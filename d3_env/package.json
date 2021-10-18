@@ -1,0 +1,19 @@
+{
+  "name": "d3_env",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "d3": "^7.1.1",
+    "parcel": "^2.0.0",
+    "yarn": "^1.22.15"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel src/index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,9 +1,10 @@
-const d3 = window.d3;
+if (typeof d3 === 'undefined') {
+    const d3 = window.d3;
 
-const margin = {top: 10, right: 40, bottom: 30, left: 100},
-    width = 800 - margin.left - margin.right,
-    height = 600 - margin.top - margin.bottom;
-
+    const margin = {top: 10, right: 40, bottom: 30, left: 100},
+        width = 800 - margin.left - margin.right,
+        height = 600 - margin.top - margin.bottom;
+}
 
 function drawHist(tracks) {
     tracks.sort((t1, t2) => t1.duration_ms - t2.duration_ms);
