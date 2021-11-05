@@ -3,154 +3,139 @@ import * as utils from './utils.mjs';
 import * as trackFeatures from '../../data/track_feature_data.json';
 import * as streamingHistory from '../../data/merged_history.json';
 import {margin, width, height} from './constants.mjs';
+import {scatterPlot} from './scatterplot/scatterplot.mjs'
+import {skippedScatterPlot, skippedScatterPlot2} from './scatterplot/skippedScatterplot.mjs'
+import { groupby } from "./utils.mjs";
 
 
-function groupby(arr, groupKey) {
-    const keys = new Set(arr.map(i => i[groupKey]).filter(e => e !== null));
-    const map = Object.fromEntries(Array.from(keys).map(k => [k, []]));
-    for (const obj of arr) {
-        if (obj[groupKey] !== null)
-            map[obj[groupKey]].push(obj);
-    }
-    return map;
+
+function topGroups(arr, key, n, comp) {
+    const defaultComp = (a, b) => b.length - a.length;
+    const groups = utils.groupby(arr, key);
+    const top = Object.values(groups).sort(comp || defaultComp).slice(0, n);
+    return top
 }
 
-function groupbyMultiple(arr, groupKeys) {
-    function getKeysVal(o) {
-        return JSON.stringify(groupKeys.map(k => o[k]))
-    }
-    const keys = new Set(arr.map(getKeysVal));
-    const map = Object.fromEntries(Array.from(keys).map(k => [k, []]));
-    for (const obj of arr) {
-        map[getKeysVal(obj)].push(obj);
-    }
-    return map;
-}
+function streamgraph() {
+    const topArtists = topGroups(streamingHistory, "artist_id", 8);
+    const streams = topArtists.flatMap(x => x);  // flatten
+    streams.forEach(
+        s => (s.endTime = new Date(s.endTime))
+    );
 
-function skippedScatterPlot() {
-    const trackStreams = groupby(streamingHistory, "track_id");
-    const skippedTracks = Object.entries(trackStreams).map(
-        ([trackId, trackStreams]) => ({
-            id: trackId,
-            trackName: trackStreams[0].trackName,
-            artistName: trackStreams[0].artistName,
-            totalStreams: trackStreams.length,
-            skippedStreams: trackStreams.filter(stream => stream.msPlayed < 10_000).length
-        })
-    ).filter(o => o.skippedStreams > 0);
+    const svg = utils.getSvg("streamgraph");
 
-    const svg = utils.getSvg("skippedScatter");
-      
-    // number of streams per track
-    const x = d3.scaleLinear()
-        .domain([0, d3.max(skippedTracks, d => d.totalStreams)])
+    const x = d3.scaleTime()
+        .domain(d3.extent(streams.map(s => s.endTime)))
         .range([0, width]);
     svg.append("g")
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x));
 
-    // number of skips per track
+    const histogram = d3.bin()
+        .value(s => s.endTime)
+        .domain(x.domain())
+        .thresholds(x.ticks(50));
+
+    const bins = histogram(streams);
+
     const y = d3.scaleLinear()
-        .domain([d3.max(skippedTracks, d => d.skippedStreams), 0])
-        .range([0, height]);
+        .range([height, 0])
+        .domain([0, d3.max(bins, b => b.length)]);
+    svg.append("g")
+        .call(d3.axisLeft(y));
+
+    const zeros = Object.fromEntries(topArtists.map(datas => [datas[0].artist_id, 0]));
+    const data = bins.map(bin => ({
+        endTime: bin.x0,
+        ...zeros,
+        ...Object.fromEntries(Object.entries(groupby(bin, "artist_id")).map(([aid, streams]) => [aid, streams.length]))
+    }))
+    // const keys = Object.keys(data[0]);
+    const keys = topArtists.map(streams => streams[0].artist_id);
+
+    const colors = d3.scaleOrdinal()
+        .domain(keys)
+        .range(['#e41a1c','#377eb8','#4daf4a','#984ea3','#ff7f00','#ffff33','#a65628','#f781bf']);
+
+    const stackedData = d3.stack()
+        .offset(d3.stackOffsetSilhouette)
+        .keys(keys)
+        (data)
+        // .value((bin, aid) => bin.filter(s => s.artist_id === aid).length)
+        // (bins)
+
+    console.log(stackedData);
+
+    svg
+        .selectAll("mylayers")
+        .data(stackedData)
+        .join("path")
+          .style("fill", d => colors(d.key))
+          .attr("d", d3.area()
+            .x(d => x(d.data.time))
+            .y0(d => y(d[0]))
+            .y1(d => y(d[1]))
+        )
+
+}
+
+function streamsBarchart() {
+    function listTopArtists(bin) {
+        const top = topGroups(bin, "artist_id", 3);
+        return top.map(streams => streams[0].artistName + ": " + streams.length).join("<br>");
+    }
+
+    const streams = streamingHistory.map(s => (
+        {...s, endTime: new Date(s.endTime)}
+    ));
+
+    const svg = utils.getSvg("streamsBar");
+
+    const x = d3.scaleTime()
+        .domain(d3.extent(streams.map(s => s.endTime)))
+        .range([0, width]);
+    svg.append("g")
+        .attr("transform", "translate(0," + height + ")")
+        .call(d3.axisBottom(x));
+
+    const histogram = d3.bin()
+        .value(s => s.endTime)
+        .domain(x.domain())
+        .thresholds(x.ticks(70));
+
+    const bins = histogram(streams);
+
+    const y = d3.scaleLinear()
+        .range([height, 0])
+        .domain([0, d3.max(bins, b => b.length)]);
     svg.append("g")
         .call(d3.axisLeft(y));
 
     const div = utils.createTooltip();
 
-    svg.append('g')
-        .selectAll("dots")
-        .data(skippedTracks)
+    svg.selectAll("rect")
+        .data(bins)
         .enter()
-        .append("circle")
-            .attr("cx", (data) => x(data.totalStreams))
-            .attr("cy", (data) => y(data.skippedStreams))
-            .attr("r", 10)
-            .style("fill", "#a269b3")
-            .style("opacity", 0.7)
-        .on("mouseover", utils.onMouseover(div, d => `<b>${d.artistName}</b> <br> ${d.trackName}`))
+        .append("rect")
+          .attr("x", 1)
+          .attr("transform", d => `translate(${x(d.x0)}, ${y(d.length)})`)
+          .attr("width", d => x(d.x1) - x(d.x0) - 1)
+          .attr("height", d => height - y(d.length))
+          .style("fill", "#69b3a2")
+        .on("mouseover", utils.onMouseover(div, listTopArtists))
         .on("mousemove", utils.onMousemove(div))
-        .on("mouseout", utils.onMouseout(div));
+        .on("mouseout", utils.onMouseout(div))
 }
 
-function skippedScatterPlot2() {
-    const trackStreams = groupby(streamingHistory, "track_id");
-    const skippedTracks = Object.entries(trackStreams).map(
-        ([trackId, trackStreams]) => ({
-            id: trackId,
-            trackName: trackStreams[0].trackName,
-            artistName: trackStreams[0].artistName,
-            totalStreams: trackStreams.length,
-            skippedStreams: trackStreams.filter(stream => stream.msPlayed < 10_000).length
-        })
-    ).filter(o => o.skippedStreams > 0);
 
-    const groupedByPosition = groupbyMultiple(skippedTracks, ["totalStreams", "skippedStreams"])
+streamgraph();
+streamsBarchart();
 
-    const svg = utils.getSvg("skippedScatter2");
-      
-    // number of streams per track
-    const x = d3.scaleLinear()
-        .domain([0, d3.max(skippedTracks, d => d.totalStreams)])
-        .range([0, width]);
-    svg.append("g")
-        .attr("transform", "translate(0," + height + ")")
-        .call(d3.axisBottom(x));
-
-    // number of skips per track
-    const y = d3.scaleLinear()
-        .domain([d3.max(skippedTracks, d => d.skippedStreams), 0])
-        .range([0, height]);
-    svg.append("g")
-        .call(d3.axisLeft(y));
-
-    const div = utils.createTooltip();
-
-    svg.append('g')
-        .selectAll("dots")
-        .data(Object.values(groupedByPosition))
-        .enter()
-        .append("circle")
-            .attr("cx", (data) => x(data[0].totalStreams))
-            .attr("cy", (data) => y(data[0].skippedStreams))
-            .attr("r", 10)
-            .style("fill", "#10aacb")
-            .style("opacity", 1)
-        .on("mouseover", utils.onMouseover(div, tracks => tracks.map(t => `<b>${t.artistName}</b> - ${t.trackName}`).join("<br>")))
-        .on("mousemove", utils.onMousemove(div))
-        .on("mouseout", utils.onMouseout(div));
-}
-
-function scatterPlot(id, data) {
-    const svg = utils.getSvg(id);
-      
-    const x = d3.scaleLinear()
-        .domain([0, 1])
-        .range([0, width]);
-    svg.append("g")
-        .attr("transform", "translate(0," + height + ")")
-        .call(d3.axisBottom(x));
-
-    const y = d3.scaleLinear()
-        .domain([1, 0])
-        .range([0, height]);
-    svg.append("g")
-        .call(d3.axisLeft(y));
-
-    svg.append('g')
-        .selectAll("dots")
-        .data(data)
-        .enter()
-        .append("circle")
-            .attr("cx", (item) => x(item[0]))
-            .attr("cy", (item) => y(item[1]))
-            .attr("r", 3)
-            .style("fill", "#69b3a2")
-            .style("opacity", 0.6)   
-}
-
-skippedScatterPlot();
-skippedScatterPlot2();
+/*
+skippedScatterPlot(streamingHistory);
+skippedScatterPlot2(streamingHistory);
 scatterPlot("a", Object.values(trackFeatures).map(e => [e[0].danceability, e[0].energy]));
 scatterPlot("b", Object.values(trackFeatures).map(e => [e[0].danceability, e[0].acousticness]));
 scatterPlot("c", Object.values(trackFeatures).map(e => [e[0].energy, e[0].acousticness]));
+*/

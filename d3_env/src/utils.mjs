@@ -1,6 +1,28 @@
 import * as d3 from "d3";
 import {margin, width, height} from './constants.mjs';
 
+export function groupby(arr, groupKey) {
+    const keys = new Set(arr.map(i => i[groupKey]).filter(e => e !== null));
+    const map = Object.fromEntries(Array.from(keys).map(k => [k, []]));
+    for (const obj of arr) {
+        if (obj[groupKey] !== null)
+            map[obj[groupKey]].push(obj);
+    }
+    return map;
+}
+
+export function groupbyMultiple(arr, groupKeys) {
+    function getKeysVal(o) {
+        return JSON.stringify(groupKeys.map(k => o[k]))
+    }
+    const keys = new Set(arr.map(getKeysVal));
+    const map = Object.fromEntries(Array.from(keys).map(k => [k, []]));
+    for (const obj of arr) {
+        map[getKeysVal(obj)].push(obj);
+    }
+    return map;
+}
+
 export function getSvg(id) {
     const existing = d3.select("#" + id);
     if (!existing.empty()) 
