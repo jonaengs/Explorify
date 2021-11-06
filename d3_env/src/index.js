@@ -1,137 +1,155 @@
 import * as d3 from "d3";
 import * as utils from './utils.mjs';
+import * as artistData from '../../data/artist_data.json'
 import * as trackFeatures from '../../data/track_feature_data.json';
 import * as streamingHistory from '../../data/merged_history.json';
 import {margin, width, height} from './constants.mjs';
-import {scatterPlot} from './scatterplot/scatterplot.mjs'
-import {skippedScatterPlot, skippedScatterPlot2} from './scatterplot/skippedScatterplot.mjs'
-import { groupby } from "./utils.mjs";
 
 
-
-function topGroups(arr, key, n, comp) {
-    const defaultComp = (a, b) => b.length - a.length;
-    const groups = utils.groupby(arr, key);
-    const top = Object.values(groups).sort(comp || defaultComp).slice(0, n);
-    return top
+Map.prototype.update = function(key, fn) {
+    return this.set(key, fn(this.get(key)));
 }
 
-function streamgraph() {
-    const topArtists = topGroups(streamingHistory, "artist_id", 8);
-    const streams = topArtists.flatMap(x => x);  // flatten
-    streams.forEach(
-        s => (s.endTime = new Date(s.endTime))
+// return top genres by artists. Consider doing it by tracks / how to cover most artists (last is maybe np hard?)
+function topGenres(n) {
+    const genreCounts = artistData.flatMap(a => a.genres).reduce((counts, genre) => 
+        counts.update(genre, x => (x || 0) + 1),
+        new Map()
+    );
+    return Array.from(genreCounts)
+            .sort(([_g1, c1], [_g2, c2]) => c2 - c1)
+            .slice(0, n)
+            .map(([g, _c]) => g);
+}
+
+function genreStreamTime(genres) {
+    const times = new Map(genres.map(g => [g, 0]));
+    streamingHistory.forEach(sh => {
+        sh.artist_genres.forEach(g => {
+            // Alternative: Filter genres.
+            // Current solution will cause not included genres to detract from time as well.
+            if (genres.includes(g)) 
+                times.update(g, x => (x + sh.msPlayed) / sh.artist_genres.length);
+        })
+    })
+    return times;
+}
+
+function createArtistNetwork() {
+    // If slow, make genre map for quicker lookups
+    const genres = topGenres(100).slice(60, 100);
+    const artists = artistData.filter(a => a.genres.some(g => genres.includes(g)));
+    artists.forEach(a => { // Remove genres that won't be in the network
+        a.genres = a.genres.filter(g => genres.includes(g))
+    });
+
+    // scale genre nodes by time spent streaming. Linear scale
+    const genreTimes = genreStreamTime(genres);
+    const [maxTime, minTime] = d3.extent(genreTimes, ([_g, t]) => t);
+    const nodeSizes = d3.scaleSqrt().domain([minTime, maxTime]).range([5, 20]);
+    console.log(maxTime, minTime);
+    console.log(
+        nodeSizes
     );
 
-    const svg = utils.getSvg("streamgraph");
-
-    const x = d3.scaleTime()
-        .domain(d3.extent(streams.map(s => s.endTime)))
-        .range([0, width]);
-    svg.append("g")
-        .attr("transform", "translate(0," + height + ")")
-        .call(d3.axisBottom(x));
-
-    const histogram = d3.bin()
-        .value(s => s.endTime)
-        .domain(x.domain())
-        .thresholds(x.ticks(50));
-
-    const bins = histogram(streams);
-
-    const y = d3.scaleLinear()
-        .range([height, 0])
-        .domain([0, d3.max(bins, b => b.length)]);
-    svg.append("g")
-        .call(d3.axisLeft(y));
-
-    const zeros = Object.fromEntries(topArtists.map(datas => [datas[0].artist_id, 0]));
-    const data = bins.map(bin => ({
-        endTime: bin.x0,
-        ...zeros,
-        ...Object.fromEntries(Object.entries(groupby(bin, "artist_id")).map(([aid, streams]) => [aid, streams.length]))
-    }))
-    // const keys = Object.keys(data[0]);
-    const keys = topArtists.map(streams => streams[0].artist_id);
-
-    const colors = d3.scaleOrdinal()
-        .domain(keys)
-        .range(['#e41a1c','#377eb8','#4daf4a','#984ea3','#ff7f00','#ffff33','#a65628','#f781bf']);
-
-    const stackedData = d3.stack()
-        .offset(d3.stackOffsetSilhouette)
-        .keys(keys)
-        (data)
-        // .value((bin, aid) => bin.filter(s => s.artist_id === aid).length)
-        // (bins)
-
-    console.log(stackedData);
-
-    svg
-        .selectAll("mylayers")
-        .data(stackedData)
-        .join("path")
-          .style("fill", d => colors(d.key))
-          .attr("d", d3.area()
-            .x(d => x(d.data.time))
-            .y0(d => y(d[0]))
-            .y1(d => y(d[1]))
+    const connectedGenres = new Map(genres.map(g => [g, []]));
+    genres.forEach(g => {
+        connectedGenres.set(g, Array.from(new Set(
+            artists.filter(a => a.genres.includes(g))
+                .flatMap(a => a.genres)
+            ))
         )
+    })
 
-}
-
-function streamsBarchart() {
-    function listTopArtists(bin) {
-        const top = topGroups(bin, "artist_id", 3);
-        return top.map(streams => streams[0].artistName + ": " + streams.length).join("<br>");
+    const data = {
+        nodes: genres.map(
+            g => ({id: g, name: g})
+        ),
+        links: Array.from(connectedGenres)
+            .flatMap(
+                ([g1, gs]) => 
+                gs.map(g2 => ({source: g1, target: g2}))
+            )
     }
 
-    const streams = streamingHistory.map(s => (
-        {...s, endTime: new Date(s.endTime)}
-    ));
+    const svg = utils.getSvg("artistNetwork");
 
-    const svg = utils.getSvg("streamsBar");
+    const link = svg
+        .selectAll("line")
+        .data(data.links)
+        .join("line")
+        .style("stroke", "#aaa");
+    const node = svg
+        .selectAll("circle")
+        .data(data.nodes)
+        .join("circle")
+        .attr("r", n => nodeSizes(genreTimes.get(n.id)))
+        .style("fill", "#69b3a2")
+        .style("opacity", 0.8);
 
-    const x = d3.scaleTime()
-        .domain(d3.extent(streams.map(s => s.endTime)))
-        .range([0, width]);
-    svg.append("g")
-        .attr("transform", "translate(0," + height + ")")
-        .call(d3.axisBottom(x));
+    const simulation = d3.forceSimulation(data.nodes)                 // Force algorithm is applied to data.nodes
+        .force("link", d3.forceLink()                               // This force provides links between nodes
+              .id(d => d.id)                                        // This provide  the id of a node
+              .links(data.links)                                    // and this the list of links
+        )
+        .force("charge", d3.forceManyBody().strength(-400).distanceMax(100))         // This adds repulsion between nodes. Play with the -400 for the repulsion strength
+        .force("center", d3.forceCenter(width / 2, height / 2))     // This force attracts nodes to the center of the svg area
+        .on("tick", ticked);
 
-    const histogram = d3.bin()
-        .value(s => s.endTime)
-        .domain(x.domain())
-        .thresholds(x.ticks(70));
+    node.call(utils.drag(simulation));
 
-    const bins = histogram(streams);
+    function ticked() {
+        link
+            .attr("x1", d => d.source.x)
+            .attr("y1", d => d.source.y)
+            .attr("x2", d => d.target.x)
+            .attr("y2", d => d.target.y);
+        node
+            .attr("cx", d => utils.clamp(d.x, 0, width))
+            .attr("cy", d => utils.clamp(d.y, 0, height));
+    }
 
-    const y = d3.scaleLinear()
-        .range([height, 0])
-        .domain([0, d3.max(bins, b => b.length)]);
-    svg.append("g")
-        .call(d3.axisLeft(y));
+
+    function getArtists({source, target}) {
+        return artists
+            .filter(a => [source.id, target.id].every(g => a.genres.includes(g)))
+            .map(a => a.name)
+            .join("<br>");
+    }
+
+    function highlightIncidents({source, target}) {
+        node
+            .filter(n => [source.id, target.id].includes(n.id))
+            .style("opacity", 1);
+    }
+
+    function dropHighlight({source, target}) {
+        node.style("opacity", 0.8);
+    }
+
+    function onLinkMouseover(event, d) {
+        highlightIncidents(d);
+        utils.onMouseover(div, getArtists)(event, d);
+    }
+
+    function onLinkMouseout(event, d) {
+        dropHighlight(d);
+        utils.onMouseout(div)(event, d);
+    }
 
     const div = utils.createTooltip();
-
-    svg.selectAll("rect")
-        .data(bins)
-        .enter()
-        .append("rect")
-          .attr("x", 1)
-          .attr("transform", d => `translate(${x(d.x0)}, ${y(d.length)})`)
-          .attr("width", d => x(d.x1) - x(d.x0) - 1)
-          .attr("height", d => height - y(d.length))
-          .style("fill", "#69b3a2")
-        .on("mouseover", utils.onMouseover(div, listTopArtists))
+    node   
+        .on("mouseover", utils.onMouseover(div, n => n.id))
         .on("mousemove", utils.onMousemove(div))
-        .on("mouseout", utils.onMouseout(div))
+        .on("mouseout", utils.onMouseout(div));
+    link   
+        .on("mouseover", onLinkMouseover)
+        .on("mousemove", utils.onMousemove(div))
+        .on("mouseout", onLinkMouseout);
 }
 
 
-streamgraph();
-streamsBarchart();
-
+createArtistNetwork();
 /*
 skippedScatterPlot(streamingHistory);
 skippedScatterPlot2(streamingHistory);

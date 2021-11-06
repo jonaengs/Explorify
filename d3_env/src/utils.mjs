@@ -1,6 +1,17 @@
 import * as d3 from "d3";
 import {margin, width, height} from './constants.mjs';
 
+export function clamp(val, min, max) {
+    return Math.max(min, Math.min(val, max));
+}
+
+export function topGroups(arr, key, n, comp) {
+    const defaultComp = (a, b) => b.length - a.length;
+    const groups = groupby(arr, key);
+    const top = Object.values(groups).sort(comp || defaultComp).slice(0, n);
+    return top
+}
+
 export function groupby(arr, groupKey) {
     const keys = new Set(arr.map(i => i[groupKey]).filter(e => e !== null));
     const map = Object.fromEntries(Array.from(keys).map(k => [k, []]));
@@ -34,7 +45,7 @@ export function getSvg(id) {
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+        .attr("transform", `translate(${margin.left}, ${margin.top})`);
 }
 
 export function createTooltip() {
@@ -69,3 +80,27 @@ export function onMousemove(div) {
         .style("top", (event.pageY - 28) + "px");
     }
 }
+
+export function drag(simulation) {    
+    function dragstarted(event) {
+      if (!event.active) simulation.alphaTarget(0.3).restart();
+      event.subject.fx = event.subject.x;
+      event.subject.fy = event.subject.y;
+    }
+    
+    function dragged(event) {
+      event.subject.fx = event.x;
+      event.subject.fy = event.y;
+    }
+    
+    function dragended(event) {
+      if (!event.active) simulation.alphaTarget(0);
+      event.subject.fx = null;
+      event.subject.fy = null;
+    }
+    
+    return d3.drag()
+      .on("start", dragstarted)
+      .on("drag", dragged)
+      .on("end", dragended);
+  }
