@@ -30,14 +30,20 @@ function genreStreamTime(genres) {
             // Current solution will cause not included genres to detract from time as well.
             if (genres.includes(g)) 
                 times.update(g, x => (x + sh.msPlayed) / sh.artist_genres.length);
+                // times.update(g, x => x + (1 / sh.artist_genres.length));
         })
     })
     return times;
 }
 
 function createArtistNetwork() {
+    const nodeSizeRange = [5, 15]
+    nodeColor = "#69b3a2"
+    linkWidth = 1
+    linkColor = "#aaa";
+
     // If slow, make genre map for quicker lookups
-    const genres = topGenres(100).slice(60, 100);
+    const genres = topGenres(150).slice(70, 120);
     const artists = artistData.filter(a => a.genres.some(g => genres.includes(g)));
     artists.forEach(a => { // Remove genres that won't be in the network
         a.genres = a.genres.filter(g => genres.includes(g))
@@ -45,12 +51,8 @@ function createArtistNetwork() {
 
     // scale genre nodes by time spent streaming. Linear scale
     const genreTimes = genreStreamTime(genres);
-    const [maxTime, minTime] = d3.extent(genreTimes, ([_g, t]) => t);
-    const nodeSizes = d3.scaleSqrt().domain([minTime, maxTime]).range([5, 20]);
-    console.log(maxTime, minTime);
-    console.log(
-        nodeSizes
-    );
+    const timesExtent = d3.extent(genreTimes, ([_g, t]) => t);
+    const nodeSizes = d3.scaleLinear().domain(timesExtent).range(nodeSizeRange);
 
     const connectedGenres = new Map(genres.map(g => [g, []]));
     genres.forEach(g => {
@@ -78,14 +80,22 @@ function createArtistNetwork() {
         .selectAll("line")
         .data(data.links)
         .join("line")
-        .style("stroke", "#aaa");
+        .style("stroke", linkColor)
+        .style("stroke-width", linkWidth);
     const node = svg
-        .selectAll("circle")
+        .selectAll("node")
         .data(data.nodes)
-        .join("circle")
+        .enter().append("g")
+    node.append("circle")
         .attr("r", n => nodeSizes(genreTimes.get(n.id)))
-        .style("fill", "#69b3a2")
-        .style("opacity", 0.8);
+        .style("fill", nodeColor)
+        .style("opacity", 0.9);
+    node.append("text")
+        .text(d => d.id)
+        .attr("visibility", "hidden");
+
+
+    console.log(node);
 
     const simulation = d3.forceSimulation(data.nodes)                 // Force algorithm is applied to data.nodes
         .force("link", d3.forceLink()                               // This force provides links between nodes
@@ -105,8 +115,8 @@ function createArtistNetwork() {
             .attr("x2", d => d.target.x)
             .attr("y2", d => d.target.y);
         node
-            .attr("cx", d => utils.clamp(d.x, 0, width))
-            .attr("cy", d => utils.clamp(d.y, 0, height));
+            // .attr("transform", d => `translate(${utils.clamp(d.x, 0, width)}, ${utils.clamp(d.y, 0, height)})`);
+            .attr("transform", d => `translate(${utils.clamp(d.x, 0, width)}, ${utils.clamp(d.y, 0, height)})`);
     }
 
 
@@ -118,13 +128,33 @@ function createArtistNetwork() {
     }
 
     function highlightIncidents({source, target}) {
-        node
-            .filter(n => [source.id, target.id].includes(n.id))
-            .style("opacity", 1);
+        const incidents = node.filter(n => [source.id, target.id].includes(n.id));
+        incidents
+            .selectChildren("circle")
+            .style("opacity", 1)
+            .style("fill", "#d2a0b1");
+
+        incidents
+            .selectChildren("text")
+            .style("visibility", "visible");
+        link
+            .filter(l => l.source == source && l.target == target)
+            .style("stroke", "#777")
+            .style("stroke-width", linkWidth * 2);
     }
 
     function dropHighlight({source, target}) {
-        node.style("opacity", 0.8);
+        const incidents = node.filter(n => [source.id, target.id].includes(n.id));
+        incidents
+            .selectChildren("circle")
+            .style("fill", nodeColor)
+            .style("opacity", 0.9);
+        incidents
+            .selectChildren("text")
+            .style("visibility", "hidden");
+        link
+            .style("stroke", linkColor)
+            .style("stroke-width", linkWidth);
     }
 
     function onLinkMouseover(event, d) {
