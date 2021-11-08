@@ -10,6 +10,7 @@ Map.prototype.update = function(key, fn) {
     return this.set(key, fn(this.get(key)));
 }
 
+
 // return top genres by artists. Consider doing it by tracks/time. Alternative try to cover the most artists (np hard?)
 function topGenres(n) {
     const genreCounts = artistData.flatMap(a => a.genres).reduce((counts, genre) => 
@@ -36,6 +37,15 @@ function genreStreamTime(genres) {
     return times;
 }
 
+function getNeighbors({nodes, links}) {
+    return links.reduce((acc, {source, target}) => 
+        source !== target ? 
+            acc.update(source, ns => ns.add(target)).update(target, ns => ns.add(source))
+            : acc,
+        new Map(nodes.map(n => [n.id, new Set()]))
+    )
+}
+
 
 function artistNetwork() {
     let streamTimes = streamingHistory.reduce((acc, entry) => 
@@ -55,21 +65,33 @@ function artistNetwork() {
         new Map()
     )
 
-    const nodes = artists.map(a => ({id: a, name: a}));
-    const links = Array.from(reverseIndex).flatMap(([g, artists]) => 
+    const network = {
+        nodes: artists.map(a => ({id: a, name: a})),
+        links: Array.from(reverseIndex).flatMap(([g, artists]) => 
         artists.flatMap((a1, i) => artists.slice(i).map(a2 => ({
             source: a1,
             target: a2,
             name: g
-        })))
+        }))))
+    };
+
+    const degrees = new Map(Array.from(getNeighbors(network)).map(([n, ns]) => [n, ns.size]));
+    const degreeExtent = d3.extent(degrees.values());
+    const colorScale = d3.scaleLinear().domain(degreeExtent).range(["green", "cyan"]);
+    const colorMap = new Map(
+        Array.from(degrees).map(([n, d]) => [n, colorScale(d)])
     );
 
-    simpleNetwork("artistNetwork", nodes, links, streamTimes, ({name}) => name);
+    simpleNetwork(network, {
+        nodeColorMap: colorMap,
+        nodeSizeMap: streamTimes,
+        getLinkLabel: ({name}) => name
+    });
 }
 
 function genreNetwork() {
     // If slow, make genre map for quicker lookups
-    const genres = topGenres(150).slice(70, 120);
+    const genres = topGenres(150).slice(0, 40);
     const artists = artistData.filter(a => a.genres.some(g => genres.includes(g)));
     artists.forEach(a => { // Remove genres that won't be in the network
         a.genres = a.genres.filter(g => genres.includes(g))
@@ -87,7 +109,7 @@ function genreNetwork() {
         )
     })
 
-    const {nodes, links} = {
+    const network = {
         nodes: genres.map(
             g => ({id: g, name: g})
         ),
@@ -105,19 +127,28 @@ function genreNetwork() {
             .join("<br>");
     }
 
-    simpleNetwork("genreNetwork", nodes, links, genreTimes, getArtists);
+    simpleNetwork(network, {
+        nodeSizeMap: genreTimes,
+        getLinkLabel: getArtists
+    });
 }
 
-function simpleNetwork(name, nodes, links, nodeMap, getLinkLabel) {
-    const nodeSizeRange = [5, 15]
-    nodeColor = "#69b3a2"
-    linkWidth = 1
-    linkColor = "#aaa";
+function simpleNetwork({nodes, links}, {
+    nodeColorMap,
+    nodeSizeMap,
+    getLinkLabel,
 
-    const timesExtent = d3.extent(nodeMap, ([_g, t]) => t);
+    nodeOpacity = 1,
+    nodeSizeRange = [5, 15],
+    nodeHighlightColor = "#69b3a2",
+    linkWidth = 1,
+    linkColor = "#aaa"
+}) {
+
+    const timesExtent = d3.extent(nodeSizeMap.values());
     const nodeSizes = d3.scaleLinear().domain(timesExtent).range(nodeSizeRange);
 
-    const svg = utils.getSvg(name);
+    const svg = utils.getSvg();
 
     const link = svg
         .selectAll("line")
@@ -130,9 +161,9 @@ function simpleNetwork(name, nodes, links, nodeMap, getLinkLabel) {
         .data(nodes)
         .enter().append("g")
     node.append("circle")
-        .attr("r", n => nodeSizes(nodeMap.get(n.id)))
-        .style("fill", nodeColor)
-        .style("opacity", 0.9);
+        .attr("r", n => nodeSizes(nodeSizeMap.get(n.id)))
+        .style("opacity", nodeOpacity)
+        .style("fill", n => nodeColorMap ? nodeColorMap.get(n.id) : nodeHighlightColor);
     node.append("text")
         .text(d => d.name)
         .attr("visibility", "hidden");
@@ -163,7 +194,6 @@ function simpleNetwork(name, nodes, links, nodeMap, getLinkLabel) {
         const incidents = node.filter(n => [source.id, target.id].includes(n.id));
         incidents
             .selectChildren("circle")
-            .style("opacity", 1)
             .style("fill", "#d2a0b1");
 
         incidents
@@ -179,8 +209,7 @@ function simpleNetwork(name, nodes, links, nodeMap, getLinkLabel) {
         const incidents = node.filter(n => [source.id, target.id].includes(n.id));
         incidents
             .selectChildren("circle")
-            .style("fill", nodeColor)
-            .style("opacity", 0.9);
+            .style("fill", n => nodeColorMap ? nodeColorMap.get(n.id) : nodeHighlightColor)
         incidents
             .selectChildren("text")
             .style("visibility", "hidden");
@@ -223,8 +252,9 @@ function simpleNetwork(name, nodes, links, nodeMap, getLinkLabel) {
 }
 
 
-genreNetwork();
 artistNetwork();
+genreNetwork();
+
 /*
 skippedScatterPlot(streamingHistory);
 skippedScatterPlot2(streamingHistory);
