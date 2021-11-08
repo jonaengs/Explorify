@@ -10,7 +10,7 @@ Map.prototype.update = function(key, fn) {
     return this.set(key, fn(this.get(key)));
 }
 
-// return top genres by artists. Consider doing it by tracks / how to cover most artists (last is maybe np hard?)
+// return top genres by artists. Consider doing it by tracks/time. Alternative try to cover the most artists (np hard?)
 function topGenres(n) {
     const genreCounts = artistData.flatMap(a => a.genres).reduce((counts, genre) => 
         counts.update(genre, x => (x || 0) + 1),
@@ -36,12 +36,38 @@ function genreStreamTime(genres) {
     return times;
 }
 
-function createArtistNetwork() {
-    const nodeSizeRange = [5, 15]
-    nodeColor = "#69b3a2"
-    linkWidth = 1
-    linkColor = "#aaa";
 
+function artistNetwork() {
+    let streamTimes = streamingHistory.reduce((acc, entry) => 
+        acc.update(entry.artistName, t => (t || 0) + entry.msPlayed),
+        new Map()
+    );
+    streamTimes = new Map(
+        Array.from(streamTimes).sort(([_a1, t1], [_a2, t2]) => t2 - t1).slice(0, 50)
+    );
+    const artists = Array.from(streamTimes.keys());
+
+    const reverseIndex = artistData.filter(a => artists.includes(a.name)).reduce(
+        (acc, artist) => artist.genres.reduce(
+           (acc, genre) => acc.update(genre, arr => (arr || []).concat(artist.name)),
+           acc
+        ),
+        new Map()
+    )
+
+    const nodes = artists.map(a => ({id: a, name: a}));
+    const links = Array.from(reverseIndex).flatMap(([g, artists]) => 
+        artists.flatMap((a1, i) => artists.slice(i).map(a2 => ({
+            source: a1,
+            target: a2,
+            name: g
+        })))
+    );
+
+    simpleNetwork("artistNetwork", nodes, links, streamTimes, ({name}) => name);
+}
+
+function genreNetwork() {
     // If slow, make genre map for quicker lookups
     const genres = topGenres(150).slice(70, 120);
     const artists = artistData.filter(a => a.genres.some(g => genres.includes(g)));
@@ -51,8 +77,6 @@ function createArtistNetwork() {
 
     // scale genre nodes by time spent streaming. Linear scale
     const genreTimes = genreStreamTime(genres);
-    const timesExtent = d3.extent(genreTimes, ([_g, t]) => t);
-    const nodeSizes = d3.scaleLinear().domain(timesExtent).range(nodeSizeRange);
 
     const connectedGenres = new Map(genres.map(g => [g, []]));
     genres.forEach(g => {
@@ -63,7 +87,7 @@ function createArtistNetwork() {
         )
     })
 
-    const data = {
+    const {nodes, links} = {
         nodes: genres.map(
             g => ({id: g, name: g})
         ),
@@ -74,33 +98,49 @@ function createArtistNetwork() {
             )
     }
 
-    const svg = utils.getSvg("artistNetwork");
+    function getArtists({source, target}) {
+        return artists
+            .filter(a => [source.id, target.id].every(g => a.genres.includes(g)))
+            .map(a => a.name)
+            .join("<br>");
+    }
+
+    simpleNetwork("genreNetwork", nodes, links, genreTimes, getArtists);
+}
+
+function simpleNetwork(name, nodes, links, nodeMap, getLinkLabel) {
+    const nodeSizeRange = [5, 15]
+    nodeColor = "#69b3a2"
+    linkWidth = 1
+    linkColor = "#aaa";
+
+    const timesExtent = d3.extent(nodeMap, ([_g, t]) => t);
+    const nodeSizes = d3.scaleLinear().domain(timesExtent).range(nodeSizeRange);
+
+    const svg = utils.getSvg(name);
 
     const link = svg
         .selectAll("line")
-        .data(data.links)
+        .data(links)
         .join("line")
         .style("stroke", linkColor)
         .style("stroke-width", linkWidth);
     const node = svg
         .selectAll("node")
-        .data(data.nodes)
+        .data(nodes)
         .enter().append("g")
     node.append("circle")
-        .attr("r", n => nodeSizes(genreTimes.get(n.id)))
+        .attr("r", n => nodeSizes(nodeMap.get(n.id)))
         .style("fill", nodeColor)
         .style("opacity", 0.9);
     node.append("text")
-        .text(d => d.id)
+        .text(d => d.name)
         .attr("visibility", "hidden");
 
-
-    console.log(node);
-
-    const simulation = d3.forceSimulation(data.nodes)                 // Force algorithm is applied to data.nodes
+    const simulation = d3.forceSimulation(nodes)                 // Force algorithm is applied to nodes
         .force("link", d3.forceLink()                               // This force provides links between nodes
               .id(d => d.id)                                        // This provide  the id of a node
-              .links(data.links)                                    // and this the list of links
+              .links(links)                                    // and this the list of links
         )
         .force("charge", d3.forceManyBody().strength(-400).distanceMax(100))         // This adds repulsion between nodes. Play with the -400 for the repulsion strength
         .force("center", d3.forceCenter(width / 2, height / 2))     // This force attracts nodes to the center of the svg area
@@ -117,14 +157,6 @@ function createArtistNetwork() {
         node
             // .attr("transform", d => `translate(${utils.clamp(d.x, 0, width)}, ${utils.clamp(d.y, 0, height)})`);
             .attr("transform", d => `translate(${utils.clamp(d.x, 0, width)}, ${utils.clamp(d.y, 0, height)})`);
-    }
-
-
-    function getArtists({source, target}) {
-        return artists
-            .filter(a => [source.id, target.id].every(g => a.genres.includes(g)))
-            .map(a => a.name)
-            .join("<br>");
     }
 
     function highlightIncidents({source, target}) {
@@ -159,7 +191,7 @@ function createArtistNetwork() {
 
     function onLinkMouseover(event, d) {
         highlightIncidents(d);
-        utils.onMouseover(div, getArtists)(event, d);
+        utils.onMouseover(div, getLinkLabel)(event, d);
     }
 
     function onLinkMouseout(event, d) {
@@ -167,11 +199,23 @@ function createArtistNetwork() {
         utils.onMouseout(div)(event, d);
     }
 
+    function onNodeMouseover(event, node) {
+        // NOTE: This currently relies on nodes linking to themselves
+        link.filter(l => l.source === node).each(highlightIncidents);
+        // utils.onMouseover(div, n => n.id)(event, node)
+    }
+
+    function onNodeMouseout(event, node) {
+        link.filter(l => l.source === node).each(dropHighlight);
+        // utils.onMouseout(div)(event, node)
+    }
+
     const div = utils.createTooltip();
-    node   
-        .on("mouseover", utils.onMouseover(div, n => n.id))
+    node
+        .selectChildren("circle")
+        .on("mouseover", onNodeMouseover)
         .on("mousemove", utils.onMousemove(div))
-        .on("mouseout", utils.onMouseout(div));
+        .on("mouseout", onNodeMouseout);
     link   
         .on("mouseover", onLinkMouseover)
         .on("mousemove", utils.onMousemove(div))
@@ -179,7 +223,8 @@ function createArtistNetwork() {
 }
 
 
-createArtistNetwork();
+genreNetwork();
+artistNetwork();
 /*
 skippedScatterPlot(streamingHistory);
 skippedScatterPlot2(streamingHistory);
