@@ -1,4 +1,5 @@
 venv/
 MyData/
+FullData/
 *.zip
 .ipynb_checkpoints/
