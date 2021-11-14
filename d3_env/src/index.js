@@ -53,7 +53,7 @@ function artistNetwork() {
         new Map()
     );
     streamTimes = new Map(
-        Array.from(streamTimes).sort(([_a1, t1], [_a2, t2]) => t2 - t1).slice(0, 50)
+        Array.from(streamTimes).sort(([_a1, t1], [_a2, t2]) => t2 - t1).slice(0, 60)
     );
     const artists = Array.from(streamTimes.keys());
 
@@ -68,11 +68,12 @@ function artistNetwork() {
     const network = {
         nodes: artists.map(a => ({id: a, name: a})),
         links: Array.from(reverseIndex).flatMap(([g, artists]) => 
-        artists.flatMap((a1, i) => artists.slice(i).map(a2 => ({
-            source: a1,
-            target: a2,
-            name: g
-        }))))
+            artists.flatMap((a1, i) => artists.slice(i).map(a2 => ({
+                    source: a1,
+                    target: a2,
+                    name: g
+                })
+            )))
     };
 
     const degrees = new Map(Array.from(getNeighbors(network)).map(([n, ns]) => [n, ns.size]));
@@ -91,7 +92,7 @@ function artistNetwork() {
 
 function genreNetwork() {
     // If slow, make genre map for quicker lookups
-    const genres = topGenres(150).slice(0, 40);
+    const genres = topGenres(150).slice(0, 50);
     const artists = artistData.filter(a => a.genres.some(g => genres.includes(g)));
     artists.forEach(a => { // Remove genres that won't be in the network
         a.genres = a.genres.filter(g => genres.includes(g))
@@ -166,6 +167,7 @@ function simpleNetwork({nodes, links}, {
         .style("fill", n => nodeColorMap ? nodeColorMap.get(n.id) : nodeHighlightColor);
     node.append("text")
         .text(d => d.name)
+        .attr("class", "unselectable")
         .attr("visibility", "hidden");
 
     const simulation = d3.forceSimulation(nodes)                 // Force algorithm is applied to nodes
@@ -173,7 +175,7 @@ function simpleNetwork({nodes, links}, {
               .id(d => d.id)                                        // This provide  the id of a node
               .links(links)                                    // and this the list of links
         )
-        .force("charge", d3.forceManyBody().strength(-400).distanceMax(100))         // This adds repulsion between nodes. Play with the -400 for the repulsion strength
+        .force("charge", d3.forceManyBody().strength(-200).distanceMax(200))        // This adds repulsion between nodes. Play with the -400 for the repulsion strength
         .force("center", d3.forceCenter(width / 2, height / 2))     // This force attracts nodes to the center of the svg area
         .on("tick", ticked);
 
@@ -186,8 +188,10 @@ function simpleNetwork({nodes, links}, {
             .attr("x2", d => d.target.x)
             .attr("y2", d => d.target.y);
         node
-            // .attr("transform", d => `translate(${utils.clamp(d.x, 0, width)}, ${utils.clamp(d.y, 0, height)})`);
-            .attr("transform", d => `translate(${utils.clamp(d.x, 0, width)}, ${utils.clamp(d.y, 0, height)})`);
+            .attr("transform", d => `translate(${utils.clamp(d.x, 0, width)}, ${utils.clamp(d.y, 0, height)})`)
+            // .attr("vx", d => ((d.x < 0 && d.vx < 0) || (d.x > width && d.vx > 0)) ? -d.vx :  d.vx)
+            // .attr("vy", d => ((d.y < 0 && d.vy < 0) || (d.y > height && d.vy > 0)) ? -d.vy :  d.vy)
+            ;
     }
 
     function highlightIncidents({source, target}) {
@@ -205,12 +209,11 @@ function simpleNetwork({nodes, links}, {
             .style("stroke-width", linkWidth * 2);
     }
 
-    function dropHighlight({source, target}) {
-        const incidents = node.filter(n => [source.id, target.id].includes(n.id));
-        incidents
+    function dropHighlight(_link) {
+        node
             .selectChildren("circle")
             .style("fill", n => nodeColorMap ? nodeColorMap.get(n.id) : nodeHighlightColor)
-        incidents
+        node
             .selectChildren("text")
             .style("visibility", "hidden");
         link
@@ -228,9 +231,10 @@ function simpleNetwork({nodes, links}, {
         utils.onMouseout(div)(event, d);
     }
 
-    function onNodeMouseover(event, node) {
+    function onNodeMouseover(_event, node) {
         // NOTE: This currently relies on nodes linking to themselves
-        link.filter(l => l.source === node).each(highlightIncidents);
+        highlightIncidents({source: node, target: node})
+        link.filter(l => [l.source, l.target].includes(node)).each(highlightIncidents);
         // utils.onMouseover(div, n => n.id)(event, node)
     }
 
@@ -253,7 +257,7 @@ function simpleNetwork({nodes, links}, {
 
 
 artistNetwork();
-genreNetwork();
+// genreNetwork();
 
 /*
 skippedScatterPlot(streamingHistory);
