@@ -70,3 +70,12 @@
 .react-calendar-heatmap .color-gitlab-4 {
   fill: #254e77;
 }
+
+.react-calendar-heatmap .color-scale-1 { fill: #63c7e3; }
+.react-calendar-heatmap .color-scale-2 { fill: #4294B8; }
+.react-calendar-heatmap .color-scale-3 { fill: #387FAB; }
+.react-calendar-heatmap .color-scale-4 { fill: #2F699F; }
+.react-calendar-heatmap .color-scale-5 { fill: #265493; }
+.react-calendar-heatmap .color-scale-6 { fill: #1D3E87; }
+.react-calendar-heatmap .color-scale-7 { fill: #13297A; }
+.react-calendar-heatmap .color-scale-8 { fill: #0A136E; }

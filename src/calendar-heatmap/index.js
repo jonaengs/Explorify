@@ -138,7 +138,7 @@ class CalendarHeatmap extends React.Component {
       return this.valueCache[index].tooltipDataAttrs;
     }
     console.log(this.valueCache[index])
-    return this.getTooltipDataAttrsForValue({ date: null, count: 0 });
+    return this.getTooltipDataAttrsForValue({ date: "", count: 0 });
   }
 
   getTooltipDataAttrsForValue(value) {
@@ -246,7 +246,7 @@ class CalendarHeatmap extends React.Component {
         height={SQUARE_SIZE}
         x={x}
         y={y}
-        className={this.getClassNameForIndex(index)}
+        className={`day ${this.getClassNameForIndex(index)}`}
         onClick={() => this.handleClick(value)}
         onMouseOver={(e) => this.handleMouseOver(e, value)}
         onMouseLeave={(e) => this.handleMouseLeave(e, value)}

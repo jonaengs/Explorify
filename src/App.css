@@ -28,6 +28,88 @@
   color: #61dafb;
 }
 
+.App-row-1 {
+  /*float: top;*/
+  display: flex;
+  padding: 15px;
+  width: 90%;
+  height: 600px;
+  box-sizing: border-box;
+}
+.App-row-2 {
+  /*float: bottom;*/
+  display: flex;
+  padding: 15px;
+  width: 90%;
+  height: 300px;
+  box-sizing: border-box;
+}
+
+.App-column-barchart {
+  /*float: right;*/
+  display: flex;
+  padding: 15px;
+  width: 30%;
+  height: 570px;
+  box-sizing: border-box;
+}
+
+.App-column-graph {
+  /*float: left;*/
+  display: flex;
+  padding: 15px;
+  width: 70%;
+  height: 570px;
+  box-sizing: border-box;
+}
+
+.toolTip {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: absolute;
+  display: none;
+  width: auto;
+  height: auto;
+  background: none repeat scroll 0 0 white;
+  border: 0 none;
+  border-radius: 8px 8px 8px 8px;
+  box-shadow: -3px 3px 15px #888888;
+  color: black;
+  font: 12px sans-serif;
+  padding: 5px;
+  text-align: center;
+}
+
+text {
+  fill: #ffffff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#calendar {
+  margin: 20px;
+}
+.month {
+  margin-right: 8px;
+}
+.month-name {
+  font-size: 10px;
+  fill: #777;
+  font-family: Arial, Helvetica;
+}
+.day.hover {
+  stroke: #6d6E70;
+  stroke-width: 2;
+}
+
+.day.selected {
+  stroke: #fbfcfc;
+  stroke-width: 2;
+}
+
+.day.focus {
+  stroke: #ffff33;
+  stroke-width: 2;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
