@@ -1,8 +1,23 @@
 import * as d3 from "d3";
 import {margin, width, height} from './constants.mjs';
+import { DefaultMap } from "./map_extensions";
 
-export function clamp(val, min, max) {
+
+export type TooltipDiv = d3.Selection<HTMLDivElement, unknown, HTMLElement, any>;
+export type SVGCanvas = d3.Selection<SVGGElement, unknown, HTMLElement, any>;
+
+export function clamp(val: number, min: number, max: number) {
     return Math.max(min, Math.min(val, max));
+}
+
+export function clampX(val: number, margin=0) {
+    const r = margin ? Math.floor(margin * Math.random()) : 0;
+    return clamp(val, r, width + r);
+}
+
+export function clampY(val: number, margin?: number) {
+    const r = Math.floor(margin * Math.random())
+    return clamp(val, r, height + r);
 }
 
 export function topGroups(arr, key, n, comp) {
@@ -12,7 +27,7 @@ export function topGroups(arr, key, n, comp) {
     return top
 }
 
-export function groupby(arr, groupKey) {
+export function groupby(arr: Object[], groupKey: string) {
     const keys = new Set(arr.map(i => i[groupKey]).filter(e => e !== null));
     const map = Object.fromEntries(Array.from(keys).map(k => [k, []]));
     for (const obj of arr) {
@@ -20,6 +35,13 @@ export function groupby(arr, groupKey) {
             map[obj[groupKey]].push(obj);
     }
     return map;
+}
+
+export function count(arr: any[]) {
+    return arr.reduce(
+        (acc, e) => acc.update(e, x => x+1),
+        new DefaultMap(0)
+    );
 }
 
 export function groupbyMultiple(arr, groupKeys) {
@@ -34,7 +56,7 @@ export function groupbyMultiple(arr, groupKeys) {
     return map;
 }
 
-export function getSvg(id) {
+export function getSvg(id: string): SVGCanvas {
     const existing = d3.select("#" + id);
     if (!existing.empty()) 
         existing.remove();
@@ -55,7 +77,8 @@ export function createTooltip() {
         .style("opacity", 0);
 }
 
-export function onMouseover(div, textFunc=() => "...") {
+
+export function onMouseover(div: TooltipDiv, textFunc=(_) => "...") {
     return (event, data) => {
         div.transition()
             .duration(100)
@@ -65,7 +88,7 @@ export function onMouseover(div, textFunc=() => "...") {
             .style("top", (event.pageY - 28) + "px");
     }  
 }
-export function onMouseout(div) {
+export function onMouseout(div: TooltipDiv) {
     return (_event, _data) => {
         div.transition()
             .duration(100)
@@ -73,34 +96,10 @@ export function onMouseout(div) {
     }       
 }
     
-export function onMousemove(div) {
+export function onMousemove(div: TooltipDiv) {
     return (event, _data) => {
         div
         .style("left", (event.pageX) + "px")
         .style("top", (event.pageY - 28) + "px");
     }
 }
-
-export function drag(simulation) {    
-    function dragstarted(event) {
-      if (!event.active) simulation.alphaTarget(0.3).restart();
-      event.subject.fx = event.subject.x;
-      event.subject.fy = event.subject.y;
-    }
-    
-    function dragged(event) {
-      event.subject.fx = event.x;
-      event.subject.fy = event.y;
-    }
-    
-    function dragended(event) {
-      if (!event.active) simulation.alphaTarget(0);
-      event.subject.fx = null;
-      event.subject.fy = null;
-    }
-    
-    return d3.drag()
-      .on("start", dragstarted)
-      .on("drag", dragged)
-      .on("end", dragended);
-  }
