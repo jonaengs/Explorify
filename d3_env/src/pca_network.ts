@@ -1,4 +1,4 @@
-import * as pcaResults from '../../data/pca_results.json'
+import * as pcaResults from '../../data/dr_results.json'
 import * as d3 from "d3";
 import * as utils from './utils';
 import {margin, width, height} from './constants.mjs';
@@ -79,7 +79,7 @@ function toPolar(x: number, y: number): [number, number] {
  * Link color by proportion of co-occurrences
  */
 export function pcaNetwork() {
-    const data = pcaResults.map(d => d.by_mean_feature)
+    const data = pcaResults.map(d => d.tsne_genre_no_outliers).filter(v => v !== null);
     const xAxis = d3.scaleLinear().domain(d3.extent(data.map(([x,]) => x))).range([0, width]);
     const yAxis = d3.scaleLinear().domain(d3.extent(data.map(([, y]) => y)).reverse()).range([0, height]);
 
@@ -88,7 +88,7 @@ export function pcaNetwork() {
     console.log(d3.hsl("blue"));
 
     const svg = utils.getSvg("pcaNetwork");
-    const nodes = data.slice(0, 100)
+    const nodes = data.slice(0, 200)
         .map(([x, y], i) => ({
             id: pcaResults[i].artist_id,
             x: xAxis(x),
