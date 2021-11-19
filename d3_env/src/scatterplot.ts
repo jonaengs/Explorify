@@ -1,11 +1,11 @@
 import * as d3 from "d3";
 import * as utils from './utils';
-import * as pcaResults from '../../data/pca_results.json'
+import * as drResults from '../../data/dr_results.json'
 import {margin, width, height} from './constants.mjs';
 import './map_extensions.ts';
 
 export function featurePCAScatter() {
-    scatterPlot("featurePCAScatter", pcaResults.map(d => d.by_mean_feature));
+    scatterPlot("featurePCAScatter", drResults.map(d => d.mean_feature_pca));
 }
 
 function scatterPlot(name: string, data: number[][], labels?: any[]) {

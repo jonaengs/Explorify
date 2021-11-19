@@ -1,8 +1,8 @@
 import {artistNetwork, genreNetwork} from './networks'
 import {featurePCAScatter} from './scatterplot'
-import {pcaNetwork} from './pca_network'
+import {edgemap} from './edgemap'
 
-pcaNetwork();
+edgemap();
 // featurePCAScatter();
 // artistNetwork();
 // genreNetwork();

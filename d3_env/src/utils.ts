@@ -16,7 +16,7 @@ export function clampX(val: number, margin=0) {
 }
 
 export function clampY(val: number, margin?: number) {
-    const r = Math.floor(margin * Math.random())
+    const r = margin ? Math.floor(margin * Math.random()) : 0;
     return clamp(val, r, height + r);
 }
 
@@ -37,10 +37,10 @@ export function groupby(arr: Object[], groupKey: string) {
     return map;
 }
 
-export function count(arr: any[]) {
+export function count<T>(arr: T[]): Map<T, number> {
     return arr.reduce(
         (acc, e) => acc.update(e, x => x+1),
-        new DefaultMap(0)
+        new DefaultMap<T, number>(0)
     );
 }
 

@@ -5,10 +5,11 @@ import './map_extensions.ts'
 
 export type genre = string;
 export type artistName = string;
+export type artistID = string;
 
 
 export type ArtistData = {
-    id: string,
+    id: artistID,
     name: artistName,
     genres: genre[],
     type: "artist" | string, // always "artist" afaik
@@ -21,7 +22,7 @@ export type StreamInstance = {
     // artist info
     artistName: artistName,
     artistGenres: genre[],
-    artistID: string,
+    artistID: artistID,
     artistPopularity: number
 
     // stream info
@@ -55,7 +56,7 @@ export type TrackFeature = {
 
 export const artistData: ArtistData[] = _artistData;
 
-export const artistIdNameMap: Map<string, artistName> = new Map(
+export const artistMap: Map<artistID, artistName> = new Map(
     artistData.map(d => [d.id, d.name])
 );
 
