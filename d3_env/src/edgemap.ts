@@ -135,7 +135,7 @@ function toPolar(x: number, y: number): [number, number] {
  */
 function getHSL({x, y}) {
     const [dist, deg] = toPolar(x, y);
-    return d3.hsl(deg, dist, 0.5, 1)
+    return d3.hsl(deg, dist, 0.6, 1)
 }
 
 
@@ -149,7 +149,7 @@ function createNetwork(): Network {
     const xAxis = d3.scaleLinear().domain(d3.extent(values.map(([x,]) => x))).range([0, width]);
     const yAxis = d3.scaleLinear().domain(d3.extent(values.map(([, y]) => y)).reverse()).range([0, height]);
     const timelineAxis = d3.scaleTime().domain(d3.extent(firstStream.values())).range([0, width])
-    const nodeSizes = d3.scaleSqrt().domain(d3.extent(getStreamTimes().values())).range([5, 15])
+    const nodeSizes = d3.scaleSqrt().domain(d3.extent(getStreamTimes().values())).range([5, 20])
 
     const nodes = Array.from(data)
         .map(([aid, pos]) => pos && ({
@@ -181,8 +181,10 @@ function createNetwork(): Network {
  * TODO: 
  *      Link thickness by session co-occurrences
  *      Link color by proportion of co-occurrences
+ *      Link color is gradient interpolated from source and target colors
+ *          See: https://stackoverflow.com/questions/20706603/d3-path-gradient-stroke
  */
-const top150 = Array.from(getStreamTimes().keys()).slice(0, 50);
+const top150 = Array.from(getStreamTimes().keys()).slice(0, 150);
 export function edgemap(artists: artistID[] = top150) {
     const artistSet = new Set(artists);
     const nodes = completeNetwork.nodes.filter(n => artistSet.has(n.id));
@@ -190,22 +192,25 @@ export function edgemap(artists: artistID[] = top150) {
 
     const simulation = d3.forceSimulation(nodes) // @ts-ignore
         .force("link", d3.forceLink(links).id(d => d.id).strength(0))
-        .force("collide", d3.forceCollide(n => Math.ceil(n.r * 1.5)))
+        .force("collide", d3.forceCollide(n => n.r +2))
         // .force("charge", d3.forceManyBody().strength(-10).distanceMax(n => n.r + 5))
         .on("tick", ticked);
+
 
     const svg = utils.getSvg("pcaNetwork");
     const background = svg.append("rect").attr("width", width).attr("height", height).style("opacity", 0);
 
     // @ts-ignore
-    const linkColor = d3.scaleLinear().range(["grey", "black"]);
+    // const getLinkColor = (color) => d3.scaleLinear().range([{...color, opacity: 0.2}, color])
+    // const getLinkColor = (color) => d3.scaleLinear().range([color, d3.hsl(color.h, color.s, 0.1)])
+    const getLinkColor = (color) => d3.scaleLinear().range([color, "black"])
     const link = svg
         .selectAll("path")
         .data(links as d3Link[])
         .join("path")
         .style("fill", "none")
-        .style("opacity", 0.7)
-        .style("stroke", link => linkColor(link.proportion))
+        .style("opacity", 0.9)
+        .style("stroke", link => getLinkColor(getHSL(link.target))(link.proportion))
         .style("stroke-width", link => Math.log2(link.count) + 1)
         .style("visibility", "hidden")
         ;
@@ -214,6 +219,8 @@ export function edgemap(artists: artistID[] = top150) {
         .selectAll("node")
         .data(nodes as d3Node[])
         .enter()
+        .append("g")
+    node
         .append("circle")
             .attr("r", n => n.r)  // @ts-ignore
             .style("fill", getHSL)
@@ -225,19 +232,31 @@ export function edgemap(artists: artistID[] = top150) {
             // node
             //     .filter(n => !neighbors.has(n.id))
             //     .style("fill", d3.hsl(0.5, 0.5, 0.2, 0.2));
-            // @ts-ignore
-            node.style("fill", 
-                n => neighbors.has(n.id) ? 
+            node
+                .selectChildren("circle") 
+                .style("fill", // @ts-ignore
+                n => neighbors.has(n.id) ? // @ts-ignore
                     getHSL(n) 
-                    : d3.hsl(0.5, 0.5, 0.2, 0.3)
+                    : d3.hsl(0.5, 0.5, 0.2, 0.2)
+            );
+            node
+                .selectChildren("text") 
+                .style("visibility", // @ts-ignore
+                n => neighbors.has(n.id) ? 
+                    "visible" : "hidden"
             );
             // event.stopPropagation(); // stop event from triggering background click event
         }
         );
+    node.append("text")
+        .text((d: Node) => d.name)
+        .attr("class", "unselectable")
+        .attr("visibility", "hidden");
 
     background.on("click", () => {
         link.style("visibility", "hidden");
-        node.style("fill", getHSL);
+        node.selectChildren("text").style("visibility", "hidden");
+        node.selectChildren("circle").style("fill", getHSL);
     });
     
     
@@ -254,9 +273,10 @@ export function edgemap(artists: artistID[] = top150) {
                 const curveRight = (d.target.x < d.source.x) + 0;
                 return `M${d.source.x},${d.source.y}A${dr},${dr} 0 0,${curveRight} ${d.target.x},${d.target.y}`
             });
-        node
-            .attr("cx", d => utils.clampX(d.x))
-            .attr("cy", d => utils.clampY(d.y))
+            node
+                .attr("transform", (d: d3Node) => 
+                    `translate(${utils.clampX(d.x)}, ${utils.clampY(d.y)})`
+                )
     }
 }
 
@@ -265,6 +285,7 @@ export function edgemap(artists: artistID[] = top150) {
     1. force away from vertical center, so timeline is cleared
     2. Change how edges are calculated by adding a third invisible intermediate node between neighbors and going through those.
         Maybe scale the y position of this node with the distance between the neighbors. 
+        Example: https://bl.ocks.org/mbostock/4600693
 */
 export function timeline(artists: artistID[] = top150) {
     const artistSet = new Set(artists);
@@ -275,6 +296,7 @@ export function timeline(artists: artistID[] = top150) {
     nodes.forEach(n => n.x = repositioning(n.firstStream));
 
     const svg = utils.getSvg("pcaNetwork");
+    const background = svg.append("rect").attr("width", width).attr("height", height).style("opacity", 0);
 
     const simulation = d3.forceSimulation(nodes) // @ts-ignore
         .force("link", d3.forceLink(links).id(d => d.id).strength(0))
@@ -307,9 +329,13 @@ export function timeline(artists: artistID[] = top150) {
             link.style("visibility", l => l.source.id === n.id ? "visible" : "hidden")
             const neighbors = new Set(links.filter((l: d3Link) => l.source.id === n.id).map(l => l.target.id));
             neighbors.add(n.id);
-            node.style("fill", n => neighbors.has(n.id) ? getHSL(n.similarityPos) : d3.hsl(0.5, 0.5, 0.2, 0.3));
+            node.style("fill", n => neighbors.has(n.id) ? getHSL(n.similarityPos) : d3.hsl(0.5, 0.5, 0.2, 0.2));
         });
 
+    background.on("click", () => {
+        link.style("visibility", "hidden");
+        node.style("fill", n => getHSL(n.similarityPos));
+    });
     svg.append("g")
         .attr("transform", `translate(0, ${height/2})`)
         .call(d3.axisBottom(repositioning));
