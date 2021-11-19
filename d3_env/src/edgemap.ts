@@ -15,8 +15,13 @@ type Node = {
     id: string,
     name: string,
     r: number,
+    firstStream: Date,
+    timelinePos: number,
+    similarityPos: {x: number, y: number}
+    
+    // shorthand for similarity view equivalents
     x: number,
-    y: number
+    y: number,
 };
 type Link = {
     source: Node["id"],
@@ -42,6 +47,10 @@ const sessionOccurrences = new Map(
     artistData.map(artist => 
         [artist.id, sessionArtists.reduce((count, as) => count + as.includes(artist.id), 0)]
     )
+);
+const firstStream = streamingHistoryNoSkipped.reduce(
+    (acc, stream) => acc.update(stream.artistID, t => t || stream.endTime),
+    new Map()
 );
 
 const artistStreamTimes: Map<artistName, number> = getStreamTimes();
@@ -130,15 +139,16 @@ function getHSL({x, y}) {
 }
 
 
-const completeNetwork: Network = getConstants();
+const completeNetwork: Network = createNetwork();
 
-function getConstants(): Network {
+function createNetwork(): Network {
     const data: Map<artistID, DRCoordinate> = new Map(drResults.map(
         res => [res.artist_id, res.tsne_genre_no_outliers as DRCoordinate]
     ));
     const values = Array.from(data.values()).filter(v => v !== null);
     const xAxis = d3.scaleLinear().domain(d3.extent(values.map(([x,]) => x))).range([0, width]);
     const yAxis = d3.scaleLinear().domain(d3.extent(values.map(([, y]) => y)).reverse()).range([0, height]);
+    const timelineAxis = d3.scaleTime().domain(d3.extent(firstStream.values())).range([0, width])
     const nodeSizes = d3.scaleSqrt().domain(d3.extent(getStreamTimes().values())).range([5, 15])
 
     const nodes = Array.from(data)
@@ -146,8 +156,12 @@ function getConstants(): Network {
             id: aid,
             name: artistMap.get(aid),
             r: nodeSizes(getStreamTimes().get(aid)),
+            similarityPos: {x: xAxis(pos[0]), y: yAxis(pos[1])},
+            firstStream: firstStream.get(aid),
+            timelinePos: timelineAxis(firstStream.get(aid)),
+
             x: xAxis(pos[0]),
-            y: yAxis(pos[1])
+            y: yAxis(pos[1]),
         }))
         .filter(v => v !== null);
 
@@ -168,8 +182,8 @@ function getConstants(): Network {
  *      Link thickness by session co-occurrences
  *      Link color by proportion of co-occurrences
  */
-const top100 = Array.from(getStreamTimes().keys()).slice(0, 200);
-export function edgemap(artists: artistID[] = top100) {
+const top150 = Array.from(getStreamTimes().keys()).slice(0, 50);
+export function edgemap(artists: artistID[] = top150) {
     const artistSet = new Set(artists);
     const nodes = completeNetwork.nodes.filter(n => artistSet.has(n.id));
     const links = completeNetwork.links.filter(l => artistSet.has(l.source) && artistSet.has(l.target));
@@ -178,7 +192,7 @@ export function edgemap(artists: artistID[] = top100) {
         .force("link", d3.forceLink(links).id(d => d.id).strength(0))
         .force("collide", d3.forceCollide(n => Math.ceil(n.r * 1.5)))
         // .force("charge", d3.forceManyBody().strength(-10).distanceMax(n => n.r + 5))
-        .on("tick", (ticked));
+        .on("tick", ticked);
 
     const svg = utils.getSvg("pcaNetwork");
     const background = svg.append("rect").attr("width", width).attr("height", height).style("opacity", 0);
@@ -243,5 +257,73 @@ export function edgemap(artists: artistID[] = top100) {
         node
             .attr("cx", d => utils.clampX(d.x))
             .attr("cy", d => utils.clampY(d.y))
+    }
+}
+
+/*
+    TODO:
+    1. force away from vertical center, so timeline is cleared
+    2. Change how edges are calculated by adding a third invisible intermediate node between neighbors and going through those.
+        Maybe scale the y position of this node with the distance between the neighbors. 
+*/
+export function timeline(artists: artistID[] = top150) {
+    const artistSet = new Set(artists);
+    const nodes = completeNetwork.nodes.filter(n => artistSet.has(n.id)).map(n => ({...n, x: n.timelinePos, y: height/2}));
+    const links = completeNetwork.links.filter(l => artistSet.has(l.source) && artistSet.has(l.target));
+
+    const repositioning = d3.scaleTime().domain(d3.extent(nodes.map(n => n.firstStream))).range([0, width]);
+    nodes.forEach(n => n.x = repositioning(n.firstStream));
+
+    const svg = utils.getSvg("pcaNetwork");
+
+    const simulation = d3.forceSimulation(nodes) // @ts-ignore
+        .force("link", d3.forceLink(links).id(d => d.id).strength(0))
+        .force("collide", d3.forceCollide(n => n.r + 1))
+        .force("anchor", d3.forceX(n => n.x).strength(5))
+        .on("tick", ticked);
+
+    // @ts-ignore
+    const linkColor = d3.scaleLinear().range(["grey", "black"]);
+    const link = svg
+        .selectAll("path")
+        .data(links as d3Link[])
+        .join("path")
+        .style("fill", "none")
+        .style("opacity", 0.7)
+        .style("stroke", link => linkColor(link.proportion))
+        .style("stroke-width", link => Math.log2(link.count) + 1)
+        .style("visibility", "hidden")
+        ;
+
+    const node = svg
+        .selectAll("node")
+        .data(nodes as d3Node[])
+        .enter()
+        .append("circle")
+            .attr("r", n => n.r) // @ts-ignore
+            .style("fill", n => getHSL(n.similarityPos))
+        .on("mouseover", (_e, node) => console.log(artistMap.get(node.id)))
+        .on("click", (_event: PointerEvent, n) => {
+            link.style("visibility", l => l.source.id === n.id ? "visible" : "hidden")
+            const neighbors = new Set(links.filter((l: d3Link) => l.source.id === n.id).map(l => l.target.id));
+            neighbors.add(n.id);
+            node.style("fill", n => neighbors.has(n.id) ? getHSL(n.similarityPos) : d3.hsl(0.5, 0.5, 0.2, 0.3));
+        });
+
+    svg.append("g")
+        .attr("transform", `translate(0, ${height/2})`)
+        .call(d3.axisBottom(repositioning));
+    
+    function ticked() {
+        link
+            .attr("d", d => {
+                const [dx, dy] = [d.target.x - d.source.x, d.target.y - d.source.y];
+                const dr = Math.sqrt(dx*dx + dy*dy);
+                const curveRight = (d.target.x < d.source.x) + 0;
+                return `M${d.source.x},${d.source.y}A${dr},${dr} 0 0,${curveRight} ${d.target.x},${d.target.y}`
+            });
+        node
+            .attr("cx", d => utils.clampX(d.x))
+            .attr("cy", d => d.y)
     }
 }
