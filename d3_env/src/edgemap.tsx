@@ -6,6 +6,7 @@ import {DefaultMap} from './map_extensions';
 import './map_extensions.ts';
 import {streamingHistory, genre, artistName, StreamInstance, artistData, streamingHistoryNoSkipped, artistID, artistMap} from './data'
 import { getStreamTimes } from './derived_data';
+import React, { Ref, useEffect, useRef } from 'react';
 
 /**
  * A feature vector reduced to 2 dimensions. Must be mapped to fit within chart.
@@ -185,7 +186,7 @@ function createNetwork(): Network {
  *          See: https://stackoverflow.com/questions/20706603/d3-path-gradient-stroke
  */
 const top150 = Array.from(getStreamTimes().keys()).slice(0, 150);
-export function edgemap(artists: artistID[] = top150) {
+export function renderEdgemap(ref: Ref<undefined>, artists: artistID[]) {    
     const artistSet = new Set(artists);
     const nodes = completeNetwork.nodes.filter(n => artistSet.has(n.id));
     const links = completeNetwork.links.filter(l => artistSet.has(l.source) && artistSet.has(l.target));
@@ -196,8 +197,7 @@ export function edgemap(artists: artistID[] = top150) {
         // .force("charge", d3.forceManyBody().strength(-10).distanceMax(n => n.r + 5))
         .on("tick", ticked);
 
-
-    const svg = utils.getSvg("pcaNetwork");
+    const svg = utils.createSVG(ref);
     const background = svg.append("rect").attr("width", width).attr("height", height).style("opacity", 0);
 
     // @ts-ignore
@@ -229,16 +229,10 @@ export function edgemap(artists: artistID[] = top150) {
             link.style("visibility", l => l.source.id === n.id ? "visible" : "hidden")
             const neighbors = new Set(links.filter((l: d3Link) => l.source.id === n.id).map(l => l.target.id));
             neighbors.add(n.id);
-            // node
-            //     .filter(n => !neighbors.has(n.id))
-            //     .style("fill", d3.hsl(0.5, 0.5, 0.2, 0.2));
+            // @ts-ignore
             node
                 .selectChildren("circle") 
-                .style("fill", // @ts-ignore
-                n => neighbors.has(n.id) ? // @ts-ignore
-                    getHSL(n) 
-                    : d3.hsl(0.5, 0.5, 0.2, 0.2)
-            );
+                .style("fill", n => neighbors.has(n.id) ? getHSL(n) : d3.hsl(0.5, 0.5, 0.2, 0.2));
             node
                 .selectChildren("text") 
                 .style("visibility", // @ts-ignore
@@ -280,6 +274,16 @@ export function edgemap(artists: artistID[] = top150) {
     }
 }
 
+export function Edgemap(
+    {artists = top150, type = "similarity"}: {artists: artistID[], type: "similarity" | "timeline"}) {    
+    const ref = useRef();
+    // TODO: return cleanup function?
+    useEffect(() => renderEdgemap(ref.current, artists), [artists]);
+    return <div id="edgemap-container">
+        <svg ref={ref}></svg>
+    </div>
+}
+
 /*
     TODO:
     1. force away from vertical center, so timeline is cleared
@@ -287,7 +291,7 @@ export function edgemap(artists: artistID[] = top150) {
         Maybe scale the y position of this node with the distance between the neighbors. 
         Example: https://bl.ocks.org/mbostock/4600693
 */
-export function timeline(artists: artistID[] = top150) {
+function timeline(artists: artistID[] = top150) {
     const artistSet = new Set(artists);
     const nodes = completeNetwork.nodes.filter(n => artistSet.has(n.id)).map(n => ({...n, x: n.timelinePos, y: height/2}));
     const links = completeNetwork.links.filter(l => artistSet.has(l.source) && artistSet.has(l.target));

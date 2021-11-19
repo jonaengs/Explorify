@@ -70,6 +70,16 @@ export function getSvg(id: string): SVGCanvas {
         .attr("transform", `translate(${margin.left}, ${margin.top})`);
 }
 
+export function createSVG(ref): SVGCanvas {   
+    console.log(d3.select(ref));
+    
+    return d3.select(ref)
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", `translate(${margin.left}, ${margin.top})`);
+}
+
 export function createTooltip() {
     return d3.select("body")
         .append("div")

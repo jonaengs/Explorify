@@ -1,9 +1,14 @@
 import {artistNetwork, genreNetwork} from './networks'
 import {featurePCAScatter} from './scatterplot'
-import {edgemap, timeline} from './edgemap'
+import {Edgemap, timeline} from './edgemap'
+
+import React from "react"
+import ReactDOM from "react-dom"
+
+ReactDOM.render(<Edgemap />, document.getElementById("root"))
 
 // timeline();
-edgemap();
+// edgemap();
 // featurePCAScatter();
 // artistNetwork();
 // genreNetwork();
