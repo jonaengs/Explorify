@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #1f1b2e;
 }
 
 .App-logo {
@@ -13,54 +14,90 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/*heatmap*/
+
+.day-label {
+  fill:#aaa;
+  /*fill: #6c6c6c;*/
+  font-size:1.4em;
 }
 
-.App-link {
-  color: #61dafb;
+.month-label {
+  text-anchor:middle;
+  font-size:1.4em;
+  fill:#aaa;
+  /*fill: #6c6c6c;*/
 }
 
-.App-row-1 {
-  /*float: top;*/
-  display: flex;
-  padding: 15px;
-  width: 90%;
-  height: 600px;
-  box-sizing: border-box;
-}
-.App-row-2 {
-  /*float: bottom;*/
-  display: flex;
-  padding: 15px;
-  width: 90%;
-  height: 300px;
-  box-sizing: border-box;
+.month {
+  fill: none;
+  stroke: #000;
+  stroke-width: 3px;
 }
 
-.App-column-barchart {
-  /*float: right;*/
-  display: flex;
-  padding: 15px;
-  width: 30%;
-  height: 570px;
-  box-sizing: border-box;
+#calendar {
+  margin: 20px;
+}
+.month {
+  margin-right: 8px;
+}
+.month-name {
+  font-size: 15px;
+  fill: #777;
+  font-family: Arial, Helvetica;
+}
+.day.hover {
+  stroke: #6d6E70;
+  stroke-width: 2;
 }
 
-.App-column-graph {
-  /*float: left;*/
-  display: flex;
-  padding: 15px;
-  width: 70%;
-  height: 570px;
-  box-sizing: border-box;
+.day.selected {
+  stroke: #000000;
+  stroke-width: 4px;
+  rx: 3;
+  fill: red;
+}
+
+.day.focus {
+  stroke: #ffff33;
+  stroke-width: 2;
+}
+
+
+/*barchart*/
+
+.y-axis{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  stroke: #dedede;
+}
+
+.y-axis .tick line {
+  stroke-width: 2;
+  stroke: whitesmoke;
+}
+.y-axis .domain {
+  stroke-width: 1;
+  stroke: whitesmoke;
+}
+
+.bar {
+  fill: rgba(0, 0, 205, 0.3);
+  stroke: dodgerblue;
+  stroke-width: 3px;
+}
+
+.bar.hover {
+  fill: rgba(54,76,246,0.68);
+  stroke: rgb(225,216,234);
+  stroke-width: 4px;
+}
+
+.bar.selected {
+  fill: rgba(161, 107, 204, 0.68);
+  stroke: rgb(225,216,234);
+  rx: 3;
+  stroke-width: 5px;
 }
 
 .toolTip {
@@ -74,9 +111,13 @@
   border-radius: 8px 8px 8px 8px;
   box-shadow: -3px 3px 15px #888888;
   color: black;
-  font: 12px sans-serif;
+  font: 15px sans-serif;
   padding: 5px;
   text-align: center;
+}
+
+.label {
+  font-size: 16px;
 }
 
 text {
@@ -84,30 +125,64 @@ text {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-#calendar {
-  margin: 20px;
-}
-.month {
-  margin-right: 8px;
-}
-.month-name {
-  font-size: 10px;
-  fill: #777;
-  font-family: Arial, Helvetica;
-}
-.day.hover {
-  stroke: #6d6E70;
-  stroke-width: 2;
+/*dashboard*/
+
+.display-card {
+  /*background-color: #2b4d47 !important;*/
+  background-color: #28253d!important;
+  width: 100%;
+  height: 100%;
+  padding: 15px!important;
 }
 
-.day.selected {
-  stroke: #fbfcfc;
-  stroke-width: 2;
+.row-col-pad {
+  padding: 15px;
 }
 
-.day.focus {
-  stroke: #ffff33;
-  stroke-width: 2;
+.row-pad {
+  padding: 0px 30px 15px 30px;
+}
+
+.custom-container {
+  /*overflow-y: scroll;*/
+  background-color: #1f1b2e;
+  /*background-color: #154b41;*/
+
+}
+
+.filter-panel {
+  background-color: #d7cffd !important;
+  /*background-color: #c5c4d0 !important;*/
+  height: 100%;
+}
+
+.card-header {
+  background-color: #bab3dc !important;
+}
+
+.card-header h5 {
+  justify-content: space-between;
+  display:flex;
+  margin: 2px;
+  align-items: center;
+}
+
+.card-header h4 {
+  justify-content: space-between;
+  display:flex;
+  margin: 2px;
+  align-items: center;
+}
+
+.card-header-dark {
+  background-color: #474764 !important;
+  color: whitesmoke;
+  font-size: 20px;
+}
+.button-span{
+  justify-content: space-between;
+  display:flex;
+  align-items: center;
 }
 
 @keyframes App-logo-spin {

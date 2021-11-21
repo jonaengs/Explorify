@@ -3,21 +3,25 @@ import * as d3 from 'd3';
 import { groupBy, msToTime, comparator} from "./helpers"
 
 const margin = {
-    top: 15,
-    right: 25,
-    bottom: 15,
-    left: 80
+    top: 20,
+    right: 30,
+    bottom: 10,
+    left: 120
 };
 
-const w = 450 - margin.left - margin.right;
-const h = 550 - margin.top - margin.bottom;
+const w = 530 - margin.left - margin.right;
+const h = 1000 - margin.top - margin.bottom;
+
+export function updateEmpty(){
+    d3.select("#bar-chart").select("svg").style("display", "none")
+}
 
 export function updateBar(dataset){
 
     let yScale = d3.scaleBand()
         .domain(d3.range(dataset.length))
         .rangeRound([0, h])
-        .padding(0.05);
+        .padding(0.2);
 
     let yScaleTicks = d3.scaleBand()
         .domain(d3.range(dataset.length))
@@ -37,7 +41,9 @@ export function updateBar(dataset){
                 return artist.slice(0, 10) + "..."
         });
 
-    let svg = d3.select("#bar-chart").select("svg")
+    let svg = d3.select("#bar-chart")
+        .select("svg")
+        .style("display", "flex");
 
     svg.selectAll(".bar")
         .data(dataset)
@@ -55,23 +61,39 @@ export function updateBar(dataset){
             return xScale(d[1]);
         })
 
+    svg.selectAll(".label")
+        .data(dataset)
+        .transition()
+        .duration(2000)
+        .attr("x", function (d) {
+            return xScale(d[1]) + margin.left + 10;
+        })
+        .attr("y", function (d, i){
+            return yScale(i) + margin.top;
+        })
+        .text(function (d, i){
+            if (d[1] != 0){
+                return "#" + (i+1)
+            }
+        })
+
     svg.selectAll(".y-axis")
         .transition()
-        .duration(2500)
+        .duration(2000)
         .call(yAxis)
+
 }
 
 const D3BarChart = () => {
     const data = require("./data/StreamingHistoryD.json");
     const barChart = useRef()
-    const rawData = data.map(function (elem) {
+    let rawData = data.map(function (elem) {
         let entry = {}
         entry.date = elem.endTime.split(" ")[0];
         entry.msPlayed = elem.msPlayed;
         entry.artistName = elem.artistName;
         return entry;
     });
-
 
     let filteredData = Object.values(groupBy(rawData, "date"));
 
@@ -106,13 +128,11 @@ const D3BarChart = () => {
     const top20Artists = allArtists.sort(comparator).slice(0, 20)
     const [datasetOnClick, changeDataset] = useState(top20Artists)
 
-    console.log("chart", streamingData)
-
     useEffect(() => {
         let yScale = d3.scaleBand()
             .domain(d3.range(top20Artists.length))
             .rangeRound([0, h])
-            .padding(0.05);
+            .padding(0.2);
 
         let yScaleTicks = d3.scaleBand()
             .domain(top20Artists.map(function (d) { return d[0]; }))
@@ -132,16 +152,19 @@ const D3BarChart = () => {
             });
 
         let svg = d3.select(barChart.current)
-            .attr("width", w)
-            .attr("height", h);
+            .attr("width", w + margin.left + margin.right)
+            .attr("height", h + margin.top + margin.bottom)
+            .style("margin", "40 0 0 10")
 
-        svg.selectAll("rect")
+
+        let rect = svg.selectAll("rect")
             .data(top20Artists)
             // .transition()
             // .duration(2000)
             .enter()
             .append("g")
-            .append("rect")
+
+        rect.append("rect")
             .attr("class", "bar")
             .attr("x", function (d) {
                 return w - xScale(d[1])
@@ -154,12 +177,28 @@ const D3BarChart = () => {
             .attr("width", function (d) {
                 return xScale(d[1]);
             })
-            .attr("fill", "rgb(29,132,192)")
+
+        rect.append("text")
+            .attr("class", "label")
+            .attr("x", function (d) {
+                return xScale(d[1]) + margin.left + 10;
+            })
+            .attr("y", function (d, i){
+                return yScale(i) + margin.top;
+            })
+            .text(function (d, i){
+                if (d[1] != 0){
+                    return "#" + (i+1)
+                }
+            })
 
         svg.append("g")
             .attr("class","y-axis")
+            // .style("font-size", "17")
+            // .style("stroke", "#dedede")
             .attr("transform", "translate(" + margin.left + ",0)")//magic number, change it at will
             .call(yAxis);
+
 
         let div = d3.select("body").append("div").attr("class", "toolTip");
 
@@ -167,20 +206,22 @@ const D3BarChart = () => {
             .data(top20Artists);
 
         bar.on("mousemove", function(event, d) {
-            d3.select(this).style("fill", "rgb(19,107,154)");
+            d3.select(this).classed("hover", true);
             div.style("left", event.pageX+10+"px");
             div.style("top", event.pageY-25+"px");
             div.style("display", "inline-block");
             div.html((d[0])+"<br>"+(msToTime(d[1])));
         }).on("mouseout", function (d) {
-            d3.select(this).style("fill", "rgb(29,132,192)");
+            d3.select(this).classed("hover", false)
             div.style("display", "none");
+        }).on("click", function(event, d) {
+            if(!d3.select(this).classed("selected")){
+                d3.selectAll(".bar").classed("selected", false)
+                d3.select(this).classed("selected", true);
+            } else {
+                d3.select(this).classed("selected", false)
+            }
         });
-
-        // bar.on("click", function (){
-        //     updateBar(streamingData[Math.floor(Math.random() * 220)].artists);
-        //     console.log("click")
-        // })
 
     })
 
