@@ -1,5 +1,5 @@
 import './App.css';
-import D3BarChart from "./D3BarChart";
+import  D3BarChart, { sortByName, sortByStream, sortByPopularity } from "./D3BarChart";
 import CalendarHeatmap from "./CalendarHeatmap";
 import logo from "./logo/logo1.png"
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -14,6 +14,9 @@ const options = [
     { value: 'alphabetical', label: 'Alphabetical' },
 ];
 
+const sortAlpha = () => sortByName();
+const sortStream = () => sortByStream();
+const sortPopularity = () => sortByPopularity();
 
 function App() {
     let selectedOption = useRef(options[0]);
@@ -21,6 +24,11 @@ function App() {
     const handleChange = (selected) => {
         selectedOption = selected;
     };
+
+    let fullData = require("./data/Kaggle_data/processed_filtered_dataset.json");
+
+    const topArtistsData = require("./data/Kaggle_data/top_artists.json");
+    const streamingData = new Map(Object.entries(fullData));
 
     return (
         <>
@@ -31,7 +39,7 @@ function App() {
                              width="100%"
                              height="70"
                              className="d-inline-block align-top"
-                             style={{"margin-left": "40px"}}
+                             style={{marginLeft: "40px"}}
                         />
                     </Navbar.Brand>
                     <Navbar.Toggle />
@@ -44,12 +52,12 @@ function App() {
             </Navbar>
 
             <Container fluid className="custom-container">
-                <Row xl={12} className={"row-col-pad"}>
-                    <Col xl={9} md={6}>
-                            <Row xl={9} className={"row-col-pad"}>
+                <Row md={12} className={"row-col-pad"}>
+                    <Col md={9} s={6}>
+                            <Row md={9} className={"row-col-pad"}>
                                 <Card className={"display-card"}>
-                                    <Row xl={9}>
-                                        <Col xl={2}>
+                                    <Row md={9}>
+                                        <Col md={2}>
                                             <Card className={"filter-panel"}>
                                                 <Card.Header>
                                                     <h5>
@@ -80,7 +88,7 @@ function App() {
                                                 </Card>
                                             </Card>
                                         </Col>
-                                        <Col xl={10}>
+                                        <Col md={10}>
                                             <Card style={{background: "#f8f8f8"}}>
                                                 <Card.Header>
                                                     <h5>
@@ -102,11 +110,14 @@ function App() {
                                             <BsQuestionCircle/>
                                         </h4>
                                     </Card.Header>
-                                    <CalendarHeatmap/>
+                                    <CalendarHeatmap
+                                        streamingData = { streamingData }
+                                        topArtistsData = { topArtistsData }
+                                    />
                                 </Card>
                             </Row>
                     </Col>
-                    <Col xl={3} md={6} className={"row-col-pad"}>
+                    <Col md={3} s={6} className={"row-col-pad"}>
                         <Card className={"display-card"}>
                             <Card.Header className={"card-header-dark"}>
                                 <h4>
@@ -118,18 +129,28 @@ function App() {
                             <Card.Header className={"card-header-dark"}>
                                 <h5 style={{paddingBottom: "10px"}}>Sorting Criteria</h5>
                                 <div className={"button-span"}>
-                                    <Button variant="info" style={{width: "30%"}}>Streaming Time</Button>{' '}
-                                    <Button variant="info" style={{width: "30%"}}>Artist Popularity</Button>{' '}
-                                    <Button variant="info" style={{width: "30%"}}>Alphabetical</Button>
+                                    <Button variant="info" style={{width: "30%"}} onClick={sortStream}>
+                                        Streaming Time
+                                    </Button>
+                                    {' '}
+                                    <Button variant="info" style={{width: "30%"}} onClick={sortPopularity}>
+                                        Artist Popularity
+                                    </Button>
+                                    {' '}
+                                    <Button variant="info" style={{width: "30%"}} onClick={sortAlpha}>
+                                        Alphabetic
+                                    </Button>
                                 </div>
                             </Card.Header>
                             <br/>
-                            <D3BarChart/>
+                            <D3BarChart
+                                topArtistsData = { topArtistsData }
+                            />
                         </Card>
                     </Col>
                 </Row>
 
-                <Row lg={12} className={"row-pad"}>
+                <Row md={12} className={"row-pad"}>
                     <Card className={"display-card headingOne"}>
                         <Card.Header className={"card-header-dark"}>
                             <h4>

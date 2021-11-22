@@ -121,8 +121,10 @@
 }
 
 text {
-  fill: #ffffff;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  fill: #ece9e9;
+  font-family: Arial, Helvetica;
+
+  /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
 }
 
 /*dashboard*/
