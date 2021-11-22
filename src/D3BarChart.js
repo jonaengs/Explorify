@@ -139,7 +139,6 @@ export function sortByName() {
     rect.transition()
         .duration(2000)
         .attr("y", function (d, i) {
-            console.log(d, i)
             return yScale(inedxMap.get(i));
         })
 
@@ -208,7 +207,6 @@ export function sortByPopularity(){
     rect.transition()
         .duration(2000)
         .attr("y", function (d, i) {
-            console.log(d, i)
             return yScale(inedxMap.get(i));
         })
 
@@ -277,7 +275,6 @@ export function sortByStream(){
     rect.transition()
         .duration(2000)
         .attr("y", function (d, i) {
-            console.log(d, i)
             return yScale(inedxMap.get(i));
         })
 

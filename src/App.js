@@ -25,9 +25,9 @@ function App() {
         selectedOption = selected;
     };
 
-    let fullData = require("./data/Kaggle_data/processed_filtered_dataset.json");
+    let fullData = require("./data/Jonatan_data/processed_filtered_dataset.json");
 
-    const topArtistsData = require("./data/Kaggle_data/top_artists.json");
+    const topArtistsData = require("./data/Jonatan_data/top_artists.json");
     const streamingData = new Map(Object.entries(fullData));
 
     return (
