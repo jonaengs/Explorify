@@ -279,9 +279,7 @@ export function Edgemap(
     const ref = useRef();
     // TODO: return cleanup function?
     useEffect(() => renderEdgemap(ref.current, artists), [artists]);
-    return <div id="edgemap-container">
-        <svg ref={ref}></svg>
-    </div>
+    return <svg ref={ref} style={{"width":"100%", "height": "100%"}}></svg>
 }
 
 /*

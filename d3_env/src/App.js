@@ -97,7 +97,7 @@ function App() {
                                                         <BsQuestionCircle/>
                                                     </h5>
                                                 </Card.Header>
-                                                <div id="edgemap-container" style={{"width": "75%", "height" : "820px"}}>
+                                                <div id="edgemap-container" style={{"width": "100%", "height" : "900px"}}>
                                                     <Edgemap />
                                                 </div>
                                             </Card>

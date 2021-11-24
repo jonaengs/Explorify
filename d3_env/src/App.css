@@ -118,11 +118,8 @@
 
 .label {
   font-size: 16px;
-}
-
-text {
-  fill: #ece9e9;
-  font-family: Arial, Helvetica;
+  fill: #ece9e9 !important;
+  font-family: Arial, Helvetica !important;
 
   /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
 }
