@@ -209,31 +209,68 @@ let edgemapState = {
     node: null,
     link: null,
     simulation: null,
-    selected: null
+    selected: null,
+    selectedNeighbors: new Set<artistID>(),
 };
 
 const deselectHSL = d3.hsl(0.5, 0.5, 0.35, 0.2);
-function highlightSelection(n) {
+function highlightSelection(n: d3Node) {
     if (!n) return;
+    dropSelectionHighlight();
     const {node, link, links} = edgemapState;
 
-    link.style("visibility", l => l.source.id === n.id ? "visible" : "hidden")
-    const neighbors = new Set(links.filter((l: d3Link) => l.source.id === n.id).map(l => l.target.id));
-    neighbors.add(n.id);
+    link.style("visibility", (l: d3Link) => l.source.id === n.id ? "visible" : "hidden")
+    const neighbors = new Set(links.filter((l: d3Link) => l.source.id === n.id).map(l => l.target.id)).add(n.id);
     node
         .selectChildren("circle") 
-        .style("fill", n => neighbors.has(n.id) ? getHSL(n) : deselectHSL);
+        .style("fill", (n: d3Node) => neighbors.has(n.id) ? getHSL(n) : deselectHSL);
     node
         .selectChildren("text") 
-        .style("visibility", // @ts-ignore
-        n => neighbors.has(n.id) ? 
-            "visible" : "hidden"
-    );
+        .style("visibility", (n: d3Node) => neighbors.has(n.id) ?  "visible" : "hidden");
 
+    const selected = node.filter(_n => _n.id === n.id);
+    selected.selectChildren("circle")
+        .style("stroke-width", 3)
+        .style("stroke", getHSL)
+        .style("fill", "white");
+
+    edgemapState.selectedNeighbors = neighbors;
     edgemapState.selected = n;
 }
 
+function dropSelectionHighlight() {
+    const {node, link, selectedNeighbors, selected} = edgemapState;
+    
+    link.style("visibility", "hidden");
+    node.selectChildren("circle").style("fill", getHSL);
+    
+    const neighbors = node.filter(n => selectedNeighbors.has(n.id));
+    neighbors.selectChildren("text").style("visibility", "hidden");
+
+    neighbors.filter(n => n.id === selected.id)
+        .selectChildren("circle")
+        .style("stroke-width", 0);
+
+    edgemapState.selected = null;
+    edgemapState.selectedNeighbors = new Set();
+}
+
 function addNodes(svg, nodes) {
+    function onMouseover(_e, n) {   
+        const {node} = edgemapState;
+        const current = node.filter(_n => _n.id === n.id);
+        current
+            .selectChildren("text")
+            .style("visibility", "visible")
+    }
+    function onMouseout(_e, n) {
+        const {node} = edgemapState;
+        const current = node.filter(_n => _n.id === n.id);
+        current
+            .selectChildren("text")
+            .style("visibility", _n => edgemapState.selectedNeighbors.has(_n.id) ? "visible" : "hidden");
+        
+    }
     const {selected} = edgemapState;
 
     const node = svg
@@ -245,11 +282,14 @@ function addNodes(svg, nodes) {
     node.append("circle")
         .attr("r", n => n.r)  // @ts-ignore
         .style("fill", n => selected ? deselectHSL : getHSL(n))
-        .on("mouseover", (_e, node) => console.log(artistMap.get(node.id)))
+        .on("mouseover", onMouseover)
+        .on("mouseout", onMouseout)
         .on("click", (_event, n) => highlightSelection(n));
     node.append("text")
         .text((d: Node) => d.name)
         .attr("class", "unselectable")
+        .on("mouseover", onMouseover)
+        .on("mouseout", onMouseout)
         .attr("visibility", "hidden");
 
     return node
@@ -319,13 +359,7 @@ export function setupEdgemap(ref: Ref<undefined>, artists: artistID[]) {
     const link = setLinks(svg, links as d3Link[]);
     const node = addNodes(svg, nodes as d3Node[]);
 
-    background.on("click", () => {
-        const {node, link} = edgemapState;
-        link.style("visibility", "hidden");
-        node.selectChildren("text").style("visibility", "hidden");
-        node.selectChildren("circle").style("fill", getHSL);
-        edgemapState.selected = null;
-    });
+    background.on("click", dropSelectionHighlight);
 
     edgemapState = {...edgemapState, artistSet, node, link, nodes, links, svg, simulation};
     
