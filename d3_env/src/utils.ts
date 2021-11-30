@@ -4,7 +4,7 @@ import { DefaultMap } from "./map_extensions";
 
 
 export type TooltipDiv = d3.Selection<HTMLDivElement, unknown, HTMLElement, any>;
-export type SVGCanvas = d3.Selection<SVGGElement, unknown, HTMLElement, any>;
+export type SVGSelection = d3.Selection<SVGGElement, unknown, HTMLElement, any>;
 
 export function clamp(val: number, min: number, max: number) {
     return Math.max(min, Math.min(val, max));
@@ -56,7 +56,7 @@ export function groupbyMultiple(arr, groupKeys) {
     return map;
 }
 
-export function getSvg(id: string): SVGCanvas {
+export function getSvg(id: string): SVGSelection {
     const existing = d3.select("#" + id);
     if (!existing.empty()) 
         existing.remove();
@@ -70,11 +70,14 @@ export function getSvg(id: string): SVGCanvas {
         .attr("transform", `translate(${margin.left}, ${margin.top})`);
 }
 
-export function createSVG(ref): SVGCanvas {   
+export function createSVG(ref): SVGSelection {   
     
     return d3.select(ref)
         .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom);
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", `translate(${margin.left}, ${margin.top})`);
+
 }
 
 export function createTooltip() {
@@ -114,16 +117,16 @@ export function onMousemove(div: TooltipDiv) {
 /*
     BEGIN SET OPERATIONS
 */
-export function bothDifference(A, B) {
-    let [AdB, BdA] = [new Set(A), new Set()];
+export function bothDifference<T>(A: Set<T>, B: Set<T>): [Set<T>, Set<T>] {
+    let [AdB, BdA] = [new Set(A), new Set<T>()];
     for (let b of B) {
         if (!AdB.delete(b)) BdA.add(b);
     }
-    return [AdB, BdA]
+    return [AdB, BdA];
 }
 
 // From: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
-export function union(setA, setB) {
+export function union<T>(setA: Set<T>, setB: Set<T>): Set<T> {
     let _union = new Set(setA)
     for (let elem of setB) {
         _union.add(elem)
@@ -132,12 +135,29 @@ export function union(setA, setB) {
 }
 
 // From: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
-export function intersection(setA, setB) {
-    let _intersection = new Set()
+export function intersection<T>(setA: Set<T>, setB: Set<T>): Set<T> {
+    let _intersection = new Set<T>()
     for (let elem of setB) {
         if (setA.has(elem)) {
             _intersection.add(elem)
         }
     }
     return _intersection
+}
+
+/*
+    END SET OPERATIONS
+*/
+
+export function debounce(f: (...args: any[]) => void, time=1000) {
+    let timeout = null;
+    function debounced(...args: any[]) {
+        if (timeout) clearTimeout(timeout)
+        timeout = setTimeout(() => f(...args), time);
+    }
+    return debounced;
+}
+
+export function d3Translate({x, y}: {x: number, y: number}) {
+    return `translate(${x}, ${y})`;
 }

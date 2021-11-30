@@ -75,7 +75,7 @@ export const streamingHistory: StreamInstance[] = _streamingHistory.map(
         trackID: sh.track_id,
         trackPopularity: sh.track_popularity
     })
-);
+).slice(1); // IMPORTANT TODO: REMOVE THIS SLICE. TEMPORARY FIX JONATAN DATA OUTLIER
 
 export const streamingHistoryNoSkipped: StreamInstance[] = streamingHistory.filter(
     sh => sh.msPlayed >= 10_000

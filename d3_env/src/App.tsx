@@ -1,30 +1,43 @@
 import { utcMilliseconds } from "d3";
 import React, { useEffect, useRef, useState } from "react";
-import { getStreamTimes } from "./derived_data";
-import { Edgemap, setupEdgemap, updateEdgemap } from "./edgemap";
+import { artistStreamTimes } from "./derived_data";
+import { Edgemap, edgemapView, NodePositionKey, setNodeColorKey, setupEdgemap, updateEdgemap } from "./edgemap";
 import * as utils from './utils';
 
 
+const update = utils.debounce(updateEdgemap, 750);
 export const App = () => {
-    const [top, setTop] = useState(150);
-    const topArtists = Array.from(getStreamTimes().keys()).slice(0, top);    
-    console.log(top);
+    const [top, setTop] = useState(50);
+    const topArtists = Array.from(artistStreamTimes.keys()).slice(0, top);    
+    
+    const [view, setView] = useState<edgemapView>("genreSimilarity");
+    const [colorKey, setColorKey] = useState<NodePositionKey>("genrePos");
     
     const edgemapRef = useRef();
-    useEffect(() => {
-        setupEdgemap(edgemapRef.current, topArtists);
-        // Cleanup needed?
-        return () => null;
-    }, []);
-    useEffect(() => top && updateEdgemap(topArtists), [topArtists]);
+    useEffect(() => 
+        setupEdgemap(edgemapRef.current, topArtists),
+        []
+    );
+    useEffect(() => 
+        top && update(topArtists, view),
+        [view, topArtists]
+    );
+    useEffect(() => 
+        setNodeColorKey(colorKey),
+        [colorKey]
+    );
     
     return <>
+        <select onChange={e => setView(e.target.value as edgemapView)}>
+            <option value="genreSimilarity">genre</option>
+            <option value="timeline">time</option>
+        </select>
+        <select onChange={e => setColorKey(e.target.value as NodePositionKey)}>
+            <option value="genrePos">genre</option>
+            <option value="timelinePos">time</option>
+            <option value="featurePos">feature</option>
+        </select>
         <input type="number" value={top} onChange={e => setTop(e.target.value)}/>
         <svg id="edgemap" ref={edgemapRef}></svg>
     </>
-
-    // return <>
-    //     <input type="number" value={top} onChange={e => setTop(e.target.value)}/>
-    //     <Edgemap artists={topArtists} />
-    // </>
 }

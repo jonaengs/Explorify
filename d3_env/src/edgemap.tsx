@@ -5,8 +5,9 @@ import {margin, width, height, maxDistance} from './constants.mjs';
 import {DefaultMap} from './map_extensions';
 import './map_extensions.ts';
 import {streamingHistory, genre, artistName, StreamInstance, artistData, streamingHistoryNoSkipped, artistID, artistMap} from './data'
-import { getStreamTimes } from './derived_data';
-import React, { Ref, useEffect, useRef } from 'react';
+import { artistStreamTimes, timeExtent } from './derived_data';
+import React, { Ref, useCallback, useEffect, useRef } from 'react';
+import { SVGSelection } from './utils';
 
 /**
  * A feature vector reduced to 2 dimensions. Must be mapped to fit within chart.
@@ -17,8 +18,8 @@ type Node = {
     name: string,
     r: number,
     firstStream: Date,
-    timelinePos: number,
-    similarityPos: {x: number, y: number}
+    timelinePos: {x: number, y: number},
+    genrePos: {x: number, y: number}
     
     // shorthand for similarity view equivalents
     x: number,
@@ -113,6 +114,7 @@ function computeSessionLinks(): Link[] {
         Array.from(neighbors).map(([a2, count]) => ({
             source: a1,
             target: a2,
+            label: "???",
             count: count,
             proportion: count / sessionOccurrences.get(a1)
         }))
@@ -134,45 +136,84 @@ function toPolar(x: number, y: number): [number, number] {
  * 
  * @param param0 x and y coordinates of a point, normalized to fit inside svg coordinates 
  */
-function getHSL({x, y}) {
-    const [dist, deg] = toPolar(x, y);
-    return d3.hsl(deg, dist, 0.6, 1)
+export type NodePositionKey = "genrePos" | "featurePos" | "timelinePos";
+function createGetHSL(positionKey: NodePositionKey) {
+    return (node: Node) => {
+        const {x, y} = node[positionKey];
+        const [dist, deg] = toPolar(x, y);
+        return d3.hsl(deg, dist, 0.6, 1)
+    }
+}
+let getHSL = createGetHSL("genrePos");
+export function setNodeColorKey(key: NodePositionKey) {
+    console.log(key);
+    getHSL = createGetHSL(key);
+    setLinks(edgemapState.links);
+    dropSelectionHighlight();
 }
 
 
-const completeNetwork: Network = createNetwork();
+const completeNetwork: Network = computeNetwork();
 
-function createNetwork(): Network {
-    const data: Map<artistID, DRCoordinate> = new Map(drResults.map(
-        res => [res.artist_id, res.tsne_genre_no_outliers as DRCoordinate]
-    ));
-    const values = Array.from(data.values()).filter(v => v !== null);
-    const xAxis = d3.scaleLinear().domain(d3.extent(values.map(([x,]) => x))).range([0, width]);
-    const yAxis = d3.scaleLinear().domain(d3.extent(values.map(([, y]) => y)).reverse()).range([0, height]);
-    const timelineAxis = d3.scaleTime().domain(d3.extent(firstStream.values())).range([0, width])
-    const nodeSizes = d3.scaleSqrt().domain(d3.extent(getStreamTimes().values())).range([5, 20])
+function computeNetwork(): Network {    
+    const genrePositions = (() => {
+        const data: Map<artistID, DRCoordinate> = new Map(drResults.map(
+            res => [res.artist_id, res.tsne_genre_no_outliers as DRCoordinate]
+        ));
+        const values = Array.from(data.values()).filter(v => v !== null);
+        const xAxis = d3.scaleLinear().domain(d3.extent(values.map(([x,]) => x))).range([0, width]);
+        const yAxis = d3.scaleLinear().domain(d3.extent(values.map(([, y]) => y)).reverse()).range([0, height]);
+        return new Map(
+            Array.from(data)
+                .filter(([, pos]) => pos !== null)
+                .map(([id, [x, y]])=> [id, {x: xAxis(x), y: yAxis(y)}])
+        );
+    })();
+    
+    const featurePositions = (() => {
+        const data: Map<artistID, DRCoordinate> = new Map(drResults.map(
+            res => [res.artist_id, res.tsne_feature as DRCoordinate]
+        ));
+        const values = Array.from(data.values()).filter(v => v !== null);
+        const xAxis = d3.scaleLinear().domain(d3.extent(values.map(([x,]) => x))).range([0, width]);
+        const yAxis = d3.scaleLinear().domain(d3.extent(values.map(([, y]) => y)).reverse()).range([0, height]);
+        return new Map(
+            Array.from(data)
+                .filter(([, pos]) => pos !== null)
+                .map(([id, [x, y]])=> [id, {x: xAxis(x), y: yAxis(y)}])
+        );
+    })();
 
-    const nodes = Array.from(data)
-        .map(([aid, pos]) => pos && ({
+    const timelineAxis = d3.scaleTime().domain(timeExtent).range([0, width])
+    const nodeSizes = d3.scaleSqrt().domain(d3.extent(artistStreamTimes.values())).range([5, 20])
+    const artistSet = utils.intersection(new Set(genrePositions.keys()), new Set(featurePositions.keys()));
+
+    // TODO: This currently excludes genre_tsne outlier artists and artists missing features. FIX
+    const nodes = Array.from(artistSet)
+        .map(aid => genrePositions.get(aid) && ({
             id: aid,
             name: artistMap.get(aid),
-            r: nodeSizes(getStreamTimes().get(aid)),
-            similarityPos: {x: xAxis(pos[0]), y: yAxis(pos[1])},
+            r: nodeSizes(artistStreamTimes.get(aid)),
+            genrePos: genrePositions.get(aid),
+            featurePos: featurePositions.get(aid),
+            timelinePos: {x: timelineAxis(firstStream.get(aid)), y: height/2},
             firstStream: firstStream.get(aid),
-            timelinePos: timelineAxis(firstStream.get(aid)),
 
-            x: xAxis(pos[0]),
-            y: yAxis(pos[1]),
+            ...genrePositions.get(aid) // x & y coords default to genrePosition
         }))
-        .filter(v => v !== null);
+    .filter(v => v !== null && v !== undefined);
 
-
-    let genreToArtists: Map<genre, artistID[]> = new DefaultMap([])
-    artistData.forEach(
-        artist => artist.genres.forEach(genre => {
-            genreToArtists = genreToArtists.update(genre, arr => arr.concat([artist.id]))
-        })
-    );
+    const genreToArtists: Map<genre, artistID[]> = (() => {
+        let map = new DefaultMap<genre, artistID[]>([]);
+        artistData
+            .filter(a => artistSet.has(a.id))
+            .forEach(
+                artist => artist.genres.forEach(genre => {
+                    map = map.update(genre, arr => arr.concat([artist.id]))
+                })
+            );
+        return map;
+    })();
     const artistToGenres = new Map(artistData.map(a => [a.id, new Set(a.genres)]));
     
     const links = Array.from(genreToArtists).flatMap(([genre, artists]) => 
@@ -188,8 +229,8 @@ function createNetwork(): Network {
                     // Overlap Coefficient: //return utils.intersection(gs1, gs2).size / Math.min(gs1.size, gs2.size);
                 })()
             })
-    ))).filter(({source, target}) => source != target)
-    .filter(({source, target}) => data.get(source) !== null && data.get(target) !== null); 
+    ))).filter(({source, target}) => source !== target)
+    .filter(({source, target}) => artistSet.has(source) && artistSet.has(target));     
 
     return {
         nodes: nodes,
@@ -208,15 +249,26 @@ let edgemapState = {
     links: [],
     node: null,
     link: null,
-    simulation: null,
+    _simulation: null,
     selected: null,
     selectedNeighbors: new Set<artistID>(),
+    currentView: "genreSimilarity",
+    timelineAxis: null,
 };
+
+function setSimulation(simulation: d3.Simulation<any, any>, dontStart=false) {
+    if (edgemapState._simulation) edgemapState._simulation.stop();
+    edgemapState._simulation = simulation;
+    if (!dontStart) simulation.restart();
+}
 
 const deselectHSL = d3.hsl(0.5, 0.5, 0.35, 0.2);
 function highlightSelection(n: d3Node) {
-    if (!n) return;
-    dropSelectionHighlight();
+    if (n === null || n === undefined) return;
+    
+    // If new node is being selected
+    if (edgemapState.selected !== n) dropSelectionHighlight();
+    
     const {node, link, links} = edgemapState;
 
     link.style("visibility", (l: d3Link) => l.source.id === n.id ? "visible" : "hidden")
@@ -244,18 +296,20 @@ function dropSelectionHighlight() {
     link.style("visibility", "hidden");
     node.selectChildren("circle").style("fill", getHSL);
     
-    const neighbors = node.filter(n => selectedNeighbors.has(n.id));
-    neighbors.selectChildren("text").style("visibility", "hidden");
-
-    neighbors.filter(n => n.id === selected.id)
-        .selectChildren("circle")
-        .style("stroke-width", 0);
+    if (selected !== null) {
+        const neighbors = node.filter(n => selectedNeighbors.has(n.id));
+        neighbors.selectChildren("text").style("visibility", "hidden");
+    
+        neighbors.filter(n => n.id === selected.id)
+            .selectChildren("circle")
+            .style("stroke-width", 0);
+    }
 
     edgemapState.selected = null;
     edgemapState.selectedNeighbors = new Set();
 }
 
-function addNodes(svg, nodes) {
+function addNodes(svg: utils.SVGSelection, nodes: d3Node[]) {
     function onMouseover(_e, n) {   
         const {node} = edgemapState;
         const current = node.filter(_n => _n.id === n.id);
@@ -269,7 +323,6 @@ function addNodes(svg, nodes) {
         current
             .selectChildren("text")
             .style("visibility", _n => edgemapState.selectedNeighbors.has(_n.id) ? "visible" : "hidden");
-        
     }
     const {selected} = edgemapState;
 
@@ -295,42 +348,36 @@ function addNodes(svg, nodes) {
     return node
 }
 
-function setLinks(svg, links) {
+function setLinks(links: d3Link[], svg?: SVGSelection) {
     const getLinkColor = (color) => d3.scaleLinear().range([color, "black"])
     const onEnter = (selection) => selection
             .append("path")
             .attr("class", "link")
             .style("fill", "none")
             .style("opacity", 0.9)
-            .style("stroke", (l: d3Link) => getLinkColor(getHSL(l.target.similarityPos))(l.proportion))
+            .style("stroke", (l: d3Link) => getLinkColor(getHSL(l.target))(l.proportion))
             .style("stroke-width", (l: d3Link) => Math.log2(l.count) + 1)
             .style("visibility", "hidden");
     
-    const link = svg
+
+    const link = (svg || edgemapState.svg)
         .selectAll("path")
-        .data(links as d3Link[], l => l.index)
+        .data(links)
         .join(
             enter => onEnter(enter),
-            update => update,
+            update => update
+                .style("stroke", (l: d3Link) => getLinkColor(getHSL(l.target))(l.proportion)),
             exit => exit.remove()
         )
 
     return link;
 }
 
-function ticked() {
-    const {node, link} = edgemapState;
-    link
-        .attr("d", d => {
-            const [dx, dy] = [d.target.x - d.source.x, d.target.y - d.source.y];
-            const dr = Math.sqrt(dx*dx + dy*dy);
-            const curveRight = (d.target.x < d.source.x) + 0;
-            return `M${d.source.x},${d.source.y}A${dr},${dr} 0 0,${curveRight} ${d.target.x},${d.target.y}`
-        });
-    node
-        .attr("transform", (d: d3Node) => 
-            `translate(${utils.clampX(d.x)}, ${utils.clampY(d.y)})`
-        );
+function computeCurve(d: d3Link) {
+    const [dx, dy] = [d.target.x - d.source.x, d.target.y - d.source.y];
+    const dr = Math.sqrt(dx*dx + dy*dy);
+    const curveRight = (d.target.x < d.source.x) + 0;
+    return `M${d.source.x},${d.source.y}A${dr},${dr} 0 0,${curveRight} ${d.target.x},${d.target.y}`
 }
 
 /*
@@ -342,32 +389,85 @@ function ticked() {
  *      Link color is gradient interpolated from source and target colors
  *          See: https://stackoverflow.com/questions/20706603/d3-path-gradient-stroke
  */
-const top150 = Array.from(getStreamTimes().keys()).slice(0, 150);
+const top150 = Array.from(artistStreamTimes.keys()).slice(0, 150);
 export function setupEdgemap(ref: Ref<undefined>, artists: artistID[]) {    
     const artistSet = new Set(artists);
     const nodes = completeNetwork.nodes.filter(n => artistSet.has(n.id)).map(x => ({...x}));
     const links = completeNetwork.links.filter(l => artistSet.has(l.source) && artistSet.has(l.target)).map(x => ({...x}));
 
     const svg = utils.createSVG(ref);
+    
     const background = svg.append("rect").attr("width", width).attr("height", height).style("opacity", 0);
-
-    const simulation = d3.forceSimulation(nodes) // @ts-ignore
-        .force("link", d3.forceLink(links).id(d => d.id).strength(0))
-        .force("collide", d3.forceCollide(n => n.r +2))
-        .on("tick", ticked);
-
-    const link = setLinks(svg, links as d3Link[]);
+    
+    const simulation = genreSimulation({nodes, links});
+    
+    const link = setLinks(links as d3Link[], svg);
     const node = addNodes(svg, nodes as d3Node[]);
 
     background.on("click", dropSelectionHighlight);
 
-    edgemapState = {...edgemapState, artistSet, node, link, nodes, links, svg, simulation};
-    
+    const timelineAxis = svg.append("g")
+        .attr("transform", `translate(0, ${height/2})`)
+        .style("visibility", "hidden")
+        .call(d3.axisBottom(d3.scaleTime().domain(timeExtent).range([0, width])));   
+
+    edgemapState = {...edgemapState, artistSet, node, link, nodes, links, svg, timelineAxis};
+    setSimulation(simulation);
 }
 
-type edgemapView = "genreSimilarity" | "timeline" | "featureSimilarity";
-export function updateEdgemap(artists: artistID[] = top150) {
-    let {svg, node, link, nodes, links, simulation} = edgemapState;
+const alphaMin = 0.02;
+const targetSimulationIterations = 100;
+const alphaDecay = 1 - Math.pow(0.001, 1 / targetSimulationIterations);
+function genreSimulation({nodes, links}: Network) {
+    function ticked() {
+        console.log("genre");
+        const {node, link} = edgemapState;
+        if (link != null)
+            link
+                .attr("d", computeCurve);
+        if (node != null)
+            node 
+                .attr("transform", (d: d3Node) => 
+                    `translate(${utils.clampX(d.x)}, ${utils.clampY(d.y)})`
+                );
+    }
+
+    return d3.forceSimulation(nodes)
+        .force("link", d3.forceLink(links).id(d => d.id).strength(0))
+        .force("collide", d3.forceCollide(n => n.r + 2))
+        .alphaMin(alphaMin)
+        .alphaDecay(alphaDecay)
+        .on("tick", ticked)
+        .stop();
+    }
+
+function timelineSimulation({nodes, links}: Network) {
+    function ticked() {
+        console.log("timeline");
+        
+        const {node, link} = edgemapState;
+        if (link != null)
+            link
+            .attr("d", computeCurve);
+            if (node != null)
+            node
+            .attr("transform", (d: d3Node) => `translate(${utils.clampX(d.x)}, ${d.y})`);
+        }
+        
+    return  d3.forceSimulation(nodes)
+        .force("link", d3.forceLink(links).id(d => d.id).strength(0))
+        .force("collide", d3.forceCollide(n => n.r + 1))
+        .force("anchor", d3.forceX(n => n.x).strength(3))
+        .alphaMin(alphaMin)
+        .alphaDecay(alphaDecay)
+        .on("tick", ticked)
+        .stop();
+}
+
+const transitionTime = 2000;
+export type edgemapView = "genreSimilarity" | "timeline" | "featureSimilarity";
+export function updateEdgemap(artists: artistID[] = top150, nextView: edgemapView = "genreSimilarity") {    
+    let {svg, node, link, nodes, links, _simulation: simulation, currentView, timelineAxis} = edgemapState;
     const artistSet = new Set(artists);
     const [added, removed] = utils.bothDifference(artistSet, edgemapState.artistSet);
 
@@ -390,207 +490,81 @@ export function updateEdgemap(artists: artistID[] = top150) {
         .concat(addedLinks);
 
     if (removed.size) {
-        // .remove() May remove more than we want. If bugs with e.g., link not showing. Try changing these lines
-        link.filter((l: d3Link) => removed.has(l.source.id) || removed.has(l.target.id)).remove();
+        // link.filter((l: d3Link) => removed.has(l.source.id) || removed.has(l.target.id)).remove();
         node.filter((n: d3Node) => removed.has(n.id)).remove();
     }
 
-    simulation.stop();
-    simulation = d3.forceSimulation(nodes)
-        .force("link", d3.forceLink(links).id(d => d.id).strength(0))
-        .force("collide", d3.forceCollide(n => n.r + 2))
-        .on("tick", ticked);
+    // On changing from timeline, remove x axis
+    if (currentView === 'timeline' && nextView !== 'timeline') {
+        timelineAxis.style("visibility", "hidden");
+    }
+    
+    if (nextView === 'genreSimilarity') {
+        if (currentView !== 'genreSimilarity') {
+            nodes.forEach((n: d3Node) => {
+                n.x = n.genrePos.x;
+                n.y = n.genrePos.y;
+            })
+            node
+                .transition()
+                .call(n => 
+                    n.transition()
+                        .duration(transitionTime)
+                        .ease(d3.easeLinear)
+                        .attr("transform", (n: Node) => utils.d3Translate(n.genrePos))
+                        .on("start", () => {
+                            simulation = genreSimulation({nodes, links});
+                        })
+                        .on("end", () => {
+                            simulation.restart();
+                        })
+                );
+        } else {
+            addedNodes.forEach((n: d3Node) => {
+                n.x = n.genrePos.x;
+                n.y = n.genrePos.y;
+            })
+            simulation = genreSimulation({nodes, links});
+        }        
+    } else if (nextView === 'timeline') {
+        // On change to timeline
+        if (currentView !== 'timeline') {   
+            timelineAxis.style("visibility", "visible");
+            nodes.forEach((n: Node) => {
+                n.x = n.timelinePos.x;
+                n.y = n.timelinePos.y;
+            });          
+            
+            node
+                .transition()
+                .call(n => 
+                    n.transition()
+                        .duration(transitionTime)
+                        .ease(d3.easeLinear)
+                        .attr("transform", n => utils.d3Translate(n.timelinePos))
+                        .on("start", () => {
+                            simulation = timelineSimulation({nodes, links});
+                        })
+                        .on("end", () => {
+                            simulation.restart();
+                        })
+                );
+        } else {
+            addedNodes.forEach(n => {
+                n.x = n.timelinePos.x;
+                n.y = n.timelinePos.y;
+            })
+            simulation = timelineSimulation({nodes, links});
+        }
+    }
 
-    setLinks(svg, links);
+    setLinks(links, svg);
     addedNodes.length && addNodes(svg, addedNodes);
 
-    console.log("before", link.size(), node.size());
-    [node, link] = [svg.selectAll(".node"), svg.selectAll(".link")]
-    console.log("after", link.size(), node.size());
+    [node, link] = [svg.selectAll(".node"), svg.selectAll(".link")];
 
-    highlightSelection(edgemapState.selected)
+    highlightSelection(edgemapState.selected);
     
-    edgemapState = {...edgemapState, simulation, artistSet, nodes, links, node, link};
-}
-
-
-/* 
-<EdgeMap> and drawEdgemap are an attempt at making building the edgemap using 
-a more traditional react approach. This means we redraw the entire network at each 
-call. This approach actually turned out much more quick to respond than the mutable approach, 
-until I realized we must deepcopy the nodes and links at each call. At this point it is
-about as slow as the mutable approach, except on initial render. 
-
-The reason that it is faster is that it only calculates the d3 network that it needs
-to draw. The mutable approach instead calculates the entire d3 network and then hides
-and makes visible nodes as we need them. Because there are so many items (50k+ links),
-the mutable approach can be really slow. 
-
-*/
-function drawEdgeMap(ref, artists) {        
-    const artistSet = new Set(artists);
-    const nodes = completeNetwork.nodes.filter(n => artistSet.has(n.id)).map(x => ({...x}));
-    const links = completeNetwork.links.filter(l => artistSet.has(l.source) && artistSet.has(l.target)).map(x => ({...x}));
-
-    const svg = utils.createSVG(ref);
-    svg.selectChildren("*").remove();
-    const background = svg.append("rect").attr("width", width).attr("height", height).style("opacity", 0);
-
-    
-    const simulation = d3.forceSimulation(nodes) // @ts-ignore
-        .force("link", d3.forceLink(links).id(d => d.id).strength(0))
-        .force("collide", d3.forceCollide(n => n.r +2))
-        .on("tick", ticked);
-
-    const getLinkColor = (color) => d3.scaleLinear().range([color, "black"]);
-    
-    const link = svg
-        .selectAll("path")
-        .data(links as d3Link[], (l: d3Link) => l.index)
-        .join("path")
-        .style("fill", "none")
-        .style("opacity", 0.9)
-        .style("stroke", l => getLinkColor(getHSL(l.target))(l.proportion))
-        .style("stroke-width", l => Math.log2(l.count) + 1)
-        .style("visibility", "hidden")
-        ;
-
-    const node = svg
-        .selectAll("node")
-        .data(nodes as d3Node[], (n: d3Node) => n.id)
-        .enter()
-        .append("g")
-    node
-        .append("circle")
-            .attr("r", n => n.r)  // @ts-ignore
-            .style("fill", getHSL)
-        .on("mouseover", (_e, node) => console.log(artistMap.get(node.id)))
-        .on("click", (_event: PointerEvent, n: Node) => {
-            link.style("visibility", l => l.source.id === n.id ? "visible" : "hidden")
-            const neighbors = new Set(links.filter((l: d3Link) => l.source.id === n.id).map(l => l.target.id));
-            neighbors.add(n.id);
-            node
-                .selectChildren("circle") 
-                .style("fill", n => neighbors.has(n.id) ? getHSL(n) : d3.hsl(0.5, 0.5, 0.2, 0.2));
-            node
-                .selectChildren("text") 
-                .style("visibility", // @ts-ignore
-                n => neighbors.has(n.id) ? 
-                    "visible" : "hidden"
-            );
-            // event.stopPropagation(); // stop event from triggering background click event 
-        });
-    node.append("text")
-        .text((d: Node) => d.name)
-        .attr("class", "unselectable")
-        .attr("visibility", "hidden");
-
-    background.on("click", () => {
-        link.style("visibility", "hidden");
-        node.selectChildren("text").style("visibility", "hidden");
-        node.selectChildren("circle").style("fill", getHSL);
-    });
-
-    function ticked() {
-        link
-            .attr("d", d => {
-                const [dx, dy] = [d.target.x - d.source.x, d.target.y - d.source.y];
-                const dr = Math.sqrt(dx*dx + dy*dy);
-                const curveRight = (d.target.x < d.source.x) + 0;
-                return `M${d.source.x},${d.source.y}A${dr},${dr} 0 0,${curveRight} ${d.target.x},${d.target.y}`
-            });
-        node
-            .attr("transform", (d: d3Node) => 
-                `translate(${utils.clampX(d.x)}, ${utils.clampY(d.y)})`
-            );
-    }
-}
-
-export function Edgemap({artists}) {        
-    const ref = useRef();
-    useEffect(() => drawEdgeMap(ref.current, artists), [artists]);
-    return (
-        <div id="edgemap-container">
-            <svg ref={ref}></svg>
-        </div>
-    );
-}
-
-
-
-
-
-
-/*
-    TODO:
-    1. force away from vertical center, so timeline is cleared
-    2. Change how edges are calculated by adding a third invisible intermediate node between neighbors and going through those.
-        Maybe scale the y position of this node with the distance between the neighbors. 
-        Example: https://bl.ocks.org/mbostock/4600693
-*/
-function timeline(artists: artistID[] = top150) {
-    const artistSet = new Set(artists);
-    const nodes = completeNetwork.nodes.filter(n => artistSet.has(n.id)).map(n => ({...n, x: n.timelinePos, y: height/2}));
-    const links = completeNetwork.links.filter(l => artistSet.has(l.source) && artistSet.has(l.target));
-
-    const repositioning = d3.scaleTime().domain(d3.extent(nodes.map(n => n.firstStream))).range([0, width]);
-    nodes.forEach(n => n.x = repositioning(n.firstStream));
-
-    const svg = utils.getSvg("pcaNetwork");
-    const background = svg.append("rect").attr("width", width).attr("height", height).style("opacity", 0);
-
-    const simulation = d3.forceSimulation(nodes) // @ts-ignore
-        .force("link", d3.forceLink(links).id(d => d.id).strength(0))
-        .force("collide", d3.forceCollide(n => n.r + 1))
-        .force("anchor", d3.forceX(n => n.x).strength(5))
-        .on("tick", ticked);
-
-    // @ts-ignore
-    const linkColor = d3.scaleLinear().range(["grey", "black"]);
-    const link = svg
-        .selectAll("path")
-        .data(links as d3Link[])
-        .join("path")
-        .style("fill", "none")
-        .style("opacity", 0.7)
-        .style("stroke", link => linkColor(link.proportion))
-        .style("stroke-width", link => Math.log2(link.count) + 1)
-        .style("visibility", "hidden")
-        ;
-
-    const node = svg
-        .selectAll("node")
-        .data(nodes as d3Node[])
-        .enter()
-        .append("circle")
-            .attr("r", n => n.r) // @ts-ignore
-            .style("fill", n => getHSL(n.similarityPos))
-        .on("mouseover", (_e, node) => console.log(artistMap.get(node.id)))
-        .on("click", (_event: PointerEvent, n) => {
-            link.style("visibility", l => l.source.id === n.id ? "visible" : "hidden")
-            const neighbors = new Set(links.filter((l: d3Link) => l.source.id === n.id).map(l => l.target.id));
-            neighbors.add(n.id);
-            node.style("fill", n => neighbors.has(n.id) ? getHSL(n.similarityPos) : d3.hsl(0.5, 0.5, 0.2, 0.2));
-        });
-
-    background.on("click", () => {
-        link.style("visibility", "hidden");
-        node.style("fill", n => getHSL(n.similarityPos));
-    });
-    svg.append("g")
-        .attr("transform", `translate(0, ${height/2})`)
-        .call(d3.axisBottom(repositioning));
-    
-    function ticked() {
-        link
-            .attr("d", d => {
-                const [dx, dy] = [d.target.x - d.source.x, d.target.y - d.source.y];
-                const dr = Math.sqrt(dx*dx + dy*dy);
-                const curveRight = (d.target.x < d.source.x) + 0;
-                return `M${d.source.x},${d.source.y}A${dr},${dr} 0 0,${curveRight} ${d.target.x},${d.target.y}`
-            });
-        node
-            .attr("cx", d => utils.clampX(d.x))
-            .attr("cy", d => d.y)
-    }
+    edgemapState = {...edgemapState, artistSet, nodes, links, node, link, currentView: nextView};
+    setSimulation(simulation, nextView !== currentView);
 }

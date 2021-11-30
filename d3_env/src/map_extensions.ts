@@ -5,7 +5,7 @@ declare global {
         update: (k: K, f: (v?: V) => V) => Map<K, V>
     }
     interface DefaultMap<K, V> {
-        update: (k: K, f: (v: V) => V) => Map<K, V>
+        update: (k: K, f: (v: V) => V) => DefaultMap<K, V>
     }
 }
 
