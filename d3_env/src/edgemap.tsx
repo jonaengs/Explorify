@@ -176,6 +176,94 @@ function createNetwork(): Network {
     }
 }
 
+let edgemapState = {
+    svg: null,
+    artistSet: new Set(),
+    nodes: [],
+    links: [],
+    node: null,
+    link: null,
+    simulation: null,
+    selected: null
+};
+
+function addNodes(svg, nodes) {
+    function onSelect(_event: PointerEvent, n: Node) {
+        const {node, link, links} = edgemapState;
+
+        link.style("visibility", l => l.source.id === n.id ? "visible" : "hidden")
+        const neighbors = new Set(links.filter((l: d3Link) => l.source.id === n.id).map(l => l.target.id));
+        neighbors.add(n.id);
+        node
+            .selectChildren("circle") 
+            .style("fill", n => neighbors.has(n.id) ? getHSL(n) : d3.hsl(0.5, 0.5, 0.35, 0.2));
+        node
+            .selectChildren("text") 
+            .style("visibility", // @ts-ignore
+            n => neighbors.has(n.id) ? 
+                "visible" : "hidden"
+        );
+        // event.stopPropagation(); // stop event from triggering background click event 
+    }    
+
+    const node = svg
+        .selectAll("node")
+        .data(nodes as d3Node[])
+        .enter()
+        .append("g")
+        .attr("class", "node")
+    node
+        .append("circle")
+            .attr("r", n => n.r)  // @ts-ignore
+            .style("fill", getHSL)
+        .on("mouseover", (_e, node) => console.log(artistMap.get(node.id)))
+        .on("click", onSelect);
+    node.append("text")
+        .text((d: Node) => d.name)
+        .attr("class", "unselectable")
+        .attr("visibility", "hidden");
+
+    return node
+}
+
+function setLinks(svg, links) {
+    const onEnter = (selection) => selection
+            .append("path")
+            .attr("class", "link")
+            .style("fill", "none")
+            .style("opacity", 0.9)
+            .style("stroke", (l: d3Link) => getLinkColor(getHSL(l.target))(l.proportion))
+            .style("stroke-width", (l: d3Link) => Math.log2(l.count) + 1)
+            .style("visibility", "hidden");
+    
+    const getLinkColor = (color) => d3.scaleLinear().range([color, "black"])
+    const link = svg
+        .selectAll("path")
+        .data(links as d3Link[])
+        .join(
+            enter => onEnter(enter),
+            update => update,
+            exit => exit.remove()
+        )
+
+    return link;
+}
+
+function ticked() {
+    const {node, link} = edgemapState;
+    link
+        .attr("d", d => {
+            const [dx, dy] = [d.target.x - d.source.x, d.target.y - d.source.y];
+            const dr = Math.sqrt(dx*dx + dy*dy);
+            const curveRight = (d.target.x < d.source.x) + 0;
+            return `M${d.source.x},${d.source.y}A${dr},${dr} 0 0,${curveRight} ${d.target.x},${d.target.y}`
+        });
+    node
+        .attr("transform", (d: d3Node) => 
+            `translate(${utils.clampX(d.x)}, ${utils.clampY(d.y)})`
+        );
+}
+
 /*
  * Important decisions:
  *      which DR result to use
@@ -186,32 +274,122 @@ function createNetwork(): Network {
  *          See: https://stackoverflow.com/questions/20706603/d3-path-gradient-stroke
  */
 const top150 = Array.from(getStreamTimes().keys()).slice(0, 150);
-export function renderEdgemap(ref: Ref<undefined>, artists: artistID[]) {    
+export function setupEdgemap(ref: Ref<undefined>, artists: artistID[]) {    
     const artistSet = new Set(artists);
-    const nodes = completeNetwork.nodes.filter(n => artistSet.has(n.id));
-    const links = completeNetwork.links.filter(l => artistSet.has(l.source) && artistSet.has(l.target));
-
-    const simulation = d3.forceSimulation(nodes) // @ts-ignore
-        .force("link", d3.forceLink(links).id(d => d.id).strength(0))
-        .force("collide", d3.forceCollide(n => n.r +2))
-        // .force("charge", d3.forceManyBody().strength(-10).distanceMax(n => n.r + 5))
-        .on("tick", ticked);
+    const nodes = completeNetwork.nodes.filter(n => artistSet.has(n.id)).map(x => ({...x}));
+    const links = completeNetwork.links.filter(l => artistSet.has(l.source) && artistSet.has(l.target)).map(x => ({...x}));
 
     const svg = utils.createSVG(ref);
     const background = svg.append("rect").attr("width", width).attr("height", height).style("opacity", 0);
 
-    // @ts-ignore
-    // const getLinkColor = (color) => d3.scaleLinear().range([{...color, opacity: 0.2}, color])
-    // const getLinkColor = (color) => d3.scaleLinear().range([color, d3.hsl(color.h, color.s, 0.1)])
-    const getLinkColor = (color) => d3.scaleLinear().range([color, "black"])
+    const simulation = d3.forceSimulation(nodes) // @ts-ignore
+        .force("link", d3.forceLink(links).id(d => d.id).strength(0))
+        .force("collide", d3.forceCollide(n => n.r +2))
+        .on("tick", ticked);
+
+    const node = addNodes(svg, nodes as d3Node[]);
+    const link = setLinks(svg, links as d3Link[]);
+
+    background.on("click", () => {
+        const {node, link} = edgemapState;
+        link.style("visibility", "hidden");
+        node.selectChildren("text").style("visibility", "hidden");
+        node.selectChildren("circle").style("fill", getHSL);
+    });
+
+    edgemapState = {...edgemapState, artistSet, node, link, nodes, links, svg, simulation};
+    
+}
+
+type edgemapView = "genreSimilarity" | "timeline" | "featureSimilarity";
+export function updateEdgemap(artists: artistID[] = top150) {
+    let {svg, node, link, nodes, links, simulation} = edgemapState;
+    const artistSet = new Set(artists);
+    const [added, removed] = utils.bothDifference(artistSet, edgemapState.artistSet);
+
+    const addedNodes = completeNetwork.nodes.filter(n => added.has(n.id)).map(x => ({...x}));
+    const addedLinks = completeNetwork.links.filter((l: Link) => {
+        const targetAdded = added.has(l.target);
+        const sourceAdded = added.has(l.source);
+        if (!(sourceAdded || targetAdded)) return false;        
+        const targetAlready = artistSet.has(l.target);
+        const sourceAlready = artistSet.has(l.source);
+        return (targetAdded && sourceAdded) || (targetAdded && sourceAlready) || (sourceAdded && targetAlready);
+    }).map(x => ({...x}))
+
+    // remove removed nodes & links. Add added nodes & links     
+    nodes = nodes
+        .filter(n => !removed.has(n.id))
+        .concat(addedNodes);
+    links = links
+        .filter((l: d3Link) => !removed.has(l.source.id) && !removed.has(l.target.id))
+        .concat(addedLinks);
+
+    if (removed.size) {
+        // .remove() May remove more than we want. If bugs with e.g., link not showing. Try changing these lines
+        link.filter((l: d3Link) => removed.has(l.source.id) || removed.has(l.target.id)).remove();
+        node.filter((n: d3Node) => removed.has(n.id)).remove();
+    }
+
+    setLinks(svg, links);
+    addedNodes.length && addNodes(svg, addedNodes);
+    
+    // simulation = simulation.nodes(nodes)
+        // .force("link", d3.forceLink(links).id(d => d.id).strength(0))
+        // .force("collide", d3.forceCollide(n => n.r + 2))
+    simulation.stop();
+    simulation = d3.forceSimulation(nodes)
+        .force("link", d3.forceLink(links).id(d => d.id).strength(0))
+        .force("collide", d3.forceCollide(n => n.r + 2))
+        .on("tick", ticked);
+
+
+    console.log("before", link.size(), node.size());
+    [node, link] = [svg.selectAll(".node"), svg.selectAll(".link")]
+    console.log("after", link.size(), node.size());
+    
+    edgemapState = {...edgemapState, simulation, artistSet, nodes, links, node, link};
+}
+
+
+/* 
+<EdgeMap> and drawEdgemap are an attempt at making building the edgemap using 
+a more traditional react approach. This means we redraw the entire network at each 
+call. This approach actually turned out much more quick to respond than the mutable approach, 
+until I realized we must deepcopy the nodes and links at each call. At this point it is
+about as slow as the mutable approach, except on initial render. 
+
+The reason that it is faster is that it only calculates the d3 network that it needs
+to draw. The mutable approach instead calculates the entire d3 network and then hides
+and makes visible nodes as we need them. Because there are so many items (50k+ links),
+the mutable approach can be really slow. 
+
+*/
+function drawEdgeMap(ref, artists) {        
+    const artistSet = new Set(artists);
+    const nodes = completeNetwork.nodes.filter(n => artistSet.has(n.id)).map(x => ({...x}));
+    const links = completeNetwork.links.filter(l => artistSet.has(l.source) && artistSet.has(l.target)).map(x => ({...x}));
+
+    const svg = utils.createSVG(ref);
+    svg.selectChildren("*").remove();
+    const background = svg.append("rect").attr("width", width).attr("height", height).style("opacity", 0);
+
+    
+    const simulation = d3.forceSimulation(nodes) // @ts-ignore
+        .force("link", d3.forceLink(links).id(d => d.id).strength(0))
+        .force("collide", d3.forceCollide(n => n.r +2))
+        .on("tick", ticked);
+
+    const getLinkColor = (color) => d3.scaleLinear().range([color, "black"]);
+    
     const link = svg
         .selectAll("path")
         .data(links as d3Link[])
         .join("path")
         .style("fill", "none")
         .style("opacity", 0.9)
-        .style("stroke", link => getLinkColor(getHSL(link.target))(link.proportion))
-        .style("stroke-width", link => Math.log2(link.count) + 1)
+        .style("stroke", l => getLinkColor(getHSL(l.target))(l.proportion))
+        .style("stroke-width", l => Math.log2(l.count) + 1)
         .style("visibility", "hidden")
         ;
 
@@ -225,11 +403,10 @@ export function renderEdgemap(ref: Ref<undefined>, artists: artistID[]) {
             .attr("r", n => n.r)  // @ts-ignore
             .style("fill", getHSL)
         .on("mouseover", (_e, node) => console.log(artistMap.get(node.id)))
-        .on("click", (_event: PointerEvent, n) => {
+        .on("click", (_event: PointerEvent, n: Node) => {
             link.style("visibility", l => l.source.id === n.id ? "visible" : "hidden")
             const neighbors = new Set(links.filter((l: d3Link) => l.source.id === n.id).map(l => l.target.id));
             neighbors.add(n.id);
-            // @ts-ignore
             node
                 .selectChildren("circle") 
                 .style("fill", n => neighbors.has(n.id) ? getHSL(n) : d3.hsl(0.5, 0.5, 0.2, 0.2));
@@ -239,9 +416,8 @@ export function renderEdgemap(ref: Ref<undefined>, artists: artistID[]) {
                 n => neighbors.has(n.id) ? 
                     "visible" : "hidden"
             );
-            // event.stopPropagation(); // stop event from triggering background click event
-        }
-        );
+            // event.stopPropagation(); // stop event from triggering background click event 
+        });
     node.append("text")
         .text((d: Node) => d.name)
         .attr("class", "unselectable")
@@ -252,14 +428,8 @@ export function renderEdgemap(ref: Ref<undefined>, artists: artistID[]) {
         node.selectChildren("text").style("visibility", "hidden");
         node.selectChildren("circle").style("fill", getHSL);
     });
-    
-    
+
     function ticked() {
-        // link
-        //     .attr("x1", (d: d3Link) => d.source.x)
-        //     .attr("y1", (d: d3Link) => d.source.y)
-        //     .attr("x2", (d: d3Link) => d.target.x)
-        //     .attr("y2", (d: d3Link) => d.target.y);
         link
             .attr("d", d => {
                 const [dx, dy] = [d.target.x - d.source.x, d.target.y - d.source.y];
@@ -267,22 +437,27 @@ export function renderEdgemap(ref: Ref<undefined>, artists: artistID[]) {
                 const curveRight = (d.target.x < d.source.x) + 0;
                 return `M${d.source.x},${d.source.y}A${dr},${dr} 0 0,${curveRight} ${d.target.x},${d.target.y}`
             });
-            node
-                .attr("transform", (d: d3Node) => 
-                    `translate(${utils.clampX(d.x)}, ${utils.clampY(d.y)})`
-                )
+        node
+            .attr("transform", (d: d3Node) => 
+                `translate(${utils.clampX(d.x)}, ${utils.clampY(d.y)})`
+            );
     }
 }
 
-export function Edgemap(
-    {artists = top150, type = "similarity"}: {artists: artistID[], type: "similarity" | "timeline"}) {    
+export function Edgemap({artists}) {        
     const ref = useRef();
-    // TODO: return cleanup function?
-    useEffect(() => renderEdgemap(ref.current, artists), [artists]);
-    return <div id="edgemap-container">
-        <svg ref={ref}></svg>
-    </div>
+    useEffect(() => drawEdgeMap(ref.current, artists), [artists]);
+    return (
+        <div id="edgemap-container">
+            <svg ref={ref}></svg>
+        </div>
+    );
 }
+
+
+
+
+
 
 /*
     TODO:

@@ -71,13 +71,10 @@ export function getSvg(id: string): SVGCanvas {
 }
 
 export function createSVG(ref): SVGCanvas {   
-    console.log(d3.select(ref));
     
     return d3.select(ref)
         .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-        .append("g")
-        .attr("transform", `translate(${margin.left}, ${margin.top})`);
+        .attr("height", height + margin.top + margin.bottom);
 }
 
 export function createTooltip() {
@@ -112,4 +109,12 @@ export function onMousemove(div: TooltipDiv) {
         .style("left", (event.pageX) + "px")
         .style("top", (event.pageY - 28) + "px");
     }
+}
+
+export function bothDifference(A, B) {
+    let [AdB, BdA] = [new Set(A), new Set()];
+    for (let b of B) {
+        if (!AdB.delete(b)) BdA.add(b);
+    }
+    return [AdB, BdA]
 }

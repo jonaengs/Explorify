@@ -1,11 +1,10 @@
 import {artistNetwork, genreNetwork} from './networks'
 import {featurePCAScatter} from './scatterplot'
-import {Edgemap, timeline} from './edgemap'
-
+import {App} from './App'
 import React from "react"
 import ReactDOM from "react-dom"
 
-ReactDOM.render(<Edgemap />, document.getElementById("root"))
+ReactDOM.render(<App />, document.getElementById("root"))
 
 // timeline();
 // edgemap();
