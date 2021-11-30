@@ -256,16 +256,16 @@ function addNodes(svg, nodes) {
 }
 
 function setLinks(svg, links) {
+    const getLinkColor = (color) => d3.scaleLinear().range([color, "black"])
     const onEnter = (selection) => selection
             .append("path")
             .attr("class", "link")
             .style("fill", "none")
             .style("opacity", 0.9)
-            .style("stroke", (l: d3Link) => getLinkColor(getHSL(l.target))(l.proportion))
+            .style("stroke", (l: d3Link) => getLinkColor(getHSL(l.target.similarityPos))(l.proportion))
             .style("stroke-width", (l: d3Link) => Math.log2(l.count) + 1)
             .style("visibility", "hidden");
     
-    const getLinkColor = (color) => d3.scaleLinear().range([color, "black"])
     const link = svg
         .selectAll("path")
         .data(links as d3Link[], l => l.index)
@@ -361,15 +361,14 @@ export function updateEdgemap(artists: artistID[] = top150) {
         node.filter((n: d3Node) => removed.has(n.id)).remove();
     }
 
-    setLinks(svg, links);
-    addedNodes.length && addNodes(svg, addedNodes);
-
     simulation.stop();
     simulation = d3.forceSimulation(nodes)
         .force("link", d3.forceLink(links).id(d => d.id).strength(0))
         .force("collide", d3.forceCollide(n => n.r + 2))
         .on("tick", ticked);
 
+    setLinks(svg, links);
+    addedNodes.length && addNodes(svg, addedNodes);
 
     console.log("before", link.size(), node.size());
     [node, link] = [svg.selectAll(".node"), svg.selectAll(".link")]
