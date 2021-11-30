@@ -111,10 +111,33 @@ export function onMousemove(div: TooltipDiv) {
     }
 }
 
+/*
+    BEGIN SET OPERATIONS
+*/
 export function bothDifference(A, B) {
     let [AdB, BdA] = [new Set(A), new Set()];
     for (let b of B) {
         if (!AdB.delete(b)) BdA.add(b);
     }
     return [AdB, BdA]
+}
+
+// From: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
+export function union(setA, setB) {
+    let _union = new Set(setA)
+    for (let elem of setB) {
+        _union.add(elem)
+    }
+    return _union
+}
+
+// From: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
+export function intersection(setA, setB) {
+    let _intersection = new Set()
+    for (let elem of setB) {
+        if (setA.has(elem)) {
+            _intersection.add(elem)
+        }
+    }
+    return _intersection
 }

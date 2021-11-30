@@ -27,6 +27,7 @@ type Node = {
 type Link = {
     source: Node["id"],
     target: Node["id"],
+    label: string,
     count: number,
     proportion: number
 }
@@ -54,7 +55,6 @@ const firstStream = streamingHistoryNoSkipped.reduce(
     new Map()
 );
 
-const artistStreamTimes: Map<artistName, number> = getStreamTimes();
 
 /*
  * Important decisions:
@@ -166,9 +166,30 @@ function createNetwork(): Network {
         }))
         .filter(v => v !== null);
 
-    const links = computeSessionLinks().filter(
-        l => data.get(l.source) !== null && data.get(l.target) !== null
-    ); 
+
+    let genreToArtists: Map<genre, artistID[]> = new DefaultMap([])
+    artistData.forEach(
+        artist => artist.genres.forEach(genre => {
+            genreToArtists = genreToArtists.update(genre, arr => arr.concat([artist.id]))
+        })
+    );
+    const artistToGenres = new Map(artistData.map(a => [a.id, new Set(a.genres)]));
+    
+    const links = Array.from(genreToArtists).flatMap(([genre, artists]) => 
+        artists.flatMap(a1 => artists.map(a2 => ({
+                source: a1,
+                target: a2,
+                label: genre,
+                count: utils.intersection(artistToGenres.get(a1), artistToGenres.get(a2)).size,
+                proportion: (() => {
+                    const [gs1, gs2] = [artistToGenres.get(a1), artistToGenres.get(a2)]
+                    // Jaccard Similarity: 
+                    return utils.intersection(gs1, gs2).size / utils.union(gs1, gs2).size;
+                    // Overlap Coefficient: //return utils.intersection(gs1, gs2).size / Math.min(gs1.size, gs2.size);
+                })()
+            })
+    ))).filter(({source, target}) => source != target)
+    .filter(({source, target}) => data.get(source) !== null && data.get(target) !== null); 
 
     return {
         nodes: nodes,
@@ -176,6 +197,10 @@ function createNetwork(): Network {
     }
 }
 
+/**
+ * It's a huge pain to pass around all the information that's needed to update the network correctly.
+ * So instead, we just store all the information in this global object. 
+ */
 let edgemapState = {
     svg: null,
     artistSet: new Set(),
@@ -187,37 +212,41 @@ let edgemapState = {
     selected: null
 };
 
-function addNodes(svg, nodes) {
-    function onSelect(_event: PointerEvent, n: Node) {
-        const {node, link, links} = edgemapState;
+const deselectHSL = d3.hsl(0.5, 0.5, 0.35, 0.2);
+function highlightSelection(n) {
+    if (!n) return;
+    const {node, link, links} = edgemapState;
 
-        link.style("visibility", l => l.source.id === n.id ? "visible" : "hidden")
-        const neighbors = new Set(links.filter((l: d3Link) => l.source.id === n.id).map(l => l.target.id));
-        neighbors.add(n.id);
-        node
-            .selectChildren("circle") 
-            .style("fill", n => neighbors.has(n.id) ? getHSL(n) : d3.hsl(0.5, 0.5, 0.35, 0.2));
-        node
-            .selectChildren("text") 
-            .style("visibility", // @ts-ignore
-            n => neighbors.has(n.id) ? 
-                "visible" : "hidden"
-        );
-        // event.stopPropagation(); // stop event from triggering background click event 
-    }    
+    link.style("visibility", l => l.source.id === n.id ? "visible" : "hidden")
+    const neighbors = new Set(links.filter((l: d3Link) => l.source.id === n.id).map(l => l.target.id));
+    neighbors.add(n.id);
+    node
+        .selectChildren("circle") 
+        .style("fill", n => neighbors.has(n.id) ? getHSL(n) : deselectHSL);
+    node
+        .selectChildren("text") 
+        .style("visibility", // @ts-ignore
+        n => neighbors.has(n.id) ? 
+            "visible" : "hidden"
+    );
+
+    edgemapState.selected = n;
+}
+
+function addNodes(svg, nodes) {
+    const {selected} = edgemapState;
 
     const node = svg
         .selectAll("node")
-        .data(nodes as d3Node[])
+        .data(nodes as d3Node[], n => n.id)
         .enter()
         .append("g")
-        .attr("class", "node")
-    node
-        .append("circle")
-            .attr("r", n => n.r)  // @ts-ignore
-            .style("fill", getHSL)
+        .attr("class", "node");
+    node.append("circle")
+        .attr("r", n => n.r)  // @ts-ignore
+        .style("fill", n => selected ? deselectHSL : getHSL(n))
         .on("mouseover", (_e, node) => console.log(artistMap.get(node.id)))
-        .on("click", onSelect);
+        .on("click", (_event, n) => highlightSelection(n));
     node.append("text")
         .text((d: Node) => d.name)
         .attr("class", "unselectable")
@@ -239,7 +268,7 @@ function setLinks(svg, links) {
     const getLinkColor = (color) => d3.scaleLinear().range([color, "black"])
     const link = svg
         .selectAll("path")
-        .data(links as d3Link[])
+        .data(links as d3Link[], l => l.index)
         .join(
             enter => onEnter(enter),
             update => update,
@@ -287,14 +316,15 @@ export function setupEdgemap(ref: Ref<undefined>, artists: artistID[]) {
         .force("collide", d3.forceCollide(n => n.r +2))
         .on("tick", ticked);
 
-    const node = addNodes(svg, nodes as d3Node[]);
     const link = setLinks(svg, links as d3Link[]);
+    const node = addNodes(svg, nodes as d3Node[]);
 
     background.on("click", () => {
         const {node, link} = edgemapState;
         link.style("visibility", "hidden");
         node.selectChildren("text").style("visibility", "hidden");
         node.selectChildren("circle").style("fill", getHSL);
+        edgemapState.selected = null;
     });
 
     edgemapState = {...edgemapState, artistSet, node, link, nodes, links, svg, simulation};
@@ -333,10 +363,7 @@ export function updateEdgemap(artists: artistID[] = top150) {
 
     setLinks(svg, links);
     addedNodes.length && addNodes(svg, addedNodes);
-    
-    // simulation = simulation.nodes(nodes)
-        // .force("link", d3.forceLink(links).id(d => d.id).strength(0))
-        // .force("collide", d3.forceCollide(n => n.r + 2))
+
     simulation.stop();
     simulation = d3.forceSimulation(nodes)
         .force("link", d3.forceLink(links).id(d => d.id).strength(0))
@@ -347,6 +374,8 @@ export function updateEdgemap(artists: artistID[] = top150) {
     console.log("before", link.size(), node.size());
     [node, link] = [svg.selectAll(".node"), svg.selectAll(".link")]
     console.log("after", link.size(), node.size());
+
+    highlightSelection(edgemapState.selected)
     
     edgemapState = {...edgemapState, simulation, artistSet, nodes, links, node, link};
 }
@@ -384,7 +413,7 @@ function drawEdgeMap(ref, artists) {
     
     const link = svg
         .selectAll("path")
-        .data(links as d3Link[])
+        .data(links as d3Link[], (l: d3Link) => l.index)
         .join("path")
         .style("fill", "none")
         .style("opacity", 0.9)
@@ -395,7 +424,7 @@ function drawEdgeMap(ref, artists) {
 
     const node = svg
         .selectAll("node")
-        .data(nodes as d3Node[])
+        .data(nodes as d3Node[], (n: d3Node) => n.id)
         .enter()
         .append("g")
     node
