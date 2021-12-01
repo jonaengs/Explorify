@@ -21,8 +21,3 @@
     user-select: none;
     pointer-events: none;
 }
-
-.node-genres {
-    font-style: italic;
-    color: darkgrey;
-}

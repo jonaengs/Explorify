@@ -28,6 +28,7 @@ type Node = {
     y: number,
 };
 type Link = {
+    id: string, // source and target ids (in that order) combined
     source: Node["id"],
     target: Node["id"],
     label: string,
@@ -110,6 +111,7 @@ function computeSessionLinks(): Link[] {
 
     const links = coPlayCounts.flatMap(([a1, neighbors]) => 
         Array.from(neighbors).map(([a2, count]) => ({
+            id: a1 + a2,
             source: a1,
             target: a2,
             label: "???",
@@ -182,14 +184,12 @@ function computeNetwork(): Network {
         );
     })();
 
-    console.log(getTimePolyExtent(2));
     // const timelineAxis = d3.scaleTime().domain(timeExtent).range([0, width])
     const timelineAxis = d3.scaleTime().domain(getTimePolyExtent(5)).range(utils.divideWidth(5));
-    
-    
     const nodeSizes = d3.scaleSqrt().domain(d3.extent(artistStreamTimes.values())).range([5, 20])
+    
+    
     const artistSet = utils.intersection(new Set(genrePositions.keys()), new Set(featurePositions.keys()));
-
     // TODO: This currently excludes genre_tsne outlier artists and artists missing features. FIX
     const nodes = Array.from(artistSet)
         .map(aid => genrePositions.get(aid) && ({
@@ -217,21 +217,45 @@ function computeNetwork(): Network {
         return map;
     })();
     
-    const links = Array.from(genreToArtists).flatMap(([genre, artists]) => 
-        artists.flatMap(a1 => artists.map(a2 => ({
-                source: a1,
-                target: a2,
-                label: genre,
-                count: utils.intersection(artistToGenres.get(a1), artistToGenres.get(a2)).size,
-                proportion: (() => {
-                    const [gs1, gs2] = [artistToGenres.get(a1), artistToGenres.get(a2)]
-                    // Jaccard Similarity: 
-                    return utils.intersection(gs1, gs2).size / utils.union(gs1, gs2).size;
-                    // Overlap Coefficient: //return utils.intersection(gs1, gs2).size / Math.min(gs1.size, gs2.size);
-                })()
-            })
-    ))).filter(({source, target}) => source !== target)
-    .filter(({source, target}) => artistSet.has(source) && artistSet.has(target));     
+    const links = Array.from(artistSet).flatMap(a1 => 
+        Array.from(artistSet).flatMap(a2 => {
+            if (a1 === a2) return; 
+            const [gs1, gs2] = [artistToGenres.get(a1), artistToGenres.get(a2)];
+            const shared = utils.intersection(gs1, gs2);
+            if (!shared.size) return;
+            const obj = {
+                    id: a1 + a2,
+                    source: a1,
+                    target: a2,
+                    label: Array.from(shared).join(", "),
+                    count: utils.intersection(gs1, gs2).size,
+                    proportion: (() => {
+                        // Jaccard Similarity: 
+                        return shared.size / utils.union(gs1, gs2).size;
+                        // Overlap Coefficient: return utils.intersection(gs1, gs2).size / Math.min(gs1.size, gs2.size);
+                    })()
+                };
+            return [obj, {...obj, source: a2, target: a1}]
+        }
+    ))
+    .filter(x => x !== null && x != undefined)
+    // .filter(({source, target}) => artistSet.has(source) && artistSet.has(target));
+
+    // const links = Array.from(genreToArtists).flatMap(([genre, artists]) => 
+    //     artists.flatMap(a1 => artists.map(a2 => ({
+    //             source: a1,
+    //             target: a2,
+    //             label: genre,
+    //             count: utils.intersection(artistToGenres.get(a1), artistToGenres.get(a2)).size,
+    //             proportion: (() => {
+    //                 const [gs1, gs2] = [artistToGenres.get(a1), artistToGenres.get(a2)]
+    //                 // Jaccard Similarity: 
+    //                 return utils.intersection(gs1, gs2).size / utils.union(gs1, gs2).size;
+    //                 // Overlap Coefficient: //return utils.intersection(gs1, gs2).size / Math.min(gs1.size, gs2.size);
+    //             })()
+    //         })
+    // ))).filter(({source, target}) => source !== target)
+    // .filter(({source, target}) => artistSet.has(source) && artistSet.has(target));     
 
     return {
         nodes: nodes,
@@ -316,25 +340,25 @@ function dropSelectionHighlight() {
 }
 
 function addNodes(svg: utils.SVGSelection, nodes: d3Node[]) {
-    function onMouseover(_e, n) {   
+    function onMouseover(_e: PointerEvent, n: d3Node) {   
         const {node} = edgemapState;
-        const current = node.filter(_n => _n.id === n.id);
+        const current = node.filter((_n: d3Node) => _n.id === n.id);
         current
             .selectChildren("text")
             .style("visibility", "visible")
     }
-    function onMouseout(_e, n) {
+    function onMouseout(_e: PointerEvent, n: d3Node) {
         const {node} = edgemapState;
-        const current = node.filter(_n => _n.id === n.id);
+        const current = node.filter((_n: d3Node) => _n.id === n.id);
         current
             .selectChildren("text")
-            .style("visibility", _n => edgemapState.selectedNeighbors.has(_n.id) ? "visible" : "hidden");
+            .style("visibility", (_n: d3Node) => edgemapState.selectedNeighbors.has(_n.id) ? "visible" : "hidden");
     }
     const {selected} = edgemapState;
 
     const node = svg
-        .selectAll("node")
-        .data(nodes as d3Node[], n => n.id)
+        .selectAll("node") // @ts-ignore
+        .data(nodes, (n: d3Node) => n.id)
         .enter()
         .append("g")
         .attr("class", "node");
@@ -356,9 +380,11 @@ function addNodes(svg: utils.SVGSelection, nodes: d3Node[]) {
     return node
 }
 
+// Use this approach to display genres along link paths: https://css-tricks.com/snippets/svg/curved-text-along-path/
 function setLinks(links: d3Link[], svg?: SVGSelection) {
     const getLinkColor = (color) => d3.scaleLinear().range([color, "black"])
-    const onEnter = (selection) => selection
+    const onEnter = (selection) => {
+        return selection
             .append("path")
             .attr("class", "link")
             .style("fill", "none")
@@ -367,7 +393,30 @@ function setLinks(links: d3Link[], svg?: SVGSelection) {
             .style("stroke-width", (l: d3Link) => Math.log2(l.count) + 1)
             .style("visibility", "hidden");
 
-    const link = (svg || edgemapState.svg)
+        // const linkNode = selection.append("g");
+        // linkNode
+        //     .attr("class", "link-node")
+        //     .style("visibility", "hidden");
+        // linkNode
+        //     .append("path")
+        //     .attr("id", (l: Link) => l.id)
+        //     .attr("class", "link-path")
+        //     .style("fill", "none")
+        //     .style("opacity", 0.9)
+        //     .style("stroke", (l: d3Link) => getLinkColor(getHSL(l.target))(l.proportion))
+        //     .style("stroke-width", (l: d3Link) => Math.log2(l.count) + 1);
+        // linkNode
+        //     .append("text")
+        //     .append("textPath")
+        //         .attr("alignment-baseline", "top")
+        //         .attr("xlink:href", (l: Link) => "#"+l.id)
+        //         .text((l: Link) => l.label);
+        
+        
+        // return linkNode;
+    }
+
+    const link = (svg || edgemapState.svg as utils.SVGSelection)
         .selectAll("path")
         .data(links)
         .join(
@@ -376,7 +425,7 @@ function setLinks(links: d3Link[], svg?: SVGSelection) {
             update => update
                 .style("stroke", (l: d3Link) => getLinkColor(getHSL(l.target))(l.proportion)),
             exit => exit.remove()
-        )
+        );
 
     return link;
 }
@@ -449,6 +498,7 @@ const alphaDecay = 1 - Math.pow(0.001, 1 / targetSimulationIterations);
 function similaritySimulation({nodes, links}: Network) {
     const ticked = makeRestrictedTick((node, link) => {        
         console.log("similarity");
+        // link.selectChildren("path").attr("d", computeCurve);
         link.attr("d", computeCurve);
         node.attr("transform", (d: d3Node) => 
                 `translate(${utils.clampX(d.x)}, ${utils.clampY(d.y)})`
@@ -468,6 +518,7 @@ function similaritySimulation({nodes, links}: Network) {
 function timelineSimulation({nodes, links}: Network) {
     const ticked = makeRestrictedTick((node, link) => {
         console.log("timeline");
+        // link.selectChildren("path").attr("d", computeCurve);
         link.attr("d", computeCurve);
         node.attr("transform", (d: d3Node) => `translate(${d.x}, ${utils.clampX(d.y)})`);
     });
@@ -528,7 +579,7 @@ export function updateEdgemap(artists: artistID[] = top150, nextView: EdgemapVie
                 .call(n => 
                     n.transition()
                         .duration(transitionTime)
-                        .ease(d3.easeSin)
+                        .ease(d3.easeQuadInOut)
                         .attr("transform", (n: Node) => utils.d3Translate(n.featurePos))
                         .on("start", () => {
                             link.style("visibility", "hidden");
@@ -560,7 +611,7 @@ export function updateEdgemap(artists: artistID[] = top150, nextView: EdgemapVie
                 .call(n => 
                     n.transition()
                         .duration(transitionTime)
-                        .ease(d3.easeSin)
+                        .ease(d3.easeQuadInOut)
                         .attr("transform", (n: Node) => utils.d3Translate(n.genrePos))
                         .on("start", () => {
                             link.style("visibility", "hidden");
@@ -593,7 +644,7 @@ export function updateEdgemap(artists: artistID[] = top150, nextView: EdgemapVie
                 .call(n => 
                     n.transition()
                         .duration(transitionTime)
-                        .ease(d3.easeSin)
+                        .ease(d3.easeQuadInOut)
                         .attr("transform", n => utils.d3Translate(n.timelinePos))
                         .on("start", () => {
                             link.style("visibility", "hidden");

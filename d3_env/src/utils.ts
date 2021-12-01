@@ -125,6 +125,13 @@ export function bothDifference<T>(A: Set<T>, B: Set<T>): [Set<T>, Set<T>] {
     return [AdB, BdA];
 }
 
+export function anyOverlap<T>(A: Set<T>, B: Set<T>): boolean {
+    for (let a of A) {
+        if (B.has(a)) return true;
+    }
+    return false;
+}
+
 // From: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
 export function union<T>(setA: Set<T>, setB: Set<T>): Set<T> {
     let _union = new Set(setA)
