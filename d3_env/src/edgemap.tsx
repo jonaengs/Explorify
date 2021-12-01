@@ -5,7 +5,7 @@ import {margin, width, height, maxDistance} from './constants.mjs';
 import {DefaultMap} from './map_extensions';
 import './map_extensions.ts';
 import {streamingHistory, genre, artistName, StreamInstance, artistData, streamingHistoryNoSkipped, artistID, artistMap} from './data'
-import { artistStreamTimes, firstStream, getTimePolyExtent, timeExtent, timePolyExtent } from './derived_data';
+import { artistStreamTimes, artistToGenres, firstArtistStream, getTimePolyExtent, timeExtent, timePolyExtent } from './derived_data';
 import React, { Ref, useCallback, useEffect, useRef } from 'react';
 import { SVGSelection } from './utils';
 
@@ -198,8 +198,8 @@ function computeNetwork(): Network {
             r: nodeSizes(artistStreamTimes.get(aid)),
             genrePos: genrePositions.get(aid),
             featurePos: featurePositions.get(aid),
-            timelinePos: {x: timelineAxis(firstStream.get(aid)), y: height/2},
-            firstStream: firstStream.get(aid),
+            timelinePos: {x: timelineAxis(firstArtistStream.get(aid)), y: height/2},
+            firstStream: firstArtistStream.get(aid),
 
             ...genrePositions.get(aid) // x & y coords default to genrePosition
         }))
@@ -216,7 +216,6 @@ function computeNetwork(): Network {
             );
         return map;
     })();
-    const artistToGenres = new Map(artistData.map(a => [a.id, new Set(a.genres)]));
     
     const links = Array.from(genreToArtists).flatMap(([genre, artists]) => 
         artists.flatMap(a1 => artists.map(a2 => ({
@@ -265,16 +264,21 @@ function setSimulation(simulation: d3.Simulation<any, any>, dontStart=false) {
 }
 
 const deselectHSL = d3.hsl(0.5, 0.5, 0.35, 0.2);
-function highlightSelection(n: d3Node) {
-    if (n === null || n === undefined) return;
+function highlightSelection(selected: d3Node) {
+    if (selected === null || selected === undefined) return;
     
     // If new node is being selected
-    if (edgemapState.selected !== n) dropSelectionHighlight();
+    if (edgemapState.selected !== selected) dropSelectionHighlight();
     
     const {node, link, links} = edgemapState;
 
-    link.style("visibility", (l: d3Link) => l.source.id === n.id ? "visible" : "hidden")
-    const neighbors = new Set(links.filter((l: d3Link) => l.source.id === n.id).map(l => l.target.id)).add(n.id);
+    link.style("visibility", (l: d3Link) => l.source.id === selected.id ? "visible" : "hidden");
+
+    const neighbors = new Set(
+        links.filter((l: d3Link) => l.source.id === selected.id).map(l => l.target.id)
+    ).add(selected.id);
+
+    const selectedGenres = artistToGenres.get(selected.id);
     node
         .selectChildren("circle") 
         .style("fill", (n: d3Node) => neighbors.has(n.id) ? getHSL(n) : deselectHSL);
@@ -282,14 +286,14 @@ function highlightSelection(n: d3Node) {
         .selectChildren("text") 
         .style("visibility", (n: d3Node) => neighbors.has(n.id) ?  "visible" : "hidden");
 
-    const selected = node.filter(_n => _n.id === n.id);
-    selected.selectChildren("circle")
+    const selectedNode = node.filter(_n => _n.id === selected.id);
+    selectedNode.selectChildren("circle")
         .style("stroke-width", 3)
         .style("stroke", getHSL)
         .style("fill", "white");
 
     edgemapState.selectedNeighbors = neighbors;
-    edgemapState.selected = n;
+    edgemapState.selected = selected;
 }
 
 function dropSelectionHighlight() {
@@ -340,13 +344,15 @@ function addNodes(svg: utils.SVGSelection, nodes: d3Node[]) {
         .on("mouseover", onMouseover)
         .on("mouseout", onMouseout)
         .on("click", (_event, n) => highlightSelection(n));
-    node.append("text")
+    node
+        .append("text")
         .text((d: Node) => d.name)
+        .attr("class", "node-text")
         .attr("class", "unselectable")
         .on("mouseover", onMouseover)
         .on("mouseout", onMouseout)
         .attr("visibility", "hidden");
-
+    
     return node
 }
 
@@ -360,13 +366,13 @@ function setLinks(links: d3Link[], svg?: SVGSelection) {
             .style("stroke", (l: d3Link) => getLinkColor(getHSL(l.target))(l.proportion))
             .style("stroke-width", (l: d3Link) => Math.log2(l.count) + 1)
             .style("visibility", "hidden");
-    
 
     const link = (svg || edgemapState.svg)
         .selectAll("path")
         .data(links)
         .join(
-            enter => onEnter(enter),
+            enter => onEnter(enter)
+                .lower(), // re-insert links as the first child of svg, so that links are drawn first (and thus behind other objects)
             update => update
                 .style("stroke", (l: d3Link) => getLinkColor(getHSL(l.target))(l.proportion)),
             exit => exit.remove()
@@ -476,7 +482,7 @@ function timelineSimulation({nodes, links}: Network) {
         .stop();
 }
 
-const transitionTime = 2000;
+const transitionTime = 1500;
 export type EdgemapView = "genreSimilarity" | "timeline" | "featureSimilarity";
 export function updateEdgemap(artists: artistID[] = top150, nextView: EdgemapView = "genreSimilarity") {    
     let {svg, node, link, nodes, links, _simulation: simulation, currentView, timelineAxis} = edgemapState;
@@ -522,13 +528,16 @@ export function updateEdgemap(artists: artistID[] = top150, nextView: EdgemapVie
                 .call(n => 
                     n.transition()
                         .duration(transitionTime)
-                        .ease(d3.easeLinear)
+                        .ease(d3.easeSin)
                         .attr("transform", (n: Node) => utils.d3Translate(n.featurePos))
                         .on("start", () => {
+                            link.style("visibility", "hidden");
+                            simulation.stop();
                             simulation = similaritySimulation({nodes, links});
                         })
                         .on("end", () => {
                             simulation.restart();
+                            highlightSelection(edgemapState.selected);
                         })
                 );
         } else {
@@ -551,14 +560,16 @@ export function updateEdgemap(artists: artistID[] = top150, nextView: EdgemapVie
                 .call(n => 
                     n.transition()
                         .duration(transitionTime)
-                        .ease(d3.easeLinear)
+                        .ease(d3.easeSin)
                         .attr("transform", (n: Node) => utils.d3Translate(n.genrePos))
                         .on("start", () => {
+                            link.style("visibility", "hidden");
                             simulation.stop();
                             simulation = similaritySimulation({nodes, links});
                         })
                         .on("end", () => {
                             simulation.restart();
+                            highlightSelection(edgemapState.selected);
                         })
                 );
         } else {
@@ -582,14 +593,16 @@ export function updateEdgemap(artists: artistID[] = top150, nextView: EdgemapVie
                 .call(n => 
                     n.transition()
                         .duration(transitionTime)
-                        .ease(d3.easeLinear)
+                        .ease(d3.easeSin)
                         .attr("transform", n => utils.d3Translate(n.timelinePos))
                         .on("start", () => {
+                            link.style("visibility", "hidden");
                             simulation.stop();
                             simulation = timelineSimulation({nodes, links});
                         })
                         .on("end", () => {
                             simulation.restart();
+                            highlightSelection(edgemapState.selected);
                         })
                 );
         } else {
