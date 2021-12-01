@@ -1,7 +1,7 @@
 import { utcMilliseconds } from "d3";
 import React, { useEffect, useRef, useState } from "react";
 import { artistStreamTimes } from "./derived_data";
-import { Edgemap, edgemapView, NodePositionKey, setNodeColorKey, setupEdgemap, updateEdgemap } from "./edgemap";
+import { Edgemap, EdgemapView, NodePositionKey, setNodeColorKey, setupEdgemap, updateEdgemap } from "./edgemap";
 import * as utils from './utils';
 
 
@@ -10,7 +10,7 @@ export const App = () => {
     const [top, setTop] = useState(50);
     const topArtists = Array.from(artistStreamTimes.keys()).slice(0, top);    
     
-    const [view, setView] = useState<edgemapView>("genreSimilarity");
+    const [view, setView] = useState<EdgemapView>("genreSimilarity");
     const [colorKey, setColorKey] = useState<NodePositionKey>("genrePos");
     
     const edgemapRef = useRef();
@@ -28,9 +28,10 @@ export const App = () => {
     );
     
     return <>
-        <select onChange={e => setView(e.target.value as edgemapView)}>
+        <select onChange={e => setView(e.target.value as EdgemapView)}>
             <option value="genreSimilarity">genre</option>
             <option value="timeline">time</option>
+            <option value="featureSimilarity">feature</option>
         </select>
         <select onChange={e => setColorKey(e.target.value as NodePositionKey)}>
             <option value="genrePos">genre</option>

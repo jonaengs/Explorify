@@ -161,3 +161,11 @@ export function debounce(f: (...args: any[]) => void, time=1000) {
 export function d3Translate({x, y}: {x: number, y: number}) {
     return `translate(${x}, ${y})`;
 }
+
+export function divideWidth(n): number[] {
+    const divs = []
+    for (let i = 0; i < n + 2; i++) {
+        divs.push(i * width / (n + 1));
+    }
+    return divs
+}

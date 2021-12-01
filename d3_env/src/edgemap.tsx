@@ -5,21 +5,23 @@ import {margin, width, height, maxDistance} from './constants.mjs';
 import {DefaultMap} from './map_extensions';
 import './map_extensions.ts';
 import {streamingHistory, genre, artistName, StreamInstance, artistData, streamingHistoryNoSkipped, artistID, artistMap} from './data'
-import { artistStreamTimes, timeExtent } from './derived_data';
+import { artistStreamTimes, firstStream, getTimePolyExtent, timeExtent, timePolyExtent } from './derived_data';
 import React, { Ref, useCallback, useEffect, useRef } from 'react';
 import { SVGSelection } from './utils';
 
 /**
  * A feature vector reduced to 2 dimensions. Must be mapped to fit within chart.
  */
+type Position = {x: number, y: number};
 type DRCoordinate = [number, number];
 type Node = {
     id: string,
     name: string,
     r: number,
+    genrePos: Position,
+    timelinePos: Position,
+    featurePos: Position,
     firstStream: Date,
-    timelinePos: {x: number, y: number},
-    genrePos: {x: number, y: number}
     
     // shorthand for similarity view equivalents
     x: number,
@@ -50,10 +52,6 @@ const sessionOccurrences = new Map(
     artistData.map(artist => 
         [artist.id, sessionArtists.reduce((count, as) => count + as.includes(artist.id), 0)]
     )
-);
-const firstStream = streamingHistoryNoSkipped.reduce(
-    (acc, stream) => acc.update(stream.artistID, t => t || stream.endTime),
-    new Map()
 );
 
 
@@ -184,7 +182,11 @@ function computeNetwork(): Network {
         );
     })();
 
-    const timelineAxis = d3.scaleTime().domain(timeExtent).range([0, width])
+    console.log(getTimePolyExtent(2));
+    // const timelineAxis = d3.scaleTime().domain(timeExtent).range([0, width])
+    const timelineAxis = d3.scaleTime().domain(getTimePolyExtent(5)).range(utils.divideWidth(5));
+    
+    
     const nodeSizes = d3.scaleSqrt().domain(d3.extent(artistStreamTimes.values())).range([5, 20])
     const artistSet = utils.intersection(new Set(genrePositions.keys()), new Set(featurePositions.keys()));
 
@@ -399,7 +401,7 @@ export function setupEdgemap(ref: Ref<undefined>, artists: artistID[]) {
     
     const background = svg.append("rect").attr("width", width).attr("height", height).style("opacity", 0);
     
-    const simulation = genreSimulation({nodes, links});
+    const simulation = similaritySimulation({nodes, links});
     
     const link = setLinks(links as d3Link[], svg);
     const node = addNodes(svg, nodes as d3Node[]);
@@ -409,28 +411,44 @@ export function setupEdgemap(ref: Ref<undefined>, artists: artistID[]) {
     const timelineAxis = svg.append("g")
         .attr("transform", `translate(0, ${height/2})`)
         .style("visibility", "hidden")
-        .call(d3.axisBottom(d3.scaleTime().domain(timeExtent).range([0, width])));   
+        .call(d3.axisBottom(d3.scaleTime().domain(getTimePolyExtent(5)).range(utils.divideWidth(5)))); 
+        // .call(d3.axisBottom(d3.scaleTime().domain(timeExtent).range([0, width])));   
 
     edgemapState = {...edgemapState, artistSet, node, link, nodes, links, svg, timelineAxis};
     setSimulation(simulation);
 }
 
-const alphaMin = 0.02;
+function makeRestrictedTick(tick: (node, link) => void) {
+    let nodePositions = null;
+    function ticked() {
+        const {node, link, nodes, _simulation} = edgemapState;
+        tick(node, link);
+        
+        if (nodePositions !== null) {
+            const movement = nodes.reduce(
+                (sum, n, i) => sum + Math.abs(n.x - nodePositions[i][0]) + Math.abs(n.y - nodePositions[i][1]),
+                0
+            )
+            // console.log(movement);
+            if (movement < 10) _simulation.stop();
+        }
+        nodePositions = nodes.map(n=> [n.x, n.y]);
+    }
+    return ticked;
+}
+
+const alphaMin = 0.05;
 const targetSimulationIterations = 100;
 const alphaDecay = 1 - Math.pow(0.001, 1 / targetSimulationIterations);
-function genreSimulation({nodes, links}: Network) {
-    function ticked() {
-        console.log("genre");
-        const {node, link} = edgemapState;
-        if (link != null)
-            link
-                .attr("d", computeCurve);
-        if (node != null)
-            node 
-                .attr("transform", (d: d3Node) => 
-                    `translate(${utils.clampX(d.x)}, ${utils.clampY(d.y)})`
-                );
-    }
+function similaritySimulation({nodes, links}: Network) {
+    const ticked = makeRestrictedTick((node, link) => {        
+        console.log("similarity");
+        link.attr("d", computeCurve);
+        node.attr("transform", (d: d3Node) => 
+                `translate(${utils.clampX(d.x)}, ${utils.clampY(d.y)})`
+            );
+        } 
+    )
 
     return d3.forceSimulation(nodes)
         .force("link", d3.forceLink(links).id(d => d.id).strength(0))
@@ -442,17 +460,11 @@ function genreSimulation({nodes, links}: Network) {
     }
 
 function timelineSimulation({nodes, links}: Network) {
-    function ticked() {
+    const ticked = makeRestrictedTick((node, link) => {
         console.log("timeline");
-        
-        const {node, link} = edgemapState;
-        if (link != null)
-            link
-            .attr("d", computeCurve);
-            if (node != null)
-            node
-            .attr("transform", (d: d3Node) => `translate(${utils.clampX(d.x)}, ${d.y})`);
-        }
+        link.attr("d", computeCurve);
+        node.attr("transform", (d: d3Node) => `translate(${d.x}, ${utils.clampX(d.y)})`);
+    });
         
     return  d3.forceSimulation(nodes)
         .force("link", d3.forceLink(links).id(d => d.id).strength(0))
@@ -465,8 +477,8 @@ function timelineSimulation({nodes, links}: Network) {
 }
 
 const transitionTime = 2000;
-export type edgemapView = "genreSimilarity" | "timeline" | "featureSimilarity";
-export function updateEdgemap(artists: artistID[] = top150, nextView: edgemapView = "genreSimilarity") {    
+export type EdgemapView = "genreSimilarity" | "timeline" | "featureSimilarity";
+export function updateEdgemap(artists: artistID[] = top150, nextView: EdgemapView = "genreSimilarity") {    
     let {svg, node, link, nodes, links, _simulation: simulation, currentView, timelineAxis} = edgemapState;
     const artistSet = new Set(artists);
     const [added, removed] = utils.bothDifference(artistSet, edgemapState.artistSet);
@@ -498,6 +510,35 @@ export function updateEdgemap(artists: artistID[] = top150, nextView: edgemapVie
     if (currentView === 'timeline' && nextView !== 'timeline') {
         timelineAxis.style("visibility", "hidden");
     }
+
+    if (nextView === 'featureSimilarity') {
+        if (currentView !== 'featureSimilarity') {
+            nodes.forEach((n: d3Node) => {
+                n.x = n.featurePos.x;
+                n.y = n.featurePos.y;
+            })
+            node
+                .transition()
+                .call(n => 
+                    n.transition()
+                        .duration(transitionTime)
+                        .ease(d3.easeLinear)
+                        .attr("transform", (n: Node) => utils.d3Translate(n.featurePos))
+                        .on("start", () => {
+                            simulation = similaritySimulation({nodes, links});
+                        })
+                        .on("end", () => {
+                            simulation.restart();
+                        })
+                );
+        } else {
+            addedNodes.forEach((n: d3Node) => {
+                n.x = n.featurePos.x;
+                n.y = n.featurePos.y;
+            })
+            simulation = similaritySimulation({nodes, links});
+        }  
+    }
     
     if (nextView === 'genreSimilarity') {
         if (currentView !== 'genreSimilarity') {
@@ -513,7 +554,8 @@ export function updateEdgemap(artists: artistID[] = top150, nextView: edgemapVie
                         .ease(d3.easeLinear)
                         .attr("transform", (n: Node) => utils.d3Translate(n.genrePos))
                         .on("start", () => {
-                            simulation = genreSimulation({nodes, links});
+                            simulation.stop();
+                            simulation = similaritySimulation({nodes, links});
                         })
                         .on("end", () => {
                             simulation.restart();
@@ -524,7 +566,7 @@ export function updateEdgemap(artists: artistID[] = top150, nextView: edgemapVie
                 n.x = n.genrePos.x;
                 n.y = n.genrePos.y;
             })
-            simulation = genreSimulation({nodes, links});
+            simulation = similaritySimulation({nodes, links});
         }        
     } else if (nextView === 'timeline') {
         // On change to timeline
@@ -543,6 +585,7 @@ export function updateEdgemap(artists: artistID[] = top150, nextView: edgemapVie
                         .ease(d3.easeLinear)
                         .attr("transform", n => utils.d3Translate(n.timelinePos))
                         .on("start", () => {
+                            simulation.stop();
                             simulation = timelineSimulation({nodes, links});
                         })
                         .on("end", () => {

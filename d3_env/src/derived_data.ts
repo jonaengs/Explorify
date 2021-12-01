@@ -3,9 +3,25 @@ import "./map_extensions.ts"
 import { DefaultMap } from "./map_extensions";
 import * as d3 from "d3";
 
-export const timeExtent: [Date, Date] = d3.extent(streamingHistoryNoSkipped.map(si => si.endTime));
-export const artistStreamTimes: Map<artistID, number> = computeStreamTimes();
+const streamTimes: Date[] = streamingHistoryNoSkipped.map(si => si.endTime);
 
+export const firstStream = streamingHistoryNoSkipped.reduce(
+    (acc, stream) => acc.update(stream.artistID, t => t || stream.endTime),
+    new Map()
+);
+
+export const timeExtent: [Date, Date] = d3.extent(streamTimes);
+
+export function getTimePolyExtent(n: number): Date[] {
+    const keys = Array.from(firstStream.keys());
+    const poly = [timeExtent[0]];
+    for (let i = 1; i < n + 1; i++) {
+        poly.push(firstStream.get(keys[Math.floor(keys.length * (i / (n+1)))]));
+    }
+    return poly.concat([timeExtent[1]]);
+}
+
+export const artistStreamTimes: Map<artistID, number> = computeStreamTimes();
 function computeStreamTimes() {
     const times: Map<artistID, number> = streamingHistoryNoSkipped.reduce((acc, stream) => 
         acc.update(stream.artistID, t => t + stream.msPlayed),
