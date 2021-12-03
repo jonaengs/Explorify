@@ -47,6 +47,8 @@ type d3Link = Link & {
     target: d3Node
 }
 
+type d3Selection = d3.Selection<any, any, any, any>;
+
 const sessions = getSessions();
 const sessionArtists = sessions.map(sesh => sesh.map(stream => stream.artistID));
 const sessionOccurrences = new Map(
@@ -223,7 +225,7 @@ function computeNetwork(): Network {
             const [gs1, gs2] = [artistToGenres.get(a1), artistToGenres.get(a2)];
             const shared = utils.intersection(gs1, gs2);
             if (!shared.size) return;
-            const obj = {
+            return {
                     id: a1 + a2,
                     source: a1,
                     target: a2,
@@ -235,27 +237,9 @@ function computeNetwork(): Network {
                         // Overlap Coefficient: return utils.intersection(gs1, gs2).size / Math.min(gs1.size, gs2.size);
                     })()
                 };
-            return [obj, {...obj, source: a2, target: a1}]
         }
     ))
-    .filter(x => x !== null && x != undefined)
-    // .filter(({source, target}) => artistSet.has(source) && artistSet.has(target));
-
-    // const links = Array.from(genreToArtists).flatMap(([genre, artists]) => 
-    //     artists.flatMap(a1 => artists.map(a2 => ({
-    //             source: a1,
-    //             target: a2,
-    //             label: genre,
-    //             count: utils.intersection(artistToGenres.get(a1), artistToGenres.get(a2)).size,
-    //             proportion: (() => {
-    //                 const [gs1, gs2] = [artistToGenres.get(a1), artistToGenres.get(a2)]
-    //                 // Jaccard Similarity: 
-    //                 return utils.intersection(gs1, gs2).size / utils.union(gs1, gs2).size;
-    //                 // Overlap Coefficient: //return utils.intersection(gs1, gs2).size / Math.min(gs1.size, gs2.size);
-    //             })()
-    //         })
-    // ))).filter(({source, target}) => source !== target)
-    // .filter(({source, target}) => artistSet.has(source) && artistSet.has(target));     
+    .filter(x => x !== null && x != undefined);      
 
     return {
         nodes: nodes,
@@ -301,8 +285,7 @@ function highlightSelection(selected: d3Node) {
     const neighbors = new Set(
         links.filter((l: d3Link) => l.source.id === selected.id).map(l => l.target.id)
     ).add(selected.id);
-
-    const selectedGenres = artistToGenres.get(selected.id);
+    
     node
         .selectChildren("circle") 
         .style("fill", (n: d3Node) => neighbors.has(n.id) ? getHSL(n) : deselectHSL);
@@ -361,6 +344,7 @@ function addNodes(svg: utils.SVGSelection, nodes: d3Node[]) {
         .data(nodes, (n: d3Node) => n.id)
         .enter()
         .append("g")
+        .attr("id", n => n.id)
         .attr("class", "node");
     node.append("circle")
         .attr("r", n => n.r)  // @ts-ignore
@@ -375,7 +359,7 @@ function addNodes(svg: utils.SVGSelection, nodes: d3Node[]) {
         .attr("class", "unselectable")
         .on("mouseover", onMouseover)
         .on("mouseout", onMouseout)
-        .attr("visibility", "hidden");
+        .style("visibility", "hidden");
     
     return node
 }
@@ -384,46 +368,41 @@ function addNodes(svg: utils.SVGSelection, nodes: d3Node[]) {
 function setLinks(links: d3Link[], svg?: SVGSelection) {
     const getLinkColor = (color) => d3.scaleLinear().range([color, "black"])
     const onEnter = (selection) => {
-        return selection
+        const linkNode = selection.append("g");
+        linkNode
+            .attr("class", "link-node")
+            .style("visibility", "hidden");
+        linkNode
             .append("path")
-            .attr("class", "link")
+            .attr("id", (l: Link) => l.id)
+            .attr("class", "link-path")
             .style("fill", "none")
             .style("opacity", 0.9)
             .style("stroke", (l: d3Link) => getLinkColor(getHSL(l.target))(l.proportion))
-            .style("stroke-width", (l: d3Link) => Math.log2(l.count) + 1)
-            .style("visibility", "hidden");
+            .style("stroke-width", (l: d3Link) => Math.log2(l.count) + 1);
 
-        // const linkNode = selection.append("g");
-        // linkNode
-        //     .attr("class", "link-node")
-        //     .style("visibility", "hidden");
-        // linkNode
-        //     .append("path")
-        //     .attr("id", (l: Link) => l.id)
-        //     .attr("class", "link-path")
-        //     .style("fill", "none")
-        //     .style("opacity", 0.9)
-        //     .style("stroke", (l: d3Link) => getLinkColor(getHSL(l.target))(l.proportion))
-        //     .style("stroke-width", (l: d3Link) => Math.log2(l.count) + 1);
-        // linkNode
-        //     .append("text")
-        //     .append("textPath")
-        //         .attr("alignment-baseline", "top")
-        //         .attr("xlink:href", (l: Link) => "#"+l.id)
-        //         .text((l: Link) => l.label);
+        linkNode
+            .append("text")
+            .append("textPath")
+                .attr("alignment-baseline", "top")
+                .attr("startOffset", 50)
+                .attr("xlink:href", (l: Link) => "#"+l.id)
+            .text((l: Link) => l.label)
+                .style("fill", (l: d3Link) => getLinkColor(getHSL(l.target))(l.proportion));
         
         
-        // return linkNode;
+        return linkNode;
     }
 
-    const link = (svg || edgemapState.svg as utils.SVGSelection)
-        .selectAll("path")
+    const link = (edgemapState.svg as utils.SVGSelection)
+        .selectAll(".link-node")
         .data(links)
         .join(
             enter => onEnter(enter)
                 .lower(), // re-insert links as the first child of svg, so that links are drawn first (and thus behind other objects)
             update => update
-                .style("stroke", (l: d3Link) => getLinkColor(getHSL(l.target))(l.proportion)),
+                // .style("stroke", (l: d3Link) => getLinkColor(getHSL(l.target))(l.proportion))
+                ,
             exit => exit.remove()
         );
 
@@ -458,6 +437,7 @@ export function setupEdgemap(ref: Ref<undefined>, artists: artistID[]) {
     
     const simulation = similaritySimulation({nodes, links});
     
+    edgemapState.svg = svg
     const link = setLinks(links as d3Link[], svg);
     const node = addNodes(svg, nodes as d3Node[]);
 
@@ -473,19 +453,18 @@ export function setupEdgemap(ref: Ref<undefined>, artists: artistID[]) {
     setSimulation(simulation);
 }
 
-function makeRestrictedTick(tick: (node, link) => void) {
+function makeRestrictedTick(tickFunc: (node: d3Selection, link: d3Selection) => void) {
     let nodePositions = null;
     function ticked() {
         const {node, link, nodes, _simulation} = edgemapState;
-        tick(node, link);
+        tickFunc(node, link);
         
         if (nodePositions !== null) {
             const movement = nodes.reduce(
                 (sum, n, i) => sum + Math.abs(n.x - nodePositions[i][0]) + Math.abs(n.y - nodePositions[i][1]),
                 0
             )
-            // console.log(movement);
-            if (movement < 10) _simulation.stop();
+            if (movement < 10) _simulation.alphaTarget(_simulation.alphaTarget()); // stops the simulation
         }
         nodePositions = nodes.map(n=> [n.x, n.y]);
     }
@@ -496,15 +475,19 @@ const alphaMin = 0.05;
 const targetSimulationIterations = 100;
 const alphaDecay = 1 - Math.pow(0.001, 1 / targetSimulationIterations);
 function similaritySimulation({nodes, links}: Network) {
+    let first = true; // compute edges on initial tick. Solves visual bug where edges appear to not update after transition.
     const ticked = makeRestrictedTick((node, link) => {        
         console.log("similarity");
-        // link.selectChildren("path").attr("d", computeCurve);
-        link.attr("d", computeCurve);
+        if (first) ended();
         node.attr("transform", (d: d3Node) => 
                 `translate(${utils.clampX(d.x)}, ${utils.clampY(d.y)})`
             );
         } 
     )
+    const ended = () => {
+        const {link} = edgemapState;
+        link.selectChildren("path").attr("d", computeCurve)
+    }
 
     return d3.forceSimulation(nodes)
         .force("link", d3.forceLink(links).id(d => d.id).strength(0))
@@ -512,16 +495,22 @@ function similaritySimulation({nodes, links}: Network) {
         .alphaMin(alphaMin)
         .alphaDecay(alphaDecay)
         .on("tick", ticked)
+        .on("end", ended)
         .stop();
     }
 
 function timelineSimulation({nodes, links}: Network) {
+    let first = true;
     const ticked = makeRestrictedTick((node, link) => {
         console.log("timeline");
-        // link.selectChildren("path").attr("d", computeCurve);
-        link.attr("d", computeCurve);
+        if (first) ended()
         node.attr("transform", (d: d3Node) => `translate(${d.x}, ${utils.clampX(d.y)})`);
     });
+
+    const ended = () => {
+        const {link} = edgemapState;
+        link.selectChildren("path").attr("d", computeCurve)
+    }
         
     return  d3.forceSimulation(nodes)
         .force("link", d3.forceLink(links).id(d => d.id).strength(0))
@@ -530,6 +519,7 @@ function timelineSimulation({nodes, links}: Network) {
         .alphaMin(alphaMin)
         .alphaDecay(alphaDecay)
         .on("tick", ticked)
+        .on("end", ended)
         .stop();
 }
 
@@ -583,6 +573,7 @@ export function updateEdgemap(artists: artistID[] = top150, nextView: EdgemapVie
                         .attr("transform", (n: Node) => utils.d3Translate(n.featurePos))
                         .on("start", () => {
                             link.style("visibility", "hidden");
+                            node.selectChildren("text").style("visibility", "hidden");
                             simulation.stop();
                             simulation = similaritySimulation({nodes, links});
                         })
@@ -615,6 +606,7 @@ export function updateEdgemap(artists: artistID[] = top150, nextView: EdgemapVie
                         .attr("transform", (n: Node) => utils.d3Translate(n.genrePos))
                         .on("start", () => {
                             link.style("visibility", "hidden");
+                            node.selectChildren("text").style("visibility", "hidden");
                             simulation.stop();
                             simulation = similaritySimulation({nodes, links});
                         })
@@ -648,6 +640,7 @@ export function updateEdgemap(artists: artistID[] = top150, nextView: EdgemapVie
                         .attr("transform", n => utils.d3Translate(n.timelinePos))
                         .on("start", () => {
                             link.style("visibility", "hidden");
+                            node.selectChildren("text").style("visibility", "hidden");
                             simulation.stop();
                             simulation = timelineSimulation({nodes, links});
                         })
@@ -668,7 +661,7 @@ export function updateEdgemap(artists: artistID[] = top150, nextView: EdgemapVie
     setLinks(links, svg);
     addedNodes.length && addNodes(svg, addedNodes);
 
-    [node, link] = [svg.selectAll(".node"), svg.selectAll(".link")];
+    [node, link] = [svg.selectAll(".node"), svg.selectAll(".link-node")];
 
     highlightSelection(edgemapState.selected);
     
