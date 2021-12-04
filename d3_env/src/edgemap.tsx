@@ -139,17 +139,25 @@ function toPolar(x: number, y: number): [number, number] {
  * @param param0 x and y coordinates of a point, normalized to fit inside svg coordinates 
  */
 export type NodePositionKey = "genrePos" | "featurePos" | "timelinePos";
-function createGetHSL(positionKey: NodePositionKey) {
+function createGetColor(positionKey: NodePositionKey) {
+    if (positionKey === "timelinePos") {
+        const scale = d3.scaleLinear().domain([width, 0]);
+        const colorScale = d3.interpolateYlGnBu;
+        return (node: Node) => {
+            return colorScale(scale(node.timelinePos.x));
+        }
+    }
     return (node: Node) => {
         const {x, y} = node[positionKey];
         const [dist, deg] = toPolar(x, y);
         return d3.hsl(deg, dist, 0.6, 1)
     }
 }
-let getHSL = createGetHSL("genrePos");
+
+let getColor = createGetColor("genrePos");
 export function setNodeColorKey(key: NodePositionKey) {
     console.log(key);
-    getHSL = createGetHSL(key);
+    getColor = createGetColor(key);
     setLinks(edgemapState.links);
     dropSelectionHighlight();
 }
@@ -186,7 +194,6 @@ function computeNetwork(): Network {
         );
     })();
 
-    // const timelineAxis = d3.scaleTime().domain(timeExtent).range([0, width])
     const timelineAxis = d3.scaleTime().domain(getTimePolyExtent(5)).range(utils.divideWidth(5));
     const nodeSizes = d3.scaleSqrt().domain(d3.extent(artistStreamTimes.values())).range([5, 20])
     
@@ -206,18 +213,6 @@ function computeNetwork(): Network {
             ...genrePositions.get(aid) // x & y coords default to genrePosition
         }))
     .filter(v => v !== null && v !== undefined);
-
-    const genreToArtists: Map<genre, artistID[]> = (() => {
-        let map = new DefaultMap<genre, artistID[]>([]);
-        artistData
-            .filter(a => artistSet.has(a.id))
-            .forEach(
-                artist => artist.genres.forEach(genre => {
-                    map = map.update(genre, arr => arr.concat([artist.id]))
-                })
-            );
-        return map;
-    })();
     
     const links = Array.from(artistSet).flatMap(a1 => 
         Array.from(artistSet).flatMap(a2 => {
@@ -288,15 +283,15 @@ function highlightSelection(selected: d3Node) {
     
     node
         .selectChildren("circle") 
-        .style("fill", (n: d3Node) => neighbors.has(n.id) ? getHSL(n) : deselectHSL);
+        .style("fill", (n: d3Node) => neighbors.has(n.id) ? getColor(n) : deselectHSL);
     node
         .selectChildren("text") 
         .style("visibility", (n: d3Node) => neighbors.has(n.id) ?  "visible" : "hidden");
 
-    const selectedNode = node.filter(_n => _n.id === selected.id);
+    const selectedNode = node.filter((n: d3Node) => n.id === selected.id);
     selectedNode.selectChildren("circle")
         .style("stroke-width", 3)
-        .style("stroke", getHSL)
+        .style("stroke", getColor)
         .style("fill", "white");
 
     edgemapState.selectedNeighbors = neighbors;
@@ -307,13 +302,13 @@ function dropSelectionHighlight() {
     const {node, link, selectedNeighbors, selected} = edgemapState;
     
     link.style("visibility", "hidden");
-    node.selectChildren("circle").style("fill", getHSL);
+    node.selectChildren("circle").style("fill", getColor);
     
     if (selected !== null) {
-        const neighbors = node.filter(n => selectedNeighbors.has(n.id));
+        const neighbors = node.filter((n: d3Node) => selectedNeighbors.has(n.id));
         neighbors.selectChildren("text").style("visibility", "hidden");
     
-        neighbors.filter(n => n.id === selected.id)
+        neighbors.filter((n: d3Node) => n.id === selected.id)
             .selectChildren("circle")
             .style("stroke-width", 0);
     }
@@ -348,7 +343,7 @@ function addNodes(svg: utils.SVGSelection, nodes: d3Node[]) {
         .attr("class", "node");
     node.append("circle")
         .attr("r", n => n.r)  // @ts-ignore
-        .style("fill", n => selected ? deselectHSL : getHSL(n))
+        .style("fill", n => selected ? deselectHSL : getColor(n))
         .on("mouseover", onMouseover)
         .on("mouseout", onMouseout)
         .on("click", (_event, n) => highlightSelection(n));
@@ -365,7 +360,7 @@ function addNodes(svg: utils.SVGSelection, nodes: d3Node[]) {
 }
 
 // Use this approach to display genres along link paths: https://css-tricks.com/snippets/svg/curved-text-along-path/
-function setLinks(links: d3Link[], svg?: SVGSelection) {
+function setLinks(links: d3Link[]) {
     const getLinkColor = (color) => d3.scaleLinear().range([color, "black"])
     const onEnter = (selection) => {
         const linkNode = selection.append("g");
@@ -378,7 +373,7 @@ function setLinks(links: d3Link[], svg?: SVGSelection) {
             .attr("class", "link-path")
             .style("fill", "none")
             .style("opacity", 0.9)
-            .style("stroke", (l: d3Link) => getLinkColor(getHSL(l.target))(l.proportion))
+            .style("stroke", (l: d3Link) => getLinkColor(getColor(l.target))(l.proportion))
             .style("stroke-width", (l: d3Link) => Math.log2(l.count) + 1);
 
         linkNode
@@ -388,7 +383,7 @@ function setLinks(links: d3Link[], svg?: SVGSelection) {
                 .attr("startOffset", 50)
                 .attr("xlink:href", (l: Link) => "#"+l.id)
             .text((l: Link) => l.label)
-                .style("fill", (l: d3Link) => getLinkColor(getHSL(l.target))(l.proportion));
+                .style("fill", (l: d3Link) => getLinkColor(getColor(l.target))(l.proportion));
         
         
         return linkNode;
@@ -411,7 +406,8 @@ function setLinks(links: d3Link[], svg?: SVGSelection) {
 
 function computeCurve(d: d3Link) {
     const [dx, dy] = [d.target.x - d.source.x, d.target.y - d.source.y];
-    const dr = Math.sqrt(dx*dx + dy*dy);
+    const dr = Math.sqrt(dx*dx + dy*dy);  
+    // @ts-ignore "+ 0" converts boolean to number
     const curveRight = (d.target.x < d.source.x) + 0;
     return `M${d.source.x},${d.source.y}A${dr},${dr} 0 0,${curveRight} ${d.target.x},${d.target.y}`
 }
@@ -434,14 +430,14 @@ export function setupEdgemap(ref: Ref<undefined>, artists: artistID[]) {
     const svg = utils.createSVG(ref);
     
     const background = svg.append("rect").attr("width", width).attr("height", height).style("opacity", 0);
+    background.on("click", dropSelectionHighlight);
     
     const simulation = similaritySimulation({nodes, links});
     
     edgemapState.svg = svg
-    const link = setLinks(links as d3Link[], svg);
+    const link = setLinks(links as d3Link[]);
     const node = addNodes(svg, nodes as d3Node[]);
 
-    background.on("click", dropSelectionHighlight);
 
     const timelineAxis = svg.append("g")
         .attr("transform", `translate(0, ${height/2})`)
@@ -478,7 +474,10 @@ function similaritySimulation({nodes, links}: Network) {
     let first = true; // compute edges on initial tick. Solves visual bug where edges appear to not update after transition.
     const ticked = makeRestrictedTick((node, link) => {        
         console.log("similarity");
-        if (first) ended();
+        if (first) {
+            first = false;
+            ended();
+        }
         node.attr("transform", (d: d3Node) => 
                 `translate(${utils.clampX(d.x)}, ${utils.clampY(d.y)})`
             );
@@ -497,13 +496,16 @@ function similaritySimulation({nodes, links}: Network) {
         .on("tick", ticked)
         .on("end", ended)
         .stop();
-    }
+}
 
 function timelineSimulation({nodes, links}: Network) {
     let first = true;
     const ticked = makeRestrictedTick((node, link) => {
         console.log("timeline");
-        if (first) ended()
+        if (first) {
+            first = false;
+            ended();
+        }
         node.attr("transform", (d: d3Node) => `translate(${d.x}, ${utils.clampX(d.y)})`);
     });
 
@@ -549,7 +551,6 @@ export function updateEdgemap(artists: artistID[] = top150, nextView: EdgemapVie
         .concat(addedLinks);
 
     if (removed.size) {
-        // link.filter((l: d3Link) => removed.has(l.source.id) || removed.has(l.target.id)).remove();
         node.filter((n: d3Node) => removed.has(n.id)).remove();
     }
 
