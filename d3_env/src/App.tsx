@@ -5,7 +5,7 @@ import { Edgemap, EdgemapView, NodePositionKey, setNodeColorKey, setupEdgemap, u
 import * as utils from './utils';
 
 
-const update = utils.debounce(updateEdgemap, 750);
+const update = utils.debounce(updateEdgemap, 300);
 export const App = () => {
     const [top, setTop] = useState(50);
     const topArtists = Array.from(artistStreamTimes.keys()).slice(0, top);    

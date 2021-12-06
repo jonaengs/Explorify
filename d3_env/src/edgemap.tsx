@@ -224,7 +224,7 @@ function computeNetwork(): Network {
                     id: a1 + a2,
                     source: a1,
                     target: a2,
-                    label: Array.from(shared).join(", "),
+                    label: Array.from(shared).join(" | "),
                     count: utils.intersection(gs1, gs2).size,
                     proportion: (() => {
                         // Jaccard Similarity: 
@@ -378,6 +378,7 @@ function setLinks(links: d3Link[]) {
 
         linkNode
             .append("text")
+                .attr("class", "link-text")
             .append("textPath")
                 .attr("alignment-baseline", "top")
                 .attr("startOffset", 50)
@@ -659,7 +660,7 @@ export function updateEdgemap(artists: artistID[] = top150, nextView: EdgemapVie
         }
     }
 
-    setLinks(links, svg);
+    setLinks(links);
     addedNodes.length && addNodes(svg, addedNodes);
 
     [node, link] = [svg.selectAll(".node"), svg.selectAll(".link-node")];
