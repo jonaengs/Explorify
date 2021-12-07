@@ -8,6 +8,8 @@ import {streamingHistory, genre, artistName, StreamInstance, artistData, streami
 import { artistStreamTimes, artistToGenres, firstArtistStream, getTimePolyExtent, timeExtent, timePolyExtent } from './derived_data';
 import React, { Ref, useCallback, useEffect, useRef } from 'react';
 import { SVGSelection } from './utils';
+import Quadtree from '@timohausmann/quadtree-js';
+import { text } from 'd3';
 
 /**
  * A feature vector reduced to 2 dimensions. Must be mapped to fit within chart.
@@ -258,6 +260,8 @@ let edgemapState = {
     selectedNeighbors: new Set<artistID>(),
     currentView: "genreSimilarity",
     timelineAxis: null,
+    quadTree: null,
+    showLabels: true,
 };
 
 function setSimulation(simulation: d3.Simulation<any, any>, dontStart=false) {
@@ -276,6 +280,7 @@ function highlightSelection(selected: d3Node) {
     const {node, link, links} = edgemapState;
 
     link.style("visibility", (l: d3Link) => l.source.id === selected.id ? "visible" : "hidden");
+    hideLinkLabels();
 
     const neighbors = new Set(
         links.filter((l: d3Link) => l.source.id === selected.id).map(l => l.target.id)
@@ -284,9 +289,12 @@ function highlightSelection(selected: d3Node) {
     node
         .selectChildren("circle") 
         .style("fill", (n: d3Node) => neighbors.has(n.id) ? getColor(n) : deselectHSL);
-    node
-        .selectChildren("text") 
-        .style("visibility", (n: d3Node) => neighbors.has(n.id) ?  "visible" : "hidden");
+
+    
+    showNodeLabels(neighbors);
+    // node
+    //     .selectChildren("text") 
+    //     .style("visibility", (n: d3Node) => neighbors.has(n.id) ?  "visible" : "hidden");
 
     const selectedNode = node.filter((n: d3Node) => n.id === selected.id);
     selectedNode.selectChildren("circle")
@@ -294,12 +302,13 @@ function highlightSelection(selected: d3Node) {
         .style("stroke", getColor)
         .style("fill", "white");
 
+
     edgemapState.selectedNeighbors = neighbors;
     edgemapState.selected = selected;
 }
 
 function dropSelectionHighlight() {
-    const {node, link, selectedNeighbors, selected} = edgemapState;
+    const {node, link, selectedNeighbors, selected, showLabels} = edgemapState;
     
     link.style("visibility", "hidden");
     node.selectChildren("circle").style("fill", getColor);
@@ -313,6 +322,8 @@ function dropSelectionHighlight() {
             .style("stroke-width", 0);
     }
 
+    if (showLabels) showNodeLabels();
+
     edgemapState.selected = null;
     edgemapState.selectedNeighbors = new Set();
 }
@@ -320,17 +331,30 @@ function dropSelectionHighlight() {
 function addNodes(svg: utils.SVGSelection, nodes: d3Node[]) {
     function onMouseover(_e: PointerEvent, n: d3Node) {   
         const {node} = edgemapState;
+        
         const current = node.filter((_n: d3Node) => _n.id === n.id);
         current
             .selectChildren("text")
             .style("visibility", "visible")
     }
     function onMouseout(_e: PointerEvent, n: d3Node) {
-        const {node} = edgemapState;
+        const {node, showLabels} = edgemapState;
         const current = node.filter((_n: d3Node) => _n.id === n.id);
         current
             .selectChildren("text")
-            .style("visibility", (_n: d3Node) => edgemapState.selectedNeighbors.has(_n.id) ? "visible" : "hidden");
+            .style("visibility", (_n: d3Node) => {
+                const circle: HTMLElement = this;
+                const text = circle.nextSibling
+                if (!edgemapState.selected) {
+                    if (showLabels && !itemOverlaps(text))
+                        return "visible";                    
+                    return "hidden";
+                }
+                if (!edgemapState.selectedNeighbors.has(_n.id) || itemOverlaps(text)) {
+                    return "hidden";
+                }
+                return "visible";
+            });
     }
     const {selected} = edgemapState;
 
@@ -375,13 +399,12 @@ function setLinks(links: d3Link[]) {
             .style("opacity", 0.9)
             .style("stroke", (l: d3Link) => getLinkColor(getColor(l.target))(l.proportion))
             .style("stroke-width", (l: d3Link) => Math.log2(l.count) + 1);
-
         linkNode
             .append("text")
                 .attr("class", "link-text")
             .append("textPath")
                 .attr("alignment-baseline", "top")
-                .attr("startOffset", 50)
+                .attr("startOffset", () => ((Math.random() * 30 + 10) + "%"))
                 .attr("xlink:href", (l: Link) => "#"+l.id)
             .text((l: Link) => l.label)
                 .style("fill", (l: d3Link) => getLinkColor(getColor(l.target))(l.proportion));
@@ -397,7 +420,8 @@ function setLinks(links: d3Link[]) {
             enter => onEnter(enter)
                 .lower(), // re-insert links as the first child of svg, so that links are drawn first (and thus behind other objects)
             update => update
-                // .style("stroke", (l: d3Link) => getLinkColor(getHSL(l.target))(l.proportion))
+                .style("fill", (l: d3Link) => getLinkColor(getColor(l.target))(l.proportion))
+                // .style("stroke", (l: d3Link) => getLinkColor(getColor(l.target))(l.proportion))
                 ,
             exit => exit.remove()
         );
@@ -439,6 +463,11 @@ export function setupEdgemap(ref: Ref<undefined>, artists: artistID[]) {
     const link = setLinks(links as d3Link[]);
     const node = addNodes(svg, nodes as d3Node[]);
 
+    // Use coordinate space of the whole browser, as these are easier to get for each element. 
+    const quadTree = new Quadtree(
+        document.getElementsByTagName("body")[0].getBoundingClientRect()
+    );
+
 
     const timelineAxis = svg.append("g")
         .attr("transform", `translate(0, ${height/2})`)
@@ -446,7 +475,7 @@ export function setupEdgemap(ref: Ref<undefined>, artists: artistID[]) {
         .call(d3.axisBottom(d3.scaleTime().domain(getTimePolyExtent(5)).range(utils.divideWidth(5)))); 
         // .call(d3.axisBottom(d3.scaleTime().domain(timeExtent).range([0, width])));   
 
-    edgemapState = {...edgemapState, artistSet, node, link, nodes, links, svg, timelineAxis};
+    edgemapState = {...edgemapState, artistSet, node, link, nodes, links, svg, timelineAxis, quadTree};
     setSimulation(simulation);
 }
 
@@ -526,10 +555,89 @@ function timelineSimulation({nodes, links}: Network) {
         .stop();
 }
 
+type Box = {x: number, y: number, width: number, height: number};
+function overlap(r1: Box) {
+    return (r2: Box) => {
+        const xOverlap = r1.x < (r2.x + r2.width) && r2.x < (r1.x + r1.width);
+        const yOverlap = r1.y < (r2.y + r2.height) && r2.y < (r1.y + r1.height);
+        return xOverlap && yOverlap;
+    }
+}
+
+function itemOverlaps(htmlNode: ChildNode, quadTree?: Quadtree) {
+    const qTree = quadTree || edgemapState.quadTree;
+    const bbox = htmlNode.getBoundingClientRect();
+    
+    return qTree.retrieve(bbox)
+        .filter((rect: Box) => bbox.x !== rect.x && bbox.y !== rect.y) // don't collide with self
+        .some(overlap(bbox));
+}
+
+// Quadtree implementation: https://github.com/timohausmann/quadtree-js/
+function showNodeLabels(subset?) {
+    // Use coordinate space of the whole browser, as these are easier to get for each element. 
+    const {quadTree} = edgemapState;
+    quadTree.clear();
+    edgemapState.node.selectChildren("text").style("visibility", "hidden");
+
+    const node = (subset !== undefined) ? edgemapState.node.filter(n => subset.has(n.id)) : edgemapState.node;
+    const text = node.selectChildren("text");
+    text.nodes().forEach(n => {
+        const bbox = n.getBoundingClientRect();
+        
+        if (!quadTree.retrieve(bbox).some(overlap(bbox))){
+            n.style.visibility = "visible";
+            quadTree.insert(bbox);
+        }
+            
+    });
+    
+    text.raise();
+    edgemapState.quadTree = quadTree;
+}
+
+function hideLinkLabels() {
+    const {width, height} = document.getElementsByTagName("body")[0].getBoundingClientRect();
+    const quadTree = new Quadtree({x: 0, y: 0, width, height});
+
+    function sortByGenres(nodes) {
+        const nodeGenres = new Map<any, string[]>(nodes.map(n => [n, n.getInnerHTML().split(" | ")]));
+        const sorted = nodes.sort((n1, n2) => nodeGenres.get(n2).length - nodeGenres.get(n1).length);
+        return sorted
+        
+    }
+    const link = edgemapState.link;
+    const textPaths = link.nodes()
+        .filter(n => n.style.visibility == "visible")
+        .map(n => n.children[1].children[0]);
+
+    sortByGenres(textPaths).forEach(tp => {            
+        const bbox = tp.getBoundingClientRect();
+        
+        if (quadTree.retrieve(bbox).some(overlap(bbox))){
+            tp.style.visibility = "hidden";
+        }
+            
+        quadTree.insert(bbox);
+    });    
+}
+
+export function setShowLabels(b: boolean) {
+    if (edgemapState.selected === null) {
+        if (b) {
+            showNodeLabels();
+        }
+        else {
+            edgemapState.node.selectChildren("text").style("visibility", "hidden");
+        }
+    }
+    edgemapState.showLabels = b;
+}
+
 const transitionTime = 1500;
 export type EdgemapView = "genreSimilarity" | "timeline" | "featureSimilarity";
 export function updateEdgemap(artists: artistID[] = top150, nextView: EdgemapView = "genreSimilarity") {    
-    let {svg, node, link, nodes, links, _simulation: simulation, currentView, timelineAxis} = edgemapState;
+    let {svg, node, link, nodes, links, _simulation: simulation, currentView, timelineAxis, showLabels} = edgemapState;
     const artistSet = new Set(artists);
     const [added, removed] = utils.bothDifference(artistSet, edgemapState.artistSet);
 
@@ -669,4 +777,6 @@ export function updateEdgemap(artists: artistID[] = top150, nextView: EdgemapVie
     
     edgemapState = {...edgemapState, artistSet, nodes, links, node, link, currentView: nextView};
     setSimulation(simulation, nextView !== currentView);
+
+    if (showLabels) showNodeLabels();
 }
