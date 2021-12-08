@@ -90,7 +90,7 @@ function App() {
                                             </Card>
                                         </Col>
                                         <Col md={10}>
-                                            <Card style={{background: "#f8f8f8"}}>
+                                            <Card className={"display-card"}>
                                                 <Card.Header>
                                                     <h5>
                                                         <a>Artist-Genre Network</a>
