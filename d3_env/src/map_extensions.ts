@@ -1,11 +1,11 @@
-export {};
+export {};  // For some reason maybe needed to make this work
 
 declare global {
     interface Map<K, V> {
-        update: (k: K, f: (v?: V) => V) => Map<K, V>
+        update: (k: K, f: (v?: V) => V) => this
     }
     interface DefaultMap<K, V> {
-        update: (k: K, f: (v: V) => V) => DefaultMap<K, V>
+        update: (k: K, f: (v: V) => V) => this
     }
 }
 
@@ -20,7 +20,7 @@ export class DefaultMap<K, V> extends Map<K, V> {
         super(iterable);
         
         // returns value itself if primitive, a new object if object
-        this.defaultGen = defaultVal === Object(defaultVal) ? 
+        this.defaultGen = defaultVal === Object(defaultVal) ?  // @ts-ignore
             () => new defaultVal.constructor()
             : () => defaultVal;
     }
@@ -28,4 +28,8 @@ export class DefaultMap<K, V> extends Map<K, V> {
     get(k: K): V {
         return super.get(k) || this.defaultGen();
     }
+}
+
+DefaultMap.prototype.update = function<K, V>(k: K, f: (v: V) => V) {
+    return this.set(k, f(this.get(k)));
 }

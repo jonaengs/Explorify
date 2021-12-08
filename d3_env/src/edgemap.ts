@@ -1,15 +1,13 @@
 import * as drResults from '../../data/dr_results.json'
 import * as d3 from "d3";
 import * as utils from './utils';
-import {margin, width, height, maxDistance} from './constants.mjs';
+import { width, height, maxDistance} from './constants';
 import {DefaultMap} from './map_extensions';
 import './map_extensions.ts';
-import {streamingHistory, genre, artistName, StreamInstance, artistData, streamingHistoryNoSkipped, artistID, artistMap} from './data'
-import { artistStreamTimes, artistToGenres, firstArtistStream, getTimePolyExtent, timeExtent, timePolyExtent } from './derived_data';
-import React, { Ref, useCallback, useEffect, useRef } from 'react';
-import { SVGSelection } from './utils';
+import { StreamInstance, artistData, streamingHistoryNoSkipped, artistID, artistMap} from './data'
+import { artistStreamTimes, artistToGenres, firstArtistStream, getTimePolyExtent } from './derived_data';
+import { Ref } from 'react';
 import Quadtree from '@timohausmann/quadtree-js';
-import { text } from 'd3';
 
 /**
  * A feature vector reduced to 2 dimensions. Must be mapped to fit within chart.
@@ -55,7 +53,7 @@ const sessions = getSessions();
 const sessionArtists = sessions.map(sesh => sesh.map(stream => stream.artistID));
 const sessionOccurrences = new Map(
     artistData.map(artist => 
-        [artist.id, sessionArtists.reduce((count, as) => count + as.includes(artist.id), 0)]
+        [artist.id, sessionArtists.reduce((count, as) => count + +as.includes(artist.id), 0)]
     )
 );
 
@@ -344,7 +342,7 @@ function addNodes(svg: utils.SVGSelection, nodes: d3Node[]) {
             .selectChildren("text")
             .style("visibility", (_n: d3Node) => {
                 const circle: HTMLElement = this;
-                const text = circle.nextSibling
+                const text = circle.nextSibling as HTMLElement
                 if (!edgemapState.selected) {
                     if (showLabels && !itemOverlaps(text))
                         return "visible";                    
@@ -365,8 +363,9 @@ function addNodes(svg: utils.SVGSelection, nodes: d3Node[]) {
         .append("g")
         .attr("id", n => n.id)
         .attr("class", "node");
+    // @ts-ignore
     node.append("circle")
-        .attr("r", n => n.r)  // @ts-ignore
+        .attr("r", n => n.r)
         .style("fill", n => selected ? deselectHSL : getColor(n))
         .on("mouseover", onMouseover)
         .on("mouseout", onMouseout)
@@ -432,8 +431,7 @@ function setLinks(links: d3Link[]) {
 function computeCurve(d: d3Link) {
     const [dx, dy] = [d.target.x - d.source.x, d.target.y - d.source.y];
     const dr = Math.sqrt(dx*dx + dy*dy);  
-    // @ts-ignore "+ 0" converts boolean to number
-    const curveRight = (d.target.x < d.source.x) + 0;
+    const curveRight = +(d.target.x < d.source.x) + 0;
     return `M${d.source.x},${d.source.y}A${dr},${dr} 0 0,${curveRight} ${d.target.x},${d.target.y}`
 }
 
@@ -519,7 +517,7 @@ function similaritySimulation({nodes, links}: Network) {
     }
 
     return d3.forceSimulation(nodes)
-        .force("link", d3.forceLink(links).id(d => d.id).strength(0))
+        .force("link", d3.forceLink(links).id(d => (d as Node).id).strength(0))
         .force("collide", d3.forceCollide(n => n.r + 2))
         .alphaMin(alphaMin)
         .alphaDecay(alphaDecay)
@@ -530,7 +528,7 @@ function similaritySimulation({nodes, links}: Network) {
 
 function timelineSimulation({nodes, links}: Network) {
     let first = true;
-    const ticked = makeRestrictedTick((node, link) => {
+    const ticked = makeRestrictedTick((node, _link) => {
         console.log("timeline");
         if (first) {
             first = false;
@@ -545,7 +543,7 @@ function timelineSimulation({nodes, links}: Network) {
     }
         
     return  d3.forceSimulation(nodes)
-        .force("link", d3.forceLink(links).id(d => d.id).strength(0))
+        .force("link", d3.forceLink(links).id(d => (d as Node).id).strength(0))
         .force("collide", d3.forceCollide(n => n.r + 1))
         .force("anchor", d3.forceX(n => n.x).strength(3))
         .alphaMin(alphaMin)
@@ -564,7 +562,7 @@ function overlap(r1: Box) {
     }
 }
 
-function itemOverlaps(htmlNode: ChildNode, quadTree?: Quadtree) {
+function itemOverlaps(htmlNode: HTMLElement, quadTree?: Quadtree) {
     const qTree = quadTree || edgemapState.quadTree;
     const bbox = htmlNode.getBoundingClientRect();
     

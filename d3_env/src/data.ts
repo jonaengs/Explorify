@@ -6,7 +6,7 @@ import './map_extensions.ts'
 export type genre = string;
 export type artistName = string;
 export type artistID = string;
-
+export type trackID = string;
 
 export type ArtistData = {
     id: artistID,
@@ -32,12 +32,12 @@ export type StreamInstance = {
     // track info
     trackName: string,
     trackDurationMS: number,
-    trackID: string
+    trackID: trackID,
     trackPopularity: number
 }
 
 export type TrackFeature = {
-    id: string,
+    id: trackID,
 
     // Following should all be in [0, 1]
     acousticness: number,
@@ -48,7 +48,7 @@ export type TrackFeature = {
     liveness: number,
     
     key: number, // integer in [0, 11]?
-    tempo: number, // not integer
+    tempo: number, // surprisingly, not an integer. Example: 120.31478123
     timeSignature: number, // integer
     
     loudness: number, // float in [-inf, 0] (?)
@@ -75,12 +75,14 @@ export const streamingHistory: StreamInstance[] = _streamingHistory.map(
         trackID: sh.track_id,
         trackPopularity: sh.track_popularity
     })
-).slice(1); // IMPORTANT TODO: REMOVE THIS SLICE. TEMPORARY FIX JONATAN DATA OUTLIER
+);
 
 export const streamingHistoryNoSkipped: StreamInstance[] = streamingHistory.filter(
     sh => sh.msPlayed >= 10_000
 );
 
-export const trackFeatures: Map<string, TrackFeature> = new Map(Object.entries(_trackFeatures).map(([tid, [tfs]]) => 
-    [tid, {...tfs, timeSignature: tfs.time_signature}]
-));
+export const trackFeatures: Map<trackID, TrackFeature> = new Map(
+    Object.entries(_trackFeatures).map(([tid, tfs]) => 
+        [tid, {...tfs, timeSignature: tfs.time_signature} as TrackFeature]
+    )
+);

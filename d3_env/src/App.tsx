@@ -1,29 +1,26 @@
-import { utcMilliseconds } from "d3";
 import React, { useEffect, useRef, useState } from "react";
 import { artistStreamTimes } from "./derived_data";
-import { Edgemap, EdgemapView, NodePositionKey, setNodeColorKey, setShowLabels, setupEdgemap, updateEdgemap } from "./edgemap";
+import { EdgemapView, NodePositionKey, setNodeColorKey, setShowLabels, setupEdgemap, updateEdgemap } from "./edgemap";
 import * as utils from './utils';
 
 
-const update = utils.debounce(updateEdgemap, 300);
+const debouncedUpdateEdgemap = utils.debounce(updateEdgemap, 300);
 export const App = () => {
     const [top, setTop] = useState(50);
     const topArtists = Array.from(artistStreamTimes.keys()).slice(0, top);    
     
     const [view, setView] = useState<EdgemapView>("genreSimilarity");
     const [colorKey, setColorKey] = useState<NodePositionKey>("genrePos");
-    const [displayLabels, setdisplayLabels] = useState(true);
-    
-    console.log(displayLabels);
-    
+    const [displayLabels, setdisplayLabels] = useState(true);    
 
     const edgemapRef = useRef();
+    
     useEffect(() => 
         setupEdgemap(edgemapRef.current, topArtists),
         []
     );
     useEffect(() => 
-        top && update(topArtists, view),
+        top && debouncedUpdateEdgemap(topArtists, view),
         [view, topArtists]
     );
     useEffect(() => 
@@ -47,7 +44,7 @@ export const App = () => {
             <option value="featurePos">feature</option>
         </select>
         <input type="number" value={top} onChange={e => setTop(parseInt(e.target.value))}/>
-        <input type="checkbox" checked={displayLabels} onClick={_ => setdisplayLabels(!displayLabels)}/>
+        <input type="checkbox" checked={displayLabels} onClick={_ => setdisplayLabels(!displayLabels)} onChange={() => null}/>
         <svg id="edgemap" ref={edgemapRef}></svg>
     </>
 }

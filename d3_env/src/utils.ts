@@ -1,5 +1,5 @@
 import * as d3 from "d3";
-import {margin, width, height} from './constants.mjs';
+import {margin, width, height} from './constants';
 import { DefaultMap } from "./map_extensions";
 
 
@@ -39,7 +39,7 @@ export function groupby(arr: Object[], groupKey: string) {
 
 export function count<T>(arr: T[]): Map<T, number> {
     return arr.reduce(
-        (acc, e) => acc.update(e, x => x+1),
+        (acc: Map<T, number>, e: T) => acc.update(e, x => x+1),
         new DefaultMap<T, number>(0)
     );
 }
@@ -169,7 +169,7 @@ export function d3Translate({x, y}: {x: number, y: number}) {
     return `translate(${x}, ${y})`;
 }
 
-export function divideWidth(n): number[] {
+export function divideWidth(n: number): number[] {
     const divs = []
     for (let i = 0; i < n + 2; i++) {
         divs.push(i * width / (n + 1));

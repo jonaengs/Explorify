@@ -1,4 +1,4 @@
-import { artistData, artistID, genre, streamingHistoryNoSkipped } from "./data";
+import { artistData, artistID, genre, streamingHistoryNoSkipped, StreamInstance } from "./data";
 import "./map_extensions.ts"
 import { DefaultMap } from "./map_extensions";
 import * as d3 from "d3";
@@ -7,7 +7,7 @@ const streamTimes: Date[] = streamingHistoryNoSkipped.map(si => si.endTime);
 
 export const firstArtistStream = streamingHistoryNoSkipped.reduce(
     (acc, stream) => acc.update(stream.artistID, t => t || stream.endTime),
-    new Map()
+    new Map<artistID, Date>()
 );
 
 export const artistToGenres: Map<artistID, Set<genre>> = new Map(artistData.map(a => [a.id, new Set(a.genres)]));
@@ -25,8 +25,9 @@ export function getTimePolyExtent(n: number): Date[] {
 
 export const artistStreamTimes: Map<artistID, number> = computeStreamTimes();
 function computeStreamTimes() {
-    const times: Map<artistID, number> = streamingHistoryNoSkipped.reduce((acc, stream) => 
-        acc.update(stream.artistID, t => t + stream.msPlayed),
+    const times: Map<artistID, number> = streamingHistoryNoSkipped.reduce(
+        (acc: DefaultMap<artistID, number>, stream: StreamInstance) => 
+            acc.update(stream.artistID, t => t + stream.msPlayed),
         new DefaultMap(0)
     );
     const sorted = Array.from(times).sort(([_a1, t1], [_a2, t2]) => t2 - t1)
