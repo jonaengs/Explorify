@@ -1,5 +1,5 @@
-import {App} from './App'
+import { Edgemap } from './Edgemap'
 import React from "react"
 import ReactDOM from "react-dom"
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<Edgemap />, document.getElementById("root"));

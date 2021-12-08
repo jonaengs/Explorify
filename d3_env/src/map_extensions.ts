@@ -16,7 +16,7 @@ Map.prototype.update = function<K, V>(key: K, fn: (v: V) => V) {
 export class DefaultMap<K, V> extends Map<K, V> {
     defaultGen: () => V;
 
-    constructor(defaultVal: V, iterable = []) {
+    constructor(defaultVal: V, iterable: [K, V][] = []) {
         super(iterable);
         
         // returns value itself if primitive, a new object if object

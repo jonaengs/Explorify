@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import { artistStreamTimes } from "./derived_data";
-import { EdgemapView, NodePositionKey, setNodeColorKey, setShowLabels, setupEdgemap, updateEdgemap } from "./edgemap";
+import { EdgemapView, NodePositionKey, setNodeColorKey, setShowLabels, setupEdgemap, updateEdgemap } from "./edgemap_functions";
 import * as utils from './utils';
 
 
 const debouncedUpdateEdgemap = utils.debounce(updateEdgemap, 300);
-export const App = () => {
+export const Edgemap = () => {
     const [top, setTop] = useState(50);
     const topArtists = Array.from(artistStreamTimes.keys()).slice(0, top);    
     
@@ -13,7 +13,7 @@ export const App = () => {
     const [colorKey, setColorKey] = useState<NodePositionKey>("genrePos");
     const [displayLabels, setdisplayLabels] = useState(true);    
 
-    const edgemapRef = useRef();
+    const edgemapRef = useRef<SVGSVGElement>();
     
     useEffect(() => 
         setupEdgemap(edgemapRef.current, topArtists),

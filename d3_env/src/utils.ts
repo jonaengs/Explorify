@@ -20,19 +20,18 @@ export function clampY(val: number, margin?: number) {
     return clamp(val, r, height + r);
 }
 
-export function topGroups(arr, key, n, comp) {
-    const defaultComp = (a, b) => b.length - a.length;
+export function topGroups<T extends Object>(arr: T[], key: string, n: number, comp?: (a: T[], b: T[]) => number) {
+    const defaultComp = (a: T[], b: T[]) => b.length - a.length;
     const groups = groupby(arr, key);
     const top = Object.values(groups).sort(comp || defaultComp).slice(0, n);
     return top
 }
 
-export function groupby(arr: Object[], groupKey: string) {
-    const keys = new Set(arr.map(i => i[groupKey]).filter(e => e !== null));
-    const map = Object.fromEntries(Array.from(keys).map(k => [k, []]));
+export function groupby<T extends Object>(arr: T[], groupKey: string) {
+    const map = new DefaultMap([]);
     for (const obj of arr) {
         if (obj[groupKey] !== null)
-            map[obj[groupKey]].push(obj);
+            map.update(obj[groupKey], arr => arr.concat(obj))
     }
     return map;
 }
@@ -44,8 +43,8 @@ export function count<T>(arr: T[]): Map<T, number> {
     );
 }
 
-export function groupbyMultiple(arr, groupKeys) {
-    function getKeysVal(o) {
+export function groupbyMultiple<T extends Object>(arr: T[], groupKeys: string[]) {
+    function getKeysVal(o: T) {
         return JSON.stringify(groupKeys.map(k => o[k]))
     }
     const keys = new Set(arr.map(getKeysVal));
@@ -70,8 +69,8 @@ export function getSvg(id: string): SVGSelection {
         .attr("transform", `translate(${margin.left}, ${margin.top})`);
 }
 
-export function createSVG(ref): SVGSelection {   
-    
+export function createSVG(ref: SVGElement): SVGSelection {   
+
     return d3.select(ref)
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
@@ -88,8 +87,8 @@ export function createTooltip() {
 }
 
 
-export function onMouseover(div: TooltipDiv, textFunc=(_) => "...") {
-    return (event, data) => {
+export function onMouseover(div: TooltipDiv, textFunc = (_: any) => "...") {
+    return (event: MouseEvent, data: any) => {
         div.transition()
             .duration(100)
             .style("opacity", 1);
@@ -99,7 +98,7 @@ export function onMouseover(div: TooltipDiv, textFunc=(_) => "...") {
     }  
 }
 export function onMouseout(div: TooltipDiv) {
-    return (_event, _data) => {
+    return (_event: MouseEvent, _data: any) => {
         div.transition()
             .duration(100)
             .style("opacity", 0);
@@ -107,7 +106,7 @@ export function onMouseout(div: TooltipDiv) {
 }
     
 export function onMousemove(div: TooltipDiv) {
-    return (event, _data) => {
+    return (event: MouseEvent, _data: any) => {
         div
         .style("left", (event.pageX) + "px")
         .style("top", (event.pageY - 28) + "px");

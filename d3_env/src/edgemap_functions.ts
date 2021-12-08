@@ -445,7 +445,7 @@ function computeCurve(d: d3Link) {
  *          See: https://stackoverflow.com/questions/20706603/d3-path-gradient-stroke
  */
 const top150 = Array.from(artistStreamTimes.keys()).slice(0, 150);
-export function setupEdgemap(ref: Ref<undefined>, artists: artistID[]) {    
+export function setupEdgemap(ref: SVGElement, artists: artistID[]) {    
     const artistSet = new Set(artists);
     const nodes = completeNetwork.nodes.filter(n => artistSet.has(n.id)).map(x => ({...x}));
     const links = completeNetwork.links.filter(l => artistSet.has(l.source) && artistSet.has(l.target)).map(x => ({...x}));
