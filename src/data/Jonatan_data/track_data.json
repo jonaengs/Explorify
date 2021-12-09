@@ -305,6 +305,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"art pop",
 			"freak folk",
 			"indie folk",
 			"indie pop",
@@ -411,7 +412,6 @@
 			"experimental rock",
 			"freak folk",
 			"grave wave",
-			"indie rock",
 			"noise pop"
 		]
 	},
@@ -1351,6 +1351,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"album rock",
 			"classic rock",
 			"country rock",
 			"folk",
@@ -1416,6 +1417,7 @@
 			"art rock",
 			"celtic rock",
 			"new wave pop",
+			"rock",
 			"scottish new wave",
 			"scottish rock"
 		]
@@ -1744,11 +1746,9 @@
 		"artist_genres": [
 			"alternative metal",
 			"alternative rock",
-			"blues rock",
 			"grunge",
 			"palm desert scene",
 			"rock",
-			"sludge metal",
 			"space rock",
 			"stoner metal",
 			"stoner rock"
@@ -2491,7 +2491,7 @@
 			"symphonic rock"
 		]
 	},
-	"4keDmsWJYJHjDBHF4blICd": {
+	"2K0cOUH2HZwQKtKMadUL09": {
 		"name": "On (2019 Sessions)",
 		"track_features": {
 			"danceability": 0.722,
@@ -2506,15 +2506,16 @@
 			"valence": 0.934,
 			"tempo": 124.983,
 			"type": "audio_features",
-			"id": "4keDmsWJYJHjDBHF4blICd",
-			"uri": "spotify:track:4keDmsWJYJHjDBHF4blICd",
-			"track_href": "https://api.spotify.com/v1/tracks/4keDmsWJYJHjDBHF4blICd",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/4keDmsWJYJHjDBHF4blICd",
+			"id": "2K0cOUH2HZwQKtKMadUL09",
+			"uri": "spotify:track:2K0cOUH2HZwQKtKMadUL09",
+			"track_href": "https://api.spotify.com/v1/tracks/2K0cOUH2HZwQKtKMadUL09",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/2K0cOUH2HZwQKtKMadUL09",
 			"duration_ms": 510396,
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"japanese dance pop"
+			"japanese dance pop",
+			"japanese jazztronica"
 		]
 	},
 	"2Bls0igCm79XQQ95IoUbhq": {
@@ -2540,6 +2541,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"classic soul",
 			"soul",
 			"southern soul"
 		]
@@ -2569,7 +2571,8 @@
 		"artist_genres": [
 			"new romantic",
 			"new wave",
-			"new wave pop"
+			"new wave pop",
+			"ska"
 		]
 	},
 	"4fXGWiVhlOLdhwRDP6pIFG": {
@@ -2728,6 +2731,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"art pop",
 			"escape room",
 			"hyperpop",
 			"japanese electropop"
@@ -2758,6 +2762,7 @@
 		"artist_genres": [
 			"afrofuturism",
 			"alternative r&b",
+			"art pop",
 			"atl hip hop",
 			"dance pop",
 			"electropop",
@@ -2915,6 +2920,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"disco",
 			"mellow gold",
 			"new wave pop",
 			"permanent wave",
@@ -2945,8 +2951,7 @@
 		},
 		"artist_genres": [
 			"bow pop",
-			"epicore",
-			"scorecore"
+			"epicore"
 		]
 	},
 	"569uHYIB0X324FZOBEhvit": {
@@ -2999,7 +3004,9 @@
 		},
 		"artist_genres": [
 			"alternative dance",
+			"art pop",
 			"dance pop",
+			"electronica",
 			"electropop",
 			"neo-synthpop",
 			"new rave"
@@ -3052,7 +3059,6 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"blues rock",
 			"classic rock",
 			"mexican classic rock"
 		]
@@ -3482,6 +3488,7 @@
 			"blues rock",
 			"british invasion",
 			"classic rock",
+			"classic uk pop",
 			"folk rock",
 			"progressive rock",
 			"psychedelic rock",
@@ -3841,7 +3848,6 @@
 			"experimental rock",
 			"freak folk",
 			"grave wave",
-			"indie rock",
 			"noise pop"
 		]
 	},
@@ -3928,26 +3934,26 @@
 			"french indietronica"
 		]
 	},
-	"6EOUSbilfsxrI04kpNVJUx": {
+	"1avwIyyLf4mYw2tERlMxJ2": {
 		"name": "Born in Puerto Rico",
 		"track_features": {
-			"danceability": 0.59,
-			"energy": 0.34,
+			"danceability": 0.595,
+			"energy": 0.321,
 			"key": 2,
-			"loudness": -12.336,
+			"loudness": -13.303,
 			"mode": 0,
-			"speechiness": 0.0365,
-			"acousticness": 0.689,
-			"instrumentalness": 0.00885,
-			"liveness": 0.237,
-			"valence": 0.443,
-			"tempo": 99.131,
+			"speechiness": 0.0379,
+			"acousticness": 0.701,
+			"instrumentalness": 0.00555,
+			"liveness": 0.24,
+			"valence": 0.427,
+			"tempo": 99.021,
 			"type": "audio_features",
-			"id": "6EOUSbilfsxrI04kpNVJUx",
-			"uri": "spotify:track:6EOUSbilfsxrI04kpNVJUx",
-			"track_href": "https://api.spotify.com/v1/tracks/6EOUSbilfsxrI04kpNVJUx",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/6EOUSbilfsxrI04kpNVJUx",
-			"duration_ms": 294693,
+			"id": "1avwIyyLf4mYw2tERlMxJ2",
+			"uri": "spotify:track:1avwIyyLf4mYw2tERlMxJ2",
+			"track_href": "https://api.spotify.com/v1/tracks/1avwIyyLf4mYw2tERlMxJ2",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/1avwIyyLf4mYw2tERlMxJ2",
+			"duration_ms": 294507,
 			"time_signature": 4
 		},
 		"artist_genres": [
@@ -3957,7 +3963,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -4227,6 +4232,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"adult standards",
 			"brill building pop",
 			"classic girl group",
 			"disco",
@@ -4259,7 +4265,6 @@
 		},
 		"artist_genres": [
 			"indie poptimism",
-			"indiecoustica",
 			"modern alternative rock",
 			"modern rock",
 			"pop rock",
@@ -4290,6 +4295,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"adult standards",
 			"funk",
 			"indie r&b",
 			"motown",
@@ -4381,6 +4387,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"alternative rock",
 			"britpop",
 			"dance rock",
 			"madchester",
@@ -4451,7 +4458,6 @@
 			"mellow gold",
 			"psychedelic rock",
 			"rock",
-			"roots rock",
 			"soft rock",
 			"yacht rock"
 		]
@@ -4592,6 +4598,7 @@
 		"artist_genres": [
 			"chicago soul",
 			"classic soul",
+			"disco",
 			"funk",
 			"soul"
 		]
@@ -4621,7 +4628,6 @@
 		"artist_genres": [
 			"hip hop",
 			"hip house",
-			"new jack swing",
 			"rap"
 		]
 	},
@@ -4977,6 +4983,7 @@
 			"art pop",
 			"art rock",
 			"compositional ambient",
+			"electronica",
 			"experimental",
 			"experimental ambient",
 			"fourth world",
@@ -5152,6 +5159,7 @@
 			"time_signature": 3
 		},
 		"artist_genres": [
+			"swedish jazz",
 			"swedish pop",
 			"swedish soul"
 		]
@@ -5328,7 +5336,6 @@
 			"time_signature": 3
 		},
 		"artist_genres": [
-			"norwegian contemporary jazz",
 			"norwegian jazz",
 			"norwegian rock"
 		]
@@ -5389,7 +5396,6 @@
 			"ecm-style jazz",
 			"jazz fusion",
 			"jazz guitar",
-			"norwegian jazz",
 			"swedish jazz"
 		]
 	},
@@ -5503,6 +5509,7 @@
 			"art pop",
 			"art rock",
 			"compositional ambient",
+			"electronica",
 			"experimental",
 			"experimental ambient",
 			"fourth world",
@@ -5535,7 +5542,6 @@
 		"artist_genres": [
 			"contemporary jazz",
 			"danish jazz",
-			"dark jazz",
 			"ecm-style jazz",
 			"jazz guitar"
 		]
@@ -5595,6 +5601,7 @@
 			"art pop",
 			"art rock",
 			"compositional ambient",
+			"electronica",
 			"experimental",
 			"experimental ambient",
 			"fourth world",
@@ -5682,6 +5689,7 @@
 		"artist_genres": [
 			"art rock",
 			"british folk",
+			"classic uk pop",
 			"folk rock",
 			"progressive rock",
 			"psychedelic folk",
@@ -5773,6 +5781,7 @@
 			"art pop",
 			"art rock",
 			"compositional ambient",
+			"electronica",
 			"experimental",
 			"experimental ambient",
 			"fourth world",
@@ -5804,6 +5813,7 @@
 		},
 		"artist_genres": [
 			"contemporary jazz",
+			"indie jazz",
 			"jazz",
 			"jazz piano",
 			"modern jazz piano"
@@ -5866,6 +5876,7 @@
 			"art pop",
 			"art rock",
 			"compositional ambient",
+			"electronica",
 			"experimental",
 			"experimental ambient",
 			"fourth world",
@@ -5900,6 +5911,7 @@
 			"art pop",
 			"art rock",
 			"compositional ambient",
+			"electronica",
 			"experimental",
 			"experimental ambient",
 			"fourth world",
@@ -6051,6 +6063,7 @@
 		"artist_genres": [
 			"album rock",
 			"art rock",
+			"classic uk pop",
 			"instrumental rock",
 			"jazz fusion",
 			"neo-progressive",
@@ -6151,6 +6164,7 @@
 			"art pop",
 			"art rock",
 			"compositional ambient",
+			"electronica",
 			"experimental",
 			"experimental ambient",
 			"fourth world",
@@ -6407,26 +6421,26 @@
 			"stomp and holler"
 		]
 	},
-	"7E5Dn0eXmYVoL7jyiekdRJ": {
+	"4o4aYaSeHjs0CCHUKtANz1": {
 		"name": "The Rabbit, The Bat & The Reindeer",
 		"track_features": {
-			"danceability": 0.323,
-			"energy": 0.864,
-			"key": 9,
-			"loudness": -6.208,
+			"danceability": 0.714,
+			"energy": 0.847,
+			"key": 10,
+			"loudness": -5.632,
 			"mode": 1,
-			"speechiness": 0.0682,
-			"acousticness": 0.00231,
-			"instrumentalness": 4e-05,
-			"liveness": 0.976,
-			"valence": 0.551,
-			"tempo": 139.502,
+			"speechiness": 0.0487,
+			"acousticness": 0.612,
+			"instrumentalness": 0.000289,
+			"liveness": 0.36,
+			"valence": 0.874,
+			"tempo": 137.91,
 			"type": "audio_features",
-			"id": "7E5Dn0eXmYVoL7jyiekdRJ",
-			"uri": "spotify:track:7E5Dn0eXmYVoL7jyiekdRJ",
-			"track_href": "https://api.spotify.com/v1/tracks/7E5Dn0eXmYVoL7jyiekdRJ",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/7E5Dn0eXmYVoL7jyiekdRJ",
-			"duration_ms": 294409,
+			"id": "4o4aYaSeHjs0CCHUKtANz1",
+			"uri": "spotify:track:4o4aYaSeHjs0CCHUKtANz1",
+			"track_href": "https://api.spotify.com/v1/tracks/4o4aYaSeHjs0CCHUKtANz1",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/4o4aYaSeHjs0CCHUKtANz1",
+			"duration_ms": 209133,
 			"time_signature": 4
 		},
 		"artist_genres": [
@@ -7751,26 +7765,26 @@
 			"stomp and holler"
 		]
 	},
-	"2ZyIJcdMXo4Il3rg3N0WD0": {
+	"4u3sMCDSkypqkh8h1BFn2v": {
 		"name": "The Beach",
 		"track_features": {
-			"danceability": 0.298,
-			"energy": 0.582,
+			"danceability": 0.524,
+			"energy": 0.607,
 			"key": 6,
-			"loudness": -9.026,
+			"loudness": -6.323,
 			"mode": 0,
-			"speechiness": 0.0419,
-			"acousticness": 0.338,
-			"instrumentalness": 0.0292,
-			"liveness": 0.271,
-			"valence": 0.193,
-			"tempo": 106.104,
+			"speechiness": 0.0433,
+			"acousticness": 0.445,
+			"instrumentalness": 0.32,
+			"liveness": 0.124,
+			"valence": 0.509,
+			"tempo": 126.326,
 			"type": "audio_features",
-			"id": "2ZyIJcdMXo4Il3rg3N0WD0",
-			"uri": "spotify:track:2ZyIJcdMXo4Il3rg3N0WD0",
-			"track_href": "https://api.spotify.com/v1/tracks/2ZyIJcdMXo4Il3rg3N0WD0",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/2ZyIJcdMXo4Il3rg3N0WD0",
-			"duration_ms": 311529,
+			"id": "4u3sMCDSkypqkh8h1BFn2v",
+			"uri": "spotify:track:4u3sMCDSkypqkh8h1BFn2v",
+			"track_href": "https://api.spotify.com/v1/tracks/4u3sMCDSkypqkh8h1BFn2v",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/4u3sMCDSkypqkh8h1BFn2v",
+			"duration_ms": 221627,
 			"time_signature": 4
 		},
 		"artist_genres": [
@@ -7943,36 +7957,30 @@
 			"stomp and holler"
 		]
 	},
-	"4VEdDo0jRhI6UXz3JNwfAE": {
+	"733ojYC8inwrSvaGcPKRbr": {
 		"name": "Heavy Light",
 		"track_features": {
-			"danceability": 0.465,
-			"energy": 0.674,
-			"key": 0,
-			"loudness": -5.925,
+			"danceability": 0.297,
+			"energy": 0.954,
+			"key": 11,
+			"loudness": -22.526,
 			"mode": 1,
-			"speechiness": 0.151,
-			"acousticness": 0.385,
-			"instrumentalness": 0.012,
-			"liveness": 0.167,
-			"valence": 0.522,
-			"tempo": 126.084,
+			"speechiness": 0.0728,
+			"acousticness": 0.0191,
+			"instrumentalness": 0.984,
+			"liveness": 0.753,
+			"valence": 0.0227,
+			"tempo": 54.41,
 			"type": "audio_features",
-			"id": "4VEdDo0jRhI6UXz3JNwfAE",
-			"uri": "spotify:track:4VEdDo0jRhI6UXz3JNwfAE",
-			"track_href": "https://api.spotify.com/v1/tracks/4VEdDo0jRhI6UXz3JNwfAE",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/4VEdDo0jRhI6UXz3JNwfAE",
-			"duration_ms": 220760,
+			"id": "733ojYC8inwrSvaGcPKRbr",
+			"uri": "spotify:track:733ojYC8inwrSvaGcPKRbr",
+			"track_href": "https://api.spotify.com/v1/tracks/733ojYC8inwrSvaGcPKRbr",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/733ojYC8inwrSvaGcPKRbr",
+			"duration_ms": 117000,
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"indie folk",
-			"indie pop",
-			"indie rock",
-			"modern folk rock",
-			"modern rock",
-			"philly indie",
-			"stomp and holler"
+			"pet calming"
 		]
 	},
 	"5u1HowZs4fT6zi7Wl2l838": {
@@ -8469,7 +8477,6 @@
 		"artist_genres": [
 			"chicano rap",
 			"gangster rap",
-			"hardcore hip hop",
 			"hip hop",
 			"rap",
 			"rap rock",
@@ -9679,7 +9686,6 @@
 			"ecm-style jazz",
 			"jazz fusion",
 			"jazz guitar",
-			"norwegian jazz",
 			"swedish jazz"
 		]
 	},
@@ -9710,7 +9716,6 @@
 			"louisiana blues",
 			"new orleans blues",
 			"rock keyboard",
-			"roots rock",
 			"soul",
 			"southern soul"
 		]
@@ -9834,7 +9839,6 @@
 			"louisiana blues",
 			"new orleans blues",
 			"rock keyboard",
-			"roots rock",
 			"soul",
 			"southern soul"
 		]
@@ -9866,8 +9870,7 @@
 			"classic soul",
 			"funk",
 			"psychedelic soul",
-			"soul",
-			"southern soul"
+			"soul"
 		]
 	},
 	"6lThiyFluc0jY2O8SYg3II": {
@@ -10184,6 +10187,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"swedish jazz",
 			"swedish pop",
 			"swedish soul"
 		]
@@ -10213,6 +10217,7 @@
 		"artist_genres": [
 			"afrofuturism",
 			"alternative r&b",
+			"art pop",
 			"atl hip hop",
 			"dance pop",
 			"electropop",
@@ -10336,6 +10341,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"alternative rock",
 			"britpop",
 			"dance rock",
 			"madchester",
@@ -10436,7 +10442,6 @@
 			"chillwave",
 			"dance pop",
 			"electropop",
-			"escape room",
 			"grave wave",
 			"hyperpop",
 			"indietronica",
@@ -10741,6 +10746,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary jazz",
 			"japanese jazz",
 			"japanese jazz fusion",
 			"jazz",
@@ -11058,7 +11064,6 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"europop",
 			"soft rock"
 		]
 	},
@@ -11088,6 +11093,7 @@
 			"adult standards",
 			"brill building pop",
 			"british invasion",
+			"classic uk pop",
 			"merseybeat",
 			"rock-and-roll",
 			"rockabilly"
@@ -11149,7 +11155,6 @@
 			"motown",
 			"quiet storm",
 			"smooth jazz",
-			"soft rock",
 			"soul jazz",
 			"yacht rock"
 		]
@@ -11180,6 +11185,7 @@
 			"adult standards",
 			"brill building pop",
 			"british invasion",
+			"classic uk pop",
 			"merseybeat",
 			"rock-and-roll",
 			"rockabilly"
@@ -11460,26 +11466,26 @@
 			"alternative hip hop"
 		]
 	},
-	"4OhhbsNx0RH8kIcvQWh0xy": {
+	"1KDXKiD18khzOIYcYNQNMt": {
 		"name": "Chariots Of Fire - Edit",
 		"track_features": {
-			"danceability": 0.455,
-			"energy": 0.444,
+			"danceability": 0.471,
+			"energy": 0.379,
 			"key": 1,
-			"loudness": -9.8,
+			"loudness": -13.411,
 			"mode": 1,
-			"speechiness": 0.0323,
-			"acousticness": 0.049,
-			"instrumentalness": 0.0635,
-			"liveness": 0.112,
-			"valence": 0.0396,
-			"tempo": 136.308,
+			"speechiness": 0.0336,
+			"acousticness": 0.0795,
+			"instrumentalness": 0.355,
+			"liveness": 0.121,
+			"valence": 0.051,
+			"tempo": 136.343,
 			"type": "audio_features",
-			"id": "4OhhbsNx0RH8kIcvQWh0xy",
-			"uri": "spotify:track:4OhhbsNx0RH8kIcvQWh0xy",
-			"track_href": "https://api.spotify.com/v1/tracks/4OhhbsNx0RH8kIcvQWh0xy",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/4OhhbsNx0RH8kIcvQWh0xy",
-			"duration_ms": 202806,
+			"id": "1KDXKiD18khzOIYcYNQNMt",
+			"uri": "spotify:track:1KDXKiD18khzOIYcYNQNMt",
+			"track_href": "https://api.spotify.com/v1/tracks/1KDXKiD18khzOIYcYNQNMt",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/1KDXKiD18khzOIYcYNQNMt",
+			"duration_ms": 211209,
 			"time_signature": 4
 		},
 		"artist_genres": []
@@ -11965,8 +11971,7 @@
 			"jazz clarinet",
 			"new orleans jazz",
 			"stride",
-			"swing",
-			"vocal jazz"
+			"swing"
 		]
 	},
 	"79RuWrqp4F06MxUAYljeQI": {
@@ -12210,7 +12215,6 @@
 		},
 		"artist_genres": [
 			"contemporary post-bop",
-			"funk",
 			"instrumental funk",
 			"jazz",
 			"jazz funk",
@@ -12567,6 +12571,7 @@
 		},
 		"artist_genres": [
 			"british folk",
+			"classic uk pop",
 			"folk",
 			"folk rock"
 		]
@@ -12695,7 +12700,6 @@
 			"avant-garde jazz",
 			"free improvisation",
 			"free jazz",
-			"japanese jazz",
 			"jazz",
 			"jazz funk",
 			"jazz saxophone"
@@ -12898,7 +12902,6 @@
 			"electro",
 			"electronica",
 			"intelligent dance music",
-			"microhouse",
 			"ninja",
 			"trip hop"
 		]
@@ -13006,6 +13009,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"indie jazz",
 			"indie soul",
 			"psychedelic soul"
 		]
@@ -13203,7 +13207,6 @@
 			"time_signature": 3
 		},
 		"artist_genres": [
-			"classical performance",
 			"german orchestra",
 			"orchestra"
 		]
@@ -13287,6 +13290,7 @@
 		},
 		"artist_genres": [
 			"british soul",
+			"indie jazz",
 			"indie soul"
 		]
 	},
@@ -13884,6 +13888,7 @@
 			"alternative dance",
 			"indie soul",
 			"new french touch",
+			"new rave",
 			"nu disco"
 		]
 	},
@@ -13994,6 +13999,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"art pop",
 			"australian indie",
 			"indie pop",
 			"indie rock",
@@ -14123,6 +14129,7 @@
 		},
 		"artist_genres": [
 			"alternative dance",
+			"art pop",
 			"chillwave",
 			"electronica",
 			"electropop",
@@ -14190,6 +14197,7 @@
 			"alternative country",
 			"alternative rock",
 			"chicago indie",
+			"folk",
 			"indie pop",
 			"indie rock",
 			"pop rock",
@@ -14227,7 +14235,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -14261,7 +14268,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -14295,7 +14301,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -14329,7 +14334,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -14637,11 +14641,9 @@
 			"classic rock",
 			"hard rock",
 			"mellow gold",
-			"progressive rock",
 			"rock",
 			"roots rock",
 			"soft rock",
-			"symphonic rock",
 			"uk americana"
 		]
 	},
@@ -14790,7 +14792,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -14846,7 +14847,6 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"chillsynth",
 			"synthwave"
 		]
 	},
@@ -14873,7 +14873,6 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"chillsynth",
 			"synthwave"
 		]
 	},
@@ -15024,7 +15023,7 @@
 			"slam poetry"
 		]
 	},
-	"0YCzCTj47uGmUC72vWkVcy": {
+	"1V4FnMqrX5IBBsc40fF4E2": {
 		"name": "The Dream Thief",
 		"track_features": {
 			"danceability": 0.271,
@@ -15039,10 +15038,10 @@
 			"valence": 0.115,
 			"tempo": 100.012,
 			"type": "audio_features",
-			"id": "0YCzCTj47uGmUC72vWkVcy",
-			"uri": "spotify:track:0YCzCTj47uGmUC72vWkVcy",
-			"track_href": "https://api.spotify.com/v1/tracks/0YCzCTj47uGmUC72vWkVcy",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/0YCzCTj47uGmUC72vWkVcy",
+			"id": "1V4FnMqrX5IBBsc40fF4E2",
+			"uri": "spotify:track:1V4FnMqrX5IBBsc40fF4E2",
+			"track_href": "https://api.spotify.com/v1/tracks/1V4FnMqrX5IBBsc40fF4E2",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/1V4FnMqrX5IBBsc40fF4E2",
 			"duration_ms": 509120,
 			"time_signature": 4
 		},
@@ -15493,6 +15492,7 @@
 			"brooklyn indie",
 			"denton tx indie",
 			"freak folk",
+			"garage psych",
 			"indie rock",
 			"modern alternative rock",
 			"modern rock",
@@ -16680,6 +16680,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"art pop",
 			"baltimore indie",
 			"dream pop",
 			"dreamo",
@@ -16796,6 +16797,7 @@
 		},
 		"artist_genres": [
 			"alternative r&b",
+			"indie jazz",
 			"indie soul"
 		]
 	},
@@ -16853,29 +16855,35 @@
 		},
 		"artist_genres": []
 	},
-	"5TiWQRHZwriIttZ06cxRgQ": {
+	"1hES47PrbU8GPTI5A9lsr0": {
 		"name": "I Never Loved a Man (The Way I Love You)",
 		"track_features": {
-			"danceability": 0.65,
-			"energy": 0.264,
+			"danceability": 0.657,
+			"energy": 0.371,
 			"key": 5,
-			"loudness": -14.067,
+			"loudness": -9.186,
 			"mode": 1,
-			"speechiness": 0.0382,
-			"acousticness": 0.342,
-			"instrumentalness": 0.065,
-			"liveness": 0.0956,
+			"speechiness": 0.0359,
+			"acousticness": 0.367,
+			"instrumentalness": 0.0459,
+			"liveness": 0.157,
 			"valence": 0.709,
-			"tempo": 134.889,
+			"tempo": 134.867,
 			"type": "audio_features",
-			"id": "5TiWQRHZwriIttZ06cxRgQ",
-			"uri": "spotify:track:5TiWQRHZwriIttZ06cxRgQ",
-			"track_href": "https://api.spotify.com/v1/tracks/5TiWQRHZwriIttZ06cxRgQ",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/5TiWQRHZwriIttZ06cxRgQ",
-			"duration_ms": 172462,
+			"id": "1hES47PrbU8GPTI5A9lsr0",
+			"uri": "spotify:track:1hES47PrbU8GPTI5A9lsr0",
+			"track_href": "https://api.spotify.com/v1/tracks/1hES47PrbU8GPTI5A9lsr0",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/1hES47PrbU8GPTI5A9lsr0",
+			"duration_ms": 171773,
 			"time_signature": 4
 		},
-		"artist_genres": []
+		"artist_genres": [
+			"classic soul",
+			"jazz blues",
+			"memphis soul",
+			"soul",
+			"southern soul"
+		]
 	},
 	"6GjAj2EPLGg4sA8IGwfeNR": {
 		"name": "Stranger in Paradise",
@@ -17562,13 +17570,11 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"acoustic pop",
 			"folk",
 			"indie folk",
 			"lilith",
 			"new americana",
 			"progressive bluegrass",
-			"roots rock",
 			"stomp and holler"
 		]
 	},
@@ -17595,13 +17601,11 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"acoustic pop",
 			"folk",
 			"indie folk",
 			"lilith",
 			"new americana",
 			"progressive bluegrass",
-			"roots rock",
 			"stomp and holler"
 		]
 	},
@@ -17628,13 +17632,11 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"acoustic pop",
 			"folk",
 			"indie folk",
 			"lilith",
 			"new americana",
 			"progressive bluegrass",
-			"roots rock",
 			"stomp and holler"
 		]
 	},
@@ -17661,13 +17663,11 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"acoustic pop",
 			"folk",
 			"indie folk",
 			"lilith",
 			"new americana",
 			"progressive bluegrass",
-			"roots rock",
 			"stomp and holler"
 		]
 	},
@@ -17694,13 +17694,11 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"acoustic pop",
 			"folk",
 			"indie folk",
 			"lilith",
 			"new americana",
 			"progressive bluegrass",
-			"roots rock",
 			"stomp and holler"
 		]
 	},
@@ -17758,13 +17756,11 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"acoustic pop",
 			"folk",
 			"indie folk",
 			"lilith",
 			"new americana",
 			"progressive bluegrass",
-			"roots rock",
 			"stomp and holler"
 		]
 	},
@@ -17791,13 +17787,11 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"acoustic pop",
 			"folk",
 			"indie folk",
 			"lilith",
 			"new americana",
 			"progressive bluegrass",
-			"roots rock",
 			"stomp and holler"
 		]
 	},
@@ -17824,13 +17818,11 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"acoustic pop",
 			"folk",
 			"indie folk",
 			"lilith",
 			"new americana",
 			"progressive bluegrass",
-			"roots rock",
 			"stomp and holler"
 		]
 	},
@@ -17857,13 +17849,11 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"acoustic pop",
 			"folk",
 			"indie folk",
 			"lilith",
 			"new americana",
 			"progressive bluegrass",
-			"roots rock",
 			"stomp and holler"
 		]
 	},
@@ -17890,13 +17880,11 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"acoustic pop",
 			"folk",
 			"indie folk",
 			"lilith",
 			"new americana",
 			"progressive bluegrass",
-			"roots rock",
 			"stomp and holler"
 		]
 	},
@@ -17923,13 +17911,11 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"acoustic pop",
 			"folk",
 			"indie folk",
 			"lilith",
 			"new americana",
 			"progressive bluegrass",
-			"roots rock",
 			"stomp and holler"
 		]
 	},
@@ -18677,7 +18663,6 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"nordic folk",
 			"norwegian contemporary jazz",
 			"norwegian folk",
 			"norwegian folk rock",
@@ -18711,6 +18696,7 @@
 		},
 		"artist_genres": [
 			"ambient",
+			"art pop",
 			"art rock",
 			"compositional ambient",
 			"fourth world"
@@ -18784,7 +18770,6 @@
 			"melancholia",
 			"metropopolis",
 			"permanent wave",
-			"stomp and holler",
 			"tape club"
 		]
 	},
@@ -18846,7 +18831,7 @@
 		"artist_genres": [
 			"contemporary jazz",
 			"contemporary post-bop",
-			"japanese jazz",
+			"indie jazz",
 			"jazz",
 			"jazz fusion",
 			"jazz guitar"
@@ -18875,7 +18860,6 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"alternative metal",
 			"art rock",
 			"progressive metal",
 			"progressive rock",
@@ -18911,7 +18895,6 @@
 			"ecm-style jazz",
 			"free jazz",
 			"italian jazz",
-			"japanese jazz",
 			"jazz",
 			"jazz fusion",
 			"swedish jazz"
@@ -18942,6 +18925,7 @@
 		"artist_genres": [
 			"austrian jazz",
 			"contemporary jazz",
+			"danish jazz",
 			"ecm-style jazz",
 			"italian jazz",
 			"jazz",
@@ -19013,6 +18997,7 @@
 			"jazz fusion",
 			"jazz trio",
 			"modern jazz trio",
+			"norwegian jazz",
 			"polish jazz",
 			"polish modern jazz",
 			"swedish jazz"
@@ -19112,7 +19097,7 @@
 			"country rock",
 			"electric blues",
 			"folk rock",
-			"roots rock",
+			"rock",
 			"supergroup"
 		]
 	},
@@ -19139,6 +19124,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary jazz",
 			"german jazz"
 		]
 	},
@@ -19234,7 +19220,6 @@
 			"album rock",
 			"art rock",
 			"jazz fusion",
-			"neo-progressive",
 			"progressive rock",
 			"symphonic rock"
 		]
@@ -19400,8 +19385,7 @@
 			"electric blues",
 			"hard rock",
 			"modern blues",
-			"rock",
-			"roots rock"
+			"rock"
 		]
 	},
 	"3iFlfQ0CXc9URaAvai8VUe": {
@@ -19536,6 +19520,7 @@
 			"blues rock",
 			"bubblegum pop",
 			"classic rock",
+			"classic uk pop",
 			"country rock",
 			"folk rock",
 			"jangle pop",
@@ -19543,7 +19528,6 @@
 			"power pop",
 			"psychedelic rock",
 			"rock",
-			"roots rock",
 			"soft rock",
 			"symphonic rock"
 		]
@@ -19611,6 +19595,7 @@
 			"blues rock",
 			"british blues",
 			"classic rock",
+			"classic uk pop",
 			"hard rock",
 			"jazz fusion",
 			"progressive rock",
@@ -20053,7 +20038,6 @@
 		"artist_genres": [
 			"folk",
 			"folk rock",
-			"roots rock",
 			"singer-songwriter"
 		]
 	},
@@ -20112,6 +20096,7 @@
 		},
 		"artist_genres": [
 			"alternative dance",
+			"electronica",
 			"indietronica",
 			"new rave"
 		]
@@ -20141,6 +20126,7 @@
 		"artist_genres": [
 			"alternative country",
 			"brooklyn indie",
+			"chamber psych",
 			"freak folk",
 			"garage psych",
 			"indie folk",
@@ -20399,7 +20385,6 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"neo-psychedelic",
 			"psychedelic pop"
 		]
 	},
@@ -20433,7 +20418,8 @@
 			"folk",
 			"folk rock",
 			"freak folk",
-			"traditional blues"
+			"traditional blues",
+			"traditional folk"
 		]
 	},
 	"0y9yrR3OpCudvlrqis17xD": {
@@ -20735,7 +20721,8 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"chillhop"
+			"chillhop",
+			"lo-fi jazzhop"
 		]
 	},
 	"6asU049doNupkVllo61luh": {
@@ -20761,6 +20748,7 @@
 			"time_signature": 3
 		},
 		"artist_genres": [
+			"art pop",
 			"baltimore indie",
 			"dream pop",
 			"dreamo",
@@ -20969,13 +20957,11 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"bass music",
 			"chillwave",
 			"downtempo",
 			"electronica",
-			"future bass",
 			"glitch",
-			"vapor twitch",
+			"uk bass",
 			"wonky"
 		]
 	},
@@ -21091,7 +21077,6 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"contemporary jazz",
 			"straight-ahead jazz"
 		]
 	},
@@ -21124,7 +21109,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -21180,6 +21164,7 @@
 		},
 		"artist_genres": [
 			"contemporary jazz",
+			"indie jazz",
 			"jazz",
 			"jazz piano",
 			"modern jazz piano"
@@ -21263,6 +21248,7 @@
 			"time_signature": 3
 		},
 		"artist_genres": [
+			"contemporary jazz",
 			"japanese jazz",
 			"japanese jazz fusion",
 			"jazz",
@@ -21471,7 +21457,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -21502,6 +21487,7 @@
 			"alternative country",
 			"alternative rock",
 			"chicago indie",
+			"folk",
 			"indie pop",
 			"indie rock",
 			"pop rock",
@@ -21843,7 +21829,6 @@
 			"escape room",
 			"hip hop",
 			"indie soul",
-			"neo soul",
 			"underground hip hop"
 		]
 	},
@@ -21902,7 +21887,6 @@
 			"electro",
 			"electronica",
 			"intelligent dance music",
-			"microhouse",
 			"ninja",
 			"trip hop"
 		]
@@ -21935,7 +21919,6 @@
 			"electro",
 			"electronica",
 			"intelligent dance music",
-			"microhouse",
 			"ninja",
 			"trip hop"
 		]
@@ -21964,6 +21947,7 @@
 		},
 		"artist_genres": [
 			"classical",
+			"early modern classical",
 			"impressionism",
 			"neoclassicism",
 			"post-romantic era"
@@ -22084,7 +22068,6 @@
 			"avant-garde jazz",
 			"free improvisation",
 			"free jazz",
-			"japanese jazz",
 			"jazz",
 			"jazz funk",
 			"jazz saxophone"
@@ -22341,7 +22324,8 @@
 			"time_signature": 3
 		},
 		"artist_genres": [
-			"classical cello"
+			"classical cello",
+			"classical performance"
 		]
 	},
 	"22DgAcWnb50oKlv0F8eziW": {
@@ -22426,8 +22410,8 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"art pop",
 			"canadian indie folk",
-			"deep new americana",
 			"freak folk",
 			"indie folk",
 			"indie pop",
@@ -22459,8 +22443,10 @@
 		},
 		"artist_genres": [
 			"alternative rock",
+			"art pop",
 			"art rock",
 			"freak folk",
+			"indie pop",
 			"indie rock",
 			"modern rock",
 			"noise pop",
@@ -22558,7 +22544,8 @@
 			"indie pop",
 			"indie rock",
 			"kc indie",
-			"modern folk rock"
+			"modern folk rock",
+			"stomp and holler"
 		]
 	},
 	"0WAKFcVVPkZboGEZcT4r73": {
@@ -22795,8 +22782,7 @@
 			"fourth world",
 			"freak folk",
 			"indie folk",
-			"jazz harp",
-			"neo-classical"
+			"jazz harp"
 		]
 	},
 	"7egTKPYxbWaaV1jEzb1rHu": {
@@ -23121,6 +23107,7 @@
 			"brill building pop",
 			"bubblegum pop",
 			"classic rock",
+			"classic uk pop",
 			"country rock",
 			"folk",
 			"folk rock",
@@ -23129,7 +23116,6 @@
 			"psychedelic rock",
 			"rock",
 			"rock-and-roll",
-			"roots rock",
 			"soft rock",
 			"soul"
 		]
@@ -23389,9 +23375,9 @@
 			"album rock",
 			"art rock",
 			"blues rock",
+			"classic uk pop",
 			"glam rock",
-			"hard rock",
-			"pub rock"
+			"hard rock"
 		]
 	},
 	"5OfTHWHPgb4q5kieyjWsF1": {
@@ -23549,6 +23535,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"disco",
 			"europop"
 		]
 	},
@@ -23762,6 +23749,7 @@
 			"classic norwegian pop",
 			"danseband",
 			"norwegian country",
+			"norwegian pop",
 			"norwegian rock"
 		]
 	},
@@ -23791,9 +23779,9 @@
 			"album rock",
 			"art rock",
 			"blues rock",
+			"classic uk pop",
 			"glam rock",
-			"hard rock",
-			"pub rock"
+			"hard rock"
 		]
 	},
 	"7JuUxcg1Xci0xHAVzZIjdG": {
@@ -23822,9 +23810,9 @@
 			"album rock",
 			"art rock",
 			"blues rock",
+			"classic uk pop",
 			"glam rock",
-			"hard rock",
-			"pub rock"
+			"hard rock"
 		]
 	},
 	"5e0ozDjIRDuitUuekiF6ns": {
@@ -23853,9 +23841,9 @@
 			"album rock",
 			"art rock",
 			"blues rock",
+			"classic uk pop",
 			"glam rock",
-			"hard rock",
-			"pub rock"
+			"hard rock"
 		]
 	},
 	"5qgGXHf4yXNk2Z1LzMQDCh": {
@@ -23884,9 +23872,9 @@
 			"album rock",
 			"art rock",
 			"blues rock",
+			"classic uk pop",
 			"glam rock",
-			"hard rock",
-			"pub rock"
+			"hard rock"
 		]
 	},
 	"3ZVmFxCCAq2LNf5TTSV3Xc": {
@@ -23915,9 +23903,9 @@
 			"album rock",
 			"art rock",
 			"blues rock",
+			"classic uk pop",
 			"glam rock",
-			"hard rock",
-			"pub rock"
+			"hard rock"
 		]
 	},
 	"2pQDZveizhKKFAuxFBHbXj": {
@@ -23946,9 +23934,9 @@
 			"album rock",
 			"art rock",
 			"blues rock",
+			"classic uk pop",
 			"glam rock",
-			"hard rock",
-			"pub rock"
+			"hard rock"
 		]
 	},
 	"6XUHsYE38CEbYunT983O9G": {
@@ -24347,29 +24335,39 @@
 			"soft rock"
 		]
 	},
-	"6rPfTz1JgJ8OTkjE1SVrFJ": {
+	"6fnachl7fIn5dqIjakfJ57": {
 		"name": "School",
 		"track_features": {
-			"danceability": 0.374,
+			"danceability": 0.366,
 			"energy": 0.468,
 			"key": 4,
 			"loudness": -14.514,
 			"mode": 0,
-			"speechiness": 0.0819,
-			"acousticness": 0.531,
-			"instrumentalness": 0.027,
+			"speechiness": 0.0826,
+			"acousticness": 0.537,
+			"instrumentalness": 0.0283,
 			"liveness": 0.0664,
-			"valence": 0.0511,
-			"tempo": 90.003,
+			"valence": 0.0506,
+			"tempo": 90.281,
 			"type": "audio_features",
-			"id": "6rPfTz1JgJ8OTkjE1SVrFJ",
-			"uri": "spotify:track:6rPfTz1JgJ8OTkjE1SVrFJ",
-			"track_href": "https://api.spotify.com/v1/tracks/6rPfTz1JgJ8OTkjE1SVrFJ",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/6rPfTz1JgJ8OTkjE1SVrFJ",
+			"id": "6fnachl7fIn5dqIjakfJ57",
+			"uri": "spotify:track:6fnachl7fIn5dqIjakfJ57",
+			"track_href": "https://api.spotify.com/v1/tracks/6fnachl7fIn5dqIjakfJ57",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/6fnachl7fIn5dqIjakfJ57",
 			"duration_ms": 335286,
 			"time_signature": 4
 		},
-		"artist_genres": []
+		"artist_genres": [
+			"album rock",
+			"art rock",
+			"classic rock",
+			"glam rock",
+			"mellow gold",
+			"piano rock",
+			"progressive rock",
+			"rock",
+			"soft rock"
+		]
 	},
 	"79dQwpXjJ4t3pILysdqFyB": {
 		"name": "Mambo Sun",
@@ -24881,6 +24879,7 @@
 			"blues rock",
 			"brill building pop",
 			"classic rock",
+			"classic uk pop",
 			"cosmic american",
 			"country rock",
 			"folk",
@@ -24916,7 +24915,8 @@
 		},
 		"artist_genres": [
 			"folk",
-			"new americana"
+			"new americana",
+			"stomp and holler"
 		]
 	},
 	"4tEpYFG3yPwIMOvQmMLspf": {
@@ -25026,11 +25026,9 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"celtic",
 			"celtic punk",
 			"celtic rock",
 			"folk punk",
-			"irish folk",
 			"punk"
 		]
 	},
@@ -25460,6 +25458,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"adult standards",
 			"jazz piano",
 			"space age pop"
 		]
@@ -25627,11 +25626,11 @@
 		"artist_genres": [
 			"afrofuturism",
 			"british jazz",
-			"chamber psych",
 			"contemporary jazz",
 			"indie jazz",
 			"indie soul",
-			"progressive jazz fusion"
+			"progressive jazz fusion",
+			"uk contemporary jazz"
 		]
 	},
 	"62dE6YTkOeYZZHArIbajxr": {
@@ -25659,11 +25658,11 @@
 		"artist_genres": [
 			"afrofuturism",
 			"british jazz",
-			"chamber psych",
 			"contemporary jazz",
 			"indie jazz",
 			"indie soul",
-			"progressive jazz fusion"
+			"progressive jazz fusion",
+			"uk contemporary jazz"
 		]
 	},
 	"1qe9hue6nh9KPHvRlA1hob": {
@@ -25691,11 +25690,11 @@
 		"artist_genres": [
 			"afrofuturism",
 			"british jazz",
-			"chamber psych",
 			"contemporary jazz",
 			"indie jazz",
 			"indie soul",
-			"progressive jazz fusion"
+			"progressive jazz fusion",
+			"uk contemporary jazz"
 		]
 	},
 	"6gDl3E9aHVipNzutEV4ZGz": {
@@ -25723,11 +25722,11 @@
 		"artist_genres": [
 			"afrofuturism",
 			"british jazz",
-			"chamber psych",
 			"contemporary jazz",
 			"indie jazz",
 			"indie soul",
-			"progressive jazz fusion"
+			"progressive jazz fusion",
+			"uk contemporary jazz"
 		]
 	},
 	"0mc0SaUktWUvWuvLcsbGxo": {
@@ -25950,11 +25949,11 @@
 		"artist_genres": [
 			"afrofuturism",
 			"british jazz",
-			"chamber psych",
 			"contemporary jazz",
 			"indie jazz",
 			"indie soul",
-			"progressive jazz fusion"
+			"progressive jazz fusion",
+			"uk contemporary jazz"
 		]
 	},
 	"3XxUkSDs1q76SetgaioRKN": {
@@ -25982,11 +25981,11 @@
 		"artist_genres": [
 			"afrofuturism",
 			"british jazz",
-			"chamber psych",
 			"contemporary jazz",
 			"indie jazz",
 			"indie soul",
-			"progressive jazz fusion"
+			"progressive jazz fusion",
+			"uk contemporary jazz"
 		]
 	},
 	"13nrwSgw5DYKS220rfxfvi": {
@@ -26014,11 +26013,11 @@
 		"artist_genres": [
 			"afrofuturism",
 			"british jazz",
-			"chamber psych",
 			"contemporary jazz",
 			"indie jazz",
 			"indie soul",
-			"progressive jazz fusion"
+			"progressive jazz fusion",
+			"uk contemporary jazz"
 		]
 	},
 	"28uZjhU60BosFYSMJLJoQ3": {
@@ -26046,11 +26045,11 @@
 		"artist_genres": [
 			"afrofuturism",
 			"british jazz",
-			"chamber psych",
 			"contemporary jazz",
 			"indie jazz",
 			"indie soul",
-			"progressive jazz fusion"
+			"progressive jazz fusion",
+			"uk contemporary jazz"
 		]
 	},
 	"5PLkuXQ7PUEOR7sf2Ua8ws": {
@@ -26078,11 +26077,11 @@
 		"artist_genres": [
 			"afrofuturism",
 			"british jazz",
-			"chamber psych",
 			"contemporary jazz",
 			"indie jazz",
 			"indie soul",
-			"progressive jazz fusion"
+			"progressive jazz fusion",
+			"uk contemporary jazz"
 		]
 	},
 	"186zi6pmNhtYzHBWUX5Opa": {
@@ -26236,11 +26235,10 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"avant-garde jazz",
 			"fourth world",
 			"free jazz",
 			"hard bop",
-			"japanese jazz",
+			"indie jazz",
 			"jazz",
 			"jazz funk",
 			"jazz fusion",
@@ -26389,6 +26387,7 @@
 			"british jazz",
 			"indie jazz",
 			"neo-psychedelic",
+			"ninja",
 			"psychedelic jazz fusion"
 		]
 	},
@@ -26510,6 +26509,7 @@
 			"brooklyn indie",
 			"denton tx indie",
 			"freak folk",
+			"garage psych",
 			"indie rock",
 			"modern alternative rock",
 			"modern rock",
@@ -26627,7 +26627,6 @@
 		},
 		"artist_genres": [
 			"contemporary post-bop",
-			"funk",
 			"instrumental funk",
 			"jazz",
 			"jazz funk",
@@ -26776,6 +26775,7 @@
 			"brooklyn indie",
 			"denton tx indie",
 			"freak folk",
+			"garage psych",
 			"indie rock",
 			"modern alternative rock",
 			"modern rock",
@@ -26907,16 +26907,15 @@
 		"artist_genres": [
 			"bebop",
 			"big band",
-			"contemporary jazz",
 			"contemporary post-bop",
 			"free jazz",
 			"hard bop",
-			"japanese jazz",
 			"jazz",
 			"jazz funk",
 			"jazz fusion",
 			"jazz trumpet",
-			"soul jazz"
+			"soul jazz",
+			"vocal jazz"
 		]
 	},
 	"7z81vC7eTE5y4hqk9yCx7F": {
@@ -26947,6 +26946,7 @@
 			"brooklyn indie",
 			"denton tx indie",
 			"freak folk",
+			"garage psych",
 			"indie rock",
 			"modern alternative rock",
 			"modern rock",
@@ -27475,6 +27475,7 @@
 		},
 		"artist_genres": [
 			"classic house",
+			"deep house",
 			"disco",
 			"diva house",
 			"philly soul",
@@ -27772,6 +27773,7 @@
 		},
 		"artist_genres": [
 			"art rock",
+			"classic uk pop",
 			"folk rock",
 			"jazz fusion",
 			"mellow gold",
@@ -27808,7 +27810,8 @@
 			"hip-hop experimental",
 			"new french touch",
 			"nu jazz",
-			"rap marseille"
+			"rap marseille",
+			"turntablism"
 		]
 	},
 	"5gyF1iyNUUHowGVwiOYoTn": {
@@ -28193,7 +28196,6 @@
 		},
 		"artist_genres": [
 			"bebop",
-			"hard bop",
 			"jazz",
 			"jazz fusion",
 			"jazz piano"
@@ -28284,8 +28286,7 @@
 		},
 		"artist_genres": [
 			"afropop",
-			"ethio-jazz",
-			"freak folk"
+			"ethio-jazz"
 		]
 	},
 	"7ww9E2j8b758ycQoXeLdvS": {
@@ -28560,8 +28561,7 @@
 			"chamber psych",
 			"drone folk",
 			"freak folk",
-			"indie folk",
-			"neo-psychedelic"
+			"indie folk"
 		]
 	},
 	"4h1Z7oRBZ0DOj2AKTUivBk": {
@@ -28617,7 +28617,8 @@
 		},
 		"artist_genres": [
 			"alternative rock",
-			"melancholia"
+			"melancholia",
+			"rock"
 		]
 	},
 	"3oZcovDVsjCsbJam1V4gG3": {
@@ -28789,7 +28790,6 @@
 		},
 		"artist_genres": [
 			"bristol indie",
-			"chamber pop",
 			"chamber psych",
 			"freak folk",
 			"indie folk"
@@ -29187,6 +29187,7 @@
 		},
 		"artist_genres": [
 			"folkmusik",
+			"nordic folk",
 			"swedish jazz",
 			"swedish prog"
 		]
@@ -29739,6 +29740,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"classic uk pop",
 			"country rock",
 			"folk rock"
 		]
@@ -29768,10 +29770,12 @@
 		"artist_genres": [
 			"alternative pop",
 			"alternative rock",
+			"art pop",
 			"boston rock",
 			"dayton indie",
 			"dream pop",
 			"indie rock",
+			"lo-fi",
 			"post-punk",
 			"rock"
 		]
@@ -29799,7 +29803,6 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"alternative metal",
 			"art rock",
 			"progressive metal",
 			"progressive rock",
@@ -29899,7 +29902,6 @@
 			"lilith",
 			"new americana",
 			"outlaw country",
-			"pop rock",
 			"roots rock",
 			"stomp and holler"
 		]
@@ -30431,7 +30433,8 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"album rock"
+			"album rock",
+			"new wave pop"
 		]
 	},
 	"6sk5J9jMQ7Dh85lhgcpJqE": {
@@ -30531,6 +30534,7 @@
 		"artist_genres": [
 			"austrian jazz",
 			"contemporary jazz",
+			"danish jazz",
 			"ecm-style jazz",
 			"italian jazz",
 			"jazz",
@@ -30565,6 +30569,7 @@
 		"artist_genres": [
 			"austrian jazz",
 			"contemporary jazz",
+			"danish jazz",
 			"ecm-style jazz",
 			"italian jazz",
 			"jazz",
@@ -30599,6 +30604,7 @@
 		"artist_genres": [
 			"austrian jazz",
 			"contemporary jazz",
+			"danish jazz",
 			"ecm-style jazz",
 			"italian jazz",
 			"jazz",
@@ -30633,6 +30639,7 @@
 		"artist_genres": [
 			"austrian jazz",
 			"contemporary jazz",
+			"danish jazz",
 			"ecm-style jazz",
 			"italian jazz",
 			"jazz",
@@ -30667,6 +30674,7 @@
 		"artist_genres": [
 			"austrian jazz",
 			"contemporary jazz",
+			"danish jazz",
 			"ecm-style jazz",
 			"italian jazz",
 			"jazz",
@@ -30701,6 +30709,7 @@
 		"artist_genres": [
 			"austrian jazz",
 			"contemporary jazz",
+			"danish jazz",
 			"ecm-style jazz",
 			"italian jazz",
 			"jazz",
@@ -30735,6 +30744,7 @@
 		"artist_genres": [
 			"austrian jazz",
 			"contemporary jazz",
+			"danish jazz",
 			"ecm-style jazz",
 			"italian jazz",
 			"jazz",
@@ -31484,6 +31494,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary jazz",
 			"japanese jazz",
 			"japanese jazz fusion",
 			"jazz",
@@ -31806,29 +31817,33 @@
 			"neo-psychedelic"
 		]
 	},
-	"5HFLZZFrtCxDOrUi8iGdVG": {
+	"2d6ml9Qkx8r4EjuUyrdpRV": {
 		"name": "Nocturne in B-Flat Minor, Op. 9, No. 1",
 		"track_features": {
-			"danceability": 0.248,
-			"energy": 0.00577,
+			"danceability": 0.261,
+			"energy": 0.0149,
 			"key": 1,
-			"loudness": -32.37,
+			"loudness": -27.528,
 			"mode": 1,
-			"speechiness": 0.0444,
-			"acousticness": 0.994,
-			"instrumentalness": 0.871,
-			"liveness": 0.0763,
-			"valence": 0.0386,
-			"tempo": 66.444,
+			"speechiness": 0.0419,
+			"acousticness": 0.992,
+			"instrumentalness": 0.897,
+			"liveness": 0.102,
+			"valence": 0.0382,
+			"tempo": 75.296,
 			"type": "audio_features",
-			"id": "5HFLZZFrtCxDOrUi8iGdVG",
-			"uri": "spotify:track:5HFLZZFrtCxDOrUi8iGdVG",
-			"track_href": "https://api.spotify.com/v1/tracks/5HFLZZFrtCxDOrUi8iGdVG",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/5HFLZZFrtCxDOrUi8iGdVG",
-			"duration_ms": 362160,
+			"id": "2d6ml9Qkx8r4EjuUyrdpRV",
+			"uri": "spotify:track:2d6ml9Qkx8r4EjuUyrdpRV",
+			"track_href": "https://api.spotify.com/v1/tracks/2d6ml9Qkx8r4EjuUyrdpRV",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/2d6ml9Qkx8r4EjuUyrdpRV",
+			"duration_ms": 286987,
 			"time_signature": 4
 		},
-		"artist_genres": []
+		"artist_genres": [
+			"classical",
+			"early romantic era",
+			"polish classical"
+		]
 	},
 	"1TZEH4KfzuNW2Pq3vSInHC": {
 		"name": "Exploitation Picket Fence",
@@ -32157,6 +32172,7 @@
 			"art rock",
 			"celtic rock",
 			"new wave pop",
+			"rock",
 			"scottish new wave",
 			"scottish rock"
 		]
@@ -32519,7 +32535,6 @@
 			"time_signature": 3
 		},
 		"artist_genres": [
-			"norwegian contemporary jazz",
 			"norwegian jazz",
 			"norwegian rock"
 		]
@@ -32547,11 +32562,13 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary jazz",
 			"german jazz",
 			"jazz",
 			"jazz piano",
 			"modern jazz piano",
 			"straight-ahead jazz",
+			"stride",
 			"vocal jazz"
 		]
 	},
@@ -32582,7 +32599,6 @@
 			"ecm-style jazz",
 			"jazz fusion",
 			"jazz guitar",
-			"norwegian jazz",
 			"swedish jazz"
 		]
 	},
@@ -32679,8 +32695,7 @@
 			"art pop",
 			"collage pop",
 			"folktronica",
-			"freak folk",
-			"indie rock"
+			"freak folk"
 		]
 	},
 	"3jkxfvEeHyiZU3tKmhLhLe": {
@@ -33127,7 +33142,8 @@
 			"psychedelic rock",
 			"rock",
 			"roots rock",
-			"scottish singer-songwriter"
+			"scottish singer-songwriter",
+			"singer-songwriter"
 		]
 	},
 	"2QVmiA93GVhWNTWQctyY1K": {
@@ -33186,6 +33202,7 @@
 			"alternative dance",
 			"indie soul",
 			"new french touch",
+			"new rave",
 			"nu disco"
 		]
 	},
@@ -33298,6 +33315,7 @@
 		},
 		"artist_genres": [
 			"contemporary jazz",
+			"indie jazz",
 			"jazz",
 			"jazz piano",
 			"modern jazz piano"
@@ -33414,6 +33432,7 @@
 		"artist_genres": [
 			"afrofuturism",
 			"alternative r&b",
+			"art pop",
 			"dance pop",
 			"escape room",
 			"hip pop",
@@ -33471,7 +33490,6 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"garage psych",
 			"indie punk",
 			"modern folk rock",
 			"modern power pop"
@@ -33659,6 +33677,8 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"classic uk pop",
+			"country rock",
 			"folk",
 			"folk rock",
 			"lilith",
@@ -33807,7 +33827,6 @@
 			"experimental",
 			"experimental rock",
 			"fourth world",
-			"post-punk",
 			"psychedelic rock",
 			"zolo"
 		]
@@ -33839,7 +33858,6 @@
 			"ecm-style jazz",
 			"jazz fusion",
 			"jazz guitar",
-			"norwegian jazz",
 			"swedish jazz"
 		]
 	},
@@ -33870,6 +33888,7 @@
 			"art pop",
 			"art rock",
 			"compositional ambient",
+			"electronica",
 			"experimental",
 			"experimental ambient",
 			"fourth world",
@@ -33927,6 +33946,7 @@
 		},
 		"artist_genres": [
 			"anti-folk",
+			"art pop",
 			"british folk",
 			"folk rock",
 			"freak folk",
@@ -33961,26 +33981,26 @@
 			"shimmer pop"
 		]
 	},
-	"7BH9RhVXiR1MBbUhPEr6yf": {
+	"2lfNrC5oplNg0KqhUd5A8a": {
 		"name": "All I Have To Do Is Dream",
 		"track_features": {
-			"danceability": 0.614,
-			"energy": 0.12,
-			"key": 7,
-			"loudness": -21.52,
+			"danceability": 0.605,
+			"energy": 0.138,
+			"key": 0,
+			"loudness": -20.045,
 			"mode": 1,
-			"speechiness": 0.0405,
-			"acousticness": 0.859,
-			"instrumentalness": 0.816,
-			"liveness": 0.0978,
-			"valence": 0.698,
-			"tempo": 80.309,
+			"speechiness": 0.0396,
+			"acousticness": 0.876,
+			"instrumentalness": 0.888,
+			"liveness": 0.0845,
+			"valence": 0.773,
+			"tempo": 80.45,
 			"type": "audio_features",
-			"id": "7BH9RhVXiR1MBbUhPEr6yf",
-			"uri": "spotify:track:7BH9RhVXiR1MBbUhPEr6yf",
-			"track_href": "https://api.spotify.com/v1/tracks/7BH9RhVXiR1MBbUhPEr6yf",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/7BH9RhVXiR1MBbUhPEr6yf",
-			"duration_ms": 103827,
+			"id": "2lfNrC5oplNg0KqhUd5A8a",
+			"uri": "spotify:track:2lfNrC5oplNg0KqhUd5A8a",
+			"track_href": "https://api.spotify.com/v1/tracks/2lfNrC5oplNg0KqhUd5A8a",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/2lfNrC5oplNg0KqhUd5A8a",
+			"duration_ms": 105293,
 			"time_signature": 4
 		},
 		"artist_genres": [
@@ -34087,7 +34107,6 @@
 			"folk rock",
 			"psychedelic folk",
 			"psychedelic rock",
-			"roots rock",
 			"singer-songwriter"
 		]
 	},
@@ -34120,7 +34139,8 @@
 			"chamber psych",
 			"freak folk",
 			"indie folk",
-			"melancholia"
+			"melancholia",
+			"new weird america"
 		]
 	},
 	"3rTnGUeDrnZV22DvRuUuXr": {
@@ -34797,6 +34817,7 @@
 		},
 		"artist_genres": [
 			"british soul",
+			"indie r&b",
 			"neo soul"
 		]
 	},
@@ -34824,6 +34845,7 @@
 		},
 		"artist_genres": [
 			"british soul",
+			"indie r&b",
 			"neo soul"
 		]
 	},
@@ -34851,6 +34873,7 @@
 		},
 		"artist_genres": [
 			"british soul",
+			"indie r&b",
 			"neo soul"
 		]
 	},
@@ -35000,7 +35023,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -35065,31 +35087,30 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
 	},
-	"0oGPVK8SMOXinOPHTN5swT": {
+	"38dqcD5Xm0f1qDhg6R29Tj": {
 		"name": "Darling Lorraine",
 		"track_features": {
-			"danceability": 0.434,
-			"energy": 0.233,
-			"key": 0,
-			"loudness": -13.928,
-			"mode": 1,
-			"speechiness": 0.0376,
-			"acousticness": 0.811,
-			"instrumentalness": 0.000295,
-			"liveness": 0.162,
-			"valence": 0.374,
-			"tempo": 105.924,
+			"danceability": 0.693,
+			"energy": 0.407,
+			"key": 2,
+			"loudness": -9.399,
+			"mode": 0,
+			"speechiness": 0.0331,
+			"acousticness": 0.723,
+			"instrumentalness": 0.0227,
+			"liveness": 0.0829,
+			"valence": 0.425,
+			"tempo": 123.851,
 			"type": "audio_features",
-			"id": "0oGPVK8SMOXinOPHTN5swT",
-			"uri": "spotify:track:0oGPVK8SMOXinOPHTN5swT",
-			"track_href": "https://api.spotify.com/v1/tracks/0oGPVK8SMOXinOPHTN5swT",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/0oGPVK8SMOXinOPHTN5swT",
-			"duration_ms": 433413,
+			"id": "38dqcD5Xm0f1qDhg6R29Tj",
+			"uri": "spotify:track:38dqcD5Xm0f1qDhg6R29Tj",
+			"track_href": "https://api.spotify.com/v1/tracks/38dqcD5Xm0f1qDhg6R29Tj",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/38dqcD5Xm0f1qDhg6R29Tj",
+			"duration_ms": 398960,
 			"time_signature": 4
 		},
 		"artist_genres": [
@@ -35099,7 +35120,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -35133,7 +35153,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -35167,7 +35186,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -35201,7 +35219,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -35235,7 +35252,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -35269,7 +35285,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -35303,7 +35318,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -35337,7 +35351,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -35371,7 +35384,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -35405,7 +35417,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -35439,7 +35450,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -35473,7 +35483,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -35507,7 +35516,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -35541,7 +35549,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -35575,7 +35582,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -35609,7 +35615,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -35643,7 +35648,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -35677,7 +35681,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -35711,7 +35714,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -35745,7 +35747,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -35779,7 +35780,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -35813,7 +35813,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -35847,7 +35846,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -35881,7 +35879,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -35915,7 +35912,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -35949,7 +35945,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -35983,7 +35978,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -36017,7 +36011,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -36051,7 +36044,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -36085,7 +36077,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -36119,7 +36110,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -36153,7 +36143,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -36187,7 +36176,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -36221,7 +36209,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -36255,7 +36242,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -36289,7 +36275,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -36323,7 +36308,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -36357,7 +36341,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -36604,6 +36587,7 @@
 		},
 		"artist_genres": [
 			"ambient",
+			"art pop",
 			"fourth world",
 			"j-ambient"
 		]
@@ -36703,8 +36687,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"classic japanese jazz",
-			"japanese jazz"
+			"classic japanese jazz"
 		]
 	},
 	"5oTnjavcEz8hENl2nlYmdx": {
@@ -37013,7 +36996,6 @@
 			"canadian experimental",
 			"compositional ambient",
 			"dream pop",
-			"drift",
 			"drone",
 			"electronica",
 			"experimental",
@@ -37048,6 +37030,7 @@
 			"time_signature": 3
 		},
 		"artist_genres": [
+			"art pop",
 			"fourth world"
 		]
 	},
@@ -37083,7 +37066,6 @@
 			"folktronica",
 			"fourth world",
 			"freak folk",
-			"microhouse",
 			"neo-classical"
 		]
 	},
@@ -37183,26 +37165,26 @@
 		},
 		"artist_genres": []
 	},
-	"57WnYNy983u8JoXpyYi0QS": {
+	"0cHSW3dCalyAveZUP07h66": {
 		"name": "Were You There",
 		"track_features": {
-			"danceability": 0.627,
-			"energy": 0.00275,
+			"danceability": 0.563,
+			"energy": 0.00682,
 			"key": 8,
-			"loudness": -22.757,
+			"loudness": -26.088,
 			"mode": 1,
-			"speechiness": 0.103,
+			"speechiness": 0.133,
 			"acousticness": 0.995,
-			"instrumentalness": 0.966,
-			"liveness": 0.111,
-			"valence": 0.228,
-			"tempo": 132.769,
+			"instrumentalness": 0.96,
+			"liveness": 0.108,
+			"valence": 0.197,
+			"tempo": 136.086,
 			"type": "audio_features",
-			"id": "57WnYNy983u8JoXpyYi0QS",
-			"uri": "spotify:track:57WnYNy983u8JoXpyYi0QS",
-			"track_href": "https://api.spotify.com/v1/tracks/57WnYNy983u8JoXpyYi0QS",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/57WnYNy983u8JoXpyYi0QS",
-			"duration_ms": 290173,
+			"id": "0cHSW3dCalyAveZUP07h66",
+			"uri": "spotify:track:0cHSW3dCalyAveZUP07h66",
+			"track_href": "https://api.spotify.com/v1/tracks/0cHSW3dCalyAveZUP07h66",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/0cHSW3dCalyAveZUP07h66",
+			"duration_ms": 295607,
 			"time_signature": 3
 		},
 		"artist_genres": []
@@ -37351,27 +37333,27 @@
 		},
 		"artist_genres": []
 	},
-	"33ahXRVbidoCGLLiTr3VE1": {
+	"5TaOy5WyINfCJzE9bBfof7": {
 		"name": "When the Saints Go Marching In",
 		"track_features": {
-			"danceability": 0.438,
-			"energy": 0.00463,
+			"danceability": 0.523,
+			"energy": 0.0043,
 			"key": 5,
-			"loudness": -26.043,
+			"loudness": -26.048,
 			"mode": 1,
-			"speechiness": 0.0672,
+			"speechiness": 0.0615,
 			"acousticness": 0.995,
-			"instrumentalness": 0.924,
-			"liveness": 0.0671,
-			"valence": 0.207,
-			"tempo": 70.312,
+			"instrumentalness": 0.929,
+			"liveness": 0.0699,
+			"valence": 0.199,
+			"tempo": 135.353,
 			"type": "audio_features",
-			"id": "33ahXRVbidoCGLLiTr3VE1",
-			"uri": "spotify:track:33ahXRVbidoCGLLiTr3VE1",
-			"track_href": "https://api.spotify.com/v1/tracks/33ahXRVbidoCGLLiTr3VE1",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/33ahXRVbidoCGLLiTr3VE1",
-			"duration_ms": 198027,
-			"time_signature": 1
+			"id": "5TaOy5WyINfCJzE9bBfof7",
+			"uri": "spotify:track:5TaOy5WyINfCJzE9bBfof7",
+			"track_href": "https://api.spotify.com/v1/tracks/5TaOy5WyINfCJzE9bBfof7",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/5TaOy5WyINfCJzE9bBfof7",
+			"duration_ms": 197933,
+			"time_signature": 3
 		},
 		"artist_genres": []
 	},
@@ -37719,32 +37701,31 @@
 			"avant-garde jazz",
 			"free improvisation",
 			"free jazz",
-			"japanese jazz",
 			"jazz",
 			"jazz funk",
 			"jazz saxophone"
 		]
 	},
-	"6C0MI24rbbiNb6E8EWAr8z": {
+	"3sU66kuOiMmfM7Bj4mSHyk": {
 		"name": "Water Boy",
 		"track_features": {
-			"danceability": 0.425,
-			"energy": 0.0551,
+			"danceability": 0.445,
+			"energy": 0.102,
 			"key": 0,
-			"loudness": -24.14,
+			"loudness": -19.506,
 			"mode": 1,
-			"speechiness": 0.0437,
-			"acousticness": 0.971,
-			"instrumentalness": 0.941,
-			"liveness": 0.114,
-			"valence": 0.282,
-			"tempo": 115.85,
+			"speechiness": 0.0444,
+			"acousticness": 0.932,
+			"instrumentalness": 0.896,
+			"liveness": 0.0934,
+			"valence": 0.26,
+			"tempo": 116.284,
 			"type": "audio_features",
-			"id": "6C0MI24rbbiNb6E8EWAr8z",
-			"uri": "spotify:track:6C0MI24rbbiNb6E8EWAr8z",
-			"track_href": "https://api.spotify.com/v1/tracks/6C0MI24rbbiNb6E8EWAr8z",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/6C0MI24rbbiNb6E8EWAr8z",
-			"duration_ms": 290760,
+			"id": "3sU66kuOiMmfM7Bj4mSHyk",
+			"uri": "spotify:track:3sU66kuOiMmfM7Bj4mSHyk",
+			"track_href": "https://api.spotify.com/v1/tracks/3sU66kuOiMmfM7Bj4mSHyk",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/3sU66kuOiMmfM7Bj4mSHyk",
+			"duration_ms": 294293,
 			"time_signature": 4
 		},
 		"artist_genres": []
@@ -38338,7 +38319,8 @@
 			"psychedelic rock",
 			"rock",
 			"roots rock",
-			"scottish singer-songwriter"
+			"scottish singer-songwriter",
+			"singer-songwriter"
 		]
 	},
 	"4o5GyaeGMgDsrclBsL3au7": {
@@ -38367,12 +38349,12 @@
 			"art rock",
 			"brill building pop",
 			"classic rock",
+			"classic uk pop",
 			"country rock",
 			"folk",
 			"folk rock",
 			"mellow gold",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -38531,13 +38513,14 @@
 			"album rock",
 			"art rock",
 			"classic rock",
+			"classic uk pop",
 			"country rock",
 			"folk rock",
 			"mellow gold",
 			"philly soul",
 			"power pop",
+			"psychedelic rock",
 			"rock",
-			"roots rock",
 			"soft rock",
 			"symphonic rock",
 			"zolo"
@@ -38566,6 +38549,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"album rock",
 			"classic rock",
 			"country rock",
 			"folk",
@@ -38727,6 +38711,7 @@
 			"time_signature": 3
 		},
 		"artist_genres": [
+			"album rock",
 			"classic rock",
 			"country rock",
 			"folk",
@@ -39038,6 +39023,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"adult standards",
 			"funk",
 			"indie r&b",
 			"motown",
@@ -39422,6 +39408,7 @@
 		},
 		"artist_genres": [
 			"british folk",
+			"classic uk pop",
 			"folk",
 			"folk rock"
 		]
@@ -39782,6 +39769,7 @@
 		"artist_genres": [
 			"alternative dance",
 			"alternative rock",
+			"art pop",
 			"dance rock",
 			"dance-punk",
 			"electronic rock",
@@ -39986,6 +39974,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary jazz",
 			"neo-classical",
 			"norwegian contemporary jazz",
 			"norwegian jazz",
@@ -40080,13 +40069,11 @@
 			"doom metal",
 			"drone",
 			"drone metal",
-			"dub metal",
 			"gaian doom",
 			"instrumental rock",
 			"olympia wa indie",
 			"post-doom metal",
-			"post-metal",
-			"space rock"
+			"post-metal"
 		]
 	},
 	"60rkOnV6lZFbsHpfzLwbW9": {
@@ -40116,7 +40103,7 @@
 			"melancholia"
 		]
 	},
-	"60sTexixOxqR2IQpWZONQ3": {
+	"5uUHju46SG49QO0LoK2sL4": {
 		"name": "Seven Days of Falling",
 		"track_features": {
 			"danceability": 0.669,
@@ -40131,10 +40118,10 @@
 			"valence": 0.31,
 			"tempo": 97.873,
 			"type": "audio_features",
-			"id": "60sTexixOxqR2IQpWZONQ3",
-			"uri": "spotify:track:60sTexixOxqR2IQpWZONQ3",
-			"track_href": "https://api.spotify.com/v1/tracks/60sTexixOxqR2IQpWZONQ3",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/60sTexixOxqR2IQpWZONQ3",
+			"id": "5uUHju46SG49QO0LoK2sL4",
+			"uri": "spotify:track:5uUHju46SG49QO0LoK2sL4",
+			"track_href": "https://api.spotify.com/v1/tracks/5uUHju46SG49QO0LoK2sL4",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/5uUHju46SG49QO0LoK2sL4",
 			"duration_ms": 399160,
 			"time_signature": 4
 		},
@@ -40143,7 +40130,6 @@
 			"ecm-style jazz",
 			"jazz fusion",
 			"jazz guitar",
-			"norwegian jazz",
 			"swedish jazz"
 		]
 	},
@@ -40284,9 +40270,7 @@
 			"duration_ms": 196880,
 			"time_signature": 4
 		},
-		"artist_genres": [
-			"bossa nova"
-		]
+		"artist_genres": []
 	},
 	"2lVM3C4INRCFfBPATyWw7X": {
 		"name": "Gimme a Holler",
@@ -40488,7 +40472,8 @@
 			"folk",
 			"folk rock",
 			"freak folk",
-			"traditional blues"
+			"traditional blues",
+			"traditional folk"
 		]
 	},
 	"0EUFHwtMDqqtz0zYbOcXoK": {
@@ -40685,13 +40670,11 @@
 			"doom metal",
 			"drone",
 			"drone metal",
-			"dub metal",
 			"gaian doom",
 			"instrumental rock",
 			"olympia wa indie",
 			"post-doom metal",
-			"post-metal",
-			"space rock"
+			"post-metal"
 		]
 	},
 	"6hNOgftznEOoTrermrc30D": {
@@ -41146,6 +41129,7 @@
 			"cool jazz",
 			"jazz",
 			"jazz trumpet",
+			"lounge",
 			"vocal jazz"
 		]
 	},
@@ -41201,6 +41185,7 @@
 			"time_signature": 3
 		},
 		"artist_genres": [
+			"contemporary jazz",
 			"japanese jazz",
 			"japanese jazz fusion",
 			"jazz",
@@ -41561,7 +41546,8 @@
 			"ambient",
 			"compositional ambient",
 			"drone",
-			"neo-classical"
+			"neo-classical",
+			"post-rock"
 		]
 	},
 	"6i0XeW4PstexSITqHfm3FH": {
@@ -41812,6 +41798,7 @@
 			"alternative country",
 			"alternative rock",
 			"chicago indie",
+			"folk",
 			"indie pop",
 			"indie rock",
 			"pop rock",
@@ -41845,6 +41832,7 @@
 		"artist_genres": [
 			"art rock",
 			"british folk",
+			"classic uk pop",
 			"folk rock",
 			"progressive rock",
 			"psychedelic folk",
@@ -41998,6 +41986,7 @@
 		},
 		"artist_genres": [
 			"norske viser",
+			"norwegian contemporary jazz",
 			"norwegian indie",
 			"norwegian pop"
 		]
@@ -42086,6 +42075,7 @@
 		"artist_genres": [
 			"canadian post-rock",
 			"double drumming",
+			"freak folk",
 			"instrumental post-rock",
 			"post-rock"
 		]
@@ -42552,6 +42542,7 @@
 		"artist_genres": [
 			"chillwave",
 			"downtempo",
+			"electronica",
 			"indietronica",
 			"intelligent dance music"
 		]
@@ -42611,7 +42602,6 @@
 			"escape room",
 			"hip hop",
 			"indie soul",
-			"neo soul",
 			"underground hip hop"
 		]
 	},
@@ -42778,6 +42768,7 @@
 		"artist_genres": [
 			"canadian post-rock",
 			"double drumming",
+			"freak folk",
 			"instrumental post-rock",
 			"post-rock"
 		]
@@ -42895,8 +42886,8 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"art pop",
 			"canadian indie folk",
-			"deep new americana",
 			"freak folk",
 			"indie folk",
 			"indie pop",
@@ -43305,13 +43296,11 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"acoustic pop",
 			"folk",
 			"indie folk",
 			"lilith",
 			"new americana",
 			"progressive bluegrass",
-			"roots rock",
 			"stomp and holler"
 		]
 	},
@@ -43433,7 +43422,6 @@
 			"folktronica",
 			"fourth world",
 			"freak folk",
-			"microhouse",
 			"neo-classical"
 		]
 	},
@@ -43485,7 +43473,9 @@
 		},
 		"artist_genres": [
 			"alternative dance",
+			"art pop",
 			"brighton indie",
+			"chamber psych",
 			"indie pop",
 			"indie rock",
 			"new rave"
@@ -43869,6 +43859,7 @@
 			"art pop",
 			"art rock",
 			"compositional ambient",
+			"electronica",
 			"experimental",
 			"experimental ambient",
 			"fourth world",
@@ -45424,7 +45415,7 @@
 			"visor"
 		]
 	},
-	"15U6J3BADJpZcKT2hOKfpY": {
+	"6TdoQdhklJ3vfoYjoQqJB3": {
 		"name": "Polaren Per \u00e4r k\u00e4rlekskrank",
 		"track_features": {
 			"danceability": 0.718,
@@ -45439,10 +45430,10 @@
 			"valence": 0.592,
 			"tempo": 133.971,
 			"type": "audio_features",
-			"id": "15U6J3BADJpZcKT2hOKfpY",
-			"uri": "spotify:track:15U6J3BADJpZcKT2hOKfpY",
-			"track_href": "https://api.spotify.com/v1/tracks/15U6J3BADJpZcKT2hOKfpY",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/15U6J3BADJpZcKT2hOKfpY",
+			"id": "6TdoQdhklJ3vfoYjoQqJB3",
+			"uri": "spotify:track:6TdoQdhklJ3vfoYjoQqJB3",
+			"track_href": "https://api.spotify.com/v1/tracks/6TdoQdhklJ3vfoYjoQqJB3",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/6TdoQdhklJ3vfoYjoQqJB3",
 			"duration_ms": 148173,
 			"time_signature": 4
 		},
@@ -46219,6 +46210,7 @@
 		},
 		"artist_genres": [
 			"contemporary jazz",
+			"indie jazz",
 			"jazz",
 			"jazz piano",
 			"modern jazz piano"
@@ -46271,6 +46263,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"adult standards",
 			"funk",
 			"indie r&b",
 			"motown",
@@ -46357,7 +46350,6 @@
 		},
 		"artist_genres": [
 			"alternative emo",
-			"anti-folk",
 			"bubblegrunge",
 			"emo",
 			"folk punk",
@@ -46419,6 +46411,7 @@
 		},
 		"artist_genres": [
 			"afrofuturism",
+			"disco",
 			"funk",
 			"funk rock",
 			"motown",
@@ -46728,7 +46721,6 @@
 			"mellow gold",
 			"psychedelic rock",
 			"rock",
-			"roots rock",
 			"soft rock",
 			"yacht rock"
 		]
@@ -46820,7 +46812,6 @@
 			"escape room",
 			"hip hop",
 			"indie soul",
-			"neo soul",
 			"underground hip hop"
 		]
 	},
@@ -47089,7 +47080,7 @@
 			"soul"
 		]
 	},
-	"73U20lYCzqwGLLk4V7u3ul": {
+	"6fPHVoN9aeke92pkhhPdev": {
 		"name": "Gone",
 		"track_features": {
 			"danceability": 0.483,
@@ -47097,27 +47088,21 @@
 			"key": 9,
 			"loudness": -7.407,
 			"mode": 0,
-			"speechiness": 0.0503,
+			"speechiness": 0.0504,
 			"acousticness": 0.956,
 			"instrumentalness": 0,
 			"liveness": 0.0911,
 			"valence": 0.312,
-			"tempo": 128.459,
+			"tempo": 128.454,
 			"type": "audio_features",
-			"id": "73U20lYCzqwGLLk4V7u3ul",
-			"uri": "spotify:track:73U20lYCzqwGLLk4V7u3ul",
-			"track_href": "https://api.spotify.com/v1/tracks/73U20lYCzqwGLLk4V7u3ul",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/73U20lYCzqwGLLk4V7u3ul",
+			"id": "6fPHVoN9aeke92pkhhPdev",
+			"uri": "spotify:track:6fPHVoN9aeke92pkhhPdev",
+			"track_href": "https://api.spotify.com/v1/tracks/6fPHVoN9aeke92pkhhPdev",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/6fPHVoN9aeke92pkhhPdev",
 			"duration_ms": 264973,
 			"time_signature": 4
 		},
-		"artist_genres": [
-			"british soul",
-			"indie soul",
-			"neo soul",
-			"pop soul",
-			"soul"
-		]
+		"artist_genres": []
 	},
 	"45RztUROkc4H1pHoCtRR6c": {
 		"name": "Please Don't Make Me Cry",
@@ -47627,6 +47612,7 @@
 		"artist_genres": [
 			"afrofuturism",
 			"alternative r&b",
+			"art pop",
 			"atl hip hop",
 			"dance pop",
 			"electropop",
@@ -47662,6 +47648,7 @@
 		"artist_genres": [
 			"afrofuturism",
 			"alternative r&b",
+			"art pop",
 			"atl hip hop",
 			"dance pop",
 			"electropop",
@@ -47697,6 +47684,7 @@
 		"artist_genres": [
 			"afrofuturism",
 			"alternative r&b",
+			"art pop",
 			"atl hip hop",
 			"dance pop",
 			"electropop",
@@ -47732,6 +47720,7 @@
 		"artist_genres": [
 			"afrofuturism",
 			"alternative r&b",
+			"art pop",
 			"atl hip hop",
 			"dance pop",
 			"electropop",
@@ -47767,6 +47756,7 @@
 		"artist_genres": [
 			"afrofuturism",
 			"alternative r&b",
+			"art pop",
 			"atl hip hop",
 			"dance pop",
 			"electropop",
@@ -47802,6 +47792,7 @@
 		"artist_genres": [
 			"afrofuturism",
 			"alternative r&b",
+			"art pop",
 			"atl hip hop",
 			"dance pop",
 			"electropop",
@@ -47837,6 +47828,7 @@
 		"artist_genres": [
 			"afrofuturism",
 			"alternative r&b",
+			"art pop",
 			"atl hip hop",
 			"dance pop",
 			"electropop",
@@ -47872,6 +47864,7 @@
 		"artist_genres": [
 			"afrofuturism",
 			"alternative r&b",
+			"art pop",
 			"atl hip hop",
 			"dance pop",
 			"electropop",
@@ -47907,6 +47900,7 @@
 		"artist_genres": [
 			"afrofuturism",
 			"alternative r&b",
+			"art pop",
 			"atl hip hop",
 			"dance pop",
 			"electropop",
@@ -47942,6 +47936,7 @@
 		"artist_genres": [
 			"afrofuturism",
 			"alternative r&b",
+			"art pop",
 			"atl hip hop",
 			"dance pop",
 			"electropop",
@@ -47977,6 +47972,7 @@
 		"artist_genres": [
 			"afrofuturism",
 			"alternative r&b",
+			"art pop",
 			"atl hip hop",
 			"dance pop",
 			"electropop",
@@ -48012,6 +48008,7 @@
 		"artist_genres": [
 			"afrofuturism",
 			"alternative r&b",
+			"art pop",
 			"atl hip hop",
 			"dance pop",
 			"electropop",
@@ -48047,6 +48044,7 @@
 		"artist_genres": [
 			"afrofuturism",
 			"alternative r&b",
+			"art pop",
 			"atl hip hop",
 			"dance pop",
 			"electropop",
@@ -48082,6 +48080,7 @@
 		"artist_genres": [
 			"afrofuturism",
 			"alternative r&b",
+			"art pop",
 			"atl hip hop",
 			"dance pop",
 			"electropop",
@@ -48117,6 +48116,7 @@
 		"artist_genres": [
 			"afrofuturism",
 			"alternative r&b",
+			"art pop",
 			"atl hip hop",
 			"dance pop",
 			"electropop",
@@ -48152,6 +48152,7 @@
 		"artist_genres": [
 			"afrofuturism",
 			"alternative r&b",
+			"art pop",
 			"atl hip hop",
 			"dance pop",
 			"electropop",
@@ -48272,7 +48273,6 @@
 			"bergen indie",
 			"norwegian indie",
 			"norwegian pop",
-			"norwegian pop rap",
 			"norwegian punk rock",
 			"norwegian rock"
 		]
@@ -48330,6 +48330,7 @@
 			"alternative r&b",
 			"contemporary jazz",
 			"indie jazz",
+			"indie r&b",
 			"indie soul",
 			"jazz",
 			"modern jazz piano",
@@ -48361,6 +48362,7 @@
 		"artist_genres": [
 			"afrofuturism",
 			"alternative r&b",
+			"art pop",
 			"atl hip hop",
 			"dance pop",
 			"electropop",
@@ -48462,7 +48464,8 @@
 			"neo soul",
 			"quiet storm",
 			"soul",
-			"southern soul"
+			"southern soul",
+			"vocal jazz"
 		]
 	},
 	"1wrhEWmo1qTLMg5NzF8Taz": {
@@ -48888,7 +48891,6 @@
 			"mellow gold",
 			"psychedelic rock",
 			"rock",
-			"roots rock",
 			"soft rock",
 			"yacht rock"
 		]
@@ -48954,7 +48956,6 @@
 			"mellow gold",
 			"psychedelic rock",
 			"rock",
-			"roots rock",
 			"soft rock",
 			"yacht rock"
 		]
@@ -49139,8 +49140,7 @@
 			"classic soul",
 			"funk",
 			"psychedelic soul",
-			"soul",
-			"southern soul"
+			"soul"
 		]
 	},
 	"0ldOjxAtxvncOrVWmg6xcw": {
@@ -49701,6 +49701,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary jazz",
 			"japanese jazz",
 			"japanese jazz fusion",
 			"jazz",
@@ -49849,6 +49850,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"art pop",
 			"freak folk",
 			"indie folk",
 			"indie pop",
@@ -50762,6 +50764,7 @@
 			"time_signature": 3
 		},
 		"artist_genres": [
+			"art pop",
 			"melancholia"
 		]
 	},
@@ -50789,7 +50792,6 @@
 		},
 		"artist_genres": [
 			"escape room",
-			"future bass",
 			"glitchcore",
 			"hyperpop"
 		]
@@ -52128,7 +52130,7 @@
 			"yacht rock"
 		]
 	},
-	"1WsOhC8Rp4kdwCdrWCkDxB": {
+	"5sHPZrS8ryzZhSWDWtGVQn": {
 		"name": "Dreams - 2018 Remaster",
 		"track_features": {
 			"danceability": 0.837,
@@ -52143,10 +52145,10 @@
 			"valence": 0.793,
 			"tempo": 120.386,
 			"type": "audio_features",
-			"id": "1WsOhC8Rp4kdwCdrWCkDxB",
-			"uri": "spotify:track:1WsOhC8Rp4kdwCdrWCkDxB",
-			"track_href": "https://api.spotify.com/v1/tracks/1WsOhC8Rp4kdwCdrWCkDxB",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/1WsOhC8Rp4kdwCdrWCkDxB",
+			"id": "5sHPZrS8ryzZhSWDWtGVQn",
+			"uri": "spotify:track:5sHPZrS8ryzZhSWDWtGVQn",
+			"track_href": "https://api.spotify.com/v1/tracks/5sHPZrS8ryzZhSWDWtGVQn",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/5sHPZrS8ryzZhSWDWtGVQn",
 			"duration_ms": 257480,
 			"time_signature": 4
 		},
@@ -52245,7 +52247,7 @@
 			"yacht rock"
 		]
 	},
-	"7BRMVjSXolblx6ZXliSaMl": {
+	"6jDSADkMOxINTxv2WmWkqe": {
 		"name": "Everywhere - 2018 Remaster",
 		"track_features": {
 			"danceability": 0.74,
@@ -52258,23 +52260,16 @@
 			"instrumentalness": 0.0107,
 			"liveness": 0.0927,
 			"valence": 0.682,
-			"tempo": 114.959,
+			"tempo": 114.957,
 			"type": "audio_features",
-			"id": "7BRMVjSXolblx6ZXliSaMl",
-			"uri": "spotify:track:7BRMVjSXolblx6ZXliSaMl",
-			"track_href": "https://api.spotify.com/v1/tracks/7BRMVjSXolblx6ZXliSaMl",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/7BRMVjSXolblx6ZXliSaMl",
+			"id": "6jDSADkMOxINTxv2WmWkqe",
+			"uri": "spotify:track:6jDSADkMOxINTxv2WmWkqe",
+			"track_href": "https://api.spotify.com/v1/tracks/6jDSADkMOxINTxv2WmWkqe",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/6jDSADkMOxINTxv2WmWkqe",
 			"duration_ms": 223253,
 			"time_signature": 4
 		},
-		"artist_genres": [
-			"album rock",
-			"classic rock",
-			"mellow gold",
-			"rock",
-			"soft rock",
-			"yacht rock"
-		]
+		"artist_genres": []
 	},
 	"3OKks9E1lZ0E8FOVMFZY49": {
 		"name": "Little Lies - 2018 Remaster",
@@ -54006,7 +54001,8 @@
 			"chamber psych",
 			"freak folk",
 			"indie folk",
-			"melancholia"
+			"melancholia",
+			"new weird america"
 		]
 	},
 	"76RD1s0oslRostAfJ7rOSt": {
@@ -54144,6 +54140,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"art pop",
 			"freak folk",
 			"indie pop",
 			"indie rock",
@@ -54779,7 +54776,6 @@
 			"mellow gold",
 			"psychedelic rock",
 			"rock",
-			"roots rock",
 			"soft rock",
 			"yacht rock"
 		]
@@ -54951,6 +54947,7 @@
 		},
 		"artist_genres": [
 			"contemporary jazz",
+			"indie jazz",
 			"uk contemporary jazz"
 		]
 	},
@@ -55692,7 +55689,6 @@
 			"mellow gold",
 			"psychedelic rock",
 			"rock",
-			"roots rock",
 			"soft rock",
 			"yacht rock"
 		]
@@ -55720,6 +55716,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"disco",
 			"europop",
 			"new wave pop",
 			"soft rock"
@@ -55836,7 +55833,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"adult standards"
+			"brill building pop"
 		]
 	},
 	"1sTsuZTdANkiFd7T34H3nb": {
@@ -56584,7 +56581,6 @@
 			"british indie rock",
 			"indie rock",
 			"indietronica",
-			"modern alternative rock",
 			"modern rock",
 			"new rave",
 			"rock",
@@ -56824,9 +56820,9 @@
 		},
 		"artist_genres": [
 			"disco",
+			"electro",
 			"funk",
 			"motown",
-			"new jack swing",
 			"popping",
 			"post-disco",
 			"quiet storm",
@@ -56923,23 +56919,23 @@
 	"0awG4a7t5UrmZZ4PZVNav3": {
 		"name": "Get Down Saturday Night",
 		"track_features": {
-			"danceability": 0.883,
-			"energy": 0.674,
-			"key": 10,
-			"loudness": -9.218,
+			"danceability": 0.865,
+			"energy": 0.611,
+			"key": 11,
+			"loudness": -11.571,
 			"mode": 0,
-			"speechiness": 0.116,
-			"acousticness": 0.0693,
-			"instrumentalness": 0.000958,
-			"liveness": 0.0448,
-			"valence": 0.898,
-			"tempo": 118.907,
+			"speechiness": 0.0573,
+			"acousticness": 0.226,
+			"instrumentalness": 0.082,
+			"liveness": 0.0572,
+			"valence": 0.963,
+			"tempo": 116.545,
 			"type": "audio_features",
 			"id": "0awG4a7t5UrmZZ4PZVNav3",
 			"uri": "spotify:track:0awG4a7t5UrmZZ4PZVNav3",
 			"track_href": "https://api.spotify.com/v1/tracks/0awG4a7t5UrmZZ4PZVNav3",
 			"analysis_url": "https://api.spotify.com/v1/audio-analysis/0awG4a7t5UrmZZ4PZVNav3",
-			"duration_ms": 234000,
+			"duration_ms": 241907,
 			"time_signature": 4
 		},
 		"artist_genres": []
@@ -57333,6 +57329,7 @@
 		"artist_genres": [
 			"alternative r&b",
 			"indie soul",
+			"trap soul",
 			"uk alternative hip hop",
 			"underground hip hop"
 		]
@@ -57756,6 +57753,7 @@
 		"artist_genres": [
 			"adult standards",
 			"classic rock",
+			"classic uk pop",
 			"folk",
 			"folk rock",
 			"mellow gold",
@@ -57903,6 +57901,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"disco",
 			"new romantic",
 			"new wave pop",
 			"soft rock",
@@ -58114,8 +58113,7 @@
 		},
 		"artist_genres": [
 			"folk",
-			"folk rock",
-			"roots rock"
+			"folk rock"
 		]
 	},
 	"5QBVRETMnR1sKyrQAMypDu": {
@@ -58592,6 +58590,7 @@
 		"artist_genres": [
 			"bossa nova",
 			"brazilian jazz",
+			"indie jazz",
 			"jazz funk",
 			"psicodelia brasileira"
 		]
@@ -58621,6 +58620,7 @@
 		"artist_genres": [
 			"bossa nova",
 			"brazilian jazz",
+			"indie jazz",
 			"jazz funk",
 			"psicodelia brasileira"
 		]
@@ -58735,6 +58735,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"disco",
 			"europop"
 		]
 	},
@@ -58788,6 +58789,7 @@
 		},
 		"artist_genres": [
 			"contemporary jazz",
+			"indie jazz",
 			"jazz",
 			"jazz piano",
 			"modern jazz piano"
@@ -59074,7 +59076,7 @@
 			"pop"
 		]
 	},
-	"0TrGpSwGoJgkzFE8rGXMaK": {
+	"7bPWdJgx8vek7S5i5yAtvG": {
 		"name": "Chemtrails Over The Country Club",
 		"track_features": {
 			"danceability": 0.334,
@@ -59089,14 +59091,17 @@
 			"valence": 0.429,
 			"tempo": 201.025,
 			"type": "audio_features",
-			"id": "0TrGpSwGoJgkzFE8rGXMaK",
-			"uri": "spotify:track:0TrGpSwGoJgkzFE8rGXMaK",
-			"track_href": "https://api.spotify.com/v1/tracks/0TrGpSwGoJgkzFE8rGXMaK",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/0TrGpSwGoJgkzFE8rGXMaK",
+			"id": "7bPWdJgx8vek7S5i5yAtvG",
+			"uri": "spotify:track:7bPWdJgx8vek7S5i5yAtvG",
+			"track_href": "https://api.spotify.com/v1/tracks/7bPWdJgx8vek7S5i5yAtvG",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/7bPWdJgx8vek7S5i5yAtvG",
 			"duration_ms": 271177,
 			"time_signature": 3
 		},
-		"artist_genres": []
+		"artist_genres": [
+			"art pop",
+			"pop"
+		]
 	},
 	"0hyImI8JaWONOrzKH7kJsC": {
 		"name": "Tulsa Jesus Freak",
@@ -59488,14 +59493,13 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"bass music",
 			"chillwave",
 			"electra",
 			"electronica",
 			"future garage",
 			"indie soul",
 			"microhouse",
-			"wonky"
+			"uk bass"
 		]
 	},
 	"2Kxcoer1xviFJEchTk4NX1": {
@@ -59725,7 +59729,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -59917,6 +59920,7 @@
 		"artist_genres": [
 			"album rock",
 			"art rock",
+			"classic uk pop",
 			"instrumental rock",
 			"jazz fusion",
 			"neo-progressive",
@@ -60239,6 +60243,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"album rock",
 			"classic rock",
 			"country rock",
 			"folk",
@@ -60375,27 +60380,27 @@
 			"jazz cubano"
 		]
 	},
-	"2KdNymqcDKBWViy0jDMnIS": {
+	"2P4jv784t9JMuMl49eEpno": {
 		"name": "Moon",
 		"track_features": {
-			"danceability": 0.658,
-			"energy": 0.413,
-			"key": 11,
-			"loudness": -13.956,
-			"mode": 0,
-			"speechiness": 0.0328,
-			"acousticness": 0.268,
-			"instrumentalness": 0.805,
-			"liveness": 0.373,
-			"valence": 0.242,
-			"tempo": 107.992,
+			"danceability": 0.453,
+			"energy": 0.67,
+			"key": 0,
+			"loudness": -13.217,
+			"mode": 1,
+			"speechiness": 0.0471,
+			"acousticness": 0.708,
+			"instrumentalness": 0.946,
+			"liveness": 0.144,
+			"valence": 0.25,
+			"tempo": 93.62,
 			"type": "audio_features",
-			"id": "2KdNymqcDKBWViy0jDMnIS",
-			"uri": "spotify:track:2KdNymqcDKBWViy0jDMnIS",
-			"track_href": "https://api.spotify.com/v1/tracks/2KdNymqcDKBWViy0jDMnIS",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/2KdNymqcDKBWViy0jDMnIS",
-			"duration_ms": 388307,
-			"time_signature": 4
+			"id": "2P4jv784t9JMuMl49eEpno",
+			"uri": "spotify:track:2P4jv784t9JMuMl49eEpno",
+			"track_href": "https://api.spotify.com/v1/tracks/2P4jv784t9JMuMl49eEpno",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/2P4jv784t9JMuMl49eEpno",
+			"duration_ms": 252446,
+			"time_signature": 3
 		},
 		"artist_genres": [
 			"canadian metal",
@@ -60517,7 +60522,6 @@
 			"chillwave",
 			"dance pop",
 			"electropop",
-			"escape room",
 			"grave wave",
 			"hyperpop",
 			"indietronica",
@@ -60794,7 +60798,6 @@
 			"chillwave",
 			"dance pop",
 			"electropop",
-			"escape room",
 			"grave wave",
 			"hyperpop",
 			"indietronica",
@@ -60887,6 +60890,7 @@
 		"artist_genres": [
 			"acoustic punk",
 			"alternative rock",
+			"pop rock",
 			"rock"
 		]
 	},
@@ -61035,7 +61039,8 @@
 			"mellow gold",
 			"psychedelic rock",
 			"roots rock",
-			"singer-songwriter"
+			"singer-songwriter",
+			"soft rock"
 		]
 	},
 	"4zYtuoOCkpX0BL185wrZaF": {
@@ -61067,7 +61072,6 @@
 			"experimental",
 			"experimental rock",
 			"fourth world",
-			"post-punk",
 			"psychedelic rock",
 			"zolo"
 		]
@@ -61131,6 +61135,7 @@
 		"artist_genres": [
 			"album rock",
 			"art rock",
+			"classic uk pop",
 			"instrumental rock",
 			"jazz fusion",
 			"neo-progressive",
@@ -61164,32 +61169,33 @@
 		"artist_genres": [
 			"avant-garde jazz",
 			"bebop",
+			"contemporary post-bop",
 			"free jazz",
 			"hard bop",
 			"jazz",
 			"jazz drums"
 		]
 	},
-	"4XHtgJqXoegZNXjj1qKdTZ": {
+	"5nCN6t1ZrYadIXhuRkwJNt": {
 		"name": "Sveve over byen",
 		"track_features": {
-			"danceability": 0.623,
-			"energy": 0.892,
+			"danceability": 0.663,
+			"energy": 0.695,
 			"key": 1,
-			"loudness": -5.493,
+			"loudness": -11.037,
 			"mode": 0,
-			"speechiness": 0.0277,
-			"acousticness": 0.47,
-			"instrumentalness": 0.219,
-			"liveness": 0.384,
-			"valence": 0.827,
-			"tempo": 108.461,
+			"speechiness": 0.0255,
+			"acousticness": 0.454,
+			"instrumentalness": 0.0531,
+			"liveness": 0.36,
+			"valence": 0.808,
+			"tempo": 108.467,
 			"type": "audio_features",
-			"id": "4XHtgJqXoegZNXjj1qKdTZ",
-			"uri": "spotify:track:4XHtgJqXoegZNXjj1qKdTZ",
-			"track_href": "https://api.spotify.com/v1/tracks/4XHtgJqXoegZNXjj1qKdTZ",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/4XHtgJqXoegZNXjj1qKdTZ",
-			"duration_ms": 262907,
+			"id": "5nCN6t1ZrYadIXhuRkwJNt",
+			"uri": "spotify:track:5nCN6t1ZrYadIXhuRkwJNt",
+			"track_href": "https://api.spotify.com/v1/tracks/5nCN6t1ZrYadIXhuRkwJNt",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/5nCN6t1ZrYadIXhuRkwJNt",
+			"duration_ms": 260227,
 			"time_signature": 4
 		},
 		"artist_genres": [
@@ -61650,7 +61656,6 @@
 		"artist_genres": [
 			"avant-garde jazz",
 			"bebop",
-			"big band",
 			"contemporary post-bop",
 			"cool jazz",
 			"electric bass",
@@ -61772,7 +61777,9 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"alternative r&b",
 			"indie jazz",
+			"indie r&b",
 			"indie soul",
 			"neo r&b"
 		]
@@ -61802,6 +61809,7 @@
 		"artist_genres": [
 			"chillwave",
 			"electra",
+			"electronica",
 			"escape room",
 			"future bass",
 			"vapor soul",
@@ -62242,7 +62250,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -62342,17 +62349,17 @@
 	"2gd0nRAv2Q4Y3KVt7NMbrH": {
 		"name": "Faithful Man",
 		"track_features": {
-			"danceability": 0.4,
+			"danceability": 0.389,
 			"energy": 0.578,
 			"key": 2,
-			"loudness": -7.455,
+			"loudness": -7.453,
 			"mode": 0,
-			"speechiness": 0.0336,
-			"acousticness": 0.143,
+			"speechiness": 0.034,
+			"acousticness": 0.14,
 			"instrumentalness": 0,
 			"liveness": 0.34,
-			"valence": 0.564,
-			"tempo": 90.384,
+			"valence": 0.571,
+			"tempo": 90.238,
 			"type": "audio_features",
 			"id": "2gd0nRAv2Q4Y3KVt7NMbrH",
 			"uri": "spotify:track:2gd0nRAv2Q4Y3KVt7NMbrH",
@@ -62363,8 +62370,7 @@
 		},
 		"artist_genres": [
 			"funk",
-			"indie soul",
-			"soul"
+			"southern soul"
 		]
 	},
 	"6iNHWlOLt4NuDi9iSvtznO": {
@@ -62537,6 +62543,7 @@
 		},
 		"artist_genres": [
 			"alternative rock",
+			"art rock",
 			"new wave",
 			"noise pop",
 			"post-punk",
@@ -62576,7 +62583,8 @@
 			"experimental rock",
 			"krautrock",
 			"protopunk",
-			"psychedelic rock"
+			"psychedelic rock",
+			"space rock"
 		]
 	},
 	"4QzUD6ni8kyrIl5zyN5HHV": {
@@ -62723,6 +62731,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"classic uk pop",
 			"melancholia",
 			"new romantic",
 			"new wave",
@@ -62847,6 +62856,7 @@
 		"artist_genres": [
 			"broken beat",
 			"drum and bass",
+			"indie jazz",
 			"jazztronica",
 			"jungle",
 			"ninja",
@@ -63062,6 +63072,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"art pop",
 			"bay area indie",
 			"chillwave",
 			"freak folk",
@@ -63095,6 +63106,7 @@
 		"artist_genres": [
 			"art rock",
 			"beatlesque",
+			"lilith",
 			"new wave",
 			"new wave pop",
 			"pop rock",
@@ -63154,6 +63166,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"art pop",
 			"bay area indie",
 			"chillwave",
 			"freak folk",
@@ -63185,6 +63198,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"art pop",
 			"bay area indie",
 			"chillwave",
 			"freak folk",
@@ -63216,6 +63230,7 @@
 			"time_signature": 3
 		},
 		"artist_genres": [
+			"art pop",
 			"bay area indie",
 			"chillwave",
 			"freak folk",
@@ -63399,6 +63414,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"art pop",
 			"bay area indie",
 			"chillwave",
 			"freak folk",
@@ -63430,6 +63446,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"art pop",
 			"bay area indie",
 			"chillwave",
 			"freak folk",
@@ -63461,6 +63478,7 @@
 			"time_signature": 3
 		},
 		"artist_genres": [
+			"art pop",
 			"bay area indie",
 			"chillwave",
 			"freak folk",
@@ -63492,6 +63510,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"art pop",
 			"bay area indie",
 			"chillwave",
 			"freak folk",
@@ -63523,6 +63542,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"art pop",
 			"bay area indie",
 			"chillwave",
 			"freak folk",
@@ -63554,6 +63574,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"art pop",
 			"bay area indie",
 			"chillwave",
 			"freak folk",
@@ -63611,6 +63632,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"art pop",
 			"bay area indie",
 			"chillwave",
 			"freak folk",
@@ -63672,6 +63694,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"art pop",
 			"bay area indie",
 			"chillwave",
 			"freak folk",
@@ -63732,6 +63755,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"art pop",
 			"bay area indie",
 			"chillwave",
 			"freak folk",
@@ -63763,6 +63787,7 @@
 			"time_signature": 3
 		},
 		"artist_genres": [
+			"art pop",
 			"bay area indie",
 			"chillwave",
 			"freak folk",
@@ -64180,34 +64205,35 @@
 			"mellow gold",
 			"psychedelic rock",
 			"rock",
-			"roots rock",
 			"soft rock",
 			"yacht rock"
 		]
 	},
-	"6jmltpE3c5yDzpXnQyWBkE": {
+	"5d1hH5XBFaG7CzpZAPtdGm": {
 		"name": "Vardag Vardag",
 		"track_features": {
-			"danceability": 0.584,
-			"energy": 0.395,
+			"danceability": 0.39,
+			"energy": 0.556,
 			"key": 0,
-			"loudness": -12.888,
-			"mode": 1,
-			"speechiness": 0.0285,
-			"acousticness": 0.333,
-			"instrumentalness": 0,
-			"liveness": 0.128,
-			"valence": 0.415,
-			"tempo": 123.285,
+			"loudness": -6.802,
+			"mode": 0,
+			"speechiness": 0.0278,
+			"acousticness": 0.268,
+			"instrumentalness": 0.39,
+			"liveness": 0.382,
+			"valence": 0.628,
+			"tempo": 125.845,
 			"type": "audio_features",
-			"id": "6jmltpE3c5yDzpXnQyWBkE",
-			"uri": "spotify:track:6jmltpE3c5yDzpXnQyWBkE",
-			"track_href": "https://api.spotify.com/v1/tracks/6jmltpE3c5yDzpXnQyWBkE",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/6jmltpE3c5yDzpXnQyWBkE",
-			"duration_ms": 244507,
+			"id": "5d1hH5XBFaG7CzpZAPtdGm",
+			"uri": "spotify:track:5d1hH5XBFaG7CzpZAPtdGm",
+			"track_href": "https://api.spotify.com/v1/tracks/5d1hH5XBFaG7CzpZAPtdGm",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/5d1hH5XBFaG7CzpZAPtdGm",
+			"duration_ms": 268627,
 			"time_signature": 4
 		},
-		"artist_genres": []
+		"artist_genres": [
+			"swedish jazz"
+		]
 	},
 	"1t9us2hggVqmnyWz7uG54y": {
 		"name": "Unison",
@@ -64334,6 +64360,7 @@
 			"neo-psychedelic",
 			"noise pop",
 			"nu gaze",
+			"post-rock",
 			"shoegaze"
 		]
 	},
@@ -64396,26 +64423,26 @@
 			"trip hop"
 		]
 	},
-	"3fa2RWZCdX2E80P2wPOPWp": {
+	"5lXKGr9FjVN9C3GKl7dFcf": {
 		"name": "Army of Ancients",
 		"track_features": {
-			"danceability": 0.344,
-			"energy": 0.639,
-			"key": 4,
-			"loudness": -9.483,
+			"danceability": 0.535,
+			"energy": 0.661,
+			"key": 5,
+			"loudness": -6.74,
 			"mode": 1,
-			"speechiness": 0.0503,
-			"acousticness": 0.103,
-			"instrumentalness": 0.000201,
-			"liveness": 0.968,
-			"valence": 0.349,
-			"tempo": 136.479,
+			"speechiness": 0.0712,
+			"acousticness": 0.191,
+			"instrumentalness": 1.18e-05,
+			"liveness": 0.91,
+			"valence": 0.483,
+			"tempo": 139.38,
 			"type": "audio_features",
-			"id": "3fa2RWZCdX2E80P2wPOPWp",
-			"uri": "spotify:track:3fa2RWZCdX2E80P2wPOPWp",
-			"track_href": "https://api.spotify.com/v1/tracks/3fa2RWZCdX2E80P2wPOPWp",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/3fa2RWZCdX2E80P2wPOPWp",
-			"duration_ms": 269857,
+			"id": "5lXKGr9FjVN9C3GKl7dFcf",
+			"uri": "spotify:track:5lXKGr9FjVN9C3GKl7dFcf",
+			"track_href": "https://api.spotify.com/v1/tracks/5lXKGr9FjVN9C3GKl7dFcf",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/5lXKGr9FjVN9C3GKl7dFcf",
+			"duration_ms": 245267,
 			"time_signature": 3
 		},
 		"artist_genres": [
@@ -64507,7 +64534,8 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"finnish electronic"
+			"finnish electronic",
+			"ninja"
 		]
 	},
 	"76BhEMEYRAFVVznsUQz2UU": {
@@ -64679,7 +64707,6 @@
 			"indie jazz",
 			"jazztronica",
 			"modern jazz trio",
-			"nu jazz",
 			"progressive jazz fusion"
 		]
 	},
@@ -64828,7 +64855,6 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"jazz",
 			"jazz fusion",
 			"modern funk",
 			"smooth jazz"
@@ -65123,31 +65149,32 @@
 			"russian romanticism"
 		]
 	},
-	"7pf3gy6eMaupdPqwfsMTZy": {
+	"4ID2p40Vv3iLKXa5Jjc1xO": {
 		"name": "Blue Angel",
 		"track_features": {
-			"danceability": 0.366,
-			"energy": 0.576,
+			"danceability": 0.354,
+			"energy": 0.33,
 			"key": 5,
-			"loudness": -6.928,
+			"loudness": -15.977,
 			"mode": 1,
-			"speechiness": 0.0529,
-			"acousticness": 0.455,
-			"instrumentalness": 7.37e-05,
-			"liveness": 0.537,
-			"valence": 0.158,
-			"tempo": 117.068,
+			"speechiness": 0.0491,
+			"acousticness": 0.379,
+			"instrumentalness": 0.000471,
+			"liveness": 0.615,
+			"valence": 0.155,
+			"tempo": 116.484,
 			"type": "audio_features",
-			"id": "7pf3gy6eMaupdPqwfsMTZy",
-			"uri": "spotify:track:7pf3gy6eMaupdPqwfsMTZy",
-			"track_href": "https://api.spotify.com/v1/tracks/7pf3gy6eMaupdPqwfsMTZy",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/7pf3gy6eMaupdPqwfsMTZy",
-			"duration_ms": 588733,
+			"id": "4ID2p40Vv3iLKXa5Jjc1xO",
+			"uri": "spotify:track:4ID2p40Vv3iLKXa5Jjc1xO",
+			"track_href": "https://api.spotify.com/v1/tracks/4ID2p40Vv3iLKXa5Jjc1xO",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/4ID2p40Vv3iLKXa5Jjc1xO",
+			"duration_ms": 586040,
 			"time_signature": 4
 		},
 		"artist_genres": [
 			"art rock",
 			"british folk",
+			"classic uk pop",
 			"folk rock",
 			"progressive rock",
 			"psychedelic folk",
@@ -65190,7 +65217,8 @@
 			"psychedelic rock",
 			"rock",
 			"roots rock",
-			"scottish singer-songwriter"
+			"scottish singer-songwriter",
+			"singer-songwriter"
 		]
 	},
 	"0XyUYupoEzHVHjYJcIwBIm": {
@@ -65314,7 +65342,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -65348,25 +65375,25 @@
 			"new rave"
 		]
 	},
-	"63zmfZ1PWzZ8WsM45yyJp2": {
+	"0QtR6bVEA0TjA9pTML3Crd": {
 		"name": "Hurt You",
 		"track_features": {
 			"danceability": 0.547,
-			"energy": 0.59,
+			"energy": 0.595,
 			"key": 2,
-			"loudness": -10.094,
+			"loudness": -10.09,
 			"mode": 0,
-			"speechiness": 0.0437,
-			"acousticness": 0.498,
-			"instrumentalness": 0.000983,
+			"speechiness": 0.0438,
+			"acousticness": 0.499,
+			"instrumentalness": 0.000951,
 			"liveness": 0.107,
-			"valence": 0.234,
-			"tempo": 110.821,
+			"valence": 0.248,
+			"tempo": 110.85,
 			"type": "audio_features",
-			"id": "63zmfZ1PWzZ8WsM45yyJp2",
-			"uri": "spotify:track:63zmfZ1PWzZ8WsM45yyJp2",
-			"track_href": "https://api.spotify.com/v1/tracks/63zmfZ1PWzZ8WsM45yyJp2",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/63zmfZ1PWzZ8WsM45yyJp2",
+			"id": "0QtR6bVEA0TjA9pTML3Crd",
+			"uri": "spotify:track:0QtR6bVEA0TjA9pTML3Crd",
+			"track_href": "https://api.spotify.com/v1/tracks/0QtR6bVEA0TjA9pTML3Crd",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/0QtR6bVEA0TjA9pTML3Crd",
 			"duration_ms": 249653,
 			"time_signature": 4
 		},
@@ -65435,8 +65462,10 @@
 		},
 		"artist_genres": [
 			"alternative rock",
+			"art pop",
 			"art rock",
 			"freak folk",
+			"indie pop",
 			"indie rock",
 			"modern rock",
 			"noise pop",
@@ -65467,7 +65496,6 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"garage psych",
 			"indie punk",
 			"modern folk rock",
 			"modern power pop"
@@ -65532,6 +65560,7 @@
 		"artist_genres": [
 			"art rock",
 			"british folk",
+			"classic uk pop",
 			"folk rock",
 			"progressive rock",
 			"psychedelic folk",
@@ -65594,7 +65623,8 @@
 			"hard bop",
 			"jazz",
 			"jazz saxophone",
-			"stride"
+			"stride",
+			"vocal jazz"
 		]
 	},
 	"1KmBbKdNCsMlpbbopYBvGH": {
@@ -65748,7 +65778,6 @@
 			"heartland rock",
 			"mellow gold",
 			"rock",
-			"roots rock",
 			"soft rock"
 		]
 	},
@@ -65931,7 +65960,6 @@
 		"artist_genres": [
 			"double drumming",
 			"indie folk",
-			"indie pop",
 			"la indie",
 			"modern rock",
 			"stomp and holler"
@@ -65993,7 +66021,6 @@
 		"artist_genres": [
 			"flamenco",
 			"flamenco guitar",
-			"nuevo flamenco",
 			"rumba"
 		]
 	},
@@ -66078,6 +66105,7 @@
 		"artist_genres": [
 			"album rock",
 			"art rock",
+			"classic uk pop",
 			"instrumental rock",
 			"jazz fusion",
 			"neo-progressive",
@@ -66200,7 +66228,6 @@
 		"artist_genres": [
 			"adult standards",
 			"brill building pop",
-			"bubblegum pop",
 			"mellow gold",
 			"rock-and-roll",
 			"rockabilly",
@@ -66232,7 +66259,6 @@
 		"artist_genres": [
 			"adult standards",
 			"brill building pop",
-			"bubblegum pop",
 			"mellow gold",
 			"rock-and-roll",
 			"rockabilly",
@@ -66262,6 +66288,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"disco",
 			"europop"
 		]
 	},
@@ -66290,7 +66317,6 @@
 		"artist_genres": [
 			"adult standards",
 			"brill building pop",
-			"bubblegum pop",
 			"mellow gold",
 			"rock-and-roll",
 			"rockabilly",
@@ -66322,7 +66348,6 @@
 		"artist_genres": [
 			"adult standards",
 			"brill building pop",
-			"bubblegum pop",
 			"mellow gold",
 			"rock-and-roll",
 			"rockabilly",
@@ -66354,7 +66379,6 @@
 		"artist_genres": [
 			"adult standards",
 			"brill building pop",
-			"bubblegum pop",
 			"mellow gold",
 			"rock-and-roll",
 			"rockabilly",
@@ -66515,6 +66539,7 @@
 			"australian dance",
 			"collage pop",
 			"electronica",
+			"indietronica",
 			"new rave",
 			"psychedelic hip hop"
 		]
@@ -66543,6 +66568,7 @@
 		},
 		"artist_genres": [
 			"art pop",
+			"chamber psych",
 			"experimental pop",
 			"freak folk"
 		]
@@ -66639,8 +66665,7 @@
 			"modern rock",
 			"pop rock",
 			"shimmer pop",
-			"stomp and holler",
-			"vapor soul"
+			"stomp and holler"
 		]
 	},
 	"7loXmEHvxWvdvwKzLFAMmc": {
@@ -66706,8 +66731,7 @@
 			"fourth world",
 			"freak folk",
 			"indie folk",
-			"jazz harp",
-			"neo-classical"
+			"jazz harp"
 		]
 	},
 	"1HlSDISbjoxt2tpimT8s6f": {
@@ -66833,6 +66857,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"art pop",
 			"baltimore indie",
 			"dream pop",
 			"dreamo",
@@ -67017,6 +67042,7 @@
 		"artist_genres": [
 			"alternative americana",
 			"art pop",
+			"chamber psych",
 			"dream pop",
 			"freak folk",
 			"indie pop",
@@ -67118,6 +67144,7 @@
 			"australian dance",
 			"collage pop",
 			"electronica",
+			"indietronica",
 			"new rave",
 			"psychedelic hip hop"
 		]
@@ -67176,6 +67203,7 @@
 			"time_signature": 3
 		},
 		"artist_genres": [
+			"art pop",
 			"freak folk",
 			"indie folk",
 			"indie pop",
@@ -67332,8 +67360,7 @@
 			"modern rock",
 			"pop rock",
 			"shimmer pop",
-			"stomp and holler",
-			"vapor soul"
+			"stomp and holler"
 		]
 	},
 	"0sEJmxTlb2SZNxdjzBATPK": {
@@ -67423,6 +67450,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"art pop",
 			"freak folk",
 			"indie folk",
 			"indie pop",
@@ -67456,7 +67484,6 @@
 			"art pop",
 			"bubblegrunge",
 			"garage psych",
-			"indie garage rock",
 			"indie pop",
 			"indie rock",
 			"surf punk"
@@ -67551,7 +67578,7 @@
 			"stomp and holler"
 		]
 	},
-	"1nLaoWVhNRZ38irY0LZjL6": {
+	"1ljjmk37pkMMYEVM06cCzG": {
 		"name": "Pay Your Way In Pain",
 		"track_features": {
 			"danceability": 0.677,
@@ -67566,10 +67593,10 @@
 			"valence": 0.498,
 			"tempo": 124.821,
 			"type": "audio_features",
-			"id": "1nLaoWVhNRZ38irY0LZjL6",
-			"uri": "spotify:track:1nLaoWVhNRZ38irY0LZjL6",
-			"track_href": "https://api.spotify.com/v1/tracks/1nLaoWVhNRZ38irY0LZjL6",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/1nLaoWVhNRZ38irY0LZjL6",
+			"id": "1ljjmk37pkMMYEVM06cCzG",
+			"uri": "spotify:track:1ljjmk37pkMMYEVM06cCzG",
+			"track_href": "https://api.spotify.com/v1/tracks/1ljjmk37pkMMYEVM06cCzG",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/1ljjmk37pkMMYEVM06cCzG",
 			"duration_ms": 183880,
 			"time_signature": 4
 		},
@@ -67708,7 +67735,8 @@
 			"chillwave",
 			"indie soul",
 			"indietronica",
-			"new rave"
+			"new rave",
+			"vapor soul"
 		]
 	},
 	"2GmGy1eJTvPACm3ekX0hxD": {
@@ -67769,7 +67797,6 @@
 		},
 		"artist_genres": [
 			"art pop",
-			"indie folk",
 			"indie pop",
 			"sydney indie"
 		]
@@ -67898,6 +67925,7 @@
 		"artist_genres": [
 			"alternative dance",
 			"alternative rock",
+			"art pop",
 			"dance rock",
 			"dance-punk",
 			"electronic rock",
@@ -67992,6 +68020,7 @@
 		"artist_genres": [
 			"alternative americana",
 			"art pop",
+			"chamber psych",
 			"dream pop",
 			"freak folk",
 			"indie pop",
@@ -68054,6 +68083,7 @@
 		"artist_genres": [
 			"alternative dance",
 			"alternative rock",
+			"art pop",
 			"dance rock",
 			"dance-punk",
 			"electronic rock",
@@ -68093,6 +68123,7 @@
 			"australian dance",
 			"collage pop",
 			"electronica",
+			"indietronica",
 			"new rave",
 			"psychedelic hip hop"
 		]
@@ -68159,6 +68190,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"art pop",
 			"chillwave",
 			"dreamo",
 			"freak folk",
@@ -68313,7 +68345,6 @@
 		},
 		"artist_genres": [
 			"art pop",
-			"indie folk",
 			"indie pop",
 			"indie rock"
 		]
@@ -68345,6 +68376,7 @@
 			"chamber pop",
 			"freak folk",
 			"indie folk",
+			"indie pop",
 			"indie rock",
 			"new americana",
 			"stomp and holler"
@@ -68404,6 +68436,7 @@
 		"artist_genres": [
 			"alternative americana",
 			"art pop",
+			"chamber psych",
 			"dream pop",
 			"freak folk",
 			"indie pop",
@@ -68460,8 +68493,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"indie pop",
-			"indie rock"
+			"indie pop"
 		]
 	},
 	"0AF7W7iFUbBWrbAbNCN3wf": {
@@ -68487,6 +68519,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"art pop",
 			"freak folk",
 			"indie folk",
 			"indie pop",
@@ -68518,7 +68551,6 @@
 		},
 		"artist_genres": [
 			"art pop",
-			"indie folk",
 			"indie pop",
 			"indie rock"
 		]
@@ -68615,7 +68647,8 @@
 			"chillwave",
 			"indie soul",
 			"indietronica",
-			"new rave"
+			"new rave",
+			"vapor soul"
 		]
 	},
 	"4IiMqp044NufGGmj4eoCYU": {
@@ -68643,6 +68676,7 @@
 		"artist_genres": [
 			"alternative americana",
 			"art pop",
+			"chamber psych",
 			"dream pop",
 			"freak folk",
 			"indie pop",
@@ -68733,6 +68767,7 @@
 		"artist_genres": [
 			"art pop",
 			"baltimore indie",
+			"chillwave",
 			"dream pop",
 			"freak folk",
 			"indie folk",
@@ -68809,6 +68844,7 @@
 			"indie garage rock",
 			"la indie",
 			"neo-psychedelic",
+			"new rave",
 			"new weird america"
 		]
 	},
@@ -70888,6 +70924,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"art pop",
 			"chillwave",
 			"dreamo",
 			"freak folk",
@@ -71025,6 +71062,7 @@
 			"time_signature": 5
 		},
 		"artist_genres": [
+			"art pop",
 			"chillwave",
 			"dreamo",
 			"freak folk",
@@ -71059,6 +71097,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"art pop",
 			"chillwave",
 			"dreamo",
 			"freak folk",
@@ -71093,6 +71132,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"art pop",
 			"chillwave",
 			"dreamo",
 			"freak folk",
@@ -71127,6 +71167,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"art pop",
 			"chillwave",
 			"dreamo",
 			"freak folk",
@@ -71161,6 +71202,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"art pop",
 			"chillwave",
 			"dreamo",
 			"freak folk",
@@ -71195,6 +71237,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"art pop",
 			"chillwave",
 			"dreamo",
 			"freak folk",
@@ -72420,26 +72463,26 @@
 			"symphonic rock"
 		]
 	},
-	"3vrm1wnzV4r08lgnGZHgbn": {
+	"6yBbmHFTxihIDFAerzDMGi": {
 		"name": "Hold On Tight",
 		"track_features": {
-			"danceability": 0.462,
-			"energy": 0.887,
+			"danceability": 0.439,
+			"energy": 0.794,
 			"key": 7,
-			"loudness": -7.798,
+			"loudness": -11.792,
 			"mode": 1,
-			"speechiness": 0.0709,
-			"acousticness": 0.103,
-			"instrumentalness": 1.71e-06,
-			"liveness": 0.383,
+			"speechiness": 0.0633,
+			"acousticness": 0.159,
+			"instrumentalness": 1.69e-06,
+			"liveness": 0.434,
 			"valence": 0.748,
-			"tempo": 145.133,
+			"tempo": 145.056,
 			"type": "audio_features",
-			"id": "3vrm1wnzV4r08lgnGZHgbn",
-			"uri": "spotify:track:3vrm1wnzV4r08lgnGZHgbn",
-			"track_href": "https://api.spotify.com/v1/tracks/3vrm1wnzV4r08lgnGZHgbn",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/3vrm1wnzV4r08lgnGZHgbn",
-			"duration_ms": 186733,
+			"id": "6yBbmHFTxihIDFAerzDMGi",
+			"uri": "spotify:track:6yBbmHFTxihIDFAerzDMGi",
+			"track_href": "https://api.spotify.com/v1/tracks/6yBbmHFTxihIDFAerzDMGi",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/6yBbmHFTxihIDFAerzDMGi",
+			"duration_ms": 186600,
 			"time_signature": 4
 		},
 		"artist_genres": [
@@ -72454,26 +72497,26 @@
 			"symphonic rock"
 		]
 	},
-	"04z3MMdiP0nBhqTf0CQyLo": {
+	"2jHNFC07PKNuiQYsReIs3s": {
 		"name": "From Out of Nowhere",
 		"track_features": {
-			"danceability": 0.148,
-			"energy": 0.636,
+			"danceability": 0.166,
+			"energy": 0.622,
 			"key": 2,
-			"loudness": -7.033,
+			"loudness": -6.992,
 			"mode": 1,
-			"speechiness": 0.0422,
-			"acousticness": 0.405,
-			"instrumentalness": 0.962,
-			"liveness": 0.202,
-			"valence": 0.366,
-			"tempo": 200.12,
+			"speechiness": 0.0423,
+			"acousticness": 0.421,
+			"instrumentalness": 0.946,
+			"liveness": 0.124,
+			"valence": 0.352,
+			"tempo": 199.675,
 			"type": "audio_features",
-			"id": "04z3MMdiP0nBhqTf0CQyLo",
-			"uri": "spotify:track:04z3MMdiP0nBhqTf0CQyLo",
-			"track_href": "https://api.spotify.com/v1/tracks/04z3MMdiP0nBhqTf0CQyLo",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/04z3MMdiP0nBhqTf0CQyLo",
-			"duration_ms": 194747,
+			"id": "2jHNFC07PKNuiQYsReIs3s",
+			"uri": "spotify:track:2jHNFC07PKNuiQYsReIs3s",
+			"track_href": "https://api.spotify.com/v1/tracks/2jHNFC07PKNuiQYsReIs3s",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/2jHNFC07PKNuiQYsReIs3s",
+			"duration_ms": 193787,
 			"time_signature": 4
 		},
 		"artist_genres": [
@@ -72692,25 +72735,25 @@
 			"symphonic rock"
 		]
 	},
-	"11K7UgOk9yT21s8mXi6SUr": {
+	"0cJPnpkFXLho1JfSD4zJFa": {
 		"name": "Time of Our Life",
 		"track_features": {
-			"danceability": 0.499,
-			"energy": 0.777,
+			"danceability": 0.501,
+			"energy": 0.78,
 			"key": 9,
 			"loudness": -6.64,
 			"mode": 1,
-			"speechiness": 0.0429,
-			"acousticness": 0.4,
-			"instrumentalness": 0.0491,
+			"speechiness": 0.0426,
+			"acousticness": 0.405,
+			"instrumentalness": 0.0497,
 			"liveness": 0.631,
-			"valence": 0.732,
-			"tempo": 128.004,
+			"valence": 0.725,
+			"tempo": 128.009,
 			"type": "audio_features",
-			"id": "11K7UgOk9yT21s8mXi6SUr",
-			"uri": "spotify:track:11K7UgOk9yT21s8mXi6SUr",
-			"track_href": "https://api.spotify.com/v1/tracks/11K7UgOk9yT21s8mXi6SUr",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/11K7UgOk9yT21s8mXi6SUr",
+			"id": "0cJPnpkFXLho1JfSD4zJFa",
+			"uri": "spotify:track:0cJPnpkFXLho1JfSD4zJFa",
+			"track_href": "https://api.spotify.com/v1/tracks/0cJPnpkFXLho1JfSD4zJFa",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/0cJPnpkFXLho1JfSD4zJFa",
 			"duration_ms": 186707,
 			"time_signature": 4
 		},
@@ -72726,25 +72769,25 @@
 			"symphonic rock"
 		]
 	},
-	"3qYPQFREFMcHhxz1hxBo1J": {
+	"2V40EjVJt86gOCZzI7Fm56": {
 		"name": "Songbird",
 		"track_features": {
-			"danceability": 0.573,
+			"danceability": 0.578,
 			"energy": 0.49,
 			"key": 0,
 			"loudness": -8.414,
 			"mode": 1,
-			"speechiness": 0.03,
+			"speechiness": 0.0296,
 			"acousticness": 0.683,
-			"instrumentalness": 0.0341,
+			"instrumentalness": 0.03,
 			"liveness": 0.0962,
-			"valence": 0.221,
-			"tempo": 115.958,
+			"valence": 0.224,
+			"tempo": 115.973,
 			"type": "audio_features",
-			"id": "3qYPQFREFMcHhxz1hxBo1J",
-			"uri": "spotify:track:3qYPQFREFMcHhxz1hxBo1J",
-			"track_href": "https://api.spotify.com/v1/tracks/3qYPQFREFMcHhxz1hxBo1J",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/3qYPQFREFMcHhxz1hxBo1J",
+			"id": "2V40EjVJt86gOCZzI7Fm56",
+			"uri": "spotify:track:2V40EjVJt86gOCZzI7Fm56",
+			"track_href": "https://api.spotify.com/v1/tracks/2V40EjVJt86gOCZzI7Fm56",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/2V40EjVJt86gOCZzI7Fm56",
 			"duration_ms": 188227,
 			"time_signature": 4
 		},
@@ -73212,7 +73255,6 @@
 			"mellow gold",
 			"permanent wave",
 			"rock",
-			"roots rock",
 			"singer-songwriter",
 			"soft rock"
 		]
@@ -73665,6 +73707,7 @@
 		"artist_genres": [
 			"art rock",
 			"british folk",
+			"classic uk pop",
 			"folk rock",
 			"progressive rock",
 			"psychedelic folk",
@@ -73724,6 +73767,7 @@
 		"artist_genres": [
 			"art rock",
 			"british folk",
+			"classic uk pop",
 			"folk rock",
 			"progressive rock",
 			"psychedelic folk",
@@ -73968,6 +74012,7 @@
 			"baltimore indie",
 			"chillwave",
 			"dream pop",
+			"electronica",
 			"experimental pop",
 			"freak folk",
 			"indie pop",
@@ -74057,7 +74102,6 @@
 		"artist_genres": [
 			"folk",
 			"folk rock",
-			"roots rock",
 			"singer-songwriter"
 		]
 	},
@@ -74086,7 +74130,6 @@
 		"artist_genres": [
 			"folk",
 			"folk rock",
-			"roots rock",
 			"singer-songwriter"
 		]
 	},
@@ -74115,7 +74158,6 @@
 		"artist_genres": [
 			"folk",
 			"folk rock",
-			"roots rock",
 			"singer-songwriter"
 		]
 	},
@@ -74144,7 +74186,6 @@
 		"artist_genres": [
 			"folk",
 			"folk rock",
-			"roots rock",
 			"singer-songwriter"
 		]
 	},
@@ -74173,7 +74214,6 @@
 		"artist_genres": [
 			"folk",
 			"folk rock",
-			"roots rock",
 			"singer-songwriter"
 		]
 	},
@@ -74202,7 +74242,6 @@
 		"artist_genres": [
 			"folk",
 			"folk rock",
-			"roots rock",
 			"singer-songwriter"
 		]
 	},
@@ -74231,7 +74270,6 @@
 		"artist_genres": [
 			"folk",
 			"folk rock",
-			"roots rock",
 			"singer-songwriter"
 		]
 	},
@@ -74260,7 +74298,6 @@
 		"artist_genres": [
 			"folk",
 			"folk rock",
-			"roots rock",
 			"singer-songwriter"
 		]
 	},
@@ -74289,7 +74326,6 @@
 		"artist_genres": [
 			"folk",
 			"folk rock",
-			"roots rock",
 			"singer-songwriter"
 		]
 	},
@@ -74347,7 +74383,6 @@
 		"artist_genres": [
 			"folk",
 			"folk rock",
-			"roots rock",
 			"singer-songwriter"
 		]
 	},
@@ -74376,7 +74411,6 @@
 		"artist_genres": [
 			"folk",
 			"folk rock",
-			"roots rock",
 			"singer-songwriter"
 		]
 	},
@@ -74405,7 +74439,6 @@
 		"artist_genres": [
 			"folk",
 			"folk rock",
-			"roots rock",
 			"singer-songwriter"
 		]
 	},
@@ -74459,6 +74492,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary jazz",
 			"funk",
 			"instrumental funk",
 			"jam band",
@@ -75210,26 +75244,26 @@
 			"swedish jazz"
 		]
 	},
-	"6z7RQ89AsooEaAQRettASt": {
+	"7FILGmOkaaV1LDYunpGMLW": {
 		"name": "3, 2, 1, Go!",
 		"track_features": {
-			"danceability": 0.295,
-			"energy": 0.313,
-			"key": 5,
-			"loudness": -19.961,
-			"mode": 1,
-			"speechiness": 0.0318,
-			"acousticness": 0.5,
-			"instrumentalness": 0.14,
-			"liveness": 0.179,
-			"valence": 0.725,
-			"tempo": 148.313,
+			"danceability": 0.362,
+			"energy": 0.483,
+			"key": 9,
+			"loudness": -11.23,
+			"mode": 0,
+			"speechiness": 0.0521,
+			"acousticness": 0.824,
+			"instrumentalness": 0.505,
+			"liveness": 0.803,
+			"valence": 0.717,
+			"tempo": 157.641,
 			"type": "audio_features",
-			"id": "6z7RQ89AsooEaAQRettASt",
-			"uri": "spotify:track:6z7RQ89AsooEaAQRettASt",
-			"track_href": "https://api.spotify.com/v1/tracks/6z7RQ89AsooEaAQRettASt",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/6z7RQ89AsooEaAQRettASt",
-			"duration_ms": 243133,
+			"id": "7FILGmOkaaV1LDYunpGMLW",
+			"uri": "spotify:track:7FILGmOkaaV1LDYunpGMLW",
+			"track_href": "https://api.spotify.com/v1/tracks/7FILGmOkaaV1LDYunpGMLW",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/7FILGmOkaaV1LDYunpGMLW",
+			"duration_ms": 347707,
 			"time_signature": 4
 		},
 		"artist_genres": [
@@ -75392,7 +75426,6 @@
 			"escape room",
 			"hip hop",
 			"indie soul",
-			"neo soul",
 			"underground hip hop"
 		]
 	},
@@ -75651,7 +75684,8 @@
 			"laboratorio",
 			"lounge",
 			"moog",
-			"space age pop"
+			"space age pop",
+			"theme"
 		]
 	},
 	"3XbFyvF5yDqAJH0p6VaDM0": {
@@ -76079,6 +76113,7 @@
 		},
 		"artist_genres": [
 			"anti-folk",
+			"art pop",
 			"british folk",
 			"folk rock",
 			"freak folk",
@@ -76310,6 +76345,7 @@
 			"alternative country",
 			"alternative rock",
 			"chicago indie",
+			"folk",
 			"indie pop",
 			"indie rock",
 			"pop rock",
@@ -76386,7 +76422,6 @@
 			"indie rock",
 			"modern rock",
 			"new americana",
-			"roots rock",
 			"stomp and holler"
 		]
 	},
@@ -76664,7 +76699,6 @@
 			"indie rock",
 			"modern rock",
 			"new americana",
-			"roots rock",
 			"stomp and holler"
 		]
 	},
@@ -76731,7 +76765,6 @@
 			"indie rock",
 			"modern rock",
 			"new americana",
-			"roots rock",
 			"stomp and holler"
 		]
 	},
@@ -76954,7 +76987,8 @@
 			"indie pop",
 			"indie rock",
 			"kc indie",
-			"modern folk rock"
+			"modern folk rock",
+			"stomp and holler"
 		]
 	},
 	"6HbxpoChDH9ThadFOSAnma": {
@@ -78933,36 +78967,29 @@
 			"one-person band"
 		]
 	},
-	"7AA1CyqUwgDtl7iwoBdWLR": {
+	"48LLtajbzYtvuRoGNqJQQR": {
 		"name": "The Hangman And The Papist",
 		"track_features": {
-			"danceability": 0.431,
-			"energy": 0.476,
-			"key": 7,
-			"loudness": -13.463,
-			"mode": 0,
-			"speechiness": 0.122,
-			"acousticness": 0.642,
+			"danceability": 0.562,
+			"energy": 0.479,
+			"key": 10,
+			"loudness": -6.484,
+			"mode": 1,
+			"speechiness": 0.0304,
+			"acousticness": 0.821,
 			"instrumentalness": 0,
-			"liveness": 0.0717,
-			"valence": 0.229,
-			"tempo": 83.719,
+			"liveness": 0.12,
+			"valence": 0.598,
+			"tempo": 93.939,
 			"type": "audio_features",
-			"id": "7AA1CyqUwgDtl7iwoBdWLR",
-			"uri": "spotify:track:7AA1CyqUwgDtl7iwoBdWLR",
-			"track_href": "https://api.spotify.com/v1/tracks/7AA1CyqUwgDtl7iwoBdWLR",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/7AA1CyqUwgDtl7iwoBdWLR",
-			"duration_ms": 253933,
+			"id": "48LLtajbzYtvuRoGNqJQQR",
+			"uri": "spotify:track:48LLtajbzYtvuRoGNqJQQR",
+			"track_href": "https://api.spotify.com/v1/tracks/48LLtajbzYtvuRoGNqJQQR",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/48LLtajbzYtvuRoGNqJQQR",
+			"duration_ms": 205133,
 			"time_signature": 4
 		},
-		"artist_genres": [
-			"art rock",
-			"british folk",
-			"folk rock",
-			"progressive rock",
-			"psychedelic folk",
-			"symphonic rock"
-		]
+		"artist_genres": []
 	},
 	"6Be0UjOGptTtj7YWBUKIs2": {
 		"name": "Change of Heart, Pt. 2",
@@ -79207,26 +79234,26 @@
 			"singer-songwriter"
 		]
 	},
-	"6CjoVIa36eqhhChapMkMF3": {
+	"7HrzErXq3TsKOY1gmdIShB": {
 		"name": "The River",
 		"track_features": {
-			"danceability": 0.454,
-			"energy": 0.712,
-			"key": 9,
-			"loudness": -8.601,
+			"danceability": 0.587,
+			"energy": 0.536,
+			"key": 7,
+			"loudness": -11.248,
 			"mode": 1,
-			"speechiness": 0.0333,
-			"acousticness": 0.204,
-			"instrumentalness": 2.7e-05,
-			"liveness": 0.784,
-			"valence": 0.492,
-			"tempo": 110.875,
+			"speechiness": 0.0304,
+			"acousticness": 0.179,
+			"instrumentalness": 2.75e-05,
+			"liveness": 0.305,
+			"valence": 0.59,
+			"tempo": 117.498,
 			"type": "audio_features",
-			"id": "6CjoVIa36eqhhChapMkMF3",
-			"uri": "spotify:track:6CjoVIa36eqhhChapMkMF3",
-			"track_href": "https://api.spotify.com/v1/tracks/6CjoVIa36eqhhChapMkMF3",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/6CjoVIa36eqhhChapMkMF3",
-			"duration_ms": 365013,
+			"id": "7HrzErXq3TsKOY1gmdIShB",
+			"uri": "spotify:track:7HrzErXq3TsKOY1gmdIShB",
+			"track_href": "https://api.spotify.com/v1/tracks/7HrzErXq3TsKOY1gmdIShB",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/7HrzErXq3TsKOY1gmdIShB",
+			"duration_ms": 301547,
 			"time_signature": 4
 		},
 		"artist_genres": [
@@ -80171,6 +80198,7 @@
 		},
 		"artist_genres": [
 			"contemporary jazz",
+			"italian jazz",
 			"jazz",
 			"jazz trumpet"
 		]
@@ -80235,13 +80263,11 @@
 			"doom metal",
 			"drone",
 			"drone metal",
-			"dub metal",
 			"gaian doom",
 			"instrumental rock",
 			"olympia wa indie",
 			"post-doom metal",
-			"post-metal",
-			"space rock"
+			"post-metal"
 		]
 	},
 	"2hbUSd2Xig2z3nCH5j4e9K": {
@@ -80267,13 +80293,11 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"adult standards",
 			"bebop",
 			"cool jazz",
 			"jazz",
 			"jazz piano",
 			"stride",
-			"swing",
 			"vocal jazz"
 		]
 	},
@@ -80599,7 +80623,6 @@
 			"disco",
 			"funk",
 			"motown",
-			"new jack swing",
 			"post-disco",
 			"quiet storm",
 			"rock steady",
@@ -80718,6 +80741,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary jazz",
 			"japanese jazz",
 			"japanese jazz fusion",
 			"jazz",
@@ -80748,6 +80772,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"indie jazz",
 			"neo r&b"
 		]
 	},
@@ -80775,7 +80800,6 @@
 		},
 		"artist_genres": [
 			"alternative dance",
-			"indietronica",
 			"new rave"
 		]
 	},
@@ -80858,7 +80882,6 @@
 		},
 		"artist_genres": [
 			"english indie rock",
-			"indie rock",
 			"modern alternative rock",
 			"shimmer pop"
 		]
@@ -81526,6 +81549,7 @@
 		"artist_genres": [
 			"chicago soul",
 			"classic soul",
+			"disco",
 			"funk",
 			"soul"
 		]
@@ -81555,6 +81579,7 @@
 		"artist_genres": [
 			"chicago soul",
 			"classic soul",
+			"disco",
 			"funk",
 			"soul"
 		]
@@ -81738,7 +81763,6 @@
 			"indie jazz",
 			"jazztronica",
 			"modern jazz trio",
-			"nu jazz",
 			"progressive jazz fusion"
 		]
 	},
@@ -81912,6 +81936,7 @@
 			"art rock",
 			"celtic rock",
 			"new wave pop",
+			"rock",
 			"scottish new wave",
 			"scottish rock"
 		]
@@ -81942,6 +81967,7 @@
 			"art rock",
 			"celtic rock",
 			"new wave pop",
+			"rock",
 			"scottish new wave",
 			"scottish rock"
 		]
@@ -81974,7 +82000,6 @@
 			"escape room",
 			"hip hop",
 			"indie soul",
-			"neo soul",
 			"underground hip hop"
 		]
 	},
@@ -82064,7 +82089,6 @@
 			"mellow gold",
 			"psychedelic rock",
 			"rock",
-			"roots rock",
 			"soft rock",
 			"yacht rock"
 		]
@@ -82161,34 +82185,29 @@
 			"uk post-punk"
 		]
 	},
-	"7ID1obCK75QsDQuf9pEVxK": {
+	"6a1RsQVHbx752MBTpZqQFk": {
 		"name": "Mountains",
 		"track_features": {
-			"danceability": 0.507,
-			"energy": 0.852,
+			"danceability": 0.49,
+			"energy": 0.907,
 			"key": 1,
-			"loudness": -6.841,
+			"loudness": -3.149,
 			"mode": 1,
-			"speechiness": 0.0453,
-			"acousticness": 0.000676,
-			"instrumentalness": 1.28e-05,
-			"liveness": 0.0599,
-			"valence": 0.595,
-			"tempo": 158.0,
+			"speechiness": 0.0492,
+			"acousticness": 0.00426,
+			"instrumentalness": 0,
+			"liveness": 0.0664,
+			"valence": 0.505,
+			"tempo": 157.985,
 			"type": "audio_features",
-			"id": "7ID1obCK75QsDQuf9pEVxK",
-			"uri": "spotify:track:7ID1obCK75QsDQuf9pEVxK",
-			"track_href": "https://api.spotify.com/v1/tracks/7ID1obCK75QsDQuf9pEVxK",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/7ID1obCK75QsDQuf9pEVxK",
-			"duration_ms": 201147,
+			"id": "6a1RsQVHbx752MBTpZqQFk",
+			"uri": "spotify:track:6a1RsQVHbx752MBTpZqQFk",
+			"track_href": "https://api.spotify.com/v1/tracks/6a1RsQVHbx752MBTpZqQFk",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/6a1RsQVHbx752MBTpZqQFk",
+			"duration_ms": 200120,
 			"time_signature": 4
 		},
-		"artist_genres": [
-			"modern alternative rock",
-			"modern rock",
-			"rock",
-			"scottish rock"
-		]
+		"artist_genres": []
 	},
 	"6OnfBiiSc9RGKiBKKtZXgQ": {
 		"name": "We Built This City",
@@ -82307,6 +82326,7 @@
 			"atl hip hop",
 			"dirty south rap",
 			"hip hop",
+			"old school atlanta hip hop",
 			"rap",
 			"southern hip hop"
 		]
@@ -82361,6 +82381,7 @@
 			"art rock",
 			"celtic rock",
 			"new wave pop",
+			"rock",
 			"scottish new wave",
 			"scottish rock"
 		]
@@ -82415,6 +82436,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"art pop",
 			"escape room",
 			"hyperpop",
 			"japanese electropop"
@@ -82442,9 +82464,7 @@
 			"duration_ms": 185085,
 			"time_signature": 4
 		},
-		"artist_genres": [
-			"social media pop"
-		]
+		"artist_genres": []
 	},
 	"77I9HL9RyWsP6CJBaZgwJL": {
 		"name": "Notre-Dame Est",
@@ -82575,7 +82595,8 @@
 		"artist_genres": [
 			"indie pop",
 			"lilith",
-			"piano rock"
+			"piano rock",
+			"pop rock"
 		]
 	},
 	"1CHFsMuc1iCiyiL3PhK0o7": {
@@ -83324,7 +83345,6 @@
 			"modern dream pop",
 			"modern rock",
 			"neo-psychedelic",
-			"new rave",
 			"nu gaze",
 			"shoegaze"
 		]
@@ -83797,7 +83817,6 @@
 			"modern dream pop",
 			"modern rock",
 			"neo-psychedelic",
-			"new rave",
 			"nu gaze",
 			"shoegaze"
 		]
@@ -83827,6 +83846,7 @@
 		"artist_genres": [
 			"alternative pop",
 			"alternative rock",
+			"art pop",
 			"britpop",
 			"dream pop",
 			"shoegaze"
@@ -83967,7 +83987,6 @@
 			"modern dream pop",
 			"modern rock",
 			"neo-psychedelic",
-			"new rave",
 			"nu gaze",
 			"shoegaze"
 		]
@@ -83998,6 +84017,7 @@
 			"chillwave",
 			"dream pop",
 			"dreamo",
+			"electropop",
 			"indie rock",
 			"indie surf",
 			"modern dream pop",
@@ -84062,7 +84082,6 @@
 			"ecm-style jazz",
 			"jazz fusion",
 			"jazz guitar",
-			"norwegian jazz",
 			"swedish jazz"
 		]
 	},
@@ -84546,6 +84565,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"album rock",
 			"classic rock",
 			"country rock",
 			"folk",
@@ -84855,7 +84875,6 @@
 			"experimental rock",
 			"freak folk",
 			"grave wave",
-			"indie rock",
 			"noise pop"
 		]
 	},
@@ -85069,7 +85088,6 @@
 			"mellow gold",
 			"psychedelic rock",
 			"rock",
-			"roots rock",
 			"soft rock",
 			"yacht rock"
 		]
@@ -85694,7 +85712,8 @@
 			"ambient",
 			"compositional ambient",
 			"drone",
-			"neo-classical"
+			"neo-classical",
+			"post-rock"
 		]
 	},
 	"1EEJBUOORu9dLZQSeQkZOP": {
@@ -85812,15 +85831,13 @@
 			"classic rock",
 			"hard rock",
 			"mellow gold",
-			"progressive rock",
 			"rock",
 			"roots rock",
 			"soft rock",
-			"symphonic rock",
 			"uk americana"
 		]
 	},
-	"216rav17h4oi70gAvVmIsP": {
+	"13MMdpEWfk4JqbO9ArzKzU": {
 		"name": "Gymnop\u00e9die No. 2",
 		"track_features": {
 			"danceability": 0.428,
@@ -85835,10 +85852,10 @@
 			"valence": 0.368,
 			"tempo": 70.556,
 			"type": "audio_features",
-			"id": "216rav17h4oi70gAvVmIsP",
-			"uri": "spotify:track:216rav17h4oi70gAvVmIsP",
-			"track_href": "https://api.spotify.com/v1/tracks/216rav17h4oi70gAvVmIsP",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/216rav17h4oi70gAvVmIsP",
+			"id": "13MMdpEWfk4JqbO9ArzKzU",
+			"uri": "spotify:track:13MMdpEWfk4JqbO9ArzKzU",
+			"track_href": "https://api.spotify.com/v1/tracks/13MMdpEWfk4JqbO9ArzKzU",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/13MMdpEWfk4JqbO9ArzKzU",
 			"duration_ms": 154969,
 			"time_signature": 4
 		},
@@ -85873,6 +85890,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary jazz",
 			"japanese jazz",
 			"japanese jazz fusion",
 			"jazz",
@@ -86546,6 +86564,7 @@
 		"artist_genres": [
 			"album rock",
 			"art rock",
+			"classic uk pop",
 			"instrumental rock",
 			"jazz fusion",
 			"neo-progressive",
@@ -86698,43 +86717,29 @@
 			"stomp and holler"
 		]
 	},
-	"2Kq4Lkemsr5BIt3knG6sPA": {
+	"4SgJ4GjK5CDinBIuqmeWsB": {
 		"name": "Lisa, Listen to Me",
 		"track_features": {
-			"danceability": 0.369,
-			"energy": 0.635,
+			"danceability": 0.53,
+			"energy": 0.653,
 			"key": 2,
-			"loudness": -9.919,
+			"loudness": -9.426,
 			"mode": 1,
-			"speechiness": 0.0879,
-			"acousticness": 0.62,
-			"instrumentalness": 3.13e-05,
-			"liveness": 0.207,
-			"valence": 0.538,
-			"tempo": 175.331,
+			"speechiness": 0.0538,
+			"acousticness": 0.43,
+			"instrumentalness": 1.79e-05,
+			"liveness": 0.184,
+			"valence": 0.516,
+			"tempo": 87.749,
 			"type": "audio_features",
-			"id": "2Kq4Lkemsr5BIt3knG6sPA",
-			"uri": "spotify:track:2Kq4Lkemsr5BIt3knG6sPA",
-			"track_href": "https://api.spotify.com/v1/tracks/2Kq4Lkemsr5BIt3knG6sPA",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/2Kq4Lkemsr5BIt3knG6sPA",
-			"duration_ms": 177800,
-			"time_signature": 4
+			"id": "4SgJ4GjK5CDinBIuqmeWsB",
+			"uri": "spotify:track:4SgJ4GjK5CDinBIuqmeWsB",
+			"track_href": "https://api.spotify.com/v1/tracks/4SgJ4GjK5CDinBIuqmeWsB",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/4SgJ4GjK5CDinBIuqmeWsB",
+			"duration_ms": 178867,
+			"time_signature": 3
 		},
-		"artist_genres": [
-			"album rock",
-			"art rock",
-			"blues rock",
-			"bubblegum pop",
-			"classic rock",
-			"country rock",
-			"folk",
-			"folk rock",
-			"jazz rock",
-			"mellow gold",
-			"psychedelic rock",
-			"soft rock",
-			"symphonic rock"
-		]
+		"artist_genres": []
 	},
 	"3LGRrDmbePCJb4nnkwZSRJ": {
 		"name": "Room 335",
@@ -86764,33 +86769,29 @@
 			"smooth jazz"
 		]
 	},
-	"1MMV4iR2TiiTrAgCBPV2hj": {
+	"2t0WWIRWJqtXXyd3ATHntX": {
 		"name": "Deux Arabesques L. 66: No. 1 Andante con moto",
 		"track_features": {
-			"danceability": 0.223,
-			"energy": 0.0306,
+			"danceability": 0.215,
+			"energy": 0.0811,
 			"key": 4,
-			"loudness": -27.06,
+			"loudness": -22.383,
 			"mode": 1,
-			"speechiness": 0.04,
-			"acousticness": 0.992,
-			"instrumentalness": 0.932,
-			"liveness": 0.0674,
-			"valence": 0.116,
-			"tempo": 69.769,
+			"speechiness": 0.0389,
+			"acousticness": 0.986,
+			"instrumentalness": 0.886,
+			"liveness": 0.164,
+			"valence": 0.104,
+			"tempo": 71.517,
 			"type": "audio_features",
-			"id": "1MMV4iR2TiiTrAgCBPV2hj",
-			"uri": "spotify:track:1MMV4iR2TiiTrAgCBPV2hj",
-			"track_href": "https://api.spotify.com/v1/tracks/1MMV4iR2TiiTrAgCBPV2hj",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/1MMV4iR2TiiTrAgCBPV2hj",
-			"duration_ms": 223333,
-			"time_signature": 3
+			"id": "2t0WWIRWJqtXXyd3ATHntX",
+			"uri": "spotify:track:2t0WWIRWJqtXXyd3ATHntX",
+			"track_href": "https://api.spotify.com/v1/tracks/2t0WWIRWJqtXXyd3ATHntX",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/2t0WWIRWJqtXXyd3ATHntX",
+			"duration_ms": 252267,
+			"time_signature": 4
 		},
-		"artist_genres": [
-			"classical",
-			"impressionism",
-			"post-romantic era"
-		]
+		"artist_genres": []
 	},
 	"7hY9oi8aifuwqYvqHEUfRO": {
 		"name": "Suite Bergamasque: Clair de Lune, No. 3",
@@ -86842,30 +86843,31 @@
 			"classical guitar"
 		]
 	},
-	"1p8Po4X9rWvMOuGR2vhVI2": {
+	"3PwuQKxlxa8i3DOSTXK0Ld": {
 		"name": "Canon in D Major, P. 37",
 		"track_features": {
-			"danceability": 0.407,
-			"energy": 0.122,
+			"danceability": 0.235,
+			"energy": 0.336,
 			"key": 2,
-			"loudness": -17.925,
+			"loudness": -15.126,
 			"mode": 1,
-			"speechiness": 0.0427,
-			"acousticness": 0.988,
-			"instrumentalness": 0.942,
-			"liveness": 0.113,
-			"valence": 0.216,
-			"tempo": 105.484,
+			"speechiness": 0.0336,
+			"acousticness": 0.824,
+			"instrumentalness": 0.767,
+			"liveness": 0.13,
+			"valence": 0.218,
+			"tempo": 112.469,
 			"type": "audio_features",
-			"id": "1p8Po4X9rWvMOuGR2vhVI2",
-			"uri": "spotify:track:1p8Po4X9rWvMOuGR2vhVI2",
-			"track_href": "https://api.spotify.com/v1/tracks/1p8Po4X9rWvMOuGR2vhVI2",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/1p8Po4X9rWvMOuGR2vhVI2",
-			"duration_ms": 288853,
+			"id": "3PwuQKxlxa8i3DOSTXK0Ld",
+			"uri": "spotify:track:3PwuQKxlxa8i3DOSTXK0Ld",
+			"track_href": "https://api.spotify.com/v1/tracks/3PwuQKxlxa8i3DOSTXK0Ld",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/3PwuQKxlxa8i3DOSTXK0Ld",
+			"duration_ms": 247987,
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"classify"
+			"german orchestra",
+			"orchestra"
 		]
 	},
 	"3vaeT9yegueJtFszFIDE4d": {
@@ -86994,7 +86996,6 @@
 			"mellow gold",
 			"psychedelic rock",
 			"rock",
-			"roots rock",
 			"soft rock",
 			"yacht rock"
 		]
@@ -87079,7 +87080,6 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"norwegian contemporary jazz",
 			"norwegian jazz",
 			"norwegian rock"
 		]
@@ -87107,6 +87107,7 @@
 			"time_signature": 1
 		},
 		"artist_genres": [
+			"contemporary jazz",
 			"japanese jazz",
 			"japanese jazz fusion",
 			"jazz",
@@ -87271,27 +87272,27 @@
 			"modern blues rock"
 		]
 	},
-	"1klIQF7Uo14k1GHI0wB7K1": {
+	"7LtG8gMuOCEg8g0ohaAlGD": {
 		"name": "Mi pueblo, mi casa, la soledad",
 		"track_features": {
-			"danceability": 0.197,
-			"energy": 0.289,
+			"danceability": 0.339,
+			"energy": 0.225,
 			"key": 0,
-			"loudness": -14.532,
+			"loudness": -13.99,
 			"mode": 0,
-			"speechiness": 0.0452,
-			"acousticness": 0.211,
-			"instrumentalness": 0.483,
-			"liveness": 0.383,
-			"valence": 0.192,
-			"tempo": 164.909,
+			"speechiness": 0.0317,
+			"acousticness": 0.438,
+			"instrumentalness": 0.592,
+			"liveness": 0.108,
+			"valence": 0.153,
+			"tempo": 105.707,
 			"type": "audio_features",
-			"id": "1klIQF7Uo14k1GHI0wB7K1",
-			"uri": "spotify:track:1klIQF7Uo14k1GHI0wB7K1",
-			"track_href": "https://api.spotify.com/v1/tracks/1klIQF7Uo14k1GHI0wB7K1",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/1klIQF7Uo14k1GHI0wB7K1",
-			"duration_ms": 344333,
-			"time_signature": 4
+			"id": "7LtG8gMuOCEg8g0ohaAlGD",
+			"uri": "spotify:track:7LtG8gMuOCEg8g0ohaAlGD",
+			"track_href": "https://api.spotify.com/v1/tracks/7LtG8gMuOCEg8g0ohaAlGD",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/7LtG8gMuOCEg8g0ohaAlGD",
+			"duration_ms": 293800,
+			"time_signature": 3
 		},
 		"artist_genres": [
 			"folklore argentino",
@@ -87385,7 +87386,6 @@
 			"experimental",
 			"free improvisation",
 			"free jazz",
-			"japanese jazz",
 			"jazz",
 			"jazz fusion",
 			"jazz saxophone",
@@ -87570,6 +87570,7 @@
 			"time_signature": 5
 		},
 		"artist_genres": [
+			"contemporary jazz",
 			"japanese jazz",
 			"japanese jazz fusion",
 			"jazz",
@@ -87601,6 +87602,7 @@
 		},
 		"artist_genres": [
 			"electric bass",
+			"indie jazz",
 			"indie soul",
 			"jazz",
 			"jazz fusion",
@@ -87634,8 +87636,7 @@
 		"artist_genres": [
 			"big band",
 			"jazz orchestra",
-			"modern big band",
-			"modern funk"
+			"modern big band"
 		]
 	},
 	"1E1hw4y82wPxyENVmtPTgI": {
@@ -87661,6 +87662,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary jazz",
 			"japanese jazz",
 			"japanese jazz fusion",
 			"jazz",
@@ -87691,6 +87693,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary jazz",
 			"japanese jazz",
 			"japanese jazz fusion",
 			"jazz",
@@ -87721,6 +87724,7 @@
 			"time_signature": 3
 		},
 		"artist_genres": [
+			"contemporary jazz",
 			"japanese jazz",
 			"japanese jazz fusion",
 			"jazz",
@@ -87751,6 +87755,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary jazz",
 			"japanese jazz",
 			"japanese jazz fusion",
 			"jazz",
@@ -87781,6 +87786,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary jazz",
 			"japanese jazz",
 			"japanese jazz fusion",
 			"jazz",
@@ -87811,6 +87817,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary jazz",
 			"japanese jazz",
 			"japanese jazz fusion",
 			"jazz",
@@ -87841,6 +87848,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary jazz",
 			"japanese jazz",
 			"japanese jazz fusion",
 			"jazz",
@@ -87871,11 +87879,13 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary jazz",
 			"german jazz",
 			"jazz",
 			"jazz piano",
 			"modern jazz piano",
 			"straight-ahead jazz",
+			"stride",
 			"vocal jazz"
 		]
 	},
@@ -87996,6 +88006,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary jazz",
 			"japanese jazz",
 			"japanese jazz fusion",
 			"jazz",
@@ -88061,7 +88072,6 @@
 			"indie jazz",
 			"jazztronica",
 			"modern jazz trio",
-			"nu jazz",
 			"progressive jazz fusion"
 		]
 	},
@@ -88242,6 +88252,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary jazz",
 			"japanese jazz",
 			"japanese jazz fusion",
 			"jazz",
@@ -88336,6 +88347,7 @@
 			"time_signature": 3
 		},
 		"artist_genres": [
+			"contemporary jazz",
 			"japanese jazz",
 			"japanese jazz fusion",
 			"jazz",
@@ -88398,11 +88410,13 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary jazz",
 			"german jazz",
 			"jazz",
 			"jazz piano",
 			"modern jazz piano",
 			"straight-ahead jazz",
+			"stride",
 			"vocal jazz"
 		]
 	},
@@ -88429,11 +88443,13 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary jazz",
 			"german jazz",
 			"jazz",
 			"jazz piano",
 			"modern jazz piano",
 			"straight-ahead jazz",
+			"stride",
 			"vocal jazz"
 		]
 	},
@@ -88460,6 +88476,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary jazz",
 			"japanese jazz",
 			"japanese jazz fusion",
 			"jazz",
@@ -88578,7 +88595,6 @@
 		},
 		"artist_genres": [
 			"contemporary jazz",
-			"dark jazz",
 			"jazz",
 			"jazz fusion",
 			"swedish jazz"
@@ -88669,6 +88685,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary jazz",
 			"japanese jazz",
 			"japanese jazz fusion",
 			"jazz",
@@ -88729,6 +88746,7 @@
 			"time_signature": 3
 		},
 		"artist_genres": [
+			"contemporary jazz",
 			"japanese jazz",
 			"japanese jazz fusion",
 			"jazz",
@@ -88792,6 +88810,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary jazz",
 			"japanese jazz",
 			"japanese jazz fusion",
 			"jazz",
@@ -88824,7 +88843,6 @@
 		"artist_genres": [
 			"electric bass",
 			"instrumental funk",
-			"jazz funk",
 			"jazz fusion",
 			"modern funk"
 		]
@@ -88889,7 +88907,6 @@
 			"indie jazz",
 			"jazztronica",
 			"modern jazz trio",
-			"nu jazz",
 			"progressive jazz fusion"
 		]
 	},
@@ -88974,6 +88991,7 @@
 			"time_signature": 3
 		},
 		"artist_genres": [
+			"contemporary jazz",
 			"japanese jazz",
 			"japanese jazz fusion",
 			"jazz",
@@ -89005,6 +89023,7 @@
 		},
 		"artist_genres": [
 			"contemporary jazz",
+			"indie jazz",
 			"jazz",
 			"jazz piano",
 			"modern jazz piano"
@@ -89069,7 +89088,6 @@
 			"indie jazz",
 			"jazztronica",
 			"modern jazz trio",
-			"nu jazz",
 			"progressive jazz fusion"
 		]
 	},
@@ -89096,6 +89114,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary jazz",
 			"japanese jazz",
 			"japanese jazz fusion",
 			"jazz",
@@ -89221,6 +89240,7 @@
 		},
 		"artist_genres": [
 			"electric bass",
+			"indie jazz",
 			"indie soul",
 			"jazz",
 			"jazz fusion",
@@ -89401,6 +89421,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary jazz",
 			"japanese jazz",
 			"japanese jazz fusion",
 			"jazz",
@@ -89462,6 +89483,7 @@
 		},
 		"artist_genres": [
 			"electric bass",
+			"indie jazz",
 			"indie soul",
 			"jazz",
 			"jazz fusion",
@@ -89807,6 +89829,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary jazz",
 			"japanese jazz",
 			"japanese jazz fusion",
 			"jazz",
@@ -90057,6 +90080,7 @@
 		},
 		"artist_genres": [
 			"contemporary jazz",
+			"indie jazz",
 			"jazz",
 			"jazz piano",
 			"modern jazz piano"
@@ -90233,36 +90257,29 @@
 			"southern soul"
 		]
 	},
-	"1N9e1myOWV26evyObwnkoM": {
+	"03ppQCUL0yzIJzm78KMgQC": {
 		"name": "Triste",
 		"track_features": {
-			"danceability": 0.405,
-			"energy": 0.341,
-			"key": 9,
-			"loudness": -20.45,
+			"danceability": 0.786,
+			"energy": 0.551,
+			"key": 6,
+			"loudness": -8.034,
 			"mode": 1,
-			"speechiness": 0.0517,
-			"acousticness": 0.838,
-			"instrumentalness": 0.911,
-			"liveness": 0.0748,
-			"valence": 0.147,
-			"tempo": 82.369,
+			"speechiness": 0.104,
+			"acousticness": 0.000224,
+			"instrumentalness": 0.0318,
+			"liveness": 0.108,
+			"valence": 0.547,
+			"tempo": 140.164,
 			"type": "audio_features",
-			"id": "1N9e1myOWV26evyObwnkoM",
-			"uri": "spotify:track:1N9e1myOWV26evyObwnkoM",
-			"track_href": "https://api.spotify.com/v1/tracks/1N9e1myOWV26evyObwnkoM",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/1N9e1myOWV26evyObwnkoM",
-			"duration_ms": 129533,
+			"id": "03ppQCUL0yzIJzm78KMgQC",
+			"uri": "spotify:track:03ppQCUL0yzIJzm78KMgQC",
+			"track_href": "https://api.spotify.com/v1/tracks/03ppQCUL0yzIJzm78KMgQC",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/03ppQCUL0yzIJzm78KMgQC",
+			"duration_ms": 130286,
 			"time_signature": 4
 		},
-		"artist_genres": [
-			"bossa nova",
-			"brazilian classical",
-			"brazilian jazz",
-			"latin classical",
-			"mpb",
-			"violao"
-		]
+		"artist_genres": []
 	},
 	"0SMkzFGJOBFDI9KfYD55L0": {
 		"name": "There She Goes",
@@ -90486,7 +90503,6 @@
 			"mellow gold",
 			"psychedelic rock",
 			"rock",
-			"roots rock",
 			"soft rock"
 		]
 	},
@@ -90522,7 +90538,6 @@
 			"mellow gold",
 			"psychedelic rock",
 			"rock",
-			"roots rock",
 			"soft rock"
 		]
 	},
@@ -90549,6 +90564,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"album rock",
 			"classic rock",
 			"country rock",
 			"folk",
@@ -90582,6 +90598,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"album rock",
 			"classic rock",
 			"country rock",
 			"folk",
@@ -90647,6 +90664,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"album rock",
 			"classic rock",
 			"country rock",
 			"folk",
@@ -90680,6 +90698,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"album rock",
 			"classic rock",
 			"country rock",
 			"folk",
@@ -90713,6 +90732,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"album rock",
 			"classic rock",
 			"country rock",
 			"folk",
@@ -90746,6 +90766,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"album rock",
 			"classic rock",
 			"country rock",
 			"folk",
@@ -90779,6 +90800,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"album rock",
 			"classic rock",
 			"country rock",
 			"folk",
@@ -91384,6 +91406,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary jazz",
 			"japanese jazz",
 			"japanese jazz fusion",
 			"jazz",
@@ -91701,27 +91724,27 @@
 			"visor"
 		]
 	},
-	"4wj308gRooCMCsfgCj1ehv": {
+	"0l3e2t0srsylbNhoFiVAql": {
 		"name": "Dekadans",
 		"track_features": {
-			"danceability": 0.739,
-			"energy": 0.31,
+			"danceability": 0.525,
+			"energy": 0.196,
 			"key": 2,
-			"loudness": -10.044,
+			"loudness": -11.967,
 			"mode": 1,
-			"speechiness": 0.0468,
-			"acousticness": 0.914,
-			"instrumentalness": 5.14e-06,
-			"liveness": 0.11,
-			"valence": 0.719,
-			"tempo": 79.062,
+			"speechiness": 0.0773,
+			"acousticness": 0.897,
+			"instrumentalness": 2.85e-06,
+			"liveness": 0.633,
+			"valence": 0.623,
+			"tempo": 178.461,
 			"type": "audio_features",
-			"id": "4wj308gRooCMCsfgCj1ehv",
-			"uri": "spotify:track:4wj308gRooCMCsfgCj1ehv",
-			"track_href": "https://api.spotify.com/v1/tracks/4wj308gRooCMCsfgCj1ehv",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/4wj308gRooCMCsfgCj1ehv",
-			"duration_ms": 142707,
-			"time_signature": 4
+			"id": "0l3e2t0srsylbNhoFiVAql",
+			"uri": "spotify:track:0l3e2t0srsylbNhoFiVAql",
+			"track_href": "https://api.spotify.com/v1/tracks/0l3e2t0srsylbNhoFiVAql",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/0l3e2t0srsylbNhoFiVAql",
+			"duration_ms": 153226,
+			"time_signature": 3
 		},
 		"artist_genres": [
 			"classic swedish pop",
@@ -92374,7 +92397,7 @@
 			"symphonic rock"
 		]
 	},
-	"0VLOqnvM9TzGhvSVukhNSE": {
+	"0RB0VrA6Nsj8GYrkFzjXoT": {
 		"name": "Minstrel in the Gallery - 2001 Remaster",
 		"track_features": {
 			"danceability": 0.542,
@@ -92389,10 +92412,10 @@
 			"valence": 0.947,
 			"tempo": 101.927,
 			"type": "audio_features",
-			"id": "0VLOqnvM9TzGhvSVukhNSE",
-			"uri": "spotify:track:0VLOqnvM9TzGhvSVukhNSE",
-			"track_href": "https://api.spotify.com/v1/tracks/0VLOqnvM9TzGhvSVukhNSE",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/0VLOqnvM9TzGhvSVukhNSE",
+			"id": "0RB0VrA6Nsj8GYrkFzjXoT",
+			"uri": "spotify:track:0RB0VrA6Nsj8GYrkFzjXoT",
+			"track_href": "https://api.spotify.com/v1/tracks/0RB0VrA6Nsj8GYrkFzjXoT",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/0RB0VrA6Nsj8GYrkFzjXoT",
 			"duration_ms": 231507,
 			"time_signature": 3
 		},
@@ -92474,7 +92497,6 @@
 			"jazz",
 			"jazz fusion",
 			"jazz trumpet",
-			"stride",
 			"swing",
 			"vocal jazz"
 		]
@@ -92564,7 +92586,6 @@
 			"big band",
 			"cool jazz",
 			"jazz",
-			"jazz fusion",
 			"jazz saxophone"
 		]
 	},
@@ -92791,7 +92812,6 @@
 			"big band",
 			"cool jazz",
 			"jazz",
-			"jazz fusion",
 			"jazz saxophone"
 		]
 	},
@@ -93324,11 +93344,11 @@
 		},
 		"artist_genres": [
 			"contemporary jazz",
-			"dark jazz",
 			"ecm-style jazz",
 			"german jazz",
 			"jazz double bass",
-			"jazz fusion"
+			"jazz fusion",
+			"norwegian jazz"
 		]
 	},
 	"5or7wPZGVkIGA2DGqaUexf": {
@@ -93384,6 +93404,7 @@
 		"artist_genres": [
 			"contemporary jazz",
 			"contemporary post-bop",
+			"ecm-style jazz",
 			"jazz",
 			"jazz fusion",
 			"jazz saxophone"
@@ -93508,7 +93529,8 @@
 			"folk",
 			"folk rock",
 			"freak folk",
-			"traditional blues"
+			"traditional blues",
+			"traditional folk"
 		]
 	},
 	"0Od1blnXgb8Jb0LItGe9by": {
@@ -93705,7 +93727,6 @@
 			"canadian pop",
 			"canadian rock",
 			"comic",
-			"neo mellow",
 			"pop rock"
 		]
 	},
@@ -93800,7 +93821,7 @@
 		"artist_genres": [
 			"baroque pop",
 			"country rock",
-			"folk",
+			"experimental",
 			"folk rock",
 			"oklahoma country",
 			"psychedelic rock",
@@ -93834,10 +93855,8 @@
 			"art rock",
 			"avant-garde jazz",
 			"experimental",
-			"fourth world",
 			"free improvisation",
 			"free jazz",
-			"japanese jazz",
 			"spiritual jazz"
 		]
 	},
@@ -93866,6 +93885,7 @@
 		"artist_genres": [
 			"album rock",
 			"art rock",
+			"classic uk pop",
 			"mellow gold",
 			"new wave pop",
 			"soft rock"
@@ -93897,7 +93917,6 @@
 			"bossa nova",
 			"manguebeat",
 			"mpb",
-			"pagode",
 			"samba",
 			"samba-rock",
 			"tropicalia"
@@ -93928,6 +93947,8 @@
 		"artist_genres": [
 			"alternative rock",
 			"blues rock",
+			"modern alternative rock",
+			"modern blues rock",
 			"palm desert scene",
 			"stoner rock"
 		]
@@ -94284,6 +94305,7 @@
 		"artist_genres": [
 			"afrofuturism",
 			"hip hop",
+			"indie r&b",
 			"neo soul",
 			"r&b",
 			"urban contemporary"
@@ -94314,6 +94336,7 @@
 		"artist_genres": [
 			"afrofuturism",
 			"hip hop",
+			"indie r&b",
 			"neo soul",
 			"r&b",
 			"urban contemporary"
@@ -94397,6 +94420,7 @@
 		"artist_genres": [
 			"afrofuturism",
 			"hip hop",
+			"indie r&b",
 			"neo soul",
 			"r&b",
 			"urban contemporary"
@@ -94427,6 +94451,7 @@
 		"artist_genres": [
 			"afrofuturism",
 			"hip hop",
+			"indie r&b",
 			"neo soul",
 			"r&b",
 			"urban contemporary"
@@ -94457,6 +94482,7 @@
 		"artist_genres": [
 			"afrofuturism",
 			"hip hop",
+			"indie r&b",
 			"neo soul",
 			"r&b",
 			"urban contemporary"
@@ -94521,6 +94547,7 @@
 		"artist_genres": [
 			"afrofuturism",
 			"hip hop",
+			"indie r&b",
 			"neo soul",
 			"r&b",
 			"urban contemporary"
@@ -94551,6 +94578,7 @@
 		"artist_genres": [
 			"afrofuturism",
 			"hip hop",
+			"indie r&b",
 			"neo soul",
 			"r&b",
 			"urban contemporary"
@@ -94582,6 +94610,7 @@
 			"art rock",
 			"celtic rock",
 			"new wave pop",
+			"rock",
 			"scottish new wave",
 			"scottish rock"
 		]
@@ -94671,27 +94700,27 @@
 			"laboratorio"
 		]
 	},
-	"2XwL9kTn9411Ed4p0MLYx3": {
+	"31BF65crbz06MBZCdNuxHt": {
 		"name": "Let England Shake",
 		"track_features": {
-			"danceability": 0.363,
-			"energy": 0.591,
-			"key": 5,
-			"loudness": -8.226,
-			"mode": 1,
-			"speechiness": 0.0348,
-			"acousticness": 0.428,
-			"instrumentalness": 0.00081,
-			"liveness": 0.212,
-			"valence": 0.139,
-			"tempo": 162.31,
+			"danceability": 0.406,
+			"energy": 0.35,
+			"key": 4,
+			"loudness": -14.257,
+			"mode": 0,
+			"speechiness": 0.0324,
+			"acousticness": 0.893,
+			"instrumentalness": 0.000115,
+			"liveness": 0.19,
+			"valence": 0.365,
+			"tempo": 152.814,
 			"type": "audio_features",
-			"id": "2XwL9kTn9411Ed4p0MLYx3",
-			"uri": "spotify:track:2XwL9kTn9411Ed4p0MLYx3",
-			"track_href": "https://api.spotify.com/v1/tracks/2XwL9kTn9411Ed4p0MLYx3",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/2XwL9kTn9411Ed4p0MLYx3",
-			"duration_ms": 189280,
-			"time_signature": 4
+			"id": "31BF65crbz06MBZCdNuxHt",
+			"uri": "spotify:track:31BF65crbz06MBZCdNuxHt",
+			"track_href": "https://api.spotify.com/v1/tracks/31BF65crbz06MBZCdNuxHt",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/31BF65crbz06MBZCdNuxHt",
+			"duration_ms": 211147,
+			"time_signature": 1
 		},
 		"artist_genres": [
 			"alternative rock",
@@ -94791,7 +94820,6 @@
 		"artist_genres": [
 			"flamenco",
 			"flamenco guitar",
-			"nuevo flamenco",
 			"rumba"
 		]
 	},
@@ -95534,6 +95562,7 @@
 		},
 		"artist_genres": [
 			"jazz metal",
+			"neo classical metal",
 			"neo-progressive",
 			"progressive metal",
 			"symphonic rock"
@@ -95563,6 +95592,7 @@
 		},
 		"artist_genres": [
 			"jazz metal",
+			"neo classical metal",
 			"neo-progressive",
 			"progressive metal",
 			"symphonic rock"
@@ -95592,6 +95622,7 @@
 		},
 		"artist_genres": [
 			"jazz metal",
+			"neo classical metal",
 			"neo-progressive",
 			"progressive metal",
 			"symphonic rock"
@@ -95621,6 +95652,7 @@
 		},
 		"artist_genres": [
 			"jazz metal",
+			"neo classical metal",
 			"neo-progressive",
 			"progressive metal",
 			"symphonic rock"
@@ -95650,6 +95682,7 @@
 		},
 		"artist_genres": [
 			"jazz metal",
+			"neo classical metal",
 			"neo-progressive",
 			"progressive metal",
 			"symphonic rock"
@@ -95679,6 +95712,7 @@
 		},
 		"artist_genres": [
 			"jazz metal",
+			"neo classical metal",
 			"neo-progressive",
 			"progressive metal",
 			"symphonic rock"
@@ -95708,6 +95742,7 @@
 		},
 		"artist_genres": [
 			"jazz metal",
+			"neo classical metal",
 			"neo-progressive",
 			"progressive metal",
 			"symphonic rock"
@@ -95737,6 +95772,7 @@
 		},
 		"artist_genres": [
 			"jazz metal",
+			"neo classical metal",
 			"neo-progressive",
 			"progressive metal",
 			"symphonic rock"
@@ -95766,6 +95802,7 @@
 		},
 		"artist_genres": [
 			"jazz metal",
+			"neo classical metal",
 			"neo-progressive",
 			"progressive metal",
 			"symphonic rock"
@@ -95795,6 +95832,7 @@
 		},
 		"artist_genres": [
 			"jazz metal",
+			"neo classical metal",
 			"neo-progressive",
 			"progressive metal",
 			"symphonic rock"
@@ -95824,6 +95862,7 @@
 		},
 		"artist_genres": [
 			"jazz metal",
+			"neo classical metal",
 			"neo-progressive",
 			"progressive metal",
 			"symphonic rock"
@@ -95853,6 +95892,7 @@
 		},
 		"artist_genres": [
 			"jazz metal",
+			"neo classical metal",
 			"neo-progressive",
 			"progressive metal",
 			"symphonic rock"
@@ -95882,6 +95922,7 @@
 		},
 		"artist_genres": [
 			"jazz metal",
+			"neo classical metal",
 			"neo-progressive",
 			"progressive metal",
 			"symphonic rock"
@@ -95911,6 +95952,7 @@
 		},
 		"artist_genres": [
 			"jazz metal",
+			"neo classical metal",
 			"neo-progressive",
 			"progressive metal",
 			"symphonic rock"
@@ -95940,6 +95982,7 @@
 		},
 		"artist_genres": [
 			"jazz metal",
+			"neo classical metal",
 			"neo-progressive",
 			"progressive metal",
 			"symphonic rock"
@@ -96056,6 +96099,7 @@
 		},
 		"artist_genres": [
 			"jazz metal",
+			"neo classical metal",
 			"neo-progressive",
 			"progressive metal",
 			"symphonic rock"
@@ -96085,6 +96129,7 @@
 		},
 		"artist_genres": [
 			"jazz metal",
+			"neo classical metal",
 			"neo-progressive",
 			"progressive metal",
 			"symphonic rock"
@@ -96114,6 +96159,7 @@
 		},
 		"artist_genres": [
 			"jazz metal",
+			"neo classical metal",
 			"neo-progressive",
 			"progressive metal",
 			"symphonic rock"
@@ -96143,6 +96189,7 @@
 		},
 		"artist_genres": [
 			"jazz metal",
+			"neo classical metal",
 			"neo-progressive",
 			"progressive metal",
 			"symphonic rock"
@@ -96172,6 +96219,7 @@
 		},
 		"artist_genres": [
 			"jazz metal",
+			"neo classical metal",
 			"neo-progressive",
 			"progressive metal",
 			"symphonic rock"
@@ -96201,6 +96249,7 @@
 		},
 		"artist_genres": [
 			"jazz metal",
+			"neo classical metal",
 			"neo-progressive",
 			"progressive metal",
 			"symphonic rock"
@@ -96230,6 +96279,7 @@
 		},
 		"artist_genres": [
 			"jazz metal",
+			"neo classical metal",
 			"neo-progressive",
 			"progressive metal",
 			"symphonic rock"
@@ -96782,6 +96832,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"art pop",
 			"escape room",
 			"hyperpop",
 			"japanese electropop"
@@ -97409,7 +97460,7 @@
 			"swedish prog"
 		]
 	},
-	"7etsW27Y70vB5EbnHzHu4y": {
+	"4NysqM6FiECwaDVkpvgXDp": {
 		"name": "Cool Water- p\u00e5 Den Gyldene Freden",
 		"track_features": {
 			"danceability": 0.443,
@@ -97424,10 +97475,10 @@
 			"valence": 0.27,
 			"tempo": 141.113,
 			"type": "audio_features",
-			"id": "7etsW27Y70vB5EbnHzHu4y",
-			"uri": "spotify:track:7etsW27Y70vB5EbnHzHu4y",
-			"track_href": "https://api.spotify.com/v1/tracks/7etsW27Y70vB5EbnHzHu4y",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/7etsW27Y70vB5EbnHzHu4y",
+			"id": "4NysqM6FiECwaDVkpvgXDp",
+			"uri": "spotify:track:4NysqM6FiECwaDVkpvgXDp",
+			"track_href": "https://api.spotify.com/v1/tracks/4NysqM6FiECwaDVkpvgXDp",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/4NysqM6FiECwaDVkpvgXDp",
 			"duration_ms": 181373,
 			"time_signature": 4
 		},
@@ -97535,7 +97586,6 @@
 			"motown",
 			"quiet storm",
 			"smooth jazz",
-			"soft rock",
 			"soul jazz",
 			"yacht rock"
 		]
@@ -97690,7 +97740,6 @@
 			"mellow gold",
 			"psychedelic rock",
 			"rock",
-			"roots rock",
 			"soft rock"
 		]
 	},
@@ -97751,8 +97800,7 @@
 			"jazz clarinet",
 			"new orleans jazz",
 			"stride",
-			"swing",
-			"vocal jazz"
+			"swing"
 		]
 	},
 	"7lflARLzeb71KjdYPU7CFt": {
@@ -98028,6 +98076,7 @@
 			"alternative r&b",
 			"contemporary jazz",
 			"indie jazz",
+			"indie r&b",
 			"indie soul",
 			"jazz",
 			"modern jazz piano",
@@ -98062,7 +98111,6 @@
 			"escape room",
 			"hip hop",
 			"indie soul",
-			"neo soul",
 			"underground hip hop"
 		]
 	},
@@ -98122,7 +98170,6 @@
 			"escape room",
 			"hip hop",
 			"indie soul",
-			"neo soul",
 			"underground hip hop"
 		]
 	},
@@ -98206,7 +98253,8 @@
 			"british jazz",
 			"contemporary jazz",
 			"modern jazz trio",
-			"turkish black metal"
+			"turkish black metal",
+			"uk contemporary jazz"
 		]
 	},
 	"6RH5kAq32aHU3syztlIn8l": {
@@ -98235,7 +98283,8 @@
 			"british jazz",
 			"contemporary jazz",
 			"modern jazz trio",
-			"turkish black metal"
+			"turkish black metal",
+			"uk contemporary jazz"
 		]
 	},
 	"3Ipgo2twyvBySMwsTzunlH": {
@@ -98410,7 +98459,6 @@
 			"electro",
 			"electronica",
 			"intelligent dance music",
-			"microhouse",
 			"ninja",
 			"trip hop"
 		]
@@ -98467,6 +98515,7 @@
 		"artist_genres": [
 			"nordic folk",
 			"norwegian folk rock",
+			"norwegian indie",
 			"norwegian rock"
 		]
 	},
@@ -98493,6 +98542,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"adult standards",
 			"funk",
 			"indie r&b",
 			"motown",
@@ -98552,7 +98602,9 @@
 			"duration_ms": 217413,
 			"time_signature": 4
 		},
-		"artist_genres": []
+		"artist_genres": [
+			"indie jazz"
+		]
 	},
 	"2fwz9mBaELJCzXuEEEe35Y": {
 		"name": "745 sticky",
@@ -99809,6 +99861,7 @@
 		},
 		"artist_genres": [
 			"contemporary jazz",
+			"indie jazz",
 			"uk contemporary jazz"
 		]
 	},
@@ -99985,7 +100038,6 @@
 			"british indie rock",
 			"indie rock",
 			"indietronica",
-			"modern alternative rock",
 			"modern rock",
 			"new rave",
 			"rock",
@@ -100128,6 +100180,7 @@
 		},
 		"artist_genres": [
 			"electric bass",
+			"indie jazz",
 			"indie soul",
 			"jazz",
 			"jazz fusion",
@@ -100255,7 +100308,9 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"alternative r&b",
 			"indie jazz",
+			"indie r&b",
 			"indie soul",
 			"neo r&b"
 		]
@@ -100283,7 +100338,9 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"alternative r&b",
 			"indie jazz",
+			"indie r&b",
 			"indie soul",
 			"neo r&b"
 		]
@@ -100319,7 +100376,6 @@
 			"mellow gold",
 			"psychedelic rock",
 			"rock",
-			"roots rock",
 			"soft rock",
 			"yacht rock"
 		]
@@ -100355,7 +100411,6 @@
 			"mellow gold",
 			"psychedelic rock",
 			"rock",
-			"roots rock",
 			"soft rock",
 			"yacht rock"
 		]
@@ -100391,7 +100446,6 @@
 			"mellow gold",
 			"psychedelic rock",
 			"rock",
-			"roots rock",
 			"soft rock",
 			"yacht rock"
 		]
@@ -100427,7 +100481,6 @@
 			"mellow gold",
 			"psychedelic rock",
 			"rock",
-			"roots rock",
 			"soft rock",
 			"yacht rock"
 		]
@@ -100893,6 +100946,7 @@
 		"artist_genres": [
 			"alternative dance",
 			"alternative rock",
+			"art pop",
 			"dance rock",
 			"dance-punk",
 			"electronic rock",
@@ -102238,7 +102292,6 @@
 			"escape room",
 			"hip hop",
 			"indie soul",
-			"neo soul",
 			"underground hip hop"
 		]
 	},
@@ -102270,7 +102323,6 @@
 			"escape room",
 			"hip hop",
 			"indie soul",
-			"neo soul",
 			"underground hip hop"
 		]
 	},
@@ -102302,7 +102354,6 @@
 			"escape room",
 			"hip hop",
 			"indie soul",
-			"neo soul",
 			"underground hip hop"
 		]
 	},
@@ -102334,7 +102385,6 @@
 			"escape room",
 			"hip hop",
 			"indie soul",
-			"neo soul",
 			"underground hip hop"
 		]
 	},
@@ -102366,7 +102416,6 @@
 			"escape room",
 			"hip hop",
 			"indie soul",
-			"neo soul",
 			"underground hip hop"
 		]
 	},
@@ -102398,7 +102447,6 @@
 			"escape room",
 			"hip hop",
 			"indie soul",
-			"neo soul",
 			"underground hip hop"
 		]
 	},
@@ -102430,7 +102478,6 @@
 			"escape room",
 			"hip hop",
 			"indie soul",
-			"neo soul",
 			"underground hip hop"
 		]
 	},
@@ -103848,6 +103895,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"adult standards",
 			"funk",
 			"indie r&b",
 			"motown",
@@ -103878,6 +103926,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"adult standards",
 			"funk",
 			"indie r&b",
 			"motown",
@@ -103908,6 +103957,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"adult standards",
 			"funk",
 			"indie r&b",
 			"motown",
@@ -103938,6 +103988,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"adult standards",
 			"funk",
 			"indie r&b",
 			"motown",
@@ -103968,6 +104019,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"adult standards",
 			"funk",
 			"indie r&b",
 			"motown",
@@ -103998,6 +104050,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"adult standards",
 			"funk",
 			"indie r&b",
 			"motown",
@@ -104028,6 +104081,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"adult standards",
 			"funk",
 			"indie r&b",
 			"motown",
@@ -104035,35 +104089,29 @@
 			"soul"
 		]
 	},
-	"0Dm43YLUlGdePpSbI1ct8h": {
+	"6R9bIhUAVhRObmIx90ixKU": {
 		"name": "Part-Time Lover",
 		"track_features": {
-			"danceability": 0.662,
-			"energy": 0.624,
+			"danceability": 0.663,
+			"energy": 0.625,
 			"key": 10,
 			"loudness": -13.606,
 			"mode": 0,
 			"speechiness": 0.0417,
 			"acousticness": 0.165,
 			"instrumentalness": 0,
-			"liveness": 0.0674,
+			"liveness": 0.0673,
 			"valence": 0.961,
-			"tempo": 174.513,
+			"tempo": 174.515,
 			"type": "audio_features",
-			"id": "0Dm43YLUlGdePpSbI1ct8h",
-			"uri": "spotify:track:0Dm43YLUlGdePpSbI1ct8h",
-			"track_href": "https://api.spotify.com/v1/tracks/0Dm43YLUlGdePpSbI1ct8h",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/0Dm43YLUlGdePpSbI1ct8h",
+			"id": "6R9bIhUAVhRObmIx90ixKU",
+			"uri": "spotify:track:6R9bIhUAVhRObmIx90ixKU",
+			"track_href": "https://api.spotify.com/v1/tracks/6R9bIhUAVhRObmIx90ixKU",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/6R9bIhUAVhRObmIx90ixKU",
 			"duration_ms": 252560,
 			"time_signature": 4
 		},
-		"artist_genres": [
-			"funk",
-			"indie r&b",
-			"motown",
-			"quiet storm",
-			"soul"
-		]
+		"artist_genres": []
 	},
 	"01lewSOj9ZaXplh9TpNKL4": {
 		"name": "Happy Birthday",
@@ -104088,6 +104136,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"adult standards",
 			"funk",
 			"indie r&b",
 			"motown",
@@ -104118,6 +104167,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"adult standards",
 			"funk",
 			"indie r&b",
 			"motown",
@@ -104148,6 +104198,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"adult standards",
 			"funk",
 			"indie r&b",
 			"motown",
@@ -104178,6 +104229,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"adult standards",
 			"funk",
 			"indie r&b",
 			"motown",
@@ -104208,6 +104260,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"adult standards",
 			"funk",
 			"indie r&b",
 			"motown",
@@ -104622,7 +104675,7 @@
 			"mellow gold"
 		]
 	},
-	"6MH56eqveAfxf29Q0O5Gkr": {
+	"4IBoDzxcRRRhQ6dozP28aQ": {
 		"name": "The Caves Of Altamira",
 		"track_features": {
 			"danceability": 0.671,
@@ -104631,20 +104684,31 @@
 			"loudness": -12.043,
 			"mode": 0,
 			"speechiness": 0.0441,
-			"acousticness": 0.106,
+			"acousticness": 0.107,
 			"instrumentalness": 0.000388,
 			"liveness": 0.129,
-			"valence": 0.815,
+			"valence": 0.818,
 			"tempo": 78.675,
 			"type": "audio_features",
-			"id": "6MH56eqveAfxf29Q0O5Gkr",
-			"uri": "spotify:track:6MH56eqveAfxf29Q0O5Gkr",
-			"track_href": "https://api.spotify.com/v1/tracks/6MH56eqveAfxf29Q0O5Gkr",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/6MH56eqveAfxf29Q0O5Gkr",
+			"id": "4IBoDzxcRRRhQ6dozP28aQ",
+			"uri": "spotify:track:4IBoDzxcRRRhQ6dozP28aQ",
+			"track_href": "https://api.spotify.com/v1/tracks/4IBoDzxcRRRhQ6dozP28aQ",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/4IBoDzxcRRRhQ6dozP28aQ",
 			"duration_ms": 213800,
 			"time_signature": 4
 		},
-		"artist_genres": []
+		"artist_genres": [
+			"album rock",
+			"art rock",
+			"classic rock",
+			"country rock",
+			"folk rock",
+			"mellow gold",
+			"psychedelic rock",
+			"rock",
+			"soft rock",
+			"yacht rock"
+		]
 	},
 	"0Ps4Eh6SQjeLnubbCsQTDD": {
 		"name": "Little Bit",
@@ -104701,11 +104765,11 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"bass music",
 			"chillwave",
 			"electronica",
 			"glitch hop",
 			"microhouse",
+			"uk bass",
 			"wonky"
 		]
 	},
@@ -104732,14 +104796,13 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"bass music",
 			"chillwave",
 			"electra",
 			"electronica",
 			"future garage",
 			"indie soul",
 			"microhouse",
-			"wonky"
+			"uk bass"
 		]
 	},
 	"5jJPcImQkogKdwsVS36zH7": {
@@ -104765,14 +104828,13 @@
 			"time_signature": 3
 		},
 		"artist_genres": [
-			"bass music",
 			"chillwave",
 			"electra",
 			"electronica",
 			"future garage",
 			"indie soul",
 			"microhouse",
-			"wonky"
+			"uk bass"
 		]
 	},
 	"430qNtapCS3Ue1yoSql1oV": {
@@ -104832,6 +104894,7 @@
 			"baltimore indie",
 			"chillwave",
 			"dream pop",
+			"electronica",
 			"experimental pop",
 			"freak folk",
 			"indie pop",
@@ -105516,6 +105579,7 @@
 		"artist_genres": [
 			"chillwave",
 			"electra",
+			"electronica",
 			"escape room",
 			"future bass",
 			"vapor soul",
@@ -105960,7 +106024,7 @@
 		},
 		"artist_genres": [
 			"chillwave",
-			"indietronica"
+			"wonky"
 		]
 	},
 	"3JnsW9l7i2ondJS894PytA": {
@@ -106231,7 +106295,8 @@
 		},
 		"artist_genres": [
 			"alternative r&b",
-			"indie soul"
+			"indie soul",
+			"vapor soul"
 		]
 	},
 	"7M7p02tAX11OY4vnU4GjMP": {
@@ -106285,7 +106350,9 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"alternative r&b",
 			"indie jazz",
+			"indie r&b",
 			"indie soul",
 			"neo r&b"
 		]
@@ -106376,6 +106443,7 @@
 			"classic rock",
 			"hard rock",
 			"mellow gold",
+			"psychedelic rock",
 			"rock"
 		]
 	},
@@ -106402,7 +106470,6 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"dreamo",
 			"progressive jazz fusion",
 			"progressive post-hardcore"
 		]
@@ -106430,7 +106497,6 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"dreamo",
 			"progressive jazz fusion",
 			"progressive post-hardcore"
 		]
@@ -106458,7 +106524,6 @@
 			"time_signature": 3
 		},
 		"artist_genres": [
-			"dreamo",
 			"progressive jazz fusion",
 			"progressive post-hardcore"
 		]
@@ -106486,7 +106551,6 @@
 			"time_signature": 3
 		},
 		"artist_genres": [
-			"dreamo",
 			"progressive jazz fusion",
 			"progressive post-hardcore"
 		]
@@ -106514,7 +106578,6 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"dreamo",
 			"progressive jazz fusion",
 			"progressive post-hardcore"
 		]
@@ -106542,7 +106605,6 @@
 			"time_signature": 5
 		},
 		"artist_genres": [
-			"dreamo",
 			"progressive jazz fusion",
 			"progressive post-hardcore"
 		]
@@ -106570,7 +106632,6 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"dreamo",
 			"progressive jazz fusion",
 			"progressive post-hardcore"
 		]
@@ -106598,7 +106659,6 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"dreamo",
 			"progressive jazz fusion",
 			"progressive post-hardcore"
 		]
@@ -106626,7 +106686,6 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"dreamo",
 			"progressive jazz fusion",
 			"progressive post-hardcore"
 		]
@@ -107260,26 +107319,26 @@
 			"stomp and holler"
 		]
 	},
-	"4giIdAr7Plyu5LQzBOR4FP": {
+	"2Wb9ejnmy27DUTUe9YF5Ew": {
 		"name": "All Night Long (All Night) - Single Version",
 		"track_features": {
-			"danceability": 0.744,
-			"energy": 0.583,
+			"danceability": 0.739,
+			"energy": 0.576,
 			"key": 1,
-			"loudness": -12.595,
+			"loudness": -12.024,
 			"mode": 1,
-			"speechiness": 0.0427,
-			"acousticness": 0.152,
-			"instrumentalness": 8.54e-05,
-			"liveness": 0.0248,
-			"valence": 0.851,
-			"tempo": 108.794,
+			"speechiness": 0.0472,
+			"acousticness": 0.122,
+			"instrumentalness": 0.00206,
+			"liveness": 0.0482,
+			"valence": 0.78,
+			"tempo": 108.81,
 			"type": "audio_features",
-			"id": "4giIdAr7Plyu5LQzBOR4FP",
-			"uri": "spotify:track:4giIdAr7Plyu5LQzBOR4FP",
-			"track_href": "https://api.spotify.com/v1/tracks/4giIdAr7Plyu5LQzBOR4FP",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/4giIdAr7Plyu5LQzBOR4FP",
-			"duration_ms": 260493,
+			"id": "2Wb9ejnmy27DUTUe9YF5Ew",
+			"uri": "spotify:track:2Wb9ejnmy27DUTUe9YF5Ew",
+			"track_href": "https://api.spotify.com/v1/tracks/2Wb9ejnmy27DUTUe9YF5Ew",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/2Wb9ejnmy27DUTUe9YF5Ew",
+			"duration_ms": 260427,
 			"time_signature": 4
 		},
 		"artist_genres": [
@@ -107444,31 +107503,35 @@
 			"japanese jazz"
 		]
 	},
-	"3Z4ZECzyrPYlLUvH1Cvun3": {
+	"5pYRnQnafIh1Qv5J8rGDz2": {
 		"name": "Russian Lullaby",
 		"track_features": {
-			"danceability": 0.652,
-			"energy": 0.251,
-			"key": 2,
-			"loudness": -15.571,
-			"mode": 0,
-			"speechiness": 0.0386,
-			"acousticness": 0.818,
-			"instrumentalness": 0.857,
-			"liveness": 0.721,
-			"valence": 0.297,
-			"tempo": 119.293,
+			"danceability": 0.542,
+			"energy": 0.33,
+			"key": 0,
+			"loudness": -11.163,
+			"mode": 1,
+			"speechiness": 0.0501,
+			"acousticness": 0.567,
+			"instrumentalness": 0.377,
+			"liveness": 0.177,
+			"valence": 0.6,
+			"tempo": 96.802,
 			"type": "audio_features",
-			"id": "3Z4ZECzyrPYlLUvH1Cvun3",
-			"uri": "spotify:track:3Z4ZECzyrPYlLUvH1Cvun3",
-			"track_href": "https://api.spotify.com/v1/tracks/3Z4ZECzyrPYlLUvH1Cvun3",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/3Z4ZECzyrPYlLUvH1Cvun3",
-			"duration_ms": 749833,
+			"id": "5pYRnQnafIh1Qv5J8rGDz2",
+			"uri": "spotify:track:5pYRnQnafIh1Qv5J8rGDz2",
+			"track_href": "https://api.spotify.com/v1/tracks/5pYRnQnafIh1Qv5J8rGDz2",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/5pYRnQnafIh1Qv5J8rGDz2",
+			"duration_ms": 187973,
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"blues rock",
+			"classic rock",
+			"country rock",
+			"folk rock",
 			"jam band",
-			"progressive bluegrass",
+			"jamgrass",
 			"roots rock"
 		]
 	},
@@ -108037,7 +108100,7 @@
 			"pop"
 		]
 	},
-	"3nYpjKjXSHvh3MdrL7iJaS": {
+	"2ygvZOXrIeVL4xZmAWJT2C": {
 		"name": "my future",
 		"track_features": {
 			"danceability": 0.444,
@@ -108052,14 +108115,18 @@
 			"valence": 0.0875,
 			"tempo": 104.745,
 			"type": "audio_features",
-			"id": "3nYpjKjXSHvh3MdrL7iJaS",
-			"uri": "spotify:track:3nYpjKjXSHvh3MdrL7iJaS",
-			"track_href": "https://api.spotify.com/v1/tracks/3nYpjKjXSHvh3MdrL7iJaS",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/3nYpjKjXSHvh3MdrL7iJaS",
+			"id": "2ygvZOXrIeVL4xZmAWJT2C",
+			"uri": "spotify:track:2ygvZOXrIeVL4xZmAWJT2C",
+			"track_href": "https://api.spotify.com/v1/tracks/2ygvZOXrIeVL4xZmAWJT2C",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/2ygvZOXrIeVL4xZmAWJT2C",
 			"duration_ms": 208155,
 			"time_signature": 4
 		},
-		"artist_genres": []
+		"artist_genres": [
+			"art pop",
+			"electropop",
+			"pop"
+		]
 	},
 	"4t2OeILB07eMGTXSUbMPEu": {
 		"name": "Oxytocin",
@@ -108765,6 +108832,7 @@
 			"cool jazz",
 			"jazz",
 			"jazz trumpet",
+			"lounge",
 			"vocal jazz"
 		]
 	},
@@ -108889,7 +108957,6 @@
 		"artist_genres": [
 			"alternative pop",
 			"alternative rock",
-			"gbvfi",
 			"permanent wave"
 		]
 	},
@@ -108971,7 +109038,8 @@
 			"ambient",
 			"compositional ambient",
 			"drone",
-			"neo-classical"
+			"neo-classical",
+			"post-rock"
 		]
 	},
 	"0djZ2ndRfAL69WYNra5jRC": {
@@ -109059,6 +109127,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"album rock",
 			"classic rock",
 			"country rock",
 			"folk",
@@ -109163,7 +109232,6 @@
 			"modern blues rock",
 			"modern rock",
 			"rock",
-			"roots rock",
 			"stomp and holler"
 		]
 	},
@@ -110558,6 +110626,7 @@
 			"alternative dance",
 			"british indie rock",
 			"indie rock",
+			"modern alternative rock",
 			"modern rock",
 			"new rave"
 		]
@@ -110674,7 +110743,6 @@
 			"mellow gold",
 			"psychedelic rock",
 			"rock",
-			"roots rock",
 			"soft rock",
 			"yacht rock"
 		]
@@ -111283,7 +111351,6 @@
 		"artist_genres": [
 			"bolero",
 			"cuban rumba",
-			"latin jazz",
 			"musica tradicional cubana",
 			"world"
 		]
@@ -111482,8 +111549,7 @@
 		},
 		"artist_genres": [
 			"classic swedish pop",
-			"swedish jazz",
-			"swedish pop"
+			"swedish jazz"
 		]
 	},
 	"0pEmzblUxXvzIYnJpu8gWW": {
@@ -111717,6 +111783,7 @@
 		},
 		"artist_genres": [
 			"electric bass",
+			"indie jazz",
 			"indie soul",
 			"jazz",
 			"jazz fusion",
@@ -112259,32 +112326,29 @@
 			"k-pop boy group"
 		]
 	},
-	"41L3O37CECZt3N7ziG2z7l": {
+	"0dZHQSDsEoSDVFwLECbYG4": {
 		"name": "Yummy",
 		"track_features": {
-			"danceability": 0.687,
-			"energy": 0.514,
+			"danceability": 0.677,
+			"energy": 0.506,
 			"key": 9,
-			"loudness": -6.612,
+			"loudness": -6.652,
 			"mode": 0,
-			"speechiness": 0.0897,
-			"acousticness": 0.366,
+			"speechiness": 0.0964,
+			"acousticness": 0.345,
 			"instrumentalness": 0,
-			"liveness": 0.116,
-			"valence": 0.494,
-			"tempo": 145.921,
+			"liveness": 0.118,
+			"valence": 0.497,
+			"tempo": 145.843,
 			"type": "audio_features",
-			"id": "41L3O37CECZt3N7ziG2z7l",
-			"uri": "spotify:track:41L3O37CECZt3N7ziG2z7l",
-			"track_href": "https://api.spotify.com/v1/tracks/41L3O37CECZt3N7ziG2z7l",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/41L3O37CECZt3N7ziG2z7l",
-			"duration_ms": 210427,
+			"id": "0dZHQSDsEoSDVFwLECbYG4",
+			"uri": "spotify:track:0dZHQSDsEoSDVFwLECbYG4",
+			"track_href": "https://api.spotify.com/v1/tracks/0dZHQSDsEoSDVFwLECbYG4",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/0dZHQSDsEoSDVFwLECbYG4",
+			"duration_ms": 208520,
 			"time_signature": 4
 		},
-		"artist_genres": [
-			"canadian pop",
-			"pop"
-		]
+		"artist_genres": []
 	},
 	"27NovPIUIRrOZoCHxABJwK": {
 		"name": "INDUSTRY BABY (feat. Jack Harlow)",
@@ -112421,8 +112485,7 @@
 		},
 		"artist_genres": [
 			"mandopop",
-			"taiwan hip hop",
-			"taiwan pop"
+			"taiwan hip hop"
 		]
 	},
 	"29bhnde7Gvnp7rvY9zsq5S": {
@@ -112451,7 +112514,7 @@
 			"eurovision"
 		]
 	},
-	"463CkQjx2Zk1yXoBuierM9": {
+	"5nujrmhLynf4yMoMtj8AQF": {
 		"name": "Levitating (feat. DaBaby)",
 		"track_features": {
 			"danceability": 0.702,
@@ -112466,10 +112529,10 @@
 			"valence": 0.915,
 			"tempo": 102.977,
 			"type": "audio_features",
-			"id": "463CkQjx2Zk1yXoBuierM9",
-			"uri": "spotify:track:463CkQjx2Zk1yXoBuierM9",
-			"track_href": "https://api.spotify.com/v1/tracks/463CkQjx2Zk1yXoBuierM9",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/463CkQjx2Zk1yXoBuierM9",
+			"id": "5nujrmhLynf4yMoMtj8AQF",
+			"uri": "spotify:track:5nujrmhLynf4yMoMtj8AQF",
+			"track_href": "https://api.spotify.com/v1/tracks/5nujrmhLynf4yMoMtj8AQF",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/5nujrmhLynf4yMoMtj8AQF",
 			"duration_ms": 203064,
 			"time_signature": 4
 		},
@@ -113059,7 +113122,7 @@
 			"pop"
 		]
 	},
-	"4WnmTHCNN45jvQCrlbEWs0": {
+	"2sXf2JdbB2GlNju00kw9WE": {
 		"name": "Skate",
 		"track_features": {
 			"danceability": 0.708,
@@ -113074,10 +113137,10 @@
 			"valence": 0.698,
 			"tempo": 112.027,
 			"type": "audio_features",
-			"id": "4WnmTHCNN45jvQCrlbEWs0",
-			"uri": "spotify:track:4WnmTHCNN45jvQCrlbEWs0",
-			"track_href": "https://api.spotify.com/v1/tracks/4WnmTHCNN45jvQCrlbEWs0",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/4WnmTHCNN45jvQCrlbEWs0",
+			"id": "2sXf2JdbB2GlNju00kw9WE",
+			"uri": "spotify:track:2sXf2JdbB2GlNju00kw9WE",
+			"track_href": "https://api.spotify.com/v1/tracks/2sXf2JdbB2GlNju00kw9WE",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/2sXf2JdbB2GlNju00kw9WE",
 			"duration_ms": 203123,
 			"time_signature": 4
 		},
@@ -113110,7 +113173,6 @@
 		},
 		"artist_genres": [
 			"asian american hip hop",
-			"chill r&b",
 			"pop"
 		]
 	},
@@ -113475,6 +113537,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"baroque",
 			"classical performance",
 			"lute"
 		]
@@ -113976,7 +114039,7 @@
 			"english renaissance"
 		]
 	},
-	"3JkngcpInYH1pC37MubshJ": {
+	"2RtUmz18axisrsJdoZRMQy": {
 		"name": "penny royal poison",
 		"track_features": {
 			"danceability": 0.247,
@@ -113991,10 +114054,10 @@
 			"valence": 0.187,
 			"tempo": 126.104,
 			"type": "audio_features",
-			"id": "3JkngcpInYH1pC37MubshJ",
-			"uri": "spotify:track:3JkngcpInYH1pC37MubshJ",
-			"track_href": "https://api.spotify.com/v1/tracks/3JkngcpInYH1pC37MubshJ",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/3JkngcpInYH1pC37MubshJ",
+			"id": "2RtUmz18axisrsJdoZRMQy",
+			"uri": "spotify:track:2RtUmz18axisrsJdoZRMQy",
+			"track_href": "https://api.spotify.com/v1/tracks/2RtUmz18axisrsJdoZRMQy",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/2RtUmz18axisrsJdoZRMQy",
 			"duration_ms": 189139,
 			"time_signature": 3
 		},

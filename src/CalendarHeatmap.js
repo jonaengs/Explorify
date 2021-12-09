@@ -2,6 +2,7 @@ import React, {useEffect, useRef, useState} from "react";
 import * as d3 from "d3";
 import {comparator, groupBy, msToTime} from "./helpers";
 import { updateBar, updateEmpty } from "./D3BarChart";
+import { updateTimeline, hideTimeline } from "./D3Timeline";
 
 const cellSize = 30;
 const cellMargin = 1;
@@ -24,6 +25,7 @@ const weeksInMonth = function(month){
 const CalendarHeatmap = (props) => {
     const streamingData = props.streamingData;
     const topArtistsData = props.topArtistsData;
+    const timelineData = props.timelineData;
     const calendarHeatmap = useRef();
 
     const MIN_MAX = d3.extent(streamingData.keys())
@@ -91,14 +93,19 @@ const CalendarHeatmap = (props) => {
                     d3.selectAll(".day").classed("selected", false)
                     d3.select(this).classed('hover', true);
                     d3.select(this).classed("selected", true);
-                    if (d.full_day_duration != 0)
-                        updateBar(d.artists)
-                    else
-                        updateEmpty()
+                    if (d.full_day_duration != 0) {
+                        updateBar(d.artists);
+                        updateTimeline(d.date, timelineData[d.date]);
+                    }
+                    else {
+                        updateEmpty();
+                        hideTimeline();
+                    }
                 } else {
                     d3.select(this).classed('hover', false);
                     d3.select(this).classed("selected", false)
                     updateBar(topArtistsData)
+                    hideTimeline();
                 }
             })
 
@@ -162,7 +169,7 @@ const CalendarHeatmap = (props) => {
             monthX.push(d.x + boxCentre + xOffset);
         })
 
-        let monthLabels = svg.append("g").attr("id","month-label")
+        let monthLabels = svg.append("g").attr("id", "month-label")
         const allMonths = [minDate, ...d3.timeMonths(minDate, maxDate)]
         allMonths.forEach(function(m,i)    {
             monthLabels.append("text")
