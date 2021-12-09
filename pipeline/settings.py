@@ -24,7 +24,7 @@ write_final_df = True
 write_retrieved_data = True
 
 # Which types of data should be retrieved from Spotify's API
-retrieve_missing_tracks = True
-retrieve_missing_artists = True
-retrieve_missing_related_artists = True
-retrieve_missing_track_audio_features = True
+retrieve_missing_tracks = False
+retrieve_missing_artists = False
+retrieve_missing_related_artists = False
+retrieve_missing_track_audio_features = False

@@ -59,10 +59,9 @@ def dbscan_outlier_marking(dr_result, eps=5):
     outliers_nad = np.array(vectors, copy=True)
     outliers_nad[result.labels_ == -1] = np.nan
 
-    # no_outliers_series = artist_id_series.copy()
-    # no_outliers_series.loc[:] = list(map(tuple, outliers_nad))
-
-    no_outliers_series = pd.Series(map(tuple, outliers_nad), index=dr_result)
+    no_outliers_series = dr_result.copy()
+    no_outliers_series.loc[:] = list(map(tuple, outliers_nad))
+    # no_outliers_series = pd.Series(map(tuple, outliers_nad), index=dr_result)
 
     return no_outliers_series
 
