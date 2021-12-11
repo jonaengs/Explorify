@@ -21,7 +21,7 @@ export const Edgemap = () => {
     );
     useEffect(() => 
         top && debouncedUpdateEdgemap(topArtists, view),
-        [view, topArtists]
+        [view, top]
     );
     useEffect(() => 
         setNodeColorKey(colorKey),

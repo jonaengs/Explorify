@@ -12,12 +12,12 @@ export function clamp(val: number, min: number, max: number) {
 
 export function clampX(val: number, margin=0) {
     const r = margin ? Math.floor(margin * Math.random()) : 0;
-    return clamp(val, r, width + r);
+    return clamp(val + r, 0, width);
 }
 
 export function clampY(val: number, margin?: number) {
     const r = margin ? Math.floor(margin * Math.random()) : 0;
-    return clamp(val, r, height + r);
+    return clamp(val + r, 0, height);
 }
 
 export function topGroups<T extends Object>(arr: T[], key: string, n: number, comp?: (a: T[], b: T[]) => number) {

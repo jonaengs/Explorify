@@ -1,13 +1,14 @@
 import * as drResults from '../../data/dr_results.json'
 import * as d3 from "d3";
 import * as utils from './utils';
-import { width, height, maxDistance} from './constants';
+import { width, height, maxDistance, alphaMin, alphaDecay, transitionTime, timeAxisDivisions, EMViewToPositionKey} from './constants';
 import {DefaultMap} from './map_extensions';
 import './map_extensions.ts';
 import { StreamInstance, artistData, streamingHistoryNoSkipped, artistID, artistMap} from './data'
 import { artistStreamTimes, artistToGenres, firstArtistStream, getTimePolyExtent } from './derived_data';
 import { Ref } from 'react';
 import Quadtree from '@timohausmann/quadtree-js';
+import { quadtree } from 'd3';
 
 /**
  * A feature vector reduced to 2 dimensions. Must be mapped to fit within chart.
@@ -194,7 +195,7 @@ function computeNetwork(): Network {
         );
     })();
 
-    const timelineAxis = d3.scaleTime().domain(getTimePolyExtent(5)).range(utils.divideWidth(5));
+    const timelineAxis = d3.scaleTime().domain(getTimePolyExtent(timeAxisDivisions)).range(utils.divideWidth(timeAxisDivisions));
     const nodeSizes = d3.scaleSqrt().domain(d3.extent(artistStreamTimes.values())).range([5, 20])
     
     
@@ -288,12 +289,9 @@ function highlightSelection(selected: d3Node) {
         .selectChildren("circle") 
         .style("fill", (n: d3Node) => neighbors.has(n.id) ? getColor(n) : deselectHSL);
 
-    
-    showNodeLabels(neighbors);
-    // node
-    //     .selectChildren("text") 
-    //     .style("visibility", (n: d3Node) => neighbors.has(n.id) ?  "visible" : "hidden");
-
+    if (edgemapState.showLabels) 
+        showNodeLabels(node.filter((n: d3Node) => neighbors.has(n.id)));
+  
     const selectedNode = node.filter((n: d3Node) => n.id === selected.id);
     selectedNode.selectChildren("circle")
         .style("stroke-width", 3)
@@ -320,10 +318,10 @@ function dropSelectionHighlight() {
             .style("stroke-width", 0);
     }
 
-    if (showLabels) showNodeLabels();
+    if (showLabels) showNodeLabels(node);
 
     edgemapState.selected = null;
-    edgemapState.selectedNeighbors = new Set();
+    edgemapState.selectedNeighbors.clear();
 }
 
 function addNodes(svg: utils.SVGSelection, nodes: d3Node[]) {
@@ -344,8 +342,10 @@ function addNodes(svg: utils.SVGSelection, nodes: d3Node[]) {
                 const circle: HTMLElement = this;
                 const text = circle.nextSibling as HTMLElement
                 if (!edgemapState.selected) {
-                    if (showLabels && !itemOverlaps(text))
+                    if (showLabels && !itemOverlaps(text)) {
+                        edgemapState.quadTree.insert(text.getBoundingClientRect());
                         return "visible";                    
+                    }
                     return "hidden";
                 }
                 if (!edgemapState.selectedNeighbors.has(_n.id) || itemOverlaps(text)) {
@@ -470,48 +470,55 @@ export function setupEdgemap(ref: SVGElement, artists: artistID[]) {
     const timelineAxis = svg.append("g")
         .attr("transform", `translate(0, ${height/2})`)
         .style("visibility", "hidden")
-        .call(d3.axisBottom(d3.scaleTime().domain(getTimePolyExtent(5)).range(utils.divideWidth(5)))); 
-        // .call(d3.axisBottom(d3.scaleTime().domain(timeExtent).range([0, width])));   
+        .call(d3.axisBottom(d3.scaleTime().domain(getTimePolyExtent(timeAxisDivisions)).range(utils.divideWidth(timeAxisDivisions)))); 
 
     edgemapState = {...edgemapState, artistSet, node, link, nodes, links, svg, timelineAxis, quadTree};
     setSimulation(simulation);
 }
 
 function makeRestrictedTick(tickFunc: (node: d3Selection, link: d3Selection) => void) {
-    let nodePositions = null;
+    let prevPositions = null;
     function ticked() {
         const {node, link, nodes, _simulation} = edgemapState;
+        
         tickFunc(node, link);
         
-        if (nodePositions !== null) {
+        if (prevPositions !== null) {
+            const cutoff = 0.01 * nodes.length;
             const movement = nodes.reduce(
-                (sum, n, i) => sum + Math.abs(n.x - nodePositions[i][0]) + Math.abs(n.y - nodePositions[i][1]),
+                (sum, n, i) => sum + Math.abs(n.x - prevPositions[i][0]) + Math.abs(n.y - prevPositions[i][1]),
                 0
-            )
-            if (movement < 10) _simulation.alphaTarget(_simulation.alphaTarget()); // stops the simulation
+            )            
+            // if (movement < cutoff) _simulation.alphaTarget(_simulation.alphaTarget()); // stops the simulation
+            if (movement < cutoff) {
+                // Set current alpha lower than the stopping alpha, stopping the simulation "naturally"
+                this.alpha(this.alphaMin() / 2);
+            }
         }
-        nodePositions = nodes.map(n=> [n.x, n.y]);
+        prevPositions = nodes.map(n=> [n.x, n.y]);
     }
-    return ticked;
+    // return ticked;
+
+    return () => {
+        const { node, link } = edgemapState;
+        tickFunc(node, link);
+    }
 }
 
-const alphaMin = 0.05;
-const targetSimulationIterations = 100;
-const alphaDecay = 1 - Math.pow(0.001, 1 / targetSimulationIterations);
 function similaritySimulation({nodes, links}: Network) {
     let first = true; // compute edges on initial tick. Solves visual bug where edges appear to not update after transition.
     const ticked = makeRestrictedTick((node, link) => {        
         console.log("similarity");
         if (first) {
             first = false;
-            ended();
+            computeEdges();
         }
         node.attr("transform", (d: d3Node) => 
                 `translate(${utils.clampX(d.x)}, ${utils.clampY(d.y)})`
             );
         } 
     )
-    const ended = () => {
+    const computeEdges = () => {
         const {link} = edgemapState;
         link.selectChildren("path").attr("d", computeCurve)
     }
@@ -522,8 +529,14 @@ function similaritySimulation({nodes, links}: Network) {
         .alphaMin(alphaMin)
         .alphaDecay(alphaDecay)
         .on("tick", ticked)
-        .on("end", ended)
+        .on("end", computeEdges)
         .stop();
+}
+
+// If a node is highlighted, return a selection of  it and its neighbors. Otherwise, return selection of all nodes
+function getNodeToLabel() {
+    const {node, selected, selectedNeighbors} = edgemapState;
+    return selected ? node.filter((n: d3Node) => selectedNeighbors.has(n.id)) : node;
 }
 
 function timelineSimulation({nodes, links}: Network) {
@@ -532,12 +545,12 @@ function timelineSimulation({nodes, links}: Network) {
         console.log("timeline");
         if (first) {
             first = false;
-            ended();
+            computeEdges();
         }
         node.attr("transform", (d: d3Node) => `translate(${d.x}, ${utils.clampX(d.y)})`);
     });
 
-    const ended = () => {
+    const computeEdges = () => {
         const {link} = edgemapState;
         link.selectChildren("path").attr("d", computeCurve)
     }
@@ -549,7 +562,7 @@ function timelineSimulation({nodes, links}: Network) {
         .alphaMin(alphaMin)
         .alphaDecay(alphaDecay)
         .on("tick", ticked)
-        .on("end", ended)
+        .on("end", computeEdges)
         .stop();
 }
 
@@ -572,25 +585,24 @@ function itemOverlaps(htmlNode: HTMLElement, quadTree?: Quadtree) {
 }
 
 // Quadtree implementation: https://github.com/timohausmann/quadtree-js/
-function showNodeLabels(subset?) {
-    // Use coordinate space of the whole browser, as these are easier to get for each element. 
+function showNodeLabels(node) {
     const {quadTree} = edgemapState;
     quadTree.clear();
-    edgemapState.node.selectChildren("text").style("visibility", "hidden");
 
-    const node = (subset !== undefined) ? edgemapState.node.filter(n => subset.has(n.id)) : edgemapState.node;
+    // edgemapState.node.selectChildren("text").style("visibility", "hidden");
+    node.selectChildren("text").style("visibility", "hidden");
+
     const text = node.selectChildren("text");
     text.nodes().forEach(n => {
         const bbox = n.getBoundingClientRect();
         
-        if (!quadTree.retrieve(bbox).some(overlap(bbox))){
+        if (!quadTree.retrieve(bbox).some(overlap(bbox))) {
             n.style.visibility = "visible";
             quadTree.insert(bbox);
         }
             
     });
     
-    text.raise();
     edgemapState.quadTree = quadTree;
 }
 
@@ -620,33 +632,31 @@ function hideLinkLabels() {
     });    
 }
 
-export function setShowLabels(b: boolean) {
-    if (edgemapState.selected === null) {
-        if (b) {
-            showNodeLabels();
-        }
-        else {
-            edgemapState.node.selectChildren("text").style("visibility", "hidden");
-        }
+export function setShowLabels(show: boolean) {
+    if (show) {
+        showNodeLabels(getNodeToLabel());
+    } else {
+        edgemapState.node.selectChildren("text").style("visibility", "hidden");
     }
-    edgemapState.showLabels = b;
+    edgemapState.showLabels = show;
 }
 
-const transitionTime = 1500;
+
 export type EdgemapView = "genreSimilarity" | "timeline" | "featureSimilarity";
 export function updateEdgemap(artists: artistID[] = top150, nextView: EdgemapView = "genreSimilarity") {    
     let {svg, node, link, nodes, links, _simulation: simulation, currentView, timelineAxis, showLabels} = edgemapState;
     const artistSet = new Set(artists);
-    const [added, removed] = utils.bothDifference(artistSet, edgemapState.artistSet);
+    const [added, removed] = utils.bothDifference(artistSet, edgemapState.artistSet);    
 
     const addedNodes = completeNetwork.nodes.filter(n => added.has(n.id)).map(x => ({...x}));
     const addedLinks = completeNetwork.links.filter((l: Link) => {
         const targetAdded = added.has(l.target);
         const sourceAdded = added.has(l.source);
-        if (!(sourceAdded || targetAdded)) return false;        
+        if (!(sourceAdded || targetAdded)) return false;
+        if (targetAdded && sourceAdded) return true;
         const targetAlready = artistSet.has(l.target);
         const sourceAlready = artistSet.has(l.source);
-        return (targetAdded && sourceAdded) || (targetAdded && sourceAlready) || (sourceAdded && targetAlready);
+        return  (targetAdded && sourceAlready) || (sourceAdded && targetAlready);
     }).map(x => ({...x}))
 
     // remove removed nodes & links. Add added nodes & links     
@@ -661,109 +671,47 @@ export function updateEdgemap(artists: artistID[] = top150, nextView: EdgemapVie
         node.filter((n: d3Node) => removed.has(n.id)).remove();
     }
 
-    // On changing from timeline, remove x axis
-    if (currentView === 'timeline' && nextView !== 'timeline') {
-        timelineAxis.style("visibility", "hidden");
-    }
+    const positionKey = EMViewToPositionKey.get(nextView);
+    nodes.forEach((n: d3Node) => {
+        n.x = n[positionKey].x;
+        n.y = n[positionKey].y;
+    })
 
-    if (nextView === 'featureSimilarity') {
-        if (currentView !== 'featureSimilarity') {
-            nodes.forEach((n: d3Node) => {
-                n.x = n.featurePos.x;
-                n.y = n.featurePos.y;
-            })
-            node
-                .transition()
-                .call(n => 
-                    n.transition()
-                        .duration(transitionTime)
-                        .ease(d3.easeQuadInOut)
-                        .attr("transform", (n: Node) => utils.d3Translate(n.featurePos))
-                        .on("start", () => {
+    let [transitionStartCalled, transitionEndCalled] = [false, false];
+    if (nextView !== currentView) {
+        timelineAxis.style("visibility", nextView === "timeline" ? "visible" : "hidden");
+
+        node
+            .call(n => 
+                n.transition()
+                    .duration(transitionTime)
+                    .ease(d3.easeQuadInOut)
+                    .attr("transform", (n: d3Node) => utils.d3Translate(n[positionKey]))
+                    .on("start", () => {
+                        if (!transitionStartCalled) {                                
                             link.style("visibility", "hidden");
                             node.selectChildren("text").style("visibility", "hidden");
                             simulation.stop();
-                            simulation = similaritySimulation({nodes, links});
-                        })
-                        .on("end", () => {
-                            simulation.restart();
-                            highlightSelection(edgemapState.selected);
-                        })
-                );
-        } else {
-            addedNodes.forEach((n: d3Node) => {
-                n.x = n.featurePos.x;
-                n.y = n.featurePos.y;
-            })
-            simulation = similaritySimulation({nodes, links});
-        }  
-    }
-    
-    if (nextView === 'genreSimilarity') {
-        if (currentView !== 'genreSimilarity') {
-            nodes.forEach((n: d3Node) => {
-                n.x = n.genrePos.x;
-                n.y = n.genrePos.y;
-            })
-            node
-                .transition()
-                .call(n => 
-                    n.transition()
-                        .duration(transitionTime)
-                        .ease(d3.easeQuadInOut)
-                        .attr("transform", (n: Node) => utils.d3Translate(n.genrePos))
-                        .on("start", () => {
-                            link.style("visibility", "hidden");
-                            node.selectChildren("text").style("visibility", "hidden");
-                            simulation.stop();
-                            simulation = similaritySimulation({nodes, links});
-                        })
-                        .on("end", () => {
-                            simulation.restart();
-                            highlightSelection(edgemapState.selected);
-                        })
-                );
-        } else {
-            addedNodes.forEach((n: d3Node) => {
-                n.x = n.genrePos.x;
-                n.y = n.genrePos.y;
-            })
-            simulation = similaritySimulation({nodes, links});
-        }        
-    } else if (nextView === 'timeline') {
-        // On change to timeline
-        if (currentView !== 'timeline') {   
-            timelineAxis.style("visibility", "visible");
-            nodes.forEach((n: Node) => {
-                n.x = n.timelinePos.x;
-                n.y = n.timelinePos.y;
-            });          
-            
-            node
-                .transition()
-                .call(n => 
-                    n.transition()
-                        .duration(transitionTime)
-                        .ease(d3.easeQuadInOut)
-                        .attr("transform", n => utils.d3Translate(n.timelinePos))
-                        .on("start", () => {
-                            link.style("visibility", "hidden");
-                            node.selectChildren("text").style("visibility", "hidden");
-                            simulation.stop();
-                            simulation = timelineSimulation({nodes, links});
-                        })
-                        .on("end", () => {
-                            simulation.restart();
-                            highlightSelection(edgemapState.selected);
-                        })
-                );
-        } else {
-            addedNodes.forEach(n => {
-                n.x = n.timelinePos.x;
-                n.y = n.timelinePos.y;
-            })
-            simulation = timelineSimulation({nodes, links});
-        }
+                            simulation = nextView === 'timeline' ? timelineSimulation({nodes, links}) : similaritySimulation({nodes, links});
+                            transitionStartCalled = true;                
+                        }
+                    })
+                    .on("end", () => {
+                        if (!transitionEndCalled) {
+                            const prevEnd = simulation.on("end")
+                            simulation.on("end", () => {
+                                prevEnd();
+                                if (edgemapState.showLabels)
+                                    showNodeLabels(edgemapState.node);
+                                highlightSelection(edgemapState.selected);  
+                            })
+                            setSimulation(simulation)
+                            transitionEndCalled = true;
+                        }
+                    })
+            );
+    } else {
+        simulation = nextView === 'timeline' ? timelineSimulation({nodes, links}) : similaritySimulation({nodes, links})
     }
 
     setLinks(links);
@@ -774,7 +722,14 @@ export function updateEdgemap(artists: artistID[] = top150, nextView: EdgemapVie
     highlightSelection(edgemapState.selected);
     
     edgemapState = {...edgemapState, artistSet, nodes, links, node, link, currentView: nextView};
-    setSimulation(simulation, nextView !== currentView);
 
-    if (showLabels) showNodeLabels();
+    if (nextView === currentView) {
+        const prevOnEnd = simulation.on("end");
+        simulation.on("end", () => {
+            prevOnEnd();
+            if (showLabels) showNodeLabels(node);
+        })
+    }
+
+    setSimulation(simulation, nextView !== currentView);   
 }
