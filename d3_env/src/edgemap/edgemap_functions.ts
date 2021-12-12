@@ -1,7 +1,7 @@
 import * as drResults from '../../../data/dr_results.json'
 import * as d3 from "d3";
 import * as utils from './utils';
-import { width, height, maxDistance, alphaMin, alphaDecay, transitionTime, timeAxisDivisions, EMViewToPositionKey} from './constants';
+import { width, height, maxDistance, alphaMin, alphaDecay, transitionTime, timeAxisDivisions, EMViewToPositionKey, deselectHSL, backgroundColor} from './constants';
 import {DefaultMap} from '../map_extensions';
 import '../map_extensions.ts';
 import { StreamInstance, artistData, streamingHistoryNoSkipped, artistID, artistMap} from '../data'
@@ -153,7 +153,7 @@ function createGetColor(positionKey: NodePositionKey) {
     return (node: Node) => {
         const {x, y} = node[positionKey];
         const [dist, deg] = toPolar(x, y);
-        return d3.hsl(deg, dist, 0.6, 1)
+        return d3.hsl(deg, dist, 0.35, 1)
     }
 }
 
@@ -272,7 +272,6 @@ function setSimulation(simulation: d3.Simulation<any, any>, dontStart=false) {
     if (!dontStart) simulation.restart();
 }
 
-const deselectHSL = d3.hsl(0.5, 0.5, 0.35, 0.2);
 function highlightSelection(selected: d3Node) {
     if (selected === null || selected === undefined) return;
     
@@ -292,15 +291,16 @@ function highlightSelection(selected: d3Node) {
         .selectChildren("circle") 
         .style("fill", (n: d3Node) => neighbors.has(n.id) ? getColor(n) : deselectHSL);
 
-    if (edgemapState.showLabels) 
+    node.selectChildren("text")
+        .style("visibility", "hidden");
+    if (edgemapState.showLabels)
         showNodeLabels(node.filter((n: d3Node) => neighbors.has(n.id)));
   
     const selectedNode = node.filter((n: d3Node) => n.id === selected.id);
     selectedNode.selectChildren("circle")
         .style("stroke-width", 3)
         .style("stroke", getColor)
-        .style("fill", "white");
-
+        .style("fill", backgroundColor);
 
     edgemapState.selectedNeighbors = neighbors;
     edgemapState.selected = selected;
@@ -376,8 +376,7 @@ function addNodes(svg: utils.SVGSelection, nodes: d3Node[]) {
     node
         .append("text")
         .text((d: Node) => d.name)
-        .attr("class", "node-text")
-        .attr("class", "unselectable")
+        .attr("class", "unselectable node-text")
         .on("mouseover", onMouseover)
         .on("mouseout", onMouseout)
         .style("visibility", "hidden");
@@ -387,7 +386,7 @@ function addNodes(svg: utils.SVGSelection, nodes: d3Node[]) {
 
 // Use this approach to display genres along link paths: https://css-tricks.com/snippets/svg/curved-text-along-path/
 function setLinks(links: d3Link[]) {
-    const getLinkColor = (color) => d3.scaleLinear().range([color, "black"])
+    const getLinkColor = (color) => d3.scaleLinear().range([color, "white"])
     const onEnter = (selection) => {
         const linkNode = selection.append("g");
         linkNode
@@ -478,6 +477,7 @@ export function setupEdgemap(ref: SVGElement, artists: artistID[]) {
     const timelineAxis = svg.append("g")
         .attr("transform", `translate(0, ${height/2})`)
         .style("visibility", "hidden")
+        .style("class", "timeline-axis")
         .call(d3.axisBottom(d3.scaleTime().domain(getTimePolyExtent(timeAxisDivisions)).range(utils.divideWidth(timeAxisDivisions)))); 
 
     edgemapState = {...edgemapState, artistSet, node, link, nodes, links, svg, timelineAxis, quadTree};

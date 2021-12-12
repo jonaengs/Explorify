@@ -1,16 +1,27 @@
-.tooltip {
-    position: absolute;
-    text-align: center;
-    min-width: 60px;
-    min-height: 28px;
-    padding: 5px;
-    font: 12px sans-serif;
-    background-color: white;
-    border: solid;
-    border-width: 2px;
-    border-radius: 5px;
-    pointer-events: none;
+body {
+    background-color: #1f1b2e;
 }
+
+.node-text {
+    fill: rgb(187, 185, 182);
+}
+
+/* d3 automatically assigns this class to the path component (the line) of an axis*/
+.domain {
+    stroke: rgb(187, 185, 182);
+}
+
+.tick > text {
+    font-size: 1.2;
+    fill: none;
+    stroke-width: 0.35;
+    stroke: rgb(187, 185, 182);
+}
+
+.tick > line {
+    stroke: rgb(187, 185, 182);
+}
+
 
 .unselectable {
     -webkit-touch-callout: none;
