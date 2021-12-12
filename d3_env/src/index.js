@@ -1,4 +1,4 @@
-import { Edgemap } from './Edgemap'
+import { Edgemap } from './edgemap/Edgemap'
 import React from "react"
 import ReactDOM from "react-dom"
 

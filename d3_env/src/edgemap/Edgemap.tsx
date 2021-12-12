@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { artistStreamTimes } from "./derived_data";
+import { artistStreamTimes } from "../derived_data";
 import { EdgemapView, NodePositionKey, setNodeColorKey, setShowLabels, setupEdgemap, updateEdgemap } from "./edgemap_functions";
 import * as utils from './utils';
 

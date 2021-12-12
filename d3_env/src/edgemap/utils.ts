@@ -1,6 +1,6 @@
 import * as d3 from "d3";
 import {margin, width, height} from './constants';
-import { DefaultMap } from "./map_extensions";
+import { DefaultMap } from "../map_extensions";
 
 
 export type TooltipDiv = d3.Selection<HTMLDivElement, unknown, HTMLElement, any>;

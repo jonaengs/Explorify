@@ -1,11 +1,11 @@
-import * as drResults from '../../data/dr_results.json'
+import * as drResults from '../../../data/dr_results.json'
 import * as d3 from "d3";
 import * as utils from './utils';
 import { width, height, maxDistance, alphaMin, alphaDecay, transitionTime, timeAxisDivisions, EMViewToPositionKey} from './constants';
-import {DefaultMap} from './map_extensions';
-import './map_extensions.ts';
-import { StreamInstance, artistData, streamingHistoryNoSkipped, artistID, artistMap} from './data'
-import { artistStreamTimes, artistToGenres, firstArtistStream, getTimePolyExtent } from './derived_data';
+import {DefaultMap} from '../map_extensions';
+import '../map_extensions.ts';
+import { StreamInstance, artistData, streamingHistoryNoSkipped, artistID, artistMap} from '../data'
+import { artistStreamTimes, artistToGenres, firstArtistStream, getTimePolyExtent } from '../derived_data';
 import { Ref } from 'react';
 import Quadtree from '@timohausmann/quadtree-js';
 import { quadtree } from 'd3';
@@ -157,10 +157,11 @@ function createGetColor(positionKey: NodePositionKey) {
 
 let getColor = createGetColor("genrePos");
 export function setNodeColorKey(key: NodePositionKey) {
-    console.log(key);
     getColor = createGetColor(key);
     setLinks(edgemapState.links);
-    dropSelectionHighlight();
+    highlightSelection(edgemapState.selected);
+    if (!edgemapState.selected)
+        dropSelectionHighlight();
 }
 
 
@@ -420,10 +421,15 @@ function setLinks(links: d3Link[]) {
                 .lower(), // re-insert links as the first child of svg, so that links are drawn first (and thus behind other objects)
             update => update
                 .style("fill", (l: d3Link) => getLinkColor(getColor(l.target))(l.proportion))
-                // .style("stroke", (l: d3Link) => getLinkColor(getColor(l.target))(l.proportion))
+                // 
                 ,
             exit => exit.remove()
         );
+
+    link.selectChildren("path")
+        .style("stroke", (l: d3Link) => getLinkColor(getColor(l.target))(l.proportion));
+    link.selectChildren("textPath")
+        .style("fill", (l: d3Link) => getLinkColor(getColor(l.target))(l.proportion));
 
     return link;
 }
