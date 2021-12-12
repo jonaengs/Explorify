@@ -142,8 +142,10 @@ function toPolar(x: number, y: number): [number, number] {
 export type NodePositionKey = "genrePos" | "featurePos" | "timelinePos";
 function createGetColor(positionKey: NodePositionKey) {
     if (positionKey === "timelinePos") {
-        const scale = d3.scaleLinear().domain([width, 0]);
-        const colorScale = d3.interpolateYlGnBu;
+        // const scale = d3.scaleLinear().domain([width, 0]);
+        const scale = d3.scaleLinear().domain([0, width]);
+        // const colorScale = d3.interpolateYlGnBu;
+        const colorScale = d3.interpolateCividis;
         return (node: Node) => {
             return colorScale(scale(node.timelinePos.x));
         }
