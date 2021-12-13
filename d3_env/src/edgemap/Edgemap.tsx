@@ -4,14 +4,14 @@ import { artistStreamTimes } from "./derived_data";
 import { autoPlayInterval } from "./constants";
 import { EdgemapView, NodePositionKey, setNodeColorKey, setShowLabels, setupEdgemap, updateEdgemap } from "./edgemap_functions";
 import * as utils from './utils';
-import { artistID } from "./data";
+import { ArtistID } from "./data";
 
 import './edgemap.css'
 
 
 export type EdgemapProps = {
     autoPlay: boolean,
-    artistIDs: artistID[]
+    artistIDs: ArtistID[]
 }
 
 

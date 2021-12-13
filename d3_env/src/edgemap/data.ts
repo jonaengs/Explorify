@@ -5,17 +5,17 @@ import * as _DRResults from '../../../data/dr_results.json';
 import './map_extensions.ts'
 
 
-export type genre = string;
-export type artistName = string;
-export type artistID = string;
-export type trackID = string;
+export type Genre = string;
+export type ArtistName = string;
+export type ArtistID = string;
+export type TrackID = string;
 export type DRCoordinate = [x: number, y: number];
 
 
 export type ArtistData = {
-    id: artistID,
-    name: artistName,
-    genres: genre[],
+    id: ArtistID,
+    name: ArtistName,
+    genres: Genre[],
     type: "artist" | string, // always "artist" afaik
     
     followers: { total: number },
@@ -24,9 +24,9 @@ export type ArtistData = {
 
 export type StreamInstance = {
     // artist info
-    artistName: artistName,
-    artistGenres: genre[],
-    artistID: artistID,
+    artistName: ArtistName,
+    artistGenres: Genre[],
+    artistID: ArtistID,
     artistPopularity: number
 
     // stream info
@@ -36,12 +36,12 @@ export type StreamInstance = {
     // track info
     trackName: string,
     trackDurationMS: number,
-    trackID: trackID,
+    trackID: TrackID,
     trackPopularity: number
 }
 
 export type TrackFeature = {
-    id: trackID,
+    id: TrackID,
 
     // Following should all be in [0, 1]
     acousticness: number,
@@ -59,7 +59,7 @@ export type TrackFeature = {
 }
 
 export type DRResult = {
-    artistID: artistID,
+    artistID: ArtistID,
     genrePCA: DRCoordinate;
     meanFeaturePCA: DRCoordinate;
     normFeaturePCA: DRCoordinate;
@@ -70,7 +70,7 @@ export type DRResult = {
 
 export const artistData: ArtistData[] = _artistData;
 
-export const artistMap: Map<artistID, artistName> = new Map(
+export const artistMap: Map<ArtistID, ArtistName> = new Map(
     artistData.map(d => [d.id, d.name])
 );
 
@@ -95,7 +95,7 @@ export const streamingHistoryNoSkipped: StreamInstance[] = streamingHistory.filt
     sh => sh.msPlayed >= 10_000
 );
 
-export const trackFeatures: Map<trackID, TrackFeature> = new Map(
+export const trackFeatures: Map<TrackID, TrackFeature> = new Map(
     Object.entries(_trackFeatures).map(([tid, tfs]) => 
         [tid, {...tfs, timeSignature: tfs.time_signature} as TrackFeature]
     )

@@ -1,4 +1,4 @@
-import { artistData, artistID, genre, streamingHistoryNoSkipped, StreamInstance } from "./data";
+import { artistData, ArtistID, Genre, streamingHistoryNoSkipped, StreamInstance } from "./data";
 import "./map_extensions.ts"
 import { DefaultMap } from "./map_extensions";
 import * as d3 from "d3";
@@ -7,10 +7,10 @@ const streamTimes: Date[] = streamingHistoryNoSkipped.map(si => si.endTime);
 
 export const firstArtistStream = streamingHistoryNoSkipped.reduce(
     (acc, stream) => acc.update(stream.artistID, t => t || stream.endTime),
-    new Map<artistID, Date>()
+    new Map<ArtistID, Date>()
 );
 
-export const artistToGenres: Map<artistID, Set<genre>> = new Map(artistData.map(a => [a.id, new Set(a.genres)]));
+export const artistToGenres: Map<ArtistID, Set<Genre>> = new Map(artistData.map(a => [a.id, new Set(a.genres)]));
 
 export const timeExtent: [Date, Date] = d3.extent(streamTimes);
 
@@ -23,10 +23,10 @@ export function getTimePolyExtent(n: number): Date[] {
     return poly.concat([timeExtent[1]]);
 }
 
-export const artistStreamTimes: Map<artistID, number> = computeStreamTimes();
+export const artistStreamTimes: Map<ArtistID, number> = computeStreamTimes();
 function computeStreamTimes() {
-    const times: Map<artistID, number> = streamingHistoryNoSkipped.reduce(
-        (acc: DefaultMap<artistID, number>, stream: StreamInstance) => 
+    const times: Map<ArtistID, number> = streamingHistoryNoSkipped.reduce(
+        (acc: DefaultMap<ArtistID, number>, stream: StreamInstance) => 
             acc.update(stream.artistID, t => t + stream.msPlayed),
         new DefaultMap(0)
     );

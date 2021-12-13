@@ -3,9 +3,32 @@ import * as utils from './utils';
 import { width, height, maxDistance, alphaMin, alphaDecay, transitionTime, timeAxisDivisions, deselectHSL, backgroundColor} from './constants';
 import {DefaultMap} from './map_extensions';
 import './map_extensions.ts';
-import { StreamInstance, artistData, streamingHistoryNoSkipped, artistID, artistMap, DRResults, DRResult, DRCoordinate } from './data'
+import { StreamInstance, artistData, streamingHistoryNoSkipped, ArtistID, artistMap, DRResults, DRCoordinate, Genre } from './data'
 import { artistStreamTimes, artistToGenres, firstArtistStream, getTimePolyExtent } from './derived_data';
 import Quadtree from '@timohausmann/quadtree-js';
+
+
+/*
+    BEGIN DIRECT EDGEMAP MANIPULATION INTERFACE
+*/
+
+export function setHighlighted(id: ArtistID) {
+    highlightSelection(edgemapState.nodes.find(n => n.id === id));
+}
+
+const filteredGenres = new Set<Genre>();
+export function updateFilteredGenres(f: (s: Set<Genre>) => Set<Genre>) {
+    f(filteredGenres);
+    if (edgemapState.selected) {
+        updateLinkLabels();
+        highlightSelection(edgemapState.selected);
+    }
+}
+
+
+/*
+    END EDGEMAP MANIPULATION INTERFACE
+*/
 
 
 export type NodePositionKey = "genrePos" | "featurePos" | "timelinePos";
@@ -31,7 +54,7 @@ type BaseEMLink = {
     id: string, // source and target ids (in that order) combined
     source: BaseEMNode["id"],
     target: BaseEMNode["id"],
-    label: string,
+    data: {sourceGenres: Set<Genre>, shared: Set<Genre>, targetGenres: Set<Genre>}
     count: number,
     proportion: number
 }
@@ -109,7 +132,7 @@ function getSessions(): StreamInstance[][] {
  * Note: Edges are kinda directed. Always in pairs, but values may not be equal
  */
 function computeSessionLinks(): BaseEMLink[] {  
-    const coPlays = new DefaultMap<artistID, artistID[]>([]);
+    const coPlays = new DefaultMap<ArtistID, ArtistID[]>([]);
     for (const artists of sessionArtists) {
         const artistSet = new Set(artists);
         artistSet.forEach(a1 => 
@@ -120,7 +143,7 @@ function computeSessionLinks(): BaseEMLink[] {
         );
     }
 
-    const coPlayCounts: [artistID, Map<artistID, number>][] = Array.from(coPlays).map(
+    const coPlayCounts: [ArtistID, Map<ArtistID, number>][] = Array.from(coPlays).map(
         ([a1, as]) => [a1, utils.count(as)]
     );
 
@@ -129,7 +152,8 @@ function computeSessionLinks(): BaseEMLink[] {
             id: a1 + a2,
             source: a1,
             target: a2,
-            label: "???",
+            // label: "???",
+            data: {sourceGenres: null, shared: null, targetGenres: null},
             count: count,
             proportion: count / sessionOccurrences.get(a1)
         }))
@@ -182,7 +206,7 @@ const completeNetwork: BaseNetwork = computeNetwork();
 
 function computeNetwork(): BaseNetwork {    
     const genrePositions = (() => {
-        const data: Map<artistID, DRCoordinate> = new Map(DRResults.map(
+        const data: Map<ArtistID, DRCoordinate> = new Map(DRResults.map(
             res => [res.artistID, res.genreTSNENoOutliers as DRCoordinate]
         ));
         const values = Array.from(data.values()).filter(v => v !== null);
@@ -196,7 +220,7 @@ function computeNetwork(): BaseNetwork {
     })();
     
     const featurePositions = (() => {
-        const data: Map<artistID, DRCoordinate> = new Map(DRResults.map(
+        const data: Map<ArtistID, DRCoordinate> = new Map(DRResults.map(
             res => [res.artistID, res.featureTSNE as DRCoordinate]
         ));
         const values = Array.from(data.values()).filter(v => v !== null);
@@ -264,14 +288,14 @@ function computeNetwork(): BaseNetwork {
  */
 let edgemapState: {
     svg: utils.SVGSelection,
-    artistSet: Set<artistID>,
+    artistSet: Set<ArtistID>,
     nodes: EMNode[],
     links: EMLink[],
     node: NodeSelection,
     link: LinkSelection,
     _simulation: EMSimulation,
     selected?: EMNode,
-    selectedNeighbors: Set<artistID>,
+    selectedNeighbors: Set<ArtistID>,
     currentView: EdgemapView,
     timelineAxis: d3.Selection<SVGGElement, unknown, HTMLElement, any>,
     quadTree: Quadtree,
@@ -287,7 +311,7 @@ let edgemapState: {
     link: null,
     _simulation: null,
     selected: null,
-    selectedNeighbors: new Set<artistID>(),
+    selectedNeighbors: new Set<ArtistID>(),
     currentView: "genreSimilarity",
     timelineAxis: null,
     quadTree: null,
@@ -309,12 +333,16 @@ function highlightSelection(selected: EMNode) {
     if (edgemapState.selected !== selected) dropSelectionHighlight();
     
     const {node, link, links} = edgemapState;
-
-    link.style("visibility", (l: EMLink) => l.source.id === selected.id ? "visible" : "hidden");
+    
+    link.style("visibility", (l: EMLink) => 
+        l.source.id === selected.id && getLinkGenres(l).length ? "visible" : "hidden"
+    );
     hideLinkLabels();
 
     const neighbors = new Set(
-        links.filter((l: EMLink) => l.source.id === selected.id).map(l => l.target.id)
+        links
+            .filter((l: EMLink) => l.source.id === selected.id && getLinkGenres(l).length)
+            .map(l => l.target.id)
     ).add(selected.id);
     
     (node.selectChildren("circle") as NodeCircleSelection)
@@ -413,13 +441,22 @@ function addNodes(svg: utils.SVGSelection, nodes: EMNode[]): NodeSelection {
     return node
 }
 
+function updateLinkLabels() {
+    const {link, selected} = edgemapState;
+    (link.filter(l => l.source.id === selected.id).selectChildren("textPath") as LinkTextpathSelection)
+        .text((l: EMLink) => getLinkGenres(l).join(" | "));
+}
+
+function getLinkGenres(l: EMLink): Genre[] {
+    return Array.from(l.data.shared).filter(g => !filteredGenres.has(g))
+}
 // Use this approach to display genres along link paths: https://css-tricks.com/snippets/svg/curved-text-along-path/
 function setLink(links: EMLink[]): LinkSelection {
     type EnterSelection = d3.Selection<d3.EnterElement, EMLink, SVGGElement, unknown>;
-    
+
     // @ts-ignore: For some reason, ts insists that creating linear color scales is not possible, while it evidently is. 
     const getLinkColor = (color: string) => d3.scaleLinear().range([color, "white"])
-    const getTooltipText = (l: EMLink) => l.label.split(" | ").join("<br/>")
+    const getTooltipText = (l: EMLink) => getLinkGenres(l).join("<br/>");
 
     const onEnter = (selection: EnterSelection) => {
         const tooltip = edgemapState.linkTooltip;  
@@ -429,7 +466,7 @@ function setLink(links: EMLink[]): LinkSelection {
             .style("visibility", "hidden");
         linkNode
             .append("path")
-            .attr("id", (l: BaseEMLink) => l.id)
+            .attr("id", (l: EMLink) => l.id)
             .attr("class", "link-path")
             .style("fill", "none")
             .style("opacity", 0.9)
@@ -445,7 +482,7 @@ function setLink(links: EMLink[]): LinkSelection {
             .style("stroke-width", (l: EMLink) => Math.log2(l.count) + 3)
             .attr("pointer-events", "visibleStroke")
             .on("mouseover", (event: PointerEvent, l: EMLink) => {
-                tooltip.style("height", 1.3 * (l.label.split(" | ").length + 1) + "rem");
+                tooltip.style("height", 1.3 * (getLinkGenres(l).length + 1) + "rem");
                 return utils.onMouseover(tooltip, getTooltipText)(event, l)
             })
             .on("mousemove", utils.onMousemove(tooltip))
@@ -456,8 +493,8 @@ function setLink(links: EMLink[]): LinkSelection {
             .append("textPath")
                 .attr("alignment-baseline", "top")
                 .attr("startOffset", () => ((Math.random() * 30 + 10) + "%"))
-                .attr("xlink:href", (l: BaseEMLink) => "#"+l.id)
-            .text((l: BaseEMLink) => l.label)
+                .attr("xlink:href", (l: EMLink) => "#"+l.id)
+            .text((l: EMLink) => getLinkGenres(l).join(" | "))
                 .style("fill", (l: EMLink) => getLinkColor(getColor(l.target))(l.proportion));
         
         
@@ -504,7 +541,7 @@ function computeCurve(d: EMLink): string {
  *          See: https://stackoverflow.com/questions/20706603/d3-path-gradient-stroke
  */
 const top150 = Array.from(artistStreamTimes.keys()).slice(0, 150);
-export function setupEdgemap(ref: SVGElement, artists: artistID[]) {    
+export function setupEdgemap(ref: SVGElement, artists: ArtistID[]) {    
     const artistSet = new Set(artists);
     const nodes = completeNetwork.nodes.filter(n => artistSet.has(n.id)).map(x => ({...x}));
     const links = completeNetwork.links.filter(l => artistSet.has(l.source) && artistSet.has(l.target)).map(x => ({...x}));
@@ -696,7 +733,7 @@ export function setShowLabels(show: boolean) {
 }
 
 
-export function updateEdgemap(artists: artistID[] = top150, nextView: EdgemapView = "genreSimilarity") {    
+export function updateEdgemap(artists: ArtistID[] = top150, nextView: EdgemapView = "genreSimilarity") {    
     let {svg, node, link, nodes, links, _simulation: simulation, currentView, timelineAxis, showLabels} = edgemapState;
     const artistSet = new Set(artists);
     const [added, removed] = utils.bothDifference(artistSet, edgemapState.artistSet);    
