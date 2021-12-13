@@ -91,23 +91,23 @@
 	"0awG4a7t5UrmZZ4PZVNav3": {
 		"name": "Get Down Saturday Night",
 		"track_features": {
-			"danceability": 0.883,
-			"energy": 0.674,
-			"key": 10,
-			"loudness": -9.218,
+			"danceability": 0.865,
+			"energy": 0.611,
+			"key": 11,
+			"loudness": -11.571,
 			"mode": 0,
-			"speechiness": 0.116,
-			"acousticness": 0.0693,
-			"instrumentalness": 0.000958,
-			"liveness": 0.0448,
-			"valence": 0.898,
-			"tempo": 118.907,
+			"speechiness": 0.0573,
+			"acousticness": 0.226,
+			"instrumentalness": 0.082,
+			"liveness": 0.0572,
+			"valence": 0.963,
+			"tempo": 116.545,
 			"type": "audio_features",
 			"id": "0awG4a7t5UrmZZ4PZVNav3",
 			"uri": "spotify:track:0awG4a7t5UrmZZ4PZVNav3",
 			"track_href": "https://api.spotify.com/v1/tracks/0awG4a7t5UrmZZ4PZVNav3",
 			"analysis_url": "https://api.spotify.com/v1/audio-analysis/0awG4a7t5UrmZZ4PZVNav3",
-			"duration_ms": 234000,
+			"duration_ms": 241907,
 			"time_signature": 4
 		},
 		"artist_genres": []
@@ -193,6 +193,7 @@
 		},
 		"artist_genres": [
 			"atl hip hop",
+			"contemporary r&b",
 			"dance pop",
 			"pop",
 			"r&b",
@@ -512,6 +513,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary r&b",
 			"neo soul",
 			"quiet storm",
 			"r&b",
@@ -653,6 +655,7 @@
 		},
 		"artist_genres": [
 			"atl hip hop",
+			"contemporary r&b",
 			"dance pop",
 			"pop",
 			"r&b",
@@ -1136,6 +1139,7 @@
 		"artist_genres": [
 			"afrofuturism",
 			"alternative r&b",
+			"art pop",
 			"atl hip hop",
 			"dance pop",
 			"electropop",
@@ -1369,6 +1373,7 @@
 		},
 		"artist_genres": [
 			"atl hip hop",
+			"contemporary r&b",
 			"dance pop",
 			"pop",
 			"r&b",
@@ -1589,6 +1594,7 @@
 		},
 		"artist_genres": [
 			"disco",
+			"funk",
 			"motown",
 			"quiet storm",
 			"soul"
@@ -1958,33 +1964,29 @@
 			"nu jazz"
 		]
 	},
-	"3ndMckj6lOpxB4nc7UigvS": {
+	"2CYl3WhTcpo7VHxJxHnby7": {
 		"name": "Piano Sonata No. 3 in B Minor, Op. 58: IV. Finale (Presto non tanto)",
 		"track_features": {
-			"danceability": 0.219,
-			"energy": 0.00739,
-			"key": 4,
-			"loudness": -41.187,
+			"danceability": 0.245,
+			"energy": 0.0176,
+			"key": 11,
+			"loudness": -27.855,
 			"mode": 1,
-			"speechiness": 0.0549,
+			"speechiness": 0.0365,
 			"acousticness": 0.994,
-			"instrumentalness": 0.971,
-			"liveness": 0.087,
-			"valence": 0.407,
-			"tempo": 97.573,
+			"instrumentalness": 0.905,
+			"liveness": 0.0953,
+			"valence": 0.113,
+			"tempo": 77.091,
 			"type": "audio_features",
-			"id": "3ndMckj6lOpxB4nc7UigvS",
-			"uri": "spotify:track:3ndMckj6lOpxB4nc7UigvS",
-			"track_href": "https://api.spotify.com/v1/tracks/3ndMckj6lOpxB4nc7UigvS",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/3ndMckj6lOpxB4nc7UigvS",
-			"duration_ms": 67813,
+			"id": "2CYl3WhTcpo7VHxJxHnby7",
+			"uri": "spotify:track:2CYl3WhTcpo7VHxJxHnby7",
+			"track_href": "https://api.spotify.com/v1/tracks/2CYl3WhTcpo7VHxJxHnby7",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/2CYl3WhTcpo7VHxJxHnby7",
+			"duration_ms": 527813,
 			"time_signature": 3
 		},
-		"artist_genres": [
-			"classical",
-			"early romantic era",
-			"polish classical"
-		]
+		"artist_genres": []
 	},
 	"5GU3mlJYUCIkNWtTkt1LLl": {
 		"name": "Blame The World",
@@ -2260,6 +2262,7 @@
 		},
 		"artist_genres": [
 			"atl hip hop",
+			"contemporary r&b",
 			"dance pop",
 			"pop",
 			"r&b",
@@ -2317,6 +2320,7 @@
 		},
 		"artist_genres": [
 			"atl hip hop",
+			"contemporary r&b",
 			"dance pop",
 			"pop",
 			"r&b",
@@ -2400,6 +2404,7 @@
 		},
 		"artist_genres": [
 			"atl hip hop",
+			"contemporary r&b",
 			"dance pop",
 			"pop",
 			"r&b",
@@ -2434,32 +2439,29 @@
 			"pop"
 		]
 	},
-	"41L3O37CECZt3N7ziG2z7l": {
+	"0dZHQSDsEoSDVFwLECbYG4": {
 		"name": "Yummy",
 		"track_features": {
-			"danceability": 0.687,
-			"energy": 0.514,
+			"danceability": 0.677,
+			"energy": 0.506,
 			"key": 9,
-			"loudness": -6.612,
+			"loudness": -6.652,
 			"mode": 0,
-			"speechiness": 0.0897,
-			"acousticness": 0.366,
+			"speechiness": 0.0964,
+			"acousticness": 0.345,
 			"instrumentalness": 0,
-			"liveness": 0.116,
-			"valence": 0.494,
-			"tempo": 145.921,
+			"liveness": 0.118,
+			"valence": 0.497,
+			"tempo": 145.843,
 			"type": "audio_features",
-			"id": "41L3O37CECZt3N7ziG2z7l",
-			"uri": "spotify:track:41L3O37CECZt3N7ziG2z7l",
-			"track_href": "https://api.spotify.com/v1/tracks/41L3O37CECZt3N7ziG2z7l",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/41L3O37CECZt3N7ziG2z7l",
-			"duration_ms": 210427,
+			"id": "0dZHQSDsEoSDVFwLECbYG4",
+			"uri": "spotify:track:0dZHQSDsEoSDVFwLECbYG4",
+			"track_href": "https://api.spotify.com/v1/tracks/0dZHQSDsEoSDVFwLECbYG4",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/0dZHQSDsEoSDVFwLECbYG4",
+			"duration_ms": 208520,
 			"time_signature": 4
 		},
-		"artist_genres": [
-			"canadian pop",
-			"pop"
-		]
+		"artist_genres": []
 	},
 	"423EcxblW9F4nnQkqcqMlK": {
 		"name": "Deja Vu (feat. Jay-Z)",
@@ -3107,6 +3109,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary r&b",
 			"dance pop",
 			"hip pop",
 			"neo soul",
@@ -3142,26 +3145,26 @@
 			"viral pop"
 		]
 	},
-	"7x6vkO7r3ZuMNyYQVMQQQj": {
+	"2s22y5MhEK8Vr8yQ8o3o3J": {
 		"name": "Waldszenen, Op. 82: 3. Einsame Blumen",
 		"track_features": {
-			"danceability": 0.423,
-			"energy": 0.0462,
+			"danceability": 0.414,
+			"energy": 0.00543,
 			"key": 10,
-			"loudness": -32.026,
+			"loudness": -39.087,
 			"mode": 1,
-			"speechiness": 0.0554,
+			"speechiness": 0.0582,
 			"acousticness": 0.996,
-			"instrumentalness": 0.901,
-			"liveness": 0.106,
-			"valence": 0.668,
-			"tempo": 67.191,
+			"instrumentalness": 0.93,
+			"liveness": 0.0891,
+			"valence": 0.46,
+			"tempo": 69.25,
 			"type": "audio_features",
-			"id": "7x6vkO7r3ZuMNyYQVMQQQj",
-			"uri": "spotify:track:7x6vkO7r3ZuMNyYQVMQQQj",
-			"track_href": "https://api.spotify.com/v1/tracks/7x6vkO7r3ZuMNyYQVMQQQj",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/7x6vkO7r3ZuMNyYQVMQQQj",
-			"duration_ms": 139560,
+			"id": "2s22y5MhEK8Vr8yQ8o3o3J",
+			"uri": "spotify:track:2s22y5MhEK8Vr8yQ8o3o3J",
+			"track_href": "https://api.spotify.com/v1/tracks/2s22y5MhEK8Vr8yQ8o3o3J",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/2s22y5MhEK8Vr8yQ8o3o3J",
+			"duration_ms": 160880,
 			"time_signature": 4
 		},
 		"artist_genres": [
@@ -3227,7 +3230,6 @@
 			"escape room",
 			"indie soul",
 			"lgbtq+ hip hop",
-			"neo soul",
 			"r&b"
 		]
 	},
@@ -3344,10 +3346,10 @@
 		},
 		"artist_genres": [
 			"british soul",
+			"contemporary r&b",
 			"hip hop",
 			"hip pop",
 			"neo soul",
-			"new jack swing",
 			"quiet storm",
 			"r&b",
 			"urban contemporary"
@@ -3631,30 +3633,6 @@
 			"urban contemporary"
 		]
 	},
-	"5S41pftCy9gkpTzjWGTeJS": {
-		"name": "Suite N1. En LA Gruta Del Rey De La Monta\u00f1a",
-		"track_features": {
-			"danceability": 0.421,
-			"energy": 0.149,
-			"key": 6,
-			"loudness": -15.849,
-			"mode": 0,
-			"speechiness": 0.0677,
-			"acousticness": 0.973,
-			"instrumentalness": 0.926,
-			"liveness": 0.0792,
-			"valence": 0.382,
-			"tempo": 118.303,
-			"type": "audio_features",
-			"id": "5S41pftCy9gkpTzjWGTeJS",
-			"uri": "spotify:track:5S41pftCy9gkpTzjWGTeJS",
-			"track_href": "https://api.spotify.com/v1/tracks/5S41pftCy9gkpTzjWGTeJS",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/5S41pftCy9gkpTzjWGTeJS",
-			"duration_ms": 155787,
-			"time_signature": 4
-		},
-		"artist_genres": []
-	},
 	"3CRDbSIZ4r5MsZ0YwxuEkn": {
 		"name": "Stressed Out",
 		"track_features": {
@@ -3852,6 +3830,7 @@
 		},
 		"artist_genres": [
 			"atl hip hop",
+			"contemporary r&b",
 			"dance pop",
 			"pop",
 			"r&b",
@@ -4079,26 +4058,26 @@
 		},
 		"artist_genres": []
 	},
-	"7rjYWQ0mvwmn4o5HmJ7Vgq": {
+	"2cZhcjTOG0sCXcjB8XDusy": {
 		"name": "Fantaisie impromptu in C-Sharp Minor, Op. 66 - Live",
 		"track_features": {
-			"danceability": 0.109,
-			"energy": 0.125,
+			"danceability": 0.249,
+			"energy": 0.107,
 			"key": 1,
-			"loudness": -20.182,
+			"loudness": -20.568,
 			"mode": 1,
-			"speechiness": 0.0383,
-			"acousticness": 0.979,
-			"instrumentalness": 0.917,
-			"liveness": 0.0919,
-			"valence": 0.115,
-			"tempo": 65.827,
+			"speechiness": 0.0359,
+			"acousticness": 0.989,
+			"instrumentalness": 0.914,
+			"liveness": 0.0818,
+			"valence": 0.109,
+			"tempo": 76.417,
 			"type": "audio_features",
-			"id": "7rjYWQ0mvwmn4o5HmJ7Vgq",
-			"uri": "spotify:track:7rjYWQ0mvwmn4o5HmJ7Vgq",
-			"track_href": "https://api.spotify.com/v1/tracks/7rjYWQ0mvwmn4o5HmJ7Vgq",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/7rjYWQ0mvwmn4o5HmJ7Vgq",
-			"duration_ms": 317649,
+			"id": "2cZhcjTOG0sCXcjB8XDusy",
+			"uri": "spotify:track:2cZhcjTOG0sCXcjB8XDusy",
+			"track_href": "https://api.spotify.com/v1/tracks/2cZhcjTOG0sCXcjB8XDusy",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/2cZhcjTOG0sCXcjB8XDusy",
+			"duration_ms": 296453,
 			"time_signature": 3
 		},
 		"artist_genres": []
@@ -4156,12 +4135,12 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"alt z",
 			"art pop",
 			"dance pop",
 			"electropop",
 			"escape room",
 			"hyperpop",
+			"indie poptimism",
 			"pop",
 			"post-teen pop",
 			"transpop"
@@ -4219,6 +4198,7 @@
 			"time_signature": 5
 		},
 		"artist_genres": [
+			"contemporary r&b",
 			"dance pop",
 			"hip pop",
 			"neo soul",
@@ -4249,10 +4229,9 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary r&b",
 			"dance pop",
-			"hip pop",
 			"neo soul",
-			"new jack swing",
 			"quiet storm",
 			"r&b",
 			"urban contemporary"
@@ -4367,7 +4346,6 @@
 		},
 		"artist_genres": [
 			"dance pop",
-			"edm",
 			"electropop",
 			"pop",
 			"post-teen pop"
@@ -4881,27 +4859,27 @@
 			"singer-songwriter"
 		]
 	},
-	"5hYxcTFDceQRd9jQKn6N6T": {
+	"3Xq33ThZ4gEje8gdVm85Ve": {
 		"name": "Voice-Over Intro Quincy Jones Interview #1 / Quincy Jones Interview #1",
 		"track_features": {
-			"danceability": 0.683,
-			"energy": 0.329,
-			"key": 11,
-			"loudness": -15.209,
+			"danceability": 0.723,
+			"energy": 0.321,
+			"key": 9,
+			"loudness": -14.935,
 			"mode": 0,
-			"speechiness": 0.953,
-			"acousticness": 0.98,
+			"speechiness": 0.897,
+			"acousticness": 0.983,
 			"instrumentalness": 0,
-			"liveness": 0.335,
-			"valence": 0.63,
-			"tempo": 85.057,
+			"liveness": 0.486,
+			"valence": 0.608,
+			"tempo": 116.78,
 			"type": "audio_features",
-			"id": "5hYxcTFDceQRd9jQKn6N6T",
-			"uri": "spotify:track:5hYxcTFDceQRd9jQKn6N6T",
-			"track_href": "https://api.spotify.com/v1/tracks/5hYxcTFDceQRd9jQKn6N6T",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/5hYxcTFDceQRd9jQKn6N6T",
-			"duration_ms": 124067,
-			"time_signature": 4
+			"id": "3Xq33ThZ4gEje8gdVm85Ve",
+			"uri": "spotify:track:3Xq33ThZ4gEje8gdVm85Ve",
+			"track_href": "https://api.spotify.com/v1/tracks/3Xq33ThZ4gEje8gdVm85Ve",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/3Xq33ThZ4gEje8gdVm85Ve",
+			"duration_ms": 137893,
+			"time_signature": 3
 		},
 		"artist_genres": [
 			"pop",
@@ -4965,12 +4943,12 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary r&b",
 			"dance pop",
 			"girl group",
 			"hip hop",
 			"hip pop",
 			"neo soul",
-			"new jack swing",
 			"quiet storm",
 			"r&b",
 			"urban contemporary"
@@ -5252,10 +5230,9 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary r&b",
 			"dance pop",
-			"hip pop",
 			"neo soul",
-			"new jack swing",
 			"quiet storm",
 			"r&b",
 			"urban contemporary"
@@ -5908,29 +5885,34 @@
 			"urban contemporary"
 		]
 	},
-	"3Pcn9GYwIwf4cyA8rWomV1": {
+	"4T5vnJjXPHpRKe4bQpvm2J": {
 		"name": "Piano Sonata No. 7 in D Major, Op. 10 No. 3: II. Largo e mesto",
 		"track_features": {
-			"danceability": 0.204,
-			"energy": 0.0154,
-			"key": 11,
-			"loudness": -30.397,
+			"danceability": 0.378,
+			"energy": 0.0508,
+			"key": 2,
+			"loudness": -29.254,
 			"mode": 1,
-			"speechiness": 0.0398,
-			"acousticness": 0.991,
-			"instrumentalness": 0.924,
-			"liveness": 0.0821,
-			"valence": 0.0396,
-			"tempo": 75.013,
+			"speechiness": 0.0368,
+			"acousticness": 0.987,
+			"instrumentalness": 0.904,
+			"liveness": 0.0664,
+			"valence": 0.208,
+			"tempo": 108.03,
 			"type": "audio_features",
-			"id": "3Pcn9GYwIwf4cyA8rWomV1",
-			"uri": "spotify:track:3Pcn9GYwIwf4cyA8rWomV1",
-			"track_href": "https://api.spotify.com/v1/tracks/3Pcn9GYwIwf4cyA8rWomV1",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/3Pcn9GYwIwf4cyA8rWomV1",
-			"duration_ms": 490440,
+			"id": "4T5vnJjXPHpRKe4bQpvm2J",
+			"uri": "spotify:track:4T5vnJjXPHpRKe4bQpvm2J",
+			"track_href": "https://api.spotify.com/v1/tracks/4T5vnJjXPHpRKe4bQpvm2J",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/4T5vnJjXPHpRKe4bQpvm2J",
+			"duration_ms": 170587,
 			"time_signature": 4
 		},
-		"artist_genres": []
+		"artist_genres": [
+			"classical",
+			"classical era",
+			"early romantic era",
+			"german romanticism"
+		]
 	},
 	"4oy98QoABnGKpvapDkI525": {
 		"name": "Turning Tables",
@@ -6157,6 +6139,7 @@
 		},
 		"artist_genres": [
 			"boy band",
+			"contemporary r&b",
 			"new jack swing",
 			"r&b",
 			"urban contemporary"
@@ -6767,6 +6750,7 @@
 		},
 		"artist_genres": [
 			"atl hip hop",
+			"contemporary r&b",
 			"dance pop",
 			"pop",
 			"r&b",
@@ -6862,8 +6846,7 @@
 			"funk",
 			"motown",
 			"quiet storm",
-			"soul",
-			"southern soul"
+			"soul"
 		]
 	},
 	"2wZTnl0pPFr3HBcyXfOaVJ": {
@@ -7032,6 +7015,7 @@
 		},
 		"artist_genres": [
 			"atl hip hop",
+			"contemporary r&b",
 			"dance pop",
 			"pop",
 			"r&b",
@@ -7181,33 +7165,29 @@
 			"pop"
 		]
 	},
-	"3DXdjHnePKnh6oXw2ZgGSl": {
+	"5PKOCL31JJLEAdIdW3koA3": {
 		"name": "Smile",
 		"track_features": {
 			"danceability": 0.783,
-			"energy": 0.912,
+			"energy": 0.911,
 			"key": 0,
-			"loudness": -3.713,
+			"loudness": -3.745,
 			"mode": 1,
 			"speechiness": 0.243,
-			"acousticness": 0.0238,
+			"acousticness": 0.0213,
 			"instrumentalness": 0,
-			"liveness": 0.339,
-			"valence": 0.749,
-			"tempo": 98.025,
+			"liveness": 0.352,
+			"valence": 0.734,
+			"tempo": 98.015,
 			"type": "audio_features",
-			"id": "3DXdjHnePKnh6oXw2ZgGSl",
-			"uri": "spotify:track:3DXdjHnePKnh6oXw2ZgGSl",
-			"track_href": "https://api.spotify.com/v1/tracks/3DXdjHnePKnh6oXw2ZgGSl",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/3DXdjHnePKnh6oXw2ZgGSl",
-			"duration_ms": 166898,
+			"id": "5PKOCL31JJLEAdIdW3koA3",
+			"uri": "spotify:track:5PKOCL31JJLEAdIdW3koA3",
+			"track_href": "https://api.spotify.com/v1/tracks/5PKOCL31JJLEAdIdW3koA3",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/5PKOCL31JJLEAdIdW3koA3",
+			"duration_ms": 168174,
 			"time_signature": 4
 		},
-		"artist_genres": [
-			"dance pop",
-			"pop",
-			"post-teen pop"
-		]
+		"artist_genres": []
 	},
 	"0aj2QKJvz6CePykmlTApiD": {
 		"name": "Se\u00f1orita",
@@ -7428,6 +7408,7 @@
 		},
 		"artist_genres": [
 			"boy band",
+			"contemporary r&b",
 			"new jack swing",
 			"r&b",
 			"urban contemporary"
@@ -7682,9 +7663,7 @@
 			"duration_ms": 237905,
 			"time_signature": 4
 		},
-		"artist_genres": [
-			"social media pop"
-		]
+		"artist_genres": []
 	},
 	"6WaogiItGdUTm490XN4QKJ": {
 		"name": "Congratulations",
@@ -8172,6 +8151,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary r&b",
 			"dance pop",
 			"girl group",
 			"hip hop",
@@ -8235,6 +8215,7 @@
 		},
 		"artist_genres": [
 			"atl hip hop",
+			"contemporary r&b",
 			"dance pop",
 			"pop",
 			"r&b",
@@ -8266,6 +8247,7 @@
 		},
 		"artist_genres": [
 			"boy band",
+			"contemporary r&b",
 			"dance pop",
 			"hip hop",
 			"hip pop",
@@ -8278,27 +8260,27 @@
 			"urban contemporary"
 		]
 	},
-	"2BUMTzag52Z9KEur4ywPHd": {
+	"1wigqV9xfMBeHbV8cvdJf5": {
 		"name": "12 \u00c9tudes, Op. 10: No. 12 in C Minor",
 		"track_features": {
-			"danceability": 0.292,
-			"energy": 0.329,
+			"danceability": 0.324,
+			"energy": 0.214,
 			"key": 5,
-			"loudness": -13.1,
+			"loudness": -17.616,
 			"mode": 0,
-			"speechiness": 0.0306,
-			"acousticness": 0.972,
-			"instrumentalness": 0.89,
-			"liveness": 0.201,
-			"valence": 0.247,
-			"tempo": 88.002,
+			"speechiness": 0.0321,
+			"acousticness": 0.963,
+			"instrumentalness": 0.858,
+			"liveness": 0.129,
+			"valence": 0.179,
+			"tempo": 131.286,
 			"type": "audio_features",
-			"id": "2BUMTzag52Z9KEur4ywPHd",
-			"uri": "spotify:track:2BUMTzag52Z9KEur4ywPHd",
-			"track_href": "https://api.spotify.com/v1/tracks/2BUMTzag52Z9KEur4ywPHd",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/2BUMTzag52Z9KEur4ywPHd",
-			"duration_ms": 178413,
-			"time_signature": 4
+			"id": "1wigqV9xfMBeHbV8cvdJf5",
+			"uri": "spotify:track:1wigqV9xfMBeHbV8cvdJf5",
+			"track_href": "https://api.spotify.com/v1/tracks/1wigqV9xfMBeHbV8cvdJf5",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/1wigqV9xfMBeHbV8cvdJf5",
+			"duration_ms": 151387,
+			"time_signature": 3
 		},
 		"artist_genres": []
 	},
@@ -8997,6 +8979,7 @@
 		},
 		"artist_genres": [
 			"boy band",
+			"contemporary r&b",
 			"new jack swing",
 			"r&b",
 			"urban contemporary"
@@ -9024,9 +9007,7 @@
 			"duration_ms": 170627,
 			"time_signature": 4
 		},
-		"artist_genres": [
-			"social media pop"
-		]
+		"artist_genres": []
 	},
 	"7IEC1NxPmRlakVc9BI3oaV": {
 		"name": "Roxanne / Roxanne",
@@ -9050,9 +9031,7 @@
 			"duration_ms": 191554,
 			"time_signature": 4
 		},
-		"artist_genres": [
-			"social media pop"
-		]
+		"artist_genres": []
 	},
 	"39JqvmCnz8GGqoSqisDarM": {
 		"name": "Slideshow",
@@ -9076,9 +9055,7 @@
 			"duration_ms": 106000,
 			"time_signature": 4
 		},
-		"artist_genres": [
-			"social media pop"
-		]
+		"artist_genres": []
 	},
 	"35mvY5S1H3J2QZyna3TFe0": {
 		"name": "positions",
@@ -9211,31 +9188,32 @@
 		},
 		"artist_genres": [
 			"boy band",
+			"contemporary r&b",
 			"new jack swing",
 			"r&b",
 			"urban contemporary"
 		]
 	},
-	"4CzwpEn34NPHZkFW5fo46d": {
+	"2lwH5GB6EBs73pPcQkjfnQ": {
 		"name": "Piano Sonata No. 2 in B-Flat Minor, Op. 35: III. Marche fun\u00e8bre. Lento",
 		"track_features": {
-			"danceability": 0.371,
-			"energy": 0.247,
-			"key": 10,
-			"loudness": -15.505,
-			"mode": 0,
-			"speechiness": 0.0402,
-			"acousticness": 0.981,
-			"instrumentalness": 0.924,
-			"liveness": 0.0721,
-			"valence": 0.0777,
-			"tempo": 98.299,
+			"danceability": 0.397,
+			"energy": 0.3,
+			"key": 8,
+			"loudness": -14.678,
+			"mode": 1,
+			"speechiness": 0.0475,
+			"acousticness": 0.989,
+			"instrumentalness": 0.886,
+			"liveness": 0.0819,
+			"valence": 0.0657,
+			"tempo": 117.867,
 			"type": "audio_features",
-			"id": "4CzwpEn34NPHZkFW5fo46d",
-			"uri": "spotify:track:4CzwpEn34NPHZkFW5fo46d",
-			"track_href": "https://api.spotify.com/v1/tracks/4CzwpEn34NPHZkFW5fo46d",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/4CzwpEn34NPHZkFW5fo46d",
-			"duration_ms": 493160,
+			"id": "2lwH5GB6EBs73pPcQkjfnQ",
+			"uri": "spotify:track:2lwH5GB6EBs73pPcQkjfnQ",
+			"track_href": "https://api.spotify.com/v1/tracks/2lwH5GB6EBs73pPcQkjfnQ",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/2lwH5GB6EBs73pPcQkjfnQ",
+			"duration_ms": 322333,
 			"time_signature": 3
 		},
 		"artist_genres": []
@@ -9318,10 +9296,9 @@
 			"time_signature": 3
 		},
 		"artist_genres": [
+			"contemporary r&b",
 			"dance pop",
-			"hip pop",
 			"neo soul",
-			"new jack swing",
 			"quiet storm",
 			"r&b",
 			"urban contemporary"
@@ -9355,26 +9332,26 @@
 			"soul"
 		]
 	},
-	"5MNK8TEoYd5b6F8JUJYzXZ": {
+	"2TbCHRMh34tQDwMuxpylrS": {
 		"name": "Shte te nameria",
 		"track_features": {
-			"danceability": 0.717,
-			"energy": 0.972,
-			"key": 7,
-			"loudness": -7.925,
-			"mode": 1,
-			"speechiness": 0.0401,
-			"acousticness": 0.0851,
-			"instrumentalness": 0.0454,
-			"liveness": 0.0719,
-			"valence": 0.959,
-			"tempo": 124.994,
+			"danceability": 0.614,
+			"energy": 0.836,
+			"key": 4,
+			"loudness": -7.624,
+			"mode": 0,
+			"speechiness": 0.0436,
+			"acousticness": 0.191,
+			"instrumentalness": 0.255,
+			"liveness": 0.901,
+			"valence": 0.786,
+			"tempo": 132.893,
 			"type": "audio_features",
-			"id": "5MNK8TEoYd5b6F8JUJYzXZ",
-			"uri": "spotify:track:5MNK8TEoYd5b6F8JUJYzXZ",
-			"track_href": "https://api.spotify.com/v1/tracks/5MNK8TEoYd5b6F8JUJYzXZ",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/5MNK8TEoYd5b6F8JUJYzXZ",
-			"duration_ms": 204053,
+			"id": "2TbCHRMh34tQDwMuxpylrS",
+			"uri": "spotify:track:2TbCHRMh34tQDwMuxpylrS",
+			"track_href": "https://api.spotify.com/v1/tracks/2TbCHRMh34tQDwMuxpylrS",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/2TbCHRMh34tQDwMuxpylrS",
+			"duration_ms": 282662,
 			"time_signature": 4
 		},
 		"artist_genres": [
@@ -9569,6 +9546,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary r&b",
 			"dance pop",
 			"hip pop",
 			"neo soul",
@@ -9851,37 +9829,10 @@
 		},
 		"artist_genres": [
 			"boy band",
+			"contemporary r&b",
 			"new jack swing",
 			"r&b",
 			"urban contemporary"
-		]
-	},
-	"463CkQjx2Zk1yXoBuierM9": {
-		"name": "Levitating (feat. DaBaby)",
-		"track_features": {
-			"danceability": 0.702,
-			"energy": 0.825,
-			"key": 6,
-			"loudness": -3.787,
-			"mode": 0,
-			"speechiness": 0.0601,
-			"acousticness": 0.00883,
-			"instrumentalness": 0,
-			"liveness": 0.0674,
-			"valence": 0.915,
-			"tempo": 102.977,
-			"type": "audio_features",
-			"id": "463CkQjx2Zk1yXoBuierM9",
-			"uri": "spotify:track:463CkQjx2Zk1yXoBuierM9",
-			"track_href": "https://api.spotify.com/v1/tracks/463CkQjx2Zk1yXoBuierM9",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/463CkQjx2Zk1yXoBuierM9",
-			"duration_ms": 203064,
-			"time_signature": 4
-		},
-		"artist_genres": [
-			"dance pop",
-			"pop",
-			"uk pop"
 		]
 	},
 	"3wJVBz7gvGTwTWVAxFa6ny": {
@@ -9965,6 +9916,7 @@
 			"dance pop",
 			"dutch edm",
 			"edm",
+			"electro house",
 			"pop",
 			"pop dance",
 			"progressive house",
@@ -10293,26 +10245,26 @@
 			"soundtrack"
 		]
 	},
-	"0Lc3coQTcMMJiiEFi7BG2z": {
+	"2u1FWVxAb16qbgwPgygAdj": {
 		"name": "V",
 		"track_features": {
-			"danceability": 0.39,
-			"energy": 0.0743,
-			"key": 2,
-			"loudness": -19.916,
-			"mode": 0,
-			"speechiness": 0.0317,
-			"acousticness": 0.841,
-			"instrumentalness": 0.815,
-			"liveness": 0.106,
-			"valence": 0.0663,
-			"tempo": 130.331,
+			"danceability": 0.407,
+			"energy": 0.811,
+			"key": 5,
+			"loudness": -6.776,
+			"mode": 1,
+			"speechiness": 0.0445,
+			"acousticness": 0.00757,
+			"instrumentalness": 0.977,
+			"liveness": 0.14,
+			"valence": 0.14,
+			"tempo": 89.987,
 			"type": "audio_features",
-			"id": "0Lc3coQTcMMJiiEFi7BG2z",
-			"uri": "spotify:track:0Lc3coQTcMMJiiEFi7BG2z",
-			"track_href": "https://api.spotify.com/v1/tracks/0Lc3coQTcMMJiiEFi7BG2z",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/0Lc3coQTcMMJiiEFi7BG2z",
-			"duration_ms": 167935,
+			"id": "2u1FWVxAb16qbgwPgygAdj",
+			"uri": "spotify:track:2u1FWVxAb16qbgwPgygAdj",
+			"track_href": "https://api.spotify.com/v1/tracks/2u1FWVxAb16qbgwPgygAdj",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/2u1FWVxAb16qbgwPgygAdj",
+			"duration_ms": 154147,
 			"time_signature": 4
 		},
 		"artist_genres": [
@@ -10430,6 +10382,7 @@
 		},
 		"artist_genres": [
 			"atl hip hop",
+			"contemporary r&b",
 			"dance pop",
 			"pop",
 			"r&b",
@@ -10752,27 +10705,27 @@
 			"bulgarian rock"
 		]
 	},
-	"3CX4c2P7W67nKCPPQA2xb7": {
+	"4Aai4jr2j7oWpvwAVoDZBF": {
 		"name": "Nocturne in C-Sharp Minor, B. 49 (Lento con gran espressione)",
 		"track_features": {
-			"danceability": 0.286,
-			"energy": 0.0428,
+			"danceability": 0.24,
+			"energy": 0.015,
 			"key": 1,
-			"loudness": -22.017,
-			"mode": 0,
-			"speechiness": 0.0503,
-			"acousticness": 0.986,
-			"instrumentalness": 0.922,
-			"liveness": 0.0957,
-			"valence": 0.169,
-			"tempo": 70.696,
+			"loudness": -27.216,
+			"mode": 1,
+			"speechiness": 0.0515,
+			"acousticness": 0.982,
+			"instrumentalness": 0.851,
+			"liveness": 0.0807,
+			"valence": 0.129,
+			"tempo": 72.862,
 			"type": "audio_features",
-			"id": "3CX4c2P7W67nKCPPQA2xb7",
-			"uri": "spotify:track:3CX4c2P7W67nKCPPQA2xb7",
-			"track_href": "https://api.spotify.com/v1/tracks/3CX4c2P7W67nKCPPQA2xb7",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/3CX4c2P7W67nKCPPQA2xb7",
-			"duration_ms": 258532,
-			"time_signature": 3
+			"id": "4Aai4jr2j7oWpvwAVoDZBF",
+			"uri": "spotify:track:4Aai4jr2j7oWpvwAVoDZBF",
+			"track_href": "https://api.spotify.com/v1/tracks/4Aai4jr2j7oWpvwAVoDZBF",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/4Aai4jr2j7oWpvwAVoDZBF",
+			"duration_ms": 286000,
+			"time_signature": 4
 		},
 		"artist_genres": []
 	},
@@ -10942,26 +10895,26 @@
 			"pop"
 		]
 	},
-	"72Y2HKafWKIILRju52I2Fo": {
+	"7l8B8DGCVfuz4IU2sH0XFr": {
 		"name": "LoveStoned/I Think She Knows Interlude - Femi Fem & T-Money Funketeria Mix - Radio Edit",
 		"track_features": {
-			"danceability": 0.847,
-			"energy": 0.835,
+			"danceability": 0.797,
+			"energy": 0.863,
 			"key": 6,
-			"loudness": -5.717,
+			"loudness": -5.62,
 			"mode": 1,
-			"speechiness": 0.0716,
-			"acousticness": 0.0133,
-			"instrumentalness": 0.00614,
-			"liveness": 0.0639,
-			"valence": 0.678,
-			"tempo": 127.493,
+			"speechiness": 0.0672,
+			"acousticness": 0.0336,
+			"instrumentalness": 0.00115,
+			"liveness": 0.279,
+			"valence": 0.769,
+			"tempo": 127.492,
 			"type": "audio_features",
-			"id": "72Y2HKafWKIILRju52I2Fo",
-			"uri": "spotify:track:72Y2HKafWKIILRju52I2Fo",
-			"track_href": "https://api.spotify.com/v1/tracks/72Y2HKafWKIILRju52I2Fo",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/72Y2HKafWKIILRju52I2Fo",
-			"duration_ms": 431107,
+			"id": "7l8B8DGCVfuz4IU2sH0XFr",
+			"uri": "spotify:track:7l8B8DGCVfuz4IU2sH0XFr",
+			"track_href": "https://api.spotify.com/v1/tracks/7l8B8DGCVfuz4IU2sH0XFr",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/7l8B8DGCVfuz4IU2sH0XFr",
+			"duration_ms": 260027,
 			"time_signature": 4
 		},
 		"artist_genres": [
@@ -11749,7 +11702,6 @@
 		},
 		"artist_genres": [
 			"cape town indie",
-			"south african alternative",
 			"south african pop",
 			"south african pop dance"
 		]
@@ -11778,7 +11730,6 @@
 		},
 		"artist_genres": [
 			"cape town indie",
-			"south african alternative",
 			"south african pop",
 			"south african pop dance"
 		]
@@ -11946,26 +11897,26 @@
 			"viral pop"
 		]
 	},
-	"6HPDiqAPEDSYhqO7jmgCtT": {
+	"0Tq6eBtml8GTzvGk0sSLO5": {
 		"name": "10 Preludes, Op. 23: No. 5 in G Minor: Alla marcia",
 		"track_features": {
-			"danceability": 0.38,
-			"energy": 0.171,
+			"danceability": 0.362,
+			"energy": 0.231,
 			"key": 7,
-			"loudness": -16.383,
+			"loudness": -18.9,
 			"mode": 0,
-			"speechiness": 0.0342,
-			"acousticness": 0.969,
-			"instrumentalness": 0.877,
-			"liveness": 0.113,
-			"valence": 0.191,
-			"tempo": 104.404,
+			"speechiness": 0.0353,
+			"acousticness": 0.975,
+			"instrumentalness": 0.839,
+			"liveness": 0.109,
+			"valence": 0.165,
+			"tempo": 116.077,
 			"type": "audio_features",
-			"id": "6HPDiqAPEDSYhqO7jmgCtT",
-			"uri": "spotify:track:6HPDiqAPEDSYhqO7jmgCtT",
-			"track_href": "https://api.spotify.com/v1/tracks/6HPDiqAPEDSYhqO7jmgCtT",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/6HPDiqAPEDSYhqO7jmgCtT",
-			"duration_ms": 257440,
+			"id": "0Tq6eBtml8GTzvGk0sSLO5",
+			"uri": "spotify:track:0Tq6eBtml8GTzvGk0sSLO5",
+			"track_href": "https://api.spotify.com/v1/tracks/0Tq6eBtml8GTzvGk0sSLO5",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/0Tq6eBtml8GTzvGk0sSLO5",
+			"duration_ms": 217027,
 			"time_signature": 4
 		},
 		"artist_genres": []
@@ -11994,29 +11945,32 @@
 		},
 		"artist_genres": []
 	},
-	"5f664wjajYSCNVtUBDIZxS": {
+	"64ta7ZvTJeThz7Ns4LmAHS": {
 		"name": "Symphony No.25 in G minor, K.183: 1. Allegro con brio",
 		"track_features": {
-			"danceability": 0.318,
-			"energy": 0.151,
+			"danceability": 0.428,
+			"energy": 0.237,
 			"key": 7,
-			"loudness": -18.109,
+			"loudness": -13.764,
 			"mode": 0,
-			"speechiness": 0.0346,
-			"acousticness": 0.97,
-			"instrumentalness": 0.899,
-			"liveness": 0.249,
-			"valence": 0.3,
-			"tempo": 78.278,
+			"speechiness": 0.0351,
+			"acousticness": 0.987,
+			"instrumentalness": 0.896,
+			"liveness": 0.0849,
+			"valence": 0.357,
+			"tempo": 79.904,
 			"type": "audio_features",
-			"id": "5f664wjajYSCNVtUBDIZxS",
-			"uri": "spotify:track:5f664wjajYSCNVtUBDIZxS",
-			"track_href": "https://api.spotify.com/v1/tracks/5f664wjajYSCNVtUBDIZxS",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/5f664wjajYSCNVtUBDIZxS",
-			"duration_ms": 462101,
+			"id": "64ta7ZvTJeThz7Ns4LmAHS",
+			"uri": "spotify:track:64ta7ZvTJeThz7Ns4LmAHS",
+			"track_href": "https://api.spotify.com/v1/tracks/64ta7ZvTJeThz7Ns4LmAHS",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/64ta7ZvTJeThz7Ns4LmAHS",
+			"duration_ms": 460027,
 			"time_signature": 4
 		},
-		"artist_genres": []
+		"artist_genres": [
+			"classical",
+			"classical era"
+		]
 	},
 	"02jcEwywffn3Tsb48fXmlW": {
 		"name": "Get the Party Started",
@@ -12127,12 +12081,12 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary r&b",
 			"dance pop",
 			"girl group",
 			"hip hop",
 			"hip pop",
 			"neo soul",
-			"new jack swing",
 			"quiet storm",
 			"r&b",
 			"urban contemporary"
@@ -12244,9 +12198,9 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary r&b",
 			"dance pop",
 			"hip pop",
-			"new jack swing",
 			"r&b",
 			"urban contemporary"
 		]
@@ -12356,6 +12310,7 @@
 		},
 		"artist_genres": [
 			"boy band",
+			"contemporary r&b",
 			"new jack swing",
 			"r&b",
 			"urban contemporary"
@@ -12496,6 +12451,7 @@
 		},
 		"artist_genres": [
 			"boy band",
+			"contemporary r&b",
 			"new jack swing",
 			"r&b",
 			"urban contemporary"
@@ -12919,29 +12875,33 @@
 			"pop"
 		]
 	},
-	"6nxYx76e4vCbmv9wwn1GAH": {
+	"2McuLYVYoBgBzibws9KSjW": {
 		"name": "Etudes, Op. 10: No. 5 in G-Flat Major",
 		"track_features": {
-			"danceability": 0.361,
-			"energy": 0.13,
+			"danceability": 0.299,
+			"energy": 0.0616,
 			"key": 1,
-			"loudness": -21.352,
+			"loudness": -21.549,
 			"mode": 1,
-			"speechiness": 0.0365,
-			"acousticness": 0.968,
-			"instrumentalness": 0.899,
-			"liveness": 0.107,
-			"valence": 0.39,
-			"tempo": 98.069,
+			"speechiness": 0.0396,
+			"acousticness": 0.991,
+			"instrumentalness": 0.902,
+			"liveness": 0.0982,
+			"valence": 0.417,
+			"tempo": 62.305,
 			"type": "audio_features",
-			"id": "6nxYx76e4vCbmv9wwn1GAH",
-			"uri": "spotify:track:6nxYx76e4vCbmv9wwn1GAH",
-			"track_href": "https://api.spotify.com/v1/tracks/6nxYx76e4vCbmv9wwn1GAH",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/6nxYx76e4vCbmv9wwn1GAH",
-			"duration_ms": 120227,
+			"id": "2McuLYVYoBgBzibws9KSjW",
+			"uri": "spotify:track:2McuLYVYoBgBzibws9KSjW",
+			"track_href": "https://api.spotify.com/v1/tracks/2McuLYVYoBgBzibws9KSjW",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/2McuLYVYoBgBzibws9KSjW",
+			"duration_ms": 101360,
 			"time_signature": 4
 		},
-		"artist_genres": []
+		"artist_genres": [
+			"classical",
+			"early romantic era",
+			"polish classical"
+		]
 	},
 	"1gQUv2qZs7LUWo1IeO7lhq": {
 		"name": "Celia's Mad",
@@ -13160,11 +13120,11 @@
 		},
 		"artist_genres": [
 			"atl hip hop",
+			"contemporary r&b",
 			"dance pop",
 			"girl group",
 			"hip hop",
 			"hip pop",
-			"new jack swing",
 			"pop",
 			"r&b",
 			"urban contemporary"
@@ -13401,26 +13361,26 @@
 			"urban contemporary"
 		]
 	},
-	"0G5g3kYObDJgAvPlpNURNo": {
+	"5LMFugEKd0THSowztc1iYu": {
 		"name": "Super Sonic",
 		"track_features": {
-			"danceability": 0.842,
-			"energy": 0.542,
-			"key": 0,
-			"loudness": -11.974,
-			"mode": 0,
-			"speechiness": 0.0434,
-			"acousticness": 0.0336,
-			"instrumentalness": 0.393,
-			"liveness": 0.0937,
-			"valence": 0.0394,
-			"tempo": 136.052,
+			"danceability": 0.749,
+			"energy": 0.898,
+			"key": 8,
+			"loudness": -9.584,
+			"mode": 1,
+			"speechiness": 0.0386,
+			"acousticness": 0.0335,
+			"instrumentalness": 0.727,
+			"liveness": 0.291,
+			"valence": 0.699,
+			"tempo": 136.984,
 			"type": "audio_features",
-			"id": "0G5g3kYObDJgAvPlpNURNo",
-			"uri": "spotify:track:0G5g3kYObDJgAvPlpNURNo",
-			"track_href": "https://api.spotify.com/v1/tracks/0G5g3kYObDJgAvPlpNURNo",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/0G5g3kYObDJgAvPlpNURNo",
-			"duration_ms": 358600,
+			"id": "5LMFugEKd0THSowztc1iYu",
+			"uri": "spotify:track:5LMFugEKd0THSowztc1iYu",
+			"track_href": "https://api.spotify.com/v1/tracks/5LMFugEKd0THSowztc1iYu",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/5LMFugEKd0THSowztc1iYu",
+			"duration_ms": 228867,
 			"time_signature": 4
 		},
 		"artist_genres": []
@@ -13504,10 +13464,9 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary r&b",
 			"dance pop",
-			"hip pop",
 			"neo soul",
-			"new jack swing",
 			"quiet storm",
 			"r&b",
 			"urban contemporary"
@@ -13543,26 +13502,26 @@
 			"urban contemporary"
 		]
 	},
-	"6HIVJXpdvp1C1ubfnkFnz8": {
+	"6CSLNGruNhqpb5zhfs5n3i": {
 		"name": "Celebration - Single Version",
 		"track_features": {
-			"danceability": 0.824,
-			"energy": 0.837,
+			"danceability": 0.843,
+			"energy": 0.656,
 			"key": 1,
-			"loudness": -7.124,
+			"loudness": -11.184,
 			"mode": 1,
-			"speechiness": 0.054,
-			"acousticness": 0.0216,
-			"instrumentalness": 0.00944,
-			"liveness": 0.123,
-			"valence": 0.947,
-			"tempo": 121.143,
+			"speechiness": 0.0595,
+			"acousticness": 0.0466,
+			"instrumentalness": 0.0187,
+			"liveness": 0.169,
+			"valence": 0.931,
+			"tempo": 121.112,
 			"type": "audio_features",
-			"id": "6HIVJXpdvp1C1ubfnkFnz8",
-			"uri": "spotify:track:6HIVJXpdvp1C1ubfnkFnz8",
-			"track_href": "https://api.spotify.com/v1/tracks/6HIVJXpdvp1C1ubfnkFnz8",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/6HIVJXpdvp1C1ubfnkFnz8",
-			"duration_ms": 218787,
+			"id": "6CSLNGruNhqpb5zhfs5n3i",
+			"uri": "spotify:track:6CSLNGruNhqpb5zhfs5n3i",
+			"track_href": "https://api.spotify.com/v1/tracks/6CSLNGruNhqpb5zhfs5n3i",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/6CSLNGruNhqpb5zhfs5n3i",
+			"duration_ms": 215653,
 			"time_signature": 4
 		},
 		"artist_genres": [
@@ -13774,6 +13733,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary r&b",
 			"hip pop",
 			"neo soul",
 			"quiet storm",
@@ -14048,6 +14008,7 @@
 		},
 		"artist_genres": [
 			"boy band",
+			"contemporary r&b",
 			"new jack swing",
 			"r&b",
 			"urban contemporary"
@@ -14076,12 +14037,12 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary r&b",
 			"dance pop",
 			"girl group",
 			"hip hop",
 			"hip pop",
 			"neo soul",
-			"new jack swing",
 			"quiet storm",
 			"r&b",
 			"urban contemporary"
@@ -14281,6 +14242,7 @@
 		},
 		"artist_genres": [
 			"boy band",
+			"contemporary r&b",
 			"new jack swing",
 			"r&b",
 			"urban contemporary"
@@ -14396,6 +14358,7 @@
 		},
 		"artist_genres": [
 			"atl hip hop",
+			"contemporary r&b",
 			"dance pop",
 			"pop",
 			"r&b",
@@ -14728,7 +14691,7 @@
 			"urban contemporary"
 		]
 	},
-	"2bzkca2aynhvNBkJiKydL9": {
+	"0SbM9oAFoy9DaJxPxrhTPM": {
 		"name": "Nocturne No.21 in C minor, Op.posth.",
 		"track_features": {
 			"danceability": 0.415,
@@ -14743,10 +14706,10 @@
 			"valence": 0.0715,
 			"tempo": 77.551,
 			"type": "audio_features",
-			"id": "2bzkca2aynhvNBkJiKydL9",
-			"uri": "spotify:track:2bzkca2aynhvNBkJiKydL9",
-			"track_href": "https://api.spotify.com/v1/tracks/2bzkca2aynhvNBkJiKydL9",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/2bzkca2aynhvNBkJiKydL9",
+			"id": "0SbM9oAFoy9DaJxPxrhTPM",
+			"uri": "spotify:track:0SbM9oAFoy9DaJxPxrhTPM",
+			"track_href": "https://api.spotify.com/v1/tracks/0SbM9oAFoy9DaJxPxrhTPM",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/0SbM9oAFoy9DaJxPxrhTPM",
 			"duration_ms": 168000,
 			"time_signature": 4
 		},
@@ -15058,9 +15021,9 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary r&b",
 			"hip pop",
 			"neo soul",
-			"new jack swing",
 			"quiet storm",
 			"r&b",
 			"urban contemporary"
@@ -15256,6 +15219,7 @@
 		},
 		"artist_genres": [
 			"boy band",
+			"contemporary r&b",
 			"new jack swing",
 			"r&b",
 			"urban contemporary"
@@ -15284,12 +15248,12 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary r&b",
 			"dance pop",
 			"girl group",
 			"hip hop",
 			"hip pop",
 			"neo soul",
-			"new jack swing",
 			"quiet storm",
 			"r&b",
 			"urban contemporary"
@@ -15454,7 +15418,7 @@
 		"artist_genres": [
 			"hip hop",
 			"indie soul",
-			"neo soul"
+			"underground hip hop"
 		]
 	},
 	"22kfHXa1z6eGU2SQNNFHeW": {
@@ -15567,6 +15531,7 @@
 		},
 		"artist_genres": [
 			"atl hip hop",
+			"contemporary r&b",
 			"dance pop",
 			"pop",
 			"r&b",
@@ -15652,10 +15617,9 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary r&b",
 			"dance pop",
-			"hip pop",
 			"neo soul",
-			"new jack swing",
 			"quiet storm",
 			"r&b",
 			"urban contemporary"
@@ -15685,6 +15649,7 @@
 		},
 		"artist_genres": [
 			"boy band",
+			"contemporary r&b",
 			"funk",
 			"hip hop",
 			"hip pop",
@@ -15746,6 +15711,7 @@
 		},
 		"artist_genres": [
 			"boy band",
+			"contemporary r&b",
 			"new jack swing",
 			"r&b",
 			"urban contemporary"
@@ -15936,6 +15902,7 @@
 			"atl hip hop",
 			"dirty south rap",
 			"hip hop",
+			"old school atlanta hip hop",
 			"rap",
 			"southern hip hop"
 		]
@@ -15964,6 +15931,7 @@
 		},
 		"artist_genres": [
 			"disco",
+			"funk",
 			"motown",
 			"quiet storm",
 			"soul"
@@ -16610,10 +16578,10 @@
 			"mode": 0,
 			"speechiness": 0.0304,
 			"acousticness": 0.0442,
-			"instrumentalness": 0.0333,
+			"instrumentalness": 0.0338,
 			"liveness": 0.1,
 			"valence": 0.28,
-			"tempo": 119.983,
+			"tempo": 119.982,
 			"type": "audio_features",
 			"id": "4IlqQhaxrGPxmg35YcXXuS",
 			"uri": "spotify:track:4IlqQhaxrGPxmg35YcXXuS",
@@ -16787,26 +16755,26 @@
 		},
 		"artist_genres": []
 	},
-	"4ao3OAI9i2yi5Iglh6iWeD": {
+	"5v6MVO7VVcmxdjKxo5Ew6u": {
 		"name": "Moga - Live",
 		"track_features": {
-			"danceability": 0.663,
-			"energy": 0.601,
-			"key": 1,
-			"loudness": -9.28,
+			"danceability": 0.444,
+			"energy": 0.402,
+			"key": 8,
+			"loudness": -8.79,
 			"mode": 1,
-			"speechiness": 0.0473,
-			"acousticness": 0.552,
-			"instrumentalness": 0.00186,
-			"liveness": 0.978,
-			"valence": 0.615,
-			"tempo": 104.981,
+			"speechiness": 0.0417,
+			"acousticness": 0.76,
+			"instrumentalness": 7.55e-06,
+			"liveness": 0.233,
+			"valence": 0.353,
+			"tempo": 113.058,
 			"type": "audio_features",
-			"id": "4ao3OAI9i2yi5Iglh6iWeD",
-			"uri": "spotify:track:4ao3OAI9i2yi5Iglh6iWeD",
-			"track_href": "https://api.spotify.com/v1/tracks/4ao3OAI9i2yi5Iglh6iWeD",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/4ao3OAI9i2yi5Iglh6iWeD",
-			"duration_ms": 356014,
+			"id": "5v6MVO7VVcmxdjKxo5Ew6u",
+			"uri": "spotify:track:5v6MVO7VVcmxdjKxo5Ew6u",
+			"track_href": "https://api.spotify.com/v1/tracks/5v6MVO7VVcmxdjKxo5Ew6u",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/5v6MVO7VVcmxdjKxo5Ew6u",
+			"duration_ms": 384369,
 			"time_signature": 4
 		},
 		"artist_genres": [
@@ -17002,27 +16970,27 @@
 			"a cappella"
 		]
 	},
-	"6JmCThKWeaKhgfGtao6cCS": {
+	"5MxhtKNfl9UDVX4IAdV4DT": {
 		"name": "Suite Bergamasque, L. 75: III. Clair de lune",
 		"track_features": {
-			"danceability": 0.368,
-			"energy": 0.0218,
+			"danceability": 0.265,
+			"energy": 0.0178,
 			"key": 1,
-			"loudness": -25.318,
+			"loudness": -26.718,
 			"mode": 1,
-			"speechiness": 0.0479,
+			"speechiness": 0.0495,
 			"acousticness": 0.995,
-			"instrumentalness": 0.933,
-			"liveness": 0.071,
-			"valence": 0.038,
-			"tempo": 132.223,
+			"instrumentalness": 0.922,
+			"liveness": 0.0684,
+			"valence": 0.0385,
+			"tempo": 68.623,
 			"type": "audio_features",
-			"id": "6JmCThKWeaKhgfGtao6cCS",
-			"uri": "spotify:track:6JmCThKWeaKhgfGtao6cCS",
-			"track_href": "https://api.spotify.com/v1/tracks/6JmCThKWeaKhgfGtao6cCS",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/6JmCThKWeaKhgfGtao6cCS",
-			"duration_ms": 298133,
-			"time_signature": 5
+			"id": "5MxhtKNfl9UDVX4IAdV4DT",
+			"uri": "spotify:track:5MxhtKNfl9UDVX4IAdV4DT",
+			"track_href": "https://api.spotify.com/v1/tracks/5MxhtKNfl9UDVX4IAdV4DT",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/5MxhtKNfl9UDVX4IAdV4DT",
+			"duration_ms": 300733,
+			"time_signature": 3
 		},
 		"artist_genres": []
 	},
@@ -17909,6 +17877,7 @@
 		},
 		"artist_genres": [
 			"boy band",
+			"contemporary r&b",
 			"new jack swing",
 			"r&b",
 			"urban contemporary"
@@ -17993,6 +17962,7 @@
 		},
 		"artist_genres": [
 			"boy band",
+			"contemporary r&b",
 			"new jack swing",
 			"r&b",
 			"urban contemporary"
@@ -18080,6 +18050,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"adult standards",
 			"funk",
 			"indie r&b",
 			"motown",
@@ -18285,26 +18256,26 @@
 			"soul"
 		]
 	},
-	"0U5oJY8DI2uPfnzOmUFH7H": {
+	"4GIxB5XC9OeeQoIab7rM5S": {
 		"name": "Polonaise No. 3 in A Major, Op. 40 No. 1 \"Military\": Allegro con brio",
 		"track_features": {
-			"danceability": 0.392,
-			"energy": 0.281,
+			"danceability": 0.326,
+			"energy": 0.291,
 			"key": 9,
-			"loudness": -14.222,
+			"loudness": -14.985,
 			"mode": 1,
-			"speechiness": 0.0387,
-			"acousticness": 0.983,
-			"instrumentalness": 0.865,
-			"liveness": 0.131,
-			"valence": 0.189,
-			"tempo": 178.027,
+			"speechiness": 0.0293,
+			"acousticness": 0.972,
+			"instrumentalness": 0.862,
+			"liveness": 0.139,
+			"valence": 0.247,
+			"tempo": 96.02,
 			"type": "audio_features",
-			"id": "0U5oJY8DI2uPfnzOmUFH7H",
-			"uri": "spotify:track:0U5oJY8DI2uPfnzOmUFH7H",
-			"track_href": "https://api.spotify.com/v1/tracks/0U5oJY8DI2uPfnzOmUFH7H",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/0U5oJY8DI2uPfnzOmUFH7H",
-			"duration_ms": 327000,
+			"id": "4GIxB5XC9OeeQoIab7rM5S",
+			"uri": "spotify:track:4GIxB5XC9OeeQoIab7rM5S",
+			"track_href": "https://api.spotify.com/v1/tracks/4GIxB5XC9OeeQoIab7rM5S",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/4GIxB5XC9OeeQoIab7rM5S",
+			"duration_ms": 306053,
 			"time_signature": 3
 		},
 		"artist_genres": [
@@ -18313,7 +18284,7 @@
 			"polish classical"
 		]
 	},
-	"2ZnBJA14fjxRQq8WKHM7a9": {
+	"4eI6gfUfYEK7bU6wxPcVIB": {
 		"name": "Intentions",
 		"track_features": {
 			"danceability": 0.84,
@@ -18328,10 +18299,10 @@
 			"valence": 0.54,
 			"tempo": 116.971,
 			"type": "audio_features",
-			"id": "2ZnBJA14fjxRQq8WKHM7a9",
-			"uri": "spotify:track:2ZnBJA14fjxRQq8WKHM7a9",
-			"track_href": "https://api.spotify.com/v1/tracks/2ZnBJA14fjxRQq8WKHM7a9",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/2ZnBJA14fjxRQq8WKHM7a9",
+			"id": "4eI6gfUfYEK7bU6wxPcVIB",
+			"uri": "spotify:track:4eI6gfUfYEK7bU6wxPcVIB",
+			"track_href": "https://api.spotify.com/v1/tracks/4eI6gfUfYEK7bU6wxPcVIB",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/4eI6gfUfYEK7bU6wxPcVIB",
 			"duration_ms": 223047,
 			"time_signature": 4
 		},
@@ -18427,6 +18398,7 @@
 		},
 		"artist_genres": [
 			"boy band",
+			"contemporary r&b",
 			"new jack swing",
 			"r&b",
 			"urban contemporary"
@@ -18624,7 +18596,8 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"big band"
+			"big band",
+			"swing"
 		]
 	},
 	"64GRDrL1efgXclrhVCeuA0": {
@@ -18900,9 +18873,7 @@
 			"duration_ms": 204090,
 			"time_signature": 4
 		},
-		"artist_genres": [
-			"deep underground hip hop"
-		]
+		"artist_genres": []
 	},
 	"439X8Ol70ZIvKd0yWu3byx": {
 		"name": "Lorraine - Eurovision Song Contest",
@@ -19069,29 +19040,35 @@
 			"pop"
 		]
 	},
-	"7HK5PvBJtfiNH4xTuCeZD9": {
+	"3e9YhJWgxWq8a5WqA08mbt": {
 		"name": "Close Your Eyes",
 		"track_features": {
-			"danceability": 0.574,
-			"energy": 0.671,
-			"key": 5,
-			"loudness": -6.349,
-			"mode": 0,
-			"speechiness": 0.0439,
-			"acousticness": 0.253,
-			"instrumentalness": 0.695,
-			"liveness": 0.0687,
-			"valence": 0.807,
-			"tempo": 164.223,
+			"danceability": 0.396,
+			"energy": 0.258,
+			"key": 8,
+			"loudness": -16.332,
+			"mode": 1,
+			"speechiness": 0.0598,
+			"acousticness": 0.526,
+			"instrumentalness": 0,
+			"liveness": 0.212,
+			"valence": 0.545,
+			"tempo": 160.458,
 			"type": "audio_features",
-			"id": "7HK5PvBJtfiNH4xTuCeZD9",
-			"uri": "spotify:track:7HK5PvBJtfiNH4xTuCeZD9",
-			"track_href": "https://api.spotify.com/v1/tracks/7HK5PvBJtfiNH4xTuCeZD9",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/7HK5PvBJtfiNH4xTuCeZD9",
-			"duration_ms": 148347,
+			"id": "3e9YhJWgxWq8a5WqA08mbt",
+			"uri": "spotify:track:3e9YhJWgxWq8a5WqA08mbt",
+			"track_href": "https://api.spotify.com/v1/tracks/3e9YhJWgxWq8a5WqA08mbt",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/3e9YhJWgxWq8a5WqA08mbt",
+			"duration_ms": 143987,
 			"time_signature": 4
 		},
-		"artist_genres": []
+		"artist_genres": [
+			"adult standards",
+			"brill building pop",
+			"easy listening",
+			"lounge",
+			"vocal jazz"
+		]
 	},
 	"66wkCYWlXzSTQAfnsPBptt": {
 		"name": "My Favorite Part",
@@ -19338,8 +19315,8 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"alt z",
 			"boy band",
+			"chill r&b",
 			"dance pop",
 			"pop",
 			"post-teen pop",
@@ -19456,12 +19433,12 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary r&b",
 			"dance pop",
 			"girl group",
 			"hip hop",
 			"hip pop",
 			"neo soul",
-			"new jack swing",
 			"quiet storm",
 			"r&b",
 			"urban contemporary"
@@ -19572,10 +19549,9 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary r&b",
 			"dance pop",
-			"hip pop",
 			"neo soul",
-			"new jack swing",
 			"quiet storm",
 			"r&b",
 			"urban contemporary"
@@ -19746,6 +19722,7 @@
 		},
 		"artist_genres": [
 			"atl hip hop",
+			"contemporary r&b",
 			"dance pop",
 			"pop",
 			"r&b",
@@ -19980,6 +19957,7 @@
 		},
 		"artist_genres": [
 			"boy band",
+			"contemporary r&b",
 			"new jack swing",
 			"r&b",
 			"urban contemporary"
@@ -20459,12 +20437,12 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary r&b",
 			"dance pop",
 			"girl group",
 			"hip hop",
 			"hip pop",
 			"neo soul",
-			"new jack swing",
 			"quiet storm",
 			"r&b",
 			"urban contemporary"
@@ -20701,8 +20679,7 @@
 			"funk",
 			"motown",
 			"quiet storm",
-			"soul",
-			"southern soul"
+			"soul"
 		]
 	},
 	"6PJIAIxPo41kOnIqMUjHik": {
@@ -20869,7 +20846,7 @@
 			"pop"
 		]
 	},
-	"4LDDf8OBSwuDhsP8t3E4DM": {
+	"61vIGLnOsYaydUUKfJ9XC5": {
 		"name": "Give It Up, Turn It Loose",
 		"track_features": {
 			"danceability": 0.836,
@@ -20877,21 +20854,31 @@
 			"key": 1,
 			"loudness": -8.778,
 			"mode": 1,
-			"speechiness": 0.0695,
-			"acousticness": 0.191,
-			"instrumentalness": 0.000252,
+			"speechiness": 0.0692,
+			"acousticness": 0.19,
+			"instrumentalness": 0.000271,
 			"liveness": 0.0379,
-			"valence": 0.938,
-			"tempo": 93.016,
+			"valence": 0.939,
+			"tempo": 93.015,
 			"type": "audio_features",
-			"id": "4LDDf8OBSwuDhsP8t3E4DM",
-			"uri": "spotify:track:4LDDf8OBSwuDhsP8t3E4DM",
-			"track_href": "https://api.spotify.com/v1/tracks/4LDDf8OBSwuDhsP8t3E4DM",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/4LDDf8OBSwuDhsP8t3E4DM",
+			"id": "61vIGLnOsYaydUUKfJ9XC5",
+			"uri": "spotify:track:61vIGLnOsYaydUUKfJ9XC5",
+			"track_href": "https://api.spotify.com/v1/tracks/61vIGLnOsYaydUUKfJ9XC5",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/61vIGLnOsYaydUUKfJ9XC5",
 			"duration_ms": 312040,
 			"time_signature": 4
 		},
-		"artist_genres": []
+		"artist_genres": [
+			"contemporary r&b",
+			"dance pop",
+			"girl group",
+			"hip hop",
+			"hip pop",
+			"neo soul",
+			"quiet storm",
+			"r&b",
+			"urban contemporary"
+		]
 	},
 	"7cvkXf3AwPGT041PyOi5VX": {
 		"name": "Dance for You",
@@ -21414,12 +21401,12 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary r&b",
 			"dance pop",
 			"girl group",
 			"hip hop",
 			"hip pop",
 			"neo soul",
-			"new jack swing",
 			"quiet storm",
 			"r&b",
 			"urban contemporary"
@@ -21475,6 +21462,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary r&b",
 			"dance pop",
 			"hip hop",
 			"hip pop",
@@ -22120,10 +22108,9 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary r&b",
 			"dance pop",
-			"hip pop",
 			"neo soul",
-			"new jack swing",
 			"quiet storm",
 			"r&b",
 			"urban contemporary"
@@ -22326,12 +22313,12 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary r&b",
 			"dance pop",
 			"girl group",
 			"hip hop",
 			"hip pop",
 			"neo soul",
-			"new jack swing",
 			"quiet storm",
 			"r&b",
 			"urban contemporary"
@@ -22360,10 +22347,9 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary r&b",
 			"dance pop",
-			"hip pop",
 			"neo soul",
-			"new jack swing",
 			"quiet storm",
 			"r&b",
 			"urban contemporary"
@@ -22446,11 +22432,10 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
-			"electro",
 			"funk",
 			"gangster rap",
+			"hip hop",
 			"motown",
-			"new jack swing",
 			"p funk",
 			"popping",
 			"post-disco",
@@ -22569,6 +22554,7 @@
 			"atl hip hop",
 			"dirty south rap",
 			"hip hop",
+			"old school atlanta hip hop",
 			"rap",
 			"southern hip hop"
 		]
@@ -22994,7 +22980,7 @@
 			"reggaeton colombiano"
 		]
 	},
-	"46U8Ubp38DuhWJ2qEoODIQ": {
+	"5EGi1AfDTT7FvsQmISumga": {
 		"name": "cardigan",
 		"track_features": {
 			"danceability": 0.612,
@@ -23009,10 +22995,10 @@
 			"valence": 0.534,
 			"tempo": 130.045,
 			"type": "audio_features",
-			"id": "46U8Ubp38DuhWJ2qEoODIQ",
-			"uri": "spotify:track:46U8Ubp38DuhWJ2qEoODIQ",
-			"track_href": "https://api.spotify.com/v1/tracks/46U8Ubp38DuhWJ2qEoODIQ",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/46U8Ubp38DuhWJ2qEoODIQ",
+			"id": "5EGi1AfDTT7FvsQmISumga",
+			"uri": "spotify:track:5EGi1AfDTT7FvsQmISumga",
+			"track_href": "https://api.spotify.com/v1/tracks/5EGi1AfDTT7FvsQmISumga",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/5EGi1AfDTT7FvsQmISumga",
 			"duration_ms": 239560,
 			"time_signature": 4
 		},
@@ -23159,6 +23145,7 @@
 		},
 		"artist_genres": [
 			"atl hip hop",
+			"contemporary r&b",
 			"dance pop",
 			"pop",
 			"r&b",
@@ -23222,6 +23209,7 @@
 			"jazz puertorriqueno",
 			"latin jazz",
 			"mambo",
+			"musica tradicional cubana",
 			"salsa"
 		]
 	},
@@ -23464,6 +23452,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary r&b",
 			"dance pop",
 			"hip pop",
 			"neo soul",
@@ -23698,8 +23687,8 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary r&b",
 			"neo soul",
-			"new jack swing",
 			"quiet storm",
 			"r&b",
 			"urban contemporary"
@@ -23765,7 +23754,7 @@
 			"urban contemporary"
 		]
 	},
-	"4WnmTHCNN45jvQCrlbEWs0": {
+	"2sXf2JdbB2GlNju00kw9WE": {
 		"name": "Skate",
 		"track_features": {
 			"danceability": 0.708,
@@ -23780,10 +23769,10 @@
 			"valence": 0.698,
 			"tempo": 112.027,
 			"type": "audio_features",
-			"id": "4WnmTHCNN45jvQCrlbEWs0",
-			"uri": "spotify:track:4WnmTHCNN45jvQCrlbEWs0",
-			"track_href": "https://api.spotify.com/v1/tracks/4WnmTHCNN45jvQCrlbEWs0",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/4WnmTHCNN45jvQCrlbEWs0",
+			"id": "2sXf2JdbB2GlNju00kw9WE",
+			"uri": "spotify:track:2sXf2JdbB2GlNju00kw9WE",
+			"track_href": "https://api.spotify.com/v1/tracks/2sXf2JdbB2GlNju00kw9WE",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/2sXf2JdbB2GlNju00kw9WE",
 			"duration_ms": 203123,
 			"time_signature": 4
 		},
@@ -23818,6 +23807,7 @@
 			"alternative r&b",
 			"contemporary jazz",
 			"indie jazz",
+			"indie r&b",
 			"indie soul",
 			"jazz",
 			"modern jazz piano",
@@ -24345,7 +24335,7 @@
 			"rap"
 		]
 	},
-	"74YsK1wweLJpxBmmLKFvQx": {
+	"23L3cB5AycJDHw3f0ASgAv": {
 		"name": "Time",
 		"track_features": {
 			"danceability": 0.455,
@@ -24360,18 +24350,17 @@
 			"valence": 0.332,
 			"tempo": 120.425,
 			"type": "audio_features",
-			"id": "74YsK1wweLJpxBmmLKFvQx",
-			"uri": "spotify:track:74YsK1wweLJpxBmmLKFvQx",
-			"track_href": "https://api.spotify.com/v1/tracks/74YsK1wweLJpxBmmLKFvQx",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/74YsK1wweLJpxBmmLKFvQx",
+			"id": "23L3cB5AycJDHw3f0ASgAv",
+			"uri": "spotify:track:23L3cB5AycJDHw3f0ASgAv",
+			"track_href": "https://api.spotify.com/v1/tracks/23L3cB5AycJDHw3f0ASgAv",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/23L3cB5AycJDHw3f0ASgAv",
 			"duration_ms": 312800,
 			"time_signature": 3
 		},
 		"artist_genres": [
+			"contemporary r&b",
 			"dance pop",
-			"hip pop",
 			"neo soul",
-			"new jack swing",
 			"quiet storm",
 			"r&b",
 			"urban contemporary"
@@ -24571,12 +24560,12 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary r&b",
 			"dance pop",
 			"girl group",
 			"hip hop",
 			"hip pop",
 			"neo soul",
-			"new jack swing",
 			"quiet storm",
 			"r&b",
 			"urban contemporary"
@@ -24975,6 +24964,7 @@
 		},
 		"artist_genres": [
 			"atl hip hop",
+			"contemporary r&b",
 			"dance pop",
 			"pop",
 			"r&b",
@@ -25118,10 +25108,10 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary r&b",
 			"funk",
 			"motown",
 			"neo soul",
-			"new jack swing",
 			"quiet storm",
 			"r&b",
 			"soul",
@@ -25237,11 +25227,11 @@
 		},
 		"artist_genres": [
 			"atl hip hop",
+			"contemporary r&b",
 			"dance pop",
 			"girl group",
 			"hip hop",
 			"hip pop",
-			"new jack swing",
 			"pop",
 			"r&b",
 			"urban contemporary"
@@ -25274,34 +25264,29 @@
 			"pop"
 		]
 	},
-	"0iiyhS2lTIEb0xLq6vNFRa": {
+	"4VjEDKWDHaqagxhqC7ShDH": {
 		"name": "Concerto for 2 Violins in A Minor, Op. 3, No. 8, RV 522",
 		"track_features": {
-			"danceability": 0.628,
-			"energy": 0.304,
-			"key": 6,
-			"loudness": -17.946,
+			"danceability": 0.505,
+			"energy": 0.193,
+			"key": 9,
+			"loudness": -17.977,
 			"mode": 0,
-			"speechiness": 0.0408,
-			"acousticness": 0.786,
-			"instrumentalness": 0.0457,
-			"liveness": 0.199,
-			"valence": 0.512,
-			"tempo": 124.829,
+			"speechiness": 0.041,
+			"acousticness": 0.903,
+			"instrumentalness": 0.0349,
+			"liveness": 0.106,
+			"valence": 0.454,
+			"tempo": 96.6,
 			"type": "audio_features",
-			"id": "0iiyhS2lTIEb0xLq6vNFRa",
-			"uri": "spotify:track:0iiyhS2lTIEb0xLq6vNFRa",
-			"track_href": "https://api.spotify.com/v1/tracks/0iiyhS2lTIEb0xLq6vNFRa",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/0iiyhS2lTIEb0xLq6vNFRa",
-			"duration_ms": 138827,
+			"id": "4VjEDKWDHaqagxhqC7ShDH",
+			"uri": "spotify:track:4VjEDKWDHaqagxhqC7ShDH",
+			"track_href": "https://api.spotify.com/v1/tracks/4VjEDKWDHaqagxhqC7ShDH",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/4VjEDKWDHaqagxhqC7ShDH",
+			"duration_ms": 237000,
 			"time_signature": 4
 		},
-		"artist_genres": [
-			"baroque",
-			"classical",
-			"early music",
-			"italian baroque"
-		]
+		"artist_genres": []
 	},
 	"6XoaZeXkTTPTWhM0s3AmpF": {
 		"name": "Vienna Blood, Op. 354",
@@ -25358,7 +25343,7 @@
 			"late romantic era"
 		]
 	},
-	"0Y2a40bgGS8GWpVE0Zt855": {
+	"0R5xnSSCJ8vy7kHyWjjkbL": {
 		"name": "3 Etudes de Concert, S. 144: No. 3 in D-Flat Major \"Un sospiro\"",
 		"track_features": {
 			"danceability": 0.225,
@@ -25373,10 +25358,10 @@
 			"valence": 0.0337,
 			"tempo": 77.481,
 			"type": "audio_features",
-			"id": "0Y2a40bgGS8GWpVE0Zt855",
-			"uri": "spotify:track:0Y2a40bgGS8GWpVE0Zt855",
-			"track_href": "https://api.spotify.com/v1/tracks/0Y2a40bgGS8GWpVE0Zt855",
-			"analysis_url": "https://api.spotify.com/v1/audio-analysis/0Y2a40bgGS8GWpVE0Zt855",
+			"id": "0R5xnSSCJ8vy7kHyWjjkbL",
+			"uri": "spotify:track:0R5xnSSCJ8vy7kHyWjjkbL",
+			"track_href": "https://api.spotify.com/v1/tracks/0R5xnSSCJ8vy7kHyWjjkbL",
+			"analysis_url": "https://api.spotify.com/v1/audio-analysis/0R5xnSSCJ8vy7kHyWjjkbL",
 			"duration_ms": 291000,
 			"time_signature": 3
 		},
@@ -25550,12 +25535,12 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary r&b",
 			"dance pop",
 			"girl group",
 			"hip hop",
 			"hip pop",
 			"neo soul",
-			"new jack swing",
 			"quiet storm",
 			"r&b",
 			"urban contemporary"
@@ -25612,12 +25597,12 @@
 			"time_signature": 3
 		},
 		"artist_genres": [
+			"contemporary r&b",
 			"dance pop",
 			"girl group",
 			"hip hop",
 			"hip pop",
 			"neo soul",
-			"new jack swing",
 			"quiet storm",
 			"r&b",
 			"urban contemporary"
@@ -25673,10 +25658,9 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary r&b",
 			"dance pop",
-			"hip pop",
 			"neo soul",
-			"new jack swing",
 			"quiet storm",
 			"r&b",
 			"urban contemporary"
@@ -25905,6 +25889,7 @@
 		},
 		"artist_genres": [
 			"atl hip hop",
+			"contemporary r&b",
 			"dance pop",
 			"pop",
 			"r&b",
@@ -25936,6 +25921,7 @@
 		},
 		"artist_genres": [
 			"boy band",
+			"contemporary r&b",
 			"new jack swing",
 			"r&b",
 			"urban contemporary"
@@ -25965,6 +25951,7 @@
 		},
 		"artist_genres": [
 			"boy band",
+			"contemporary r&b",
 			"new jack swing",
 			"r&b",
 			"urban contemporary"
@@ -25996,6 +25983,7 @@
 			"alternative r&b",
 			"contemporary jazz",
 			"indie jazz",
+			"indie r&b",
 			"indie soul",
 			"jazz",
 			"modern jazz piano",
@@ -26556,12 +26544,12 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"contemporary r&b",
 			"dance pop",
 			"girl group",
 			"hip hop",
 			"hip pop",
 			"neo soul",
-			"new jack swing",
 			"quiet storm",
 			"r&b",
 			"urban contemporary"
@@ -27099,7 +27087,6 @@
 		"artist_genres": [
 			"australian dance",
 			"australian pop",
-			"dance pop",
 			"pop"
 		]
 	},
@@ -27637,6 +27624,7 @@
 			"time_signature": 4
 		},
 		"artist_genres": [
+			"dance pop",
 			"hip hop",
 			"miami hip hop",
 			"pop",

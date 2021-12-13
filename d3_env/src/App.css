@@ -14,6 +14,43 @@
   }
 }
 
+
+/*timeline*/
+
+.x-axis .tick text {
+  font-family: Arial, Helvetica;
+  font-size: medium!important;
+}
+
+.x-axis .tick line {
+  stroke-width: 2;
+  stroke: ghostwhite;
+}
+.x-axis .domain {
+  stroke-width: 1;
+  stroke: whitesmoke;
+}
+
+.timeline-bar {
+  stroke: #000000;
+  fill: rgba(65, 65, 79, 0.3);
+  stroke-width: 1px;
+}
+
+.timeline-bar.hover {
+  stroke: rgb(255, 255, 255);
+  stroke-width: 4px;
+}
+
+.date-title {
+  font-family: Arial, Helvetica;
+  text-anchor:middle;
+  font-size:2em;
+  fill: #eaeaea;
+  /*fill: #6c6c6c;*/
+}
+
+
 /*heatmap*/
 
 .day-label {
@@ -66,10 +103,9 @@
 
 /*barchart*/
 
-.y-axis{
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 17px;
-  stroke: #dedede;
+.y-axis .tick text {
+  font-family: Arial, Helvetica;
+  font-size: medium!important;
 }
 
 .y-axis .tick line {
@@ -122,6 +158,12 @@
   font-family: Arial, Helvetica !important;
 
   /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+}
+
+text {
+  fill: #ece9e9;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align-all: right;
 }
 
 /*dashboard*/

@@ -10,7 +10,7 @@ const margin = {
 };
 
 const w = 530 - margin.left - margin.right;
-const h = 1000 - margin.top - margin.bottom;
+const h = 1100 - margin.top - margin.bottom;
 
 export function updateEmpty(){
     d3.select("#bar-chart").select("svg").style("display", "none");
@@ -386,6 +386,7 @@ const D3BarChart = (props) => {
             if(!d3.select(this).classed("selected")){
                 d3.selectAll(".bar").classed("selected", false)
                 d3.select(this).classed("selected", true);
+                // select artst on graph (pass artist id/name)
             } else {
                 d3.select(this).classed("selected", false)
             }
