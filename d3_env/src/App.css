@@ -42,12 +42,6 @@
   stroke-width: 4px;
 }
 
-.timeline-bar.selected {
-  stroke: rgb(213, 9, 9);
-  rx: 3;
-  stroke-width: 4px;
-}
-
 .date-title {
   font-family: Arial, Helvetica;
   text-anchor:middle;

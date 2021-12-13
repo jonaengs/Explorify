@@ -96,14 +96,7 @@ export function updateTimeline(date, dateData) {
     }).on("mouseout", function (d) {
         d3.select(this).classed("hover", false)
         div.style("display", "none");
-    }).on("click", function(event, d) {
-        if(!d3.select(this).classed("selected")){
-            d3.selectAll(".timeline-bar").classed("selected", false)
-            d3.select(this).classed("selected", true);
-        } else {
-            d3.select(this).classed("selected", false)
-        }
-    });
+    })
 
 }
 
