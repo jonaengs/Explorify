@@ -18,6 +18,5 @@ const targetSimulationIterations = 50;
 export const alphaDecay = 1 - Math.pow(0.001, 1 / targetSimulationIterations);
 export const alphaMin = 0.05;
 
-export const EMViewToPositionKey = new Map<EdgemapView, NodePositionKey>([
-    ["genreSimilarity", "genrePos"], ["featureSimilarity", "featurePos"], ["timeline", "timelinePos"]
-]);
+// Other
+export const autoPlayInterval = 3500;

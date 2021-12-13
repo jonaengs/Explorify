@@ -1,7 +1,7 @@
 import * as drResults from '../../../data/dr_results.json'
 import * as d3 from "d3";
 import * as utils from './utils';
-import { width, height, maxDistance, alphaMin, alphaDecay, transitionTime, timeAxisDivisions, EMViewToPositionKey, deselectHSL, backgroundColor} from './constants';
+import { width, height, maxDistance, alphaMin, alphaDecay, transitionTime, timeAxisDivisions, deselectHSL, backgroundColor} from './constants';
 import {DefaultMap} from '../map_extensions';
 import '../map_extensions.ts';
 import { StreamInstance, artistData, streamingHistoryNoSkipped, artistID, artistMap} from '../data'
@@ -58,6 +58,10 @@ const sessionOccurrences = new Map(
     )
 );
 
+
+const EMViewToPositionKey = new Map<EdgemapView, NodePositionKey>([
+    ["genreSimilarity", "genrePos"], ["featureSimilarity", "featurePos"], ["timeline", "timelinePos"]
+]);
 
 /*
  * Important decisions:
@@ -228,6 +232,7 @@ function computeNetwork(): Network {
                     id: a1 + a2,
                     source: a1,
                     target: a2,
+                    data: {sourceGenres: gs1, shared: shared, targetGenres: gs2},
                     label: Array.from(shared).join(" | "),
                     count: utils.intersection(gs1, gs2).size,
                     proportion: (() => {
@@ -264,6 +269,8 @@ let edgemapState = {
     timelineAxis: null,
     quadTree: null,
     showLabels: true,
+    linkTooltip: utils.createTooltip(),
+    background: null,
 };
 
 function setSimulation(simulation: d3.Simulation<any, any>, dontStart=false) {
@@ -342,6 +349,7 @@ function addNodes(svg: utils.SVGSelection, nodes: d3Node[]) {
         current
             .selectChildren("text")
             .style("visibility", (_n: d3Node) => {
+                if (!showLabels) return "hidden";
                 const circle: HTMLElement = this;
                 const text = circle.nextSibling as HTMLElement
                 if (!edgemapState.selected) {
@@ -386,6 +394,9 @@ function addNodes(svg: utils.SVGSelection, nodes: d3Node[]) {
 
 // Use this approach to display genres along link paths: https://css-tricks.com/snippets/svg/curved-text-along-path/
 function setLinks(links: d3Link[]) {
+    const getTooltipText = (l: d3Link) => l.label.split(" | ").join("<br/>")
+
+    const tooltip = edgemapState.linkTooltip;
     const getLinkColor = (color) => d3.scaleLinear().range([color, "white"])
     const onEnter = (selection) => {
         const linkNode = selection.append("g");
@@ -399,7 +410,14 @@ function setLinks(links: d3Link[]) {
             .style("fill", "none")
             .style("opacity", 0.9)
             .style("stroke", (l: d3Link) => getLinkColor(getColor(l.target))(l.proportion))
-            .style("stroke-width", (l: d3Link) => Math.log2(l.count) + 1);
+            .style("stroke-width", (l: d3Link) => Math.log2(l.count) + 1)
+            .attr("pointer-events", "visibleStroke")
+            .on("mouseover", (event: PointerEvent, l: d3Link) => {
+                tooltip.style("height", 1.2 * l.label.split(" | ").length + "rem");
+                return utils.onMouseover(tooltip, getTooltipText)(event, l)
+            })
+            .on("mousemove", utils.onMousemove(tooltip))
+            .on("mouseout", utils.onMouseout(tooltip));
         linkNode
             .append("text")
                 .attr("class", "link-text")
@@ -426,7 +444,8 @@ function setLinks(links: d3Link[]) {
                 ,
             exit => exit.remove()
         );
-
+    
+    edgemapState.background.lower(); // Lower background so links don't appear behind it (even if it is transparent, it still gets hovers/clicks ahead of them)
     link.selectChildren("path")
         .style("stroke", (l: d3Link) => getLinkColor(getColor(l.target))(l.proportion));
     link.selectChildren("textPath")
@@ -459,8 +478,10 @@ export function setupEdgemap(ref: SVGElement, artists: artistID[]) {
 
     const svg = utils.createSVG(ref);
     
-    const background = svg.append("rect").attr("width", width).attr("height", height).style("opacity", 0);
-    background.on("click", dropSelectionHighlight);
+    edgemapState.background = svg.append("rect")
+        .attr("width", width).attr("height", height)
+        .style("opacity", 0)
+        .on("click", dropSelectionHighlight);
     
     const simulation = similaritySimulation({nodes, links});
     
@@ -472,7 +493,6 @@ export function setupEdgemap(ref: SVGElement, artists: artistID[]) {
     const quadTree = new Quadtree(
         document.getElementsByTagName("body")[0].getBoundingClientRect()
     );
-
 
     const timelineAxis = svg.append("g")
         .attr("transform", `translate(0, ${height/2})`)

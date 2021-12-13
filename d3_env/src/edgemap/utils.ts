@@ -69,6 +69,23 @@ export function getSvg(id: string): SVGSelection {
         .attr("transform", `translate(${margin.left}, ${margin.top})`);
 }
 
+export function cartesianProduct<T, U>(arr1: T[][], arr2: U[]): (T | U)[][]
+export function cartesianProduct<T, U>(arr1: T[], arr2: U[]): (T | U)[][] {
+    if (arr1[0].constructor === Array) 
+        return arr1.flatMap(a => 
+            arr2.map((b: U) => (a as T[]).concat(b) as (T | U)[])
+        );
+    return arr1.flatMap((a: T) => 
+        arr2.map((b: U) => [a, b] as (T | U)[])
+    );
+}
+// export function cartesianProduct(arr1: any[][], arr2: any[]): any[][]
+// export function cartesianProduct(arr1: any[], arr2: any[]): any[][] {
+//     return arr1.flatMap(a => 
+//         arr2.map(b => a.constructor === Array ? (a as Array<any>).concat(b) : [a, b])
+//     );
+// }
+
 export function createSVG(ref: SVGElement): SVGSelection {   
 
     return d3.select(ref)
@@ -82,19 +99,21 @@ export function createSVG(ref: SVGElement): SVGSelection {
 export function createTooltip() {
     return d3.select("body")
         .append("div")
-        .attr("class", "tooltip")
+        .attr("class", "link-tooltip unselectable")
         .style("opacity", 0);
 }
 
 
-export function onMouseover(div: TooltipDiv, textFunc = (_: any) => "...") {
-    return (event: MouseEvent, data: any) => {
+export function onMouseover<T>(div: TooltipDiv, textFunc = (_: T) => "...") {
+    return (event: MouseEvent, data: T) => {
+        console.log(event, data);
+        
         div.transition()
             .duration(100)
             .style("opacity", 1);
         div.html(textFunc(data))
             .style("left", (event.pageX) + "px")
-            .style("top", (event.pageY - 28) + "px");
+            .style("top", (event.pageY - div.node().getBoundingClientRect().height - 10) + "px");
     }  
 }
 export function onMouseout(div: TooltipDiv) {
@@ -109,7 +128,8 @@ export function onMousemove(div: TooltipDiv) {
     return (event: MouseEvent, _data: any) => {
         div
         .style("left", (event.pageX) + "px")
-        .style("top", (event.pageY - 28) + "px");
+        .style("top", (event.pageY - div.node().getBoundingClientRect().height - 10) + "px");
+        // .style("top", (event.pageY - 28) + "px");
     }
 }
 
