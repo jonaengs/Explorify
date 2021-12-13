@@ -20,13 +20,14 @@ export function setEMHighlighted(id: ArtistID) {
         dropSelectionHighlight();
 }
 
-const filteredGenres = new Set<Genre>();
+let filteredGenres = new Set<Genre>();
 export function updateFilteredGenres(f: (s: Set<Genre>) => Set<Genre>) {
-    f(filteredGenres);
+    filteredGenres = f(filteredGenres);
     if (edgemapState.selected) {
         updateLinkLabels();
         highlightSelection(edgemapState.selected);
     }
+    // console.log(filteredGenres);
 }
 
 
@@ -432,9 +433,10 @@ function addNodes(svg: utils.SVGSelection, nodes: EMNode[]): NodeSelection {
         .data(nodes, (n: EMNode) => n.id)
         .enter()
         .append("g")
-        .attr("id", n => n.id)
+        .attr("id", n => "node-" + n.id)
         .attr("class", "node");
     node.append("circle")
+        .attr("id", n => "circle-" + n.id)
         .attr("r", n => n.r)
         .style("fill", n => selected ? deselectHSL : getColor(n))
         .on("mouseover", onMouseover)
@@ -476,7 +478,7 @@ function setLink(links: EMLink[]): LinkSelection {
             .style("visibility", "hidden");
         linkNode
             .append("path")
-            .attr("id", (l: EMLink) => l.id)
+            .attr("id", (l: EMLink) => "link-" + l.id)
             .attr("class", "link-path")
             .style("fill", "none")
             .style("opacity", 0.9)
@@ -757,18 +759,19 @@ export function updateEdgemap(artists: ArtistID[] = top150, nextView: EdgemapVie
         const targetAlready = artistSet.has(l.target);
         const sourceAlready = artistSet.has(l.source);
         return  (targetAdded && sourceAlready) || (sourceAdded && targetAlready);
-    }).map(x => ({...x}))
+    }).map(x => ({...x})) as EMLink[];
 
     // remove removed nodes & links. Add added nodes & links     
     nodes = nodes
         .filter(n => !removed.has(n.id))
         .concat(addedNodes);
     links = links
-        .filter((l: EMLink) => !removed.has(l.source.id) && !removed.has(l.target.id))
+        .filter((l: EMLink) => !(removed.has(l.source.id) || removed.has(l.target.id)))
         .concat(addedLinks);
 
     if (removed.size) {
         node.filter((n: EMNode) => removed.has(n.id)).remove();
+        // link.filter((l: EMLink) => removed.has(l.source.id) || removed.has(l.target.id)).remove();
     }
 
     const positionKey = EMViewToPositionKey.get(nextView);
@@ -814,10 +817,11 @@ export function updateEdgemap(artists: ArtistID[] = top150, nextView: EdgemapVie
         simulation = nextView === 'timeline' ? timelineSimulation({nodes, links}) : similaritySimulation({nodes, links})
     }
 
-    setLink(links);
-    addedNodes.length && addNodes(svg, addedNodes);
-
-    [node, link] = [svg.selectAll(".node"), svg.selectAll(".link-node")];
+    link = setLink(links);
+    if (addedNodes.length) {
+        addedNodes.length && addNodes(svg, addedNodes);
+        node = svg.selectAll(".node");
+    }
 
     highlightSelection(edgemapState.selected);
     
