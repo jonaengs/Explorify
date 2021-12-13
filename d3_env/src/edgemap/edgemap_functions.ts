@@ -445,7 +445,7 @@ function setLink(links: EMLink[]): LinkSelection {
             .style("stroke-width", (l: EMLink) => Math.log2(l.count) + 3)
             .attr("pointer-events", "visibleStroke")
             .on("mouseover", (event: PointerEvent, l: EMLink) => {
-                tooltip.style("height", 1.2 * l.label.split(" | ").length + "rem");
+                tooltip.style("height", 1.3 * (l.label.split(" | ").length + 1) + "rem");
                 return utils.onMouseover(tooltip, getTooltipText)(event, l)
             })
             .on("mousemove", utils.onMousemove(tooltip))

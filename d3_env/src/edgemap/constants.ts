@@ -9,7 +9,7 @@ export const maxDistance = Math.sqrt((width**2 + height**2)/4);
 
 // Various edgemap constants
 export const backgroundColor =  "#1f1b2e";
-export const deselectHSL = d3.hsl(0.5, 0.3, 0.2, 0.8).toString();
+export const deselectHSL = d3.hsl(0.5, 0.4, 0.4, 0.4).toString();
 export const transitionTime = 2500;
 export const timeAxisDivisions = 4;
 
