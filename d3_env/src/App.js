@@ -7,7 +7,7 @@ import React, { useRef } from "react";
 import { DropdownSelect } from "./DropdownSelect"
 import { Navbar, Container, Form, Nav, Row, Col, Card, InputGroup, ButtonGroup, Button } from "react-bootstrap";
 import { BsQuestionCircle } from 'react-icons/bs';
-import { Edgemap } from './edgemap';
+import { Edgemap } from './edgemap/Edgemap';
 
 const options = [
     { value: 'listening-history', label: 'Listening History' },

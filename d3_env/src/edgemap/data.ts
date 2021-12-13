@@ -1,11 +1,15 @@
-import * as _artistData from '../../data/artist_data.json'
-import * as _trackFeatures from '../../data/track_feature_data.json';
-import * as _streamingHistory from '../../data/merged_history.json';
+import * as _artistData from '../../../data/artist_data.json'
+import * as _trackFeatures from '../../../data/track_feature_data.json';
+import * as _streamingHistory from '../../../data/merged_history.json';
+import * as _DRResults from '../../../data/dr_results.json';
 import './map_extensions.ts'
+
 
 export type genre = string;
 export type artistName = string;
 export type artistID = string;
+export type trackID = string;
+export type DRCoordinate = [x: number, y: number];
 
 
 export type ArtistData = {
@@ -32,12 +36,12 @@ export type StreamInstance = {
     // track info
     trackName: string,
     trackDurationMS: number,
-    trackID: string
+    trackID: trackID,
     trackPopularity: number
 }
 
 export type TrackFeature = {
-    id: string,
+    id: trackID,
 
     // Following should all be in [0, 1]
     acousticness: number,
@@ -48,10 +52,20 @@ export type TrackFeature = {
     liveness: number,
     
     key: number, // integer in [0, 11]?
-    tempo: number, // not integer
+    tempo: number, // surprisingly, not an integer. Example: 120.31478123
     timeSignature: number, // integer
     
     loudness: number, // float in [-inf, 0] (?)
+}
+
+export type DRResult = {
+    artistID: artistID,
+    genrePCA: DRCoordinate;
+    meanFeaturePCA: DRCoordinate;
+    normFeaturePCA: DRCoordinate;
+    featureTSNE: DRCoordinate;
+    genreTSNE: DRCoordinate;
+    genreTSNENoOutliers: DRCoordinate;
 }
 
 export const artistData: ArtistData[] = _artistData;
@@ -81,6 +95,18 @@ export const streamingHistoryNoSkipped: StreamInstance[] = streamingHistory.filt
     sh => sh.msPlayed >= 10_000
 );
 
-export const trackFeatures: Map<string, TrackFeature> = new Map(Object.entries(_trackFeatures).map(([tid, [tfs]]) => 
-    [tid, {...tfs, timeSignature: tfs.time_signature}]
-));
+export const trackFeatures: Map<trackID, TrackFeature> = new Map(
+    Object.entries(_trackFeatures).map(([tid, tfs]) => 
+        [tid, {...tfs, timeSignature: tfs.time_signature} as TrackFeature]
+    )
+);
+
+export const DRResults: DRResult[] = _DRResults.map(res => ({
+    artistID: res.artist_id,
+    genrePCA: res.genre_pca as DRCoordinate,
+    meanFeaturePCA: res.mean_feature_pca as DRCoordinate,
+    normFeaturePCA: res.norm_feature_pca as DRCoordinate,
+    featureTSNE: res.tsne_feature as DRCoordinate,
+    genreTSNE: res.tsne_genre as DRCoordinate,
+    genreTSNENoOutliers: res.tsne_genre_no_outliers as DRCoordinate,
+}));
