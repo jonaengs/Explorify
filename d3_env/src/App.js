@@ -1,6 +1,7 @@
 import './App.css';
 import  D3BarChart, { sortByName, sortByStream, sortByPopularity } from "./D3BarChart";
 import CalendarHeatmap from "./CalendarHeatmap";
+import D3Timeline from "./D3Timeline";
 import logo from "./logo/logo1.png"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useRef } from "react";
@@ -30,6 +31,7 @@ function App() {
 
     const topArtistsData = require("./data/Jonatan_data/top_artists.json");
     const streamingData = new Map(Object.entries(fullData));
+    const timelineData = require("./data/Jonatan_data/timeline_data.json");
 
     return (
         <>
@@ -116,6 +118,7 @@ function App() {
                                     <CalendarHeatmap
                                         streamingData = { streamingData }
                                         topArtistsData = { topArtistsData }
+                                        timelineData = { timelineData }
                                     />
                                 </Card>
                             </Row>
@@ -157,11 +160,13 @@ function App() {
                     <Card className={"display-card headingOne"}>
                         <Card.Header className={"card-header-dark"}>
                             <h4>
-                               Track Features Distribution
+                                Detailed Listening History per Day
                                 <BsQuestionCircle/>
                             </h4>
                         </Card.Header>
-                        <div id="distribution-map" style={{"width": "100%", "height" : "500px"}}></div>
+                        <D3Timeline
+                            data = { timelineData }
+                        />
                     </Card>
                 </Row>
 

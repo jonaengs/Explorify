@@ -227,6 +227,7 @@ function simpleNetwork({nodes, links}: Network, {
         .data(nodes as d3Node[])
         .enter().append("g")
     node.append("circle")
+        // .attr("id", (n: Node) => n.id)
         .attr("r", (n: Node) => nodeSizes(nodeSizeMap.get(n.id)))
         .style("opacity", nodeOpacity)
         .style("fill", (n: Node) => nodeColorMap.get(n.id));

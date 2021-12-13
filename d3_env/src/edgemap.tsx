@@ -222,6 +222,7 @@ export function renderEdgemap(ref: Ref<undefined>, artists: artistID[]) {
         .append("g")
     node
         .append("circle")
+            .attr("id", n => n.name.replace(" ", "_"))
             .attr("r", n => n.r)  // @ts-ignore
             .style("fill", getHSL)
         .on("mouseover", (_e, node) => console.log(artistMap.get(node.id)))
@@ -324,6 +325,7 @@ function timeline(artists: artistID[] = top150) {
         .data(nodes as d3Node[])
         .enter()
         .append("circle")
+            .attr("id", n => n.name.replace(" ", "_"))
             .attr("r", n => n.r) // @ts-ignore
             .style("fill", n => getHSL(n.similarityPos))
         .on("mouseover", (_e, node) => console.log(artistMap.get(node.id)))

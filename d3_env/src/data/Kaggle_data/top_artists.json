@@ -1,9 +1,19 @@
 [
 	{
+		"name": "KIM DONG HAN",
+		"popularity": 31,
+		"id": "1iGenyJQdF1y4bV4GAvNmW",
+		"artist_duration": 10080643,
+		"artist_genres": [
+			"k-pop"
+		],
+		"rank": 1
+	},
+	{
 		"name": "Drake",
-		"popularity": 98,
+		"popularity": 97,
 		"id": "3TVXtAsR1Inumwj472S9r4",
-		"artist_duration": 15267460.0,
+		"artist_duration": 9132814,
 		"artist_genres": [
 			"canadian hip hop",
 			"canadian pop",
@@ -11,23 +21,13 @@
 			"rap",
 			"toronto rap"
 		],
-		"rank": 1
-	},
-	{
-		"name": "KIM DONG HAN",
-		"popularity": 32,
-		"id": "1iGenyJQdF1y4bV4GAvNmW",
-		"artist_duration": 13727219.0,
-		"artist_genres": [
-			"k-pop"
-		],
 		"rank": 2
 	},
 	{
 		"name": "Oddisee",
 		"popularity": 51,
 		"id": "72tRiBHei5G9M8it4h4sfC",
-		"artist_duration": 12672913.0,
+		"artist_duration": 7407228,
 		"artist_genres": [
 			"alternative hip hop",
 			"dmv rap",
@@ -40,7 +40,7 @@
 		"name": "Childish Gambino",
 		"popularity": 79,
 		"id": "73sIBHcqh3Z3NyqHKZ7FOL",
-		"artist_duration": 8244008.0,
+		"artist_duration": 4522243,
 		"artist_genres": [
 			"atl hip hop",
 			"hip hop",
@@ -51,13 +51,12 @@
 		"rank": 4
 	},
 	{
-		"name": "Altin G\u00fcn",
-		"popularity": 52,
-		"id": "37PL04N8kBWWW69jdrMMWT",
-		"artist_duration": 6661309.0,
+		"name": "Mabel Matiz",
+		"popularity": 63,
+		"id": "1dpqJqIuNqideTvmxBsSku",
+		"artist_duration": 4355775,
 		"artist_genres": [
-			"dutch indie",
-			"turkish psych"
+			"turkish pop"
 		],
 		"rank": 5
 	},
@@ -65,7 +64,7 @@
 		"name": "Calvin Harris",
 		"popularity": 85,
 		"id": "7CajNmpbOovFoOoasH2HaY",
-		"artist_duration": 6396468.0,
+		"artist_duration": 4166184,
 		"artist_genres": [
 			"dance pop",
 			"edm",
@@ -79,25 +78,24 @@
 		"rank": 6
 	},
 	{
-		"name": "Mabel Matiz",
-		"popularity": 63,
-		"id": "1dpqJqIuNqideTvmxBsSku",
-		"artist_duration": 5691119.0,
+		"name": "Yuna",
+		"popularity": 61,
+		"id": "3kHVioJpVxlazAAKQ64pC1",
+		"artist_duration": 3777412,
 		"artist_genres": [
-			"turkish pop"
+			"alternative r&b",
+			"malaysian pop"
 		],
 		"rank": 7
 	},
 	{
-		"name": "J. Cole",
-		"popularity": 89,
-		"id": "6l3HvQ5sa6mXTsMTB19rO5",
-		"artist_duration": 5567630.0,
+		"name": "Altin G\u00fcn",
+		"popularity": 53,
+		"id": "37PL04N8kBWWW69jdrMMWT",
+		"artist_duration": 3707693,
 		"artist_genres": [
-			"conscious hip hop",
-			"hip hop",
-			"north carolina hip hop",
-			"rap"
+			"dutch indie",
+			"turkish psych"
 		],
 		"rank": 8
 	},
@@ -105,7 +103,7 @@
 		"name": "Depeche Mode",
 		"popularity": 75,
 		"id": "762310PdDnwsDxAQxzQkfX",
-		"artist_duration": 5182545.0,
+		"artist_duration": 3684031,
 		"artist_genres": [
 			"dance rock",
 			"new romantic",
@@ -116,34 +114,59 @@
 		"rank": 9
 	},
 	{
-		"name": "Yuna",
-		"popularity": 61,
-		"id": "3kHVioJpVxlazAAKQ64pC1",
-		"artist_duration": 5070385.0,
+		"name": "21 Savage",
+		"popularity": 88,
+		"id": "1URnnhqYAYcrqrcwql10ft",
+		"artist_duration": 3292890,
 		"artist_genres": [
-			"alternative r&b",
-			"malaysian pop"
+			"atl hip hop",
+			"rap",
+			"trap"
 		],
 		"rank": 10
 	},
 	{
-		"name": "21 Savage",
-		"popularity": 88,
-		"id": "1URnnhqYAYcrqrcwql10ft",
-		"artist_duration": 4851023.0,
+		"name": "J. Cole",
+		"popularity": 89,
+		"id": "6l3HvQ5sa6mXTsMTB19rO5",
+		"artist_duration": 3164008,
 		"artist_genres": [
-			"atl hip hop",
+			"conscious hip hop",
 			"hip hop",
-			"rap",
-			"trap"
+			"north carolina hip hop",
+			"rap"
 		],
 		"rank": 11
+	},
+	{
+		"name": "Sergei Rachmaninoff",
+		"popularity": 66,
+		"id": "0Kekt6CKSo0m5mivKcoH51",
+		"artist_duration": 2860273,
+		"artist_genres": [
+			"classical",
+			"post-romantic era",
+			"russian romanticism",
+			"ukrainian classical"
+		],
+		"rank": 12
+	},
+	{
+		"name": "Still Woozy",
+		"popularity": 73,
+		"id": "4iMO20EPodreIaEl8qW66y",
+		"artist_duration": 2628703,
+		"artist_genres": [
+			"bedroom pop",
+			"oakland indie"
+		],
+		"rank": 13
 	},
 	{
 		"name": "2Pac",
 		"popularity": 81,
 		"id": "1ZwdS5xdxEREPySFridCfh",
-		"artist_duration": 4063356.0,
+		"artist_duration": 2622837,
 		"artist_genres": [
 			"g funk",
 			"gangster rap",
@@ -151,60 +174,26 @@
 			"rap",
 			"west coast rap"
 		],
-		"rank": 12
-	},
-	{
-		"name": "Post Malone",
-		"popularity": 91,
-		"id": "246dkjvS1zLTtiykXe5h60",
-		"artist_duration": 3989407.0,
-		"artist_genres": [
-			"dfw rap",
-			"melodic rap",
-			"rap"
-		],
-		"rank": 13
+		"rank": 14
 	},
 	{
 		"name": "Hiatus Kaiyote",
-		"popularity": 59,
+		"popularity": 60,
 		"id": "43JlwunhXm1oqdKyOa2Z9Y",
-		"artist_duration": 3899970.0,
+		"artist_duration": 2607560,
 		"artist_genres": [
 			"australian r&b",
 			"indie jazz",
 			"indie soul",
 			"shiver pop"
 		],
-		"rank": 14
-	},
-	{
-		"name": "Jungle",
-		"popularity": 69,
-		"id": "59oA5WbbQvomJz2BuRG071",
-		"artist_duration": 3654467.0,
-		"artist_genres": [
-			"indie soul",
-			"uk contemporary r&b"
-		],
 		"rank": 15
-	},
-	{
-		"name": "Stray Kids",
-		"popularity": 81,
-		"id": "2dIgFjalVxs4ThymZ67YCE",
-		"artist_duration": 3567586.0,
-		"artist_genres": [
-			"k-pop",
-			"k-pop boy group"
-		],
-		"rank": 16
 	},
 	{
 		"name": "Clean Bandit",
 		"popularity": 79,
 		"id": "6MDME20pz9RveH9rEXvrOM",
-		"artist_duration": 3322276.0,
+		"artist_duration": 2378523,
 		"artist_genres": [
 			"dance pop",
 			"edm",
@@ -214,61 +203,13 @@
 			"uk dance",
 			"uk funky"
 		],
-		"rank": 17
-	},
-	{
-		"name": "Kendrick Lamar",
-		"popularity": 89,
-		"id": "2YZyLoL8N0Wb9xBt1NhZWg",
-		"artist_duration": 3305635.0,
-		"artist_genres": [
-			"conscious hip hop",
-			"hip hop",
-			"rap",
-			"west coast rap"
-		],
-		"rank": 18
-	},
-	{
-		"name": "Unknown Mortal Orchestra",
-		"popularity": 66,
-		"id": "1LeVJ5GPeYDOVUjxx1y7Rp",
-		"artist_duration": 3184356.0,
-		"artist_genres": [
-			"chillwave",
-			"indie rock",
-			"kiwi rock",
-			"neo-psychedelic",
-			"portland hip hop",
-			"psychedelic pop"
-		],
-		"rank": 19
-	},
-	{
-		"name": "Still Woozy",
-		"popularity": 73,
-		"id": "4iMO20EPodreIaEl8qW66y",
-		"artist_duration": 3109386.0,
-		"artist_genres": [
-			"bedroom pop",
-			"modern rock",
-			"oakland indie"
-		],
-		"rank": 20
-	},
-	{
-		"name": "Masego",
-		"popularity": 73,
-		"id": "3ycxRkcZ67ALN3GQJ57Vig",
-		"artist_duration": 3091649.0,
-		"artist_genres": [],
-		"rank": 21
+		"rank": 16
 	},
 	{
 		"name": "Caroline Polachek",
 		"popularity": 64,
 		"id": "4Ge8xMJNwt6EEXOzVXju9a",
-		"artist_duration": 3029225.0,
+		"artist_duration": 2223921,
 		"artist_genres": [
 			"art pop",
 			"dance pop",
@@ -279,38 +220,36 @@
 			"indietronica",
 			"pop"
 		],
-		"rank": 22
+		"rank": 17
 	},
 	{
-		"name": "Pyotr Ilyich Tchaikovsky",
-		"popularity": 72,
-		"id": "3MKCzCnpzw3TjUYs2v7vDA",
-		"artist_duration": 3015930.0,
+		"name": "Jungle",
+		"popularity": 69,
+		"id": "59oA5WbbQvomJz2BuRG071",
+		"artist_duration": 2101544,
 		"artist_genres": [
-			"classical",
-			"late romantic era",
-			"russian romanticism"
+			"indie soul",
+			"uk contemporary r&b"
 		],
-		"rank": 23
+		"rank": 18
 	},
 	{
-		"name": "Sergei Rachmaninoff",
-		"popularity": 66,
-		"id": "0Kekt6CKSo0m5mivKcoH51",
-		"artist_duration": 2897754.0,
+		"name": "Sam Smith",
+		"popularity": 87,
+		"id": "2wY79sveU1sp5g7SokKOiI",
+		"artist_duration": 2066958,
 		"artist_genres": [
-			"classical",
-			"post-romantic era",
-			"russian romanticism",
-			"ukrainian classical"
+			"dance pop",
+			"pop",
+			"uk pop"
 		],
-		"rank": 24
+		"rank": 19
 	},
 	{
 		"name": "Bibio",
-		"popularity": 58,
+		"popularity": 59,
 		"id": "0qzzGu8qpbXYpzgV52wOFT",
-		"artist_duration": 2598651.0,
+		"artist_duration": 2012686,
 		"artist_genres": [
 			"ambient folk",
 			"chillwave",
@@ -319,98 +258,466 @@
 			"folktronica",
 			"indie soul"
 		],
+		"rank": 20
+	},
+	{
+		"name": "Parcels",
+		"popularity": 69,
+		"id": "3oKRxpszQKUjjaHz388fVA",
+		"artist_duration": 1893559,
+		"artist_genres": [
+			"aussietronica",
+			"indie soul"
+		],
+		"rank": 21
+	},
+	{
+		"name": "Post Malone",
+		"popularity": 91,
+		"id": "246dkjvS1zLTtiykXe5h60",
+		"artist_duration": 1777792,
+		"artist_genres": [
+			"dfw rap",
+			"melodic rap",
+			"rap"
+		],
+		"rank": 22
+	},
+	{
+		"name": "Kendrick Lamar",
+		"popularity": 89,
+		"id": "2YZyLoL8N0Wb9xBt1NhZWg",
+		"artist_duration": 1771240,
+		"artist_genres": [
+			"conscious hip hop",
+			"hip hop",
+			"rap",
+			"west coast rap"
+		],
+		"rank": 23
+	},
+	{
+		"name": "Takuya Kuroda",
+		"popularity": 45,
+		"id": "4DbVGBurfbrdLW2ZwfwdmP",
+		"artist_duration": 1759093,
+		"artist_genres": [
+			"indie jazz",
+			"indie soul",
+			"japanese jazz"
+		],
+		"rank": 24
+	},
+	{
+		"name": "Unknown Mortal Orchestra",
+		"popularity": 66,
+		"id": "1LeVJ5GPeYDOVUjxx1y7Rp",
+		"artist_duration": 1740608,
+		"artist_genres": [
+			"chillwave",
+			"indie rock",
+			"kiwi rock",
+			"neo-psychedelic",
+			"portland hip hop",
+			"psychedelic pop"
+		],
 		"rank": 25
+	},
+	{
+		"name": "Tycho",
+		"popularity": 61,
+		"id": "5oOhM2DFWab8XhSdQiITry",
+		"artist_duration": 1729999,
+		"artist_genres": [
+			"chillwave",
+			"downtempo",
+			"electronica",
+			"indietronica",
+			"intelligent dance music"
+		],
+		"rank": 26
 	},
 	{
 		"name": "Kanye West",
 		"popularity": 94,
 		"id": "5K4W6rqBFWDnAN6FQUkS6x",
-		"artist_duration": 2582916.0,
+		"artist_duration": 1678174,
 		"artist_genres": [
 			"chicago rap",
 			"rap"
 		],
-		"rank": 26
-	},
-	{
-		"name": "Migos",
-		"popularity": 82,
-		"id": "6oMuImdp5ZcFhWP0ESe6mG",
-		"artist_duration": 2563916.0,
-		"artist_genres": [
-			"atl hip hop",
-			"rap",
-			"trap"
-		],
 		"rank": 27
 	},
 	{
-		"name": "Woo Park",
-		"popularity": 27,
-		"id": "2qXxyzCMW4mPE2LVLVL78F",
-		"artist_duration": 2520999.0,
-		"artist_genres": [
-			"neo r&b",
-			"psychedelic soul"
-		],
+		"name": "Fr\u00e9d\u00e9ric Chopin",
+		"popularity": 0,
+		"id": "0LyfQWJT6nXafLPZqxe9Of",
+		"artist_duration": 1619276,
+		"artist_genres": [],
 		"rank": 28
 	},
 	{
+		"name": "Nicola Cruz",
+		"popularity": 57,
+		"id": "0OltT51j3hIkgaDJqqPzDn",
+		"artist_duration": 1600737,
+		"artist_genres": [
+			"ecuadorian indie",
+			"latintronica",
+			"organic electronic"
+		],
+		"rank": 29
+	},
+	{
 		"name": "Toro y Moi",
-		"popularity": 64,
+		"popularity": 65,
 		"id": "6O4EGCCb6DoIiR6B1QCQgp",
-		"artist_duration": 2517525.0,
+		"artist_duration": 1583508,
 		"artist_genres": [
 			"alternative dance",
 			"alternative r&b",
 			"chillwave",
 			"indie soul",
 			"indietronica",
-			"new rave"
+			"new rave",
+			"vapor soul"
 		],
-		"rank": 29
+		"rank": 30
+	},
+	{
+		"name": "Tora",
+		"popularity": 60,
+		"id": "7KGI0OwY8iAL5rI5p47YyK",
+		"artist_duration": 1534577,
+		"artist_genres": [
+			"alternative r&b",
+			"indie soul",
+			"vapor soul"
+		],
+		"rank": 31
 	},
 	{
 		"name": "Charlie Puth",
 		"popularity": 81,
 		"id": "6VuMaDnrHyPL1p4EHjYLi7",
-		"artist_duration": 2382816.0,
+		"artist_duration": 1514031,
 		"artist_genres": [
 			"dance pop",
 			"pop",
 			"viral pop"
 		],
-		"rank": 30
+		"rank": 32
 	},
 	{
-		"name": "Takuya Kuroda",
-		"popularity": 45,
-		"id": "4DbVGBurfbrdLW2ZwfwdmP",
-		"artist_duration": 2264257.0,
+		"name": "Bonobo",
+		"popularity": 67,
+		"id": "0cmWgDlu9CwTgxPhf403hb",
+		"artist_duration": 1493121,
 		"artist_genres": [
-			"indie jazz",
-			"indie soul",
-			"japanese jazz"
+			"downtempo",
+			"electronica",
+			"jazztronica",
+			"ninja",
+			"nu jazz",
+			"trip hop"
 		],
-		"rank": 31
+		"rank": 33
 	},
 	{
-		"name": "Sam Smith",
-		"popularity": 86,
-		"id": "2wY79sveU1sp5g7SokKOiI",
-		"artist_duration": 2253348.0,
+		"name": "Washed Out",
+		"popularity": 60,
+		"id": "5juOkIIy18sFw9L30syt1Z",
+		"artist_duration": 1433398,
+		"artist_genres": [
+			"alternative dance",
+			"art pop",
+			"chillwave",
+			"dream pop",
+			"indie rock",
+			"indie soul",
+			"indietronica",
+			"neo-synthpop",
+			"shimmer pop"
+		],
+		"rank": 34
+	},
+	{
+		"name": "Masego",
+		"popularity": 73,
+		"id": "3ycxRkcZ67ALN3GQJ57Vig",
+		"artist_duration": 1400269,
+		"artist_genres": [],
+		"rank": 35
+	},
+	{
+		"name": "Stray Kids",
+		"popularity": 82,
+		"id": "2dIgFjalVxs4ThymZ67YCE",
+		"artist_duration": 1382638,
+		"artist_genres": [
+			"k-pop",
+			"k-pop boy group"
+		],
+		"rank": 36
+	},
+	{
+		"name": "Miguel",
+		"popularity": 79,
+		"id": "360IAlyVv4PCEVjgyMZrxK",
+		"artist_duration": 1351237,
 		"artist_genres": [
 			"dance pop",
 			"pop",
-			"uk pop"
+			"r&b",
+			"urban contemporary"
 		],
-		"rank": 32
+		"rank": 37
+	},
+	{
+		"name": "Shye Ben Tzur",
+		"popularity": 35,
+		"id": "2UCzkuXiE37VD7K123J4Tf",
+		"artist_duration": 1320051,
+		"artist_genres": [
+			"rajasthani folk",
+			"sufi",
+			"world fusion"
+		],
+		"rank": 38
+	},
+	{
+		"name": "Tom Misch",
+		"popularity": 71,
+		"id": "1uiEZYehlNivdK3iQyAbye",
+		"artist_duration": 1315623,
+		"artist_genres": [
+			"indie soul",
+			"jazz pop"
+		],
+		"rank": 39
+	},
+	{
+		"name": "Woo Park",
+		"popularity": 27,
+		"id": "2qXxyzCMW4mPE2LVLVL78F",
+		"artist_duration": 1261851,
+		"artist_genres": [
+			"neo r&b",
+			"psychedelic soul"
+		],
+		"rank": 40
+	},
+	{
+		"name": "The Notorious B.I.G.",
+		"popularity": 80,
+		"id": "5me0Irg2ANcsgc93uaYrpb",
+		"artist_duration": 1223804,
+		"artist_genres": [
+			"east coast hip hop",
+			"gangster rap",
+			"hardcore hip hop",
+			"hip hop",
+			"rap"
+		],
+		"rank": 41
+	},
+	{
+		"name": "Big Sean",
+		"popularity": 83,
+		"id": "0c173mlxpT3dSFRgMO8XPh",
+		"artist_duration": 1217837,
+		"artist_genres": [
+			"detroit hip hop",
+			"hip hop",
+			"pop",
+			"pop rap",
+			"rap",
+			"southern hip hop",
+			"trap"
+		],
+		"rank": 42
+	},
+	{
+		"name": "J Balvin",
+		"popularity": 93,
+		"id": "1vyhD5VmyZ7KMfW5gqLgo5",
+		"artist_duration": 1206963,
+		"artist_genres": [
+			"latin",
+			"reggaeton",
+			"reggaeton colombiano",
+			"trap latino"
+		],
+		"rank": 43
+	},
+	{
+		"name": "Mondo Grosso",
+		"popularity": 47,
+		"id": "4d2zOuYJHBPJTpVblHEKJb",
+		"artist_duration": 1172926,
+		"artist_genres": [
+			"japanese jazztronica",
+			"japanese r&b",
+			"shibuya-kei"
+		],
+		"rank": 44
+	},
+	{
+		"name": "TOKiMONSTA",
+		"popularity": 58,
+		"id": "3VwKSHAfgzV1DOHV0aANCI",
+		"artist_duration": 1160949,
+		"artist_genres": [
+			"chillwave",
+			"electra",
+			"electronica",
+			"escape room",
+			"future bass",
+			"vapor soul",
+			"vapor twitch",
+			"wonky"
+		],
+		"rank": 45
+	},
+	{
+		"name": "Tuxedo",
+		"popularity": 48,
+		"id": "0CCqHvxGgfjJzwzQzmPlEr",
+		"artist_duration": 1116572,
+		"artist_genres": [
+			"indie soul",
+			"popping",
+			"synth funk"
+		],
+		"rank": 46
+	},
+	{
+		"name": "Stardust",
+		"popularity": 59,
+		"id": "2w7IutHv5g4e8LumrwtjWR",
+		"artist_duration": 1107573,
+		"artist_genres": [],
+		"rank": 47
+	},
+	{
+		"name": "Fetty Wap",
+		"popularity": 74,
+		"id": "6PXS4YHDkKvl1wkIl4V8DL",
+		"artist_duration": 1099481,
+		"artist_genres": [
+			"new jersey rap",
+			"pop rap",
+			"rap",
+			"southern hip hop",
+			"trap"
+		],
+		"rank": 48
+	},
+	{
+		"name": "Khalid",
+		"popularity": 89,
+		"id": "2YZyLoL8N0Wb9xBt1NhZWg",
+		"artist_duration": 1066727,
+		"artist_genres": [
+			"conscious hip hop",
+			"hip hop",
+			"rap",
+			"west coast rap"
+		],
+		"rank": 49
+	},
+	{
+		"name": "Migos",
+		"popularity": 81,
+		"id": "6oMuImdp5ZcFhWP0ESe6mG",
+		"artist_duration": 1042048,
+		"artist_genres": [
+			"atl hip hop",
+			"rap",
+			"trap"
+		],
+		"rank": 50
+	},
+	{
+		"name": "DJ Cam Quartet",
+		"popularity": 47,
+		"id": "0DkOD427BCfr11yQVvfqU9",
+		"artist_duration": 1031562,
+		"artist_genres": [
+			"jazz quartet",
+			"nu jazz"
+		],
+		"rank": 51
+	},
+	{
+		"name": "Bad Bunny",
+		"popularity": 97,
+		"id": "4q3ewBCX7sLwd24euuV69X",
+		"artist_duration": 1004026,
+		"artist_genres": [
+			"latin",
+			"reggaeton",
+			"trap latino"
+		],
+		"rank": 52
+	},
+	{
+		"name": "Mary J. Blige",
+		"popularity": 73,
+		"id": "1XkoF8ryArs86LZvFOkbyr",
+		"artist_duration": 963463,
+		"artist_genres": [
+			"contemporary r&b",
+			"dance pop",
+			"hip pop",
+			"neo soul",
+			"r&b",
+			"urban contemporary"
+		],
+		"rank": 53
+	},
+	{
+		"name": "Amy Winehouse",
+		"popularity": 78,
+		"id": "6Q192DXotxtaysaqNPy5yR",
+		"artist_duration": 962090,
+		"artist_genres": [
+			"british soul",
+			"indie r&b",
+			"neo soul"
+		],
+		"rank": 54
+	},
+	{
+		"name": "Tennyson",
+		"popularity": 51,
+		"id": "3Nb8N20WChM0swo5qWTvm8",
+		"artist_duration": 955721,
+		"artist_genres": [
+			"edmonton indie",
+			"future bass",
+			"vapor twitch"
+		],
+		"rank": 55
+	},
+	{
+		"name": "Beenzino",
+		"popularity": 54,
+		"id": "7IrDIIq3j04exsiF3Z7CPg",
+		"artist_duration": 938738,
+		"artist_genres": [
+			"k-indie",
+			"k-rap",
+			"korean pop",
+			"korean r&b"
+		],
+		"rank": 56
 	},
 	{
 		"name": "Frank Ocean",
 		"popularity": 84,
 		"id": "2h93pZq0e7k5yf4dywlkpM",
-		"artist_duration": 2207784.0,
+		"artist_duration": 903785,
 		"artist_genres": [
 			"alternative r&b",
 			"hip hop",
@@ -418,113 +725,84 @@
 			"neo soul",
 			"pop"
 		],
-		"rank": 33
+		"rank": 57
 	},
 	{
-		"name": "Parcels",
-		"popularity": 69,
-		"id": "3oKRxpszQKUjjaHz388fVA",
-		"artist_duration": 2162853.0,
+		"name": "ADOY",
+		"popularity": 48,
+		"id": "64sY7LsUjNE3ifONkftTXC",
+		"artist_duration": 881814,
 		"artist_genres": [
-			"aussietronica",
-			"indie soul"
+			"chill r&b",
+			"k-indie",
+			"korean city pop",
+			"korean dream pop",
+			"korean electropop",
+			"korean indie rock"
 		],
-		"rank": 34
+		"rank": 58
 	},
 	{
-		"name": "J Balvin",
-		"popularity": 93,
-		"id": "1vyhD5VmyZ7KMfW5gqLgo5",
-		"artist_duration": 2083840.0,
+		"name": "The Foreign Exchange",
+		"popularity": 67,
+		"id": "3zTOe1BtyTkwNvYZOxXktX",
+		"artist_duration": 870480,
 		"artist_genres": [
-			"latin",
-			"reggaeton",
-			"reggaeton colombiano",
-			"trap latino"
-		],
-		"rank": 35
-	},
-	{
-		"name": "Miguel",
-		"popularity": 79,
-		"id": "360IAlyVv4PCEVjgyMZrxK",
-		"artist_duration": 2062690.0,
-		"artist_genres": [
+			"contemporary r&b",
 			"dance pop",
-			"pop",
+			"hip pop",
+			"neo soul",
 			"r&b",
 			"urban contemporary"
 		],
-		"rank": 36
+		"rank": 59
 	},
 	{
-		"name": "Tennyson",
-		"popularity": 51,
-		"id": "3Nb8N20WChM0swo5qWTvm8",
-		"artist_duration": 2041691.0,
+		"name": "LION BABE",
+		"popularity": 54,
+		"id": "4VA3EAvncrTucjTmrvd4GE",
+		"artist_duration": 869461,
 		"artist_genres": [
-			"edmonton indie",
-			"future bass",
-			"vapor twitch"
+			"alternative r&b",
+			"electropop",
+			"escape room",
+			"indie r&b",
+			"indie soul"
 		],
-		"rank": 37
+		"rank": 60
 	},
 	{
-		"name": "Tom Misch",
-		"popularity": 70,
-		"id": "1uiEZYehlNivdK3iQyAbye",
-		"artist_duration": 2019239.0,
-		"artist_genres": [
-			"indie soul",
-			"jazz pop"
-		],
-		"rank": 38
-	},
-	{
-		"name": "Tuxedo",
-		"popularity": 48,
-		"id": "0CCqHvxGgfjJzwzQzmPlEr",
-		"artist_duration": 1979551.0,
-		"artist_genres": [
-			"indie soul",
-			"popping",
-			"synth funk"
-		],
-		"rank": 39
-	},
-	{
-		"name": "Tycho",
+		"name": "De La Soul",
 		"popularity": 61,
-		"id": "5oOhM2DFWab8XhSdQiITry",
-		"artist_duration": 1978548.0,
+		"id": "1Z8ODXyhEBi3WynYw0Rya6",
+		"artist_duration": 859086,
 		"artist_genres": [
-			"chillwave",
-			"downtempo",
-			"indietronica",
-			"intelligent dance music"
+			"alternative hip hop",
+			"east coast hip hop",
+			"gangster rap",
+			"golden age hip hop",
+			"hardcore hip hop",
+			"hip hop",
+			"jazz rap",
+			"rap"
 		],
-		"rank": 40
+		"rank": 61
 	},
 	{
-		"name": "Big Sean",
-		"popularity": 83,
-		"id": "0c173mlxpT3dSFRgMO8XPh",
-		"artist_duration": 1934422.0,
+		"name": "Anderson .Paak",
+		"popularity": 87,
+		"id": "3jK9MiCrA42lLAdMGUZpwa",
+		"artist_duration": 849524,
 		"artist_genres": [
-			"detroit hip hop",
-			"hip hop",
-			"pop rap",
-			"rap",
-			"southern hip hop",
-			"trap"
+			"escape room"
 		],
-		"rank": 41
+		"rank": 62
 	},
 	{
 		"name": "Common",
 		"popularity": 66,
 		"id": "2GHclqNVjqGuiE5mA7BEoc",
-		"artist_duration": 1908983.0,
+		"artist_duration": 841586,
 		"artist_genres": [
 			"alternative hip hop",
 			"chicago rap",
@@ -535,212 +813,51 @@
 			"political hip hop",
 			"rap"
 		],
-		"rank": 42
+		"rank": 63
 	},
 	{
-		"name": "Gesu No Kiwami Otome",
-		"popularity": 52,
-		"id": "1ieluXFoq2RRxMXZIQksTz",
-		"artist_duration": 1886018.0,
+		"name": "Chaos In The CBD",
+		"popularity": 50,
+		"id": "0QOQc6jEsPX5Y45TV0hXQy",
+		"artist_duration": 840551,
 		"artist_genres": [
-			"j-pop",
-			"j-rock"
+			"deep house",
+			"electronica",
+			"float house",
+			"future garage",
+			"indie soul",
+			"jazz house",
+			"nz electronic"
 		],
-		"rank": 43
+		"rank": 64
 	},
 	{
-		"name": "Stardust",
-		"popularity": 58,
-		"id": "2w7IutHv5g4e8LumrwtjWR",
-		"artist_duration": 1826342.0,
-		"artist_genres": [],
-		"rank": 44
-	},
-	{
-		"name": "The Notorious B.I.G.",
-		"popularity": 80,
-		"id": "5me0Irg2ANcsgc93uaYrpb",
-		"artist_duration": 1825333.0,
-		"artist_genres": [
-			"east coast hip hop",
-			"gangster rap",
-			"hardcore hip hop",
-			"hip hop",
-			"rap"
-		],
-		"rank": 45
-	},
-	{
-		"name": "Shye Ben Tzur",
-		"popularity": 35,
-		"id": "2UCzkuXiE37VD7K123J4Tf",
-		"artist_duration": 1824760.0,
-		"artist_genres": [
-			"rajasthani folk",
-			"sufi",
-			"world fusion"
-		],
-		"rank": 46
-	},
-	{
-		"name": "Mura Masa",
-		"popularity": 66,
-		"id": "5Q81rlcTFh3k6DQJXPdsot",
-		"artist_duration": 1821880.0,
-		"artist_genres": [
-			"channel islands indie",
-			"vapor soul"
-		],
-		"rank": 47
-	},
-	{
-		"name": "Cool Calm Pete",
-		"popularity": 28,
-		"id": "6g9zudwUPL5IwY8sbEzN9C",
-		"artist_duration": 1805330.0,
+		"name": "August Greene",
+		"popularity": 31,
+		"id": "7KIFh8WDiqlz1Dlopd03cy",
+		"artist_duration": 835714,
 		"artist_genres": [
 			"jazz rap"
 		],
-		"rank": 48
+		"rank": 65
 	},
 	{
-		"name": "Nicola Cruz",
-		"popularity": 57,
-		"id": "0OltT51j3hIkgaDJqqPzDn",
-		"artist_duration": 1793480.0,
+		"name": "Skee-Lo",
+		"popularity": 55,
+		"id": "55Pp4Ns5VfTSFsBraW7MQy",
+		"artist_duration": 818097,
 		"artist_genres": [
-			"ecuadorian indie",
-			"latintronica",
-			"organic electronic"
-		],
-		"rank": 49
-	},
-	{
-		"name": "Khalid",
-		"popularity": 89,
-		"id": "2YZyLoL8N0Wb9xBt1NhZWg",
-		"artist_duration": 1781606.0,
-		"artist_genres": [
-			"conscious hip hop",
 			"hip hop",
 			"rap",
 			"west coast rap"
 		],
-		"rank": 50
-	},
-	{
-		"name": "Washed Out",
-		"popularity": 60,
-		"id": "5juOkIIy18sFw9L30syt1Z",
-		"artist_duration": 1709600.0,
-		"artist_genres": [
-			"alternative dance",
-			"chillwave",
-			"dream pop",
-			"indie rock",
-			"indie soul",
-			"indietronica",
-			"neo-synthpop",
-			"new rave",
-			"shimmer pop"
-		],
-		"rank": 51
-	},
-	{
-		"name": "TOKiMONSTA",
-		"popularity": 58,
-		"id": "3VwKSHAfgzV1DOHV0aANCI",
-		"artist_duration": 1697064.0,
-		"artist_genres": [
-			"chillwave",
-			"electra",
-			"escape room",
-			"future bass",
-			"vapor soul",
-			"vapor twitch",
-			"wonky"
-		],
-		"rank": 52
-	},
-	{
-		"name": "Doja Cat",
-		"popularity": 94,
-		"id": "5cj0lLjcoR7YOSnhnX0Po5",
-		"artist_duration": 1659544.0,
-		"artist_genres": [
-			"dance pop",
-			"pop"
-		],
-		"rank": 53
-	},
-	{
-		"name": "Fr\u00e9d\u00e9ric Chopin",
-		"popularity": 78,
-		"id": "7y97mc3bZRFXzT2szRM4L4",
-		"artist_duration": 1641545.0,
-		"artist_genres": [
-			"classical",
-			"early romantic era",
-			"polish classical"
-		],
-		"rank": 54
-	},
-	{
-		"name": "Tora",
-		"popularity": 59,
-		"id": "7KGI0OwY8iAL5rI5p47YyK",
-		"artist_duration": 1621662.0,
-		"artist_genres": [
-			"alternative r&b",
-			"indie soul",
-			"vapor soul"
-		],
-		"rank": 55
-	},
-	{
-		"name": "Beenzino",
-		"popularity": 54,
-		"id": "7IrDIIq3j04exsiF3Z7CPg",
-		"artist_duration": 1599704.0,
-		"artist_genres": [
-			"k-indie",
-			"k-rap",
-			"korean pop",
-			"korean r&b"
-		],
-		"rank": 56
-	},
-	{
-		"name": "DADARAY",
-		"popularity": 40,
-		"id": "5YVpCleE4Ysa6YRa66nzIN",
-		"artist_duration": 1548076.0,
-		"artist_genres": [
-			"city pop",
-			"j-pixie"
-		],
-		"rank": 57
-	},
-	{
-		"name": "The Foreign Exchange",
-		"popularity": 67,
-		"id": "3zTOe1BtyTkwNvYZOxXktX",
-		"artist_duration": 1535536.0,
-		"artist_genres": [
-			"dance pop",
-			"hip pop",
-			"neo soul",
-			"new jack swing",
-			"r&b",
-			"urban contemporary"
-		],
-		"rank": 58
+		"rank": 66
 	},
 	{
 		"name": "Phoenix",
 		"popularity": 65,
 		"id": "1xU878Z1QtBldR7ru9owdU",
-		"artist_duration": 1526106.0,
+		"artist_duration": 814109,
 		"artist_genres": [
 			"alternative dance",
 			"indie rock",
@@ -749,927 +866,221 @@
 			"pop rock",
 			"rock independant francais"
 		],
-		"rank": 59
-	},
-	{
-		"name": "Fetty Wap",
-		"popularity": 74,
-		"id": "6PXS4YHDkKvl1wkIl4V8DL",
-		"artist_duration": 1496679.0,
-		"artist_genres": [
-			"new jersey rap",
-			"pop rap",
-			"rap",
-			"southern hip hop",
-			"trap"
-		],
-		"rank": 60
-	},
-	{
-		"name": "Skee-Lo",
-		"popularity": 55,
-		"id": "55Pp4Ns5VfTSFsBraW7MQy",
-		"artist_duration": 1495758.0,
-		"artist_genres": [
-			"hip hop",
-			"rap",
-			"west coast rap"
-		],
-		"rank": 61
-	},
-	{
-		"name": "Bonobo",
-		"popularity": 67,
-		"id": "0cmWgDlu9CwTgxPhf403hb",
-		"artist_duration": 1495390.0,
-		"artist_genres": [
-			"downtempo",
-			"electronica",
-			"jazztronica",
-			"ninja",
-			"nu jazz",
-			"trip hop"
-		],
-		"rank": 62
-	},
-	{
-		"name": "Mondo Grosso",
-		"popularity": 47,
-		"id": "4d2zOuYJHBPJTpVblHEKJb",
-		"artist_duration": 1470000.0,
-		"artist_genres": [
-			"japanese jazztronica",
-			"japanese r&b",
-			"shibuya-kei"
-		],
-		"rank": 63
-	},
-	{
-		"name": "Bad Bunny",
-		"popularity": 97,
-		"id": "4q3ewBCX7sLwd24euuV69X",
-		"artist_duration": 1463032.0,
-		"artist_genres": [
-			"latin",
-			"reggaeton",
-			"trap latino"
-		],
-		"rank": 64
-	},
-	{
-		"name": "Anderson .Paak",
-		"popularity": 87,
-		"id": "3jK9MiCrA42lLAdMGUZpwa",
-		"artist_duration": 1456205.0,
-		"artist_genres": [
-			"escape room"
-		],
-		"rank": 65
-	},
-	{
-		"name": "Kenichiro Nishihara",
-		"popularity": 44,
-		"id": "4en7e0KjSkfa4sfLDhTc3m",
-		"artist_duration": 1412822.0,
-		"artist_genres": [
-			"ambeat",
-			"japanese jazz fusion"
-		],
-		"rank": 66
-	},
-	{
-		"name": "Khruangbin",
-		"popularity": 71,
-		"id": "2mVVjNmdjXZZDvhgQWiakk",
-		"artist_duration": 1399988.0,
-		"artist_genres": [
-			"neo-psychedelic"
-		],
 		"rank": 67
 	},
 	{
-		"name": "Lafayette Afro Rock Band",
-		"popularity": 37,
-		"id": "5EgMMveFcSL3rq87Wkyw4s",
-		"artist_duration": 1392424.0,
+		"name": "Cool Calm Pete",
+		"popularity": 28,
+		"id": "6g9zudwUPL5IwY8sbEzN9C",
+		"artist_duration": 807379,
 		"artist_genres": [
-			"afrobeat",
-			"funk",
-			"jazz funk"
+			"jazz rap"
 		],
 		"rank": 68
 	},
 	{
-		"name": "Day Fly",
-		"popularity": 20,
-		"id": "2CICny47Mu3LqSCe1eu4g0",
-		"artist_duration": 1379049.0,
-		"artist_genres": [
-			"neo r&b",
-			"uk alternative pop"
-		],
+		"name": "Pyotr Ilyich Tchaikovsky",
+		"popularity": 3,
+		"id": "7D0to7EEDiaIf61rbk9P5n",
+		"artist_duration": 802748,
+		"artist_genres": [],
 		"rank": 69
-	},
-	{
-		"name": "N.E.R.D",
-		"popularity": 61,
-		"id": "5wPoxI5si3eJsYYwyXV4Wi",
-		"artist_duration": 1314626.0,
-		"artist_genres": [
-			"hip hop",
-			"virginia hip hop"
-		],
-		"rank": 70
-	},
-	{
-		"name": "Janelle Mon\u00e1e",
-		"popularity": 69,
-		"id": "6ueGR6SWhUJfvEhqkvMsVs",
-		"artist_duration": 1298256.0,
-		"artist_genres": [
-			"afrofuturism",
-			"alternative r&b",
-			"atl hip hop",
-			"dance pop",
-			"electropop",
-			"escape room",
-			"neo soul",
-			"pop",
-			"r&b",
-			"urban contemporary"
-		],
-		"rank": 71
-	},
-	{
-		"name": "Ludwig van Beethoven",
-		"popularity": 75,
-		"id": "2wOqMjp9TyABvtHdOSOTUS",
-		"artist_duration": 1297714.0,
-		"artist_genres": [
-			"classical",
-			"classical era",
-			"early romantic era",
-			"german romanticism"
-		],
-		"rank": 72
-	},
-	{
-		"name": "August Greene",
-		"popularity": 30,
-		"id": "7KIFh8WDiqlz1Dlopd03cy",
-		"artist_duration": 1264965.0,
-		"artist_genres": [
-			"jazz rap"
-		],
-		"rank": 73
 	},
 	{
 		"name": "Jon Connor",
 		"popularity": 45,
 		"id": "1F5zdoXcwIB9XSNfitdo7x",
-		"artist_duration": 1247330.0,
+		"artist_duration": 781824,
 		"artist_genres": [
+			"deep underground hip hop",
 			"flint hip hop",
 			"soul flow"
+		],
+		"rank": 70
+	},
+	{
+		"name": "Day Fly",
+		"popularity": 20,
+		"id": "2CICny47Mu3LqSCe1eu4g0",
+		"artist_duration": 774896,
+		"artist_genres": [
+			"neo r&b",
+			"uk alternative pop"
+		],
+		"rank": 71
+	},
+	{
+		"name": "N.E.R.D",
+		"popularity": 61,
+		"id": "5wPoxI5si3eJsYYwyXV4Wi",
+		"artist_duration": 745359,
+		"artist_genres": [
+			"hip hop",
+			"virginia hip hop"
+		],
+		"rank": 72
+	},
+	{
+		"name": "Jarami",
+		"popularity": 43,
+		"id": "1iwseab2dozTUHoF5taAdf",
+		"artist_duration": 728232,
+		"artist_genres": [
+			"new french touch",
+			"scandipop"
+		],
+		"rank": 73
+	},
+	{
+		"name": "Juice WRLD",
+		"popularity": 93,
+		"id": "4MCBfE4596Uoi2O4DtmEMz",
+		"artist_duration": 719508,
+		"artist_genres": [
+			"chicago rap",
+			"melodic rap"
 		],
 		"rank": 74
 	},
 	{
-		"name": "half\u2022alive",
-		"popularity": 64,
-		"id": "7sOR7gk6XUlGnxj3p9F54k",
-		"artist_duration": 1238930.0,
+		"name": "DADARAY",
+		"popularity": 40,
+		"id": "5YVpCleE4Ysa6YRa66nzIN",
+		"artist_duration": 702960,
 		"artist_genres": [
-			"alt z",
-			"indie pop",
-			"modern alternative rock",
-			"modern rock"
+			"city pop",
+			"j-pixie"
 		],
 		"rank": 75
 	},
 	{
-		"name": "Echo Park",
-		"popularity": 22,
-		"id": "1gySMfXhI95Tgfr6YYwV5B",
-		"artist_duration": 1226635.0,
-		"artist_genres": [],
+		"name": "Kenichiro Nishihara",
+		"popularity": 44,
+		"id": "4en7e0KjSkfa4sfLDhTc3m",
+		"artist_duration": 700498,
+		"artist_genres": [
+			"ambeat",
+			"japanese jazz fusion"
+		],
 		"rank": 76
 	},
 	{
-		"name": "Daft Punk",
-		"popularity": 81,
-		"id": "4tZwfgrHOc3mvqYlEYSvVi",
-		"artist_duration": 1200865.0,
+		"name": "ESTA.",
+		"popularity": 42,
+		"id": "4KZmpaIhanIo46eaQimtgO",
+		"artist_duration": 696270,
 		"artist_genres": [
-			"electro",
-			"filter house"
+			"vapor twitch"
 		],
 		"rank": 77
 	},
 	{
-		"name": "Daniel Caesar",
-		"popularity": 82,
-		"id": "20wkVLutqVOYrc0kxFs7rA",
-		"artist_duration": 1187470.0,
+		"name": "Doja Cat",
+		"popularity": 94,
+		"id": "5cj0lLjcoR7YOSnhnX0Po5",
+		"artist_duration": 694343,
 		"artist_genres": [
-			"canadian contemporary r&b",
-			"pop",
-			"r&b"
+			"dance pop",
+			"pop"
 		],
 		"rank": 78
 	},
 	{
-		"name": "ADOY",
-		"popularity": 48,
-		"id": "64sY7LsUjNE3ifONkftTXC",
-		"artist_duration": 1178730.0,
+		"name": "Gesu No Kiwami Otome",
+		"popularity": 52,
+		"id": "1ieluXFoq2RRxMXZIQksTz",
+		"artist_duration": 691566,
 		"artist_genres": [
-			"chill r&b",
-			"k-indie",
-			"korean city pop",
-			"korean dream pop",
-			"korean electropop",
-			"korean indie rock"
+			"j-pop",
+			"j-rock"
 		],
 		"rank": 79
-	},
-	{
-		"name": "Amy Winehouse",
-		"popularity": 78,
-		"id": "6Q192DXotxtaysaqNPy5yR",
-		"artist_duration": 1177465.0,
-		"artist_genres": [
-			"british soul",
-			"neo soul"
-		],
-		"rank": 80
-	},
-	{
-		"name": "Westside Connection",
-		"popularity": 60,
-		"id": "3zNM2tRfTX6LI1lN2PlrTt",
-		"artist_duration": 1172212.0,
-		"artist_genres": [
-			"g funk",
-			"gangster rap",
-			"hardcore hip hop",
-			"hip hop",
-			"pop rap",
-			"rap",
-			"west coast rap"
-		],
-		"rank": 81
-	},
-	{
-		"name": "Maurice Ravel",
-		"popularity": 0,
-		"id": "0LyfQWJT6nXafLPZqxe9Of",
-		"artist_duration": 1150799.0,
-		"artist_genres": [],
-		"rank": 82
-	},
-	{
-		"name": "Consequence",
-		"popularity": 51,
-		"id": "5KkgZ31b9eDwkvo9oMIrSm",
-		"artist_duration": 1124532.0,
-		"artist_genres": [
-			"nyc rap",
-			"queens hip hop"
-		],
-		"rank": 83
-	},
-	{
-		"name": "ESTA.",
-		"popularity": 41,
-		"id": "4KZmpaIhanIo46eaQimtgO",
-		"artist_duration": 1116275.0,
-		"artist_genres": [
-			"vapor twitch"
-		],
-		"rank": 84
 	},
 	{
 		"name": "Rationale",
 		"popularity": 56,
 		"id": "2IQDM5URYGYfSMmwhTCmyy",
-		"artist_duration": 1085000.0,
+		"artist_duration": 677739,
 		"artist_genres": [
 			"uk contemporary r&b"
+		],
+		"rank": 80
+	},
+	{
+		"name": "MISO",
+		"popularity": 52,
+		"id": "04xEkodoWyFji8icX911jM",
+		"artist_duration": 673727,
+		"artist_genres": [
+			"korean electropop",
+			"korean r&b"
+		],
+		"rank": 81
+	},
+	{
+		"name": "Ariana Grande",
+		"popularity": 94,
+		"id": "66CXWjxzNUsdJxJ2JdwvnR",
+		"artist_duration": 670740,
+		"artist_genres": [
+			"dance pop",
+			"pop"
+		],
+		"rank": 82
+	},
+	{
+		"name": "Echo Park",
+		"popularity": 22,
+		"id": "1gySMfXhI95Tgfr6YYwV5B",
+		"artist_duration": 666406,
+		"artist_genres": [],
+		"rank": 83
+	},
+	{
+		"name": "Dela",
+		"popularity": 39,
+		"id": "3ZNUlWnJXhcuBaTJGnOO8O",
+		"artist_duration": 643917,
+		"artist_genres": [
+			"alternative hip hop",
+			"ambeat",
+			"jazz boom bap",
+			"jazz rap"
+		],
+		"rank": 84
+	},
+	{
+		"name": "Ant\u00f4nio Carlos Jobim",
+		"popularity": 84,
+		"id": "1Mxqyy3pSjf8kZZL4QVxS0",
+		"artist_duration": 643447,
+		"artist_genres": [
+			"adult standards",
+			"easy listening",
+			"lounge"
 		],
 		"rank": 85
 	},
 	{
-		"name": "Mary J. Blige",
+		"name": "Ms. Lauryn Hill",
 		"popularity": 73,
-		"id": "1XkoF8ryArs86LZvFOkbyr",
-		"artist_duration": 1079892.0,
+		"id": "2Mu5NfyYm8n5iTomuKAEHl",
+		"artist_duration": 640256,
 		"artist_genres": [
-			"dance pop",
+			"conscious hip hop",
 			"hip pop",
 			"neo soul",
+			"new jersey rap",
 			"r&b",
 			"urban contemporary"
 		],
 		"rank": 86
 	},
 	{
-		"name": "Jorja Smith",
-		"popularity": 75,
-		"id": "1CoZyIx7UvdxT5c8UkMzHd",
-		"artist_duration": 1072397.0,
-		"artist_genres": [
-			"pop",
-			"r&b",
-			"uk contemporary r&b"
-		],
-		"rank": 87
-	},
-	{
-		"name": "Emily King",
-		"popularity": 54,
-		"id": "6jlWj6y00bMQt8XoKuCjyZ",
-		"artist_duration": 1069861.0,
-		"artist_genres": [
-			"indie soul",
-			"neo soul",
-			"nyc pop",
-			"pop soul",
-			"r&b",
-			"urban contemporary"
-		],
-		"rank": 88
-	},
-	{
-		"name": "DJ Cam Quartet",
-		"popularity": 47,
-		"id": "0DkOD427BCfr11yQVvfqU9",
-		"artist_duration": 1034772.0,
-		"artist_genres": [
-			"jazz quartet",
-			"nu jazz"
-		],
-		"rank": 89
-	},
-	{
-		"name": "MISO",
-		"popularity": 52,
-		"id": "04xEkodoWyFji8icX911jM",
-		"artist_duration": 1030588.0,
-		"artist_genres": [
-			"korean electropop",
-			"korean r&b"
-		],
-		"rank": 90
-	},
-	{
-		"name": "Esperanza Spalding",
-		"popularity": 51,
-		"id": "5bepW5vcdRzheNc0F8lHJ5",
-		"artist_duration": 1020478.0,
-		"artist_genres": [
-			"electric bass",
-			"indie soul",
-			"jazz",
-			"jazz fusion",
-			"jazz pop",
-			"neo soul",
-			"vocal jazz"
-		],
-		"rank": 91
-	},
-	{
-		"name": "Twista",
-		"popularity": 94,
-		"id": "5K4W6rqBFWDnAN6FQUkS6x",
-		"artist_duration": 948159.0,
-		"artist_genres": [
-			"chicago rap",
-			"rap"
-		],
-		"rank": 92
-	},
-	{
-		"name": "De La Soul",
-		"popularity": 61,
-		"id": "1Z8ODXyhEBi3WynYw0Rya6",
-		"artist_duration": 946750.0,
-		"artist_genres": [
-			"alternative hip hop",
-			"east coast hip hop",
-			"gangster rap",
-			"golden age hip hop",
-			"hardcore hip hop",
-			"hip hop",
-			"jazz rap",
-			"rap"
-		],
-		"rank": 93
-	},
-	{
-		"name": "BTS",
-		"popularity": 95,
-		"id": "3Nrfpe0tUJi4K4DXYWgMUX",
-		"artist_duration": 905147.0,
-		"artist_genres": [
-			"k-pop",
-			"k-pop boy group"
-		],
-		"rank": 94
-	},
-	{
-		"name": "The Pharcyde",
-		"popularity": 61,
-		"id": "7yk35uHNQclPXFGFoTU44w",
-		"artist_duration": 903252.0,
-		"artist_genres": [
-			"alternative hip hop",
-			"hardcore hip hop",
-			"hip hop",
-			"jazz rap",
-			"rap",
-			"west coast rap"
-		],
-		"rank": 95
-	},
-	{
-		"name": "Jay Park",
-		"popularity": 70,
-		"id": "4XDi67ZENZcbfKnvMnTYsI",
-		"artist_duration": 894482.0,
-		"artist_genres": [
-			"k-pop",
-			"k-rap",
-			"korean r&b"
-		],
-		"rank": 96
-	},
-	{
-		"name": "LION BABE",
-		"popularity": 54,
-		"id": "4VA3EAvncrTucjTmrvd4GE",
-		"artist_duration": 869544.0,
-		"artist_genres": [
-			"alternative r&b",
-			"electropop",
-			"escape room",
-			"indie r&b",
-			"indie soul",
-			"neo soul"
-		],
-		"rank": 97
-	},
-	{
-		"name": "Dela",
-		"popularity": 38,
-		"id": "3ZNUlWnJXhcuBaTJGnOO8O",
-		"artist_duration": 863211.0,
-		"artist_genres": [
-			"alternative hip hop",
-			"ambeat",
-			"chillhop",
-			"jazz boom bap",
-			"jazz rap"
-		],
-		"rank": 98
-	},
-	{
-		"name": "Franz Schubert",
-		"popularity": 67,
-		"id": "2p0UyoPfYfI76PCStuXfOP",
-		"artist_duration": 860078.0,
-		"artist_genres": [
-			"classical",
-			"classical era",
-			"early romantic era"
-		],
-		"rank": 99
-	},
-	{
-		"name": "Joomanji",
-		"popularity": 39,
-		"id": "1TGyEDXHDYwHNB012Otfhj",
-		"artist_duration": 857007.0,
-		"artist_genres": [
-			"indie jazz",
-			"indie soul"
-		],
-		"rank": 100
-	},
-	{
-		"name": "Naughty Boy",
-		"popularity": 63,
-		"id": "1bT7m67vi78r2oqvxrP3X5",
-		"artist_duration": 852076.0,
-		"artist_genres": [
-			"uk contemporary r&b"
-		],
-		"rank": 101
-	},
-	{
-		"name": "A Tribe Called Quest",
-		"popularity": 69,
-		"id": "09hVIj6vWgoCDtT03h8ZCa",
-		"artist_duration": 842505.0,
-		"artist_genres": [
-			"alternative hip hop",
-			"conscious hip hop",
-			"east coast hip hop",
-			"gangster rap",
-			"golden age hip hop",
-			"hardcore hip hop",
-			"hip hop",
-			"jazz rap",
-			"queens hip hop",
-			"rap"
-		],
-		"rank": 102
-	},
-	{
-		"name": "Chaos In The CBD",
-		"popularity": 50,
-		"id": "0QOQc6jEsPX5Y45TV0hXQy",
-		"artist_duration": 841838.0,
-		"artist_genres": [
-			"deep house",
-			"disco house",
-			"electronica",
-			"float house",
-			"future garage",
-			"indie soul",
-			"jazz house",
-			"nz electronic"
-		],
-		"rank": 103
-	},
-	{
-		"name": "Nio Garcia",
-		"popularity": 81,
-		"id": "5hdhHgpxyniooUiQVaPxQ0",
-		"artist_duration": 835840.0,
-		"artist_genres": [
-			"latin",
-			"reggaeton",
-			"trap latino"
-		],
-		"rank": 104
-	},
-	{
-		"name": "Yancey Boys",
-		"popularity": 31,
-		"id": "6poDCHAO9nvG3TB7Nzn1WD",
-		"artist_duration": 830040.0,
-		"artist_genres": [],
-		"rank": 105
-	},
-	{
-		"name": "Sex on Toast",
-		"popularity": 37,
-		"id": "7w6CFgYRRBheH4QOpa7xzI",
-		"artist_duration": 807849.0,
-		"artist_genres": [
-			"australian r&b"
-		],
-		"rank": 106
-	},
-	{
-		"name": "Cloud",
-		"popularity": 25,
-		"id": "6emoTi2rwoBTY20ejWnbBR",
-		"artist_duration": 803760.0,
-		"artist_genres": [
-			"swedish house"
-		],
-		"rank": 107
-	},
-	{
-		"name": "Darryl Reeves",
-		"popularity": 15,
-		"id": "5Bf7K3Mw4k2yjglOAFjvyi",
-		"artist_duration": 800702.0,
-		"artist_genres": [],
-		"rank": 108
-	},
-	{
-		"name": "Edvard Grieg",
-		"popularity": 65,
-		"id": "5ihY290YPGc3aY2xTyx7Gy",
-		"artist_duration": 796480.0,
-		"artist_genres": [
-			"classical",
-			"late romantic era",
-			"norwegian classical"
-		],
-		"rank": 109
-	},
-	{
-		"name": "Ariana Grande",
-		"popularity": 93,
-		"id": "66CXWjxzNUsdJxJ2JdwvnR",
-		"artist_duration": 788518.0,
-		"artist_genres": [
-			"dance pop",
-			"pop"
-		],
-		"rank": 110
-	},
-	{
-		"name": "jhfly",
-		"popularity": 48,
-		"id": "7D6kLgvRHr6DNDavc0LhvI",
-		"artist_duration": 788342.0,
-		"artist_genres": [
-			"chillhop",
-			"lo-fi beats"
-		],
-		"rank": 111
-	},
-	{
-		"name": "Beat Connection",
-		"popularity": 38,
-		"id": "64xvudklMEbVYMBocLyHSn",
-		"artist_duration": 786120.0,
-		"artist_genres": [
-			"chillwave",
-			"shimmer pop"
-		],
-		"rank": 112
-	},
-	{
-		"name": "Dr. Dre",
-		"popularity": 0,
-		"id": "0LyfQWJT6nXafLPZqxe9Of",
-		"artist_duration": 772652.0,
-		"artist_genres": [],
-		"rank": 113
-	},
-	{
-		"name": "Raury",
-		"popularity": 55,
-		"id": "2PU4qFehXQF7WnlFsJpBiJ",
-		"artist_duration": 765652.0,
-		"artist_genres": [
-			"psychedelic hip hop"
-		],
-		"rank": 114
-	},
-	{
-		"name": "VanJess",
-		"popularity": 59,
-		"id": "0Ek89uaJyo6NfWK22awFvI",
-		"artist_duration": 764400.0,
-		"artist_genres": [
-			"alternative r&b",
-			"chill r&b",
-			"indie r&b",
-			"indie soul",
-			"pop r&b",
-			"r&b"
-		],
-		"rank": 115
-	},
-	{
-		"name": "Camille Saint-Sa\u00ebns",
-		"popularity": 67,
-		"id": "436sYg6CZhNefQJogaXeK0",
-		"artist_duration": 745600.0,
-		"artist_genres": [
-			"classical",
-			"french romanticism",
-			"late romantic era"
-		],
-		"rank": 116
-	},
-	{
-		"name": "Billy Joel",
-		"popularity": 78,
-		"id": "6zFYqv1mOsgBRQbae3JJ9e",
-		"artist_duration": 740893.0,
-		"artist_genres": [
-			"classic rock",
-			"folk rock",
-			"mellow gold",
-			"piano rock",
-			"rock",
-			"singer-songwriter",
-			"soft rock"
-		],
-		"rank": 117
-	},
-	{
-		"name": "Jarami",
-		"popularity": 43,
-		"id": "1iwseab2dozTUHoF5taAdf",
-		"artist_duration": 728232.0,
-		"artist_genres": [
-			"new french touch",
-			"scandipop"
-		],
-		"rank": 118
-	},
-	{
-		"name": "Juice WRLD",
-		"popularity": 93,
-		"id": "4MCBfE4596Uoi2O4DtmEMz",
-		"artist_duration": 719505.0,
-		"artist_genres": [
-			"chicago rap",
-			"melodic rap"
-		],
-		"rank": 119
-	},
-	{
-		"name": "Solange",
-		"popularity": 64,
-		"id": "2auiVi8sUZo17dLy1HwrTU",
-		"artist_duration": 706479.0,
-		"artist_genres": [
-			"afrofuturism",
-			"alternative r&b",
-			"dance pop",
-			"escape room",
-			"hip pop",
-			"indie soul",
-			"neo soul",
-			"pop",
-			"r&b",
-			"urban contemporary"
-		],
-		"rank": 120
-	},
-	{
-		"name": "JR & PH7",
-		"popularity": 25,
-		"id": "5zTs8RFqVY1MISB77emYoR",
-		"artist_duration": 702720.0,
-		"artist_genres": [
-			"underground boom bap"
-		],
-		"rank": 121
-	},
-	{
-		"name": "Sampha",
-		"popularity": 62,
-		"id": "2WoVwexZuODvclzULjPQtm",
-		"artist_duration": 696867.0,
-		"artist_genres": [
-			"alternative r&b",
-			"indie soul"
-		],
-		"rank": 122
-	},
-	{
-		"name": "Romare",
-		"popularity": 55,
-		"id": "6d1HqiWNEKV9zFqQM9WeYo",
-		"artist_duration": 695336.0,
-		"artist_genres": [
-			"electronica",
-			"indie jazz",
-			"indie soul",
-			"ninja"
-		],
-		"rank": 123
-	},
-	{
-		"name": "Terrace Martin",
-		"popularity": 65,
-		"id": "7MNEVabc4cs19CbzAFZmXz",
-		"artist_duration": 673863.0,
-		"artist_genres": [
-			"alternative r&b",
-			"indie r&b",
-			"indie soul",
-			"neo soul"
-		],
-		"rank": 124
-	},
-	{
-		"name": "Frederick Delius",
-		"popularity": 0,
-		"id": "0LyfQWJT6nXafLPZqxe9Of",
-		"artist_duration": 665826.0,
-		"artist_genres": [],
-		"rank": 125
-	},
-	{
-		"name": "The Chainsmokers",
-		"popularity": 83,
-		"id": "69GGBxA162lTqCwzJG5jLp",
-		"artist_duration": 662280.0,
-		"artist_genres": [
-			"dance pop",
-			"edm",
-			"electropop",
-			"pop",
-			"pop dance",
-			"tropical house"
-		],
-		"rank": 126
-	},
-	{
-		"name": "Neguim Beats",
-		"popularity": 13,
-		"id": "6GgLM2qNPZilgFLyBZHHMF",
-		"artist_duration": 662067.0,
-		"artist_genres": [
-			"brazilian experimental"
-		],
-		"rank": 127
-	},
-	{
-		"name": "Breakbot",
-		"popularity": 60,
-		"id": "0iui2Be5CP8EWxvHYsVspL",
-		"artist_duration": 647358.0,
-		"artist_genres": [
-			"alternative dance",
-			"disco house",
-			"filter house",
-			"new french touch",
-			"nu disco"
-		],
-		"rank": 128
-	},
-	{
-		"name": "James Tillman",
-		"popularity": 38,
-		"id": "4FXBouJHB0s6E3d6Q9YeSO",
-		"artist_duration": 642681.0,
-		"artist_genres": [
-			"alternative r&b",
-			"indie jazz",
-			"indie r&b",
-			"indie soul",
-			"neo r&b"
-		],
-		"rank": 129
-	},
-	{
-		"name": "Tyler, The Creator",
-		"popularity": 86,
-		"id": "4V8LLVI7PbaPR0K2TGSxFF",
-		"artist_duration": 641440.0,
-		"artist_genres": [
-			"hip hop",
-			"rap"
-		],
-		"rank": 130
-	},
-	{
-		"name": "Ms. Lauryn Hill",
-		"popularity": 74,
-		"id": "2Mu5NfyYm8n5iTomuKAEHl",
-		"artist_duration": 640532.0,
-		"artist_genres": [
-			"conscious hip hop",
-			"hip pop",
-			"neo soul",
-			"new jersey rap",
-			"r&b",
-			"urban contemporary"
-		],
-		"rank": 131
-	},
-	{
-		"name": "Maxwell Young",
-		"popularity": 51,
-		"id": "5HONdRTLNvBjlD2LirKp0q",
-		"artist_duration": 639999.0,
-		"artist_genres": [
-			"chillhop"
-		],
-		"rank": 132
-	},
-	{
-		"name": "Damian Marley",
-		"popularity": 68,
-		"id": "3QJzdZJYIAcoET1GcfpNGi",
-		"artist_duration": 634666.0,
-		"artist_genres": [
-			"modern reggae",
-			"reggae",
-			"reggae fusion"
-		],
-		"rank": 133
-	},
-	{
-		"name": "Darondo",
-		"popularity": 53,
-		"id": "4JfFdF9Row7UXtdsKtT6tc",
-		"artist_duration": 633440.0,
-		"artist_genres": [
-			"afrobeat",
-			"funk",
-			"soul"
-		],
-		"rank": 134
-	},
-	{
 		"name": "Flying Lotus",
 		"popularity": 62,
 		"id": "29XOeO6KIWxGthejQqn793",
-		"artist_duration": 629265.0,
+		"artist_duration": 629093,
 		"artist_genres": [
 			"afrofuturism",
 			"alternative hip hop",
@@ -1684,13 +1095,13 @@
 			"psychedelic hip hop",
 			"wonky"
 		],
-		"rank": 135
+		"rank": 87
 	},
 	{
 		"name": "Vic Mensa",
 		"popularity": 65,
 		"id": "27w1NoOLMX7tJMYqcetPyG",
-		"artist_duration": 628440.0,
+		"artist_duration": 628440,
 		"artist_genres": [
 			"chicago rap",
 			"conscious hip hop",
@@ -1700,367 +1111,224 @@
 			"trap",
 			"underground hip hop"
 		],
-		"rank": 136
+		"rank": 88
 	},
 	{
-		"name": "Travis Scott",
-		"popularity": 93,
-		"id": "0Y5tJX1MQlPlqiwlOH1tJY",
-		"artist_duration": 625640.0,
+		"name": "Emily King",
+		"popularity": 54,
+		"id": "6jlWj6y00bMQt8XoKuCjyZ",
+		"artist_duration": 627138,
 		"artist_genres": [
-			"rap",
-			"slap house"
+			"indie soul",
+			"neo soul",
+			"nyc pop",
+			"pop soul",
+			"r&b",
+			"urban contemporary"
 		],
-		"rank": 137
+		"rank": 89
 	},
 	{
-		"name": "SoulChef",
-		"popularity": 60,
-		"id": "7rdiGVXL2fFyONexHzfKFS",
-		"artist_duration": 623973.0,
+		"name": "Joomanji",
+		"popularity": 40,
+		"id": "1TGyEDXHDYwHNB012Otfhj",
+		"artist_duration": 612993,
 		"artist_genres": [
-			"ambeat"
+			"indie jazz",
+			"indie soul"
 		],
-		"rank": 138
-	},
-	{
-		"name": "SBTRKT",
-		"popularity": 53,
-		"id": "1O10apSOoAPjOu6UhUNmeI",
-		"artist_duration": 623762.0,
-		"artist_genres": [
-			"electronica",
-			"electropop",
-			"future garage",
-			"new rave"
-		],
-		"rank": 139
-	},
-	{
-		"name": "Kodomo",
-		"popularity": 36,
-		"id": "57BliIwnAIqKeI4dbAWwaU",
-		"artist_duration": 615092.0,
-		"artist_genres": [
-			"space ambient"
-		],
-		"rank": 140
+		"rank": 90
 	},
 	{
 		"name": "Blue In Green",
 		"popularity": 34,
 		"id": "6tkPtKgggRAndEQc47Epms",
-		"artist_duration": 612772.0,
+		"artist_duration": 611445,
 		"artist_genres": [],
-		"rank": 141
+		"rank": 91
 	},
 	{
-		"name": "Pharrell Williams",
-		"popularity": 81,
-		"id": "2RdwBSPQiwcmiDo9kixcl8",
-		"artist_duration": 610558.0,
+		"name": "Twista",
+		"popularity": 94,
+		"id": "5K4W6rqBFWDnAN6FQUkS6x",
+		"artist_duration": 607281,
 		"artist_genres": [
-			"pop rap"
+			"chicago rap",
+			"rap"
 		],
-		"rank": 142
+		"rank": 92
 	},
 	{
-		"name": "Catching Flies",
-		"popularity": 57,
-		"id": "4zAOqBfNLyWFvj1e3yvypJ",
-		"artist_duration": 608972.0,
+		"name": "Franz Schubert",
+		"popularity": 67,
+		"id": "2p0UyoPfYfI76PCStuXfOP",
+		"artist_duration": 606821,
 		"artist_genres": [
-			"downtempo",
-			"electronica",
-			"indie dream pop",
-			"indie soul",
-			"new french touch",
-			"vapor soul",
-			"vapor twitch"
+			"classical",
+			"classical era",
+			"early romantic era"
 		],
-		"rank": 143
+		"rank": 93
 	},
 	{
-		"name": "Blackalicious",
-		"popularity": 50,
-		"id": "42Np3r8zXnaKcjLQsQSjyG",
-		"artist_duration": 607800.0,
+		"name": "Cloud",
+		"popularity": 25,
+		"id": "6emoTi2rwoBTY20ejWnbBR",
+		"artist_duration": 605880,
 		"artist_genres": [
-			"alternative hip hop",
-			"hip hop",
-			"turntablism"
+			"swedish house"
 		],
-		"rank": 144
+		"rank": 94
 	},
 	{
 		"name": "Miracle",
 		"popularity": 25,
 		"id": "3oWP9Q0jANEXzYtmb3nWdS",
-		"artist_duration": 604586.0,
+		"artist_duration": 604559,
 		"artist_genres": [],
-		"rank": 145
+		"rank": 95
 	},
 	{
-		"name": "Disclosure",
-		"popularity": 76,
-		"id": "6nS5roXSAGhTGr34W6n7Et",
-		"artist_duration": 603893.0,
+		"name": "Raury",
+		"popularity": 56,
+		"id": "2PU4qFehXQF7WnlFsJpBiJ",
+		"artist_duration": 597957,
 		"artist_genres": [
-			"house",
-			"pop",
-			"uk dance"
+			"psychedelic hip hop"
 		],
-		"rank": 146
-	},
-	{
-		"name": "Point Point",
-		"popularity": 43,
-		"id": "5L67d6oZKOOmXcBcMMJdZZ",
-		"artist_duration": 600000.0,
-		"artist_genres": [
-			"future bass",
-			"new french touch",
-			"vapor soul",
-			"vapor twitch"
-		],
-		"rank": 147
+		"rank": 96
 	},
 	{
 		"name": "Gabriel Garz\u00f3n-Montano",
 		"popularity": 46,
 		"id": "1R4GxRuSVTPSb6oy56SPST",
-		"artist_duration": 597812.0,
+		"artist_duration": 597779,
 		"artist_genres": [
 			"alternative r&b",
 			"indie jazz",
 			"indie soul"
 		],
-		"rank": 148
-	},
-	{
-		"name": "Nick Leng",
-		"popularity": 48,
-		"id": "2fR4D8OveDTHMvCvm7paAO",
-		"artist_duration": 595176.0,
-		"artist_genres": [
-			"vapor soul"
-		],
-		"rank": 149
+		"rank": 97
 	},
 	{
 		"name": "NEIL FRANCES",
-		"popularity": 61,
+		"popularity": 62,
 		"id": "587PA35pRGL1JwQr6idJbb",
-		"artist_duration": 594915.0,
+		"artist_duration": 594963,
 		"artist_genres": [
 			"indie soul"
 		],
-		"rank": 150
+		"rank": 98
 	},
 	{
-		"name": "Fela Kuti",
-		"popularity": 52,
-		"id": "5CG9X521RDFWCuAhlo6QoR",
-		"artist_duration": 591706.0,
+		"name": "Naughty Boy",
+		"popularity": 63,
+		"id": "1bT7m67vi78r2oqvxrP3X5",
+		"artist_duration": 590644,
 		"artist_genres": [
-			"afrobeat",
-			"afropop",
-			"funk",
-			"soul",
-			"world"
+			"tropical house",
+			"uk contemporary r&b"
 		],
-		"rank": 151
+		"rank": 99
 	},
 	{
-		"name": "Souls Of Mischief",
-		"popularity": 56,
-		"id": "5Rzqmz1zAszembFHGZQuAt",
-		"artist_duration": 584106.0,
+		"name": "jhfly",
+		"popularity": 48,
+		"id": "7D6kLgvRHr6DNDavc0LhvI",
+		"artist_duration": 566388,
 		"artist_genres": [
-			"alternative hip hop",
-			"hardcore hip hop",
-			"hip hop",
-			"jazz rap"
+			"chillhop",
+			"lo-fi beats"
 		],
-		"rank": 152
+		"rank": 100
 	},
 	{
-		"name": "Snoop Dogg",
-		"popularity": 85,
-		"id": "7hJcb9fa4alzcOq3EaNPoG",
-		"artist_duration": 583359.0,
+		"name": "Daniel Caesar",
+		"popularity": 82,
+		"id": "20wkVLutqVOYrc0kxFs7rA",
+		"artist_duration": 563832,
+		"artist_genres": [
+			"canadian contemporary r&b",
+			"pop",
+			"r&b"
+		],
+		"rank": 101
+	},
+	{
+		"name": "Daft Punk",
+		"popularity": 82,
+		"id": "4tZwfgrHOc3mvqYlEYSvVi",
+		"artist_duration": 547899,
+		"artist_genres": [
+			"electro",
+			"filter house"
+		],
+		"rank": 102
+	},
+	{
+		"name": "Billy Joel",
+		"popularity": 78,
+		"id": "6zFYqv1mOsgBRQbae3JJ9e",
+		"artist_duration": 540949,
+		"artist_genres": [
+			"classic rock",
+			"folk rock",
+			"mellow gold",
+			"piano rock",
+			"rock",
+			"singer-songwriter",
+			"soft rock"
+		],
+		"rank": 103
+	},
+	{
+		"name": "Gold Panda",
+		"popularity": 43,
+		"id": "6xS3zemJD9h94iueQvGqVk",
+		"artist_duration": 535514,
+		"artist_genres": [
+			"chillwave",
+			"electronica",
+			"future garage",
+			"indietronica",
+			"microhouse",
+			"wonky"
+		],
+		"rank": 104
+	},
+	{
+		"name": "Westside Connection",
+		"popularity": 60,
+		"id": "3zNM2tRfTX6LI1lN2PlrTt",
+		"artist_duration": 521350,
 		"artist_genres": [
 			"g funk",
 			"gangster rap",
+			"hardcore hip hop",
 			"hip hop",
 			"pop rap",
 			"rap",
 			"west coast rap"
 		],
-		"rank": 153
+		"rank": 105
 	},
 	{
-		"name": "Michael Kiwanuka",
-		"popularity": 68,
-		"id": "0bzfPKdbXL5ezYW2z3UGQj",
-		"artist_duration": 583136.0,
+		"name": "Fashawn",
+		"popularity": 41,
+		"id": "6sDyTDjzGxcvyhLn5x9RyY",
+		"artist_duration": 514573,
 		"artist_genres": [
-			"british soul",
-			"neo soul",
-			"psychedelic soul",
-			"soul"
+			"alternative hip hop",
+			"soul flow",
+			"underground rap"
 		],
-		"rank": 154
-	},
-	{
-		"name": "Mac Miller",
-		"popularity": 87,
-		"id": "4LLpKhyESsyAXpc4laK94U",
-		"artist_duration": 575680.0,
-		"artist_genres": [
-			"hip hop",
-			"pittsburgh rap",
-			"rap"
-		],
-		"rank": 155
-	},
-	{
-		"name": "Coldplay",
-		"popularity": 91,
-		"id": "4gzpq5DPGxSnKTe4SA8HAU",
-		"artist_duration": 570028.0,
-		"artist_genres": [
-			"permanent wave",
-			"pop"
-		],
-		"rank": 156
-	},
-	{
-		"name": "Photay",
-		"popularity": 47,
-		"id": "1MSxOmIt7uYgvPydd1tU8F",
-		"artist_duration": 568576.0,
-		"artist_genres": [
-			"chillwave",
-			"future bass",
-			"wonky"
-		],
-		"rank": 157
-	},
-	{
-		"name": "Roy Ayers Ubiquity",
-		"popularity": 45,
-		"id": "4DbVGBurfbrdLW2ZwfwdmP",
-		"artist_duration": 565502.0,
-		"artist_genres": [
-			"indie jazz",
-			"indie soul",
-			"japanese jazz"
-		],
-		"rank": 158
-	},
-	{
-		"name": "Nas",
-		"popularity": 76,
-		"id": "20qISvAhX20dpIbOOzGK3q",
-		"artist_duration": 564746.0,
-		"artist_genres": [
-			"conscious hip hop",
-			"east coast hip hop",
-			"gangster rap",
-			"hardcore hip hop",
-			"hip hop",
-			"queens hip hop",
-			"rap"
-		],
-		"rank": 159
-	},
-	{
-		"name": "The Seshen",
-		"popularity": 27,
-		"id": "2rkxM3pdssb12wllaVcYSC",
-		"artist_duration": 564106.0,
-		"artist_genres": [
-			"experimental r&b"
-		],
-		"rank": 160
-	},
-	{
-		"name": "Kings of Convenience",
-		"popularity": 64,
-		"id": "41AbNVba2ccpmcc9QtOJE7",
-		"artist_duration": 561332.0,
-		"artist_genres": [
-			"bergen indie",
-			"melancholia",
-			"norwegian indie"
-		],
-		"rank": 161
-	},
-	{
-		"name": "A$AP Ferg",
-		"popularity": 76,
-		"id": "5dHt1vcEm9qb8fCyLcB3HL",
-		"artist_duration": 551732.0,
-		"artist_genres": [
-			"hip hop",
-			"pop rap",
-			"rap",
-			"southern hip hop",
-			"trap",
-			"underground hip hop"
-		],
-		"rank": 162
-	},
-	{
-		"name": "Gramatik",
-		"popularity": 59,
-		"id": "179BpmLkQCRIoU68Co80f5",
-		"artist_duration": 547047.0,
-		"artist_genres": [
-			"downtempo",
-			"jazz boom bap",
-			"jazztronica",
-			"livetronica",
-			"nu jazz",
-			"slovenian electronic",
-			"trip hop"
-		],
-		"rank": 163
-	},
-	{
-		"name": "Franz Liszt",
-		"popularity": 65,
-		"id": "1385hLNbrnbCJGokfH2ac2",
-		"artist_duration": 546986.0,
-		"artist_genres": [
-			"classical",
-			"late romantic era"
-		],
-		"rank": 164
-	},
-	{
-		"name": "Mk.gee",
-		"popularity": 71,
-		"id": "1Xfmvd48oOhEWkscWyEbh9",
-		"artist_duration": 546266.0,
-		"artist_genres": [
-			"dance pop",
-			"hip pop",
-			"pop",
-			"pop r&b",
-			"pop rap",
-			"r&b",
-			"southern hip hop",
-			"urban contemporary"
-		],
-		"rank": 165
+		"rank": 106
 	},
 	{
 		"name": "Gary Clark Jr.",
-		"popularity": 64,
+		"popularity": 65,
 		"id": "01aC2ikO4Xgb2LUpf9JfKp",
-		"artist_duration": 542320.0,
+		"artist_duration": 514416,
 		"artist_genres": [
 			"blues rock",
 			"electric blues",
@@ -2071,81 +1339,349 @@
 			"soul blues",
 			"texas blues"
 		],
-		"rank": 166
+		"rank": 107
 	},
 	{
-		"name": "Gold Panda",
-		"popularity": 43,
-		"id": "6xS3zemJD9h94iueQvGqVk",
-		"artist_duration": 535466.0,
+		"name": "Taylor McFerrin",
+		"popularity": 44,
+		"id": "0yLmsf6RBPYqm6hvFJCPg6",
+		"artist_duration": 513450,
 		"artist_genres": [
-			"chillwave",
-			"electronica",
-			"future garage",
-			"indietronica",
-			"microhouse",
+			"indie jazz",
+			"indie soul",
 			"wonky"
 		],
-		"rank": 167
+		"rank": 108
+	},
+	{
+		"name": "Solange",
+		"popularity": 64,
+		"id": "2auiVi8sUZo17dLy1HwrTU",
+		"artist_duration": 512191,
+		"artist_genres": [
+			"afrofuturism",
+			"alternative r&b",
+			"art pop",
+			"dance pop",
+			"escape room",
+			"hip pop",
+			"indie soul",
+			"neo soul",
+			"pop",
+			"r&b",
+			"urban contemporary"
+		],
+		"rank": 109
 	},
 	{
 		"name": "Unwrapped",
 		"popularity": 37,
 		"id": "16yvMxTCkxg6Jqe43TXDFe",
-		"artist_duration": 533466.0,
+		"artist_duration": 509944,
 		"artist_genres": [],
-		"rank": 168
+		"rank": 110
 	},
 	{
-		"name": "Loyle Carner",
-		"popularity": 67,
-		"id": "4oDjh8wNW5vDHyFRrDYC4k",
-		"artist_duration": 532405.0,
+		"name": "Edvard Grieg",
+		"popularity": 65,
+		"id": "5ihY290YPGc3aY2xTyx7Gy",
+		"artist_duration": 509429,
 		"artist_genres": [
-			"indie soul",
-			"london rap",
-			"uk alternative hip hop"
+			"classical",
+			"late romantic era",
+			"norwegian classical"
 		],
-		"rank": 169
+		"rank": 111
 	},
 	{
-		"name": "Illa J",
-		"popularity": 51,
-		"id": "72zigmOdJbIsz0iIRhCBvp",
-		"artist_duration": 531068.0,
+		"name": "People Under The Stairs",
+		"popularity": 54,
+		"id": "0av074qUwLn5eyzwqoq3xh",
+		"artist_duration": 505328,
 		"artist_genres": [
 			"alternative hip hop",
-			"detroit hip hop",
 			"hip hop",
-			"indie soul"
+			"jazz rap",
+			"turntablism"
 		],
-		"rank": 170
+		"rank": 112
 	},
 	{
-		"name": "M. T. Hadley",
-		"popularity": 22,
-		"id": "3O9qxLTLMvR9Dn1OAFoWaH",
-		"artist_duration": 527200.0,
+		"name": "Gorillaz",
+		"popularity": 82,
+		"id": "3AA28KZvwAUcZuOKwyblJQ",
+		"artist_duration": 503209,
 		"artist_genres": [
+			"alternative hip hop"
+		],
+		"rank": 113
+	},
+	{
+		"name": "JR & PH7",
+		"popularity": 28,
+		"id": "5zTs8RFqVY1MISB77emYoR",
+		"artist_duration": 491205,
+		"artist_genres": [
+			"underground boom bap"
+		],
+		"rank": 114
+	},
+	{
+		"name": "Roman GianArthur",
+		"popularity": 48,
+		"id": "7hgRzsQGjlm1zifNoigyB9",
+		"artist_duration": 489724,
+		"artist_genres": [],
+		"rank": 115
+	},
+	{
+		"name": "Ludwig van Beethoven",
+		"popularity": 75,
+		"id": "2wOqMjp9TyABvtHdOSOTUS",
+		"artist_duration": 487929,
+		"artist_genres": [
+			"classical",
+			"classical era",
+			"early romantic era",
+			"german romanticism"
+		],
+		"rank": 116
+	},
+	{
+		"name": "half\u2022alive",
+		"popularity": 65,
+		"id": "7sOR7gk6XUlGnxj3p9F54k",
+		"artist_duration": 477538,
+		"artist_genres": [
+			"alt z",
+			"indie pop",
+			"modern alternative rock",
+			"modern rock"
+		],
+		"rank": 117
+	},
+	{
+		"name": "Hayden James",
+		"popularity": 65,
+		"id": "4csQIMQm6vI2A2SCVDuM2z",
+		"artist_duration": 476726,
+		"artist_genres": [
+			"aussietronica",
+			"edm",
+			"gauze pop",
+			"house",
+			"indie soul",
+			"pop dance",
+			"tropical house"
+		],
+		"rank": 118
+	},
+	{
+		"name": "T-Pain",
+		"popularity": 80,
+		"id": "3aQeKQSyrW4qWr35idm0cy",
+		"artist_duration": 473765,
+		"artist_genres": [
+			"dance pop",
+			"hip hop",
+			"pop",
+			"pop rap",
+			"r&b",
+			"rap",
+			"southern hip hop",
+			"urban contemporary"
+		],
+		"rank": 119
+	},
+	{
+		"name": "SoulChef",
+		"popularity": 60,
+		"id": "7rdiGVXL2fFyONexHzfKFS",
+		"artist_duration": 473055,
+		"artist_genres": [
+			"ambeat"
+		],
+		"rank": 120
+	},
+	{
+		"name": "Damian Marley",
+		"popularity": 69,
+		"id": "3QJzdZJYIAcoET1GcfpNGi",
+		"artist_duration": 468416,
+		"artist_genres": [
+			"reggae",
+			"reggae fusion"
+		],
+		"rank": 121
+	},
+	{
+		"name": "Mura Masa",
+		"popularity": 67,
+		"id": "5Q81rlcTFh3k6DQJXPdsot",
+		"artist_duration": 465617,
+		"artist_genres": [
+			"channel islands indie",
 			"vapor soul"
 		],
-		"rank": 171
+		"rank": 122
 	},
 	{
-		"name": "The World Famous Tony Williams",
-		"popularity": 42,
-		"id": "6TTVdg5UOUHsyiYPHgxLaq",
-		"artist_duration": 525972.0,
+		"name": "Paris Jones",
+		"popularity": 29,
+		"id": "1buXx0RSkvGYCCiAl03JIp",
+		"artist_duration": 463232,
+		"artist_genres": [],
+		"rank": 123
+	},
+	{
+		"name": "Idesia",
+		"popularity": 25,
+		"id": "2VUuRcKjZfeCQzBI1PPyL1",
+		"artist_duration": 462391,
 		"artist_genres": [
-			"psychedelic hip hop"
+			"neo r&b"
 		],
-		"rank": 172
+		"rank": 124
+	},
+	{
+		"name": "Moods",
+		"popularity": 53,
+		"id": "14uVJsPC4DByeuD0cq36ez",
+		"artist_duration": 461849,
+		"artist_genres": [
+			"chillhop",
+			"indie soul",
+			"new french touch",
+			"vapor twitch"
+		],
+		"rank": 125
+	},
+	{
+		"name": "Khruangbin",
+		"popularity": 71,
+		"id": "2mVVjNmdjXZZDvhgQWiakk",
+		"artist_duration": 460229,
+		"artist_genres": [
+			"neo-psychedelic"
+		],
+		"rank": 126
+	},
+	{
+		"name": "Octave Minds",
+		"popularity": 23,
+		"id": "3t5CzAvVZ7ruA3Uv3QvUrt",
+		"artist_duration": 459524,
+		"artist_genres": [],
+		"rank": 127
+	},
+	{
+		"name": "Jay Park",
+		"popularity": 71,
+		"id": "4XDi67ZENZcbfKnvMnTYsI",
+		"artist_duration": 458173,
+		"artist_genres": [
+			"k-pop",
+			"k-rap",
+			"korean r&b"
+		],
+		"rank": 128
+	},
+	{
+		"name": "Gabriel Faur\u00e9",
+		"popularity": 44,
+		"id": "4gs13ipYIJhCcqDMOEx9eN",
+		"artist_duration": 456140,
+		"artist_genres": [
+			"choral"
+		],
+		"rank": 129
+	},
+	{
+		"name": "Miles Davis",
+		"popularity": 65,
+		"id": "0kbYTNQb4Pb1rPbbaF0pT4",
+		"artist_duration": 445648,
+		"artist_genres": [
+			"cool jazz",
+			"hard bop",
+			"jazz",
+			"jazz fusion",
+			"jazz trumpet"
+		],
+		"rank": 130
+	},
+	{
+		"name": "Breakbot",
+		"popularity": 60,
+		"id": "0iui2Be5CP8EWxvHYsVspL",
+		"artist_duration": 442612,
+		"artist_genres": [
+			"alternative dance",
+			"disco house",
+			"filter house",
+			"new french touch",
+			"nu disco"
+		],
+		"rank": 131
+	},
+	{
+		"name": "DJ Grumble",
+		"popularity": 45,
+		"id": "2oJgWr3LkpO9g9NyL8hiOJ",
+		"artist_duration": 440293,
+		"artist_genres": [
+			"chillhop",
+			"jazz boom bap"
+		],
+		"rank": 132
+	},
+	{
+		"name": "Fela Kuti",
+		"popularity": 52,
+		"id": "5CG9X521RDFWCuAhlo6QoR",
+		"artist_duration": 439388,
+		"artist_genres": [
+			"afrobeat",
+			"afropop",
+			"funk",
+			"soul",
+			"world"
+		],
+		"rank": 133
+	},
+	{
+		"name": "James Tillman",
+		"popularity": 38,
+		"id": "4FXBouJHB0s6E3d6Q9YeSO",
+		"artist_duration": 438812,
+		"artist_genres": [
+			"indie jazz",
+			"indie r&b",
+			"indie soul",
+			"neo r&b"
+		],
+		"rank": 134
+	},
+	{
+		"name": "The Chainsmokers",
+		"popularity": 83,
+		"id": "69GGBxA162lTqCwzJG5jLp",
+		"artist_duration": 438063,
+		"artist_genres": [
+			"dance pop",
+			"edm",
+			"electropop",
+			"pop",
+			"pop dance",
+			"tropical house"
+		],
+		"rank": 135
 	},
 	{
 		"name": "The Roots",
 		"popularity": 64,
 		"id": "78xUyw6FkVZrRAtziFdtdu",
-		"artist_duration": 522599.0,
+		"artist_duration": 436144,
 		"artist_genres": [
 			"alternative hip hop",
 			"conscious hip hop",
@@ -2157,66 +1693,39 @@
 			"political hip hop",
 			"southern hip hop"
 		],
-		"rank": 173
+		"rank": 136
 	},
 	{
-		"name": "Rae Sremmurd",
-		"popularity": 76,
-		"id": "7iZtZyCzp3LItcw1wtPI3D",
-		"artist_duration": 519893.0,
+		"name": "Darondo",
+		"popularity": 53,
+		"id": "4JfFdF9Row7UXtdsKtT6tc",
+		"artist_duration": 435821,
 		"artist_genres": [
-			"hip hop",
-			"melodic rap",
-			"mississippi hip hop",
-			"pop rap",
-			"rap",
-			"southern hip hop",
-			"trap"
+			"afrobeat",
+			"funk",
+			"soul"
 		],
-		"rank": 174
+		"rank": 137
 	},
 	{
-		"name": "Fashawn",
-		"popularity": 43,
-		"id": "6sDyTDjzGxcvyhLn5x9RyY",
-		"artist_duration": 515075.0,
+		"name": "Two Another",
+		"popularity": 59,
+		"id": "35RvGPQ1OxbEZknWyiaAcs",
+		"artist_duration": 433258,
 		"artist_genres": [
-			"alternative hip hop",
-			"soul flow",
-			"underground rap"
+			"indie soul",
+			"new french touch",
+			"vapor soul"
 		],
-		"rank": 175
-	},
-	{
-		"name": "Mr. Carmack",
-		"popularity": 45,
-		"id": "4OHaWpWPKDcZgOOUn9elFn",
-		"artist_duration": 514284.0,
-		"artist_genres": [
-			"electronic trap",
-			"future bass",
-			"vapor twitch"
-		],
-		"rank": 176
-	},
-	{
-		"name": "Kiiara",
-		"popularity": 48,
-		"id": "6po19E0R9xffrgzrg84TC9",
-		"artist_duration": 513570.0,
-		"artist_genres": [
-			"atl hip hop",
-			"trap soul",
-			"underground hip hop"
-		],
-		"rank": 177
+		"rank": 138
 	},
 	{
 		"name": "Mario",
 		"popularity": 69,
 		"id": "20s0P9QLxGqKuCsGwFsp7w",
-		"artist_duration": 513466.0,
+		"artist_duration": 429367,
 		"artist_genres": [
+			"contemporary r&b",
 			"dance pop",
 			"hip pop",
 			"pop",
@@ -2226,88 +1735,852 @@
 			"rap",
 			"urban contemporary"
 		],
-		"rank": 178
+		"rank": 139
 	},
 	{
-		"name": "Taylor McFerrin",
-		"popularity": 44,
-		"id": "0yLmsf6RBPYqm6hvFJCPg6",
-		"artist_duration": 513432.0,
+		"name": "Flume",
+		"popularity": 74,
+		"id": "6nxWCVXbOlEVRexSbLsTer",
+		"artist_duration": 427766,
 		"artist_genres": [
-			"indie jazz",
-			"indie soul",
-			"neo r&b",
-			"wonky"
+			"australian dance",
+			"australian electropop",
+			"australian indie",
+			"downtempo",
+			"edm"
 		],
-		"rank": 179
+		"rank": 140
+	},
+	{
+		"name": "Sex on Toast",
+		"popularity": 37,
+		"id": "7w6CFgYRRBheH4QOpa7xzI",
+		"artist_duration": 424423,
+		"artist_genres": [
+			"australian r&b"
+		],
+		"rank": 141
+	},
+	{
+		"name": "Maxwell Young",
+		"popularity": 51,
+		"id": "5HONdRTLNvBjlD2LirKp0q",
+		"artist_duration": 422653,
+		"artist_genres": [
+			"chillhop"
+		],
+		"rank": 142
+	},
+	{
+		"name": "Jacob Banks",
+		"popularity": 64,
+		"id": "0AepkoQhYvkjEzzwIcGxdV",
+		"artist_duration": 417535,
+		"artist_genres": [
+			"modern alternative rock",
+			"uk contemporary r&b"
+		],
+		"rank": 143
+	},
+	{
+		"name": "Blazo",
+		"popularity": 42,
+		"id": "089rQ02K5KBRF0XRYcQ9LX",
+		"artist_duration": 405183,
+		"artist_genres": [
+			"ambeat",
+			"chillhop",
+			"jazz boom bap"
+		],
+		"rank": 144
+	},
+	{
+		"name": "Darryl Reeves",
+		"popularity": 15,
+		"id": "5Bf7K3Mw4k2yjglOAFjvyi",
+		"artist_duration": 403381,
+		"artist_genres": [],
+		"rank": 145
+	},
+	{
+		"name": "Catching Flies",
+		"popularity": 57,
+		"id": "4zAOqBfNLyWFvj1e3yvypJ",
+		"artist_duration": 397040,
+		"artist_genres": [
+			"downtempo",
+			"electronica",
+			"indie dream pop",
+			"indie soul",
+			"new french touch",
+			"vapor soul",
+			"vapor twitch"
+		],
+		"rank": 146
+	},
+	{
+		"name": "Lafayette Afro Rock Band",
+		"popularity": 37,
+		"id": "5EgMMveFcSL3rq87Wkyw4s",
+		"artist_duration": 395588,
+		"artist_genres": [
+			"afrobeat",
+			"funk",
+			"jazz funk"
+		],
+		"rank": 147
+	},
+	{
+		"name": "Neguim Beats",
+		"popularity": 13,
+		"id": "6GgLM2qNPZilgFLyBZHHMF",
+		"artist_duration": 394400,
+		"artist_genres": [
+			"brazilian experimental"
+		],
+		"rank": 148
+	},
+	{
+		"name": "Camille Saint-Sa\u00ebns",
+		"popularity": 0,
+		"id": "0LyfQWJT6nXafLPZqxe9Of",
+		"artist_duration": 390019,
+		"artist_genres": [],
+		"rank": 149
+	},
+	{
+		"name": "Jodie Abacus",
+		"popularity": 43,
+		"id": "0yh6q1VddpFTvlZlC4raQp",
+		"artist_duration": 389250,
+		"artist_genres": [
+			"british soul"
+		],
+		"rank": 150
+	},
+	{
+		"name": "Jorja Smith",
+		"popularity": 76,
+		"id": "1CoZyIx7UvdxT5c8UkMzHd",
+		"artist_duration": 380288,
+		"artist_genres": [
+			"dance pop",
+			"pop",
+			"r&b",
+			"uk contemporary r&b"
+		],
+		"rank": 151
+	},
+	{
+		"name": "Kings of Convenience",
+		"popularity": 64,
+		"id": "41AbNVba2ccpmcc9QtOJE7",
+		"artist_duration": 373322,
+		"artist_genres": [
+			"bergen indie",
+			"melancholia",
+			"norwegian indie"
+		],
+		"rank": 152
+	},
+	{
+		"name": "Monte Booker",
+		"popularity": 53,
+		"id": "4p75GTNEXwsAAkpweMVtKo",
+		"artist_duration": 373272,
+		"artist_genres": [
+			"viral rap"
+		],
+		"rank": 153
+	},
+	{
+		"name": "Claude Debussy",
+		"popularity": 72,
+		"id": "1Uff91EOsvd99rtAupatMP",
+		"artist_duration": 368462,
+		"artist_genres": [
+			"classical",
+			"impressionism",
+			"post-romantic era"
+		],
+		"rank": 154
+	},
+	{
+		"name": "Point Point",
+		"popularity": 44,
+		"id": "5L67d6oZKOOmXcBcMMJdZZ",
+		"artist_duration": 368298,
+		"artist_genres": [
+			"future bass",
+			"new french touch",
+			"vapor soul",
+			"vapor twitch"
+		],
+		"rank": 155
 	},
 	{
 		"name": "Theophilus London",
 		"popularity": 57,
 		"id": "4EMtGVFvfCSrEmWaGV0roE",
-		"artist_duration": 510240.0,
+		"artist_duration": 367629,
 		"artist_genres": [
 			"alternative hip hop"
+		],
+		"rank": 156
+	},
+	{
+		"name": "Snarky Puppy",
+		"popularity": 52,
+		"id": "7ENzCHnmJUr20nUjoZ0zZ1",
+		"artist_duration": 362627,
+		"artist_genres": [
+			"contemporary jazz",
+			"funk rock",
+			"jazz fusion",
+			"modern funk",
+			"progressive jazz fusion"
+		],
+		"rank": 157
+	},
+	{
+		"name": "Coldplay",
+		"popularity": 91,
+		"id": "4gzpq5DPGxSnKTe4SA8HAU",
+		"artist_duration": 361815,
+		"artist_genres": [
+			"permanent wave",
+			"pop"
+		],
+		"rank": 158
+	},
+	{
+		"name": "Eric Lau",
+		"popularity": 36,
+		"id": "68P6JiHWJsv5VqfLPchS1n",
+		"artist_duration": 361476,
+		"artist_genres": [
+			"indie jazz",
+			"neo r&b"
+		],
+		"rank": 159
+	},
+	{
+		"name": "Frederick Delius",
+		"popularity": 0,
+		"id": "0LyfQWJT6nXafLPZqxe9Of",
+		"artist_duration": 360526,
+		"artist_genres": [],
+		"rank": 160
+	},
+	{
+		"name": "M. T. Hadley",
+		"popularity": 22,
+		"id": "3O9qxLTLMvR9Dn1OAFoWaH",
+		"artist_duration": 356130,
+		"artist_genres": [
+			"vapor soul"
+		],
+		"rank": 161
+	},
+	{
+		"name": "Disclosure",
+		"popularity": 76,
+		"id": "6nS5roXSAGhTGr34W6n7Et",
+		"artist_duration": 355389,
+		"artist_genres": [
+			"house",
+			"pop",
+			"uk dance"
+		],
+		"rank": 162
+	},
+	{
+		"name": "Maxwell",
+		"popularity": 61,
+		"id": "2AOt5htsbtyaHd5Eq3kl3j",
+		"artist_duration": 346133,
+		"artist_genres": [
+			"contemporary r&b",
+			"funk",
+			"neo soul",
+			"quiet storm",
+			"r&b",
+			"soul",
+			"urban contemporary"
+		],
+		"rank": 163
+	},
+	{
+		"name": "Roy Woods",
+		"popularity": 66,
+		"id": "7mDU6nMUJnOSY2Hkjz5oqM",
+		"artist_duration": 345729,
+		"artist_genres": [
+			"canadian contemporary r&b",
+			"canadian hip hop",
+			"pop rap",
+			"r&b",
+			"trap",
+			"trap soul"
+		],
+		"rank": 164
+	},
+	{
+		"name": "Jos\u00e9 Gonz\u00e1lez",
+		"popularity": 68,
+		"id": "6xrCU6zdcSTsG2hLrojpmI",
+		"artist_duration": 344228,
+		"artist_genres": [
+			"gothenburg indie",
+			"indie folk",
+			"stomp and holler",
+			"swedish indie folk",
+			"swedish indie pop",
+			"swedish singer-songwriter"
+		],
+		"rank": 165
+	},
+	{
+		"name": "Electric Guest",
+		"popularity": 59,
+		"id": "7sgWBYtJpblXpJl2lU5WVs",
+		"artist_duration": 342763,
+		"artist_genres": [
+			"alternative dance",
+			"indietronica",
+			"la indie",
+			"modern rock",
+			"shimmer pop",
+			"vapor soul"
+		],
+		"rank": 166
+	},
+	{
+		"name": "Mr. Carmack",
+		"popularity": 45,
+		"id": "4OHaWpWPKDcZgOOUn9elFn",
+		"artist_duration": 342475,
+		"artist_genres": [
+			"electronic trap",
+			"future bass",
+			"vapor twitch"
+		],
+		"rank": 167
+	},
+	{
+		"name": "Blackalicious",
+		"popularity": 51,
+		"id": "42Np3r8zXnaKcjLQsQSjyG",
+		"artist_duration": 341831,
+		"artist_genres": [
+			"alternative hip hop",
+			"hip hop",
+			"turntablism"
+		],
+		"rank": 168
+	},
+	{
+		"name": "Photay",
+		"popularity": 47,
+		"id": "1MSxOmIt7uYgvPydd1tU8F",
+		"artist_duration": 338254,
+		"artist_genres": [
+			"chillwave",
+			"future bass",
+			"wonky"
+		],
+		"rank": 169
+	},
+	{
+		"name": "Pharrell Williams",
+		"popularity": 81,
+		"id": "2RdwBSPQiwcmiDo9kixcl8",
+		"artist_duration": 337439,
+		"artist_genres": [
+			"pop rap"
+		],
+		"rank": 170
+	},
+	{
+		"name": "The Pharcyde",
+		"popularity": 61,
+		"id": "7yk35uHNQclPXFGFoTU44w",
+		"artist_duration": 333873,
+		"artist_genres": [
+			"alternative hip hop",
+			"hardcore hip hop",
+			"hip hop",
+			"jazz rap",
+			"rap",
+			"west coast rap"
+		],
+		"rank": 171
+	},
+	{
+		"name": "@Peace",
+		"popularity": 36,
+		"id": "6lW657rZgEP90xb1rfHh2z",
+		"artist_duration": 333368,
+		"artist_genres": [
+			"nz hip hop"
+		],
+		"rank": 172
+	},
+	{
+		"name": "Consequence",
+		"popularity": 51,
+		"id": "5KkgZ31b9eDwkvo9oMIrSm",
+		"artist_duration": 330451,
+		"artist_genres": [
+			"nyc rap",
+			"queens hip hop"
+		],
+		"rank": 173
+	},
+	{
+		"name": "Ivan Ave",
+		"popularity": 46,
+		"id": "7BxJEL8I7OoAMGyPWn1cPS",
+		"artist_duration": 329268,
+		"artist_genres": [
+			"indie jazz",
+			"indie soul",
+			"jazz rap",
+			"neo r&b"
+		],
+		"rank": 174
+	},
+	{
+		"name": "Franz Liszt",
+		"popularity": 65,
+		"id": "1385hLNbrnbCJGokfH2ac2",
+		"artist_duration": 326737,
+		"artist_genres": [
+			"classical",
+			"late romantic era"
+		],
+		"rank": 175
+	},
+	{
+		"name": "Spazzkid",
+		"popularity": 24,
+		"id": "1qmmiqE1glIyPbXg5sZ92f",
+		"artist_duration": 325236,
+		"artist_genres": [
+			"future bass"
+		],
+		"rank": 176
+	},
+	{
+		"name": "Snoop Dogg",
+		"popularity": 85,
+		"id": "7hJcb9fa4alzcOq3EaNPoG",
+		"artist_duration": 322795,
+		"artist_genres": [
+			"g funk",
+			"gangster rap",
+			"hip hop",
+			"pop rap",
+			"rap",
+			"west coast rap"
+		],
+		"rank": 177
+	},
+	{
+		"name": "KAASI",
+		"popularity": 43,
+		"id": "0rCjhB7bSAgpshTquzm1I6",
+		"artist_duration": 319594,
+		"artist_genres": [
+			"indie soul"
+		],
+		"rank": 178
+	},
+	{
+		"name": "Les Sins",
+		"popularity": 37,
+		"id": "4gSTRpmeyYppvIXuFKjfAL",
+		"artist_duration": 318038,
+		"artist_genres": [
+			"chillwave"
+		],
+		"rank": 179
+	},
+	{
+		"name": "Terrace Martin",
+		"popularity": 65,
+		"id": "7MNEVabc4cs19CbzAFZmXz",
+		"artist_duration": 317530,
+		"artist_genres": [
+			"alternative r&b",
+			"indie soul"
 		],
 		"rank": 180
 	},
 	{
-		"name": "Aloe Blacc",
-		"popularity": 70,
-		"id": "0id62QV2SZZfvBn9xpmuCl",
-		"artist_duration": 509760.0,
+		"name": "Nick Leng",
+		"popularity": 48,
+		"id": "2fR4D8OveDTHMvCvm7paAO",
+		"artist_duration": 315788,
 		"artist_genres": [
-			"pop soul",
-			"r&b"
+			"vapor soul"
 		],
 		"rank": 181
 	},
 	{
-		"name": "Dr Who Dat?",
-		"popularity": 26,
-		"id": "3obWUpCkNW2kdL0yDYo6pV",
-		"artist_duration": 506400.0,
+		"name": "Lianne La Havas",
+		"popularity": 64,
+		"id": "2RP4pPHTXlQpDnO9LvR7Yt",
+		"artist_duration": 315105,
 		"artist_genres": [
-			"wonky"
+			"british soul",
+			"indie soul",
+			"neo soul",
+			"pop soul",
+			"soul"
 		],
 		"rank": 182
 	},
 	{
-		"name": "People Under The Stairs",
-		"popularity": 54,
-		"id": "0av074qUwLn5eyzwqoq3xh",
-		"artist_duration": 505393.0,
+		"name": "FloFilz",
+		"popularity": 55,
+		"id": "39ZQx0618UYVBgGTDOJ2ds",
+		"artist_duration": 313739,
 		"artist_genres": [
-			"alternative hip hop",
-			"hip hop",
-			"jazz rap",
-			"turntablism"
+			"chillhop",
+			"jazz boom bap",
+			"lo-fi beats",
+			"lo-fi jazzhop"
 		],
 		"rank": 183
 	},
 	{
-		"name": "Gorillaz",
-		"popularity": 82,
-		"id": "3AA28KZvwAUcZuOKwyblJQ",
-		"artist_duration": 503758.0,
+		"name": "J-Live",
+		"popularity": 48,
+		"id": "5bb5uytW59wDF0gpv8iQbE",
+		"artist_duration": 312906,
+		"artist_genres": [
+			"alternative hip hop",
+			"hardcore hip hop",
+			"hip hop",
+			"turntablism",
+			"underground rap"
+		],
+		"rank": 184
+	},
+	{
+		"name": "Nas",
+		"popularity": 76,
+		"id": "20qISvAhX20dpIbOOzGK3q",
+		"artist_duration": 311051,
+		"artist_genres": [
+			"conscious hip hop",
+			"east coast hip hop",
+			"gangster rap",
+			"hardcore hip hop",
+			"hip hop",
+			"queens hip hop",
+			"rap"
+		],
+		"rank": 185
+	},
+	{
+		"name": "Thestand4rd",
+		"popularity": 26,
+		"id": "5UgGWJ0LpDer5DJWTuWgBw",
+		"artist_duration": 305238,
+		"artist_genres": [
+			"experimental r&b"
+		],
+		"rank": 186
+	},
+	{
+		"name": "VanJess",
+		"popularity": 59,
+		"id": "0Ek89uaJyo6NfWK22awFvI",
+		"artist_duration": 305089,
+		"artist_genres": [
+			"alternative r&b",
+			"chill r&b",
+			"indie r&b",
+			"indie soul",
+			"pop r&b",
+			"r&b"
+		],
+		"rank": 187
+	},
+	{
+		"name": "H.E.R.",
+		"popularity": 80,
+		"id": "3Y7RZ31TRPVadSFVy1o8os",
+		"artist_duration": 304651,
+		"artist_genres": [
+			"alternative r&b",
+			"dance pop",
+			"pop",
+			"r&b"
+		],
+		"rank": 188
+	},
+	{
+		"name": "Homeboy Sandman",
+		"popularity": 42,
+		"id": "5s1QeAf7U5ELP9PTeLaicb",
+		"artist_duration": 304023,
+		"artist_genres": [
+			"abstract hip hop",
+			"alternative hip hop",
+			"east coast hip hop",
+			"escape room",
+			"underground rap"
+		],
+		"rank": 189
+	},
+	{
+		"name": "Yancey Boys",
+		"popularity": 31,
+		"id": "6poDCHAO9nvG3TB7Nzn1WD",
+		"artist_duration": 302114,
+		"artist_genres": [],
+		"rank": 190
+	},
+	{
+		"name": "Nehruviandoom",
+		"popularity": 37,
+		"id": "0ZWQOiDsRVjQXoSljCxraD",
+		"artist_duration": 294858,
 		"artist_genres": [
 			"alternative hip hop"
 		],
-		"rank": 184
+		"rank": 191
+	},
+	{
+		"name": "Esperanza Spalding",
+		"popularity": 56,
+		"id": "5bepW5vcdRzheNc0F8lHJ5",
+		"artist_duration": 294710,
+		"artist_genres": [
+			"electric bass",
+			"indie jazz",
+			"indie soul",
+			"jazz",
+			"jazz fusion",
+			"jazz pop",
+			"neo soul",
+			"vocal jazz"
+		],
+		"rank": 192
+	},
+	{
+		"name": "Kiiara",
+		"popularity": 48,
+		"id": "6po19E0R9xffrgzrg84TC9",
+		"artist_duration": 294303,
+		"artist_genres": [
+			"atl hip hop",
+			"trap soul",
+			"underground hip hop"
+		],
+		"rank": 193
+	},
+	{
+		"name": "DJ Honda",
+		"popularity": 41,
+		"id": "7mrvU3OShTgthJV80o2day",
+		"artist_duration": 290386,
+		"artist_genres": [
+			"alternative hip hop",
+			"hardcore hip hop",
+			"japanese boom bap",
+			"japanese underground rap",
+			"turntablism"
+		],
+		"rank": 194
+	},
+	{
+		"name": "Clipse",
+		"popularity": 55,
+		"id": "2J257euzcjnDLipsyJH3F2",
+		"artist_duration": 290280,
+		"artist_genres": [
+			"alternative hip hop",
+			"dirty south rap",
+			"gangster rap",
+			"hardcore hip hop",
+			"hip hop",
+			"rap",
+			"southern hip hop",
+			"trap",
+			"virginia hip hop"
+		],
+		"rank": 195
+	},
+	{
+		"name": "Panama",
+		"popularity": 63,
+		"id": "3W9UldYu0xJcaOAw2SUTDI",
+		"artist_duration": 290185,
+		"artist_genres": [
+			"australian indie",
+			"indie poptimism",
+			"shimmer pop",
+			"vapor soul"
+		],
+		"rank": 196
+	},
+	{
+		"name": "Beat Connection",
+		"popularity": 38,
+		"id": "64xvudklMEbVYMBocLyHSn",
+		"artist_duration": 289029,
+		"artist_genres": [
+			"chillwave",
+			"shimmer pop"
+		],
+		"rank": 197
+	},
+	{
+		"name": "Declaime",
+		"popularity": 0,
+		"id": "1yXStSSiAScXQxj55HsSDi",
+		"artist_duration": 288853,
+		"artist_genres": [],
+		"rank": 198
 	},
 	{
 		"name": "Ghost Town DJs",
 		"popularity": 0,
 		"id": "0LyfQWJT6nXafLPZqxe9Of",
-		"artist_duration": 497280.0,
+		"artist_duration": 287193,
 		"artist_genres": [],
-		"rank": 185
+		"rank": 199
+	},
+	{
+		"name": "J-Love",
+		"popularity": 29,
+		"id": "5eGENdlc6kQZeuzUJZ4W8B",
+		"artist_duration": 287013,
+		"artist_genres": [],
+		"rank": 200
+	},
+	{
+		"name": "Loyle Carner",
+		"popularity": 67,
+		"id": "4oDjh8wNW5vDHyFRrDYC4k",
+		"artist_duration": 285932,
+		"artist_genres": [
+			"indie soul",
+			"london rap",
+			"uk alternative hip hop"
+		],
+		"rank": 201
+	},
+	{
+		"name": "Yuno",
+		"popularity": 49,
+		"id": "36BjLtXEXIifbRrfc1Rtqa",
+		"artist_duration": 283207,
+		"artist_genres": [
+			"gamecore",
+			"jacksonville indie"
+		],
+		"rank": 202
+	},
+	{
+		"name": "Ambassadeurs",
+		"popularity": 35,
+		"id": "6BKSRVMfQ6Aeux4rKG1h9H",
+		"artist_duration": 278830,
+		"artist_genres": [
+			"vapor twitch"
+		],
+		"rank": 203
+	},
+	{
+		"name": "Lloyd",
+		"popularity": 71,
+		"id": "1Xfmvd48oOhEWkscWyEbh9",
+		"artist_duration": 273133,
+		"artist_genres": [
+			"dance pop",
+			"hip pop",
+			"pop",
+			"pop rap",
+			"r&b",
+			"southern hip hop",
+			"urban contemporary"
+		],
+		"rank": 204
+	},
+	{
+		"name": "Dr Who Dat?",
+		"popularity": 27,
+		"id": "3obWUpCkNW2kdL0yDYo6pV",
+		"artist_duration": 272757,
+		"artist_genres": [
+			"wonky"
+		],
+		"rank": 205
+	},
+	{
+		"name": "Aloe Blacc",
+		"popularity": 70,
+		"id": "0id62QV2SZZfvBn9xpmuCl",
+		"artist_duration": 271473,
+		"artist_genres": [
+			"pop soul",
+			"r&b"
+		],
+		"rank": 206
+	},
+	{
+		"name": "Madlib",
+		"popularity": 70,
+		"id": "5LhTec3c7dcqBvpLRWbMcf",
+		"artist_duration": 269961,
+		"artist_genres": [
+			"alternative hip hop",
+			"hip hop",
+			"psychedelic hip hop"
+		],
+		"rank": 207
+	},
+	{
+		"name": "BJ The Chicago Kid",
+		"popularity": 66,
+		"id": "07d5etnpjriczFBB8pxmRe",
+		"artist_duration": 269173,
+		"artist_genres": [
+			"alternative r&b",
+			"chicago rap",
+			"hip hop",
+			"indie r&b",
+			"indie soul",
+			"neo soul",
+			"pop r&b",
+			"r&b",
+			"underground hip hop"
+		],
+		"rank": 208
+	},
+	{
+		"name": "Kartell",
+		"popularity": 49,
+		"id": "3E4UsjXgFv2GdwshMkkJze",
+		"artist_duration": 266599,
+		"artist_genres": [
+			"filter house",
+			"indie soul",
+			"new french touch",
+			"nu disco"
+		],
+		"rank": 209
 	},
 	{
 		"name": "Raekwon",
 		"popularity": 72,
 		"id": "2yQf6b8hxahZaT5dHlWaB1",
-		"artist_duration": 493034.0,
+		"artist_duration": 262933,
 		"artist_genres": [
 			"alternative hip hop",
 			"east coast hip hop",
@@ -2317,300 +2590,666 @@
 			"rap",
 			"southern hip hop"
 		],
-		"rank": 186
+		"rank": 210
 	},
 	{
-		"name": "Roman GianArthur",
-		"popularity": 48,
-		"id": "7hgRzsQGjlm1zifNoigyB9",
-		"artist_duration": 490564.0,
-		"artist_genres": [],
-		"rank": 187
+		"name": "Michael Jackson",
+		"popularity": 84,
+		"id": "3fMbdgg4jU18AjLCKBhRSm",
+		"artist_duration": 260666,
+		"artist_genres": [
+			"pop",
+			"r&b",
+			"soul"
+		],
+		"rank": 211
+	},
+	{
+		"name": "Chrome Sparks",
+		"popularity": 50,
+		"id": "2pTCZ9C1fXdaVlv6d5EIXM",
+		"artist_duration": 260203,
+		"artist_genres": [
+			"chillwave",
+			"shimmer psych",
+			"vapor soul",
+			"vapor twitch"
+		],
+		"rank": 212
+	},
+	{
+		"name": "Vince Staples",
+		"popularity": 72,
+		"id": "68kEuyFKyqrdQQLLsmiatm",
+		"artist_duration": 259212,
+		"artist_genres": [
+			"conscious hip hop",
+			"escape room",
+			"hip hop",
+			"rap",
+			"underground hip hop"
+		],
+		"rank": 213
+	},
+	{
+		"name": "Kan Sano",
+		"popularity": 50,
+		"id": "5b3ZFm6P1lpZIASMDnBDs9",
+		"artist_duration": 258867,
+		"artist_genres": [
+			"japanese jazz fusion",
+			"japanese r&b"
+		],
+		"rank": 214
+	},
+	{
+		"name": "Moon Boots",
+		"popularity": 50,
+		"id": "3cIXmCH7iNcslTbwrwS7zy",
+		"artist_duration": 258058,
+		"artist_genres": [
+			"deep house",
+			"house",
+			"indie soul",
+			"nu disco"
+		],
+		"rank": 215
 	},
 	{
 		"name": "Les Loups",
 		"popularity": 30,
 		"id": "3U6FqAuXdKYRrGUIyv9MWa",
-		"artist_duration": 489928.0,
+		"artist_duration": 257347,
 		"artist_genres": [
 			"new french touch"
 		],
-		"rank": 188
+		"rank": 216
 	},
 	{
-		"name": "Wolfgang Amadeus Mozart",
-		"popularity": 78,
-		"id": "4NJhFmfw43RLBLjQvxDuRS",
-		"artist_duration": 489120.0,
-		"artist_genres": [
-			"classical",
-			"classical era"
-		],
-		"rank": 189
-	},
-	{
-		"name": "Panama",
-		"popularity": 62,
-		"id": "3W9UldYu0xJcaOAw2SUTDI",
-		"artist_duration": 486720.0,
-		"artist_genres": [
-			"australian indie",
-			"indie poptimism",
-			"shimmer pop",
-			"vapor soul"
-		],
-		"rank": 190
-	},
-	{
-		"name": "Cashmere Cat",
+		"name": "Good Times Ahead",
 		"popularity": 60,
-		"id": "2LZDXcxJWgsJfKXZv9a5eG",
-		"artist_duration": 484266.0,
+		"id": "6M7RdR9ZP52h2mfNLmiHtU",
+		"artist_duration": 256194,
 		"artist_genres": [
-			"downtempo",
-			"pop",
-			"shiver pop"
-		],
-		"rank": 191
-	},
-	{
-		"name": "Madlib",
-		"popularity": 70,
-		"id": "5LhTec3c7dcqBvpLRWbMcf",
-		"artist_duration": 483466.0,
-		"artist_genres": [
-			"alternative hip hop",
-			"hip hop",
-			"psychedelic hip hop"
-		],
-		"rank": 192
-	},
-	{
-		"name": "Hayden James",
-		"popularity": 65,
-		"id": "4csQIMQm6vI2A2SCVDuM2z",
-		"artist_duration": 476836.0,
-		"artist_genres": [
-			"aussietronica",
+			"bass trap",
+			"brostep",
 			"edm",
-			"gauze pop",
-			"house",
-			"indie soul",
+			"electro house",
+			"electronic trap",
 			"pop dance",
-			"tropical house"
+			"vapor twitch"
 		],
-		"rank": 193
+		"rank": 217
 	},
 	{
-		"name": "Dua Lipa",
-		"popularity": 92,
-		"id": "6M2wZ9GZgrQXHCFfjv46we",
-		"artist_duration": 476573.0,
+		"name": "Osunlade",
+		"popularity": 43,
+		"id": "4mHngi71hWNKTRuyl3W9FY",
+		"artist_duration": 256016,
 		"artist_genres": [
-			"dance pop",
+			"afro house",
+			"deep house",
+			"soulful house"
+		],
+		"rank": 218
+	},
+	{
+		"name": "Re:plus",
+		"popularity": 42,
+		"id": "6ftHlqrtNdAq0bWL7zkaTG",
+		"artist_duration": 255902,
+		"artist_genres": [
+			"ambeat",
+			"japanese jazz fusion"
+		],
+		"rank": 219
+	},
+	{
+		"name": "Rvdical the Kid",
+		"popularity": 31,
+		"id": "4eu9GW8WwzF6n6fb34COES",
+		"artist_duration": 254362,
+		"artist_genres": [
+			"african electronic",
+			"ghanaian alternative"
+		],
+		"rank": 220
+	},
+	{
+		"name": "Young Money",
+		"popularity": 66,
+		"id": "5OrB6Jhhrl9y2PK0pSV4VP",
+		"artist_duration": 253633,
+		"artist_genres": [
+			"dirty south rap",
+			"gangster rap",
+			"hip hop",
+			"pop rap",
+			"rap",
+			"southern hip hop",
+			"trap"
+		],
+		"rank": 221
+	},
+	{
+		"name": "Alina Baraz",
+		"popularity": 70,
+		"id": "6hfwwpXqZPRC9CsKI7qtv1",
+		"artist_duration": 252647,
+		"artist_genres": [
+			"alternative r&b",
+			"electropop",
+			"etherpop",
+			"pop",
+			"r&b"
+		],
+		"rank": 222
+	},
+	{
+		"name": "Iman Omari",
+		"popularity": 54,
+		"id": "1ySUvbTVNE9pyhdzcDxjg4",
+		"artist_duration": 250111,
+		"artist_genres": [
+			"alternative r&b",
+			"indie r&b",
+			"indie soul"
+		],
+		"rank": 223
+	},
+	{
+		"name": "Kiko Bun",
+		"popularity": 47,
+		"id": "7yMruV2Y0a7ib9RLj9mLQQ",
+		"artist_duration": 249567,
+		"artist_genres": [
+			"british soul",
+			"uk reggae"
+		],
+		"rank": 224
+	},
+	{
+		"name": "P-Money",
+		"popularity": 41,
+		"id": "2Q13jBmo9llBTWdgnZMzyS",
+		"artist_duration": 248991,
+		"artist_genres": [
+			"grime",
+			"nz hip hop",
+			"pacific islands pop"
+		],
+		"rank": 225
+	},
+	{
+		"name": "J.Robb",
+		"popularity": 39,
+		"id": "2DfpfU9DpRLC3EuWLKyy4m",
+		"artist_duration": 248580,
+		"artist_genres": [],
+		"rank": 226
+	},
+	{
+		"name": "HONNE",
+		"popularity": 72,
+		"id": "0Vw76uk7P8yVtTClWyOhac",
+		"artist_duration": 248258,
+		"artist_genres": [
+			"chill r&b",
 			"pop",
 			"uk pop"
 		],
-		"rank": 194
+		"rank": 227
 	},
 	{
-		"name": "T-Pain",
-		"popularity": 80,
-		"id": "3aQeKQSyrW4qWr35idm0cy",
-		"artist_duration": 473765.0,
+		"name": "Otis Junior",
+		"popularity": 41,
+		"id": "3JWTfcIZq4OUdC6oBunofK",
+		"artist_duration": 247619,
 		"artist_genres": [
-			"dance pop",
-			"hip hop",
-			"pop",
-			"pop rap",
-			"r&b",
-			"rap",
-			"southern hip hop",
-			"urban contemporary"
-		],
-		"rank": 195
-	},
-	{
-		"name": "Kartell",
-		"popularity": 49,
-		"id": "3E4UsjXgFv2GdwshMkkJze",
-		"artist_duration": 473238.0,
-		"artist_genres": [
-			"filter house",
-			"indie soul",
-			"new french touch",
-			"nu disco"
-		],
-		"rank": 196
-	},
-	{
-		"name": "Rhymefest",
-		"popularity": 34,
-		"id": "1SUFqa4aXxvMrGdOnqiMmR",
-		"artist_duration": 468426.0,
-		"artist_genres": [
-			"alternative hip hop",
-			"chicago rap"
-		],
-		"rank": 197
-	},
-	{
-		"name": "ASTR",
-		"popularity": 38,
-		"id": "3GJhraAgCA8s8XHENnDsXq",
-		"artist_duration": 464760.0,
-		"artist_genres": [
-			"indie poptimism",
-			"vapor pop"
-		],
-		"rank": 198
-	},
-	{
-		"name": "Idesia",
-		"popularity": 24,
-		"id": "2VUuRcKjZfeCQzBI1PPyL1",
-		"artist_duration": 463370.0,
-		"artist_genres": [
+			"indie jazz",
 			"neo r&b"
 		],
-		"rank": 199
+		"rank": 228
 	},
 	{
-		"name": "Paris Jones",
-		"popularity": 29,
-		"id": "1buXx0RSkvGYCCiAl03JIp",
-		"artist_duration": 463202.0,
-		"artist_genres": [],
-		"rank": 200
-	},
-	{
-		"name": "Moods",
-		"popularity": 53,
-		"id": "14uVJsPC4DByeuD0cq36ez",
-		"artist_duration": 462624.0,
-		"artist_genres": [
-			"chillhop",
-			"indie soul",
-			"new french touch",
-			"vapor twitch"
-		],
-		"rank": 201
-	},
-	{
-		"name": "Mark Redito",
-		"popularity": 26,
-		"id": "5yKJAwjLJltKwd5xHyjX4u",
-		"artist_duration": 462608.0,
-		"artist_genres": [
-			"future bass"
-		],
-		"rank": 202
-	},
-	{
-		"name": "Octave Minds",
-		"popularity": 23,
-		"id": "3t5CzAvVZ7ruA3Uv3QvUrt",
-		"artist_duration": 459524.0,
-		"artist_genres": [],
-		"rank": 203
-	},
-	{
-		"name": "King Geedorah",
-		"popularity": 52,
-		"id": "77AKJs9SJqxHXbPgtJPKRa",
-		"artist_duration": 458640.0,
-		"artist_genres": [
-			"alternative hip hop",
-			"hardcore hip hop",
-			"hip hop"
-		],
-		"rank": 204
-	},
-	{
-		"name": "Gabriel Faur\u00e9",
+		"name": "Subculture Sage",
 		"popularity": 43,
-		"id": "4gs13ipYIJhCcqDMOEx9eN",
-		"artist_duration": 456286.0,
+		"id": "5HZXZ01UBUXhMpdei2vULP",
+		"artist_duration": 246643,
 		"artist_genres": [
-			"choral"
+			"uk alternative hip hop"
 		],
-		"rank": 205
+		"rank": 229
 	},
 	{
-		"name": "Nickelus F",
-		"popularity": 38,
-		"id": "68DGxDpMWfSsPJEjT4wQnW",
-		"artist_duration": 456000.0,
-		"artist_genres": [
-			"soul flow",
-			"underground hip hop",
-			"virginia hip hop"
-		],
-		"rank": 206
+		"name": "Cam O'bi",
+		"popularity": 54,
+		"id": "4jqFe1fd5uul2XSSxsRvbZ",
+		"artist_duration": 245880,
+		"artist_genres": [],
+		"rank": 230
 	},
 	{
 		"name": "Zak Abel",
 		"popularity": 65,
 		"id": "6Gk5hoM7eW8NSCYhICMDHw",
-		"artist_duration": 452788.0,
+		"artist_duration": 245840,
 		"artist_genres": [
 			"uk contemporary r&b"
 		],
-		"rank": 207
+		"rank": 231
 	},
 	{
-		"name": "Miles Davis",
-		"popularity": 65,
-		"id": "0kbYTNQb4Pb1rPbbaF0pT4",
-		"artist_duration": 445600.0,
+		"name": "Rhymefest",
+		"popularity": 34,
+		"id": "1SUFqa4aXxvMrGdOnqiMmR",
+		"artist_duration": 245334,
 		"artist_genres": [
-			"cool jazz",
-			"hard bop",
-			"jazz",
-			"jazz fusion",
-			"jazz trumpet"
+			"alternative hip hop",
+			"chicago rap"
 		],
-		"rank": 208
+		"rank": 232
 	},
 	{
-		"name": "DJ Grumble",
-		"popularity": 46,
-		"id": "2oJgWr3LkpO9g9NyL8hiOJ",
-		"artist_duration": 440476.0,
+		"name": "Mark Redito",
+		"popularity": 26,
+		"id": "5yKJAwjLJltKwd5xHyjX4u",
+		"artist_duration": 243913,
 		"artist_genres": [
-			"chillhop",
-			"jazz boom bap"
+			"future bass"
 		],
-		"rank": 209
+		"rank": 233
 	},
 	{
-		"name": "Pastor T.L. Barrett",
-		"popularity": 41,
-		"id": "66l6SXrWHLjXFHfv202kdA",
-		"artist_duration": 433946.0,
+		"name": "ASTR",
+		"popularity": 38,
+		"id": "3GJhraAgCA8s8XHENnDsXq",
+		"artist_duration": 242475,
 		"artist_genres": [
-			"gospel soul",
-			"spirituals",
-			"traditional soul"
+			"indie poptimism",
+			"vapor pop"
 		],
-		"rank": 210
+		"rank": 234
 	},
 	{
-		"name": "Two Another",
+		"name": "King Geedorah",
+		"popularity": 52,
+		"id": "77AKJs9SJqxHXbPgtJPKRa",
+		"artist_duration": 242448,
+		"artist_genres": [
+			"alternative hip hop",
+			"hardcore hip hop",
+			"hip hop"
+		],
+		"rank": 235
+	},
+	{
+		"name": "Samm Henshaw",
 		"popularity": 59,
-		"id": "35RvGPQ1OxbEZknWyiaAcs",
-		"artist_duration": 433442.0,
+		"id": "1Q2mS59tFYLm2KGFoCgWN4",
+		"artist_duration": 241989,
 		"artist_genres": [
+			"alternative r&b",
+			"british soul",
 			"indie soul",
+			"uk contemporary r&b"
+		],
+		"rank": 236
+	},
+	{
+		"name": "tobi lou",
+		"popularity": 65,
+		"id": "4T8NIfZmVY6TJFqVzN6X49",
+		"artist_duration": 240000,
+		"artist_genres": [
+			"alternative r&b",
+			"chicago rap",
+			"pop",
+			"pop rap"
+		],
+		"rank": 237
+	},
+	{
+		"name": "Bas",
+		"popularity": 72,
+		"id": "70gP6Ry4Uo0Yx6uzPIdaiJ",
+		"artist_duration": 238053,
+		"artist_genres": [
+			"hip hop",
+			"queens hip hop",
+			"rap",
+			"sudanese pop",
+			"trap",
+			"underground hip hop"
+		],
+		"rank": 238
+	},
+	{
+		"name": "The Japanese House",
+		"popularity": 63,
+		"id": "3IunaFjvNKj98JW89JYv9u",
+		"artist_duration": 236991,
+		"artist_genres": [
+			"art pop",
+			"electropop",
+			"indie pop",
+			"indie poptimism",
+			"indietronica",
+			"modern dream pop",
 			"vapor soul"
 		],
-		"rank": 211
+		"rank": 239
+	},
+	{
+		"name": "Deca",
+		"popularity": 46,
+		"id": "0Up3H1s9ME6FivFcOz6qte",
+		"artist_duration": 235921,
+		"artist_genres": [
+			"jazz rap",
+			"nyc rap"
+		],
+		"rank": 240
+	},
+	{
+		"name": "Maurice Ravel",
+		"popularity": 0,
+		"id": "0LyfQWJT6nXafLPZqxe9Of",
+		"artist_duration": 234336,
+		"artist_genres": [],
+		"rank": 241
+	},
+	{
+		"name": "Caroline Smith",
+		"popularity": 41,
+		"id": "47blM5Op3BJODxUJImwdYE",
+		"artist_duration": 233999,
+		"artist_genres": [
+			"minneapolis indie"
+		],
+		"rank": 242
+	},
+	{
+		"name": "Cosmo's Midnight",
+		"popularity": 60,
+		"id": "4VivsO1n4n2Mi2Btyb5gfL",
+		"artist_duration": 233344,
+		"artist_genres": [
+			"australian dance",
+			"australian indie",
+			"indie dream pop",
+			"indie soul"
+		],
+		"rank": 243
+	},
+	{
+		"name": "Szymon",
+		"popularity": 45,
+		"id": "4hSeosKw3pr72gC10igZow",
+		"artist_duration": 232265,
+		"artist_genres": [
+			"folktronica",
+			"indie soul"
+		],
+		"rank": 244
+	},
+	{
+		"name": "Wiz Khalifa",
+		"popularity": 85,
+		"id": "137W8MRPWKqSmrBGDBFSop",
+		"artist_duration": 231944,
+		"artist_genres": [
+			"dance pop",
+			"hip hop",
+			"pittsburgh rap",
+			"pop rap",
+			"rap",
+			"southern hip hop",
+			"trap"
+		],
+		"rank": 245
+	},
+	{
+		"name": "Jack Stauber",
+		"popularity": 68,
+		"id": "1vVHevk2PD45epYnDi9CCc",
+		"artist_duration": 231548,
+		"artist_genres": [
+			"pittsburgh indie"
+		],
+		"rank": 246
+	},
+	{
+		"name": "SG Lewis",
+		"popularity": 68,
+		"id": "0GG2cWaonE4JPrjcCCQ1EG",
+		"artist_duration": 229893,
+		"artist_genres": [
+			"alternative r&b",
+			"indie soul",
+			"tropical house",
+			"uk dance",
+			"vapor soul"
+		],
+		"rank": 247
+	},
+	{
+		"name": "Louis Rustum",
+		"popularity": 18,
+		"id": "3pIxjxF74tqQCbAyy2QMnu",
+		"artist_duration": 227552,
+		"artist_genres": [
+			"danish electropop"
+		],
+		"rank": 248
+	},
+	{
+		"name": "Mtbrd",
+		"popularity": 44,
+		"id": "6vXJ4kIg2HlqsSfX3S1RHV",
+		"artist_duration": 226981,
+		"artist_genres": [
+			"chillhop"
+		],
+		"rank": 249
+	},
+	{
+		"name": "Talib Kweli",
+		"popularity": 58,
+		"id": "0lEssBAxQl2In4RpaB1C2Y",
+		"artist_duration": 226789,
+		"artist_genres": [
+			"alternative hip hop",
+			"conscious hip hop",
+			"east coast hip hop",
+			"hardcore hip hop",
+			"hip hop",
+			"southern hip hop"
+		],
+		"rank": 250
+	},
+	{
+		"name": "Trinix",
+		"popularity": 63,
+		"id": "3HqP3nd8WI0VfHRhApPlan",
+		"artist_duration": 226768,
+		"artist_genres": [
+			"bass trap",
+			"new french touch",
+			"tropical house"
+		],
+		"rank": 251
+	},
+	{
+		"name": "Dua Lipa",
+		"popularity": 93,
+		"id": "6M2wZ9GZgrQXHCFfjv46we",
+		"artist_duration": 224808,
+		"artist_genres": [
+			"dance pop",
+			"pop",
+			"uk pop"
+		],
+		"rank": 252
+	},
+	{
+		"name": "Topaz Jones",
+		"popularity": 49,
+		"id": "76bAuLD5jMIT1YDJ84KB8l",
+		"artist_duration": 223302,
+		"artist_genres": [
+			"indie r&b",
+			"new jersey rap"
+		],
+		"rank": 253
+	},
+	{
+		"name": "Raleigh Ritchie",
+		"popularity": 51,
+		"id": "0IB0VjX9NSrGX6PjCXGVcq",
+		"artist_duration": 223013,
+		"artist_genres": [
+			"uk contemporary r&b"
+		],
+		"rank": 254
+	},
+	{
+		"name": "Zacari",
+		"popularity": 89,
+		"id": "2YZyLoL8N0Wb9xBt1NhZWg",
+		"artist_duration": 222093,
+		"artist_genres": [
+			"conscious hip hop",
+			"hip hop",
+			"rap",
+			"west coast rap"
+		],
+		"rank": 255
+	},
+	{
+		"name": "Wun Two",
+		"popularity": 60,
+		"id": "69cjjIQEN8M6heOBT2SqZE",
+		"artist_duration": 221045,
+		"artist_genres": [
+			"chillhop",
+			"lo-fi beats"
+		],
+		"rank": 256
+	},
+	{
+		"name": "Kwaku Asante",
+		"popularity": 42,
+		"id": "2aUr9B6iwO3eYiEHJIpB0M",
+		"artist_duration": 220172,
+		"artist_genres": [
+			"alternative r&b",
+			"chill r&b",
+			"indie r&b",
+			"uk contemporary r&b"
+		],
+		"rank": 257
+	},
+	{
+		"name": "kevatta",
+		"popularity": 29,
+		"id": "0IkEumFM5jr2xUgcS9XZNz",
+		"artist_duration": 219980,
+		"artist_genres": [],
+		"rank": 258
+	},
+	{
+		"name": "Apollo Brown",
+		"popularity": 54,
+		"id": "151BUVKmiB9rHDjIkgbeVE",
+		"artist_duration": 218372,
+		"artist_genres": [
+			"alternative hip hop",
+			"boom bap",
+			"hip hop"
+		],
+		"rank": 259
+	},
+	{
+		"name": "The Seventh",
+		"popularity": 13,
+		"id": "75c3TOrBX0IkcuGVGNybJl",
+		"artist_duration": 214612,
+		"artist_genres": [],
+		"rank": 260
+	},
+	{
+		"name": "Billy Davis",
+		"popularity": 38,
+		"id": "1faxe25Wp3Nk43xVVxsdSB",
+		"artist_duration": 214024,
+		"artist_genres": [
+			"australian r&b"
+		],
+		"rank": 261
+	},
+	{
+		"name": "Elton",
+		"popularity": 34,
+		"id": "4O24XfCPqIJQUMXOJ2F0ni",
+		"artist_duration": 213310,
+		"artist_genres": [
+			"bedroom soul"
+		],
+		"rank": 262
+	},
+	{
+		"name": "Snakehips",
+		"popularity": 67,
+		"id": "2FwJwEswyIUAljqgjNSHgP",
+		"artist_duration": 212735,
+		"artist_genres": [
+			"edm",
+			"electropop",
+			"indie poptimism",
+			"pop",
+			"pop dance",
+			"tropical house"
+		],
+		"rank": 263
+	},
+	{
+		"name": "A$AP Rocky",
+		"popularity": 85,
+		"id": "13ubrt8QOOCPljQ2FL1Kca",
+		"artist_duration": 212640,
+		"artist_genres": [
+			"east coast hip hop",
+			"hip hop",
+			"rap",
+			"trap"
+		],
+		"rank": 264
+	},
+	{
+		"name": "Valleyz",
+		"popularity": 37,
+		"id": "2D0u6nyYzRpoDvJe6sOBXu",
+		"artist_duration": 212412,
+		"artist_genres": [],
+		"rank": 265
+	},
+	{
+		"name": "Wolfgang Amadeus Mozart",
+		"popularity": 78,
+		"id": "4NJhFmfw43RLBLjQvxDuRS",
+		"artist_duration": 211812,
+		"artist_genres": [
+			"classical",
+			"classical era"
+		],
+		"rank": 266
 	},
 	{
 		"name": "Ti\u00ebsto",
 		"popularity": 85,
 		"id": "2o5jDhtHVPhrJdv3cEQ99Z",
-		"artist_duration": 431518.0,
+		"artist_duration": 211607,
 		"artist_genres": [
 			"big room",
 			"brostep",
@@ -2624,1821 +3263,397 @@
 			"trance",
 			"tropical house"
 		],
-		"rank": 212
-	},
-	{
-		"name": "Danny Watts",
-		"popularity": 19,
-		"id": "2fY9ilMSpmjOR3SIINXx0F",
-		"artist_duration": 429048.0,
-		"artist_genres": [],
-		"rank": 213
-	},
-	{
-		"name": "Flume",
-		"popularity": 73,
-		"id": "6nxWCVXbOlEVRexSbLsTer",
-		"artist_duration": 427766.0,
-		"artist_genres": [
-			"australian dance",
-			"australian electropop",
-			"australian indie",
-			"downtempo",
-			"edm"
-		],
-		"rank": 214
-	},
-	{
-		"name": "Electric Guest",
-		"popularity": 59,
-		"id": "7sgWBYtJpblXpJl2lU5WVs",
-		"artist_duration": 426332.0,
-		"artist_genres": [
-			"alternative dance",
-			"indie rock",
-			"indietronica",
-			"la indie",
-			"modern rock",
-			"shimmer pop",
-			"vapor soul"
-		],
-		"rank": 215
-	},
-	{
-		"name": "HONNE",
-		"popularity": 72,
-		"id": "0Vw76uk7P8yVtTClWyOhac",
-		"artist_duration": 424842.0,
-		"artist_genres": [
-			"chill r&b",
-			"pop",
-			"uk pop"
-		],
-		"rank": 216
-	},
-	{
-		"name": "Ivan Ave",
-		"popularity": 46,
-		"id": "7BxJEL8I7OoAMGyPWn1cPS",
-		"artist_duration": 419226.0,
-		"artist_genres": [
-			"indie jazz",
-			"indie r&b",
-			"indie soul",
-			"jazz rap"
-		],
-		"rank": 217
-	},
-	{
-		"name": "Jacob Banks",
-		"popularity": 64,
-		"id": "0AepkoQhYvkjEzzwIcGxdV",
-		"artist_duration": 417600.0,
-		"artist_genres": [
-			"modern alternative rock",
-			"uk contemporary r&b"
-		],
-		"rank": 218
-	},
-	{
-		"name": "Jack Stauber",
-		"popularity": 68,
-		"id": "1vVHevk2PD45epYnDi9CCc",
-		"artist_duration": 416052.0,
-		"artist_genres": [
-			"pittsburgh indie"
-		],
-		"rank": 219
-	},
-	{
-		"name": "The Internet",
-		"popularity": 63,
-		"id": "7GN9PivdemQRKjDt4z5Zv8",
-		"artist_duration": 415613.0,
-		"artist_genres": [
-			"alternative r&b",
-			"escape room",
-			"indie soul",
-			"lgbtq+ hip hop",
-			"neo soul",
-			"r&b"
-		],
-		"rank": 220
-	},
-	{
-		"name": "Samm Henshaw",
-		"popularity": 58,
-		"id": "1Q2mS59tFYLm2KGFoCgWN4",
-		"artist_duration": 415444.0,
-		"artist_genres": [
-			"alternative r&b",
-			"british soul",
-			"indie soul",
-			"uk contemporary r&b"
-		],
-		"rank": 221
-	},
-	{
-		"name": "Pomo",
-		"popularity": 47,
-		"id": "6YtlR8MLfO6azxwOKAvEi3",
-		"artist_duration": 412022.0,
-		"artist_genres": [
-			"canadian electronic",
-			"new french touch"
-		],
-		"rank": 222
-	},
-	{
-		"name": "Caroline Smith",
-		"popularity": 41,
-		"id": "47blM5Op3BJODxUJImwdYE",
-		"artist_duration": 410772.0,
-		"artist_genres": [
-			"minneapolis indie"
-		],
-		"rank": 223
-	},
-	{
-		"name": "Wun Two",
-		"popularity": 59,
-		"id": "69cjjIQEN8M6heOBT2SqZE",
-		"artist_duration": 407855.0,
-		"artist_genres": [
-			"chillhop",
-			"lo-fi beats"
-		],
-		"rank": 224
-	},
-	{
-		"name": "Blazo",
-		"popularity": 43,
-		"id": "089rQ02K5KBRF0XRYcQ9LX",
-		"artist_duration": 406132.0,
-		"artist_genres": [
-			"ambeat",
-			"chillhop"
-		],
-		"rank": 225
-	},
-	{
-		"name": "DJ Day",
-		"popularity": 35,
-		"id": "64nlNvqVtLkdY4x8Hhvq6T",
-		"artist_duration": 406114.0,
-		"artist_genres": [],
-		"rank": 226
-	},
-	{
-		"name": "Gallant",
-		"popularity": 58,
-		"id": "7wFDo161xYdeaiLz3KIHoM",
-		"artist_duration": 402038.0,
-		"artist_genres": [
-			"alternative r&b",
-			"chill r&b",
-			"indie r&b",
-			"pop",
-			"r&b"
-		],
-		"rank": 227
-	},
-	{
-		"name": "Ant\u00f4nio Carlos Jobim",
-		"popularity": 81,
-		"id": "1Mxqyy3pSjf8kZZL4QVxS0",
-		"artist_duration": 400720.0,
-		"artist_genres": [
-			"adult standards",
-			"easy listening",
-			"lounge"
-		],
-		"rank": 228
-	},
-	{
-		"name": "Aaron Taylor",
-		"popularity": 56,
-		"id": "1evO4fwLsEkkPGq32dCix7",
-		"artist_duration": 400704.0,
-		"artist_genres": [
-			"alternative r&b",
-			"indie soul",
-			"soul",
-			"uk contemporary r&b"
-		],
-		"rank": 229
-	},
-	{
-		"name": "Onra",
-		"popularity": 47,
-		"id": "2sAlo7Fey5cqBk5WJILSd8",
-		"artist_duration": 391230.0,
-		"artist_genres": [
-			"japanese chillhop",
-			"wonky"
-		],
-		"rank": 230
-	},
-	{
-		"name": "Jodie Abacus",
-		"popularity": 43,
-		"id": "0yh6q1VddpFTvlZlC4raQp",
-		"artist_duration": 389202.0,
-		"artist_genres": [
-			"british soul"
-		],
-		"rank": 231
-	},
-	{
-		"name": "Young Money",
-		"popularity": 66,
-		"id": "5OrB6Jhhrl9y2PK0pSV4VP",
-		"artist_duration": 376640.0,
-		"artist_genres": [
-			"dirty south rap",
-			"gangster rap",
-			"hip hop",
-			"pop rap",
-			"rap",
-			"southern hip hop",
-			"trap"
-		],
-		"rank": 232
-	},
-	{
-		"name": "The Hics",
-		"popularity": 43,
-		"id": "2XHJ36WzMJKpDk6fLl6lMo",
-		"artist_duration": 376485.0,
-		"artist_genres": [
-			"alternative r&b"
-		],
-		"rank": 233
-	},
-	{
-		"name": "Monte Booker",
-		"popularity": 53,
-		"id": "4p75GTNEXwsAAkpweMVtKo",
-		"artist_duration": 373294.0,
-		"artist_genres": [
-			"alternative r&b",
-			"viral rap"
-		],
-		"rank": 234
-	},
-	{
-		"name": "Mtbrd",
-		"popularity": 44,
-		"id": "6vXJ4kIg2HlqsSfX3S1RHV",
-		"artist_duration": 370132.0,
-		"artist_genres": [
-			"chillhop"
-		],
-		"rank": 235
-	},
-	{
-		"name": "Claude Debussy",
-		"popularity": 72,
-		"id": "1Uff91EOsvd99rtAupatMP",
-		"artist_duration": 368533.0,
-		"artist_genres": [
-			"classical",
-			"impressionism",
-			"post-romantic era"
-		],
-		"rank": 236
-	},
-	{
-		"name": "Snarky Puppy",
-		"popularity": 52,
-		"id": "7ENzCHnmJUr20nUjoZ0zZ1",
-		"artist_duration": 362626.0,
-		"artist_genres": [
-			"contemporary jazz",
-			"funk rock",
-			"jazz fusion",
-			"modern funk",
-			"progressive jazz fusion"
-		],
-		"rank": 237
-	},
-	{
-		"name": "Eric Lau",
-		"popularity": 36,
-		"id": "68P6JiHWJsv5VqfLPchS1n",
-		"artist_duration": 361476.0,
-		"artist_genres": [
-			"indie jazz",
-			"neo r&b"
-		],
-		"rank": 238
-	},
-	{
-		"name": "Nil Karaibrahimgil",
-		"popularity": 58,
-		"id": "1PpRPZXSS5ka7m5NW2TO7q",
-		"artist_duration": 358997.0,
-		"artist_genres": [
-			"turkish folk",
-			"turkish pop",
-			"turkish singer-songwriter"
-		],
-		"rank": 239
-	},
-	{
-		"name": "Deca",
-		"popularity": 46,
-		"id": "0Up3H1s9ME6FivFcOz6qte",
-		"artist_duration": 358782.0,
-		"artist_genres": [
-			"jazz rap",
-			"nyc rap"
-		],
-		"rank": 240
-	},
-	{
-		"name": "AlunaGeorge",
-		"popularity": 66,
-		"id": "2VAnyOxzJuSAj7XIuEOT38",
-		"artist_duration": 348527.0,
-		"artist_genres": [
-			"electropop",
-			"house",
-			"pop",
-			"tropical house"
-		],
-		"rank": 241
-	},
-	{
-		"name": "Lizzo",
-		"popularity": 76,
-		"id": "56oDRnqbIiwx4mymNEv7dS",
-		"artist_duration": 346650.0,
-		"artist_genres": [
-			"dance pop",
-			"escape room",
-			"minnesota hip hop",
-			"pop",
-			"trap queen"
-		],
-		"rank": 242
-	},
-	{
-		"name": "Japanese Breakfast",
-		"popularity": 63,
-		"id": "7MoIc5s9KXolCBH1fy9kkw",
-		"artist_duration": 346617.0,
-		"artist_genres": [
-			"art pop",
-			"eugene indie",
-			"indie pop",
-			"philly indie"
-		],
-		"rank": 243
-	},
-	{
-		"name": "Maxwell",
-		"popularity": 61,
-		"id": "2AOt5htsbtyaHd5Eq3kl3j",
-		"artist_duration": 345975.0,
-		"artist_genres": [
-			"neo soul",
-			"new jack swing",
-			"quiet storm",
-			"r&b",
-			"soul",
-			"urban contemporary"
-		],
-		"rank": 244
-	},
-	{
-		"name": "Roy Woods",
-		"popularity": 66,
-		"id": "7mDU6nMUJnOSY2Hkjz5oqM",
-		"artist_duration": 345748.0,
-		"artist_genres": [
-			"canadian contemporary r&b",
-			"canadian hip hop",
-			"pop rap",
-			"r&b",
-			"trap",
-			"trap soul"
-		],
-		"rank": 245
-	},
-	{
-		"name": "Jos\u00e9 Gonz\u00e1lez",
-		"popularity": 68,
-		"id": "6xrCU6zdcSTsG2hLrojpmI",
-		"artist_duration": 345573.0,
-		"artist_genres": [
-			"gothenburg indie",
-			"indie folk",
-			"stomp and holler",
-			"swedish indie folk",
-			"swedish indie pop",
-			"swedish singer-songwriter"
-		],
-		"rank": 246
-	},
-	{
-		"name": "Chance the Rapper",
-		"popularity": 80,
-		"id": "1anyVhU62p31KFi8MEzkbf",
-		"artist_duration": 345336.0,
-		"artist_genres": [
-			"chicago rap",
-			"conscious hip hop",
-			"hip hop",
-			"pop rap",
-			"rap"
-		],
-		"rank": 247
-	},
-	{
-		"name": "@Peace",
-		"popularity": 36,
-		"id": "6lW657rZgEP90xb1rfHh2z",
-		"artist_duration": 333426.0,
-		"artist_genres": [
-			"nz hip hop"
-		],
-		"rank": 248
-	},
-	{
-		"name": "Yasuko Agawa",
-		"popularity": 0,
-		"id": "0pzEkpWlGKQjuWMRlnCBuA",
-		"artist_duration": 330600.0,
-		"artist_genres": [],
-		"rank": 249
-	},
-	{
-		"name": "NxWorries",
-		"popularity": 55,
-		"id": "6PEMFpe3PTOksdV4ZXUpbE",
-		"artist_duration": 325626.0,
-		"artist_genres": [
-			"hip hop",
-			"indie soul",
-			"neo soul"
-		],
-		"rank": 250
-	},
-	{
-		"name": "Spazzkid",
-		"popularity": 24,
-		"id": "1qmmiqE1glIyPbXg5sZ92f",
-		"artist_duration": 325384.0,
-		"artist_genres": [
-			"future bass"
-		],
-		"rank": 251
-	},
-	{
-		"name": "KAASI",
-		"popularity": 44,
-		"id": "0rCjhB7bSAgpshTquzm1I6",
-		"artist_duration": 320000.0,
-		"artist_genres": [
-			"indie soul"
-		],
-		"rank": 252
-	},
-	{
-		"name": "swim good now",
-		"popularity": 30,
-		"id": "0nfObbo5nqn9iWe0cy7Zvt",
-		"artist_duration": 319058.0,
-		"artist_genres": [
-			"canadian indie"
-		],
-		"rank": 253
-	},
-	{
-		"name": "Kids These Days",
-		"popularity": 27,
-		"id": "2A2MfAaWoDvGe0jhcZjKaY",
-		"artist_duration": 318814.0,
-		"artist_genres": [],
-		"rank": 254
-	},
-	{
-		"name": "Les Sins",
-		"popularity": 37,
-		"id": "4gSTRpmeyYppvIXuFKjfAL",
-		"artist_duration": 318014.0,
-		"artist_genres": [
-			"chillwave"
-		],
-		"rank": 255
-	},
-	{
-		"name": "Ta-ku",
-		"popularity": 54,
-		"id": "13Kd75NSHSp9lB4CaqPMOV",
-		"artist_duration": 317321.0,
-		"artist_genres": [
-			"alternative r&b",
-			"ambeat",
-			"indie soul",
-			"vapor soul",
-			"vapor twitch"
-		],
-		"rank": 256
-	},
-	{
-		"name": "Lianne La Havas",
-		"popularity": 64,
-		"id": "2RP4pPHTXlQpDnO9LvR7Yt",
-		"artist_duration": 316304.0,
-		"artist_genres": [
-			"british soul",
-			"indie soul",
-			"neo soul",
-			"pop soul",
-			"soul"
-		],
-		"rank": 257
-	},
-	{
-		"name": "FloFilz",
-		"popularity": 55,
-		"id": "39ZQx0618UYVBgGTDOJ2ds",
-		"artist_duration": 314754.0,
-		"artist_genres": [
-			"chillhop",
-			"jazz boom bap",
-			"lo-fi beats",
-			"lo-fi jazzhop"
-		],
-		"rank": 258
-	},
-	{
-		"name": "Tru Heru",
-		"popularity": 16,
-		"id": "0vZPnViZ1Xz1XLRbzvdwid",
-		"artist_duration": 314613.0,
-		"artist_genres": [],
-		"rank": 259
-	},
-	{
-		"name": "Marcos Valle",
-		"popularity": 54,
-		"id": "5I0EPnV9gwrZYTbScjnaOk",
-		"artist_duration": 313493.0,
-		"artist_genres": [
-			"bossa nova",
-			"brazilian boogie",
-			"mpb"
-		],
-		"rank": 260
-	},
-	{
-		"name": "J-Live",
-		"popularity": 48,
-		"id": "5bb5uytW59wDF0gpv8iQbE",
-		"artist_duration": 312906.0,
-		"artist_genres": [
-			"alternative hip hop",
-			"hardcore hip hop",
-			"hip hop",
-			"turntablism",
-			"underground rap"
-		],
-		"rank": 261
-	},
-	{
-		"name": "Nao",
-		"popularity": 64,
-		"id": "7aFTOGFDEqDtJUCziLVsVC",
-		"artist_duration": 307640.0,
-		"artist_genres": [
-			"alternative r&b",
-			"chill r&b",
-			"indie r&b",
-			"indie soul",
-			"neo soul",
-			"pop",
-			"r&b",
-			"uk contemporary r&b"
-		],
-		"rank": 262
-	},
-	{
-		"name": "Ray Barretto",
-		"popularity": 50,
-		"id": "2h4ndKS2vRWeFLpq8ARu0D",
-		"artist_duration": 307173.0,
-		"artist_genres": [
-			"boogaloo",
-			"latin jazz",
-			"salsa",
-			"salsa international",
-			"tropical"
-		],
-		"rank": 263
-	},
-	{
-		"name": "Lil Wayne",
-		"popularity": 89,
-		"id": "55Aa2cqylxrFIXC767Z865",
-		"artist_duration": 306173.0,
-		"artist_genres": [
-			"hip hop",
-			"new orleans rap",
-			"pop rap",
-			"rap",
-			"trap"
-		],
-		"rank": 264
-	},
-	{
-		"name": "Thestand4rd",
-		"popularity": 25,
-		"id": "5UgGWJ0LpDer5DJWTuWgBw",
-		"artist_duration": 305214.0,
-		"artist_genres": [
-			"experimental r&b"
-		],
-		"rank": 265
-	},
-	{
-		"name": "H.E.R.",
-		"popularity": 79,
-		"id": "3Y7RZ31TRPVadSFVy1o8os",
-		"artist_duration": 304653.0,
-		"artist_genres": [
-			"alternative r&b",
-			"dance pop",
-			"pop",
-			"r&b"
-		],
-		"rank": 266
-	},
-	{
-		"name": "Mitski",
-		"popularity": 81,
-		"id": "2uYWxilOVlUdk4oV9DvwqK",
-		"artist_duration": 304348.0,
-		"artist_genres": [
-			"brooklyn indie",
-			"indie pop"
-		],
 		"rank": 267
 	},
 	{
-		"name": "Homeboy Sandman",
-		"popularity": 42,
-		"id": "5s1QeAf7U5ELP9PTeLaicb",
-		"artist_duration": 304032.0,
+		"name": "Free n Losh",
+		"popularity": 40,
+		"id": "7DY8ywDjWdmToTbrrhLIWN",
+		"artist_duration": 209886,
 		"artist_genres": [
-			"abstract hip hop",
-			"alternative hip hop",
-			"east coast hip hop",
-			"escape room",
-			"underground rap"
+			"vapor soul"
 		],
 		"rank": 268
 	},
 	{
-		"name": "Mark Ronson",
-		"popularity": 77,
-		"id": "3hv9jJF3adDNsBSIQDqcjp",
-		"artist_duration": 304000.0,
+		"name": "Domo Genesis",
+		"popularity": 59,
+		"id": "6vHBuUxrcpn1do5UaEJ7g6",
+		"artist_duration": 209640,
 		"artist_genres": [
-			"dance pop",
-			"pop"
+			"alternative hip hop",
+			"hip hop",
+			"rap",
+			"underground hip hop"
 		],
 		"rank": 269
 	},
 	{
-		"name": "Shlohmo",
-		"popularity": 52,
-		"id": "6y80I9YZi4DOpbaSUlL725",
-		"artist_duration": 302210.0,
+		"name": "SBTRKT",
+		"popularity": 53,
+		"id": "1O10apSOoAPjOu6UhUNmeI",
+		"artist_duration": 209562,
 		"artist_genres": [
-			"bass music",
-			"chillwave",
-			"downtempo",
 			"electronica",
-			"future bass",
-			"glitch",
-			"vapor twitch",
-			"wonky"
+			"electropop",
+			"future garage",
+			"new rave"
 		],
 		"rank": 270
 	},
 	{
-		"name": "BADBADNOTGOOD",
-		"popularity": 67,
-		"id": "65dGLGjkw3UbddUg2GKQoZ",
-		"artist_duration": 300995.0,
+		"name": "Jamila Woods",
+		"popularity": 57,
+		"id": "4UodukR17NIQfNu5uaqm9B",
+		"artist_duration": 207933,
 		"artist_genres": [
-			"alternative hip hop",
-			"canadian modern jazz",
+			"afrofuturism",
+			"alternative r&b",
 			"escape room",
-			"hip hop",
 			"indie soul"
 		],
 		"rank": 271
 	},
 	{
-		"name": "Jaeden Camstra",
-		"popularity": 45,
-		"id": "1xOgtDBKnZvSLAgCVSOmNH",
-		"artist_duration": 300516.0,
-		"artist_genres": [
-			"chillhop",
-			"lo-fi beats"
-		],
+		"name": "Dr. Dre",
+		"popularity": 0,
+		"id": "0LyfQWJT6nXafLPZqxe9Of",
+		"artist_duration": 206713,
+		"artist_genres": [],
 		"rank": 272
 	},
 	{
-		"name": "Joe",
-		"popularity": 67,
-		"id": "3zTOe1BtyTkwNvYZOxXktX",
-		"artist_duration": 296693.0,
-		"artist_genres": [
-			"dance pop",
-			"hip pop",
-			"neo soul",
-			"new jack swing",
-			"r&b",
-			"urban contemporary"
-		],
+		"name": "Mizan K",
+		"popularity": 16,
+		"id": "65RJIgxb7uYgeQVKacbp82",
+		"artist_duration": 205590,
+		"artist_genres": [],
 		"rank": 273
 	},
 	{
-		"name": "Ady Suleiman",
-		"popularity": 52,
-		"id": "5LuLeXlnT2jFxbx7Cg7j88",
-		"artist_duration": 296000.0,
+		"name": "Ark Patrol",
+		"popularity": 59,
+		"id": "3zaxUd86U92CdZkNa6NUo9",
+		"artist_duration": 204126,
 		"artist_genres": [
-			"indie soul",
-			"uk contemporary r&b"
+			"future bass",
+			"vapor soul",
+			"vapor twitch"
 		],
 		"rank": 274
 	},
 	{
-		"name": "Nehruviandoom",
-		"popularity": 37,
-		"id": "0ZWQOiDsRVjQXoSljCxraD",
-		"artist_duration": 294843.0,
+		"name": "Louis Armstrong",
+		"popularity": 75,
+		"id": "19eLuQmk9aCobbVDHc6eek",
+		"artist_duration": 203877,
 		"artist_genres": [
-			"alternative hip hop"
+			"adult standards",
+			"dixieland",
+			"harlem renaissance",
+			"jazz trumpet",
+			"new orleans jazz",
+			"swing",
+			"vocal jazz"
 		],
 		"rank": 275
 	},
 	{
-		"name": "Jonwayne",
-		"popularity": 46,
-		"id": "3i7IUsb5VsiJAKqX2Md9Fc",
-		"artist_duration": 292787.0,
-		"artist_genres": [
-			"alternative hip hop",
-			"escape room",
-			"wonky"
-		],
+		"name": "DJ Day",
+		"popularity": 35,
+		"id": "64nlNvqVtLkdY4x8Hhvq6T",
+		"artist_duration": 202242,
+		"artist_genres": [],
 		"rank": 276
 	},
 	{
-		"name": "Clipse",
-		"popularity": 54,
-		"id": "2J257euzcjnDLipsyJH3F2",
-		"artist_duration": 290280.0,
+		"name": "Aaron Taylor",
+		"popularity": 57,
+		"id": "1evO4fwLsEkkPGq32dCix7",
+		"artist_duration": 200057,
 		"artist_genres": [
-			"alternative hip hop",
-			"dirty south rap",
-			"gangster rap",
-			"hardcore hip hop",
-			"hip hop",
-			"rap",
-			"southern hip hop",
-			"trap",
-			"virginia hip hop"
+			"alternative r&b",
+			"indie jazz",
+			"indie r&b",
+			"indie soul",
+			"soul",
+			"uk contemporary r&b"
 		],
 		"rank": 277
 	},
 	{
-		"name": "Declaime",
-		"popularity": 0,
-		"id": "1yXStSSiAScXQxj55HsSDi",
-		"artist_duration": 288853.0,
-		"artist_genres": [],
+		"name": "Anti-Lilly & Phoniks",
+		"popularity": 37,
+		"id": "71MaDLIywcEKpXNGCnUlBe",
+		"artist_duration": 199482,
+		"artist_genres": [
+			"jazz rap"
+		],
 		"rank": 278
 	},
 	{
-		"name": "DJ Honda",
-		"popularity": 41,
-		"id": "7mrvU3OShTgthJV80o2day",
-		"artist_duration": 288773.0,
+		"name": "Run The Jewels",
+		"popularity": 65,
+		"id": "4RnBFZRiMLRyZy0AzzTg2C",
+		"artist_duration": 198640,
 		"artist_genres": [
-			"alternative hip hop",
-			"hardcore hip hop",
-			"japanese boom bap",
-			"japanese underground rap",
-			"turntablism"
+			"escape room",
+			"hip hop",
+			"political hip hop"
 		],
 		"rank": 279
 	},
 	{
-		"name": "JMSN",
-		"popularity": 52,
-		"id": "6HCkJzbswOIc7Qc5TJ1n5l",
-		"artist_duration": 288027.0,
+		"name": "Saje",
+		"popularity": 39,
+		"id": "3I2596dGk4K3e4qKjwpzQb",
+		"artist_duration": 198555,
 		"artist_genres": [
-			"alternative r&b",
-			"indie soul"
+			"new french touch",
+			"vapor soul"
 		],
 		"rank": 280
 	},
 	{
-		"name": "J-Love",
-		"popularity": 28,
-		"id": "5eGENdlc6kQZeuzUJZ4W8B",
-		"artist_duration": 287013.0,
-		"artist_genres": [],
+		"name": "Jazz Spastiks",
+		"popularity": 40,
+		"id": "49vIrnZPb9Tcc9N30t7E3S",
+		"artist_duration": 197508,
+		"artist_genres": [
+			"chillhop",
+			"jazz boom bap",
+			"jazz rap"
+		],
 		"rank": 281
+	},
+	{
+		"name": "Marcos Valle",
+		"popularity": 54,
+		"id": "5I0EPnV9gwrZYTbScjnaOk",
+		"artist_duration": 197196,
+		"artist_genres": [
+			"bossa nova",
+			"brazilian boogie",
+			"mpb"
+		],
+		"rank": 282
+	},
+	{
+		"name": "Mr Hudson",
+		"popularity": 59,
+		"id": "1zV9UjTUevjp5VUddqIUUn",
+		"artist_duration": 195632,
+		"artist_genres": [],
+		"rank": 283
+	},
+	{
+		"name": "Everything Is Recorded",
+		"popularity": 40,
+		"id": "0JYlkNmu76Wu1DgvWNWq7X",
+		"artist_duration": 195129,
+		"artist_genres": [
+			"alternative r&b"
+		],
+		"rank": 284
+	},
+	{
+		"name": "Reva DeVito",
+		"popularity": 41,
+		"id": "00jACgDWIBdPM4eH8nORwz",
+		"artist_duration": 194807,
+		"artist_genres": [
+			"portland hip hop"
+		],
+		"rank": 285
+	},
+	{
+		"name": "Shlohmo",
+		"popularity": 52,
+		"id": "6y80I9YZi4DOpbaSUlL725",
+		"artist_duration": 194611,
+		"artist_genres": [
+			"chillwave",
+			"downtempo",
+			"electronica",
+			"glitch",
+			"uk bass",
+			"wonky"
+		],
+		"rank": 286
+	},
+	{
+		"name": "The Physics",
+		"popularity": 21,
+		"id": "6DBPiY29Re2ne1npE68FMf",
+		"artist_duration": 193121,
+		"artist_genres": [],
+		"rank": 287
+	},
+	{
+		"name": "The 49ers",
+		"popularity": 30,
+		"id": "1WWJxH3nMA5AoEnghYv1ij",
+		"artist_duration": 193098,
+		"artist_genres": [
+			"ambeat",
+			"jazz rap"
+		],
+		"rank": 288
+	},
+	{
+		"name": "Bones & Beeker",
+		"popularity": 25,
+		"id": "2eUgwyMobMitdjib3FxQVF",
+		"artist_duration": 191077,
+		"artist_genres": [],
+		"rank": 289
+	},
+	{
+		"name": "Benny Sings",
+		"popularity": 66,
+		"id": "4gHcu2JoaXJ0mV4aNPCd7N",
+		"artist_duration": 189344,
+		"artist_genres": [
+			"dutch pop",
+			"indie jazz",
+			"indie soul"
+		],
+		"rank": 290
+	},
+	{
+		"name": "Cupidon",
+		"popularity": 45,
+		"id": "1qz3nYVQit24tcOsCOdCvb",
+		"artist_duration": 187074,
+		"artist_genres": [],
+		"rank": 291
+	},
+	{
+		"name": "Spycc",
+		"popularity": 20,
+		"id": "35AcTLN4eMdtdgNVJIIuoN",
+		"artist_duration": 186588,
+		"artist_genres": [
+			"nz hip hop"
+		],
+		"rank": 292
+	},
+	{
+		"name": "Chico Mann",
+		"popularity": 36,
+		"id": "2Wt6Q6ZHygCPVtMO3uxLGB",
+		"artist_duration": 185670,
+		"artist_genres": [
+			"latin afrobeat",
+			"latintronica"
+		],
+		"rank": 293
+	},
+	{
+		"name": "Cold Callers",
+		"popularity": 30,
+		"id": "4kea10qfngnISrreon00lH",
+		"artist_duration": 183620,
+		"artist_genres": [
+			"psychedelic hip hop"
+		],
+		"rank": 294
+	},
+	{
+		"name": "Stro Elliot",
+		"popularity": 36,
+		"id": "35mEzAsFbM7OOTzFyjTgeU",
+		"artist_duration": 181848,
+		"artist_genres": [
+			"jazz rap"
+		],
+		"rank": 295
 	},
 	{
 		"name": "Diddy",
 		"popularity": 0,
 		"id": "0LyfQWJT6nXafLPZqxe9Of",
-		"artist_duration": 285586.0,
+		"artist_duration": 180673,
 		"artist_genres": [],
-		"rank": 282
-	},
-	{
-		"name": "Yuno",
-		"popularity": 49,
-		"id": "36BjLtXEXIifbRrfc1Rtqa",
-		"artist_duration": 283206.0,
-		"artist_genres": [
-			"gamecore",
-			"jacksonville indie"
-		],
-		"rank": 283
-	},
-	{
-		"name": "Trinix",
-		"popularity": 63,
-		"id": "3HqP3nd8WI0VfHRhApPlan",
-		"artist_duration": 281738.0,
-		"artist_genres": [
-			"bass trap",
-			"new french touch",
-			"tropical house"
-		],
-		"rank": 284
-	},
-	{
-		"name": "Action Bronson",
-		"popularity": 64,
-		"id": "7BMccF0hQFBpP6417k1OtQ",
-		"artist_duration": 280160.0,
-		"artist_genres": [
-			"alternative hip hop",
-			"east coast hip hop",
-			"escape room",
-			"hip hop",
-			"nyc rap",
-			"queens hip hop",
-			"rap",
-			"underground hip hop"
-		],
-		"rank": 285
-	},
-	{
-		"name": "Ambassadeurs",
-		"popularity": 35,
-		"id": "6BKSRVMfQ6Aeux4rKG1h9H",
-		"artist_duration": 278822.0,
-		"artist_genres": [
-			"vapor twitch"
-		],
-		"rank": 286
-	},
-	{
-		"name": "Ryu\u2606",
-		"popularity": 0,
-		"id": "0LyfQWJT6nXafLPZqxe9Of",
-		"artist_duration": 273200.0,
-		"artist_genres": [],
-		"rank": 287
-	},
-	{
-		"name": "Lloyd",
-		"popularity": 71,
-		"id": "1Xfmvd48oOhEWkscWyEbh9",
-		"artist_duration": 273133.0,
-		"artist_genres": [
-			"dance pop",
-			"hip pop",
-			"pop",
-			"pop r&b",
-			"pop rap",
-			"r&b",
-			"southern hip hop",
-			"urban contemporary"
-		],
-		"rank": 288
-	},
-	{
-		"name": "Mello Music Group",
-		"popularity": 36,
-		"id": "3c5J6hzTBZJVsjJ9FJoQ0V",
-		"artist_duration": 272812.0,
-		"artist_genres": [
-			"alternative hip hop",
-			"boom bap",
-			"underground rap"
-		],
-		"rank": 289
-	},
-	{
-		"name": "Colossus",
-		"popularity": 0,
-		"id": "0LyfQWJT6nXafLPZqxe9Of",
-		"artist_duration": 272400.0,
-		"artist_genres": [],
-		"rank": 290
-	},
-	{
-		"name": "RKCB",
-		"popularity": 57,
-		"id": "4QDvXnbmw1znkqkK1119Fc",
-		"artist_duration": 270053.0,
-		"artist_genres": [
-			"electropop",
-			"indie electropop",
-			"indie poptimism",
-			"indie soul",
-			"vapor soul",
-			"vapor twitch"
-		],
-		"rank": 291
-	},
-	{
-		"name": "BJ The Chicago Kid",
-		"popularity": 67,
-		"id": "07d5etnpjriczFBB8pxmRe",
-		"artist_duration": 269173.0,
-		"artist_genres": [
-			"alternative r&b",
-			"chicago rap",
-			"hip hop",
-			"indie r&b",
-			"indie soul",
-			"neo soul",
-			"pop r&b",
-			"r&b",
-			"underground hip hop"
-		],
-		"rank": 292
-	},
-	{
-		"name": "FKJ",
-		"popularity": 71,
-		"id": "2FwDTncULUnmANIh7qKa5z",
-		"artist_duration": 268170.0,
-		"artist_genres": [
-			"filter house",
-			"indie soul"
-		],
-		"rank": 293
-	},
-	{
-		"name": "Teedra Moses",
-		"popularity": 52,
-		"id": "6vfR5QRc3xca0KvpG8KZBE",
-		"artist_duration": 268087.0,
-		"artist_genres": [
-			"alternative r&b",
-			"hip pop",
-			"neo soul",
-			"r&b",
-			"urban contemporary"
-		],
-		"rank": 294
-	},
-	{
-		"name": "SRNO",
-		"popularity": 98,
-		"id": "3TVXtAsR1Inumwj472S9r4",
-		"artist_duration": 267066.0,
-		"artist_genres": [
-			"canadian hip hop",
-			"canadian pop",
-			"hip hop",
-			"rap",
-			"toronto rap"
-		],
-		"rank": 295
-	},
-	{
-		"name": "Usher",
-		"popularity": 81,
-		"id": "23zg3TcAtWQy7J6upgbUnj",
-		"artist_duration": 266893.0,
-		"artist_genres": [
-			"atl hip hop",
-			"dance pop",
-			"pop",
-			"r&b",
-			"south carolina hip hop",
-			"urban contemporary"
-		],
 		"rank": 296
 	},
 	{
-		"name": "50 Cent",
-		"popularity": 37,
-		"id": "16yvMxTCkxg6Jqe43TXDFe",
-		"artist_duration": 266733.0,
+		"name": "Thane",
+		"popularity": 27,
+		"id": "26h4NY9BTM2UtvNQ0Gr8Ht",
+		"artist_duration": 179982,
 		"artist_genres": [],
 		"rank": 297
 	},
 	{
-		"name": "Lunay",
-		"popularity": 78,
-		"id": "47MpMsUfWtgyIIBEFOr4FE",
-		"artist_duration": 266086.0,
+		"name": "alt-J",
+		"popularity": 74,
+		"id": "3XHO7cRUPCLOr6jwp8vsx5",
+		"artist_duration": 179632,
 		"artist_genres": [
-			"latin",
-			"latin hip hop",
-			"latin pop",
-			"reggaeton",
-			"reggaeton flow",
-			"trap latino"
+			"indie rock",
+			"modern rock"
 		],
 		"rank": 298
 	},
 	{
-		"name": "Jaden",
-		"popularity": 75,
-		"id": "0xOeVMOz2fVg5BJY3N6akT",
-		"artist_duration": 262473.0,
+		"name": "Nio Garcia",
+		"popularity": 81,
+		"id": "5hdhHgpxyniooUiQVaPxQ0",
+		"artist_duration": 177025,
 		"artist_genres": [
-			"hip hop",
-			"pop",
-			"rap"
+			"latin",
+			"reggaeton",
+			"trap latino"
 		],
 		"rank": 299
 	},
 	{
-		"name": "Strong Arm Steady",
-		"popularity": 29,
-		"id": "2DbpanduRLSrGiYjQkOrna",
-		"artist_duration": 261013.0,
+		"name": "Anton\u00edn Dvo\u0159\u00e1k",
+		"popularity": 63,
+		"id": "6n7nd5iceYpXVwcx8VPpxF",
+		"artist_duration": 175731,
 		"artist_genres": [
-			"alternative hip hop"
+			"classical",
+			"czech classical",
+			"late romantic era"
 		],
 		"rank": 300
 	},
 	{
-		"name": "Michael Jackson",
-		"popularity": 84,
-		"id": "3fMbdgg4jU18AjLCKBhRSm",
-		"artist_duration": 260666.0,
-		"artist_genres": [
-			"pop",
-			"r&b",
-			"soul"
-		],
+		"name": "Wildcookie",
+		"popularity": 33,
+		"id": "2nkfPQ3HP5UyDHqy1hSbgG",
+		"artist_duration": 174679,
+		"artist_genres": [],
 		"rank": 301
 	},
 	{
-		"name": "Chrome Sparks",
-		"popularity": 49,
-		"id": "2pTCZ9C1fXdaVlv6d5EIXM",
-		"artist_duration": 260519.0,
+		"name": "Big Grams",
+		"popularity": 36,
+		"id": "4jU68Hm8np6WNZXMqi7rz3",
+		"artist_duration": 171840,
 		"artist_genres": [
-			"chillwave",
-			"shimmer psych",
-			"vapor soul",
-			"vapor twitch"
+			"escape room"
 		],
 		"rank": 302
 	},
 	{
-		"name": "LUCKY TAPES",
-		"popularity": 50,
-		"id": "7tyrh2CwSnilzMD8olQxcx",
-		"artist_duration": 260360.0,
+		"name": "Jaeden Camstra",
+		"popularity": 45,
+		"id": "1xOgtDBKnZvSLAgCVSOmNH",
+		"artist_duration": 171733,
 		"artist_genres": [
-			"city pop",
-			"japanese r&b"
+			"chillhop",
+			"lo-fi beats"
 		],
 		"rank": 303
-	},
-	{
-		"name": "Jelleestone",
-		"popularity": 26,
-		"id": "21EIv4m5gbtWQLA9Al9em4",
-		"artist_duration": 259946.0,
-		"artist_genres": [
-			"canadian old school hip hop"
-		],
-		"rank": 304
-	},
-	{
-		"name": "Vince Staples",
-		"popularity": 72,
-		"id": "68kEuyFKyqrdQQLLsmiatm",
-		"artist_duration": 259213.0,
-		"artist_genres": [
-			"conscious hip hop",
-			"escape room",
-			"hip hop",
-			"rap",
-			"underground hip hop"
-		],
-		"rank": 305
-	},
-	{
-		"name": "Kan Sano",
-		"popularity": 49,
-		"id": "5b3ZFm6P1lpZIASMDnBDs9",
-		"artist_duration": 258968.0,
-		"artist_genres": [
-			"japanese jazz fusion",
-			"japanese r&b"
-		],
-		"rank": 306
-	},
-	{
-		"name": "Kendra Foster",
-		"popularity": 21,
-		"id": "1RhQ4EIgZsMwOi8ioA7Rbi",
-		"artist_duration": 258089.0,
-		"artist_genres": [
-			"p funk"
-		],
-		"rank": 307
-	},
-	{
-		"name": "Moon Boots",
-		"popularity": 50,
-		"id": "3cIXmCH7iNcslTbwrwS7zy",
-		"artist_duration": 258034.0,
-		"artist_genres": [
-			"deep house",
-			"disco house",
-			"edm",
-			"house",
-			"indie soul",
-			"nu disco"
-		],
-		"rank": 308
-	},
-	{
-		"name": "YEAR OF THE OX",
-		"popularity": 33,
-		"id": "614kirduDphBL5NZebU3Zi",
-		"artist_duration": 257430.0,
-		"artist_genres": [
-			"asian american hip hop"
-		],
-		"rank": 309
-	},
-	{
-		"name": "Good Times Ahead",
-		"popularity": 60,
-		"id": "6M7RdR9ZP52h2mfNLmiHtU",
-		"artist_duration": 256546.0,
-		"artist_genres": [
-			"bass trap",
-			"brostep",
-			"edm",
-			"electro house",
-			"electronic trap",
-			"pop dance",
-			"vapor twitch"
-		],
-		"rank": 310
-	},
-	{
-		"name": "Re:plus",
-		"popularity": 42,
-		"id": "6ftHlqrtNdAq0bWL7zkaTG",
-		"artist_duration": 256133.0,
-		"artist_genres": [
-			"ambeat",
-			"japanese jazz fusion"
-		],
-		"rank": 311
-	},
-	{
-		"name": "Osunlade",
-		"popularity": 43,
-		"id": "4mHngi71hWNKTRuyl3W9FY",
-		"artist_duration": 256016.0,
-		"artist_genres": [
-			"afro house",
-			"broken beat",
-			"deep house",
-			"soulful house",
-			"vocal house"
-		],
-		"rank": 312
-	},
-	{
-		"name": "Rvdical the Kid",
-		"popularity": 31,
-		"id": "4eu9GW8WwzF6n6fb34COES",
-		"artist_duration": 254457.0,
-		"artist_genres": [
-			"african electronic",
-			"ghanaian alternative"
-		],
-		"rank": 313
-	},
-	{
-		"name": "ERIMAJ",
-		"popularity": 15,
-		"id": "47zB8HowGfion9FkA4xLYo",
-		"artist_duration": 253786.0,
-		"artist_genres": [],
-		"rank": 314
-	},
-	{
-		"name": "Luniz",
-		"popularity": 61,
-		"id": "3z3g65U7mmyyBmmDfsQK9x",
-		"artist_duration": 253533.0,
-		"artist_genres": [
-			"g funk",
-			"gangster rap",
-			"hyphy",
-			"oakland hip hop",
-			"west coast rap"
-		],
-		"rank": 315
-	},
-	{
-		"name": "Alina Baraz",
-		"popularity": 71,
-		"id": "6hfwwpXqZPRC9CsKI7qtv1",
-		"artist_duration": 253200.0,
-		"artist_genres": [
-			"alternative r&b",
-			"electropop",
-			"etherpop",
-			"pop",
-			"r&b"
-		],
-		"rank": 316
-	},
-	{
-		"name": "Iman Omari",
-		"popularity": 54,
-		"id": "1ySUvbTVNE9pyhdzcDxjg4",
-		"artist_duration": 252106.0,
-		"artist_genres": [
-			"alternative r&b",
-			"indie r&b",
-			"indie soul"
-		],
-		"rank": 317
-	},
-	{
-		"name": "June Marieezy",
-		"popularity": 40,
-		"id": "538d30rb03lrsD9u8Yipar",
-		"artist_duration": 252000.0,
-		"artist_genres": [
-			"alternative r&b",
-			"pinoy r&b"
-		],
-		"rank": 318
-	},
-	{
-		"name": "Ginuwine",
-		"popularity": 0,
-		"id": "0LyfQWJT6nXafLPZqxe9Of",
-		"artist_duration": 251733.0,
-		"artist_genres": [],
-		"rank": 319
-	},
-	{
-		"name": "Musiq Soulchild",
-		"popularity": 61,
-		"id": "3UVRliakQfa1pMWIsNuiZ8",
-		"artist_duration": 251426.0,
-		"artist_genres": [
-			"dance pop",
-			"hip pop",
-			"neo soul",
-			"new jack swing",
-			"quiet storm",
-			"r&b",
-			"urban contemporary"
-		],
-		"rank": 320
-	},
-	{
-		"name": "Wu-Tang Clan",
-		"popularity": 71,
-		"id": "34EP7KEpOjXcM2TCat1ISk",
-		"artist_duration": 251080.0,
-		"artist_genres": [
-			"east coast hip hop",
-			"gangster rap",
-			"hardcore hip hop",
-			"hip hop",
-			"rap"
-		],
-		"rank": 321
-	},
-	{
-		"name": "Kiko Bun",
-		"popularity": 47,
-		"id": "7yMruV2Y0a7ib9RLj9mLQQ",
-		"artist_duration": 250937.0,
-		"artist_genres": [
-			"british soul",
-			"uk reggae"
-		],
-		"rank": 322
-	},
-	{
-		"name": "Brasstracks",
-		"popularity": 57,
-		"id": "5sKvgmG84C0bIMWeS2SRPr",
-		"artist_duration": 250521.0,
-		"artist_genres": [
-			"alternative r&b",
-			"indie soul",
-			"nyc pop"
-		],
-		"rank": 323
-	},
-	{
-		"name": "Truth Trill",
-		"popularity": 8,
-		"id": "2XHdOGNKn0WzZo6NaTSOty",
-		"artist_duration": 250254.0,
-		"artist_genres": [],
-		"rank": 324
-	},
-	{
-		"name": "Jidenna",
-		"popularity": 57,
-		"id": "4TsHKU8l8Wq7n7OPVikirn",
-		"artist_duration": 250000.0,
-		"artist_genres": [
-			"ghanaian hip hop"
-		],
-		"rank": 325
-	},
-	{
-		"name": "Cleopold",
-		"popularity": 38,
-		"id": "2BeARYDF52QQk5S2zgiVHe",
-		"artist_duration": 249560.0,
-		"artist_genres": [],
-		"rank": 326
-	},
-	{
-		"name": "P-Money",
-		"popularity": 40,
-		"id": "2Q13jBmo9llBTWdgnZMzyS",
-		"artist_duration": 249546.0,
-		"artist_genres": [
-			"grime",
-			"nz hip hop",
-			"pacific islands pop"
-		],
-		"rank": 327
-	},
-	{
-		"name": "Jesse Boykins III",
-		"popularity": 47,
-		"id": "7N3L5HZxQqxWSfhrrTNI29",
-		"artist_duration": 249106.0,
-		"artist_genres": [
-			"alternative r&b",
-			"neo r&b",
-			"neo soul"
-		],
-		"rank": 328
-	},
-	{
-		"name": "Limes",
-		"popularity": 3,
-		"id": "6txPhxLJccbLaaS2OgblBs",
-		"artist_duration": 248666.0,
-		"artist_genres": [],
-		"rank": 329
-	},
-	{
-		"name": "J.Robb",
-		"popularity": 39,
-		"id": "2DfpfU9DpRLC3EuWLKyy4m",
-		"artist_duration": 248580.0,
-		"artist_genres": [],
-		"rank": 330
-	},
-	{
-		"name": "Salt-N-Pepa",
-		"popularity": 64,
-		"id": "7wqtxqI3eo7Gn1P7SpP6cQ",
-		"artist_duration": 248573.0,
-		"artist_genres": [
-			"dance pop",
-			"girl group",
-			"golden age hip hop",
-			"hip hop",
-			"hip pop",
-			"old school hip hop",
-			"queens hip hop",
-			"rap"
-		],
-		"rank": 331
-	},
-	{
-		"name": "Otis Junior",
-		"popularity": 42,
-		"id": "3JWTfcIZq4OUdC6oBunofK",
-		"artist_duration": 247619.0,
-		"artist_genres": [
-			"neo r&b"
-		],
-		"rank": 332
-	},
-	{
-		"name": "Subculture Sage",
-		"popularity": 43,
-		"id": "5HZXZ01UBUXhMpdei2vULP",
-		"artist_duration": 246709.0,
-		"artist_genres": [
-			"uk alternative hip hop"
-		],
-		"rank": 333
-	},
-	{
-		"name": "Cam O'bi",
-		"popularity": 54,
-		"id": "4jqFe1fd5uul2XSSxsRvbZ",
-		"artist_duration": 245985.0,
-		"artist_genres": [],
-		"rank": 334
-	},
-	{
-		"name": "Ciscero",
-		"popularity": 49,
-		"id": "5oSCIcpPdrO3UhTMATxkYL",
-		"artist_duration": 241755.0,
-		"artist_genres": [
-			"dmv rap"
-		],
-		"rank": 335
-	},
-	{
-		"name": "Coolio",
-		"popularity": 71,
-		"id": "3y24n3XhZ96wgwRXjvS17T",
-		"artist_duration": 240693.0,
-		"artist_genres": [
-			"g funk",
-			"gangster rap",
-			"hip hop",
-			"rap",
-			"west coast rap"
-		],
-		"rank": 336
-	},
-	{
-		"name": "McClenney",
-		"popularity": 46,
-		"id": "44drVL4jbdo6T6llD5cMgx",
-		"artist_duration": 240000.0,
-		"artist_genres": [
-			"alternative r&b",
-			"chill r&b",
-			"indie r&b",
-			"indie soul",
-			"neo r&b"
-		],
-		"rank": 337
-	},
-	{
-		"name": "tobi lou",
-		"popularity": 65,
-		"id": "4T8NIfZmVY6TJFqVzN6X49",
-		"artist_duration": 240000.0,
-		"artist_genres": [
-			"alternative r&b",
-			"chicago rap",
-			"pop",
-			"pop rap"
-		],
-		"rank": 338
-	},
-	{
-		"name": "R\u00dcF\u00dcS DU SOL",
-		"popularity": 75,
-		"id": "5Pb27ujIyYb33zBqVysBkj",
-		"artist_duration": 239417.0,
-		"artist_genres": [
-			"australian electropop",
-			"indietronica"
-		],
-		"rank": 339
-	},
-	{
-		"name": "Amerie",
-		"popularity": 56,
-		"id": "08rMCq2ek1YjdDBsCPVH2s",
-		"artist_duration": 238760.0,
-		"artist_genres": [
-			"dance pop",
-			"hip hop",
-			"hip pop",
-			"neo soul",
-			"r&b",
-			"urban contemporary"
-		],
-		"rank": 340
-	},
-	{
-		"name": "Kweku Collins",
-		"popularity": 41,
-		"id": "2SPt3i9sJKS1qiMQQQr9LS",
-		"artist_duration": 238546.0,
-		"artist_genres": [
-			"underground hip hop"
-		],
-		"rank": 341
-	},
-	{
-		"name": "Penthouse Penthouse",
-		"popularity": 24,
-		"id": "5UfeYtslz7DT0hvVnkCEjB",
-		"artist_duration": 238195.0,
-		"artist_genres": [],
-		"rank": 342
-	},
-	{
-		"name": "Bas",
-		"popularity": 72,
-		"id": "70gP6Ry4Uo0Yx6uzPIdaiJ",
-		"artist_duration": 238053.0,
-		"artist_genres": [
-			"hip hop",
-			"queens hip hop",
-			"rap",
-			"sudanese pop",
-			"underground hip hop"
-		],
-		"rank": 343
-	},
-	{
-		"name": "WEDNESDAY CAMPANELLA",
-		"popularity": 49,
-		"id": "0bp9CvkjQYhUJvWRHjFRWI",
-		"artist_duration": 237500.0,
-		"artist_genres": [
-			"japanese dance pop",
-			"japanese electropop"
-		],
-		"rank": 344
-	},
-	{
-		"name": "The Japanese House",
-		"popularity": 63,
-		"id": "3IunaFjvNKj98JW89JYv9u",
-		"artist_duration": 237426.0,
-		"artist_genres": [
-			"art pop",
-			"electropop",
-			"indie pop",
-			"indie poptimism",
-			"indietronica",
-			"modern dream pop",
-			"vapor soul"
-		],
-		"rank": 345
-	},
-	{
-		"name": "Yaeji",
-		"popularity": 57,
-		"id": "2RqrWplViWHSGLzlhmDcbt",
-		"artist_duration": 237231.0,
-		"artist_genres": [
-			"art pop",
-			"escape room",
-			"experimental house"
-		],
-		"rank": 346
-	},
-	{
-		"name": "Pool Cosby",
-		"popularity": 31,
-		"id": "7zrfybpJUeRLpyPY9DoDt7",
-		"artist_duration": 233627.0,
-		"artist_genres": [],
-		"rank": 347
-	},
-	{
-		"name": "Cosmo's Midnight",
-		"popularity": 59,
-		"id": "4VivsO1n4n2Mi2Btyb5gfL",
-		"artist_duration": 233334.0,
-		"artist_genres": [
-			"australian dance",
-			"australian indie",
-			"indie dream pop",
-			"indie soul"
-		],
-		"rank": 348
-	},
-	{
-		"name": "POLKADOT STINGRAY",
-		"popularity": 54,
-		"id": "5zV9afUO4DVqJeRaZvfNev",
-		"artist_duration": 233198.0,
-		"artist_genres": [
-			"anime rock",
-			"j-pixie",
-			"j-pop",
-			"j-rock",
-			"kyushu indie"
-		],
-		"rank": 349
-	},
-	{
-		"name": "Rina Sawayama",
-		"popularity": 64,
-		"id": "2KEqzdPS7M5YwGmiuPTdr5",
-		"artist_duration": 232946.0,
-		"artist_genres": [
-			"art pop",
-			"dance pop",
-			"electropop",
-			"escape room",
-			"pop"
-		],
-		"rank": 350
-	},
-	{
-		"name": "Szymon",
-		"popularity": 46,
-		"id": "4hSeosKw3pr72gC10igZow",
-		"artist_duration": 232801.0,
-		"artist_genres": [
-			"folktronica",
-			"indie soul"
-		],
-		"rank": 351
-	},
-	{
-		"name": "The Age of L.U.N.A",
-		"popularity": 24,
-		"id": "5yAqULyufEDkH8oBRuFfYF",
-		"artist_duration": 232121.0,
-		"artist_genres": [
-			"neo r&b"
-		],
-		"rank": 352
-	},
-	{
-		"name": "Neon Indian",
-		"popularity": 50,
-		"id": "0KydPQPUUoTNhmiHKOg5Er",
-		"artist_duration": 231442.0,
-		"artist_genres": [
-			"alternative dance",
-			"chillwave",
-			"denton tx indie",
-			"dream pop",
-			"experimental pop",
-			"indie rock",
-			"indietronica",
-			"neo-synthpop",
-			"new rave"
-		],
-		"rank": 353
-	},
-	{
-		"name": "Heralds Of Change",
-		"popularity": 18,
-		"id": "0IzjeWBDWlNK2SYVdOyOAI",
-		"artist_duration": 231270.0,
-		"artist_genres": [],
-		"rank": 354
-	},
-	{
-		"name": "SG Lewis",
-		"popularity": 68,
-		"id": "0GG2cWaonE4JPrjcCCQ1EG",
-		"artist_duration": 230540.0,
-		"artist_genres": [
-			"alternative r&b",
-			"indie soul",
-			"new french touch",
-			"tropical house",
-			"uk dance",
-			"vapor soul"
-		],
-		"rank": 355
-	},
-	{
-		"name": "Bill Withers",
-		"popularity": 74,
-		"id": "1ThoqLcyIYvZn7iWbj8fsj",
-		"artist_duration": 229946.0,
-		"artist_genres": [
-			"funk",
-			"motown",
-			"quiet storm",
-			"soul"
-		],
-		"rank": 356
-	},
-	{
-		"name": "Wiz Khalifa",
-		"popularity": 85,
-		"id": "137W8MRPWKqSmrBGDBFSop",
-		"artist_duration": 229525.0,
-		"artist_genres": [
-			"dance pop",
-			"hip hop",
-			"pittsburgh rap",
-			"pop rap",
-			"rap",
-			"southern hip hop",
-			"trap"
-		],
-		"rank": 357
-	},
-	{
-		"name": "Plage 84",
-		"popularity": 15,
-		"id": "7dwoKc64TML5mj1uPvPL6A",
-		"artist_duration": 228807.0,
-		"artist_genres": [],
-		"rank": 358
-	},
-	{
-		"name": "KAYTRANADA",
-		"popularity": 70,
-		"id": "6qgnBH6iDM91ipVXv28OMu",
-		"artist_duration": 228146.0,
-		"artist_genres": [
-			"escape room",
-			"indie soul",
-			"lgbtq+ hip hop"
-		],
-		"rank": 359
-	},
-	{
-		"name": "Louis Rustum",
-		"popularity": 18,
-		"id": "3pIxjxF74tqQCbAyy2QMnu",
-		"artist_duration": 227552.0,
-		"artist_genres": [
-			"danish electropop"
-		],
-		"rank": 360
-	},
-	{
-		"name": "Talib Kweli",
-		"popularity": 58,
-		"id": "0lEssBAxQl2In4RpaB1C2Y",
-		"artist_duration": 227426.0,
-		"artist_genres": [
-			"alternative hip hop",
-			"conscious hip hop",
-			"east coast hip hop",
-			"hardcore hip hop",
-			"hip hop",
-			"southern hip hop"
-		],
-		"rank": 361
-	},
-	{
-		"name": "Jamieboy",
-		"popularity": 32,
-		"id": "7ew9ZidsT1WM5NJy568Ma9",
-		"artist_duration": 227138.0,
-		"artist_genres": [],
-		"rank": 362
-	},
-	{
-		"name": "Baro Sura",
-		"popularity": 30,
-		"id": "79EKbkmOJ9lJwnhTBOqOlV",
-		"artist_duration": 225173.0,
-		"artist_genres": [],
-		"rank": 363
 	},
 	{
 		"name": "Sampa the Great",
 		"popularity": 53,
 		"id": "7fw0E8WHdG3r9SuPBcGmWk",
-		"artist_duration": 224512.0,
+		"artist_duration": 171626,
 		"artist_genres": [
 			"australian hip hop",
 			"conscious hip hop",
@@ -4446,339 +3661,435 @@
 			"indie soul",
 			"zambian hip hop"
 		],
-		"rank": 364
+		"rank": 304
 	},
 	{
-		"name": "Cardi B",
-		"popularity": 85,
-		"id": "4kYSro6naA4h99UJvo89HB",
-		"artist_duration": 223712.0,
+		"name": "SwuM",
+		"popularity": 97,
+		"id": "3TVXtAsR1Inumwj472S9r4",
+		"artist_duration": 171387,
 		"artist_genres": [
-			"dance pop",
+			"canadian hip hop",
+			"canadian pop",
+			"hip hop",
+			"rap",
+			"toronto rap"
+		],
+		"rank": 305
+	},
+	{
+		"name": "Olukara",
+		"popularity": 30,
+		"id": "24rWEwje2NmxaT6EKbv6uG",
+		"artist_duration": 170116,
+		"artist_genres": [],
+		"rank": 306
+	},
+	{
+		"name": "Cashmere Cat",
+		"popularity": 60,
+		"id": "2LZDXcxJWgsJfKXZv9a5eG",
+		"artist_duration": 169347,
+		"artist_genres": [
+			"downtempo",
 			"pop",
-			"pop rap",
-			"rap"
+			"shiver pop"
 		],
-		"rank": 365
+		"rank": 307
 	},
 	{
-		"name": "Topaz Jones",
-		"popularity": 49,
-		"id": "76bAuLD5jMIT1YDJ84KB8l",
-		"artist_duration": 223278.0,
-		"artist_genres": [
-			"indie hip hop",
-			"indie r&b",
-			"new jersey rap"
-		],
-		"rank": 366
+		"name": "Bearface",
+		"popularity": 0,
+		"id": "0LyfQWJT6nXafLPZqxe9Of",
+		"artist_duration": 166024,
+		"artist_genres": [],
+		"rank": 308
 	},
 	{
-		"name": "Moonchild",
-		"popularity": 54,
-		"id": "1VgjAK52kjkQJQQRhTn02t",
-		"artist_duration": 223026.0,
+		"name": "NxWorries",
+		"popularity": 55,
+		"id": "6PEMFpe3PTOksdV4ZXUpbE",
+		"artist_duration": 163539,
 		"artist_genres": [
-			"indie jazz",
+			"hip hop",
 			"indie soul",
-			"neo r&b"
+			"underground hip hop"
 		],
-		"rank": 367
+		"rank": 309
 	},
 	{
-		"name": "Raleigh Ritchie",
-		"popularity": 50,
-		"id": "0IB0VjX9NSrGX6PjCXGVcq",
-		"artist_duration": 223013.0,
+		"name": "Substantial",
+		"popularity": 49,
+		"id": "5FmThJ74ycmeBdQnu4Cfcw",
+		"artist_duration": 163186,
 		"artist_genres": [
-			"uk contemporary r&b"
+			"ambeat"
 		],
-		"rank": 368
+		"rank": 310
 	},
 	{
-		"name": "Summer Walker",
-		"popularity": 85,
-		"id": "57LYzLEk2LcFghVwuWbcuS",
-		"artist_duration": 222374.0,
+		"name": "CoryaYo",
+		"popularity": 47,
+		"id": "3xqrRhBSgCer7lokC0Lhk4",
+		"artist_duration": 159080,
 		"artist_genres": [
+			"chillhop",
+			"jazz boom bap",
+			"lo-fi beats"
+		],
+		"rank": 311
+	},
+	{
+		"name": "Gallant",
+		"popularity": 58,
+		"id": "7wFDo161xYdeaiLz3KIHoM",
+		"artist_duration": 158637,
+		"artist_genres": [
+			"alternative r&b",
+			"chill r&b",
+			"indie r&b",
 			"pop",
 			"r&b"
 		],
-		"rank": 369
+		"rank": 312
 	},
 	{
-		"name": "Zacari",
-		"popularity": 89,
-		"id": "2YZyLoL8N0Wb9xBt1NhZWg",
-		"artist_duration": 222093.0,
+		"name": "Chance the Rapper",
+		"popularity": 80,
+		"id": "1anyVhU62p31KFi8MEzkbf",
+		"artist_duration": 157989,
 		"artist_genres": [
+			"chicago rap",
 			"conscious hip hop",
 			"hip hop",
-			"rap",
-			"west coast rap"
+			"pop rap",
+			"rap"
 		],
-		"rank": 370
+		"rank": 313
 	},
 	{
-		"name": "The Seventh",
-		"popularity": 14,
-		"id": "75c3TOrBX0IkcuGVGNybJl",
-		"artist_duration": 222000.0,
+		"name": "Freddie Joachim",
+		"popularity": 0,
+		"id": "5nGSuAZWcV649G8a54ocSn",
+		"artist_duration": 155492,
 		"artist_genres": [],
-		"rank": 371
+		"rank": 314
+	},
+	{
+		"name": "Amerie",
+		"popularity": 56,
+		"id": "08rMCq2ek1YjdDBsCPVH2s",
+		"artist_duration": 154229,
+		"artist_genres": [
+			"contemporary r&b",
+			"dance pop",
+			"hip hop",
+			"hip pop",
+			"neo soul",
+			"r&b",
+			"urban contemporary"
+		],
+		"rank": 315
+	},
+	{
+		"name": "Psymun",
+		"popularity": 31,
+		"id": "5gVgcz9X3QcrcrrDXR56NP",
+		"artist_duration": 153676,
+		"artist_genres": [
+			"experimental hip hop",
+			"minnesota hip hop"
+		],
+		"rank": 316
+	},
+	{
+		"name": "Jared Jackson",
+		"popularity": 0,
+		"id": "0LyfQWJT6nXafLPZqxe9Of",
+		"artist_duration": 150098,
+		"artist_genres": [],
+		"rank": 317
+	},
+	{
+		"name": "Mars Today",
+		"popularity": 31,
+		"id": "60jVpPkp3hgECctyeE9gWH",
+		"artist_duration": 148816,
+		"artist_genres": [
+			"neo r&b"
+		],
+		"rank": 318
+	},
+	{
+		"name": "glue70",
+		"popularity": 48,
+		"id": "3AsWxxZTFPoCFxM1s8Lg1J",
+		"artist_duration": 144000,
+		"artist_genres": [
+			"future funk"
+		],
+		"rank": 319
+	},
+	{
+		"name": "Flight Facilities",
+		"popularity": 66,
+		"id": "1lc8mnyGrCLtPhCoWjRxjM",
+		"artist_duration": 143155,
+		"artist_genres": [
+			"alternative dance",
+			"aussietronica",
+			"australian dance",
+			"australian indie",
+			"indie soul",
+			"nu disco"
+		],
+		"rank": 320
+	},
+	{
+		"name": "Janelle Mon\u00e1e",
+		"popularity": 69,
+		"id": "6ueGR6SWhUJfvEhqkvMsVs",
+		"artist_duration": 141629,
+		"artist_genres": [
+			"afrofuturism",
+			"alternative r&b",
+			"art pop",
+			"atl hip hop",
+			"dance pop",
+			"electropop",
+			"escape room",
+			"neo soul",
+			"pop",
+			"r&b",
+			"urban contemporary"
+		],
+		"rank": 321
+	},
+	{
+		"name": "Ady Suleiman",
+		"popularity": 52,
+		"id": "5LuLeXlnT2jFxbx7Cg7j88",
+		"artist_duration": 133754,
+		"artist_genres": [
+			"indie soul",
+			"uk contemporary r&b"
+		],
+		"rank": 322
+	},
+	{
+		"name": "A Tribe Called Quest",
+		"popularity": 69,
+		"id": "09hVIj6vWgoCDtT03h8ZCa",
+		"artist_duration": 125386,
+		"artist_genres": [
+			"alternative hip hop",
+			"conscious hip hop",
+			"east coast hip hop",
+			"gangster rap",
+			"golden age hip hop",
+			"hardcore hip hop",
+			"hip hop",
+			"jazz rap",
+			"queens hip hop",
+			"rap"
+		],
+		"rank": 323
+	},
+	{
+		"name": "50 Cent",
+		"popularity": 37,
+		"id": "16yvMxTCkxg6Jqe43TXDFe",
+		"artist_duration": 123427,
+		"artist_genres": [],
+		"rank": 324
+	},
+	{
+		"name": "McClenney",
+		"popularity": 46,
+		"id": "44drVL4jbdo6T6llD5cMgx",
+		"artist_duration": 122408,
+		"artist_genres": [
+			"alternative r&b",
+			"chill r&b",
+			"indie r&b",
+			"indie soul",
+			"neo r&b"
+		],
+		"rank": 325
+	},
+	{
+		"name": "Nickelus F",
+		"popularity": 39,
+		"id": "68DGxDpMWfSsPJEjT4wQnW",
+		"artist_duration": 121742,
+		"artist_genres": [
+			"soul flow",
+			"underground hip hop",
+			"virginia hip hop"
+		],
+		"rank": 326
+	},
+	{
+		"name": "The Seshen",
+		"popularity": 27,
+		"id": "2rkxM3pdssb12wllaVcYSC",
+		"artist_duration": 117196,
+		"artist_genres": [
+			"experimental r&b"
+		],
+		"rank": 327
+	},
+	{
+		"name": "Lizzo",
+		"popularity": 76,
+		"id": "56oDRnqbIiwx4mymNEv7dS",
+		"artist_duration": 116052,
+		"artist_genres": [
+			"dance pop",
+			"escape room",
+			"minnesota hip hop",
+			"pop",
+			"trap queen"
+		],
+		"rank": 328
+	},
+	{
+		"name": "Travis Scott",
+		"popularity": 93,
+		"id": "0Y5tJX1MQlPlqiwlOH1tJY",
+		"artist_duration": 114822,
+		"artist_genres": [
+			"rap",
+			"slap house"
+		],
+		"rank": 329
+	},
+	{
+		"name": "Gramatik",
+		"popularity": 59,
+		"id": "179BpmLkQCRIoU68Co80f5",
+		"artist_duration": 113637,
+		"artist_genres": [
+			"downtempo",
+			"jazz boom bap",
+			"jazztronica",
+			"livetronica",
+			"nu jazz",
+			"slovenian electronic",
+			"trip hop"
+		],
+		"rank": 330
+	},
+	{
+		"name": "Wayne Snow",
+		"popularity": 52,
+		"id": "4f44GWlEQdXaWl8gQ9sPBC",
+		"artist_duration": 111108,
+		"artist_genres": [
+			"indie jazz",
+			"indie r&b",
+			"indie soul"
+		],
+		"rank": 331
+	},
+	{
+		"name": "Kids These Days",
+		"popularity": 27,
+		"id": "2A2MfAaWoDvGe0jhcZjKaY",
+		"artist_duration": 101365,
+		"artist_genres": [],
+		"rank": 332
+	},
+	{
+		"name": "G Perico",
+		"popularity": 58,
+		"id": "4Q2hTDZYFCohf17D5GvkIb",
+		"artist_duration": 99611,
+		"artist_genres": [
+			"cali rap",
+			"west coast trap"
+		],
+		"rank": 333
 	},
 	{
 		"name": "Takeoff",
 		"popularity": 62,
 		"id": "3EW0kQ1skZiK1NHg3Spt9J",
-		"artist_duration": 221892.0,
+		"artist_duration": 97182,
 		"artist_genres": [
 			"atl hip hop",
 			"rap",
 			"southern hip hop",
 			"trap"
 		],
-		"rank": 372
+		"rank": 334
 	},
 	{
-		"name": "Kwaku Asante",
-		"popularity": 42,
-		"id": "2aUr9B6iwO3eYiEHJIpB0M",
-		"artist_duration": 220943.0,
-		"artist_genres": [
-			"alternative r&b",
-			"chill r&b",
-			"indie r&b",
-			"uk contemporary r&b"
-		],
-		"rank": 373
-	},
-	{
-		"name": "Mahalia",
-		"popularity": 67,
-		"id": "16rCzZOMQX7P8Kmn5YKexI",
-		"artist_duration": 220306.0,
-		"artist_genres": [
-			"alternative r&b",
-			"chill r&b",
-			"dance pop",
-			"indie anthem-folk",
-			"indie soul",
-			"pop",
-			"r&b",
-			"uk contemporary r&b"
-		],
-		"rank": 374
-	},
-	{
-		"name": "kevatta",
-		"popularity": 30,
-		"id": "0IkEumFM5jr2xUgcS9XZNz",
-		"artist_duration": 219980.0,
+		"name": "Ron Gilmore",
+		"popularity": 10,
+		"id": "1kqUcOydtZPzh0M7f7KfY9",
+		"artist_duration": 94146,
 		"artist_genres": [],
-		"rank": 375
+		"rank": 335
 	},
 	{
-		"name": "Marc E. Bassy",
-		"popularity": 71,
-		"id": "3tQx1LPXbsYjE9VwN1Peaa",
-		"artist_duration": 218493.0,
-		"artist_genres": [
-			"alternative r&b",
-			"pop",
-			"pop rap",
-			"r&b"
-		],
-		"rank": 376
-	},
-	{
-		"name": "Apollo Brown",
-		"popularity": 53,
-		"id": "151BUVKmiB9rHDjIkgbeVE",
-		"artist_duration": 218372.0,
+		"name": "Mello Music Group",
+		"popularity": 36,
+		"id": "3c5J6hzTBZJVsjJ9FJoQ0V",
+		"artist_duration": 93216,
 		"artist_genres": [
 			"alternative hip hop",
-			"boom bap",
-			"hip hop"
+			"boom bap"
 		],
-		"rank": 377
+		"rank": 336
 	},
 	{
-		"name": "Leven Kali",
-		"popularity": 59,
-		"id": "5YZ5AExR68U3ZblH6HcO6B",
-		"artist_duration": 218050.0,
+		"name": "BTS",
+		"popularity": 95,
+		"id": "3Nrfpe0tUJi4K4DXYWgMUX",
+		"artist_duration": 91069,
+		"artist_genres": [
+			"k-pop",
+			"k-pop boy group"
+		],
+		"rank": 337
+	},
+	{
+		"name": "JMSN",
+		"popularity": 52,
+		"id": "6HCkJzbswOIc7Qc5TJ1n5l",
+		"artist_duration": 90187,
 		"artist_genres": [
 			"alternative r&b",
-			"chill r&b",
-			"indie r&b",
-			"indie soul",
-			"r&b"
-		],
-		"rank": 378
-	},
-	{
-		"name": "Anushka",
-		"popularity": 31,
-		"id": "30kBWK3T10BVkU6WLSeody",
-		"artist_duration": 218001.0,
-		"artist_genres": [
-			"weightless"
-		],
-		"rank": 379
-	},
-	{
-		"name": "Art Of Fresh",
-		"popularity": 5,
-		"id": "2RDvTWf6y497oW4stJT5qg",
-		"artist_duration": 218000.0,
-		"artist_genres": [],
-		"rank": 380
-	},
-	{
-		"name": "Bruno Mars",
-		"popularity": 92,
-		"id": "0du5cEVh5yTK9QJze8zA0C",
-		"artist_duration": 217288.0,
-		"artist_genres": [
-			"dance pop",
-			"pop"
-		],
-		"rank": 381
-	},
-	{
-		"name": "Kygo",
-		"popularity": 83,
-		"id": "23fqKkggKUBHNkbKtXEls4",
-		"artist_duration": 217286.0,
-		"artist_genres": [
-			"edm",
-			"pop",
-			"pop dance",
-			"tropical house"
-		],
-		"rank": 382
-	},
-	{
-		"name": "Bearcubs",
-		"popularity": 48,
-		"id": "5iPtkyoEOCILhwFgl2a2d3",
-		"artist_duration": 215212.0,
-		"artist_genres": [
-			"indie soul",
-			"vapor soul",
-			"vapor twitch"
-		],
-		"rank": 383
-	},
-	{
-		"name": "Jeff Bernat",
-		"popularity": 63,
-		"id": "2vVT4qoxWje0gVD2FiWZ4u",
-		"artist_duration": 215125.0,
-		"artist_genres": [
-			"chill r&b",
-			"pop",
-			"popping"
-		],
-		"rank": 384
-	},
-	{
-		"name": "Billy Davis",
-		"popularity": 38,
-		"id": "1faxe25Wp3Nk43xVVxsdSB",
-		"artist_duration": 214000.0,
-		"artist_genres": [
-			"australian r&b"
-		],
-		"rank": 385
-	},
-	{
-		"name": "Luke James",
-		"popularity": 46,
-		"id": "4E7AV8mtElSjHZP3xA9kyU",
-		"artist_duration": 213535.0,
-		"artist_genres": [
-			"alternative r&b",
-			"pop r&b",
-			"r&b"
-		],
-		"rank": 386
-	},
-	{
-		"name": "Elton",
-		"popularity": 34,
-		"id": "4O24XfCPqIJQUMXOJ2F0ni",
-		"artist_duration": 213286.0,
-		"artist_genres": [
-			"bedroom soul"
-		],
-		"rank": 387
-	},
-	{
-		"name": "Snakehips",
-		"popularity": 67,
-		"id": "2FwJwEswyIUAljqgjNSHgP",
-		"artist_duration": 212780.0,
-		"artist_genres": [
-			"edm",
-			"electropop",
-			"indie poptimism",
-			"pop",
-			"pop dance",
-			"tropical house"
-		],
-		"rank": 388
-	},
-	{
-		"name": "A$AP Rocky",
-		"popularity": 85,
-		"id": "13ubrt8QOOCPljQ2FL1Kca",
-		"artist_duration": 212640.0,
-		"artist_genres": [
-			"east coast hip hop",
-			"hip hop",
-			"rap",
-			"trap"
-		],
-		"rank": 389
-	},
-	{
-		"name": "Vulfpeck",
-		"popularity": 63,
-		"id": "7pXu47GoqSYRajmBCjxdD6",
-		"artist_duration": 212549.0,
-		"artist_genres": [
-			"ann arbor indie",
-			"funk rock",
-			"instrumental funk"
-		],
-		"rank": 390
-	},
-	{
-		"name": "Valleyz",
-		"popularity": 37,
-		"id": "2D0u6nyYzRpoDvJe6sOBXu",
-		"artist_duration": 212412.0,
-		"artist_genres": [],
-		"rank": 391
-	},
-	{
-		"name": "Jai Paul",
-		"popularity": 50,
-		"id": "53wZLCnhshZKDRs3uopFBc",
-		"artist_duration": 210880.0,
-		"artist_genres": [
-			"escape room",
 			"indie soul"
 		],
-		"rank": 392
+		"rank": 338
+	},
+	{
+		"name": "L\u00e5psley",
+		"popularity": 54,
+		"id": "27ze6hCgfr3HcDZAHY60pg",
+		"artist_duration": 83638,
+		"artist_genres": [
+			"electropop",
+			"gauze pop",
+			"indie soul"
+		],
+		"rank": 339
+	},
+	{
+		"name": "Penthouse Penthouse",
+		"popularity": 24,
+		"id": "5UfeYtslz7DT0hvVnkCEjB",
+		"artist_duration": 81327,
+		"artist_genres": [],
+		"rank": 340
 	},
 	{
 		"name": "Rudimental",
-		"popularity": 73,
+		"popularity": 72,
 		"id": "4WN5naL3ofxrVBgFpguzKo",
-		"artist_duration": 210772.0,
+		"artist_duration": 78390,
 		"artist_genres": [
 			"dance pop",
 			"edm",
@@ -4789,408 +4100,217 @@
 			"uk dance",
 			"uk funky"
 		],
-		"rank": 393
+		"rank": 341
 	},
 	{
-		"name": "Jhen\u00e9 Aiko",
-		"popularity": 80,
-		"id": "5ZS223C6JyBfXasXxrRqOk",
-		"artist_duration": 210640.0,
+		"name": "The Age of L.U.N.A",
+		"popularity": 24,
+		"id": "5yAqULyufEDkH8oBRuFfYF",
+		"artist_duration": 75360,
+		"artist_genres": [
+			"neo r&b"
+		],
+		"rank": 342
+	},
+	{
+		"name": "Sampha",
+		"popularity": 62,
+		"id": "2WoVwexZuODvclzULjPQtm",
+		"artist_duration": 74490,
 		"artist_genres": [
 			"alternative r&b",
-			"dance pop",
-			"pop",
-			"pop rap",
-			"r&b",
-			"urban contemporary"
-		],
-		"rank": 394
-	},
-	{
-		"name": "Free n Losh",
-		"popularity": 40,
-		"id": "7DY8ywDjWdmToTbrrhLIWN",
-		"artist_duration": 210357.0,
-		"artist_genres": [
-			"vapor soul"
-		],
-		"rank": 395
-	},
-	{
-		"name": "Domo Genesis",
-		"popularity": 59,
-		"id": "6vHBuUxrcpn1do5UaEJ7g6",
-		"artist_duration": 209640.0,
-		"artist_genres": [
-			"alternative hip hop",
-			"hip hop",
-			"rap",
-			"underground hip hop"
-		],
-		"rank": 396
-	},
-	{
-		"name": "Jamila Woods",
-		"popularity": 57,
-		"id": "4UodukR17NIQfNu5uaqm9B",
-		"artist_duration": 208329.0,
-		"artist_genres": [
-			"afrofuturism",
-			"alternative r&b",
-			"escape room",
 			"indie soul"
 		],
-		"rank": 397
+		"rank": 343
 	},
 	{
-		"name": "KAMAUU",
-		"popularity": 52,
-		"id": "3IAQ6JspwRCPY06WXnaguc",
-		"artist_duration": 208243.0,
+		"name": "Pomo",
+		"popularity": 46,
+		"id": "6YtlR8MLfO6azxwOKAvEi3",
+		"artist_duration": 73744,
 		"artist_genres": [
-			"alternative r&b",
-			"downtempo bass"
+			"canadian electronic",
+			"new french touch"
 		],
-		"rank": 398
+		"rank": 344
 	},
 	{
-		"name": "Elliot Moss",
-		"popularity": 52,
-		"id": "2xGCGoulmU85qYdpb2Z4xx",
-		"artist_duration": 207519.0,
+		"name": "Vulfpeck",
+		"popularity": 63,
+		"id": "7pXu47GoqSYRajmBCjxdD6",
+		"artist_duration": 72957,
 		"artist_genres": [
-			"nyc pop"
+			"ann arbor indie",
+			"funk rock",
+			"instrumental funk"
 		],
-		"rank": 399
+		"rank": 345
 	},
 	{
-		"name": "Kali Uchis",
-		"popularity": 84,
-		"id": "1U1el3k54VvEUzo3ybLPlM",
-		"artist_duration": 207454.0,
+		"name": "Pastor T.L. Barrett",
+		"popularity": 42,
+		"id": "66l6SXrWHLjXFHfv202kdA",
+		"artist_duration": 71519,
 		"artist_genres": [
-			"colombian pop",
-			"pop"
+			"gospel soul",
+			"spirituals",
+			"traditional soul"
 		],
-		"rank": 400
+		"rank": 346
 	},
 	{
-		"name": "Leon Bridges",
-		"popularity": 74,
-		"id": "3qnGvpP8Yth1AqSBMqON5x",
-		"artist_duration": 207306.0,
-		"artist_genres": [
-			"modern blues"
-		],
-		"rank": 401
-	},
-	{
-		"name": "Louis Armstrong",
-		"popularity": 73,
-		"id": "19eLuQmk9aCobbVDHc6eek",
-		"artist_duration": 206333.0,
-		"artist_genres": [
-			"adult standards",
-			"dixieland",
-			"harlem renaissance",
-			"jazz trumpet",
-			"new orleans jazz",
-			"swing",
-			"vocal jazz"
-		],
-		"rank": 402
-	},
-	{
-		"name": "G\u00f6ksel",
-		"popularity": 64,
-		"id": "4i4ALRtQQmFxn3BCIB6iC0",
-		"artist_duration": 205811.0,
-		"artist_genres": [
-			"turkce slow sarkilar",
-			"turkish pop"
-		],
-		"rank": 403
-	},
-	{
-		"name": "Everything Is Recorded",
-		"popularity": 40,
-		"id": "0JYlkNmu76Wu1DgvWNWq7X",
-		"artist_duration": 205613.0,
-		"artist_genres": [
-			"alternative r&b"
-		],
-		"rank": 404
-	},
-	{
-		"name": "Mizan K",
-		"popularity": 15,
-		"id": "65RJIgxb7uYgeQVKacbp82",
-		"artist_duration": 205590.0,
-		"artist_genres": [],
-		"rank": 405
-	},
-	{
-		"name": "Urban Zakapa",
-		"popularity": 53,
-		"id": "1dOMFM5wDNsENQQW0nl0K8",
-		"artist_duration": 205266.0,
-		"artist_genres": [
-			"k-pop",
-			"korean pop"
-		],
-		"rank": 406
-	},
-	{
-		"name": "L\u00e5psley",
-		"popularity": 54,
-		"id": "27ze6hCgfr3HcDZAHY60pg",
-		"artist_duration": 204873.0,
+		"name": "AlunaGeorge",
+		"popularity": 66,
+		"id": "2VAnyOxzJuSAj7XIuEOT38",
+		"artist_duration": 69881,
 		"artist_genres": [
 			"electropop",
-			"gauze pop",
-			"indie soul"
+			"house",
+			"tropical house"
 		],
-		"rank": 407
+		"rank": 347
 	},
 	{
-		"name": "Ark Patrol",
-		"popularity": 58,
-		"id": "3zaxUd86U92CdZkNa6NUo9",
-		"artist_duration": 204137.0,
-		"artist_genres": [
-			"future bass",
-			"vapor soul",
-			"vapor twitch"
-		],
-		"rank": 408
+		"name": "Plage 84",
+		"popularity": 15,
+		"id": "7dwoKc64TML5mj1uPvPL6A",
+		"artist_duration": 67359,
+		"artist_genres": [],
+		"rank": 348
 	},
 	{
-		"name": "Flamingosis",
-		"popularity": 53,
-		"id": "75cW8FFekyCjj0mfZM1Gfb",
-		"artist_duration": 203870.0,
+		"name": "Jonwayne",
+		"popularity": 47,
+		"id": "3i7IUsb5VsiJAKqX2Md9Fc",
+		"artist_duration": 62760,
 		"artist_genres": [
-			"chillhop",
-			"future funk"
+			"alternative hip hop",
+			"escape room",
+			"wonky"
 		],
-		"rank": 409
+		"rank": 349
 	},
 	{
-		"name": "Tyga",
-		"popularity": 84,
-		"id": "5LHRHt1k9lMyONurDHEdrp",
-		"artist_duration": 203200.0,
+		"name": "Kodomo",
+		"popularity": 36,
+		"id": "57BliIwnAIqKeI4dbAWwaU",
+		"artist_duration": 60192,
 		"artist_genres": [
-			"dance pop",
+			"space ambient"
+		],
+		"rank": 350
+	},
+	{
+		"name": "Jaden",
+		"popularity": 75,
+		"id": "0xOeVMOz2fVg5BJY3N6akT",
+		"artist_duration": 59443,
+		"artist_genres": [
+			"hip hop",
+			"pop",
+			"rap"
+		],
+		"rank": 351
+	},
+	{
+		"name": "Tru Heru",
+		"popularity": 16,
+		"id": "0vZPnViZ1Xz1XLRbzvdwid",
+		"artist_duration": 59358,
+		"artist_genres": [],
+		"rank": 352
+	},
+	{
+		"name": "A$AP Ferg",
+		"popularity": 76,
+		"id": "5dHt1vcEm9qb8fCyLcB3HL",
+		"artist_duration": 57053,
+		"artist_genres": [
 			"hip hop",
 			"pop rap",
 			"rap",
 			"southern hip hop",
-			"trap"
+			"trap",
+			"underground hip hop"
 		],
-		"rank": 410
+		"rank": 353
 	},
 	{
-		"name": "Anti-Lilly & Phoniks",
-		"popularity": 37,
-		"id": "71MaDLIywcEKpXNGCnUlBe",
-		"artist_duration": 200829.0,
+		"name": "Mac Miller",
+		"popularity": 86,
+		"id": "4LLpKhyESsyAXpc4laK94U",
+		"artist_duration": 56561,
 		"artist_genres": [
-			"jazz rap"
-		],
-		"rank": 411
-	},
-	{
-		"name": "Saje",
-		"popularity": 39,
-		"id": "3I2596dGk4K3e4qKjwpzQb",
-		"artist_duration": 198912.0,
-		"artist_genres": [
-			"new french touch",
-			"vapor soul"
-		],
-		"rank": 412
-	},
-	{
-		"name": "Run The Jewels",
-		"popularity": 65,
-		"id": "4RnBFZRiMLRyZy0AzzTg2C",
-		"artist_duration": 198640.0,
-		"artist_genres": [
-			"alternative hip hop",
-			"escape room",
 			"hip hop",
-			"political hip hop"
+			"pittsburgh rap",
+			"rap"
 		],
-		"rank": 413
+		"rank": 354
 	},
 	{
-		"name": "Sango",
-		"popularity": 54,
-		"id": "7e3FtKBIPLrIVm8g1FJMVg",
-		"artist_duration": 197538.0,
+		"name": "Mitski",
+		"popularity": 82,
+		"id": "2uYWxilOVlUdk4oV9DvwqK",
+		"artist_duration": 55541,
 		"artist_genres": [
-			"abstract beats",
-			"alternative r&b",
-			"escape room",
-			"indie r&b",
-			"indie soul",
-			"vapor twitch"
+			"brooklyn indie",
+			"indie pop"
 		],
-		"rank": 414
+		"rank": 355
 	},
 	{
-		"name": "Jazz Spastiks",
-		"popularity": 40,
-		"id": "49vIrnZPb9Tcc9N30t7E3S",
-		"artist_duration": 197508.0,
-		"artist_genres": [
-			"jazz boom bap",
-			"jazz rap"
-		],
-		"rank": 415
-	},
-	{
-		"name": "Emeli Sand\u00e9",
-		"popularity": 68,
-		"id": "7sfgqEdoeBTjd8lQsPT3Cy",
-		"artist_duration": 196866.0,
-		"artist_genres": [
-			"dance pop",
-			"neo soul",
-			"pop",
-			"r&b",
-			"uk pop"
-		],
-		"rank": 416
-	},
-	{
-		"name": "Mr Hudson",
-		"popularity": 59,
-		"id": "1zV9UjTUevjp5VUddqIUUn",
-		"artist_duration": 196190.0,
-		"artist_genres": [],
-		"rank": 417
-	},
-	{
-		"name": "NAV",
-		"popularity": 79,
-		"id": "7rkW85dBwwrJtlHRDkJDAC",
-		"artist_duration": 195053.0,
-		"artist_genres": [
-			"canadian hip hop",
-			"canadian trap",
-			"hip hop",
-			"melodic rap",
-			"pop rap",
-			"rap",
-			"toronto rap",
-			"trap"
-		],
-		"rank": 418
-	},
-	{
-		"name": "Wayne Snow",
-		"popularity": 51,
-		"id": "4f44GWlEQdXaWl8gQ9sPBC",
-		"artist_duration": 194992.0,
+		"name": "Roy Ayers Ubiquity",
+		"popularity": 45,
+		"id": "4DbVGBurfbrdLW2ZwfwdmP",
+		"artist_duration": 53482,
 		"artist_genres": [
 			"indie jazz",
-			"indie soul"
+			"indie soul",
+			"japanese jazz"
 		],
-		"rank": 419
+		"rank": 356
 	},
 	{
-		"name": "Reva DeVito",
-		"popularity": 41,
-		"id": "00jACgDWIBdPM4eH8nORwz",
-		"artist_duration": 194782.0,
+		"name": "Action Bronson",
+		"popularity": 64,
+		"id": "7BMccF0hQFBpP6417k1OtQ",
+		"artist_duration": 53267,
 		"artist_genres": [
-			"portland hip hop"
+			"alternative hip hop",
+			"east coast hip hop",
+			"escape room",
+			"hip hop",
+			"nyc rap",
+			"queens hip hop",
+			"rap",
+			"underground hip hop"
 		],
-		"rank": 420
+		"rank": 357
 	},
 	{
-		"name": "Slow Magic",
-		"popularity": 49,
-		"id": "3htNAy3vYWWYV8RZFeyRMT",
-		"artist_duration": 193616.0,
-		"artist_genres": [
-			"chillwave",
-			"future bass",
-			"gauze pop",
-			"indie dream pop",
-			"vapor soul",
-			"vapor twitch"
-		],
-		"rank": 421
-	},
-	{
-		"name": "The Physics",
-		"popularity": 21,
-		"id": "6DBPiY29Re2ne1npE68FMf",
-		"artist_duration": 193173.0,
+		"name": "Truth Trill",
+		"popularity": 8,
+		"id": "2XHdOGNKn0WzZo6NaTSOty",
+		"artist_duration": 52735,
 		"artist_genres": [],
-		"rank": 422
+		"rank": 358
 	},
 	{
-		"name": "The 49ers",
-		"popularity": 29,
-		"id": "1WWJxH3nMA5AoEnghYv1ij",
-		"artist_duration": 193098.0,
+		"name": "Tyler, The Creator",
+		"popularity": 87,
+		"id": "4V8LLVI7PbaPR0K2TGSxFF",
+		"artist_duration": 51391,
 		"artist_genres": [
-			"ambeat",
-			"jazz rap"
+			"hip hop",
+			"rap"
 		],
-		"rank": 423
-	},
-	{
-		"name": "Shoffy",
-		"popularity": 58,
-		"id": "4wO0kHiOwf8l9VMJJN9HmG",
-		"artist_duration": 191935.0,
-		"artist_genres": [
-			"chill pop",
-			"chill r&b",
-			"electropop",
-			"indie electropop",
-			"indie poptimism",
-			"la pop",
-			"pop"
-		],
-		"rank": 424
-	},
-	{
-		"name": "Sly5thAve",
-		"popularity": 0,
-		"id": "6rFL5x9mbGrE4y2VsywWW1",
-		"artist_duration": 191414.0,
-		"artist_genres": [],
-		"rank": 425
-	},
-	{
-		"name": "Bones & Beeker",
-		"popularity": 25,
-		"id": "2eUgwyMobMitdjib3FxQVF",
-		"artist_duration": 191053.0,
-		"artist_genres": [],
-		"rank": 426
-	},
-	{
-		"name": "Niko Is",
-		"popularity": 29,
-		"id": "7Ci28o541njEn2byuNfjfs",
-		"artist_duration": 189850.0,
-		"artist_genres": [
-			"florida rap"
-		],
-		"rank": 427
+		"rank": 359
 	},
 	{
 		"name": "Melodiesinfonie",
 		"popularity": 47,
 		"id": "3YndyZk8nVLJKspIBo0nLd",
-		"artist_duration": 189333.0,
+		"artist_duration": 49636,
 		"artist_genres": [
 			"chillhop",
 			"indie jazz",
@@ -5199,195 +4319,386 @@
 			"lo-fi jazzhop",
 			"vapor twitch"
 		],
-		"rank": 428
+		"rank": 360
 	},
 	{
-		"name": "Benny Sings",
-		"popularity": 65,
-		"id": "4gHcu2JoaXJ0mV4aNPCd7N",
-		"artist_duration": 189320.0,
+		"name": "Brasstracks",
+		"popularity": 57,
+		"id": "5sKvgmG84C0bIMWeS2SRPr",
+		"artist_duration": 47021,
 		"artist_genres": [
-			"dutch pop",
-			"indie soul"
+			"alternative r&b",
+			"indie soul",
+			"nyc pop"
 		],
-		"rank": 429
+		"rank": 361
 	},
 	{
-		"name": "Cupidon",
-		"popularity": 41,
-		"id": "1qz3nYVQit24tcOsCOdCvb",
-		"artist_duration": 187050.0,
-		"artist_genres": [],
-		"rank": 430
-	},
-	{
-		"name": "Spycc",
-		"popularity": 20,
-		"id": "35AcTLN4eMdtdgNVJIIuoN",
-		"artist_duration": 186944.0,
+		"name": "Teedra Moses",
+		"popularity": 53,
+		"id": "6vfR5QRc3xca0KvpG8KZBE",
+		"artist_duration": 46632,
 		"artist_genres": [
-			"nz hip hop"
+			"alternative r&b",
+			"contemporary r&b",
+			"hip pop",
+			"neo soul",
+			"r&b",
+			"urban contemporary"
 		],
-		"rank": 431
+		"rank": 362
 	},
 	{
-		"name": "Chico Mann",
-		"popularity": 36,
-		"id": "2Wt6Q6ZHygCPVtMO3uxLGB",
-		"artist_duration": 186076.0,
+		"name": "June Marieezy",
+		"popularity": 40,
+		"id": "538d30rb03lrsD9u8Yipar",
+		"artist_duration": 46070,
 		"artist_genres": [
-			"latin afrobeat",
-			"latintronica"
+			"alternative r&b",
+			"pinoy r&b"
 		],
-		"rank": 432
+		"rank": 363
 	},
 	{
-		"name": "BoA",
-		"popularity": 59,
-		"id": "4muJrGMndyYWqZtfk8OWy4",
-		"artist_duration": 185990.0,
+		"name": "Mahalia",
+		"popularity": 67,
+		"id": "16rCzZOMQX7P8Kmn5YKexI",
+		"artist_duration": 43968,
 		"artist_genres": [
-			"k-pop"
+			"alternative r&b",
+			"chill r&b",
+			"dance pop",
+			"indie anthem-folk",
+			"indie soul",
+			"pop",
+			"r&b",
+			"uk contemporary r&b"
 		],
-		"rank": 433
+		"rank": 364
 	},
 	{
-		"name": "Cold Callers",
-		"popularity": 29,
-		"id": "4kea10qfngnISrreon00lH",
-		"artist_duration": 183682.0,
+		"name": "The World Famous Tony Williams",
+		"popularity": 42,
+		"id": "6TTVdg5UOUHsyiYPHgxLaq",
+		"artist_duration": 43768,
 		"artist_genres": [
 			"psychedelic hip hop"
 		],
-		"rank": 434
+		"rank": 365
 	},
 	{
-		"name": "Marian Hill",
-		"popularity": 59,
-		"id": "1xHQO9GJIW9OXHxGBISYc5",
-		"artist_duration": 183400.0,
+		"name": "Jesse Boykins III",
+		"popularity": 48,
+		"id": "7N3L5HZxQqxWSfhrrTNI29",
+		"artist_duration": 43682,
 		"artist_genres": [
-			"electropop",
-			"indie poptimism"
+			"alternative r&b",
+			"neo r&b",
+			"neo soul"
 		],
-		"rank": 435
+		"rank": 366
 	},
 	{
-		"name": "Savon",
-		"popularity": 28,
-		"id": "1Z4kMiUwBM1dkoO6TyXXhn",
-		"artist_duration": 183038.0,
+		"name": "Sango",
+		"popularity": 54,
+		"id": "7e3FtKBIPLrIVm8g1FJMVg",
+		"artist_duration": 41397,
 		"artist_genres": [
-			"lo-fi house"
+			"abstract beats",
+			"alternative r&b",
+			"escape room",
+			"indie r&b",
+			"indie soul",
+			"vapor twitch"
 		],
-		"rank": 436
+		"rank": 367
 	},
 	{
-		"name": "End of the World",
-		"popularity": 51,
-		"id": "0b59cVa1STVENq3i7wkcHV",
-		"artist_duration": 182990.0,
-		"artist_genres": [],
-		"rank": 437
-	},
-	{
-		"name": "blackwave.",
-		"popularity": 51,
-		"id": "0nvdwVbj7NT1WL9P8JowLD",
-		"artist_duration": 182800.0,
+		"name": "Ta-ku",
+		"popularity": 54,
+		"id": "13Kd75NSHSp9lB4CaqPMOV",
+		"artist_duration": 41109,
 		"artist_genres": [
-			"belgian hip hop"
+			"alternative r&b",
+			"ambeat",
+			"indie soul",
+			"vapor soul",
+			"vapor twitch"
 		],
-		"rank": 438
+		"rank": 368
 	},
 	{
-		"name": "SwuM",
-		"popularity": 98,
-		"id": "3TVXtAsR1Inumwj472S9r4",
-		"artist_duration": 182080.0,
+		"name": "Japanese Breakfast",
+		"popularity": 64,
+		"id": "7MoIc5s9KXolCBH1fy9kkw",
+		"artist_duration": 40925,
 		"artist_genres": [
-			"canadian hip hop",
-			"canadian pop",
-			"hip hop",
-			"rap",
-			"toronto rap"
-		],
-		"rank": 439
-	},
-	{
-		"name": "Ricky Montgomery",
-		"popularity": 73,
-		"id": "0ZUvK7zGdXLd78mQr3t1Tw",
-		"artist_duration": 181920.0,
-		"artist_genres": [
+			"art pop",
+			"eugene indie",
 			"indie pop",
-			"la indie",
-			"pop"
+			"philly indie"
 		],
-		"rank": 440
+		"rank": 369
 	},
 	{
-		"name": "Stro Elliot",
-		"popularity": 36,
-		"id": "35mEzAsFbM7OOTzFyjTgeU",
-		"artist_duration": 181823.0,
+		"name": "The Internet",
+		"popularity": 64,
+		"id": "7GN9PivdemQRKjDt4z5Zv8",
+		"artist_duration": 40860,
 		"artist_genres": [
+			"alternative r&b",
+			"escape room",
+			"indie soul",
+			"lgbtq+ hip hop",
+			"r&b"
+		],
+		"rank": 370
+	},
+	{
+		"name": "Luniz",
+		"popularity": 61,
+		"id": "3z3g65U7mmyyBmmDfsQK9x",
+		"artist_duration": 40762,
+		"artist_genres": [
+			"g funk",
+			"gangster rap",
+			"hyphy",
+			"oakland hip hop",
+			"west coast rap"
+		],
+		"rank": 371
+	},
+	{
+		"name": "The Hics",
+		"popularity": 43,
+		"id": "2XHJ36WzMJKpDk6fLl6lMo",
+		"artist_duration": 40644,
+		"artist_genres": [
+			"alternative r&b"
+		],
+		"rank": 372
+	},
+	{
+		"name": "Marc E. Bassy",
+		"popularity": 70,
+		"id": "3tQx1LPXbsYjE9VwN1Peaa",
+		"artist_duration": 40214,
+		"artist_genres": [
+			"alternative r&b",
+			"pop",
+			"pop rap",
+			"r&b"
+		],
+		"rank": 373
+	},
+	{
+		"name": "Slow Magic",
+		"popularity": 49,
+		"id": "3htNAy3vYWWYV8RZFeyRMT",
+		"artist_duration": 36882,
+		"artist_genres": [
+			"chillwave",
+			"future bass",
+			"gauze pop",
+			"indie dream pop",
+			"vapor soul",
+			"vapor twitch"
+		],
+		"rank": 374
+	},
+	{
+		"name": "Souls Of Mischief",
+		"popularity": 56,
+		"id": "5Rzqmz1zAszembFHGZQuAt",
+		"artist_duration": 36617,
+		"artist_genres": [
+			"alternative hip hop",
+			"hardcore hip hop",
+			"hip hop",
 			"jazz rap"
 		],
-		"rank": 441
+		"rank": 375
+	},
+	{
+		"name": "Mk.gee",
+		"popularity": 71,
+		"id": "1Xfmvd48oOhEWkscWyEbh9",
+		"artist_duration": 36130,
+		"artist_genres": [
+			"dance pop",
+			"hip pop",
+			"pop",
+			"pop rap",
+			"r&b",
+			"southern hip hop",
+			"urban contemporary"
+		],
+		"rank": 376
+	},
+	{
+		"name": "KAMI",
+		"popularity": 33,
+		"id": "3BhngrEjaGAD0a8OzzFWlC",
+		"artist_duration": 35864,
+		"artist_genres": [],
+		"rank": 377
+	},
+	{
+		"name": "Michael Kiwanuka",
+		"popularity": 68,
+		"id": "0bzfPKdbXL5ezYW2z3UGQj",
+		"artist_duration": 35540,
+		"artist_genres": [
+			"british soul",
+			"neo soul",
+			"psychedelic soul",
+			"soul"
+		],
+		"rank": 378
+	},
+	{
+		"name": "GoldLink",
+		"popularity": 69,
+		"id": "5XenQ7XfcvQdfIbpLEFaKQ",
+		"artist_duration": 34258,
+		"artist_genres": [
+			"alternative r&b",
+			"dmv rap",
+			"hip hop",
+			"indie soul",
+			"pop",
+			"r&b",
+			"rap",
+			"underground hip hop"
+		],
+		"rank": 379
+	},
+	{
+		"name": "KAMAUU",
+		"popularity": 52,
+		"id": "3IAQ6JspwRCPY06WXnaguc",
+		"artist_duration": 33070,
+		"artist_genres": [
+			"alternative r&b",
+			"downtempo bass"
+		],
+		"rank": 380
+	},
+	{
+		"name": "Jeff Bernat",
+		"popularity": 64,
+		"id": "2vVT4qoxWje0gVD2FiWZ4u",
+		"artist_duration": 32725,
+		"artist_genres": [
+			"chill r&b",
+			"pop",
+			"popping"
+		],
+		"rank": 381
+	},
+	{
+		"name": "Romare",
+		"popularity": 55,
+		"id": "6d1HqiWNEKV9zFqQM9WeYo",
+		"artist_duration": 32127,
+		"artist_genres": [
+			"deep house",
+			"electronica",
+			"indie jazz",
+			"indie soul",
+			"ninja",
+			"nu jazz"
+		],
+		"rank": 382
+	},
+	{
+		"name": "Ryu\u2606",
+		"popularity": 0,
+		"id": "0LyfQWJT6nXafLPZqxe9Of",
+		"artist_duration": 31950,
+		"artist_genres": [],
+		"rank": 383
 	},
 	{
 		"name": "Elderbrook",
-		"popularity": 71,
+		"popularity": 72,
 		"id": "2vf4pRsEY6LpL5tKmqWb64",
-		"artist_duration": 181702.0,
+		"artist_duration": 31858,
 		"artist_genres": [
 			"house",
 			"pop dance",
 			"tropical house"
 		],
-		"rank": 442
+		"rank": 384
 	},
 	{
-		"name": "BlocBoy JB",
-		"popularity": 64,
-		"id": "4TEJudQY2pXxVHPE3gD2EU",
-		"artist_duration": 181263.0,
-		"artist_genres": [
-			"memphis hip hop",
-			"pop rap",
-			"rap",
-			"southern hip hop",
-			"tennessee hip hop",
-			"trap",
-			"vapor trap"
-		],
-		"rank": 443
-	},
-	{
-		"name": "Thane",
-		"popularity": 26,
-		"id": "26h4NY9BTM2UtvNQ0Gr8Ht",
-		"artist_duration": 180218.0,
+		"name": "Ginuwine",
+		"popularity": 0,
+		"id": "0LyfQWJT6nXafLPZqxe9Of",
+		"artist_duration": 31811,
 		"artist_genres": [],
-		"rank": 444
+		"rank": 385
 	},
 	{
-		"name": "alt-J",
-		"popularity": 74,
-		"id": "3XHO7cRUPCLOr6jwp8vsx5",
-		"artist_duration": 179746.0,
+		"name": "Kendra Foster",
+		"popularity": 21,
+		"id": "1RhQ4EIgZsMwOi8ioA7Rbi",
+		"artist_duration": 31651,
 		"artist_genres": [
-			"indie rock",
-			"modern rock"
+			"p funk"
 		],
-		"rank": 445
+		"rank": 386
+	},
+	{
+		"name": "Lil Pump",
+		"popularity": 71,
+		"id": "3wyVrVrFCkukjdVIdirGVY",
+		"artist_duration": 31439,
+		"artist_genres": [
+			"emo rap",
+			"miami hip hop",
+			"rap",
+			"social media pop",
+			"trap"
+		],
+		"rank": 387
+	},
+	{
+		"name": "Nil Karaibrahimgil",
+		"popularity": 59,
+		"id": "1PpRPZXSS5ka7m5NW2TO7q",
+		"artist_duration": 30963,
+		"artist_genres": [
+			"turkish folk",
+			"turkish pop",
+			"turkish singer-songwriter"
+		],
+		"rank": 388
+	},
+	{
+		"name": "ERIMAJ",
+		"popularity": 16,
+		"id": "47zB8HowGfion9FkA4xLYo",
+		"artist_duration": 30486,
+		"artist_genres": [],
+		"rank": 389
+	},
+	{
+		"name": "Mark Ronson",
+		"popularity": 77,
+		"id": "3hv9jJF3adDNsBSIQDqcjp",
+		"artist_duration": 30421,
+		"artist_genres": [
+			"dance pop",
+			"pop"
+		],
+		"rank": 390
 	},
 	{
 		"name": "Ekali",
-		"popularity": 54,
+		"popularity": 53,
 		"id": "0Y0QSi6lz1bPik5Ffjr8sd",
-		"artist_duration": 175851.0,
+		"artist_duration": 30250,
 		"artist_genres": [
 			"canadian electronic",
 			"edm",
@@ -5399,117 +4710,385 @@
 			"pop edm",
 			"vapor twitch"
 		],
-		"rank": 446
+		"rank": 391
 	},
 	{
-		"name": "Wildcookie",
-		"popularity": 33,
-		"id": "2nkfPQ3HP5UyDHqy1hSbgG",
-		"artist_duration": 175586.0,
-		"artist_genres": [],
-		"rank": 447
-	},
-	{
-		"name": "Kiefer",
-		"popularity": 49,
-		"id": "5lDtfHPqWN6MG9tFywnW8J",
-		"artist_duration": 175214.0,
+		"name": "LUCKY TAPES",
+		"popularity": 50,
+		"id": "7tyrh2CwSnilzMD8olQxcx",
+		"artist_duration": 30211,
 		"artist_genres": [
-			"indie jazz",
-			"indie r&b",
-			"indie soul",
-			"neo r&b"
+			"city pop",
+			"japanese r&b"
 		],
-		"rank": 448
-	},
-	{
-		"name": "KAMI",
-		"popularity": 32,
-		"id": "3BhngrEjaGAD0a8OzzFWlC",
-		"artist_duration": 174705.0,
-		"artist_genres": [],
-		"rank": 449
-	},
-	{
-		"name": "Mars Today",
-		"popularity": 31,
-		"id": "60jVpPkp3hgECctyeE9gWH",
-		"artist_duration": 174573.0,
-		"artist_genres": [
-			"neo r&b"
-		],
-		"rank": 450
-	},
-	{
-		"name": "Mac DeMarco",
-		"popularity": 78,
-		"id": "3Sz7ZnJQBIHsXLUSo0OQtM",
-		"artist_duration": 173888.0,
-		"artist_genres": [
-			"edmonton indie",
-			"lo-fi indie"
-		],
-		"rank": 451
+		"rank": 392
 	},
 	{
 		"name": "weird inside",
 		"popularity": 49,
 		"id": "4iylWAhvTVtSVhIeAoM7Bl",
-		"artist_duration": 173846.0,
+		"artist_duration": 29618,
 		"artist_genres": [
 			"chillhop",
 			"future bass",
 			"lo-fi beats",
 			"vapor twitch"
 		],
-		"rank": 452
+		"rank": 393
 	},
 	{
-		"name": "Evenings",
-		"popularity": 34,
-		"id": "4bODnAlydTbem2JAjDX52y",
-		"artist_duration": 172252.0,
+		"name": "Mac DeMarco",
+		"popularity": 79,
+		"id": "3Sz7ZnJQBIHsXLUSo0OQtM",
+		"artist_duration": 29440,
 		"artist_genres": [
-			"chillwave",
-			"glitch pop"
+			"edmonton indie",
+			"lo-fi indie"
 		],
-		"rank": 453
+		"rank": 394
 	},
 	{
-		"name": "Big Grams",
-		"popularity": 36,
-		"id": "4jU68Hm8np6WNZXMqi7rz3",
-		"artist_duration": 171840.0,
-		"artist_genres": [
-			"escape room"
-		],
-		"rank": 454
-	},
-	{
-		"name": "Quentin Miller",
-		"popularity": 48,
-		"id": "6po19E0R9xffrgzrg84TC9",
-		"artist_duration": 171190.0,
-		"artist_genres": [
-			"atl hip hop",
-			"trap soul",
-			"underground hip hop"
-		],
-		"rank": 455
-	},
-	{
-		"name": "Olukara",
-		"popularity": 31,
-		"id": "24rWEwje2NmxaT6EKbv6uG",
-		"artist_duration": 170155.0,
+		"name": "Cleopold",
+		"popularity": 38,
+		"id": "2BeARYDF52QQk5S2zgiVHe",
+		"artist_duration": 29131,
 		"artist_genres": [],
-		"rank": 456
+		"rank": 395
+	},
+	{
+		"name": "Ray Barretto",
+		"popularity": 50,
+		"id": "2h4ndKS2vRWeFLpq8ARu0D",
+		"artist_duration": 28610,
+		"artist_genres": [
+			"boogaloo",
+			"latin jazz",
+			"salsa",
+			"salsa international",
+			"tropical"
+		],
+		"rank": 396
+	},
+	{
+		"name": "Lunay",
+		"popularity": 79,
+		"id": "47MpMsUfWtgyIIBEFOr4FE",
+		"artist_duration": 28212,
+		"artist_genres": [
+			"latin",
+			"latin hip hop",
+			"latin pop",
+			"reggaeton",
+			"reggaeton flow",
+			"trap latino"
+		],
+		"rank": 397
+	},
+	{
+		"name": "blackwave.",
+		"popularity": 51,
+		"id": "0nvdwVbj7NT1WL9P8JowLD",
+		"artist_duration": 28084,
+		"artist_genres": [
+			"belgian hip hop"
+		],
+		"rank": 398
+	},
+	{
+		"name": "Salt-N-Pepa",
+		"popularity": 64,
+		"id": "7wqtxqI3eo7Gn1P7SpP6cQ",
+		"artist_duration": 27989,
+		"artist_genres": [
+			"dance pop",
+			"girl group",
+			"golden age hip hop",
+			"hip hop",
+			"hip pop",
+			"old school hip hop",
+			"queens hip hop",
+			"rap"
+		],
+		"rank": 399
+	},
+	{
+		"name": "Bill Withers",
+		"popularity": 74,
+		"id": "1ThoqLcyIYvZn7iWbj8fsj",
+		"artist_duration": 27980,
+		"artist_genres": [
+			"funk",
+			"motown",
+			"quiet storm",
+			"soul"
+		],
+		"rank": 400
+	},
+	{
+		"name": "FKJ",
+		"popularity": 71,
+		"id": "2FwDTncULUnmANIh7qKa5z",
+		"artist_duration": 27634,
+		"artist_genres": [
+			"filter house",
+			"indie soul"
+		],
+		"rank": 401
+	},
+	{
+		"name": "Illa J",
+		"popularity": 51,
+		"id": "72zigmOdJbIsz0iIRhCBvp",
+		"artist_duration": 27495,
+		"artist_genres": [
+			"alternative hip hop",
+			"detroit hip hop",
+			"hip hop",
+			"indie soul"
+		],
+		"rank": 402
+	},
+	{
+		"name": "Rae Sremmurd",
+		"popularity": 77,
+		"id": "7iZtZyCzp3LItcw1wtPI3D",
+		"artist_duration": 27445,
+		"artist_genres": [
+			"hip hop",
+			"melodic rap",
+			"mississippi hip hop",
+			"pop rap",
+			"rap",
+			"southern hip hop",
+			"trap"
+		],
+		"rank": 403
+	},
+	{
+		"name": "Jidenna",
+		"popularity": 57,
+		"id": "4TsHKU8l8Wq7n7OPVikirn",
+		"artist_duration": 26865,
+		"artist_genres": [
+			"ghanaian hip hop"
+		],
+		"rank": 404
+	},
+	{
+		"name": "Onra",
+		"popularity": 47,
+		"id": "2sAlo7Fey5cqBk5WJILSd8",
+		"artist_duration": 26787,
+		"artist_genres": [
+			"japanese chillhop",
+			"wonky"
+		],
+		"rank": 405
+	},
+	{
+		"name": "Moonchild",
+		"popularity": 54,
+		"id": "1VgjAK52kjkQJQQRhTn02t",
+		"artist_duration": 26341,
+		"artist_genres": [
+			"alternative r&b",
+			"indie jazz",
+			"indie r&b",
+			"indie soul",
+			"neo r&b"
+		],
+		"rank": 406
+	},
+	{
+		"name": "Neon Indian",
+		"popularity": 50,
+		"id": "0KydPQPUUoTNhmiHKOg5Er",
+		"artist_duration": 26172,
+		"artist_genres": [
+			"alternative dance",
+			"chillwave",
+			"denton tx indie",
+			"dream pop",
+			"experimental pop",
+			"indie rock",
+			"indietronica",
+			"neo-synthpop",
+			"new rave"
+		],
+		"rank": 407
+	},
+	{
+		"name": "G\u00f6ksel",
+		"popularity": 64,
+		"id": "4i4ALRtQQmFxn3BCIB6iC0",
+		"artist_duration": 25925,
+		"artist_genres": [
+			"turkce slow sarkilar",
+			"turkish pop"
+		],
+		"rank": 408
+	},
+	{
+		"name": "Pool Cosby",
+		"popularity": 31,
+		"id": "7zrfybpJUeRLpyPY9DoDt7",
+		"artist_duration": 25384,
+		"artist_genres": [],
+		"rank": 409
+	},
+	{
+		"name": "KAYTRANADA",
+		"popularity": 72,
+		"id": "6qgnBH6iDM91ipVXv28OMu",
+		"artist_duration": 25187,
+		"artist_genres": [
+			"escape room",
+			"indie soul",
+			"lgbtq+ hip hop"
+		],
+		"rank": 410
+	},
+	{
+		"name": "Niko Is",
+		"popularity": 29,
+		"id": "7Ci28o541njEn2byuNfjfs",
+		"artist_duration": 25161,
+		"artist_genres": [
+			"florida rap"
+		],
+		"rank": 411
+	},
+	{
+		"name": "Jai Paul",
+		"popularity": 51,
+		"id": "53wZLCnhshZKDRs3uopFBc",
+		"artist_duration": 24395,
+		"artist_genres": [
+			"indie soul"
+		],
+		"rank": 412
+	},
+	{
+		"name": "Tyga",
+		"popularity": 84,
+		"id": "5LHRHt1k9lMyONurDHEdrp",
+		"artist_duration": 24160,
+		"artist_genres": [
+			"dance pop",
+			"hip hop",
+			"pop rap",
+			"rap",
+			"southern hip hop",
+			"trap"
+		],
+		"rank": 413
+	},
+	{
+		"name": "SRNO",
+		"popularity": 97,
+		"id": "3TVXtAsR1Inumwj472S9r4",
+		"artist_duration": 24123,
+		"artist_genres": [
+			"canadian hip hop",
+			"canadian pop",
+			"hip hop",
+			"rap",
+			"toronto rap"
+		],
+		"rank": 414
+	},
+	{
+		"name": "Varnish La Piscine",
+		"popularity": 42,
+		"id": "3r7t38zbphQtpfAH12UbRd",
+		"artist_duration": 24084,
+		"artist_genres": [
+			"rap calme",
+			"rap francais nouvelle vague"
+		],
+		"rank": 415
+	},
+	{
+		"name": "Summer Walker",
+		"popularity": 85,
+		"id": "57LYzLEk2LcFghVwuWbcuS",
+		"artist_duration": 23928,
+		"artist_genres": [
+			"pop",
+			"r&b"
+		],
+		"rank": 416
+	},
+	{
+		"name": "Johann Sebastian Bach",
+		"popularity": 80,
+		"id": "5aIqB5nVVvmFsvSdExz408",
+		"artist_duration": 23080,
+		"artist_genres": [
+			"baroque",
+			"classical",
+			"early music",
+			"german baroque"
+		],
+		"rank": 417
+	},
+	{
+		"name": "swim good now",
+		"popularity": 30,
+		"id": "0nfObbo5nqn9iWe0cy7Zvt",
+		"artist_duration": 22859,
+		"artist_genres": [
+			"canadian indie"
+		],
+		"rank": 418
+	},
+	{
+		"name": "BoA",
+		"popularity": 59,
+		"id": "4muJrGMndyYWqZtfk8OWy4",
+		"artist_duration": 22850,
+		"artist_genres": [
+			"k-pop"
+		],
+		"rank": 419
+	},
+	{
+		"name": "Elliot Moss",
+		"popularity": 52,
+		"id": "2xGCGoulmU85qYdpb2Z4xx",
+		"artist_duration": 22733,
+		"artist_genres": [
+			"nyc pop"
+		],
+		"rank": 420
+	},
+	{
+		"name": "Savon",
+		"popularity": 28,
+		"id": "1Z4kMiUwBM1dkoO6TyXXhn",
+		"artist_duration": 22611,
+		"artist_genres": [
+			"lo-fi house"
+		],
+		"rank": 421
+	},
+	{
+		"name": "Bearcubs",
+		"popularity": 48,
+		"id": "5iPtkyoEOCILhwFgl2a2d3",
+		"artist_duration": 21408,
+		"artist_genres": [
+			"indie soul",
+			"vapor soul",
+			"vapor twitch"
+		],
+		"rank": 422
 	},
 	{
 		"name": "Justine Skye",
 		"popularity": 60,
 		"id": "0jUQSUOcM7lxVn5eVGTkzQ",
-		"artist_duration": 167493.0,
+		"artist_duration": 20778,
 		"artist_genres": [
 			"alternative r&b",
 			"chill r&b",
@@ -5519,135 +5098,146 @@
 			"post-teen pop",
 			"r&b"
 		],
-		"rank": 457
+		"rank": 423
 	},
 	{
-		"name": "Bearface",
-		"popularity": 0,
-		"id": "0LyfQWJT6nXafLPZqxe9Of",
-		"artist_duration": 166000.0,
-		"artist_genres": [],
-		"rank": 458
-	},
-	{
-		"name": "Substantial",
+		"name": "Nick Hakim",
 		"popularity": 49,
-		"id": "5FmThJ74ycmeBdQnu4Cfcw",
-		"artist_duration": 163186.0,
-		"artist_genres": [
-			"ambeat"
-		],
-		"rank": 459
-	},
-	{
-		"name": "GoldLink",
-		"popularity": 69,
-		"id": "5XenQ7XfcvQdfIbpLEFaKQ",
-		"artist_duration": 161080.0,
+		"id": "1Goe2NezNnym45kco2xTk6",
+		"artist_duration": 20696,
 		"artist_genres": [
 			"alternative r&b",
-			"dmv rap",
-			"hip hop",
+			"indie jazz",
+			"indie r&b",
 			"indie soul",
+			"vapor soul"
+		],
+		"rank": 424
+	},
+	{
+		"name": "Yasuko Agawa",
+		"popularity": 0,
+		"id": "0pzEkpWlGKQjuWMRlnCBuA",
+		"artist_duration": 20677,
+		"artist_genres": [],
+		"rank": 425
+	},
+	{
+		"name": "Nao",
+		"popularity": 64,
+		"id": "7aFTOGFDEqDtJUCziLVsVC",
+		"artist_duration": 20445,
+		"artist_genres": [
+			"alternative r&b",
+			"chill r&b",
+			"indie r&b",
+			"indie soul",
+			"neo soul",
+			"pop",
 			"r&b",
+			"uk contemporary r&b"
+		],
+		"rank": 426
+	},
+	{
+		"name": "Cardi B",
+		"popularity": 85,
+		"id": "4kYSro6naA4h99UJvo89HB",
+		"artist_duration": 19771,
+		"artist_genres": [
+			"dance pop",
+			"pop",
+			"pop rap",
+			"rap"
+		],
+		"rank": 427
+	},
+	{
+		"name": "Wu-Tang Clan",
+		"popularity": 71,
+		"id": "34EP7KEpOjXcM2TCat1ISk",
+		"artist_duration": 19667,
+		"artist_genres": [
+			"east coast hip hop",
+			"gangster rap",
+			"hardcore hip hop",
+			"hip hop",
+			"rap"
+		],
+		"rank": 428
+	},
+	{
+		"name": "Luke James",
+		"popularity": 46,
+		"id": "4E7AV8mtElSjHZP3xA9kyU",
+		"artist_duration": 19562,
+		"artist_genres": [
+			"alternative r&b",
+			"pop r&b",
+			"r&b"
+		],
+		"rank": 429
+	},
+	{
+		"name": "Coolio",
+		"popularity": 71,
+		"id": "3y24n3XhZ96wgwRXjvS17T",
+		"artist_duration": 19488,
+		"artist_genres": [
+			"g funk",
+			"gangster rap",
+			"hip hop",
 			"rap",
-			"underground hip hop"
+			"west coast rap"
 		],
-		"rank": 460
+		"rank": 430
 	},
 	{
-		"name": "CoryaYo",
-		"popularity": 47,
-		"id": "3xqrRhBSgCer7lokC0Lhk4",
-		"artist_duration": 159056.0,
+		"name": "RKCB",
+		"popularity": 57,
+		"id": "4QDvXnbmw1znkqkK1119Fc",
+		"artist_duration": 18837,
 		"artist_genres": [
-			"chillhop",
-			"jazz boom bap",
-			"lo-fi beats"
-		],
-		"rank": 461
-	},
-	{
-		"name": "Freddie Joachim",
-		"popularity": 0,
-		"id": "5nGSuAZWcV649G8a54ocSn",
-		"artist_duration": 156106.0,
-		"artist_genres": [],
-		"rank": 462
-	},
-	{
-		"name": "Psymun",
-		"popularity": 31,
-		"id": "5gVgcz9X3QcrcrrDXR56NP",
-		"artist_duration": 154074.0,
-		"artist_genres": [
-			"experimental hip hop",
-			"minnesota hip hop"
-		],
-		"rank": 463
-	},
-	{
-		"name": "Johann Sebastian Bach",
-		"popularity": 80,
-		"id": "5aIqB5nVVvmFsvSdExz408",
-		"artist_duration": 151480.0,
-		"artist_genres": [
-			"baroque",
-			"classical",
-			"early music",
-			"german baroque"
-		],
-		"rank": 464
-	},
-	{
-		"name": "Jared Jackson",
-		"popularity": 0,
-		"id": "0LyfQWJT6nXafLPZqxe9Of",
-		"artist_duration": 150857.0,
-		"artist_genres": [],
-		"rank": 465
-	},
-	{
-		"name": "Kooley High",
-		"popularity": 30,
-		"id": "3OQjXzDIPZLM5AytPp5mNg",
-		"artist_duration": 146426.0,
-		"artist_genres": [
-			"north carolina hip hop",
-			"soul flow"
-		],
-		"rank": 466
-	},
-	{
-		"name": "glue70",
-		"popularity": 48,
-		"id": "3AsWxxZTFPoCFxM1s8Lg1J",
-		"artist_duration": 144000.0,
-		"artist_genres": [
-			"future funk"
-		],
-		"rank": 467
-	},
-	{
-		"name": "Flight Facilities",
-		"popularity": 66,
-		"id": "1lc8mnyGrCLtPhCoWjRxjM",
-		"artist_duration": 143196.0,
-		"artist_genres": [
-			"alternative dance",
-			"aussietronica",
-			"australian dance",
-			"australian indie",
+			"electropop",
+			"indie electropop",
+			"indie poptimism",
 			"indie soul",
-			"nu disco"
+			"vapor soul",
+			"vapor twitch"
 		],
-		"rank": 468
+		"rank": 431
+	},
+	{
+		"name": "Baro Sura",
+		"popularity": 31,
+		"id": "79EKbkmOJ9lJwnhTBOqOlV",
+		"artist_duration": 18092,
+		"artist_genres": [],
+		"rank": 432
+	},
+	{
+		"name": "End of the World",
+		"popularity": 50,
+		"id": "0b59cVa1STVENq3i7wkcHV",
+		"artist_duration": 17770,
+		"artist_genres": [],
+		"rank": 433
+	},
+	{
+		"name": "YEAR OF THE OX",
+		"popularity": 33,
+		"id": "614kirduDphBL5NZebU3Zi",
+		"artist_duration": 17621,
+		"artist_genres": [
+			"asian american hip hop"
+		],
+		"rank": 434
 	},
 	{
 		"name": "Daryl Hall & John Oates",
-		"popularity": 74,
+		"popularity": 76,
 		"id": "77tT1kLj6mCWtFNqiOmP9H",
-		"artist_duration": 142786.0,
+		"artist_duration": 17589,
 		"artist_genres": [
 			"album rock",
 			"classic rock",
@@ -5656,88 +5246,489 @@
 			"soft rock",
 			"yacht rock"
 		],
-		"rank": 469
+		"rank": 435
 	},
 	{
-		"name": "Anton\u00edn Dvo\u0159\u00e1k",
-		"popularity": 62,
-		"id": "6n7nd5iceYpXVwcx8VPpxF",
-		"artist_duration": 136160.0,
+		"name": "NAV",
+		"popularity": 79,
+		"id": "7rkW85dBwwrJtlHRDkJDAC",
+		"artist_duration": 17287,
 		"artist_genres": [
-			"classical",
-			"czech classical",
-			"late romantic era"
+			"canadian hip hop",
+			"canadian trap",
+			"hip hop",
+			"melodic rap",
+			"pop rap",
+			"rap",
+			"toronto rap",
+			"trap"
 		],
-		"rank": 470
+		"rank": 436
 	},
 	{
-		"name": "Varnish La Piscine",
-		"popularity": 42,
-		"id": "3r7t38zbphQtpfAH12UbRd",
-		"artist_duration": 134266.0,
+		"name": "Marian Hill",
+		"popularity": 59,
+		"id": "1xHQO9GJIW9OXHxGBISYc5",
+		"artist_duration": 16853,
 		"artist_genres": [
-			"rap calme",
-			"rap francais nouvelle vague"
+			"electropop",
+			"indie poptimism"
 		],
-		"rank": 471
+		"rank": 437
+	},
+	{
+		"name": "BlocBoy JB",
+		"popularity": 65,
+		"id": "4TEJudQY2pXxVHPE3gD2EU",
+		"artist_duration": 16497,
+		"artist_genres": [
+			"memphis hip hop",
+			"pop rap",
+			"rap",
+			"southern hip hop",
+			"tennessee hip hop",
+			"trap",
+			"vapor trap"
+		],
+		"rank": 438
+	},
+	{
+		"name": "Colossus",
+		"popularity": 0,
+		"id": "0LyfQWJT6nXafLPZqxe9Of",
+		"artist_duration": 16402,
+		"artist_genres": [],
+		"rank": 439
+	},
+	{
+		"name": "R\u00dcF\u00dcS DU SOL",
+		"popularity": 75,
+		"id": "5Pb27ujIyYb33zBqVysBkj",
+		"artist_duration": 16277,
+		"artist_genres": [
+			"australian electropop",
+			"indietronica"
+		],
+		"rank": 440
+	},
+	{
+		"name": "Strong Arm Steady",
+		"popularity": 29,
+		"id": "2DbpanduRLSrGiYjQkOrna",
+		"artist_duration": 15728,
+		"artist_genres": [
+			"alternative hip hop"
+		],
+		"rank": 441
+	},
+	{
+		"name": "Quentin Miller",
+		"popularity": 48,
+		"id": "6po19E0R9xffrgzrg84TC9",
+		"artist_duration": 15719,
+		"artist_genres": [
+			"atl hip hop",
+			"trap soul",
+			"underground hip hop"
+		],
+		"rank": 442
+	},
+	{
+		"name": "Leven Kali",
+		"popularity": 59,
+		"id": "5YZ5AExR68U3ZblH6HcO6B",
+		"artist_duration": 15616,
+		"artist_genres": [
+			"alternative r&b",
+			"chill r&b",
+			"indie r&b",
+			"indie soul",
+			"r&b"
+		],
+		"rank": 443
+	},
+	{
+		"name": "Emeli Sand\u00e9",
+		"popularity": 68,
+		"id": "7sfgqEdoeBTjd8lQsPT3Cy",
+		"artist_duration": 15573,
+		"artist_genres": [
+			"dance pop",
+			"neo soul",
+			"pop",
+			"r&b",
+			"uk pop"
+		],
+		"rank": 444
+	},
+	{
+		"name": "Limes",
+		"popularity": 3,
+		"id": "6txPhxLJccbLaaS2OgblBs",
+		"artist_duration": 15477,
+		"artist_genres": [],
+		"rank": 445
+	},
+	{
+		"name": "Usher",
+		"popularity": 82,
+		"id": "23zg3TcAtWQy7J6upgbUnj",
+		"artist_duration": 15420,
+		"artist_genres": [
+			"atl hip hop",
+			"contemporary r&b",
+			"dance pop",
+			"pop",
+			"r&b",
+			"south carolina hip hop",
+			"urban contemporary"
+		],
+		"rank": 446
+	},
+	{
+		"name": "Jamieboy",
+		"popularity": 32,
+		"id": "7ew9ZidsT1WM5NJy568Ma9",
+		"artist_duration": 15168,
+		"artist_genres": [],
+		"rank": 447
+	},
+	{
+		"name": "Flamingosis",
+		"popularity": 53,
+		"id": "75cW8FFekyCjj0mfZM1Gfb",
+		"artist_duration": 15123,
+		"artist_genres": [
+			"chillhop",
+			"future funk"
+		],
+		"rank": 448
+	},
+	{
+		"name": "Rina Sawayama",
+		"popularity": 64,
+		"id": "2KEqzdPS7M5YwGmiuPTdr5",
+		"artist_duration": 14655,
+		"artist_genres": [
+			"art pop",
+			"dance pop",
+			"electropop",
+			"escape room",
+			"pop"
+		],
+		"rank": 449
+	},
+	{
+		"name": "Yaeji",
+		"popularity": 57,
+		"id": "2RqrWplViWHSGLzlhmDcbt",
+		"artist_duration": 14421,
+		"artist_genres": [
+			"art pop",
+			"escape room",
+			"experimental house"
+		],
+		"rank": 450
+	},
+	{
+		"name": "Jelleestone",
+		"popularity": 26,
+		"id": "21EIv4m5gbtWQLA9Al9em4",
+		"artist_duration": 14152,
+		"artist_genres": [
+			"canadian old school hip hop"
+		],
+		"rank": 451
+	},
+	{
+		"name": "Kygo",
+		"popularity": 83,
+		"id": "23fqKkggKUBHNkbKtXEls4",
+		"artist_duration": 13930,
+		"artist_genres": [
+			"edm",
+			"pop",
+			"pop dance",
+			"tropical house"
+		],
+		"rank": 452
+	},
+	{
+		"name": "Kali Uchis",
+		"popularity": 85,
+		"id": "1U1el3k54VvEUzo3ybLPlM",
+		"artist_duration": 13664,
+		"artist_genres": [
+			"colombian pop",
+			"pop"
+		],
+		"rank": 453
+	},
+	{
+		"name": "Bruno Mars",
+		"popularity": 92,
+		"id": "0du5cEVh5yTK9QJze8zA0C",
+		"artist_duration": 13455,
+		"artist_genres": [
+			"dance pop",
+			"pop"
+		],
+		"rank": 454
+	},
+	{
+		"name": "Ricky Montgomery",
+		"popularity": 74,
+		"id": "0ZUvK7zGdXLd78mQr3t1Tw",
+		"artist_duration": 13290,
+		"artist_genres": [
+			"indie pop",
+			"la indie",
+			"pop"
+		],
+		"rank": 455
+	},
+	{
+		"name": "Anushka",
+		"popularity": 31,
+		"id": "30kBWK3T10BVkU6WLSeody",
+		"artist_duration": 13268,
+		"artist_genres": [
+			"weightless"
+		],
+		"rank": 456
+	},
+	{
+		"name": "Heralds Of Change",
+		"popularity": 18,
+		"id": "0IzjeWBDWlNK2SYVdOyOAI",
+		"artist_duration": 13093,
+		"artist_genres": [],
+		"rank": 457
+	},
+	{
+		"name": "Joe",
+		"popularity": 67,
+		"id": "3zTOe1BtyTkwNvYZOxXktX",
+		"artist_duration": 12186,
+		"artist_genres": [
+			"contemporary r&b",
+			"dance pop",
+			"hip pop",
+			"neo soul",
+			"r&b",
+			"urban contemporary"
+		],
+		"rank": 458
+	},
+	{
+		"name": "Shoffy",
+		"popularity": 58,
+		"id": "4wO0kHiOwf8l9VMJJN9HmG",
+		"artist_duration": 12138,
+		"artist_genres": [
+			"chill pop",
+			"chill r&b",
+			"electropop",
+			"indie electropop",
+			"indie poptimism",
+			"la pop",
+			"pop"
+		],
+		"rank": 459
 	},
 	{
 		"name": "Bazzi",
 		"popularity": 77,
 		"id": "4GvEc3ANtPPjt1ZJllr5Zl",
-		"artist_duration": 131064.0,
+		"artist_duration": 12004,
 		"artist_genres": [
 			"dance pop",
 			"electropop",
 			"pop"
 		],
+		"rank": 460
+	},
+	{
+		"name": "Sly5thAve",
+		"popularity": 0,
+		"id": "6rFL5x9mbGrE4y2VsywWW1",
+		"artist_duration": 11860,
+		"artist_genres": [],
+		"rank": 461
+	},
+	{
+		"name": "WEDNESDAY CAMPANELLA",
+		"popularity": 48,
+		"id": "0bp9CvkjQYhUJvWRHjFRWI",
+		"artist_duration": 11760,
+		"artist_genres": [
+			"japanese dance pop",
+			"japanese electropop"
+		],
+		"rank": 462
+	},
+	{
+		"name": "Art Of Fresh",
+		"popularity": 5,
+		"id": "2RDvTWf6y497oW4stJT5qg",
+		"artist_duration": 11627,
+		"artist_genres": [],
+		"rank": 463
+	},
+	{
+		"name": "Jhen\u00e9 Aiko",
+		"popularity": 80,
+		"id": "5ZS223C6JyBfXasXxrRqOk",
+		"artist_duration": 11604,
+		"artist_genres": [
+			"alternative r&b",
+			"dance pop",
+			"pop",
+			"r&b",
+			"urban contemporary"
+		],
+		"rank": 464
+	},
+	{
+		"name": "Urban Zakapa",
+		"popularity": 53,
+		"id": "1dOMFM5wDNsENQQW0nl0K8",
+		"artist_duration": 11357,
+		"artist_genres": [
+			"k-pop",
+			"korean pop"
+		],
+		"rank": 465
+	},
+	{
+		"name": "Danny Watts",
+		"popularity": 19,
+		"id": "2fY9ilMSpmjOR3SIINXx0F",
+		"artist_duration": 11093,
+		"artist_genres": [],
+		"rank": 466
+	},
+	{
+		"name": "Leon Bridges",
+		"popularity": 75,
+		"id": "3qnGvpP8Yth1AqSBMqON5x",
+		"artist_duration": 11093,
+		"artist_genres": [
+			"modern blues"
+		],
+		"rank": 467
+	},
+	{
+		"name": "Lil Wayne",
+		"popularity": 89,
+		"id": "55Aa2cqylxrFIXC767Z865",
+		"artist_duration": 10971,
+		"artist_genres": [
+			"hip hop",
+			"new orleans rap",
+			"pop rap",
+			"rap",
+			"trap"
+		],
+		"rank": 468
+	},
+	{
+		"name": "Kooley High",
+		"popularity": 31,
+		"id": "3OQjXzDIPZLM5AytPp5mNg",
+		"artist_duration": 10875,
+		"artist_genres": [
+			"north carolina hip hop",
+			"soul flow"
+		],
+		"rank": 469
+	},
+	{
+		"name": "Ciscero",
+		"popularity": 49,
+		"id": "5oSCIcpPdrO3UhTMATxkYL",
+		"artist_duration": 10816,
+		"artist_genres": [
+			"dmv rap"
+		],
+		"rank": 470
+	},
+	{
+		"name": "BADBADNOTGOOD",
+		"popularity": 67,
+		"id": "65dGLGjkw3UbddUg2GKQoZ",
+		"artist_duration": 10643,
+		"artist_genres": [
+			"alternative hip hop",
+			"canadian modern jazz",
+			"escape room",
+			"hip hop",
+			"indie soul"
+		],
+		"rank": 471
+	},
+	{
+		"name": "Kiefer",
+		"popularity": 49,
+		"id": "5lDtfHPqWN6MG9tFywnW8J",
+		"artist_duration": 10439,
+		"artist_genres": [
+			"indie jazz",
+			"indie r&b",
+			"indie soul",
+			"neo r&b",
+			"uk contemporary jazz"
+		],
 		"rank": 472
 	},
 	{
-		"name": "Lil Pump",
-		"popularity": 71,
-		"id": "3wyVrVrFCkukjdVIdirGVY",
-		"artist_duration": 124055.0,
+		"name": "Evenings",
+		"popularity": 34,
+		"id": "4bODnAlydTbem2JAjDX52y",
+		"artist_duration": 10158,
 		"artist_genres": [
-			"emo rap",
-			"miami hip hop",
-			"rap",
-			"social media pop",
-			"trap"
+			"chillwave",
+			"glitch pop"
 		],
 		"rank": 473
 	},
 	{
-		"name": "Nick Hakim",
-		"popularity": 49,
-		"id": "1Goe2NezNnym45kco2xTk6",
-		"artist_duration": 121544.0,
+		"name": "Kweku Collins",
+		"popularity": 41,
+		"id": "2SPt3i9sJKS1qiMQQQr9LS",
+		"artist_duration": 10125,
 		"artist_genres": [
-			"alternative r&b",
-			"indie jazz",
-			"indie r&b",
-			"indie soul",
-			"vapor soul"
+			"underground hip hop"
 		],
 		"rank": 474
 	},
 	{
-		"name": "G Perico",
-		"popularity": 58,
-		"id": "4Q2hTDZYFCohf17D5GvkIb",
-		"artist_duration": 105248.0,
+		"name": "Musiq Soulchild",
+		"popularity": 61,
+		"id": "3UVRliakQfa1pMWIsNuiZ8",
+		"artist_duration": 10111,
 		"artist_genres": [
-			"cali rap",
-			"west coast trap"
+			"contemporary r&b",
+			"dance pop",
+			"neo soul",
+			"quiet storm",
+			"r&b",
+			"urban contemporary"
 		],
 		"rank": 475
 	},
 	{
-		"name": "Ron Gilmore",
-		"popularity": 10,
-		"id": "1kqUcOydtZPzh0M7f7KfY9",
-		"artist_duration": 94603.0,
-		"artist_genres": [],
+		"name": "POLKADOT STINGRAY",
+		"popularity": 55,
+		"id": "5zV9afUO4DVqJeRaZvfNev",
+		"artist_duration": 10077,
+		"artist_genres": [
+			"anime rock",
+			"j-pixie",
+			"j-pop",
+			"j-rock",
+			"kyushu indie"
+		],
 		"rank": 476
 	}
 ]
