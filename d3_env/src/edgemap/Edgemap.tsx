@@ -10,8 +10,8 @@ import './edgemap.css'
 
 
 export type EdgemapProps = {
-    autoPlay: boolean,
     artistIDs: ArtistID[]
+    autoPlay: boolean,
 }
 
 
@@ -35,11 +35,12 @@ const allValueCombinations: (number | EdgemapView | NodePositionKey | boolean)[]
 const sortedArtistIDs = Array.from(artistStreamTimes.keys())
 const debouncedUpdateEdgemap = utils.debounce(updateEdgemap, 300);
 let autoPlayTimer = null;
-export const Edgemap = ({autoPlay = false, artistIDs = sortedArtistIDs}: EdgemapProps) => {
+export const Edgemap = ({ artistIDs, autoPlay = false }: EdgemapProps) => {
     const [autoPlayCounter, setAutoPlayCounter] = useState(0);
 
     const [top, setTop] = useState(50);
-    const topArtists = Array.from(artistIDs).slice(0, top);    
+    const topArtists = Array.from(artistIDs || sortedArtistIDs).slice(0, top);    
+    console.log("artists in edgemap:", topArtists);
     
     const [view, setView] = useState<EdgemapView>("genreSimilarity");
     const [colorKey, setColorKey] = useState<NodePositionKey>("genrePos");
@@ -53,7 +54,7 @@ export const Edgemap = ({autoPlay = false, artistIDs = sortedArtistIDs}: Edgemap
     );
     useEffect(() => 
         top && debouncedUpdateEdgemap(topArtists, view),
-        [view, top]
+        [view, top, artistIDs]
     );
     useEffect(() => 
         setNodeColorKey(colorKey),

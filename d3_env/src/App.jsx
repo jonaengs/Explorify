@@ -4,7 +4,7 @@ import CalendarHeatmap from "./CalendarHeatmap";
 import D3Timeline from "./D3Timeline";
 import logo from "./logo/logo1.png"
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { DropdownSelect } from "./DropdownSelect"
 import { Navbar, Container, Form, Nav, Row, Col, Card, InputGroup, ButtonGroup, Button } from "react-bootstrap";
 import { BsQuestionCircle } from 'react-icons/bs';
@@ -26,6 +26,10 @@ function App() {
     const handleChange = (selected) => {
         selectedOption = selected;
     };
+
+    // IDs of artists to include in the edgemap
+    const [edgemapArtists, setEdgemapArtists] = useState(undefined);
+    console.log(edgemapArtists)
 
     let fullData = require("./data/Jonatan_data/processed_filtered_dataset.json");
 
@@ -100,7 +104,7 @@ function App() {
                                                     </h5>
                                                 </Card.Header>
                                                 <div id="edgemap-container" style={{"width": "100%", "height" : "900px"}}>
-                                                    <Edgemap />
+                                                    <Edgemap artistIDs={edgemapArtists}/>
                                                 </div>
                                             </Card>
                                         </Col>
@@ -119,6 +123,7 @@ function App() {
                                         streamingData = { streamingData }
                                         topArtistsData = { topArtistsData }
                                         timelineData = { timelineData }
+                                        setEdgemapArtists = { setEdgemapArtists }
                                     />
                                 </Card>
                             </Row>

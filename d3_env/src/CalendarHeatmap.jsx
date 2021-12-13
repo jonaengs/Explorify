@@ -22,11 +22,10 @@ const weeksInMonth = function(month){
     return d3.timeWeeks(d3.timeWeek.floor(m), d3.timeMonth.offset(m,1)).length;
 }
 
-const CalendarHeatmap = (props) => {
-    const streamingData = props.streamingData;
-    const topArtistsData = props.topArtistsData;
-    const timelineData = props.timelineData;
+const CalendarHeatmap = ({streamingData, topArtistsData, timelineData, setEdgemapArtists}) => {
     const calendarHeatmap = useRef();
+
+    const [selected, setSelected] = useState(null);
 
     const MIN_MAX = d3.extent(streamingData.keys())
     const minDate = new Date(extractYMD(MIN_MAX[0]))
@@ -59,7 +58,7 @@ const CalendarHeatmap = (props) => {
             .attr("id", function (d){
                 return d.date;
             })
-            .attr("class", "day")
+            .attr("class", d => "day test" + (d === selected && " selected hover"))
             .attr("width", cellSize)
             .attr("height", cellSize)
             .attr("x", function (d){
@@ -96,16 +95,21 @@ const CalendarHeatmap = (props) => {
                     if (d.full_day_duration != 0) {
                         updateBar(d.artists);
                         updateTimeline(d.date, timelineData[d.date]);
+                        setEdgemapArtists(d.artists.map(a => a.id));
                     }
                     else {
                         updateEmpty();
                         hideTimeline();
+                        setEdgemapArtists([]);
                     }
+                    setSelected(d);
                 } else {
                     d3.select(this).classed('hover', false);
                     d3.select(this).classed("selected", false)
                     updateBar(topArtistsData);
                     hideTimeline();
+                    setEdgemapArtists(null);
+                    setSelected(null);
                 }
             })
 
