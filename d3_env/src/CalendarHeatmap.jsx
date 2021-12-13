@@ -26,7 +26,21 @@ const CalendarHeatmap = ({streamingData, topArtistsData, timelineData, setEdgema
     const calendarHeatmap = useRef();
 
     const [selected, setSelected] = useState(null);
-    if (selected) updateBar(selected.artists);
+    if (selected) {
+        const d = selected;
+        if (d.full_day_duration != 0) {
+            updateBar(d.artists);
+            updateTimeline(d.date, timelineData[d.date]);
+        }
+        else {
+            updateEmpty();
+            hideTimeline();
+        }
+    } else {
+        updateBar(topArtistsData);
+    }
+
+
 
     const MIN_MAX = d3.extent(streamingData.keys())
     const minDate = new Date(extractYMD(MIN_MAX[0]))
