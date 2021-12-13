@@ -5,6 +5,8 @@ import { autoPlayInterval } from "./constants";
 import { EdgemapView, NodePositionKey, setNodeColorKey, setShowLabels, setupEdgemap, updateEdgemap } from "./edgemap_functions";
 import * as utils from './utils';
 
+import './edgemap.css'
+
 const topValues = [50, 100, 150];
 const viewValues: EdgemapView[] = ["genreSimilarity", "featureSimilarity", "timeline"];
 const colorValues: NodePositionKey[] = ["genrePos", "featurePos", "timelinePos"];

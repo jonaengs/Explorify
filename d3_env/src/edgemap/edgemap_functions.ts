@@ -6,16 +6,15 @@ import {DefaultMap} from '../map_extensions';
 import '../map_extensions.ts';
 import { StreamInstance, artistData, streamingHistoryNoSkipped, artistID, artistMap} from '../data'
 import { artistStreamTimes, artistToGenres, firstArtistStream, getTimePolyExtent } from '../derived_data';
-import { Ref } from 'react';
 import Quadtree from '@timohausmann/quadtree-js';
-import { quadtree } from 'd3';
 
-/**
- * A feature vector reduced to 2 dimensions. Must be mapped to fit within chart.
- */
-type Position = {x: number, y: number};
+
+export type EdgemapView = "genreSimilarity" | "timeline" | "featureSimilarity";
+// A feature vector reduced to 2 dimensions. Must be mapped to fit within chart.
 type DRCoordinate = [number, number];
-type Node = {
+type Position = {x: number, y: number};
+type Box = {x: number, y: number, width: number, height: number};
+type BaseEMNode = {
     id: string,
     name: string,
     r: number,
@@ -28,27 +27,37 @@ type Node = {
     x: number,
     y: number,
 };
-type Link = {
+type BaseEMLink = {
     id: string, // source and target ids (in that order) combined
-    source: Node["id"],
-    target: Node["id"],
+    source: BaseEMNode["id"],
+    target: BaseEMNode["id"],
     label: string,
     count: number,
     proportion: number
 }
-type Network = {
-    nodes: Node[], 
-    links: Link[]
+
+type BaseNetwork = {
+    nodes: BaseEMNode[], 
+    links: BaseEMLink[]
 };
 
-type d3Node = Node & d3.SimulationNodeDatum;
-type d3Link = Link & {
+// Adding BaseEMNodes and BaseEMLinks to the simulation mutates them into the following types:
+type EMNode = BaseEMNode & d3.SimulationNodeDatum;
+type EMLink = BaseEMLink & {
     index: number,
-    source: d3Node,
-    target: d3Node
+    source: EMNode,
+    target: EMNode
 }
 
-type d3Selection = d3.Selection<any, any, any, any>;
+type NodeSelection = d3.Selection<SVGGElement, EMNode, SVGGElement, unknown>;
+type NodeCircleSelection = d3.Selection<SVGCircleElement, EMNode, SVGGElement, EMNode>;
+type NodeTextSelection = d3.Selection<SVGTextElement, EMNode, SVGGElement, EMNode>;
+
+type LinkSelection = d3.Selection<SVGGElement, EMLink, SVGGElement, unknown>;
+type LinkPathSelection = d3.Selection<SVGPathElement, EMLink, SVGGElement, EMLink>;
+type LinkTextpathSelection = d3.Selection<SVGTextPathElement, EMLink, SVGGElement, EMLink>;
+
+type EMSimulation = d3.Simulation<EMNode, EMLink>;
 
 const sessions = getSessions();
 const sessionArtists = sessions.map(sesh => sesh.map(stream => stream.artistID));
@@ -100,7 +109,7 @@ function getSessions(): StreamInstance[][] {
  * 
  * Note: Edges are kinda directed. Always in pairs, but values may not be equal
  */
-function computeSessionLinks(): Link[] {  
+function computeSessionLinks(): BaseEMLink[] {  
     const coPlays = new DefaultMap<artistID, artistID[]>([]);
     for (const artists of sessionArtists) {
         const artistSet = new Set(artists);
@@ -144,36 +153,36 @@ function toPolar(x: number, y: number): [number, number] {
  * @param param0 x and y coordinates of a point, normalized to fit inside svg coordinates 
  */
 export type NodePositionKey = "genrePos" | "featurePos" | "timelinePos";
-function createGetColor(positionKey: NodePositionKey) {
+function createGetColor(positionKey: NodePositionKey): (n: EMNode) => string {
     if (positionKey === "timelinePos") {
         // const scale = d3.scaleLinear().domain([width, 0]);
-        const scale = d3.scaleLinear().domain([0, width]);
         // const colorScale = d3.interpolateYlGnBu;
+        const scale = d3.scaleLinear().domain([0, width]);
         const colorScale = d3.interpolateCividis;
-        return (node: Node) => {
-            return colorScale(scale(node.timelinePos.x));
+        return (node: BaseEMNode) => {
+            return colorScale(scale(node.timelinePos.x)).toString();
         }
     }
-    return (node: Node) => {
+    return (node: BaseEMNode) => {
         const {x, y} = node[positionKey];
         const [dist, deg] = toPolar(x, y);
-        return d3.hsl(deg, dist, 0.35, 1)
+        return d3.hsl(deg, dist, 0.35, 1).toString()
     }
 }
 
 let getColor = createGetColor("genrePos");
 export function setNodeColorKey(key: NodePositionKey) {
     getColor = createGetColor(key);
-    setLinks(edgemapState.links);
+    setLink(edgemapState.links as EMLink[]);
     highlightSelection(edgemapState.selected);
     if (!edgemapState.selected)
         dropSelectionHighlight();
 }
 
 
-const completeNetwork: Network = computeNetwork();
+const completeNetwork: BaseNetwork = computeNetwork();
 
-function computeNetwork(): Network {    
+function computeNetwork(): BaseNetwork {    
     const genrePositions = (() => {
         const data: Map<artistID, DRCoordinate> = new Map(drResults.map(
             res => [res.artist_id, res.tsne_genre_no_outliers as DRCoordinate]
@@ -255,7 +264,23 @@ function computeNetwork(): Network {
  * It's a huge pain to pass around all the information that's needed to update the network correctly.
  * So instead, we just store all the information in this global object. 
  */
-let edgemapState = {
+let edgemapState: {
+    svg: utils.SVGSelection,
+    artistSet: Set<artistID>,
+    nodes: EMNode[],
+    links: EMLink[],
+    node: NodeSelection,
+    link: LinkSelection,
+    _simulation: EMSimulation,
+    selected?: EMNode,
+    selectedNeighbors: Set<artistID>,
+    currentView: EdgemapView,
+    timelineAxis: d3.Selection<SVGGElement, unknown, HTMLElement, any>,
+    quadTree: Quadtree,
+    showLabels: boolean,
+    linkTooltip: d3.Selection<HTMLDivElement, unknown, HTMLElement, any>
+    background: d3.Selection<SVGRectElement, unknown, HTMLElement, any>
+} = {
     svg: null,
     artistSet: new Set(),
     nodes: [],
@@ -273,13 +298,13 @@ let edgemapState = {
     background: null,
 };
 
-function setSimulation(simulation: d3.Simulation<any, any>, dontStart=false) {
+function setSimulation(simulation: EMSimulation, dontStart=false) {
     if (edgemapState._simulation) edgemapState._simulation.stop();
     edgemapState._simulation = simulation;
     if (!dontStart) simulation.restart();
 }
 
-function highlightSelection(selected: d3Node) {
+function highlightSelection(selected: EMNode) {
     if (selected === null || selected === undefined) return;
     
     // If new node is being selected
@@ -287,24 +312,23 @@ function highlightSelection(selected: d3Node) {
     
     const {node, link, links} = edgemapState;
 
-    link.style("visibility", (l: d3Link) => l.source.id === selected.id ? "visible" : "hidden");
+    link.style("visibility", (l: EMLink) => l.source.id === selected.id ? "visible" : "hidden");
     hideLinkLabels();
 
     const neighbors = new Set(
-        links.filter((l: d3Link) => l.source.id === selected.id).map(l => l.target.id)
+        links.filter((l: EMLink) => l.source.id === selected.id).map(l => l.target.id)
     ).add(selected.id);
     
-    node
-        .selectChildren("circle") 
-        .style("fill", (n: d3Node) => neighbors.has(n.id) ? getColor(n) : deselectHSL);
+    (node.selectChildren("circle") as NodeCircleSelection)
+        .style("fill", (n: EMNode) => neighbors.has(n.id) ? getColor(n) : deselectHSL);
 
     node.selectChildren("text")
         .style("visibility", "hidden");
     if (edgemapState.showLabels)
-        showNodeLabels(node.filter((n: d3Node) => neighbors.has(n.id)));
+        showNodeLabels(node.filter((n: EMNode) => neighbors.has(n.id)));
   
-    const selectedNode = node.filter((n: d3Node) => n.id === selected.id);
-    selectedNode.selectChildren("circle")
+    const selectedNode = node.filter((n: EMNode) => n.id === selected.id);
+    (selectedNode.selectChildren("circle") as NodeCircleSelection)
         .style("stroke-width", 3)
         .style("stroke", getColor)
         .style("fill", backgroundColor);
@@ -317,13 +341,14 @@ function dropSelectionHighlight() {
     const {node, link, selectedNeighbors, selected, showLabels} = edgemapState;
     
     link.style("visibility", "hidden");
-    node.selectChildren("circle").style("fill", getColor);
+    (node.selectChildren("circle") as NodeCircleSelection)
+        .style("fill", getColor);
     
     if (selected !== null) {
-        const neighbors = node.filter((n: d3Node) => selectedNeighbors.has(n.id));
+        const neighbors = node.filter((n: EMNode) => selectedNeighbors.has(n.id));
         neighbors.selectChildren("text").style("visibility", "hidden");
     
-        neighbors.filter((n: d3Node) => n.id === selected.id)
+        neighbors.filter((n: EMNode) => n.id === selected.id)
             .selectChildren("circle")
             .style("stroke-width", 0);
     }
@@ -334,21 +359,20 @@ function dropSelectionHighlight() {
     edgemapState.selectedNeighbors.clear();
 }
 
-function addNodes(svg: utils.SVGSelection, nodes: d3Node[]) {
-    function onMouseover(_e: PointerEvent, n: d3Node) {   
+function addNodes(svg: utils.SVGSelection, nodes: EMNode[]): NodeSelection {
+    function onMouseover(_e: PointerEvent, n: EMNode) {   
         const {node} = edgemapState;
         
-        const current = node.filter((_n: d3Node) => _n.id === n.id);
+        const current = node.filter((_n: EMNode) => _n.id === n.id);
         current
             .selectChildren("text")
             .style("visibility", "visible")
     }
-    function onMouseout(_e: PointerEvent, n: d3Node) {
+    function onMouseout(_e: PointerEvent, n: EMNode) {
         const {node, showLabels} = edgemapState;
-        const current = node.filter((_n: d3Node) => _n.id === n.id);
-        current
-            .selectChildren("text")
-            .style("visibility", (_n: d3Node) => {
+        const current = node.filter((_n: EMNode) => _n.id === n.id);
+        (current.selectChildren("text") as NodeTextSelection)
+            .style("visibility", (_n: EMNode) => {
                 if (!showLabels) return "hidden";
                 const circle: HTMLElement = this;
                 const text = circle.nextSibling as HTMLElement
@@ -369,12 +393,11 @@ function addNodes(svg: utils.SVGSelection, nodes: d3Node[]) {
 
     const node = svg
         .selectAll("node") // @ts-ignore
-        .data(nodes, (n: d3Node) => n.id)
+        .data(nodes, (n: EMNode) => n.id)
         .enter()
         .append("g")
         .attr("id", n => n.id)
         .attr("class", "node");
-    // @ts-ignore
     node.append("circle")
         .attr("r", n => n.r)
         .style("fill", n => selected ? deselectHSL : getColor(n))
@@ -383,7 +406,7 @@ function addNodes(svg: utils.SVGSelection, nodes: d3Node[]) {
         .on("click", (_event, n) => highlightSelection(n));
     node
         .append("text")
-        .text((d: Node) => d.name)
+        .text((d: BaseEMNode) => d.name)
         .attr("class", "unselectable node-text")
         .on("mouseover", onMouseover)
         .on("mouseout", onMouseout)
@@ -393,26 +416,37 @@ function addNodes(svg: utils.SVGSelection, nodes: d3Node[]) {
 }
 
 // Use this approach to display genres along link paths: https://css-tricks.com/snippets/svg/curved-text-along-path/
-function setLinks(links: d3Link[]) {
-    const getTooltipText = (l: d3Link) => l.label.split(" | ").join("<br/>")
+function setLink(links: EMLink[]): LinkSelection {
+    type EnterSelection = d3.Selection<d3.EnterElement, EMLink, SVGGElement, unknown>;
+    
+    // @ts-ignore: For some reason, ts insists that creating linear color scales is not possible, while it evidently is. 
+    const getLinkColor = (color: string) => d3.scaleLinear().range([color, "white"])
+    const getTooltipText = (l: EMLink) => l.label.split(" | ").join("<br/>")
 
-    const tooltip = edgemapState.linkTooltip;
-    const getLinkColor = (color) => d3.scaleLinear().range([color, "white"])
-    const onEnter = (selection) => {
+    const onEnter = (selection: EnterSelection) => {
+        const tooltip = edgemapState.linkTooltip;  
         const linkNode = selection.append("g");
         linkNode
             .attr("class", "link-node")
             .style("visibility", "hidden");
         linkNode
             .append("path")
-            .attr("id", (l: Link) => l.id)
+            .attr("id", (l: BaseEMLink) => l.id)
             .attr("class", "link-path")
             .style("fill", "none")
             .style("opacity", 0.9)
-            .style("stroke", (l: d3Link) => getLinkColor(getColor(l.target))(l.proportion))
-            .style("stroke-width", (l: d3Link) => Math.log2(l.count) + 1)
+            .style("stroke", (l: EMLink) => getLinkColor(getColor(l.target))(l.proportion))
+            .style("stroke-width", (l: EMLink) => Math.log2(l.count) + 1)
+        
+        // Draw a thicker, invisible path on top of the actual path. 
+        // Makes triggering the hover effect require less accuracy, especially for very thin paths
+        linkNode
+            .append("path")
+            .style("fill", "none")
+            .style("opacity", 0)
+            .style("stroke-width", (l: EMLink) => Math.log2(l.count) + 3)
             .attr("pointer-events", "visibleStroke")
-            .on("mouseover", (event: PointerEvent, l: d3Link) => {
+            .on("mouseover", (event: PointerEvent, l: EMLink) => {
                 tooltip.style("height", 1.2 * l.label.split(" | ").length + "rem");
                 return utils.onMouseover(tooltip, getTooltipText)(event, l)
             })
@@ -420,13 +454,13 @@ function setLinks(links: d3Link[]) {
             .on("mouseout", utils.onMouseout(tooltip));
         linkNode
             .append("text")
-                .attr("class", "link-text")
+                .attr("class", "link-text unselectable")
             .append("textPath")
                 .attr("alignment-baseline", "top")
                 .attr("startOffset", () => ((Math.random() * 30 + 10) + "%"))
-                .attr("xlink:href", (l: Link) => "#"+l.id)
-            .text((l: Link) => l.label)
-                .style("fill", (l: d3Link) => getLinkColor(getColor(l.target))(l.proportion));
+                .attr("xlink:href", (l: BaseEMLink) => "#"+l.id)
+            .text((l: BaseEMLink) => l.label)
+                .style("fill", (l: EMLink) => getLinkColor(getColor(l.target))(l.proportion));
         
         
         return linkNode;
@@ -439,22 +473,20 @@ function setLinks(links: d3Link[]) {
             enter => onEnter(enter)
                 .lower(), // re-insert links as the first child of svg, so that links are drawn first (and thus behind other objects)
             update => update
-                .style("fill", (l: d3Link) => getLinkColor(getColor(l.target))(l.proportion))
-                // 
-                ,
+                .style("fill", (l: EMLink) => getLinkColor(getColor(l.target))(l.proportion)),
             exit => exit.remove()
-        );
+        ) as LinkSelection;
     
     edgemapState.background.lower(); // Lower background so links don't appear behind it (even if it is transparent, it still gets hovers/clicks ahead of them)
-    link.selectChildren("path")
-        .style("stroke", (l: d3Link) => getLinkColor(getColor(l.target))(l.proportion));
-    link.selectChildren("textPath")
-        .style("fill", (l: d3Link) => getLinkColor(getColor(l.target))(l.proportion));
+    (link.selectChildren("path") as LinkPathSelection)
+        .style("stroke", l => getLinkColor(getColor(l.target))(l.proportion));
+    (link.selectChildren("textPath") as LinkTextpathSelection)
+        .style("fill", (l: EMLink) => getLinkColor(getColor(l.target))(l.proportion));
 
     return link;
 }
 
-function computeCurve(d: d3Link) {
+function computeCurve(d: EMLink): string {
     const [dx, dy] = [d.target.x - d.source.x, d.target.y - d.source.y];
     const dr = Math.sqrt(dx*dx + dy*dy);  
     const curveRight = +(d.target.x < d.source.x) + 0;
@@ -491,8 +523,8 @@ export function setupEdgemap(ref: SVGElement, artists: artistID[]) {
     const simulation = similaritySimulation({nodes, links});
     
     edgemapState.svg = svg
-    const link = setLinks(links as d3Link[]);
-    const node = addNodes(svg, nodes as d3Node[]);
+    const link = setLink(links as EMLink[]);
+    const node = addNodes(svg, nodes as EMNode[]);
 
     // Use coordinate space of the whole browser, as these are easier to get for each element. 
     const quadTree = new Quadtree(
@@ -509,7 +541,7 @@ export function setupEdgemap(ref: SVGElement, artists: artistID[]) {
     setSimulation(simulation);
 }
 
-function makeRestrictedTick(tickFunc: (node: d3Selection, link: d3Selection) => void) {
+function makeRestrictedTick(tickFunc: (node: NodeSelection, link: LinkSelection) => void) {
     let prevPositions = null;
     function ticked() {
         const {node, link, nodes, _simulation} = edgemapState;
@@ -540,10 +572,11 @@ function makeRestrictedTick(tickFunc: (node: d3Selection, link: d3Selection) => 
 
 function computeEdges() {
     const {link} = edgemapState;
-    link.selectChildren("path").attr("d", computeCurve);
+    (link.selectChildren("path") as LinkTextpathSelection)
+        .attr("d", computeCurve);
 }
 
-function similaritySimulation({nodes, links}: Network) {
+function similaritySimulation({nodes, links}: BaseNetwork) {
     let first = true; // compute edges on initial tick. Solves visual bug where edges appear to not update after transition.
     const ticked = makeRestrictedTick((node, link) => {        
         console.log("similarity");
@@ -551,14 +584,14 @@ function similaritySimulation({nodes, links}: Network) {
             first = false;
             computeEdges();
         }
-        node.attr("transform", (d: d3Node) => 
+        node.attr("transform", (d: EMNode) => 
                 `translate(${utils.clampX(d.x)}, ${utils.clampY(d.y)})`
             );
         } 
     )
 
     return d3.forceSimulation(nodes)
-        .force("link", d3.forceLink(links).id(d => (d as Node).id).strength(0))
+        .force("link", d3.forceLink(links).id(d => (d as BaseEMNode).id).strength(0))
         .force("collide", d3.forceCollide(n => n.r + 2))
         .alphaMin(alphaMin)
         .alphaDecay(alphaDecay)
@@ -570,10 +603,10 @@ function similaritySimulation({nodes, links}: Network) {
 // If a node is highlighted, return a selection of  it and its neighbors. Otherwise, return selection of all nodes
 function getNodeToLabel() {
     const {node, selected, selectedNeighbors} = edgemapState;
-    return selected ? node.filter((n: d3Node) => selectedNeighbors.has(n.id)) : node;
+    return selected ? node.filter((n: EMNode) => selectedNeighbors.has(n.id)) : node;
 }
 
-function timelineSimulation({nodes, links}: Network) {
+function timelineSimulation({nodes, links}: BaseNetwork) {
     let first = true;
     const ticked = makeRestrictedTick((node, _link) => {
         console.log("timeline");
@@ -581,11 +614,11 @@ function timelineSimulation({nodes, links}: Network) {
             first = false;
             computeEdges();
         }
-        node.attr("transform", (d: d3Node) => `translate(${d.x}, ${utils.clampX(d.y)})`);
+        node.attr("transform", (d: EMNode) => `translate(${d.x}, ${utils.clampX(d.y)})`);
     });
         
     return  d3.forceSimulation(nodes)
-        .force("link", d3.forceLink(links).id(d => (d as Node).id).strength(0))
+        .force("link", d3.forceLink(links).id(d => (d as BaseEMNode).id).strength(0))
         .force("collide", d3.forceCollide(n => n.r + 1))
         .force("anchor", d3.forceX(n => n.x).strength(3))
         .alphaMin(alphaMin)
@@ -595,7 +628,6 @@ function timelineSimulation({nodes, links}: Network) {
         .stop();
 }
 
-type Box = {x: number, y: number, width: number, height: number};
 function overlap(r1: Box) {
     return (r2: Box) => {
         const xOverlap = r1.x < (r2.x + r2.width) && r2.x < (r1.x + r1.width);
@@ -614,7 +646,7 @@ function itemOverlaps(htmlNode: HTMLElement, quadTree?: Quadtree) {
 }
 
 // Quadtree implementation: https://github.com/timohausmann/quadtree-js/
-function showNodeLabels(node) {
+function showNodeLabels(node: NodeSelection) {
     const {quadTree} = edgemapState;
     quadTree.clear();
 
@@ -623,10 +655,10 @@ function showNodeLabels(node) {
 
     const text = node.selectChildren("text");
     text.nodes().forEach(n => {
-        const bbox = n.getBoundingClientRect();
+        const bbox = (n as HTMLElement).getBoundingClientRect();
         
         if (!quadTree.retrieve(bbox).some(overlap(bbox))) {
-            n.style.visibility = "visible";
+            (n as HTMLElement).style.visibility = "visible";
             quadTree.insert(bbox);
         }
             
@@ -647,8 +679,8 @@ function hideLinkLabels() {
     }
     const link = edgemapState.link;
     const textPaths = link.nodes()
-        .filter(n => n.style.visibility == "visible")
-        .map(n => n.children[1].children[0]);
+        .filter(n => (n as SVGGElement).style.visibility == "visible")
+        .map(n => (n as SVGGElement).children[2].children[0]);
 
     sortByGenres(textPaths).forEach(tp => {            
         const bbox = tp.getBoundingClientRect();
@@ -671,14 +703,13 @@ export function setShowLabels(show: boolean) {
 }
 
 
-export type EdgemapView = "genreSimilarity" | "timeline" | "featureSimilarity";
 export function updateEdgemap(artists: artistID[] = top150, nextView: EdgemapView = "genreSimilarity") {    
     let {svg, node, link, nodes, links, _simulation: simulation, currentView, timelineAxis, showLabels} = edgemapState;
     const artistSet = new Set(artists);
     const [added, removed] = utils.bothDifference(artistSet, edgemapState.artistSet);    
 
     const addedNodes = completeNetwork.nodes.filter(n => added.has(n.id)).map(x => ({...x}));
-    const addedLinks = completeNetwork.links.filter((l: Link) => {
+    const addedLinks = completeNetwork.links.filter((l: BaseEMLink) => {
         const targetAdded = added.has(l.target);
         const sourceAdded = added.has(l.source);
         if (!(sourceAdded || targetAdded)) return false;
@@ -693,15 +724,15 @@ export function updateEdgemap(artists: artistID[] = top150, nextView: EdgemapVie
         .filter(n => !removed.has(n.id))
         .concat(addedNodes);
     links = links
-        .filter((l: d3Link) => !removed.has(l.source.id) && !removed.has(l.target.id))
+        .filter((l: EMLink) => !removed.has(l.source.id) && !removed.has(l.target.id))
         .concat(addedLinks);
 
     if (removed.size) {
-        node.filter((n: d3Node) => removed.has(n.id)).remove();
+        node.filter((n: EMNode) => removed.has(n.id)).remove();
     }
 
     const positionKey = EMViewToPositionKey.get(nextView);
-    nodes.forEach((n: d3Node) => {
+    nodes.forEach((n: EMNode) => {
         n.x = n[positionKey].x;
         n.y = n[positionKey].y;
     })
@@ -715,7 +746,7 @@ export function updateEdgemap(artists: artistID[] = top150, nextView: EdgemapVie
                 n.transition()
                     .duration(transitionTime)
                     .ease(d3.easeQuadInOut)
-                    .attr("transform", (n: d3Node) => utils.d3Translate(n[positionKey]))
+                    .attr("transform", (n: EMNode) => utils.d3Translate(n[positionKey]))
                     .on("start", () => {
                         if (!transitionStartCalled) {                                
                             link.style("visibility", "hidden");
@@ -727,9 +758,9 @@ export function updateEdgemap(artists: artistID[] = top150, nextView: EdgemapVie
                     })
                     .on("end", () => {
                         if (!transitionEndCalled) {
-                            const prevEnd = simulation.on("end")
+                            const prevOnEnd = simulation.on("end")
                             simulation.on("end", () => {
-                                prevEnd();
+                                if (prevOnEnd) prevOnEnd.call(simulation);
                                 if (edgemapState.showLabels)
                                     showNodeLabels(edgemapState.node);
                                 highlightSelection(edgemapState.selected);  
@@ -743,7 +774,7 @@ export function updateEdgemap(artists: artistID[] = top150, nextView: EdgemapVie
         simulation = nextView === 'timeline' ? timelineSimulation({nodes, links}) : similaritySimulation({nodes, links})
     }
 
-    setLinks(links);
+    setLink(links);
     addedNodes.length && addNodes(svg, addedNodes);
 
     [node, link] = [svg.selectAll(".node"), svg.selectAll(".link-node")];
@@ -755,7 +786,7 @@ export function updateEdgemap(artists: artistID[] = top150, nextView: EdgemapVie
     if (nextView === currentView) {
         const prevOnEnd = simulation.on("end");
         simulation.on("end", () => {
-            prevOnEnd();
+            if (prevOnEnd) prevOnEnd.call(simulation);
             if (showLabels) showNodeLabels(node);
         })
     }
