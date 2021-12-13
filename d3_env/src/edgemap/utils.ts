@@ -79,12 +79,6 @@ export function cartesianProduct<T, U>(arr1: T[], arr2: U[]): (T | U)[][] {
         arr2.map((b: U) => [a, b] as (T | U)[])
     );
 }
-// export function cartesianProduct(arr1: any[][], arr2: any[]): any[][]
-// export function cartesianProduct(arr1: any[], arr2: any[]): any[][] {
-//     return arr1.flatMap(a => 
-//         arr2.map(b => a.constructor === Array ? (a as Array<any>).concat(b) : [a, b])
-//     );
-// }
 
 export function createSVG(ref: SVGElement): SVGSelection {   
 
@@ -103,11 +97,8 @@ export function createTooltip() {
         .style("opacity", 0);
 }
 
-
 export function onMouseover<T>(div: TooltipDiv, textFunc = (_: T) => "...") {
-    return (event: MouseEvent, data: T) => {
-        console.log(event, data);
-        
+    return (event: MouseEvent, data: T) => {        
         div.transition()
             .duration(100)
             .style("opacity", 1);

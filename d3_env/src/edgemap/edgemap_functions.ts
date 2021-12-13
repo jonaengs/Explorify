@@ -458,7 +458,12 @@ function computeCurve(d: d3Link) {
     const [dx, dy] = [d.target.x - d.source.x, d.target.y - d.source.y];
     const dr = Math.sqrt(dx*dx + dy*dy);  
     const curveRight = +(d.target.x < d.source.x) + 0;
-    return `M${d.source.x},${d.source.y}A${dr},${dr} 0 0,${curveRight} ${d.target.x},${d.target.y}`
+    
+    // Flip curve direction if target is to the left of source. Prevents textPath being upside down.
+    if (dx < 0)
+        return computeCurve({...d, target: d.source, source: d.target})
+    
+        return `M${d.source.x},${d.source.y}A${dr},${dr} 0 0,${curveRight} ${d.target.x},${d.target.y}`
 }
 
 /*
@@ -533,6 +538,11 @@ function makeRestrictedTick(tickFunc: (node: d3Selection, link: d3Selection) => 
     }
 }
 
+function computeEdges() {
+    const {link} = edgemapState;
+    link.selectChildren("path").attr("d", computeCurve);
+}
+
 function similaritySimulation({nodes, links}: Network) {
     let first = true; // compute edges on initial tick. Solves visual bug where edges appear to not update after transition.
     const ticked = makeRestrictedTick((node, link) => {        
@@ -546,10 +556,6 @@ function similaritySimulation({nodes, links}: Network) {
             );
         } 
     )
-    const computeEdges = () => {
-        const {link} = edgemapState;
-        link.selectChildren("path").attr("d", computeCurve)
-    }
 
     return d3.forceSimulation(nodes)
         .force("link", d3.forceLink(links).id(d => (d as Node).id).strength(0))
@@ -577,11 +583,6 @@ function timelineSimulation({nodes, links}: Network) {
         }
         node.attr("transform", (d: d3Node) => `translate(${d.x}, ${utils.clampX(d.y)})`);
     });
-
-    const computeEdges = () => {
-        const {link} = edgemapState;
-        link.selectChildren("path").attr("d", computeCurve)
-    }
         
     return  d3.forceSimulation(nodes)
         .force("link", d3.forceLink(links).id(d => (d as Node).id).strength(0))
