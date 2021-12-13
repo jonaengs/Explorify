@@ -1,12 +1,16 @@
-import * as _artistData from '../../data/artist_data.json'
-import * as _trackFeatures from '../../data/track_feature_data.json';
-import * as _streamingHistory from '../../data/merged_history.json';
+import * as _artistData from '../../../data/artist_data.json'
+import * as _trackFeatures from '../../../data/track_feature_data.json';
+import * as _streamingHistory from '../../../data/merged_history.json';
+import * as _DRResults from '../../../data/dr_results.json';
 import './map_extensions.ts'
+
 
 export type genre = string;
 export type artistName = string;
 export type artistID = string;
 export type trackID = string;
+export type DRCoordinate = [x: number, y: number];
+
 
 export type ArtistData = {
     id: artistID,
@@ -54,6 +58,16 @@ export type TrackFeature = {
     loudness: number, // float in [-inf, 0] (?)
 }
 
+export type DRResult = {
+    artistID: artistID,
+    genrePCA: DRCoordinate;
+    meanFeaturePCA: DRCoordinate;
+    normFeaturePCA: DRCoordinate;
+    featureTSNE: DRCoordinate;
+    genreTSNE: DRCoordinate;
+    genreTSNENoOutliers: DRCoordinate;
+}
+
 export const artistData: ArtistData[] = _artistData;
 
 export const artistMap: Map<artistID, artistName> = new Map(
@@ -86,3 +100,13 @@ export const trackFeatures: Map<trackID, TrackFeature> = new Map(
         [tid, {...tfs, timeSignature: tfs.time_signature} as TrackFeature]
     )
 );
+
+export const DRResults: DRResult[] = _DRResults.map(res => ({
+    artistID: res.artist_id,
+    genrePCA: res.genre_pca as DRCoordinate,
+    meanFeaturePCA: res.mean_feature_pca as DRCoordinate,
+    normFeaturePCA: res.norm_feature_pca as DRCoordinate,
+    featureTSNE: res.tsne_feature as DRCoordinate,
+    genreTSNE: res.tsne_genre as DRCoordinate,
+    genreTSNENoOutliers: res.tsne_genre_no_outliers as DRCoordinate,
+}));

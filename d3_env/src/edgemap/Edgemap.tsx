@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom";
-import { artistStreamTimes } from "../derived_data";
+import { artistStreamTimes } from "./derived_data";
 import { autoPlayInterval } from "./constants";
 import { EdgemapView, NodePositionKey, setNodeColorKey, setShowLabels, setupEdgemap, updateEdgemap } from "./edgemap_functions";
 import * as utils from './utils';

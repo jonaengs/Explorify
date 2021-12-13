@@ -1,6 +1,6 @@
 import * as d3 from "d3";
 import {margin, width, height} from './constants';
-import { DefaultMap } from "../map_extensions";
+import { DefaultMap } from "./map_extensions";
 
 
 export type TooltipDiv = d3.Selection<HTMLDivElement, unknown, HTMLElement, any>;
@@ -69,13 +69,12 @@ export function getSvg(id: string): SVGSelection {
         .attr("transform", `translate(${margin.left}, ${margin.top})`);
 }
 
-export function cartesianProduct<T, U>(arr1: T[][], arr2: U[]): (T | U)[][]
-export function cartesianProduct<T, U>(arr1: T[], arr2: U[]): (T | U)[][] {
+export function cartesianProduct<T, U>(arr1: T[] | T[][], arr2: U[]): (T | U)[][] {
     if (arr1[0].constructor === Array) 
-        return arr1.flatMap(a => 
-            arr2.map((b: U) => (a as T[]).concat(b) as (T | U)[])
+        return (arr1 as T[][]).flatMap(a => 
+            arr2.map((b: U) => (a as (T | U)[]).concat(b))
         );
-    return arr1.flatMap((a: T) => 
+    return (arr1 as T[]).flatMap((a: T) => 
         arr2.map((b: U) => [a, b] as (T | U)[])
     );
 }

@@ -1,17 +1,15 @@
-import * as drResults from '../../../data/dr_results.json'
 import * as d3 from "d3";
 import * as utils from './utils';
 import { width, height, maxDistance, alphaMin, alphaDecay, transitionTime, timeAxisDivisions, deselectHSL, backgroundColor} from './constants';
-import {DefaultMap} from '../map_extensions';
-import '../map_extensions.ts';
-import { StreamInstance, artistData, streamingHistoryNoSkipped, artistID, artistMap} from '../data'
-import { artistStreamTimes, artistToGenres, firstArtistStream, getTimePolyExtent } from '../derived_data';
+import {DefaultMap} from './map_extensions';
+import './map_extensions.ts';
+import { StreamInstance, artistData, streamingHistoryNoSkipped, artistID, artistMap, DRResults, DRResult, DRCoordinate } from './data'
+import { artistStreamTimes, artistToGenres, firstArtistStream, getTimePolyExtent } from './derived_data';
 import Quadtree from '@timohausmann/quadtree-js';
 
 
 export type EdgemapView = "genreSimilarity" | "timeline" | "featureSimilarity";
 // A feature vector reduced to 2 dimensions. Must be mapped to fit within chart.
-type DRCoordinate = [number, number];
 type Position = {x: number, y: number};
 type Box = {x: number, y: number, width: number, height: number};
 type BaseEMNode = {
@@ -184,8 +182,8 @@ const completeNetwork: BaseNetwork = computeNetwork();
 
 function computeNetwork(): BaseNetwork {    
     const genrePositions = (() => {
-        const data: Map<artistID, DRCoordinate> = new Map(drResults.map(
-            res => [res.artist_id, res.tsne_genre_no_outliers as DRCoordinate]
+        const data: Map<artistID, DRCoordinate> = new Map(DRResults.map(
+            res => [res.artistID, res.genreTSNENoOutliers as DRCoordinate]
         ));
         const values = Array.from(data.values()).filter(v => v !== null);
         const xAxis = d3.scaleLinear().domain(d3.extent(values.map(([x,]) => x))).range([0, width]);
@@ -198,8 +196,8 @@ function computeNetwork(): BaseNetwork {
     })();
     
     const featurePositions = (() => {
-        const data: Map<artistID, DRCoordinate> = new Map(drResults.map(
-            res => [res.artist_id, res.tsne_feature as DRCoordinate]
+        const data: Map<artistID, DRCoordinate> = new Map(DRResults.map(
+            res => [res.artistID, res.featureTSNE as DRCoordinate]
         ));
         const values = Array.from(data.values()).filter(v => v !== null);
         const xAxis = d3.scaleLinear().domain(d3.extent(values.map(([x,]) => x))).range([0, width]);
