@@ -106,6 +106,7 @@
 .y-axis .tick text {
   font-family: Arial, Helvetica;
   font-size: medium!important;
+  fill: whitesmoke;
 }
 
 .y-axis .tick line {

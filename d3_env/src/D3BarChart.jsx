@@ -1,6 +1,7 @@
 import React, {useRef, useEffect, useState} from "react";
 import * as d3 from 'd3';
 import { groupBy, msToTime, comparator} from "./helpers"
+import { setEMHighlighted } from "./edgemap/edgemap_functions";
 
 const margin = {
     top: 20,
@@ -386,9 +387,10 @@ const D3BarChart = (props) => {
             if(!d3.select(this).classed("selected")){
                 d3.selectAll(".bar").classed("selected", false)
                 d3.select(this).classed("selected", true);
-                // select artst on graph (pass artist id/name)
+                setEMHighlighted(d.id);
             } else {
                 d3.select(this).classed("selected", false)
+                setEMHighlighted(null);
             }
         });
 
@@ -399,6 +401,10 @@ const D3BarChart = (props) => {
             <svg ref={barChart}></svg>
         </div>
     )
+}
+
+export function setBarchartHighlighted(id) {
+    d3.selectAll("#bar-chart .bar").classed("selected", d => d.id === id);
 }
 
 export default D3BarChart;

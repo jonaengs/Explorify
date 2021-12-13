@@ -40,7 +40,6 @@ export const Edgemap = ({ artistIDs, autoPlay = false }: EdgemapProps) => {
 
     const [top, setTop] = useState(50);
     const topArtists = Array.from(artistIDs || sortedArtistIDs).slice(0, top);    
-    console.log("artists in edgemap:", topArtists);
     
     const [view, setView] = useState<EdgemapView>("genreSimilarity");
     const [colorKey, setColorKey] = useState<NodePositionKey>("genrePos");

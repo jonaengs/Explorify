@@ -6,14 +6,18 @@ import './map_extensions.ts';
 import { StreamInstance, artistData, streamingHistoryNoSkipped, ArtistID, artistMap, DRResults, DRCoordinate, Genre } from './data'
 import { artistStreamTimes, artistToGenres, firstArtistStream, getTimePolyExtent } from './derived_data';
 import Quadtree from '@timohausmann/quadtree-js';
+import { setBarchartHighlighted } from "../D3BarChart";
 
 
 /*
     BEGIN DIRECT EDGEMAP MANIPULATION INTERFACE
 */
 
-export function setHighlighted(id: ArtistID) {
-    highlightSelection(edgemapState.nodes.find(n => n.id === id));
+export function setEMHighlighted(id: ArtistID) {
+    if (id)
+        highlightSelection(edgemapState.nodes.find(n => n.id === id));
+    else
+        dropSelectionHighlight();
 }
 
 const filteredGenres = new Set<Genre>();
@@ -332,6 +336,9 @@ function highlightSelection(selected: EMNode) {
     // If new node is being selected
     if (edgemapState.selected !== selected) dropSelectionHighlight();
     
+    // Barchart connectivity
+    setBarchartHighlighted(selected.id);
+    
     const {node, link, links} = edgemapState;
     
     link.style("visibility", (l: EMLink) => 
@@ -365,6 +372,9 @@ function highlightSelection(selected: EMNode) {
 
 function dropSelectionHighlight() {
     const {node, link, selectedNeighbors, selected, showLabels} = edgemapState;
+    
+    // Barchart connectivity
+    setBarchartHighlighted(null);
     
     link.style("visibility", "hidden");
     (node.selectChildren("circle") as NodeCircleSelection)
