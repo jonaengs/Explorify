@@ -1,11 +1,11 @@
 import os
 
 
-# OAUTH token for the Spotify API
-oauth_token = os.environ.get("SPOTIFY_API_TOKEN") or \
-""" 
-BQDS2y1EJsD9-Pveqp-QuDgx04o2GsF2xonkwI2-CZoAZ3YX_rENPV3ozTP-8NO19HmvGUR4DWOsK1ZQsEa9v0AiWkT2Jq1-2w5WK0Y_oGAWQc6_y3_cfyb2aP4GK8RKlPqcHoOgrnrYpWGuRFJM63zHZqv6Tu6mvEfTFiiJuwwYKXkpbOs-m0QETyOoFSEH351zACrtviynG4bIPGXl01FgQYp8EcZLZZzVyMjKYpHv6UI4rsxaidGmnLXLVnSbs0VtFzilpkOZw_NI608
-""".strip()
+SPOTIFY_OAUTH_TOKEN = os.environ.get("SPOTIFY_API_TOKEN")
+
+SPOTIFY_CLIENT_ID = os.environ.get("SPOTIFY_CLIENT_ID") or input("Spotify CLIENT ID: ")
+SPOTIFY_CLIENT_SECRET = os.environ.get("SPOTIFY_CLIENT_SECRET") or input("Spotify CLIENT SECRET: ")
+
 
 # Path to data folder, where files are read from and written to
 # MUST contain StreamingHistory0.json. Other files are optional and created by this program.

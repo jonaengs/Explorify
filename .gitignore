@@ -5,3 +5,4 @@ FullData/
 .ipynb_checkpoints/
 */__pycache__/
 .idea/
+.cache

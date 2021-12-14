@@ -1,11 +1,16 @@
 import json
 import requests
-import pprint 
+from pprint import pprint 
 import re
+from spotipy.oauth2 import SpotifyClientCredentials
 
-from settings import oauth_token
+from settings import SPOTIFY_OAUTH_TOKEN, SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET
 
-print("using OAUTH TOKEN:\n" + oauth_token + "\n")
+if SPOTIFY_OAUTH_TOKEN:
+    oauth_token = SPOTIFY_OAUTH_TOKEN
+else:
+    client_credentials_manager = SpotifyClientCredentials(client_id=SPOTIFY_CLIENT_ID, client_secret=SPOTIFY_CLIENT_SECRET)
+    oauth_token = client_credentials_manager.get_access_token()['access_token']
 
 headers = {
     "Accept": "application/json",
@@ -14,10 +19,13 @@ headers = {
 }
 
 def get_track_data_by_name(artist_name, track_name):
+    resp, data = None, None
+    
     def normalize_str(s):
         return re.sub("\'`´", "", s.lower())
     
     def search(params):
+        nonlocal resp, data
         resp = requests.get(endpoint, headers=headers, params=params)
         if resp.status_code != 200:
             raise ValueError(resp.text)

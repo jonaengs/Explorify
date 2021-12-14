@@ -7,13 +7,12 @@ import json
 from datetime import datetime, date, timedelta
 
 from inna_data_extraction import *
-from inna_helpers import *
 
 def get_track_data(fully_listened):
     unique = fully_listened.drop_duplicates(subset=['trackName'])
     track_data = {}
     for i, row in unique.iterrows():
-        track_data[row.trackName] = get_track_details(row)
+        track_data[row.trackName] = extract_track_details(row)
     
     return track_data
 
@@ -22,7 +21,7 @@ def get_track_details(fully_listened):
     unique_track_ids = fully_listened.trackId.unique()
     track_details = {}
     for track_id in unique_track_ids:
-        track_details[track_id] = get_track_features(track_id)
+        track_details[track_id] = extract_track_features(track_id)
 
     return track_details
 
@@ -31,7 +30,7 @@ def get_artist_details(filtered):
     uniques_artist_ids = filtered.trackArtistId.unique()
     artist_details = {}
     for artist in uniques_artist_ids:
-        artist_details[artist] = get_artist_data(artist)
+        artist_details[artist] = extract_artist_data(artist)
 
     return artist_details
 
@@ -72,7 +71,7 @@ def get_dataset(filtered):
 
     return dataset
 
-def get_full_dataset(dataset):
+def get_full_dataset(dataset, artist_data):
     full_dataset = {}
     empty_artist = [{"name": "", "popularity": 0, "id": "", "artist_duration": 0, "artist_genres": []}]
     all_artists = {}
@@ -121,7 +120,7 @@ def get_full_dataset(dataset):
             "artists": artists,
         }
 
-    return full_dataset
+    return full_dataset, all_artists
 
 def get_all_dates(full_dataset):
     all_days = sorted(full_dataset.keys())

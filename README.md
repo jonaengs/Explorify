@@ -6,7 +6,9 @@ CPSC 547 Project
 Requirements:  `Python >= 3.8`
 1. Retrieve your personal spotify listening history by visiting your Spotify account privacy page and following the instructions at the bottom of the page. 
 2. Upon receiving your data, extract the file called "StreamingHistory0.json" into the data folder in this directory.
-3. Retrieve a Spotify API key and integrate it with the code where required <--- SHOULD BE POSSIBLE TO DO BY SETTING ENV VARIABLE
+3. Set one of the two following sets of environmental variables:
+    * `SPOTIFY_API_TOKEN`. You can generate this by going to the console at developer.spotify.com and copying the generated OAuth token.
+    * `SPOTIFY_CLIENT_ID` and `SPOTIFY_CLIENT_SECRET`. You get these by creating a new app in your dashboard at developer.spotify.com.
 4. `pip install -r requirements.txt`
 5. Run the pipeline 
 

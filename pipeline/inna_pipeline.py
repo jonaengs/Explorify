@@ -7,11 +7,13 @@ import json
 from datetime import datetime, date, timedelta
 from collections import OrderedDict
 
-from inna_data_extraction import *
+from inna_data_extraction import extract_track_id, extract_track_duration, extract_track_popularity, extract_album_id, extract_artist_id
 from inna_helpers import *
 
+# SETTINGS
+folder = "../data/Jonatan_data/"
+collect_data = False
 
-folder = "../data/Kaggle_data/"
 
 # Create URL to JSON file (alternatively this can be a filepath)
 json_file = folder + "StreamingHistory0.json"
@@ -23,38 +25,31 @@ threshold = 10000  # 10 seconds
 fully_listened = df.loc[df['msPlayed'] >= threshold] 
 skipped = df.loc[df['msPlayed'] < threshold]
 
+if collect_data:
+    # Collect data
+    track_data = get_track_data(fully_listened)
+    fully_listened["trackDetails"] = fully_listened.trackName.apply(lambda x: track_data[x])
+    fully_listened["trackId"] = fully_listened["trackDetails"].apply(extract_track_id)
+    fully_listened["trackDuration"] = fully_listened["trackDetails"].apply(extract_track_duration)
+    fully_listened["trackPopularity"] = fully_listened["trackDetails"].apply(extract_track_popularity)
+    fully_listened["trackAlbum"] = fully_listened["trackDetails"].apply(extract_album_id)
+    fully_listened["trackArtistId"] = fully_listened["trackDetails"].apply(extract_artist_id)
+    track_details = get_track_details(fully_listened)
+    fully_listened["trackFeatures"] = fully_listened["trackId"].apply(lambda x: track_details[x])
 
-# Spotify API
-import spotipy
-from spotipy.oauth2 import SpotifyClientCredentials
+    # Write out
+    fully_listened.to_pickle(folder + "listened_raw.pkl")
 
-client_id = "b9dbb97e8d404c7ca611adc9aa7814c6"
-client_secret = "49de3614d07a4ac5bab51f4c3e836c47"
-credentials = SpotifyClientCredentials(client_id=client_id, client_secret=client_secret)
-# token = credentials.get_access_token()
-spotify = spotipy.Spotify(auth_manager=credentials)
+    # clean-up None values
+    filtered = fully_listened.loc[fully_listened["trackId"].notna()]
+    filtered.drop("trackDetails", axis=1, inplace=True)
 
+    # Write out
+    filtered.to_pickle(folder + "listened_filtered_raw.pkl")
 
-# Collect data
-track_data = get_track_data(fully_listened)
-fully_listened["trackDetails"] = fully_listened.trackName.apply(lambda x: track_data[x])
-fully_listened["trackId"] = fully_listened["trackDetails"].apply(get_track_id)
-fully_listened["trackDuration"] = fully_listened["trackDetails"].apply(get_track_duration)
-fully_listened["trackPopularity"] = fully_listened["trackDetails"].apply(get_track_popularity)
-fully_listened["trackAlbum"] = fully_listened["trackDetails"].apply(extract_album_id)
-fully_listened["trackArtistId"] = fully_listened["trackDetails"].apply(get_artist_id)
-track_details = get_track_details(fully_listened)
-fully_listened["trackFeatures"] = fully_listened["trackId"].apply(lambda x: track_details[x])
-
-# Write out
-fully_listened.to_pickle(folder + "listened_raw.pkl")
-
-# clean-up None values
-filtered = fully_listened.loc[fully_listened["trackId"].notna()]
-filtered.drop("trackDetails", axis=1, inplace=True)
-
-# Write out
-filtered.to_pickle(folder + "listened_filtered_raw.pkl")
+else: 
+    fully_listened = pd.read_pickle(folder + "listened_raw.pkl")
+    filtered = pd.read_pickle(folder + "listened_filtered_raw.pkl")
 
 
 # Extract artist data
@@ -75,7 +70,7 @@ with open(folder + "track_data.json", "w") as f:
 # Full dataset Extraction
 filtered["date"] = filtered.endTime.apply(lambda x: x.split(" ")[0])
 dataset = get_dataset(filtered)
-full_dataset = get_full_dataset(dataset)
+full_dataset, all_artists = get_full_dataset(dataset, artist_data)
 
 # Add dates to dataset
 all_dates = get_all_dates(full_dataset)
