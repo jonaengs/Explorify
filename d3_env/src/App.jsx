@@ -152,7 +152,7 @@ function App() {
                                                         <Card.Title> Number of Artists to Display</Card.Title>
                                                             <InputGroup>
                                                                 <InputGroup.Text >nodes</InputGroup.Text>
-                                                                <Form.Control style={{width: "70%"}} type="number" min="1" max={topArtistsData.length} placeholder={"eg. 10, 20, 50"} onChange={nodeRedraw}/>
+                                                                <Form.Control style={{width: "70%"}} type="number" min="1" max={topArtistsData.length} placeholder={"default 50"} onChange={nodeRedraw}/>
                                                             </InputGroup>
                                                     </Card.Body>
                                                 </Card>

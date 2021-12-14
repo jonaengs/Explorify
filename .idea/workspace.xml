@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b74dc22e-610e-4db3-82b6-60bde2b0a278" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/d3_env/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/d3_env/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/d3_env/src/edgemap/Edgemap.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/d3_env/src/edgemap/Edgemap.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="b74dc22e-610e-4db3-82b6-60bde2b0a278" name="Changes" comment="timeline" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,7 +23,7 @@
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="$PROJECT_DIR$/d3_env/node_modules/typescript/lib" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RunManager">
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -55,7 +52,7 @@
       <updated>1639380058997</updated>
       <workItem from="1639380061809" duration="4197000" />
       <workItem from="1639386300140" duration="3112000" />
-      <workItem from="1639438219137" duration="15154000" />
+      <workItem from="1639438219137" duration="15460000" />
     </task>
     <servers />
   </component>
