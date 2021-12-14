@@ -20,6 +20,7 @@
 .x-axis .tick text {
   font-family: Arial, Helvetica;
   font-size: medium!important;
+  stroke: ghostwhite!important;
 }
 
 .x-axis .tick line {

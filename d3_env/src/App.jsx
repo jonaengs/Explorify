@@ -47,30 +47,28 @@ function App() {
     const positionArtist = () => {
         const elem = document.getElementById("position");
         elem.value = "genreSimilarity";
-        var ev = new Event('change',  { bubbles: true});
+        const ev = new Event('change',  { bubbles: true});
         elem.dispatchEvent(ev)
     }
 
     const positionFeatures = () => {
         const elem = document.getElementById("position");
         elem.value = "featureSimilarity";
-        var ev = new Event('change',  { bubbles: true});
+        const ev = new Event('change',  { bubbles: true});
         elem.dispatchEvent(ev)
     }
 
     const positionTimeline = () => {
         const elem = document.getElementById("position");
         elem.value = "timeline";
-        var ev = new Event('change',  { bubbles: true});
+        const ev = new Event('change',  { bubbles: true});
         elem.dispatchEvent(ev)
     }
 
     const nodeRedraw = (selected) => {
-        console.log("Here")
         const elem = document.getElementById("nodes-number");
         elem.value = selected.target.value;
-        let ev = new Event('change',  { bubbles: true});
-        // ev.target = selected.target
+        var ev = new Event('click',  { bubbles: true });
         elem.dispatchEvent(ev)
     }
 
@@ -78,7 +76,7 @@ function App() {
         const elem = document.getElementById("attributes");
         if (selected.target.checked) elem.checked = true;
         else elem.checked = false;
-        var ev = new Event('click',  { bubbles: true});
+        const ev = new Event('click',  { bubbles: true});
         elem.dispatchEvent(ev)
     }
 
@@ -152,7 +150,7 @@ function App() {
                                                         <Card.Title> Number of Artists to Display</Card.Title>
                                                             <InputGroup>
                                                                 <InputGroup.Text >nodes</InputGroup.Text>
-                                                                <Form.Control style={{width: "70%"}} type="number" min="1" max={topArtistsData.length} placeholder={"default 50"} onChange={nodeRedraw}/>
+                                                                <Form.Control style={{width: "70%"}} type="number" min="1" max={topArtistsData.length} step={5} placeholder={"default 50"} onChange={nodeRedraw}/>
                                                             </InputGroup>
                                                     </Card.Body>
                                                 </Card>
@@ -179,9 +177,7 @@ function App() {
                                                         <BsQuestionCircle/>
                                                     </h5>
                                                 </Card.Header>
-                                                <div id="edgemap-container" style={{"width": "100%", "height" : "900px"}}>
-                                                    <Edgemap artistIDs={edgemapArtists}/>
-                                                </div>
+                                                <Edgemap artistIDs={edgemapArtists}/>
                                             </Card>
                                         </Col>
                                     </Row>

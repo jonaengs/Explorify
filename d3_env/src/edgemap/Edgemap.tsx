@@ -84,7 +84,7 @@ export const Edgemap = ({ artistIDs, autoPlay = false }: EdgemapProps) => {
         )
     }
     
-    return <div id="edgemap-container">
+    return <div id="edgemap-container" style={{"width": "100%", "height" : "900px"}}>
         <div id="edgemap-controls-container" style={{"display": "none"}}>
             {/*style={{"display" : "none"}}>*/}
             <select onChange={e => setView(e.target.value as EdgemapView)} value={view} id={"position"}>
@@ -98,7 +98,7 @@ export const Edgemap = ({ artistIDs, autoPlay = false }: EdgemapProps) => {
                 <option value="featurePos">feature</option>
             </select>
             {/*setTop(parseInt(e.target.value))*/}
-            <input type="number" value={top} onChange={e => console.log(e)} id={"nodes-number"}/>
+            <input type="number" value={top} onClick={e => setTop(parseInt(e.target.value))} id={"nodes-number"}/>
             <input type="checkbox" checked={displayLabels} onClick={_ => setDisplayLabels(!displayLabels)} onChange={() => null} id={"attributes"}/>
         </div>
         <svg id="edgemap" ref={edgemapRef}></svg>
