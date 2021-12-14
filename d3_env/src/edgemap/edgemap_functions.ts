@@ -7,6 +7,7 @@ import { StreamInstance, artistData, streamingHistoryNoSkipped, ArtistID, artist
 import { artistStreamTimes, artistToGenres, firstArtistStream, getTimePolyExtent } from './derived_data';
 import Quadtree from '@timohausmann/quadtree-js';
 import { setBarchartHighlighted } from "../D3BarChart";
+import { updateColours } from "../D3Timeline";
 
 
 /*
@@ -204,6 +205,7 @@ export function setNodeColorKey(key: NodePositionKey) {
     highlightSelection(edgemapState.selected);
     if (!edgemapState.selected)
         dropSelectionHighlight();
+    updateColours();
 }
 
 
@@ -836,4 +838,14 @@ export function updateEdgemap(artists: ArtistID[] = top150, nextView: EdgemapVie
     }
 
     setSimulation(simulation, nextView !== currentView);   
+}
+
+// export function getArtistColor(id: ArtistID) {
+//     try { return getColor(edgemapState.nodes.find(n => n.id === id));
+//     } catch { return null; }
+// }
+
+export function getArtistColor(id: ArtistID) {
+    try { return getColor(completeNetwork.nodes.find(n => n.id === id));
+    } catch { return null; }
 }

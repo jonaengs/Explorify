@@ -109,8 +109,8 @@ const CalendarHeatmap = ({streamingData, topArtistsData, timelineData, setEdgema
                     d3.select(this).classed("selected", true);
                     if (d.full_day_duration != 0) {
                         updateBar(d.artists);
-                        updateTimeline(d.date, timelineData[d.date]);
                         setEdgemapArtists(d.artists.map(a => a.id));
+                        updateTimeline(d.date, timelineData[d.date]);
                     }
                     else {
                         updateEmpty();
@@ -194,7 +194,7 @@ const CalendarHeatmap = ({streamingData, topArtistsData, timelineData, setEdgema
                 .attr("y",yOffset/1.2)
                 .text(d3.timeFormat("%b")(m));
         })
-    })
+    }, [])
 
 
     return(

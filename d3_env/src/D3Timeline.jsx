@@ -1,6 +1,7 @@
 import React, {useRef, useEffect, useState} from "react";
 import * as d3 from 'd3';
 import { msToTime } from "./helpers"
+import { getArtistColor } from "./edgemap/edgemap_functions";
 
 const margin = {
     top: 40,
@@ -19,6 +20,18 @@ const toolDate = d3.timeFormat("%d %b %Y");
 const extractYMD = function (s){
     s = s.split("-")
     return [parseInt(s[0]), parseInt(s[1]), parseInt(s[2])]
+}
+
+export function updateColours(){
+    const svg = d3.select("#timeline")
+        .select("svg");
+
+    let rect = svg.selectAll("rect")
+
+    rect.transition(2000)
+        .style("fill", function(d) {
+            return getArtistColor(d.artist_id)
+        })
 }
 
 export function updateTimeline(date, dateData) {
@@ -61,12 +74,7 @@ export function updateTimeline(date, dateData) {
         .attr("class", "timeline-bar")
         .attr("transform", `translate(0, ${margin.top * 2})`)
         .style("fill", function(d) {
-            try {
-                let circle = d3.select("#" + d.artist_name.replace(" ", "_"))
-                return circle.style("fill")
-            } catch (DOMException) {
-                return "rgb(11,3,87)"
-            }
+            return getArtistColor(d.artist_id)
         })
 
     svg.selectAll("rect")
