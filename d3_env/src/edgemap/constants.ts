@@ -14,9 +14,9 @@ export const transitionTime = 2500;
 export const timeAxisDivisions = 4;
 
 // Simulation constants
-const targetSimulationIterations = 50;
+const targetSimulationIterations = 200;
 export const alphaDecay = 1 - Math.pow(0.001, 1 / targetSimulationIterations);
 export const alphaMin = 0.05;
 
 // Other
-export const autoPlayInterval = 3500;
+export const autoPlayInterval = 2500;

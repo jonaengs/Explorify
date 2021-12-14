@@ -7,6 +7,8 @@ import * as utils from './utils';
 import { ArtistID } from "./data";
 
 import './edgemap.css'
+import { Card, Col, Form, Row } from "react-bootstrap";
+import { BsFillPauseCircleFill, BsFillPlayCircleFill, BsQuestionCircle } from "react-icons/bs";
 
 
 export type EdgemapProps = {
@@ -19,7 +21,7 @@ const valuesOrdered = (() => {
     const topValues = [50, 100, 150];
     const viewValues: EdgemapView[] = ["genreSimilarity", "featureSimilarity", "timeline"];
     const colorValues: NodePositionKey[] = ["genrePos", "featurePos", "timelinePos"];
-    const displayValues = [false, true, false];
+    const displayValues = [false, true];
     
     return [
         topValues,
@@ -34,8 +36,9 @@ const allValueCombinations: (number | EdgemapView | NodePositionKey | boolean)[]
     
 const sortedArtistIDs = Array.from(artistStreamTimes.keys())
 const debouncedUpdateEdgemap = utils.debounce(updateEdgemap, 300);
-let autoPlayTimer = null;
-export const Edgemap = ({ artistIDs, autoPlay = false }: EdgemapProps) => {
+let autoPlayTimeout = null;
+export const Edgemap = ({ artistIDs }: EdgemapProps) => {
+    const [autoPlay, setAutoPlay] = useState(true);
     const [autoPlayCounter, setAutoPlayCounter] = useState(0);
 
     const [top, setTop] = useState(50);
@@ -64,12 +67,13 @@ export const Edgemap = ({ artistIDs, autoPlay = false }: EdgemapProps) => {
         [displayLabels]
     );
 
-    if (autoPlay && !autoPlayTimer) {
-        autoPlayTimer = setTimeout(() => {
-            autoPlayTimer = null;
-            // TODO: Must match valuesOrdered order
+    if (autoPlay && !autoPlayTimeout) {
+        const prevViewIndex = utils.mod(autoPlayCounter - 2, allValueCombinations.length);
+        const viewChanged = allValueCombinations[prevViewIndex][1] !== view;
+        autoPlayTimeout = setTimeout(() => {
+            autoPlayTimeout = null;
+            // NB! Must match valuesOrdered order
             const [autoTop, autoView, autoColor, autoDisplay] = allValueCombinations[autoPlayCounter];
-            console.log(autoTop, autoView, autoColor, autoDisplay);
             
             ReactDOM.unstable_batchedUpdates(() => {
                 setAutoPlayCounter((autoPlayCounter + 1) % allValueCombinations.length);
@@ -77,30 +81,92 @@ export const Edgemap = ({ artistIDs, autoPlay = false }: EdgemapProps) => {
                 setView(autoView as EdgemapView);
                 setColorKey(autoColor as NodePositionKey);
                 setDisplayLabels(autoDisplay as boolean);
-
             })
         },
-        autoPlayInterval
+        autoPlayInterval * (+viewChanged + 1)
         )
+    } else if (!autoPlay && autoPlayTimeout) {
+        clearTimeout(autoPlayTimeout);
     }
-    
-    return <div id="edgemap-container">
-        <div id="edgemap-controls-container" style={{"display": "none"}}>
-            {/*style={{"display" : "none"}}>*/}
-            <select onChange={e => setView(e.target.value as EdgemapView)} value={view} id={"position"}>
-                <option value="genreSimilarity">genre</option>
-                <option value="timeline">time</option>
-                <option value="featureSimilarity">feature</option>
-            </select>
-            <select onChange={e => setColorKey(e.target.value as NodePositionKey)} value={colorKey} id={"colour-map"}>
-                <option value="genrePos">genre</option>
-                <option value="timelinePos">time</option>
-                <option value="featurePos">feature</option>
-            </select>
-            {/*setTop(parseInt(e.target.value))*/}
-            <input type="number" value={top} onChange={e => console.log(e)} id={"nodes-number"}/>
-            <input type="checkbox" checked={displayLabels} onClick={_ => setDisplayLabels(!displayLabels)} onChange={() => null} id={"attributes"}/>
-        </div>
-        <svg id="edgemap" ref={edgemapRef}></svg>
-    </div>
+
+    return (
+    <Row md={9}>
+        <Col md={2}>
+            <Card className={"filter-panel"}>
+                <Card.Header>
+                    <h5>
+                        <a>Control Panel</a>
+                        <BsQuestionCircle/>
+                    </h5>
+                </Card.Header>
+                <Card className={"filter-panel"} style={{height: "15%"}}>
+                    <Card.Body>
+                        <Card.Title>Colour By </Card.Title>
+                        <Form id={"colour-by"} onChange={e => setColorKey(e.target.value as NodePositionKey)}>
+                            <Form.Check inline label="Artist Genres" name="colour-by" type={"radio"} checked={colorKey === "genrePos"}  value={"genrePos"}/>
+                            <Form.Check inline label="Artist Features" name="colour-by" type={"radio"} checked={colorKey === "featurePos"} value={"featurePos"}/>
+                            <Form.Check inline label="Artist Timeline" name="colour-by" type={"radio"} checked={colorKey === "timelinePos"} value={"timelinePos"}/>
+                        </Form>
+                    </Card.Body>
+                </Card>
+                <Card className={"filter-panel"} style={{height: "15%"}}>
+                    <Card.Body>
+                        <Card.Title>Position By </Card.Title>
+                            <Form onChange={e => setView(e.target.value as EdgemapView)} id={"position"}>
+                                <Form.Check inline label="Artist Genres" name="position-by" type={"radio"} checked={view === "genreSimilarity"} value={"genreSimilarity"}/>
+                                <Form.Check inline label="Artist Features" name="position-by" type={"radio"} checked={view === "featureSimilarity"} value={"featureSimilarity"}/>
+                                <Form.Check inline label="Artist Timeline" name="position-by" type={"radio"} checked={view === "timeline"} value={"timeline"}/>
+                            </Form>
+                    </Card.Body>
+                </Card>
+                <Card className={"filter-panel"} style={{height: "16%"}}>
+                    <Card.Body>
+                        <Card.Title>Number of Artists to Display</Card.Title>
+                            <Form onChange={e => setTop(parseInt(e.target.value))}>
+                                {/*<InputGroup.Text>nodes</InputGroup.Text>*/}
+                                <Form.Control style={{width: "70%"}} type="number" min="1" max={500} value={top}/>
+                            </Form>
+                    </Card.Body>
+                </Card>
+                <Card className={"filter-panel"} style={{height: "10%"}}>
+                    <Card.Body>
+                        <Card.Title>Display Attributes</Card.Title>
+                        <Form id={"display-attr"}>
+                            <Form.Check inline label="Artist Names" type={"checkbox"} checked={displayLabels} onClick={_ => setDisplayLabels(!displayLabels)}/>
+                        </Form>
+                    </Card.Body>
+                </Card>
+                <Card className={"filter-panel"} style={{height: "40%"}}>
+                    <Card.Body>
+                        <Card.Title>Legend</Card.Title>
+                        <Card.Text>
+                            <p>Node color: </p>
+                            <p>Node position: </p>
+                            <p>Node size: Artist streaming time</p>
+                            <p>Edges: Common genres</p>
+                            <p>Edges lightness: Proportion of genres in common</p>
+                            <p>Edges thickness: Number of genres in common</p>
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+            </Card>
+        </Col>
+        <Col md={10}>
+            <Card className={"display-card"}>
+                <Card.Header>
+                    <h5>
+                        <a>Artist-Genre Network</a>
+                        <BsQuestionCircle/>
+                    </h5>
+                </Card.Header>
+                <div id="edgemap-container" style={{"width": "100%", "height" : "900px"}}>
+                    <span id="edgemap-autoplay-toggle" onClick={() => setAutoPlay(!autoPlay)}>
+                        {autoPlay ? <BsFillPauseCircleFill />: <BsFillPlayCircleFill />}
+                    </span>
+                    <svg id="edgemap" ref={edgemapRef}></svg>
+                </div>
+            </Card>
+        </Col>
+    </Row>
+    );
 }

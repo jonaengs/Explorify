@@ -616,7 +616,7 @@ function makeRestrictedTick(tickFunc: (node: NodeSelection, link: LinkSelection)
         }
         prevPositions = nodes.map(n=> [n.x, n.y]);
     }
-    // return ticked;
+    return ticked;
 
     return () => {
         const { node, link } = edgemapState;

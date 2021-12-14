@@ -185,3 +185,8 @@ export function divideWidth(n: number): number[] {
     }
     return divs
 }
+
+// Fun fact: The JS % operator is not modulo, but remainder, making it useless for negative values
+export function mod(a: number, b: number) {
+    return ((a % b) + b) % b;
+}
