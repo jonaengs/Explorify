@@ -43,7 +43,7 @@ export const Edgemap = ({ artistIDs, autoPlay = false }: EdgemapProps) => {
     
     const [view, setView] = useState<EdgemapView>("genreSimilarity");
     const [colorKey, setColorKey] = useState<NodePositionKey>("genrePos");
-    const [displayLabels, setDisplayLabels] = useState(true);    
+    const [displayLabels, setDisplayLabels] = useState(false);
 
     const edgemapRef = useRef<SVGSVGElement>();
     
@@ -85,19 +85,21 @@ export const Edgemap = ({ artistIDs, autoPlay = false }: EdgemapProps) => {
     }
     
     return <div id="edgemap-container">
-        <div id="edgemap-controls-container">
-            <select onChange={e => setView(e.target.value as EdgemapView)} value={view}>
+        <div id="edgemap-controls-container" style={{"display": "none"}}>
+            {/*style={{"display" : "none"}}>*/}
+            <select onChange={e => setView(e.target.value as EdgemapView)} value={view} id={"position"}>
                 <option value="genreSimilarity">genre</option>
                 <option value="timeline">time</option>
                 <option value="featureSimilarity">feature</option>
             </select>
-            <select onChange={e => setColorKey(e.target.value as NodePositionKey)} value={colorKey}>
+            <select onChange={e => setColorKey(e.target.value as NodePositionKey)} value={colorKey} id={"colour-map"}>
                 <option value="genrePos">genre</option>
                 <option value="timelinePos">time</option>
                 <option value="featurePos">feature</option>
             </select>
-            <input type="number" value={top} onChange={e => setTop(parseInt(e.target.value))}/>
-            <input type="checkbox" checked={displayLabels} onClick={_ => setDisplayLabels(!displayLabels)} onChange={() => null}/>
+            {/*setTop(parseInt(e.target.value))*/}
+            <input type="number" value={top} onChange={e => console.log(e)} id={"nodes-number"}/>
+            <input type="checkbox" checked={displayLabels} onClick={_ => setDisplayLabels(!displayLabels)} onChange={() => null} id={"attributes"}/>
         </div>
         <svg id="edgemap" ref={edgemapRef}></svg>
     </div>
