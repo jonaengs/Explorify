@@ -14,6 +14,11 @@ import { updateColours } from "../D3Timeline";
     BEGIN DIRECT EDGEMAP MANIPULATION INTERFACE
 */
 
+export function getArtistColor(id: ArtistID) {
+    const artistNode = completeNetwork.nodes.find(n => n.id === id);
+    return artistNode && getColor(artistNode);
+}
+
 export function setEMHighlighted(id: ArtistID) {
     if (id)
         highlightSelection(edgemapState.nodes.find(n => n.id === id));
@@ -473,11 +478,14 @@ function setLink(links: EMLink[]): LinkSelection {
     const getTooltipText = (l: EMLink) => getLinkGenres(l).join("<br/>");
 
     const onEnter = (selection: EnterSelection) => {
-        const tooltip = edgemapState.linkTooltip;  
+        const { linkTooltip, selected}  = edgemapState;  
         const linkNode = selection.append("g");
         linkNode
             .attr("class", "link-node")
-            .style("visibility", "hidden");
+            .style("visibility", l => {
+                if (!selected) return "hidden";
+                return l.source.id === selected.id ? "visible" : "hidden"
+            });
         linkNode
             .append("path")
             .attr("id", (l: EMLink) => "link-" + l.id)
@@ -496,11 +504,11 @@ function setLink(links: EMLink[]): LinkSelection {
             .style("stroke-width", (l: EMLink) => Math.log2(l.count) + 3)
             .attr("pointer-events", "visibleStroke")
             .on("mouseover", (event: PointerEvent, l: EMLink) => {
-                tooltip.style("height", 1.3 * (getLinkGenres(l).length + 1) + "rem");
-                return utils.onMouseover(tooltip, getTooltipText)(event, l)
+                linkTooltip.style("height", 1.3 * (getLinkGenres(l).length + 1) + "rem");
+                return utils.onMouseover(linkTooltip, getTooltipText)(event, l)
             })
-            .on("mousemove", utils.onMousemove(tooltip))
-            .on("mouseout", utils.onMouseout(tooltip));
+            .on("mousemove", utils.onMousemove(linkTooltip))
+            .on("mouseout", utils.onMouseout(linkTooltip));
         linkNode
             .append("text")
                 .attr("class", "link-text unselectable")
@@ -773,7 +781,7 @@ export function updateEdgemap(artists: ArtistID[] = top150, nextView: EdgemapVie
 
     if (removed.size) {
         node.filter((n: EMNode) => removed.has(n.id)).remove();
-        // link.filter((l: EMLink) => removed.has(l.source.id) || removed.has(l.target.id)).remove();
+        link.filter((l: EMLink) => removed.has(l.source.id) || removed.has(l.target.id)).remove();
     }
 
     const positionKey = EMViewToPositionKey.get(nextView);
@@ -838,14 +846,4 @@ export function updateEdgemap(artists: ArtistID[] = top150, nextView: EdgemapVie
     }
 
     setSimulation(simulation, nextView !== currentView);   
-}
-
-// export function getArtistColor(id: ArtistID) {
-//     try { return getColor(edgemapState.nodes.find(n => n.id === id));
-//     } catch { return null; }
-// }
-
-export function getArtistColor(id: ArtistID) {
-    try { return getColor(completeNetwork.nodes.find(n => n.id === id));
-    } catch { return null; }
 }
