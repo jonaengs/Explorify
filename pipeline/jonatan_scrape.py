@@ -4,21 +4,8 @@ import numpy as np
 
 from ast import literal_eval
 
-from settings import data_path, write_retrieved_data, retrieve_missing_tracks, retrieve_missing_artists, retrieve_missing_related_artists, retrieve_missing_track_audio_features
+from jonatan_settings import data_path, write_retrieved_data, retrieve_missing_tracks, retrieve_missing_artists, retrieve_missing_related_artists, retrieve_missing_track_audio_features
 from jonatan_requests import get_track_data_by_name, get_artist_data_by_name, get_related_artists, get_track_audio_features
-
-
-from threading import Thread
-def make_threaded(f, *args, num_threads=10):
-    threads = [Thread(f, args=args) for i in range(num_threads)]
-    
-    for t in threads:
-        t.start()
-
-    for t in threads:
-        t.join()
-    
-    return
 
 
 def get_artist_data(df):

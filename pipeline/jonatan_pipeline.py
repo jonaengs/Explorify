@@ -5,7 +5,7 @@ import pprint
 
 from sklearn.preprocessing import StandardScaler
 
-from settings import data_path, write_final_df, write_dr_results, audio_features
+from jonatan_settings import data_path, write_final_df, write_dr_results, audio_features
 from jonatan_scrape import get_track_data, get_artist_data, get_audio_feature_data
 from jonatan_dr import compute_dr_results
 

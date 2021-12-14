@@ -4,7 +4,7 @@ from pprint import pprint
 import re
 from spotipy.oauth2 import SpotifyClientCredentials
 
-from settings import SPOTIFY_OAUTH_TOKEN, SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET
+from jonatan_settings import SPOTIFY_OAUTH_TOKEN, SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET
 
 if SPOTIFY_OAUTH_TOKEN:
     oauth_token = SPOTIFY_OAUTH_TOKEN

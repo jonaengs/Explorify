@@ -9,7 +9,7 @@ from sklearn.manifold import TSNE
 from sklearn.cluster import DBSCAN
 from math import isnan
 
-from settings import audio_features
+from jonatan_settings import audio_features
 
 
 ###################################
