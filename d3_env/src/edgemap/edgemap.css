@@ -70,3 +70,9 @@
 #edgemap-autoplay-toggle:hover {
     color: rgba(227, 225, 222, 0.9);
 }
+
+#legend-svg text {
+    fill: black !important;
+    color: black !important;
+    font-size: 0.35rem;
+}

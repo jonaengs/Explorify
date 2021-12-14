@@ -140,12 +140,106 @@ export const Edgemap = ({ artistIDs }: EdgemapProps) => {
                     <Card.Body>
                         <Card.Title>Legend</Card.Title>
                         <Card.Text>
-                            <p>Node color: </p>
+                            <svg id="legend-svg" style={{width: "100%", height: "100%"}} viewBox="0 0 100 100">
+                                <g>
+                                    <circle cx="4" cy="11" r="1"/>
+                                    <circle cx="8" cy="9.5" r="2"/>
+                                    <circle cx="15" cy="7" r="4"/>
+                                    <text x="25" y="11">
+                                        Artist streaming time
+                                    </text>
+                                </g>
+                                <line x1="0" x2="100" y1="13" y2="13" stroke="#bcb5dd"/>
+                                <g>
+                                    <circle cx="5" cy="20" r="4.5" fill={colorKey === "timelinePos" ? "blue" : "green"}/>
+                                    <circle cx="15" cy="20" r="4.5" fill={colorKey === "timelinePos" ? "yellow" : "red"}/>
+                                    <text x="25" y="25">
+                                        Artist {colorKey === 'featurePos' ? "musical qualities" : 
+                                                colorKey === 'genrePos' ? "genres" : "date of first stream"}
+                                    </text>
+                                </g>
+                                <line x1="0" x2="100" y1="27" y2="27" stroke="#bcb5dd"/>
+                                <g>
+                                    <path 
+                                        d="M 0 35 C 7 28, 15 28, 22 35"
+                                        fill="none" stroke-width="2" stroke={colorKey === "timelinePos" ? "yellow" : "green"}
+                                    />
+                                    <text x="25" y="38">
+                                        Genres in common
+                                    </text>
+                                </g>
+                                <line x1="0" x2="100" y1="40" y2="40" stroke="#bcb5dd"/>
+                                <g>
+                                    <path 
+                                            d="M 0 46 C 7 40, 15 40, 22 46"
+                                            fill="none" stroke-width="1"
+                                            stroke="white"
+                                    />
+                                    <path 
+                                            d="M 0 48 C 7 42, 15 42, 22 48"
+                                            fill="none" stroke-width="1"
+                                            stroke="grey"
+                                    />
+                                    <path 
+                                            d="M 0 50 C 7 44, 15 44, 22 50"
+                                            fill="none" stroke-width="1"
+                                            stroke="black"
+                                    />
+                                    <text x="25" y="51">
+                                        Proportion of genres shared
+                                    </text>
+                                </g>
+                                <line x1="0" x2="100" y1="53" y2="53" stroke="#bcb5dd"/>
+                                <g>
+                                    <path 
+                                            d="M 0 59 C 7 54, 15 54, 22 59"
+                                            fill="none" stroke="black"
+                                            stroke-width="3"
+                                    />
+                                    <path 
+                                            d="M 0 63 C 7 58, 15 58, 22 63"
+                                            fill="none" stroke="black"
+                                            stroke-width="2"
+                                    />
+                                    <path 
+                                            d="M 0 65 C 7 61, 15 61, 22 65"
+                                            fill="none" stroke="black"
+                                            stroke-width="1"
+                                    />
+                                    <text x="25" y="64">
+                                        Number of genres shared
+                                    </text>
+                                </g>
+                                <line x1="0" x2="100" y1="66" y2="66" stroke="#bcb5dd"/>
+                                <g>
+                                    {/* Arrow from: http://thenewcode.com/1068/Making-Arrows-in-SVG */}
+                                    <defs>
+                                        <marker id="arrowhead" markerWidth="2" markerHeight="1.6" 
+                                        refX="0" refY="0.8" orient="auto">
+                                        <polygon points="0 0, 2 0.8, 0 1.6" />
+                                        </marker>
+                                    </defs>
+                                    <line x1="0" x2="22" y1="70" y2="70" stroke="gray" stroke-width="0.6" />
+                                    <line x1="0" x2="22" y1="75" y2="75" stroke="gray" stroke-width="0.6" />
+                                    <line x1="6" x2="6" y1="67" y2="78" stroke="gray" stroke-width="0.6" />
+                                    <line x1="16" x2="16" y1="67" y2="78" stroke="gray" stroke-width="0.6" />
+                                    
+                                    <circle cx="4" cy="70" r="2"/>
+                                    <circle cx="18" cy="75" r="2"/>
+
+                                    <line x1="7" x2="13.5" y1="71" y2="73.5" 
+                                        stroke="black"
+                                        stroke-width="1" marker-end="url(#arrowhead)"
+                                    />
+                                    
+                                    <text x="25" y="77">
+                                        {view === "timeline" ? "Artist date of first stream" 
+                                        : "Similarity by " + (view === "genreSimilarity" ? "genre" : "musical qualities")}
+                                    </text>
+                                </g>
+                                <line x1="0" x2="100" y1="79" y2="79" stroke="#bcb5dd"/>
+                            </svg>
                             <p>Node position: </p>
-                            <p>Node size: Artist streaming time</p>
-                            <p>Edges: Common genres</p>
-                            <p>Edges lightness: Proportion of genres in common</p>
-                            <p>Edges thickness: Number of genres in common</p>
                         </Card.Text>
                     </Card.Body>
                 </Card>
