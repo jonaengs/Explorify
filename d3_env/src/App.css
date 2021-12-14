@@ -20,6 +20,7 @@
 .x-axis .tick text {
   font-family: Arial, Helvetica;
   font-size: medium!important;
+  stroke: ghostwhite!important;
 }
 
 .x-axis .tick line {
@@ -104,9 +105,9 @@
 /*barchart*/
 
 .y-axis .tick text {
-  font-family: Arial, Helvetica;
+  font-family: Arial, Helvetica, sans-serif!important;
   font-size: medium!important;
-  fill: whitesmoke;
+  fill: whitesmoke!important;
 }
 
 .y-axis .tick line {

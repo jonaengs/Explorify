@@ -7,7 +7,7 @@ const margin = {
     top: 20,
     right: 30,
     bottom: 10,
-    left: 120
+    left: 200
 };
 
 const w = 530 - margin.left - margin.right;
@@ -40,10 +40,10 @@ export function updateBar(artistsForDay){
     let yAxis = d3.axisLeft(yScaleTicks)
         .tickFormat(function (d){
             let artist = top20ArtistsForDay[d].name
-            if (artist.length < 12)
+            if (artist.length < 20)
                 return artist
             else
-                return artist.slice(0, 10) + "..."
+                return artist.slice(0, 15) + "..."
         });
 
     let svg = d3.select("#bar-chart")
@@ -131,10 +131,10 @@ export function sortByName() {
     let yAxis = d3.axisLeft(yScaleTicks)
         .tickFormat(function (d, i) {
             let artist = sortedNames[i][0].name
-            if (artist.length < 12)
+            if (artist.length < 20)
                 return artist
             else
-                return artist.slice(0, 10) + "..."
+                return artist.slice(0, 15) + "..."
         });
 
     rect.transition()
@@ -199,10 +199,10 @@ export function sortByPopularity(){
     let yAxis = d3.axisLeft(yScaleTicks)
         .tickFormat(function (d, i) {
             let artist = sortedNames[i][0].name
-            if (artist.length < 12)
+            if (artist.length < 20)
                 return artist
             else
-                return artist.slice(0, 10) + "..."
+                return artist.slice(0, 15) + "..."
         });
 
     rect.transition()
@@ -267,10 +267,10 @@ export function sortByStream(){
     let yAxis = d3.axisLeft(yScaleTicks)
         .tickFormat(function (d, i) {
             let artist = sortedNames[i][0].name
-            if (artist.length < 12)
+            if (artist.length < 20)
                 return artist
             else
-                return artist.slice(0, 10) + "..."
+                return artist.slice(0, 15) + "..."
         });
 
     rect.transition()
@@ -318,10 +318,10 @@ const D3BarChart = (props) => {
 
         let yAxis = d3.axisLeft(yScaleTicks)
             .tickFormat(function (d){
-                if (d.length < 12)
+                if (d.length < 20)
                     return d
                 else
-                    return d.slice(0, 10) + "..."
+                    return d.slice(0, 15) + "..."
             });
 
         let svg = d3.select(barChart.current)
