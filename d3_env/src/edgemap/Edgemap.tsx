@@ -214,9 +214,9 @@ export const Edgemap = ({ artistIDs }: EdgemapProps) => {
                                 <g>
                                     {/* Arrow from: http://thenewcode.com/1068/Making-Arrows-in-SVG */}
                                     <defs>
-                                        <marker id="arrowhead" markerWidth="2" markerHeight="1.6" 
-                                        refX="0" refY="0.8" orient="auto">
-                                        <polygon points="0 0, 2 0.8, 0 1.6" />
+                                        <marker id="arrowhead" markerWidth="2" markerHeight="3" 
+                                        refX="0" refY="1.5" orient="auto">
+                                        <polygon points="0 0, 2 1.5, 0 3" />
                                         </marker>
                                     </defs>
                                     <line x1="0" x2="22" y1="70" y2="70" stroke="gray" stroke-width="0.6" />
@@ -237,7 +237,7 @@ export const Edgemap = ({ artistIDs }: EdgemapProps) => {
                                         : "Similarity by " + (view === "genreSimilarity" ? "genre" : "musical qualities")}
                                     </text>
                                 </g>
-                                <line x1="0" x2="100" y1="79" y2="79" stroke="#bcb5dd"/>
+                                <line x1="0" x2="100" y1="79" y2="79" stroke="#bcb5dd" stroke-width="0.5"/>
                             </svg>
                         </Card.Text>
                     </Card.Body>
