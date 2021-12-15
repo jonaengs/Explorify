@@ -151,8 +151,8 @@ export const Edgemap = ({ artistIDs }: EdgemapProps) => {
                                 </g>
                                 <line x1="0" x2="100" y1="13" y2="13" stroke="#bcb5dd"/>
                                 <g>
-                                    <circle cx="5" cy="20" r="4.5" fill={colorKey === "timelinePos" ? "blue" : "green"}/>
-                                    <circle cx="15" cy="20" r="4.5" fill={colorKey === "timelinePos" ? "yellow" : "red"}/>
+                                    <circle cx="5" cy="20" r="4.5" fill={colorKey === "timelinePos" ? "#27426e" : "#5c8c26"}/>
+                                    <circle cx="15" cy="20" r="4.5" fill={colorKey === "timelinePos" ? "#e4cd5a" : "#932520"}/>
                                     <text x="25" y="25">
                                         Artist {colorKey === 'featurePos' ? "musical qualities" : 
                                                 colorKey === 'genrePos' ? "genres" : "date of first stream"}
@@ -162,7 +162,7 @@ export const Edgemap = ({ artistIDs }: EdgemapProps) => {
                                 <g>
                                     <path 
                                         d="M 0 35 C 7 28, 15 28, 22 35"
-                                        fill="none" stroke-width="2" stroke={colorKey === "timelinePos" ? "yellow" : "green"}
+                                        fill="none" stroke-width="2" stroke={colorKey === "timelinePos" ? "#f4dd6a" : "#2d7185"}
                                     />
                                     <text x="25" y="38">
                                         Genres in common
@@ -239,7 +239,6 @@ export const Edgemap = ({ artistIDs }: EdgemapProps) => {
                                 </g>
                                 <line x1="0" x2="100" y1="79" y2="79" stroke="#bcb5dd"/>
                             </svg>
-                            <p>Node position: </p>
                         </Card.Text>
                     </Card.Body>
                 </Card>
